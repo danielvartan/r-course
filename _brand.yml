@@ -1,0 +1,87 @@
+# For detailed documentation on the format, refer to:
+#
+# - https://posit-dev.github.io/brand-yml
+# - https://quarto.org/docs/authoring/brand.html
+
+# Most of the parameters were extracted from the Sustentarea's website
+# <https://www.fsp.usp.br/sustentarea/>.
+
+meta:
+  name:
+    short: Sustentarea
+    full: Sustentarea Research and Extension Group
+  link:
+    home: https://www.fsp.usp.br/sustentarea
+    github: https://github.com/sustentarea
+    instagram: https://instagram.com/sustentarea
+    facebook: https://www.facebook.com/sustentarea
+    spotify: https://open.spotify.com/show/0loUt1qoEsko66pW6hwd05
+    youtube: https://www.youtube.com/@sustentareausp
+    linkedin: https://www.linkedin.com/in/sustentarea-usp-230700218
+    linktree: https://linktr.ee/sustentarea.usp
+  description: |
+    Research and Extension Center at the University of São Paulo
+    (USP) dedicated to advancing scientific research in food systems,
+    sustainable eating, and the global syndemic. 🍏🥦🌍
+  founded: 2012
+
+# For a better visualization of the color palette, see:
+#
+# - https://coolors.co/006909-9ecd7a-ed6b4d-b44522-513024-ffffff-7a7a7a-272b33
+# - https://www.color-name.com/hex/006909
+
+color:
+  palette:
+    # Primary Colors
+    green: "#006909"
+    red: "#ED6B4D"
+    red-750: "#F5B4A5"
+    brown: "#513024"
+    brown-750: "#A79791"
+    # Secondary Colors
+    light-green: "#9ECD7A"
+    dark-red: "#B44522"
+    dark-red-triadic-blue: "#4522B4" # colortools::triadic("#B44522")[3]
+    # Grayscale
+    white: "#FFFFFF"
+    grey: "#7A7A7A"
+    grey-950: "#F1F1F1"
+    grey-975: "#F8F8F8" # get_brand_color_tint(950, "grey")
+    black: "#272B33"
+  background: white
+  primary: green
+  secondary: red
+  tertiary: brown
+  success: light-green
+  info: green
+  warning: dark-red
+  danger: brown
+  light: white
+  dark: black
+
+typography:
+  fonts:
+    # Main fonts
+    - family: Poppins
+      source: google
+    - family: DM Sans
+      source: google
+    - family: DM Mono
+      source: google
+  base: # color: gray
+    family: Poppins
+    line-height: 1.5
+    weight: normal
+  headings: # h1 3rem; h2 1.6rem;
+    family: Poppins
+    color: brown
+    weight: bold
+  monospace: DM Mono
+  monospace-inline:
+    color: green
+    background-color: grey-975
+  monospace-block:
+    background-color: grey-975
+  link:
+    color: green
+    decoration: underline

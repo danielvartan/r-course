@@ -1,0 +1,86 @@
+[
+  {
+    "objectID": "index.html#hi-there",
+    "href": "index.html#hi-there",
+    "title": "R Course",
+    "section": "Hi there! 👋",
+    "text": "Hi there! 👋\n\n\nThis course will introuce you to the basics of the R programming language.\n\nWe’ll explore the following topics:\n\nIntroduction\n\n\n\n\n\n\n\n\n\n(Artwork by Allison Horst)"
+  },
+  {
+    "objectID": "index.html#pre-course-form",
+    "href": "index.html#pre-course-form",
+    "title": "R Course",
+    "section": "Pre-Course Form",
+    "text": "Pre-Course Form"
+  },
+  {
+    "objectID": "index.html#course-objectives",
+    "href": "index.html#course-objectives",
+    "title": "R Course",
+    "section": "Course Objectives",
+    "text": "Course Objectives\n\nUnderstand basically how a computer works\nUnderstand the structure, primary objects, operators and other basic elements of the R language\nUnderstand basic concepts of data visualization\nUnderstand basic concepts of data munging\nUnderstand basic concepts of modeling\nUnderstand basic concepts of hypothesis testing\n(Other course: How to use Git)"
+  },
+  {
+    "objectID": "index.html#schedule",
+    "href": "index.html#schedule",
+    "title": "R Course",
+    "section": "Schedule",
+    "text": "Schedule\n\nDates and times\nFSP Laboratories"
+  },
+  {
+    "objectID": "index.html#main-references",
+    "href": "index.html#main-references",
+    "title": "R Course",
+    "section": "Main References",
+    "text": "Main References\n\n(Book cover image from Wickham et al. (2023) and Wickham (2019))"
+  },
+  {
+    "objectID": "index.html#other-references",
+    "href": "index.html#other-references",
+    "title": "R Course",
+    "section": "Other References",
+    "text": "Other References\n\nW3Schools"
+  },
+  {
+    "objectID": "index.html#where-to-go-from-gere",
+    "href": "index.html#where-to-go-from-gere",
+    "title": "R Course",
+    "section": "Where to Go from Gere",
+    "text": "Where to Go from Gere"
+  },
+  {
+    "objectID": "index.html#post-course-form",
+    "href": "index.html#post-course-form",
+    "title": "R Course",
+    "section": "Post-Course Form",
+    "text": "Post-Course Form"
+  },
+  {
+    "objectID": "index.html#closing-remarks",
+    "href": "index.html#closing-remarks",
+    "title": "R Course",
+    "section": "Closing Remarks",
+    "text": "Closing Remarks\n \nThis presentation was created with the Quarto Publishing System. The code and materials are available on GitHub.\n\n\n\n\n\n(Artwork by Allison Horst)"
+  },
+  {
+    "objectID": "index.html#references",
+    "href": "index.html#references",
+    "title": "R Course",
+    "section": "References",
+    "text": "References\n\nIn accordance with the American Psychological Association (APA) Style, 7th edition.\n\n\n\nWickham, H. (2019). Advanced R (2nd ed.). CRC Press. https://adv-r.hadley.nz\n\n\nWickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2023). R for data science: Import, tidy, transform, visualize, and model data (2nd ed.). O’Reilly Media. https://r4ds.hadley.nz"
+  },
+  {
+    "objectID": "index.html#thank-you",
+    "href": "index.html#thank-you",
+    "title": "R Course",
+    "section": "Thank you!",
+    "text": "Thank you!\n\n\n\n\n\n(Artwork by Allison Horst)"
+  },
+  {
+    "objectID": "index.html#ap-placeholder",
+    "href": "index.html#ap-placeholder",
+    "title": "R Course",
+    "section": "(AP) Placeholder",
+    "text": "(AP) Placeholder"
+  }
+]

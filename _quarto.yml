@@ -1,0 +1,66 @@
+editor: source
+
+execute:
+  cache: false
+  freeze: false
+
+project:
+  type: website
+  output-dir: docs
+  render: [index.qmd]
+  post-render: "R/_post-render.R"
+
+title: "R Course"
+author: "Daniel Vartanian & Jaqueline Lopes Pereira"
+keyword: >
+  R. RStats. Course. Programming. Data Science. Statistics. Visualization.
+institute: "University of São Paulo"
+date: 2025-03-24
+date-format: "YYYY-MM-DD"
+
+website:
+  favicon: images/sustentarea-icon.png
+  site-url: https://danielvartan.github.io/r-course/
+  repo-url: https://github.com/danielvartan/r-course/
+  issue-url: https://github.com/danielvartan/r-course/issues/
+  open-graph:
+    image: images/og-image.png
+    image-width: 2400
+    image-height: 1600
+    image-alt: Sustentarea Research and Extension Group
+  repo-branch: main
+
+format:
+  revealjs:
+    open-graph: true
+    locale: en
+    lang: en
+    code-link: true
+    code-fold: true
+    link-external-newwindow: true
+    tbl-cap-location: top
+    callout-appearance: simple
+    csl: csl/english-apa-author-date.csl
+    preview-links: false
+    controls: true
+    controls-layout: bottom-right
+    chalkboard: true
+    auto-stretch: true
+    fig-align: center
+    theme: [default, brand, scss/styles.scss]
+    pdf-max-pages-per-slide: 1
+    template-partials:
+      - html/title-slide.html
+    menu:
+      titleSelector: [h1 h2]
+      useTextContentForMissingTitles: false
+      hideMissingTitles: false
+    include-in-header:
+      text: |
+        <meta property="og:description" content="">
+        <meta property="og:image" content="images/og-image.png">
+        <meta property="og:image:height" content="2400">
+        <meta property="og:image:width" content="1600">
+
+google-scholar: false
+bibliography: references.bib
