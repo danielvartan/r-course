@@ -1,0 +1,579 @@
+## Data Science Workflow {.smaller}
+
+![](images/wickham-2023-figure-1.png){fig-align="center" style="width: 85%; padding-top: 100px;"}
+
+::: footer
+(Reproduced from @wickham2023e)
+:::
+
+::: {.notes}
+:::
+
+## The RStudio IDE {.smaller}
+
+::: {.notes}
+- Always use software in English.
+:::
+
+## Objects {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%;"}
+**Everything in R is an object**.
+
+Everything that happens in R is the result of a function call.
+
+Objects assigned to variables are stored in memory.
+
+- **Scalars** (0D)
+- **Vectors** (1D)
+- **Matrices** (2D)
+- **Arrays** (nD)
+:::
+::: {.column style="width: 50%; padding-top: 0px;"}
+![](images/scy-2018-figure-1.png){fig-align="center" style="width: 85%;"}
+:::
+::::
+
+::: footer
+(Artwork by [Zac Scy](https://medium.com/@ZacScy/thoughtware-upgrade-2ed0276d04f3))
+:::
+
+::: {.notes}
+- Data frames are a special case of 2D objects.
+:::
+
+## Primary Data Types {.smaller}
+
+These are part of the [**atomic**](https://adv-r.hadley.nz/vectors-chap.html?q=atomic#atomic-vectors) data types in R.
+
+:::: {.columns}
+::: {.column style="width: 50%;"}
+- **Boolean/Logical**: TRUE/FALSE.
+- **Integer**: 1, 2, 3.
+- **Float/Double**: 1.0, 2.0, 3.0.
+- **Character/String**: "Hello, World!".
+:::
+::: {.column style="width: 50%;"}
+```{r}
+#| echo: true
+#| code-fold: false
+
+typeof(as.Date("2025-01-01"))
+```
+:::
+::::
+
+::: {.notes}
+See: https://youtu.be/e1zJS31tr88?si=7-TamPi2tmwprCUL&t=900
+:::
+
+::: {.notes}
+:::
+
+## Data Classes {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%;"}
+* **Character** (e.g., "Maria", "John").
+* **Factor** (e.g., 1 = "Male", 2 = "Female").
+* **Integer** (e.g., 1, 2, 3).
+* **Float** (e.g., 1.0, 2.0, 3.0).
+* **Complex** (e.g., 1 + 2i, 3 + 4i).
+* **Boolean** (e.g., TRUE, FALSE).
+:::
+
+::: {.column style="width: 50%;"}
+* **Date** (e.g., 2023-01-01) ([linear time](https://danielvartan.github.io/lubritime/reference/cycle_time.html#linear-versus-circular-time)).
+* **Date-time** (e.g., 2023-01-01 00:00:00) (linear time).
+* **Interval** (e.g., 2023-01-01 00:00:00--2023-12-15 15:40:00) (linear time).
+* **Duration** (e.g., 1 year, 2 months, 3 days) (linear time).
+* **Period** (e.g., 1 year, 2 months, 3 days) (linear(ish) time).
+* **Time of day** (e.g., 01:00:00) ([circular time](https://danielvartan.github.io/lubritime/reference/cycle_time.html#linear-versus-circular-time)).
+:::
+::::
+
+::: {.notes}
+:::
+
+## Non-Atomic Objects {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%;"}
+Atomic types are **non-recursice objects**, i.e., objects that can't hold themselfs as an entry (e.g., `logical`, `integer`, `double`, `character`).
+
+**Non-Atomic Objects**
+
+- Matrices (`matrice()`)
+- Lists (`list()`)
+- Data Frames (`data.frame()`)
+:::
+::: {.column style="width: 50%;"}
+```{r}
+#| echo: true
+#| code-fold: false
+
+list(list(1), list(2))
+```
+:::
+::::
+
+::: {.notes}
+:::
+
+## Operations {.smaller}
+
+::: {style="font-size: 1.5em; text-align: center; padding-top: 175px;"}
+[**Left Hand Side**]{.brand-red} = [**Right Hand Side**]{.brand-red}
+:::
+
+::: {.notes}
+:::
+
+## Arithmetic Operators {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%;"}
+- ``` `+`() ``` Addition
+- ``` `-`() ``` Subtraction
+- ``` `*`() ``` Multiplication
+- ``` `/`() ``` Division
+- ``` `^`() ``` Exponentiation
+- ``` `%/%`() ``` Integer division
+- ``` `%%`() ``` Modulus (Remainder from Division)
+:::
+::: {.column style="width: 50%;"}
+```{r}
+#| echo: true
+#| code-fold: false
+
+10 %% 3
+```
+:::
+::::
+
+::: {.notes}
+:::
+
+## Assignment Operators {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%;"}
+- ``` `<-`() ``` Leftwards assignment (**Use this!**)
+- ``` `<<-`() ``` Leftwards assignment (Global Environment)
+- ``` `->`() ``` Rightwards assignment
+- ``` `->>`() ``` Rightwards assignment (Global Environment)
+- ``` `=`() ``` Equals sign assignment
+:::
+::: {.column style="width: 50%;"}
+```{r}
+#| echo: true
+#| code-fold: false
+
+x <- 1
+
+x
+```
+:::
+::::
+
+::: {.notes}
+:::
+
+## Comparison Operators {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%;"}
+- ``` `==`() ``` Equal to
+- ``` `!=`() ``` Not equal to
+- ``` `>`() ``` Greater than
+- ``` `<`() ``` Less than
+- ``` `>=`() ``` Greater than or equal to
+- ``` `<=`() ``` Less than or equal to
+:::
+::: {.column style="width: 50%;"}
+```{r}
+#| echo: true
+#| code-fold: false
+
+1 == 1
+```
+:::
+::::
+
+::: {.notes}
+:::
+
+## Logical Operators {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%;"}
+- ``` `&`() ``` AND (Element-wise)
+- ``` `&&`() ``` AND
+- ``` `|`() ``` OR
+- ``` `||`() ``` OR (Element-wise)
+- ``` `!`() ``` NOT
+:::
+::: {.column style="width: 50%;"}
+```{r}
+#| echo: true
+#| code-fold: false
+
+x <- 5
+y <- 10
+
+x > 5 & y < 10
+```
+:::
+::::
+
+::: {.notes}
+:::
+
+## Other Operators {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%;"}
+- ``` `:`() ``` Sequence operator
+- ``` `%in%`() ``` Matching operator
+- ``` `%*%`() ``` Matrix multiplication
+:::
+::: {.column style="width: 50%;"}
+```{r}
+#| echo: true
+#| code-fold: false
+
+1:10
+```
+:::
+::::
+
+::: {.notes}
+:::
+
+## Operator Precedence {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 47.5%; font-size: 0.9em;"}
+(@) ``` `^`() ``` Exponent (Right to Left)
+(@) ``` -x ```, ``` +x ``` Unary minus, Unary plus (Left to Right)
+(@) ``` `%%`() ``` Modulus (Left to Right)
+(@) ``` `*`() ```, ``` `/`() ``` Multiplication, Division (Left to Right)
+(@) ``` `+`() ```, ``` `-`() ``` Addition, Subtraction (Left to Right)
+(@) ``` `==`() ```, ``` `!=`() ``` Comparisons (Left to Right)
+:::
+::: {.column style="width: 5%; font-size: 0.9em;"}
+:::
+::: {.column style="width: 47.5%; font-size: 0.9em;"}
+(@) ``` `!`() ``` Logical NOT (Left to Right)
+(@) ``` `&`() ```, ``` `&&`() ``` Logical AND (Left to Right)
+(@) ``` `|`() ```, ``` `||`() ``` Logical OR (Left to Right)
+(@) ``` `->`() ```, ``` `->>`() ``` Rightward assignment (Left to Right)
+(@) ``` `<-`() ```, ``` `<<-`() ``` Leftward assignment (Right to Left)
+(@) ``` `=`() ```: Leftward assignment (Right to Left)
+:::
+::::
+
+```{r}
+#| echo: true
+#| code-fold: false
+
+2^2 + 1 * 2
+```
+
+```{r}
+#| echo: true
+#| code-fold: false
+
+!FALSE & TRUE
+```
+
+::: {.notes}
+:::
+
+## Subsetting {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 47.5%;"}
+**Atomic**
+
+- ``` `[`() ``` 1 level extraction
+- ``` `[[`() ``` 2 level extraction
+
+```{r}
+#| echo: true
+#| code-fold: false
+
+x <- c("a", "b", "c")
+
+x[1]
+```
+
+<br>
+
+**Non-Atomic**
+
+- ``` `$`() ```: 2 level extraction
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+**Data Frames**
+
+- `x[i, ]` Extract line `i`
+- `x[, j]` Extract column/variable `j`
+- `x[i, j]` Extract line `i` from column/variable `j`
+
+```{r}
+#| echo: true
+#| code-fold: false
+
+data <- data.frame(a = c(1, 2, 3), b = c(4, 5, 6))
+
+data$a |> head(5)
+```
+:::
+::::
+
+::: {.notes}
+:::
+
+## Pipes {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 47.5%;"}
+**R Native Pipe**<br>
+[(Introduced in [R 4.1.0](https://cran.r-project.org/bin/windows/base/old/4.1.0/NEWS.R-4.1.0.html))]{style="font-size: 0.7em"}
+
+<br>
+
+```{r}
+#| echo: true
+#| code-fold: false
+#| eval: false
+
+object |> function()
+object %>% function(1, par = _)
+```
+
+```{r}
+#| echo: true
+#| code-fold: false
+
+seq(1, 8) |>
+  c(9) |>
+  mean()
+```
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+**[`magrittr`](https://magrittr.tidyverse.org/) Pipe**
+
+<br>
+
+```{r}
+#| echo: true
+#| code-fold: false
+#| eval: false
+
+object %>% function()
+object %>% function(1, par = .)
+object %>% function(1, .)
+```
+
+```{r}
+#| echo: true
+#| code-fold: false
+
+library(magrittr)
+
+seq(1, 8) %>%
+  c(9) %>%
+  mean()
+```
+:::
+::::
+
+## Control Flow: Choices {.smaller}
+
+```{r}
+#| echo: true
+#| code-fold: false
+#| eval: false
+
+if (condition) true_action
+if (condition) true_action else false_action
+```
+
+<br>
+
+```{r}
+#| echo: true
+#| code-fold: false
+
+x <- 60
+
+if (x > 90) {
+    "A"
+  } else if (x > 80) {
+    "B"
+  } else if (x > 50) {
+    "C"
+  } else {
+    "F"
+  }
+```
+
+::: {.notes}
+:::
+
+## Control Flow: Loops {.smaller}
+
+```{r}
+#| echo: true
+#| code-fold: false
+#| eval: false
+
+while (condition) perform_action
+```
+
+```{r}
+#| echo: true
+#| code-fold: false
+
+x <- 0
+
+while (x < 5) {
+  x <- x + 1
+  print(x)
+}
+```
+
+<br>
+
+```{r}
+#| echo: true
+#| code-fold: false
+#| eval: false
+
+for (item in vector) perform_action
+```
+
+```{r}
+#| echo: true
+#| code-fold: false
+
+for (i in 1:3) {
+  print(i)
+}
+```
+
+::: {.notes}
+:::
+
+## Functions {.smaller}
+
+```{r}
+#| echo: true
+#| code-fold: false
+#| eval: false
+
+name <- function(parameter_1, parameter_2, ...) {
+  expression
+}
+```
+
+<br>
+
+```{r}
+#| echo: true
+#| code-fold: false
+
+foo <- function(x) {
+  x + 1
+}
+
+foo(9)
+```
+
+::: {.notes}
+:::
+
+## Enviroments {.smaller}
+
+[Scoping](https://adv-r.hadley.nz/functions.html?q=scoping#lexical-scoping)
+
+<br>
+
+```{r}
+#| echo: true
+#| code-fold: false
+
+x <- 10
+
+foo <- function() {
+  x <- 20
+
+  x
+}
+
+foo()
+```
+
+::: {.notes}
+:::
+
+## Packages {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%;"}
+In R, the fundamental unit of shareable code is the package. A package bundles together code, data, documentation, and tests, and is easy to share with others [@wickham2023d].
+
+[**The Unix philosophy**](https://en.wikipedia.org/wiki/Unix_philosophy)
+:::
+::: {.column style="width: 50%;"}
+```{r}
+#| echo: true
+#| code-fold: false
+#| eval: false
+
+install.packages("package_name")
+```
+
+<br>
+
+```{r}
+#| echo: true
+#| code-fold: false
+
+library(hms)
+library(lubridate)
+library(mctq)
+
+so(parse_hm("23:00"), lubridate::dhours(2))
+```
+
+<br>
+
+```{r}
+#| echo: true
+#| code-fold: false
+#| eval: false
+
+package_name::function_name()
+```
+
+<br>
+
+```{r}
+#| echo: true
+#| code-fold: false
+
+hms::parse_hm("23:00")
+```
+:::
+::::
+
+::: {.notes}
+:::

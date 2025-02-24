@@ -1,0 +1,339 @@
+## Let's Start from Zero {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%;"}
+**This is a programming course**.
+
+As such, we must understand the basics of how a computer works.
+
+It is essential to start from materiality; otherwise, things stop making sense.
+:::
+::: {.column style="width: 50%;"}
+![](images/eroshka-ariadne-thread.png){fig-align="center" style="width: 55%;"}
+:::
+::::
+
+::: footer
+(Artwork by [Eroshka](https://www.shutterstock.com/image-vector/ariadne-thread-ancient-greek-woman-standing-2368887349))
+:::
+
+::: {.notes}
+- If you just want to learn how to push buttons, stick to Excel or Stata.
+:::
+
+## A Bit of History {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%;"}
+[**Abacus**](https://en.wikipedia.org/wiki/Abacus) (~between 2700 and 2300 BCE) (Sumerians) [@ifrah2001]
+
+[**Pascalina**](https://en.wikipedia.org/wiki/Pascaline) (1642) (Blaise Pascal (1623–1662)) [@ifrah2001]
+
+[**Babbage’s Difference Engine**](https://en.wikipedia.org/wiki/Difference_engine) (Charles Babbage (1792–1871))
+:::
+::: {.column style="width: 50%;"}
+![](images/richards-1950-chinese-abacus.jpg){fig-align="center" style="width: 80%; padding-top: 100px;"}
+:::
+::::
+
+::: footer
+(Photo by [Mark Richards](https://www.computerhistory.org/revolution/calculators/1/1/134?position=0))
+:::
+
+::: {.notes}
+:::
+
+## A Bit of History {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%;"}
+**Keep in mind**
+
+- 1st World War (1914–1918)
+- 2nd World War (1939–1945)
+
+[**Universal Turing machine**](https://en.wikipedia.org/wiki/Universal_Turing_machine) (Alan Turing) [@turing1937]
+
+[**"von Neumann Architecture"**](https://en.wikipedia.org/wiki/Von_Neumann_architecture) [@vonneumann1993a]
+
+[**ENIAC**](https://en.wikipedia.org/wiki/ENIAC) (1945)
+:::
+::: {.column style="width: 50%;"}
+![](images/science-history-images-eniac-figure-1.jpg){fig-align="center" style="width: 80%; padding-top: 50px;"}
+:::
+::::
+
+::: footer
+(Photo by [Science History Images/Alamy Stock Photo](https://www.alamy.com/technicians-connecting-wires-of-eniac-image386295734.html))
+:::
+
+::: {.notes}
+- [Enigma machine](https://en.wikipedia.org/wiki/Enigma_machine)
+:::
+
+## Abstractions {.smaller}
+
+![](images/picasso-1946-the-bull.jpg){fig-align="center" style="padding-bottom: 10px;"}
+
+::: footer
+(Artwork by Pablo Picasso – [*Le Taureau*](https://en.wikipedia.org/wiki/Le_Taureau) (1945-46))
+:::
+
+::: {.notes}
+:::
+
+## Computer Architecture {.smaller .nostretch}
+
+[**Stored-Program Concept**](https://en.wikipedia.org/wiki/Stored-program_computer) (1945) (AKA ["von Neumann Architecture"](https://en.wikipedia.org/wiki/Von_Neumann_architecture))
+
+First proposed by **J. P. Eckert** and his team (1944-1945).
+
+**Input** -> **Storage** -> **Processing** -> **Output**
+
+![](images/brookshear-2020-figure-2-1.svg){fig-align="center" style="width: 70%; padding-top: 10px;"}
+
+::: footer
+(Reproduced from @brookshear2020)
+:::
+
+::: {.notes}
+:::
+
+## Binary Arith. & Boolean Logic {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%;"}
+```
+0 = 0    | 01 +
+1 = 1    | 01 +
+2 = 10   | 01
+3 = 11   | ---
+4 = 100  | 11
+```
+:::
+::: {.column style="width: 50%;"}
+```
+ x  | y  | x ∧ y | x ∨ y
+----|----|-------|-------
+ 0  | 0  |   0   |   0
+ 0  | 1  |   0   |   1
+ 1  | 0  |   0   |   1
+ 1  | 1  |   1   |   1
+
+ x  | ¬x
+----|----
+ 0  |  1
+ 1  |  0
+```
+:::
+::::
+
+::: {.notes}
+:::
+
+## Logic Gates {.smaller .nostretch}
+
+![](images/brookshear-2020-figure-1-2-adapted.svg){fig-align="center" style="width: 100%; padding-top: 75px;"}
+
+::: footer
+(Adapted from @brookshear2020)
+:::
+
+::: {.notes}
+:::
+
+## What We Really Do When We Program? {.smaller}
+
+::: {.notes}
+A look inside a computer.
+:::
+
+## Programming Languages {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%;"}
+> The instructions which govern this operation must be given to the device in absolutely **exhaustive detail**. [...] All these procedures require the use of **some code** to express the logical and the algebraical definition of the problem under consideration, as well as the necessary numerical material. [@vonneumann1993a]
+:::
+::: {.column style="width: 50%;"}
+![](images/von-neumann-figure-1.jpg){fig-align="center" style="width: 80%; padding-top: 0px;"}
+:::
+::::
+
+::: footer
+(Photo by [Corbis Historical/Getty Images](https://www.gettyimages.com.br/detail/foto-jornal%C3%ADstica/john-von-neumann-was-a-brilliant-mathematician-who-foto-jornal%C3%ADstica/615303546?adppopup=true))
+:::
+
+::: {.notes}
+:::
+
+## Programming Paradigms {.smaller}
+
+A [programming paradigm](https://en.m.wikipedia.org/wiki/Programming_paradigm) is a specific approach to the programming proces [@brookshear2020[p. 325]].
+
+R is a multi-paradigm programming language, but is mainly **functional**.
+
+:::: {.columns}
+::: {.column style="width: 50%;"}
+**Imperative**
+
+- [Procedural](https://en.m.wikipedia.org/wiki/Procedural_programming)
+- [Object-Oriented](https://en.m.wikipedia.org/wiki/Object-oriented_programming)
+:::
+::: {.column style="width: 50%;"}
+**Declarative**
+
+- [Funcional](https://en.m.wikipedia.org/wiki/Functional_programming)
+:::
+::::
+
+::: {.notes}
+:::
+
+## Open-Source Programming Languages
+
+![](images/calltutors-figure-1.png){.r-stretch fig-align="center"}
+
+::: footer
+(Artwork by [Calltutors](https://www.calltutors.com/))
+:::
+
+::: {.notes}
+- High-level programming languages.
+- R was started by professors Ross Ihaka and Robert Gentleman as a programming language to teach introductory statistics at the University of Auckland. It was release in 1993.
+- Python was created by Guido van Rossum and released in 1991.
+- statistical computing and data visualization **versus** general-purpose.
+- Science-driven **versus** industry-driven.
+:::
+
+::: {.notes}
+:::
+
+## Why R? {.smaller .nostretch}
+
+**R** is an excellent language to get started with programming because it's specialized. Unlike some other languages, it doesn't have an overwhelming amount of features for you to learn.
+
+![](images/allison-horst-figure-7.png){fig-align="center" style="width: 55%; padding-top: 10px;"}
+
+::: footer
+(Artwork by [Allison Horst](https://twitter.com/allison_horst))
+:::
+
+::: {.notes}
+:::
+
+## Python is Fine Too, I Guess... {.smaller .nostretch}
+
+Python is good for learning how to program, but it is much easier to learn how to work with data in R. In academia, both programming languages are very important.
+
+![](images/meme-python-r.png){fig-align="center" style="width: 50%;"}
+
+::: footer
+(Image by Unknown Author)
+:::
+
+::: {.notes}
+:::
+
+## It's Not What You Think {.smaller}
+
+::::: {.columns}
+:::: {.column style="width: 50%;"}
+::: {style="font-size: 0.75em;"}
+Programming in movies **versus** programming in real life:
+:::
+
+![](images/meme-programming-movie-actual.gif){fig-align="center" style="width: 125%"}
+::::
+:::: {.column style="width: 50%;"}
+![](images/meme-changing-stuff-book.jpg){fig-align="center" style="width: 80%;"}
+::::
+:::::
+
+::: {.notes}
+* You don't have to be a math genius to learn how to code.
+:::
+
+## Community {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%; font-size: 1em; padding-top: 0px;"}
+![](images/allison-horst-figure-2.png){fig-align="center" style="width: 120%;"}
+:::
+::: {.column style="width: 50%;"}
+![](images/allison-horst-figure-4.png){fig-align="center" style="width: 100%;"}
+:::
+::::
+
+::: {.notes}
+:::
+
+::: footer
+(Artworks by [Allison Horst](https://allisonhorst.com/horst-hill-collaborations))
+:::
+
+## Important R Comm. and Events {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%;"}
+[![](images/r-ladies-logo.png){fig-align="center" style="width: 50%; padding-top: 15px;"}](https://rladies.org/)
+
+[![](images/ropensci-logo.png){fig-align="center" style="width: 50%;"}](https://ropensci.org/)
+:::
+::: {.column style="width: 50%;"}
+[![](images/latinr-logo.png){fig-align="center" style="width: 50%; padding-top: 15px;"}](https://latin-r.com/)
+
+[![](images/user-logo.png){fig-align="center" style="width: 50%;"}](https://www.r-project.org/useR-2021/)
+:::
+::::
+
+::: {.notes}
+:::
+
+## Data Engineering {.smaller .nostretch}
+
+::: {style="font-size: 0.75em"}
+> Data engineering is the development, implementation, and maintenance of systems and processes that take in raw data and produce high-quality, consistent information that supports downstream use cases, such as analysis and machine learning [@reis2022].
+:::
+
+![](images/reis-2022-figure-1-1.png){fig-align="center" style="width: 65%; padding-top: 0px;"}
+
+::: footer
+(Reproduced from @reis2022)
+:::
+
+::: {.notes}
+- Two main activities related to R.
+- You can think of data engineering as the **plumbing** of data science.
+:::
+
+## Data Science {.nostretch .smaller}
+
+::: {style="font-size: 0.8em"}
+> Data science is the study of the generalizable extraction of knowledge from data [@dhar2023].
+
+For some, data science is just statistics [@broman2013] (_hype statistics_). For others, it's a new interdisciplinary field that synthesizes statistics, informatics, computing, communication, management, and sociology [@cao2017].
+:::
+
+![](images/wickham-2023-figure-1.png){fig-align="center" style="width: 85%; padding-top: 10px;"}
+
+::: footer
+(Figure reproduced from @wickham2023e)
+:::
+
+::: {.notes}
+:::
+
+## Data Eng. *versus* Data Science {.smaller .nostretch}
+
+::: {style="padding-top: 25px;"}
+> Data scientists, according to interviews and expert estimates, spend **from 50 percent to 80 percent of their time mired in this more mundane labor of collecting and preparing unruly digital data**, before it can be explored for useful nuggets [@lohr2014].
+:::
+
+![](images/reis-2022-figure-1-6.png){fig-align="center" style="width: 90%; padding-top:50px;"}
+
+::: footer
+(Figure reproduced from @reis2022)
+:::
+
+::: {.notes}
+:::

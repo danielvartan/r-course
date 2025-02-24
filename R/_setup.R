@@ -107,7 +107,7 @@ ggplot2::theme_set(
 
 rutils:::bbt_write_quarto_bib(
   bib_file = here::here("references.bib"),
-  dir = c("."),
+  dir = c(".", "qmd"),
   pattern = "\\.qmd$",
   wd = here::here()
 )

@@ -10,10 +10,11 @@ project:
   render: [index.qmd]
   post-render: "R/_post-render.R"
 
-title: "R Course"
+title: "An Introduction to the R Programming Language"
 author: "Daniel Vartanian & Jaqueline Lopes Pereira"
 keyword: >
-  R. RStats. Course. Programming. Data Science. Statistics. Visualization.
+  R. RStats. Course. Programming. Data Science. Data Engineering.
+  Data Analysis. Statistics. Data Visualization.
 institute: "University of São Paulo"
 date: 2025-03-24
 date-format: "YYYY-MM-DD"

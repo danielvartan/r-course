@@ -8,7 +8,7 @@ MIT](https://img.shields.io/badge/license-MIT-green)](https://choosealicense.com
 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 <!-- badges: end -->
 
-🚀🖥️🔬🔎📊📈📉💻🔧🔨
+🚀👩‍💻👨‍💻🤖💻🖱🔬🔎📊📈📉🔧🔨
 
 This repository contains the slides and materials of the R course designed for the [Sustentarea](https://www.fsp.usp.br/sustentarea/) Research and Extension Center at the University of São Paulo ([USP](https://www5.usp.br/)). You can access the slides [here](https://danielvartan.github.io/r-course/).
 

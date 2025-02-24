@@ -1,0 +1,311 @@
+## What Is Data After All? {.smaller}
+
+[Ackoff's DIKW pyramid](https://en.wikipedia.org/wiki/DIKW_pyramid)
+
+**Data** < **Information** < **Knowledge** < **Wisdom**
+
+Data _versus_ the interpretation of the data
+
+![](images/dikw-drawing.jpeg){fig-align="center" style="padding-top: 25px;"}
+
+::: footer
+(To learn more see: @ackoff1989 and @rowley2007)
+:::
+
+::: {.notes}
+:::
+
+## What Is Data After All? {.smaller}
+
+Data is an abstraction. It's a representation of the world around us. Without context, it has no meaning.
+
+![](images/picasso-1946-the-bull.jpg){fig-align="center" style="padding-top: 5px;"}
+
+::: footer
+(Artwork by Pablo Picasso – [*Le Taureau*](https://en.wikipedia.org/wiki/Le_Taureau) (1945-46))
+:::
+
+::: {.notes}
+:::
+
+## Statistical Value Chain {.smaller}
+
+> A value chain, roughly, consists of a sequence of activities that increase the value of a product step by step. [...] One should realize that although the schema nicely organizes data analysis activities, in practice, the process is hardly linear [@jonge2018a].
+
+![](images/statistical-value-chain.png){fig-align="center" style="width: 90%; padding-top: 25px;"}
+
+::: footer
+(Reproduced from @jonge2018a)
+:::
+
+::: {.notes}
+:::
+
+## Raw Data {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%; font-size: 0.9em;"}
+> With raw data, we mean the data as it arrives at the desk of the analyst. The state of such data may of course vary enormously, depending on the data source. [@jonge2018a].
+
+> If the researcher has made any modifications to the raw data, it is not the raw form of the data. [@ellis2018].
+:::
+::: {.column style="width: 50%;"}
+![](images/raw-data.png){fig-align="center" style="width: 100%; padding-top: 75px;"}
+:::
+::::
+
+::: footer
+(Photo by Unknown Author)
+:::
+
+::: {.notes}
+:::
+
+## Valid Data {.smaller}
+
+Data validation techniques are used to ensure that data is accurate, consistent, and reliable.
+
+::: {style="padding-top: 10px;"}
+**Examples**
+
+- Impossible values (e.g., negative age);
+- Inconsistent values (e.g., a person with a height of 2 meters and a weight of 20 kg);
+- Improbable values (e.g., a person 200 years old);
+- Duplicated values (e.g., the same person with two different ages).
+:::
+
+::: {.notes}
+:::
+
+## The Tidy Data Manifesto {.smaller}
+
+::: footer
+[@wickham2014]
+:::
+
+::: {.notes}
+:::
+
+## Tidy Data {.smaller}
+
+![](images/allison-horst-figure-13.jpg){fig-align="center" style="width: 100%;"}
+
+::: footer
+(Artwork by [Allison Horst](https://allisonhorst.com/horst-hill-collaborations))
+:::
+
+## Tidy Data {.smaller}
+
+![](images/allison-horst-figure-14.jpg){fig-align="center" style="width: 100%;"}
+
+::: footer
+(Artwork by [Allison Horst](https://allisonhorst.com/horst-hill-collaborations))
+:::
+
+## Untidy to Tidy {.smaller}
+
+![](images/wickham-2023-figure-5-3.png){fig-align="center" style="width: 100%;"}
+
+::: footer
+(Reproduced from @wickham2023e)
+:::
+
+## Tidy Data
+
+![](images/allison-horst-figure-15.jpg){fig-align="center" style="width: 100%;"}
+
+::: footer
+(Artwork by [Allison Horst](https://allisonhorst.com/horst-hill-collaborations))
+:::
+
+## Tidy Data
+
+![](images/allison-horst-figure-19.jpg){fig-align="center" style="width: 90%;"}
+
+::: footer
+(Artwork by [Allison Horst](https://allisonhorst.com/horst-hill-collaborations))
+:::
+
+## Best Practices {.smaller}
+
+- [Tidyverse](https://www.tidyverse.org/)
+- [rOpenSci](https://ropensci.org/)
+
+<br>
+
+- [Tidyverse style guide](https://style.tidyverse.org/)
+- [Tidy design principles](https://design.tidyverse.org/)
+
+## Big Data {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 40%;"}
+> **Big data will be dead in 5 Years**: Everything will be big data, so it won't need a special name. [@gavin2020]
+:::
+
+::: {.column style="width: 60%;"}
+![](images/david-fletcher-big-data.jpeg){fig-align="center" style="width: 100%;"}
+:::
+::::
+
+::: footer
+(Artwork by [David Fletcher](https://en.wikipedia.org/wiki/David_Fletcher_(cartoonist)))
+:::
+
+::: {.notes}
+:::
+
+## Big Data Wrangling {.smaller}
+
+**Working with big data using Excel or GUI-based (Graphical User Interface) statistical software is extremely challenging, if not impossible**.
+
+Excel, for example, can struggle with performance issues and has a maximum row limit (1,048,576 rows), which is often insufficient for big data projects.
+
+The best tools for handling big data are [R](https://www.r-project.org/) and [Python](https://www.python.org/).
+
+::: {.notes}
+:::
+
+## SISVAN Data (Tabular) {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%; text-align: center;"}
+2023
+: 34 cols $\times$ 50,544,073 rows<br>1,718,498,482 data points.
+
+2022
+: 34 cols $\times$ 45,862,105 rows<br>1,559,311,570 data points.
+
+2021
+: 34 cols $\times$ 29,853,217 rows<br>1,015,009,378 data points.
+
+2020
+: 34 cols $\times$ 22,720,515 rows<br>772,497,510 data points.
+:::
+::: {.column style="width: 50%;"}
+![](images/sisvan-logo.png){fig-align="center" style="width: 75%; padding-top: 100px;"}
+:::
+::::
+
+::: {.notes}
+:::
+
+## Spatial Data (Raster) {.smaller}
+
+::::: {.columns}
+:::: {.column style="width: 60%;"}
+![](images/worldclim-logo.png){style="width: 45%;"}
+
+Not all data is tabular; spatial data can be very large and complex.
+
+Excel cannot handle spatial data, and GUI-based statistical softwares, when capable of handling spatial data, are often limited and struggles with performance issues.
+
+<br>
+
+::: {style="font-size: 0.8em; font-style: italic;"}
+Projected monthly average maximum temperatures (°C) for June 2021–2040, based on the global climate model (GCM) ACCESS-CM2.
+:::
+::::
+:::: {.column style="width: 40%; padding-top: 30px;"}
+![](images/vartanian-2024-figure-2.png){fig-align="center" style="width: 100%"}
+::::
+:::::
+
+::: footer
+([WorldClim 2.1 data](https://worldclim.org/data/worldclim21.html). June mean temperature (°C) in South America (1970-2000))
+:::
+
+::: {.notes}
+:::
+
+## Spreadsheet Syndrome {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%;"}
+Spreadsheet syndrome is a term used to describe the problems that arise from using spreadsheets to manage data.
+:::
+::: {.column style="width: 50%;"}
+![](images/spreadsheet-syndrome.png){fig-align="center" style="width: 100%; padding-top: 60px;"}
+:::
+::::
+
+::: footer
+(Figure by 9Dots Management)
+:::
+
+## Relational Databases {.nostretch .smaller}
+
+::: {style="font-size: 0.7em"}
+> Developed by [E. F. Codd](https://en.wikipedia.org/wiki/Edgar_F._Codd) of IBM in 1970, the relational model is based on mathematical [set theory](https://en.wikipedia.org/wiki/Set_theory) and represents data as independent relations. Each relation (table) is conceptually represented as a two-dimensional structure of intersecting rows and columns. The relations are related to each other through the sharing of common entity characteristics (values in columns) [@coronel2019].
+:::
+
+![](images/relational-database.png){fig-align="center" style="width: 80%; padding-top: 10px;"}
+
+## Data Documentation {visibility="uncounted"}
+
+- Data dictionaries/Codebooks (e.g., [SISVAN](https://s3.sa-east-1.amazonaws.com/ckan.saude.gov.br/SISVAN/estado_nutricional/Dicionário+de+Dados+-+Estado+Nutricional.pdf)).
+- [Guide to writing “readme” style metadata](https://data.research.cornell.edu/data-management/sharing/readme/).
+- [Metadata Standards Catalog](https://rdamsc.bath.ac.uk/).
+- [Data Documentation Initiative (DDI)](https://ddialliance.org/).
+
+## The Codebook {.nostretch}
+
+![](images/ellis-2018-figure-1.jpg){fig-align="center" style="width: 80%;"}
+
+::: footer
+(Reproduced from @ellis2018)
+:::
+
+## Open Data Formats {.smaller}
+
+There are many open data formats available for researchers to use. Here are some examples:
+
+**Excel files are not a open data format!**
+
+:::: {.columns}
+::: {.column style="width: 47.5%;"}
+**Tabular data**
+
+- [Comma-Separated Values (CSV)](https://en.wikipedia.org/wiki/Comma-separated_values)
+- [Apache Parquet](https://en.wikipedia.org/wiki/Apache_Parquet)
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+**List data**
+
+- [JSON](https://en.wikipedia.org/wiki/JSON)
+- [YAML](https://en.wikipedia.org/wiki/YAML)
+- [TOML](https://en.wikipedia.org/wiki/TOML)
+- [XML](https://en.wikipedia.org/wiki/XML)
+:::
+::::
+
+::: {.notes}
+:::
+
+## Fair Principles {.nostretch .smaller}
+
+![](images/fair-data-principles.png){fig-align="center" style="padding-top: 75px;"}
+
+::: footer
+(To learn more see: @wilkinson2016 and @gofairinitiative)
+:::
+
+::: {.notes}
+:::
+
+## Data Management Plans {.smaller}
+
+A data management plan (DMP) is a formal document that outlines how data will be managed throughout the research process.
+
+- [FAPESP](https://fapesp.br/gestaodedados)
+- [DMPTool](https://dmptool.org/)
+- [DMPonline](https://dmponline.dcc.ac.uk/)
+
+::: {}
+**Example**: [Associations between the duration and quality of sleep of pregnant women in the third trimester with the duration of labor](https://doi.org/10.48321/D1PS4M)
+:::
+
+::: {.notes}
+:::

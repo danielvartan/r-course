@@ -8,17 +8,26 @@ source(here::here("R/_setup.R"))
 ```
 
 ::::: {.columns}
-:::: {.column style="width: 55%;"}
-This course will introuce you to the basics of the **R** programming language.
+:::: {.column style="width: 50%;"}
+This course will introuce you to the **R** programming language.
 
 ::: {style="padding-top: 15px;"}
 We'll explore the following topics:
 
+::: {style="font-size: 0.8em; padding-top: 15px;"}
 1. [**Introduction**]{.brand-brown}
+1. [**Computer Science**]{.brand-brown}
+1. [**R Basics**]{.brand-brown}
+1. [**Data Munging**]{.brand-brown}
+1. [**Data Visualization**]{.brand-brown}
+1. [**Modeling**]{.brand-brown}
+1. [**Hypothesis Testing**]{.brand-brown}
+1. [**Conclusion**]{.brand-brown}
+:::
 :::
 ::::
-:::: {.column style="width: 45%; padding-top: 100px;"}
-![](images/allison-horst-figure-4.png){fig-align="center" style="width: 100%;"}
+:::: {.column style="width: 50%; padding-top: 120px;"}
+![](images/allison-horst-figure-8.png){fig-align="center" style="width: 100%;"}
 ::::
 :::::
 
@@ -35,33 +44,65 @@ We'll explore the following topics:
 - See slides of the Open Science Presentation
 :::
 
-## Pre-Course Form {.smaller}
+## Pre-Course Survey {.smaller}
 
 ::: {.notes}
 :::
 
 ## Course Objectives {.smaller}
 
-- Understand basically how a computer works
-- Understand the structure, primary objects, operators and other basic elements of the R language
-- Understand basic concepts of data visualization
-- Understand basic concepts of data munging
-- Understand basic concepts of modeling
-- Understand basic concepts of hypothesis testing
+Understand basically how a computer works
 
-- (Other course: How to use Git)
+Understand the structure and basic elements of the R language
+
+Understand basic concepts of data visualization
+
+Understand basic concepts of data munging
+
+Understand basic concepts of modeling
+
+Understand basic concepts of hypothesis testing
+
+(Future course: How to use Git)
+
+::: {.notes}
+:::
+
+## Course Content {.smaller .nostretch}
+
+![](images/allison-horst-figure-22.png){fig-align="center" style="width: 90%; padding-top: 0px;"}
+
+::: footer
+(Artwork by [Allison Horst](https://twitter.com/allison_horst))
+:::
 
 ::: {.notes}
 :::
 
 ## Schedule {.smaller}
 
+- 24/03 13:00-14:00
+- 24/03 13:00-14:00
+- **24/03 13:00-18:00**
+- 24/03 13:00-14:00
+- 24/03 13:00-14:00
+
 ::: {.notes}
-- Dates and times
 - FSP Laboratories
 :::
 
 ## Main References {.smaller}
+
+::::: {.columns}
+::: {.column style="width: 47.5%;"}
+[![](images/wickham-2023-book-cover.png){fig-align="center" style="width: 85%; padding-top: 0px;"}](https://r4ds.hadley.nz//)
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+[![](images/wickham-2019-book-cover.png){fig-align="center" style="width: 75%;"}](https://adv-r.hadley.nz/)
+:::
+::::
 
 ::: footer
 (Book cover image from @wickham2023e and @wickham2019)
@@ -70,69 +111,62 @@ We'll explore the following topics:
 ::: {.notes}
 :::
 
-## Other References {.smaller}
+## Other Useful References {.smaller}
 
 - [W3Schools](https://www.w3schools.com/r/default.asp)
+- [How Computers Work](https://youtube.com/playlist?list=PLzdnOPI1iJNcsRwJhvksEo1tJqjIqWbN-&si=9nOuIefDZ2F-BJJ8)
 
 ::: {.notes}
 :::
 
-# Module 1: Computer Science {.smaller}
+# Module 1<br>[Computer Science]{.brand-brown-750} {.smaller data-menu-title="Module 1: Computer Science"}
 
 {{< include ./qmd/module-1.qmd >}}
 
 ::: {.notes}
-- A Bit of History -> Historical materiality
-- What do we do when we program?
-- Abstractions (Picasso)
-- Boolean logic and Gates
-- IDE (RStudio) and Version Control Systems (Git)
-- Always use software in English
-- Style and best practices (Tidy Manifesto and Style Guide)
-- Data science & Data Engineering
-
-- See slides of the Open Science Presentation
 :::
 
-# Module 2: R Basics {.smaller}
+# Module 2<br>[R Basics]{.brand-brown-750} {.smaller data-menu-title="Module 2: R Basics"}
 
 {{< include ./qmd/module-2.qmd >}}
 
 ::: {.notes}
-- Why R? R is an excellent language to get started with programming because it's specialized. Unlike some other languages, it doesn't have an overwhelming amount of features for you to learn.
-
-- Vectors
-- Primary objects
-- Objects
-- Operators (Assignment, Arithmetic, Comparison, Logical, Miscellaneous Operators)
-- Precedence, Subsetting, Operators as functions
-- Control flow
-- Environments
-- Packages - Unix Structure (We Stand on the Shoulders of Giants)
 :::
 
-# Module 3: Data Munging {.smaller}
+# Module 3<br>[Data Munging]{.brand-brown-750} {.smaller data-menu-title="Module 3: Data Munging"}
 
 {{< include ./qmd/module-3.qmd >}}
 
 ::: {.notes}
 :::
 
-# Module 4: Data Visualization {.smaller}
+# Module 4<br>[Data Visualization]{.brand-brown-750} {.smaller data-menu-title="Module 4: Data Visualization"}
 
 {{< include ./qmd/module-4.qmd >}}
 
 ::: {.notes}
 :::
 
-# Module 5: Modeling {.smaller}
+# Module 5<br>[Modeling]{.brand-brown-750} {.smaller data-menu-title="Module 5: Modeling"}
 
 {{< include ./qmd/module-5.qmd >}}
 
 ::: {.notes}
 :::
 
-# Module 6: Hypothesis Testing {.smaller}
+# Module 6<br>[Hypothesis Testing]{.brand-brown-750} {.smaller data-menu-title="Module 6: Hypothesis Testing"}
+
+{{< include ./qmd/module-6.qmd >}}
+
+::: {.notes}
+:::
+
+# Module 7<br>[Some Things You May Need to Know]{.brand-brown-750} {.smaller data-menu-title="Module 7: Some Things You May Need to Know"}
+
+{{< include ./qmd/module-7.qmd >}}
+
+::: {.notes}
+:::
 
 {{< include ./qmd/module-6.qmd >}}
 
@@ -144,12 +178,18 @@ We'll explore the following topics:
 ::: {.notes}
 :::
 
-## Where to Go from Gere {.smaller}
+## Want to Learn More? {.smaller}
+
+[Introdução à ciência da computação com python - Parte 1](https://www.coursera.org/learn/ciencia-computacao-python-conceitos) (USP-IME)
+
+[Introdução à ciência da computação com python - Parte 2](https://www.coursera.org/learn/ciencia-computacao-python-conceitos-2s) (USP-IME)
+
+[Data science specialization](https://www.coursera.org/specializations/jhu-data-science) (Johns Hopkins)
 
 ::: {.notes}
 :::
 
-## Post-Course Form {.smaller}
+## Post-Course Survey {.smaller}
 
 ::: {.notes}
 :::
@@ -186,7 +226,7 @@ In accordance with the [American Psychological Association (APA) Style](https://
 
 ## Thank you! {.nostretch}
 
-![](images/allison-horst-figure-3.png){fig-align="center" style="width: 70%; padding-top: 25px;"}
+![](images/allison-horst-figure-11.png){fig-align="center" style="width: 70%; padding-top: 25px;"}
 
 ::: footer
 (Artwork by [Allison Horst](https://twitter.com/allison_horst))
