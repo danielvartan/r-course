@@ -1,3 +1,34 @@
+## Data Science Workflow {.smaller}
+
+![](images/wickham-2023-figure-1.png){fig-align="center" style="width: 85%; padding-top: 100px;"}
+
+::: footer
+(Reproduced from @wickham2023e)
+:::
+
+::: {.notes}
+:::
+
+## Managing Your Project {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%;"}
+It is important to have a structured project directory. A best practice is to follow the structure made for **R Packages**.
+
+Every data project must be accompanied, at least, by a **README** file, explaining the project, and a **LICENSE** file, defining the terms of use of the data.
+:::
+::: {.column style="width: 50%;"}
+![](images/marwick-2018-figure-2.png){fig-align="center" style="width: 80%; padding-top: 0px;"}
+:::
+::::
+
+::: footer
+(Reproduced from @marwick2018)
+:::
+
+::: {.notes}
+:::
+
 ## What Is Data After All? {.smaller}
 
 [Ackoff's DIKW pyramid](https://en.wikipedia.org/wiki/DIKW_pyramid)
@@ -19,7 +50,7 @@ Data _versus_ the interpretation of the data
 
 Data is an abstraction. It's a representation of the world around us. Without context, it has no meaning.
 
-![](images/picasso-1946-the-bull.jpg){fig-align="center" style="padding-top: 5px;"}
+![](images/picasso-1946-the-bull.jpg){fig-align="center" style="padding-top: 10px; padding-bottom: 10px;"}
 
 ::: footer
 (Artwork by Pablo Picasso – [*Le Taureau*](https://en.wikipedia.org/wiki/Le_Taureau) (1945-46))
@@ -30,12 +61,12 @@ Data is an abstraction. It's a representation of the world around us. Without co
 
 ## Statistical Value Chain {.smaller}
 
-> A value chain, roughly, consists of a sequence of activities that increase the value of a product step by step. [...] One should realize that although the schema nicely organizes data analysis activities, in practice, the process is hardly linear [@jonge2018a].
+> A value chain, roughly, consists of a sequence of activities that increase the value of a product step by step. [...] One should realize that although the schema nicely organizes data analysis activities, in practice, the process is hardly linear [@vanderloo2018].
 
 ![](images/statistical-value-chain.png){fig-align="center" style="width: 90%; padding-top: 25px;"}
 
 ::: footer
-(Reproduced from @jonge2018a)
+(Reproduced from @vanderloo2018)
 :::
 
 ::: {.notes}
@@ -45,7 +76,7 @@ Data is an abstraction. It's a representation of the world around us. Without co
 
 :::: {.columns}
 ::: {.column style="width: 50%; font-size: 0.9em;"}
-> With raw data, we mean the data as it arrives at the desk of the analyst. The state of such data may of course vary enormously, depending on the data source. [@jonge2018a].
+> With raw data, we mean the data as it arrives at the desk of the analyst. The state of such data may of course vary enormously, depending on the data source. [@vanderloo2018].
 
 > If the researcher has made any modifications to the raw data, it is not the raw form of the data. [@ellis2018].
 :::
@@ -120,18 +151,13 @@ Data validation techniques are used to ensure that data is accurate, consistent,
 
 ## Tidy Data
 
-![](images/allison-horst-figure-19.jpg){fig-align="center" style="width: 90%;"}
+![](images/allison-horst-figure-19.jpg){fig-align="center" style="width: 85%;"}
 
 ::: footer
 (Artwork by [Allison Horst](https://allisonhorst.com/horst-hill-collaborations))
 :::
 
 ## Best Practices {.smaller}
-
-- [Tidyverse](https://www.tidyverse.org/)
-- [rOpenSci](https://ropensci.org/)
-
-<br>
 
 - [Tidyverse style guide](https://style.tidyverse.org/)
 - [Tidy design principles](https://design.tidyverse.org/)
@@ -142,7 +168,6 @@ Data validation techniques are used to ensure that data is accurate, consistent,
 ::: {.column style="width: 40%;"}
 > **Big data will be dead in 5 Years**: Everything will be big data, so it won't need a special name. [@gavin2020]
 :::
-
 ::: {.column style="width: 60%;"}
 ![](images/david-fletcher-big-data.jpeg){fig-align="center" style="width: 100%;"}
 :::
@@ -190,24 +215,49 @@ The best tools for handling big data are [R](https://www.r-project.org/) and [Py
 ::: {.notes}
 :::
 
-## Spatial Data (Raster) {.smaller}
+## Hierarchical Data {.smaller}
+
+::::: {.columns}
+:::: {.column style="width: 47.5%;"}
+Data can be hierarchical, with multiple levels of organization.
+
+::: {style="font-size: 0.8em; font-style: italic; padding-top: 200px;"}
+Interest rate representing the adjusted average rate of overnight repurchase agreements backed by Brazil's federal government securities held in the Special System for Settlement and Custody ([SELIC](https://dadosabertos.bcb.gov.br/dataset/11-taxa-de-juros---selic)). Reported in % per day.
+:::
+::::
+:::: {.column style="width: 5%;"}
+::::
+:::: {.column style="width: 47.5%;"}
+```{r}
+paste0(
+  "https://api.bcb.gov.br/dados/serie/",
+  "bcdata.sgs.11", "/",
+  "dados", "?",
+  "formato=json", "&",
+  "dataInicial=01/12/2024", "&",
+  "dataFinal=03/12/2024"
+) |>
+  jsonlite::read_json()
+```
+::::
+:::::
+
+## Spatial Data {.smaller}
 
 ::::: {.columns}
 :::: {.column style="width: 60%;"}
-![](images/worldclim-logo.png){style="width: 45%;"}
+![](images/worldclim-logo.png){style="width: 40%;"}
 
 Not all data is tabular; spatial data can be very large and complex.
 
 Excel cannot handle spatial data, and GUI-based statistical softwares, when capable of handling spatial data, are often limited and struggles with performance issues.
 
-<br>
-
-::: {style="font-size: 0.8em; font-style: italic;"}
+::: {style="font-size: 0.8em; font-style: italic; padding-top: 50px;"}
 Projected monthly average maximum temperatures (°C) for June 2021–2040, based on the global climate model (GCM) ACCESS-CM2.
 :::
 ::::
 :::: {.column style="width: 40%; padding-top: 30px;"}
-![](images/vartanian-2024-figure-2.png){fig-align="center" style="width: 100%"}
+![](images/vartanian-2024-figure-2.png){fig-align="center" style="width: 100%;"}
 ::::
 :::::
 
@@ -243,10 +293,13 @@ Spreadsheet syndrome is a term used to describe the problems that arise from usi
 
 ## Data Documentation {visibility="uncounted"}
 
-- Data dictionaries/Codebooks (e.g., [SISVAN](https://s3.sa-east-1.amazonaws.com/ckan.saude.gov.br/SISVAN/estado_nutricional/Dicionário+de+Dados+-+Estado+Nutricional.pdf)).
-- [Guide to writing “readme” style metadata](https://data.research.cornell.edu/data-management/sharing/readme/).
-- [Metadata Standards Catalog](https://rdamsc.bath.ac.uk/).
-- [Data Documentation Initiative (DDI)](https://ddialliance.org/).
+Data dictionaries/Codebooks (e.g., [SISVAN](https://s3.sa-east-1.amazonaws.com/ckan.saude.gov.br/SISVAN/estado_nutricional/Dicionário+de+Dados+-+Estado+Nutricional.pdf))
+
+[Guide to writing “readme” style metadata](https://data.research.cornell.edu/data-management/sharing/readme/)
+
+[Metadata Standards Catalog](https://rdamsc.bath.ac.uk/)
+
+[Data Documentation Initiative (DDI)](https://ddialliance.org/)
 
 ## The Codebook {.nostretch}
 
@@ -262,9 +315,9 @@ There are many open data formats available for researchers to use. Here are some
 
 **Excel files are not a open data format!**
 
-:::: {.columns}
+:::: {.columns stye="padding-top: 15px;"}
 ::: {.column style="width: 47.5%;"}
-**Tabular data**
+**Tabular Data**
 
 - [Comma-Separated Values (CSV)](https://en.wikipedia.org/wiki/Comma-separated_values)
 - [Apache Parquet](https://en.wikipedia.org/wiki/Apache_Parquet)
@@ -272,7 +325,7 @@ There are many open data formats available for researchers to use. Here are some
 ::: {.column style="width: 5%;"}
 :::
 ::: {.column style="width: 47.5%;"}
-**List data**
+**Hierarchical Data**
 
 - [JSON](https://en.wikipedia.org/wiki/JSON)
 - [YAML](https://en.wikipedia.org/wiki/YAML)
@@ -305,6 +358,326 @@ A data management plan (DMP) is a formal document that outlines how data will be
 
 ::: {}
 **Example**: [Associations between the duration and quality of sleep of pregnant women in the third trimester with the duration of labor](https://doi.org/10.48321/D1PS4M)
+:::
+
+::: {.notes}
+:::
+
+## How to Read Data in R {.smaller}
+
+It will depend on what king of data you are working with.
+
+Different from Excel or GUI-based statistical software, R can deal with any kind of data.
+
+- Tabular data: `utils::read.csv()`, `readr::read_csv()`
+- Geographical data: `terra::vect()`, `st::st_read()`
+- Proprietary formats: `readxl::read_excel()`, `haven::read_dta()` (Stata), `haven::read_sav()` (SPSS), `haven::read_sas()` (SAS)
+
+::: {.notes}
+:::
+
+## Meet the Penguins {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 47.5%; font-size: 0.8em;"}
+[![](images/palmerpeguins-hex-logo.png){style="width: 150px; padding-top: 0px;"}](https://allisonhorst.github.io/palmerpenguins/)
+
+```r
+install.packages("palmerpenguins")
+```
+
+Created by the great [Allison Horst](https://twitter.com/allison_horst), the author of these beatiful illustrations.
+
+Data were collected and made available by [Dr. Kristen Gorman](https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php) and the [Palmer Station, Antarctica LTER](https://pallter.marine.rutgers.edu/), a member of the [Long Term Ecological Research Network](https://lternet.edu/).
+
+We will use this package in the first part of the course to get familiar with R.
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+![](images/allison-horst-figure-23.png){style="width: 1000%; padding-top: 100px;"}
+:::
+::::
+
+```{r}
+#| echo: false
+#| eval: false
+
+library(here)
+library(palmerpenguins)
+library(readr)
+
+palmerpenguins::penguins_raw |>
+  readr::write_csv(here::here("data", "palmer-penguins-raw.csv"))
+
+palmerpenguins::penguins |>
+  readr::write_csv(here::here("data", "palmer-penguins-tidy.csv"))
+```
+
+::: footer
+(Artwork by [Allison Horst](https://twitter.com/allison_horst))
+:::
+
+::: {.notes}
+It is a nice dataset for learning. A viable alternative to famous [Fisher's Iris dataset](https://doi.org/10.1111/j.1469-1809.1936.tb02137.x) (see `datasets::iris`), but without the eugenics background (👀).
+:::
+
+## Looking at Tabular Data {.smaller}
+
+**Known your data**
+
+[CSV](https://en.wikipedia.org/wiki/Comma-separated_values) (Comma-Separated Values) files are the most common way to store tabular data. As the name suggest, they are text files where each line is a row and the columns are separated by commas.
+
+Before importing the data to R, let's first take a look at the content of this file in a text editor.
+
+::: {.notes}
+:::
+
+## 🚨 Warning {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 47.5%;"}
+**Never use `setwd()`!**
+
+(How to detect a beginner R user)
+
+Always work inside a project directory. Your Working Directory (WD) should always be the root of your project.
+
+If you need a better way to manage your WD, see the [`here`](https://here.r-lib.org/) package.
+
+[Project-oriented workflow](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/)
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+![](images/allison-horst-figure-26.png){fig-align="center" style="width: 100%; padding-top: 125px;"}
+:::
+::::
+
+::: {.notes}
+:::
+
+## The `readr` Package {.smaller}
+
+```r
+install.packages("readr")
+```
+
+## Data Import {.smaller}
+
+```r
+library(readr)
+
+?read_csv
+?read_delim
+```
+
+```{r}
+library(here)
+library(palmerpenguins)
+library(readr)
+
+data <-
+  here("data", "palmer-penguins-raw.csv") |>
+  read_csv(col_types = readr::cols(.default = "c"))
+```
+
+```{r}
+#| eval: false
+
+View(data)
+```
+
+```{r}
+#| eval: false
+
+library(dplyr)
+
+data |> glimpse()
+```
+
+::: {.notes}
+:::
+
+## Data Import {.smaller}
+
+```{r}
+#| df-print: paged
+
+data
+```
+
+::: {.notes}
+:::
+
+## Data Tidying {.smaller}
+
+## The `janitor` Package {.smaller}
+
+```r
+install.packages("janitor")
+```
+
+::: {.notes}
+:::
+
+## `janitor::clean_names()` {.smaller}
+
+![](images/allison-horst-figure-25.png){fig-align="center" style="width: 90%; padding-top: 25px;"}
+
+::: footer
+(Artwork by [Allison Horst](https://twitter.com/allison_horst))
+:::
+
+::: {.notes}
+:::
+
+## `janitor::clean_names()` {.smaller}
+
+```{r}
+data |> names()
+```
+
+```{r}
+library(janitor)
+
+data <- data |> clean_names()
+```
+
+```{r}
+data |> names()
+```
+
+```{r}
+#| eval: false
+
+View(data)
+```
+
+::: {.notes}
+:::
+
+## The `tidyr` Package {.smaller}
+
+```r
+install.packages("tidyr")
+```
+
+::: {.notes}
+:::
+
+## The `dplyr` Package {.smaller}
+
+```r
+install.packages("dplyr")
+```
+
+A grammar for data manipulation.
+
+
+::: {.notes}
+:::
+
+## `dplyr` Verbs {.smaller}
+
+- `mutate()`: Create, modify, and delete columns
+- `transmute()`: Creates a new data frame containing only specified computations
+- `select()`: Keep or drop columns using their names and types
+- `slice()`: Subset rows using their positions
+- `filter()`: Keep rows that match a condition
+- `summarize()`: Summarise each group down to one row
+- `arrange()`: Order rows using column values
+- `rename()`: Rename columns
+- `relocate()`: Change column order
+
+::: {.notes}
+:::
+
+## `dplyr::mutate()`
+
+![](images/allison-horst-figure-24.png){fig-align="center" style="width: 90%; padding-top: 0px;"}
+
+::: footer
+(Artwork by [Allison Horst](https://twitter.com/allison_horst))
+:::
+
+::: {.notes}
+:::
+
+## `dplyr::filter()`
+
+![](images/allison-horst-figure-31.png){fig-align="center" style="width: 90%; padding-top: 0px;"}
+
+::: footer
+(Artwork by [Allison Horst](https://twitter.com/allison_horst))
+:::
+
+::: {.notes}
+:::
+
+## `dplyr::relocate()`
+
+![](images/allison-horst-figure-30.png){fig-align="center" style="width: 90%; padding-top: 0px;"}
+
+::: footer
+(Artwork by [Allison Horst](https://twitter.com/allison_horst))
+:::
+
+::: {.notes}
+:::
+
+## `dplyr::rename()`
+
+![](images/allison-horst-figure-29.png){fig-align="center" style="width: 90%; padding-top: 0px;"}
+
+::: footer
+(Artwork by [Allison Horst](https://twitter.com/allison_horst))
+:::
+
+::: {.notes}
+:::
+
+## `dplyr::across()`
+
+![](images/allison-horst-figure-33.png){fig-align="center" style="width: 90%; padding-top: 0px;"}
+
+::: footer
+(Artwork by [Allison Horst](https://twitter.com/allison_horst))
+:::
+
+::: {.notes}
+:::
+
+## `dplyr::case_when()`
+
+![](images/allison-horst-figure-32.png){fig-align="center" style="width: 90%; padding-top: 0px;"}
+
+::: footer
+(Artwork by [Allison Horst](https://twitter.com/allison_horst))
+:::
+
+::: {.notes}
+:::
+
+## Data Validation
+
+## Exporting the Data
+
+## How to Learn More {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 47.5%;"}
+[![](images/wickham-2023-book-cover.png){fig-align="center" style="width: 85%; padding-top: 0px;"}](https://r4ds.hadley.nz/)
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+![](images/van-der-loo-2018-book-cover.jpg){fig-align="center" style="width: 75%;"}
+:::
+::::
+
+::: footer
+(Book cover image from @wickham2023e and @vanderloo2018)
 :::
 
 ::: {.notes}

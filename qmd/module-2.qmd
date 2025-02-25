@@ -1,19 +1,16 @@
-## Data Science Workflow {.smaller}
+## Installing R {.smaller}
 
-![](images/wickham-2023-figure-1.png){fig-align="center" style="width: 85%; padding-top: 100px;"}
+[The R Project for Statistical Computing](https://www.r-project.org/)
 
-::: footer
-(Reproduced from @wickham2023e)
-:::
-
-::: {.notes}
-:::
+[The Comprehensive R Archive Network](https://cran.r-project.org/)
 
 ## The RStudio IDE {.smaller}
 
 ::: {.notes}
 - Always use software in English.
 :::
+
+## Creating a Project {.smaller}
 
 ## Objects {.smaller}
 
@@ -23,44 +20,72 @@
 
 Everything that happens in R is the result of a function call.
 
-Objects assigned to variables are stored in memory.
+<br>
 
-- **Scalars** (0D)
-- **Vectors** (1D)
-- **Matrices** (2D)
-- **Arrays** (nD)
+**Scalars** (0D): `1`
+
+**Vectors** (1D): `c(1, 2, 3)`
+
+**Matrices** (2D):<br>`matrix(1:9, nrow = 3, ncol = 3)`
+
+**Arrays** (nD):<br>`array(1:27, dim = c(3, 3, 3))`
 :::
 ::: {.column style="width: 50%; padding-top: 0px;"}
-![](images/scy-2018-figure-1.png){fig-align="center" style="width: 85%;"}
+![](images/srivastava-2019-figure-1-adapted-rgb-72-dpi.png){fig-align="center" style="width: 85%;"}
 :::
 ::::
 
 ::: footer
-(Artwork by [Zac Scy](https://medium.com/@ZacScy/thoughtware-upgrade-2ed0276d04f3))
+(Artwork by [Kanishk Srivastava](https://medium.com/@kaaanishk/illustrated-introduction-to-linear-algebra-using-numpy-11d503d244a1))
 :::
 
 ::: {.notes}
 - Data frames are a special case of 2D objects.
 :::
 
-## Primary Data Types {.smaller}
-
-These are part of the [**atomic**](https://adv-r.hadley.nz/vectors-chap.html?q=atomic#atomic-vectors) data types in R.
+## Vectorized Operations {.smaller}
 
 :::: {.columns}
 ::: {.column style="width: 50%;"}
-- **Boolean/Logical**: TRUE/FALSE.
-- **Integer**: 1, 2, 3.
-- **Float/Double**: 1.0, 2.0, 3.0.
-- **Character/String**: "Hello, World!".
+The most important feature of R is that it is a **vectorized language**. This means that most operations are performed element-wise.
+
+This is achieved using the C programming language behind the scenes.
+
+```{r}
+x <- c(1, 2, 3)
+
+x + 1
+```
 :::
 ::: {.column style="width: 50%;"}
-```{r}
-#| echo: true
-#| code-fold: false
+![](images/srivastava-2019-figure-2-adapted-rgb-72-dpi.gif){fig-align="center" style="width: 60%; padding-top: 150px;"}
+:::
+::::
 
+::: footer
+(Artwork by [Kanishk Srivastava](https://medium.com/@kaaanishk/illustrated-introduction-to-linear-algebra-using-numpy-11d503d244a1))
+:::
+
+::: {.notes}
+:::
+
+## Primary Data Types {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%;"}
+These are part of the [**atomic**](https://adv-r.hadley.nz/vectors-chap.html?q=atomic#atomic-vectors) data types in R.
+
+- `logical`: TRUE/FALSE.
+- `integer`: 1, 2, 3.
+- `double`: 1.0, 2.0, 3.0.
+- `character`: "Hello, World!".
+
+```{r}
 typeof(as.Date("2025-01-01"))
 ```
+:::
+::: {.column style="width: 50%;"}
+![](images/primary-objects-rgb-96-dpi.png){fig-align="center" style="width: 80%; padding-top: 50px;"}
 :::
 ::::
 
@@ -68,28 +93,24 @@ typeof(as.Date("2025-01-01"))
 See: https://youtu.be/e1zJS31tr88?si=7-TamPi2tmwprCUL&t=900
 :::
 
-::: {.notes}
-:::
-
 ## Data Classes {.smaller}
 
 :::: {.columns}
 ::: {.column style="width: 50%;"}
-* **Character** (e.g., "Maria", "John").
-* **Factor** (e.g., 1 = "Male", 2 = "Female").
-* **Integer** (e.g., 1, 2, 3).
-* **Float** (e.g., 1.0, 2.0, 3.0).
-* **Complex** (e.g., 1 + 2i, 3 + 4i).
-* **Boolean** (e.g., TRUE, FALSE).
+* `character` (e.g., "Maria", "John")
+* `factor`<br>(e.g., 1 = "Male", 2 = "Female")
+* `integer` (e.g., 1, 2, 3)
+* `double` (e.g., 1.0, 2.0, 3.0)
+* `complex` (e.g., 1 + 2i, 3 + 4i)
+* `logical` (e.g., TRUE, FALSE)
 :::
-
 ::: {.column style="width: 50%;"}
-* **Date** (e.g., 2023-01-01) ([linear time](https://danielvartan.github.io/lubritime/reference/cycle_time.html#linear-versus-circular-time)).
-* **Date-time** (e.g., 2023-01-01 00:00:00) (linear time).
-* **Interval** (e.g., 2023-01-01 00:00:00--2023-12-15 15:40:00) (linear time).
-* **Duration** (e.g., 1 year, 2 months, 3 days) (linear time).
-* **Period** (e.g., 1 year, 2 months, 3 days) (linear(ish) time).
-* **Time of day** (e.g., 01:00:00) ([circular time](https://danielvartan.github.io/lubritime/reference/cycle_time.html#linear-versus-circular-time)).
+* `Date` (e.g., 2023-01-01) ([Linear time](https://danielvartan.github.io/lubritime/reference/cycle_time.html#linear-versus-circular-time))
+* `POSIXct` (e.g., 2023-01-01 00:00:00) (linear time)
+* `Interval` (e.g., 2023-01-01 00:00:00--2023-12-15 15:40:00) (linear time)
+* `Duration` (e.g., 1 year, 2 months, 3 days) (linear time)
+* `Period` (e.g., 1 year, 2 months, 3 days) (linear(ish) time)
+* `hms` (e.g., 01:00:00) ([Circular time](https://danielvartan.github.io/lubritime/reference/cycle_time.html#linear-versus-circular-time))
 :::
 ::::
 
@@ -98,25 +119,28 @@ See: https://youtu.be/e1zJS31tr88?si=7-TamPi2tmwprCUL&t=900
 
 ## Non-Atomic Objects {.smaller}
 
-:::: {.columns}
-::: {.column style="width: 50%;"}
-Atomic types are **non-recursice objects**, i.e., objects that can't hold themselfs as an entry (e.g., `logical`, `integer`, `double`, `character`).
+::::: {.columns}
+:::: {.column style="width: 50%;"}
+Atomic types are **non-recursive objects**, i.e., objects that can't hold themselfs as an entry (e.g., `logical`, `integer`, `double`, `character`).
 
+::: {style="padding-top: 30px;"}
 **Non-Atomic Objects**
 
-- Matrices (`matrice()`)
+- Matrices (`matrix()`)
 - Lists (`list()`)
 - Data Frames (`data.frame()`)
 :::
-::: {.column style="width: 50%;"}
-```{r}
-#| echo: true
-#| code-fold: false
-
-list(list(1), list(2))
-```
-:::
 ::::
+:::: {.column style="width: 50%;"}
+```{r}
+list(
+  list(list(1), list(2)),
+  list(list("a"), list("b")),
+  list(TRUE)
+)
+```
+::::
+:::::
 
 ::: {.notes}
 :::
@@ -144,10 +168,25 @@ list(list(1), list(2))
 :::
 ::: {.column style="width: 50%;"}
 ```{r}
-#| echo: true
-#| code-fold: false
-
-10 %% 3
+1 + 1
+```
+```{r}
+1 - 1
+```
+```{r}
+1 * 2
+```
+```{r}
+1 / 2
+```
+```{r}
+2^2
+```
+```{r}
+5 %/% 2
+```
+```{r}
+5 %% 2
 ```
 :::
 ::::
@@ -167,12 +206,24 @@ list(list(1), list(2))
 :::
 ::: {.column style="width: 50%;"}
 ```{r}
-#| echo: true
-#| code-fold: false
+x <- 1; x
+```
+```{r}
+x <<- 1; x
+```
+```{r}
+1 -> x; x
+```
+```{r}
+1 ->> x; x
+```
+```{r}
+x = 1; x
+```
+```{r}
+#| eval: false
 
-x <- 1
-
-x
+1 = x; x # Error!
 ```
 :::
 ::::
@@ -193,10 +244,22 @@ x
 :::
 ::: {.column style="width: 50%;"}
 ```{r}
-#| echo: true
-#| code-fold: false
-
 1 == 1
+```
+```{r}
+1 != 2
+```
+```{r}
+2 > 1
+```
+```{r}
+1 < 2
+```
+```{r}
+1 >= 1
+```
+```{r}
+1 <= 1
 ```
 :::
 ::::
@@ -216,13 +279,29 @@ x
 :::
 ::: {.column style="width: 50%;"}
 ```{r}
-#| echo: true
-#| code-fold: false
+c(TRUE, FALSE) & c(TRUE, TRUE)
+```
+```{r}
+TRUE && FALSE
+```
+```{r}
+#| eval: false
 
-x <- 5
-y <- 10
+c(TRUE, FALSE) && c(TRUE, TRUE) # Error!
+```
+```{r}
+c(TRUE, FALSE) | c(TRUE, TRUE)
+```
+```{r}
+TRUE || FALSE
+```
+```{r}
+#| eval: false
 
-x > 5 & y < 10
+c(TRUE, FALSE) || c(TRUE, TRUE) # Error!
+```
+```{r}
+!TRUE
 ```
 :::
 ::::
@@ -240,10 +319,13 @@ x > 5 & y < 10
 :::
 ::: {.column style="width: 50%;"}
 ```{r}
-#| echo: true
-#| code-fold: false
-
 1:10
+```
+```{r}
+"a" %in% c("a", "b", "c")
+```
+```{r}
+matrix(1:4, nrow = 2) %*% matrix(1:4, nrow = 2)
 ```
 :::
 ::::
@@ -262,7 +344,7 @@ x > 5 & y < 10
 (@) ``` `+`() ```, ``` `-`() ``` Addition, Subtraction (Left to Right)
 (@) ``` `==`() ```, ``` `!=`() ``` Comparisons (Left to Right)
 :::
-::: {.column style="width: 5%; font-size: 0.9em;"}
+::: {.column style="width: 5%;"}
 :::
 ::: {.column style="width: 47.5%; font-size: 0.9em;"}
 (@) ``` `!`() ``` Logical NOT (Left to Right)
@@ -274,19 +356,20 @@ x > 5 & y < 10
 :::
 ::::
 
+:::: {.columns}
+::: {.column style="width: 47.5%; font-size: 0.9em;"}
 ```{r}
-#| echo: true
-#| code-fold: false
-
 2^2 + 1 * 2
 ```
-
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%; font-size: 0.9em;"}
 ```{r}
-#| echo: true
-#| code-fold: false
-
 !FALSE & TRUE
 ```
+:::
+::::
 
 ::: {.notes}
 :::
@@ -298,39 +381,34 @@ x > 5 & y < 10
 **Atomic**
 
 - ``` `[`() ``` 1 level extraction
-- ``` `[[`() ``` 2 level extraction
 
 ```{r}
-#| echo: true
-#| code-fold: false
-
-x <- c("a", "b", "c")
-
-x[1]
+c("a", "b", "c")[1]
 ```
-
-<br>
-
-**Non-Atomic**
-
-- ``` `$`() ```: 2 level extraction
 :::
 ::: {.column style="width: 5%;"}
 :::
 ::: {.column style="width: 47.5%;"}
-**Data Frames**
+**Non-Atomic**
 
-- `x[i, ]` Extract line `i`
-- `x[, j]` Extract column/variable `j`
-- `x[i, j]` Extract line `i` from column/variable `j`
+- ``` `[`() ``` 1 level extraction
+- ``` `[[`() ``` 2 level extraction
+- ``` `$`() ``` 2 level extraction
 
 ```{r}
-#| echo: true
-#| code-fold: false
-
-data <- data.frame(a = c(1, 2, 3), b = c(4, 5, 6))
-
-data$a |> head(5)
+data <- list(a = 1, b = 2)
+```
+```{r}
+data[1]
+```
+```{r}
+data[[1]]
+```
+```{r}
+data$a
+```
+```{r}
+data[["a"]] # == data$a
 ```
 :::
 ::::
@@ -338,54 +416,128 @@ data$a |> head(5)
 ::: {.notes}
 :::
 
-## Pipes {.smaller}
+## Subsetting {.smaller}
 
 :::: {.columns}
 ::: {.column style="width: 47.5%;"}
-**R Native Pipe**<br>
-[(Introduced in [R 4.1.0](https://cran.r-project.org/bin/windows/base/old/4.1.0/NEWS.R-4.1.0.html))]{style="font-size: 0.7em"}
+**Data Frames**
 
-<br>
+- `x[i, ]` Extract line `i`
+- `x[, j]` Extract column/variable `j`
+- `x[i, j]` Extract line `i` from column/variable `j`
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+```{r}
+data <- data.frame(a = c(1, 2), b = c(4, 5))
+
+data
+```
+```{r}
+data["a"]
+```
+```{r}
+data[["a"]] # == data$a
+```
+```{r}
+data[1, ]
+```
+```{r}
+data[, 1]
+```
+```{r}
+data[1, 1]
+```
+:::
+::::
+
+::: {.notes}
+:::
+
+## Missing Values {.smaller}
+
+::::: {.columns}
+:::: {.column style="width: 47.5%;"}
+Missing values must me explicitly declared in R. For that R uses the `NA` value (*Not Available*).
+
+`NA` comes in different flavors, for example: `NA_integer_`, `NA_real_`, `NA_character_`, `NA_complex_`.
+
+If you use just `NA`, R will use the most appropriate type.
 
 ```{r}
-#| echo: true
-#| code-fold: false
-#| eval: false
-
-object |> function()
-object %>% function(1, par = _)
+c(1, NA, 3)
 ```
 
 ```{r}
-#| echo: true
-#| code-fold: false
+is.na(c(1, NA, 3))
+```
+::::
+:::: {.column style="width: 5%;"}
+::::
+:::: {.column style="width: 47.5%;"}
+`Nan` (*Not a Number*)
 
+```{r}
+0 / 0
+```
+```{r}
+is.nan(0 / 0)
+```
+
+::: {style="padding-top: 15px;"}
+`Inf` (*Infinite*)
+
+```{r}
+1 / 0
+```
+```{r}
+-1 / 0
+```
+```{r}
+is.infinite(1 / 0)
+```
+:::
+
+::: {style="padding-top: 30px;"}
+**Tip**: See the [`naniar`](https://naniar.njtierney.com/) package.
+:::
+::::
+:::::
+
+## Pipes {.smaller}
+
+::::: {.columns}
+:::: {.column style="width: 47.5%;"}
+**R Native Pipe**<br>
+[(Introduced in [R 4.1.0](https://cran.r-project.org/bin/windows/base/old/4.1.0/NEWS.R-4.1.0.html))]{style="font-size: 0.7em"}
+
+::: {style="padding-top: 10px;"}
+```r
+object |> function()
+object |> function(1, par = _)
+```
+
+```{r}
 seq(1, 8) |>
   c(9) |>
   mean()
 ```
 :::
-::: {.column style="width: 5%;"}
-:::
-::: {.column style="width: 47.5%;"}
+::::
+:::: {.column style="width: 5%;"}
+::::
+:::: {.column style="width: 47.5%;"}
 **[`magrittr`](https://magrittr.tidyverse.org/) Pipe**
 
-<br>
-
-```{r}
-#| echo: true
-#| code-fold: false
-#| eval: false
-
+::: {style="padding-top: 20px;"}
+```r
 object %>% function()
 object %>% function(1, par = .)
 object %>% function(1, .)
 ```
 
 ```{r}
-#| echo: true
-#| code-fold: false
-
 library(magrittr)
 
 seq(1, 8) %>%
@@ -394,24 +546,18 @@ seq(1, 8) %>%
 ```
 :::
 ::::
+:::::
 
 ## Control Flow: Choices {.smaller}
 
-```{r}
-#| echo: true
-#| code-fold: false
-#| eval: false
-
+:::: {.columns}
+::: {.column style="width: 47.5%;"}
+```r
 if (condition) true_action
 if (condition) true_action else false_action
 ```
 
-<br>
-
 ```{r}
-#| echo: true
-#| code-fold: false
-
 x <- 60
 
 if (x > 90) {
@@ -424,24 +570,45 @@ if (x > 90) {
     "F"
   }
 ```
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+**is.\* Functions**
+
+- `is.logical()`
+- `is.integer()`
+- `is.numeric()`
+- `is.character()`
+
+```{r}
+x <- "a"
+
+if (is.numeric(x)) {
+    "A"
+  } else {
+    "B"
+  }
+```
+:::
+::::
 
 ::: {.notes}
 :::
 
 ## Control Flow: Loops {.smaller}
 
-```{r}
-#| echo: true
-#| code-fold: false
-#| eval: false
+🚨 **Avoid loops** if you can.
 
+Use vectorized operations instead (**functionals**).
+
+:::: {.columns style="padding-top: 30px;"}
+::: {.column style="width: 47.5%;"}
+```r
 while (condition) perform_action
 ```
 
 ```{r}
-#| echo: true
-#| code-fold: false
-
 x <- 0
 
 while (x < 5) {
@@ -449,67 +616,127 @@ while (x < 5) {
   print(x)
 }
 ```
-
-<br>
-
-```{r}
-#| echo: true
-#| code-fold: false
-#| eval: false
-
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+```r
 for (item in vector) perform_action
 ```
 
 ```{r}
-#| echo: true
-#| code-fold: false
-
-for (i in 1:3) {
+for (i in 1:5) {
   print(i)
 }
 ```
+:::
+::::
 
 ::: {.notes}
 :::
 
 ## Functions {.smaller}
 
-```{r}
-#| echo: true
-#| code-fold: false
-#| eval: false
+::::: {.columns}
+:::: {.column style="width: 47.5%;"}
+The last evaluated expression is the return value of the function.
 
+You can use `return()` to return a value before the end of the function.
+
+```r
 name <- function(parameter_1, parameter_2, ...) {
   expression
 }
 ```
 
-<br>
-
 ```{r}
-#| echo: true
-#| code-fold: false
-
 foo <- function(x) {
   x + 1
 }
 
 foo(9)
 ```
+::::
+:::: {.column style="width: 5%;"}
+::::
+:::: {.column style="width: 47.5%;"}
+```{r}
+foo <- function(x) {
+  return(x + 1)
+
+  "a"
+}
+
+foo(9)
+```
+
+::: {style="padding-top: 15px;"}
+**Shorthand Notation**<br>
+[(Introduced in [R 4.1.0](https://cran.r-project.org/bin/windows/base/old/4.1.0/NEWS.R-4.1.0.html))]{style="font-size: 0.7em"}
+
+```{r}
+foo <- function(x) x(9)
+
+foo(\(x) x + 1)
+```
+:::
+::::
+:::::
 
 ::: {.notes}
 :::
+
+## Functionals {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 47.5%; font-size: 0.95em;"}
+A **functional** is a function that takes a function as an input and returns a vector as output [@wickham2019].
+
+It makes the work of the programmer easier, because it allows to apply a function to a vector without the need of a loop. Because these functions are written in C, they are very fast.
+
+R have native functionals (e.g., `lapply()`), but prefer solutions from the [`purrr`](https://purrr.tidyverse.org/) package.
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+```{r}
+triple <- function(x) x * 3
+```
+
+```{r}
+with_for_loop <- function(x) {
+  out <- numeric()
+  for (i in x) out <- c(out, triple(i))
+  out
+}
+```
+
+```{r}
+library(purrr)
+
+with_map <- function(x) map_dbl(x, triple)
+```
+
+```{r}
+library(microbenchmark)
+
+microbenchmark(
+  with_for_loop(1:1000),
+  with_map(1:1000),
+  times = 100,
+  check = "equal"
+)
+```
+:::
+::::
 
 ## Enviroments {.smaller}
 
 [Scoping](https://adv-r.hadley.nz/functions.html?q=scoping#lexical-scoping)
 
-<br>
-
+:::: {.columns style="padding-top: 10px;"}
+::: {.column style="width: 47.5%;"}
 ```{r}
-#| echo: true
-#| code-fold: false
-
 x <- 10
 
 foo <- function() {
@@ -520,60 +747,218 @@ foo <- function() {
 
 foo()
 ```
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+```{r}
+foo <- function() {
+  x <<- 50
+
+  invisible()
+}
+
+foo()
+x
+```
+:::
+::::
 
 ::: {.notes}
 :::
 
 ## Packages {.smaller}
 
-:::: {.columns}
-::: {.column style="width: 50%;"}
-In R, the fundamental unit of shareable code is the package. A package bundles together code, data, documentation, and tests, and is easy to share with others [@wickham2023d].
-
+::::: {.columns}
+:::: {.column style="width: 47.5%;"}
 [**The Unix philosophy**](https://en.wikipedia.org/wiki/Unix_philosophy)
-:::
-::: {.column style="width: 50%;"}
-```{r}
-#| echo: true
-#| code-fold: false
-#| eval: false
 
+In R, the fundamental unit of shareable code is the package.
+
+A package bundles together code, data, documentation, and tests, and is easy to share with others [@wickham2023d].
+::::
+:::: {.column style="width: 5%;"}
+::::
+:::: {.column style="width: 47.5%;"}
+```r
+# From `utils` package
 install.packages("package_name")
 ```
 
-<br>
-
+::: {style="padding-top: 15px;"}
+```r
+library("package_name")
+```
 ```{r}
-#| echo: true
-#| code-fold: false
-
 library(hms)
 library(lubridate)
 library(mctq)
 
 so(parse_hm("23:00"), lubridate::dhours(2))
 ```
+:::
 
-<br>
-
-```{r}
-#| echo: true
-#| code-fold: false
-#| eval: false
-
+::: {style="padding-top: 15px;"}
+```r
 package_name::function_name()
 ```
 
-<br>
-
 ```{r}
-#| echo: true
-#| code-fold: false
-
 hms::parse_hm("23:00")
 ```
 :::
 ::::
+:::::
+
+::: {.notes}
+:::
+
+## Packages {.smaller}
+
+**R is just the core**. It needs packages to do anything useful.
+
+A tipycal installation of R comes with a [set](https://cran.r-project.org/manuals.html#:~:text=recommended%20packages) of packages, like:
+
+- `base`: Basic R functions (e.g., `sum()`)
+- `datasets`: Some datasets for testing and teaching (e.g., `mtcars`)
+- `graphics`: The basic graphics functions (e.g., `plot()`)
+- `grDevices`: The graphics devices (e.g., `pdf()`)
+- `methods`: The built-in object-oriented programming system
+- `parallel`: Support for parallel computation
+- `stats`: Basic statistical functions (e.g., `t.test()`)
+- `utils`: Utility functions (e.g., `install.packages()`)
+
+## Other Kind of Objects {.smaller}
+
+::::: {.columns}
+:::: {.column style="width: 47.5%; font-size: 0.9em;"}
+Based on the atomic types, we can create other types of objects. **Using the right kind of object in R is very important**, because these objects also include methods to deal with particular types of data.
+
+For example, time can be expressed in diffent ways, like linear time (e.g., durations, periods, data-time, intervals) and circular time (e.g., time of day). We can also have time series, which are a sequence of data points taken at successive equally spaced points in time.
+::::
+:::: {.column style="width: 5%;"}
+::::
+:::: {.column style="width: 47.5%; font-size: 0.9em;"}
+`Date`<br>(Days since 1970-01-01 (UNIX epoch))
+
+```{r}
+as.Date("1970-01-01") |> as.numeric()
+```
+```{r}
+as.Date("1970-01-01") + 1
+```
+
+::: {style="padding-top: 15px;"}
+`POSIXct`<br>(Seconds since 1970-01-01)
+```{r}
+as.POSIXct("1970-01-01 00:00:00", tz = "UTC") |>
+  as.numeric()
+```
+```{r}
+as.POSIXct("1970-01-01 00:00:00", tz = "UTC") + 1
+```
+:::
+::::
+:::::
+
+::: {.notes}
+:::
+
+## Commenting {.smaller}
+
+🚨 **Only if Necessary**
+
+Your code must speak for itself.
+
+In data analysis code, only use comments to **record important things**. If you need comments to explain what your code is doing, consider rewriting your code to be clearer [@wickhamb].
+
+::: {style="padding-top: 15px;"}
+```r
+# This is a comment
+```
+:::
+
+::: {.notes}
+:::
+
+## Documentation {.smaller}
+
+One the most important things in programming is to know how to find help. In R, you can use the `help()` function to get help on a function or package.
+
+Since R has more an academic focus, documentation is usually plentiful and very well written.
+
+::: {style="padding-top: 10px;"}
+```r
+help(mean)
+```
+```r
+?mean
+```
+:::
+
+::: {.notes}
+:::
+
+## Debugging {.smaller}
+
+![](images/allison-horst-figure-35.png){fig-align="center" style="width: 90%; padding-top: 0px;"}
+
+::: footer
+(Artwork by [Allison Horst](https://twitter.com/allison_horst))
+:::
+
+::: {.notes}
+:::
+
+## The Tidyverse {.smaller}
+
+[![](images/tidyverse-hex-logo.png){style="width: 150px; padding-top: 0px;"}](https://www.tidyverse.org/)
+
+```r
+install.packages("tidyverse")
+```
+
+[Tidyverse](https://www.tidyverse.org/) is a collection of R packages designed for data science. All packages share an underlying design philosophy ([The tidy Manifesto](https://tidyverse.tidyverse.org/articles/manifesto.html)), grammar, and data structures.
+
+It was created by [Hadley Wickham](https://hadley.nz/) (the "R God", and author of the main refrences of this course). **We could say that there is an R befeore and after Hadley Wickham**.
+
+::: {.notes}
+:::
+
+## The Tidyverse {.smaller}
+
+**Main Tidyverse Packages**
+
+- `readr`: Read flat files (csv, tsv, fwf) into R
+- `tibble`: A modern re-imagining of the data frame
+- `stringr`: A fresh approach to string manipulation in R
+- `lubridate`: Make working with dates in R just that little bit easier
+- `dplyr`: A grammar of data manipulation
+- `tidyr`: Tidy messy data
+- `purrr`: A functional programming toolkit for R
+- `forcats`: Tools for working with categorical variables (factors)
+- `ggplot2`: An implementation of the Grammar of Graphics in R
+
+## The rOpenSci {.smaller}
+
+[![](images/ropensci-hex-logo.png){style="width: 150px; padding-top: 0px;"}](https://ropensci.org/)
+
+The importance of relying on good packages is crucial.
+
+[rOpenSci](https://ropensci.org/) project is a community of researchers and developers working on open science and open data. They develop R packages that allow access to data and tools from a wide range of sources.
+
+All packages go through a **peer-review** process, which ensures that they are well written and reliable.
+
+::: {.notes}
+:::
+
+## Base R Solutions {.smaller}
+
+You can do most of the things you need with the packages that come bundled with R. However, that is not the most efficient way to do things today.
+
+In this course **we are going to focus on the Tidyverse and rOpenSci packages**, which are the most modern and efficient way to work with data in R.
+
+If you want a depper understanding of the R language, we encourage you to explore the base R solutions.
 
 ::: {.notes}
 :::

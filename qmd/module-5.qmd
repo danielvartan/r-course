@@ -1,0 +1,171 @@
+## The `visdat` Package {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 47.5%;"}
+[![](images/visdat-hex-logo.svg){style="width: 150px; padding-top: 0px;"}](https://docs.ropensci.org/visdat/)
+
+```r
+install.packages("visdat")
+```
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+```{r}
+library(palmerpenguins)
+library(visdat)
+
+penguins |> vis_dat()
+```
+:::
+::::
+
+::: {.notes}
+:::
+
+## `ggplot2` {.smaller .nostretch}
+
+![](images/allison-horst-figure-28.png){fig-align="center" style="width: 90%; padding-top: 0px;"}
+
+::: footer
+(Artwork by [Allison Horst](https://twitter.com/allison_horst))
+:::
+
+::: {.notes}
+:::
+
+## `dplyr::glimpse()` {.smaller}
+
+```{r}
+library(dplyr)
+library(palmerpenguins)
+
+penguins %>% dplyr::glimpse()
+```
+
+## `dplyr::count()` {.smaller}
+
+```{r}
+library(dplyr)
+library(palmerpenguins)
+
+penguins |> count(species, island, .drop = FALSE)
+```
+
+## Bar Plots {.smaller}
+
+```{r}
+#| fig-align: center
+#| code-fold: true
+
+library(ggplot2)
+library(palmerpenguins)
+
+penguins |>
+  ggplot(aes(x = island, fill = species)) +
+  geom_bar(alpha = 0.8) +
+  scale_fill_manual(
+    values = c("darkorange","purple","cyan4"),
+    guide = FALSE
+  ) +
+  theme_minimal() +
+  facet_wrap(~species, ncol = 1) +
+  coord_flip()
+```
+
+## Histograms {.smaller}
+
+```{r}
+#| fig-align: center
+#| code-fold: true
+
+library(ggplot2)
+library(palmerpenguins)
+
+penguins |>
+  ggplot(aes(x = flipper_length_mm, fill = species)) +
+  geom_histogram(alpha = 0.5, position = "identity") +
+  scale_fill_manual(values = c("darkorange","darkorchid","cyan4"))
+```
+
+## Boxplots {.smaller}
+
+```{r}
+#| fig-align: center
+#| code-fold: true
+
+library(ggplot2)
+library(palmerpenguins)
+
+penguins |>
+  ggplot(aes(x = species, y = bill_length_mm, fill = species)) +
+  geom_boxplot(outlier.color = "red") +
+  geom_jitter(width = 0.2, alpha = 0.1) +
+  scale_fill_manual(values = c("darkorange","purple","cyan4"))
+```
+
+## Scatterplots {.smaller}
+
+```{r}
+#| fig-align: center
+#| code-fold: true
+
+library(ggplot2)
+library(palmerpenguins)
+
+penguins |>
+  ggplot(
+    aes(
+      x = flipper_length_mm,
+      y = body_mass_g,
+      color = species,
+      shape = species
+    )
+  ) +
+  geom_point(size = 2) +
+  geom_smooth(method = "lm", se = FALSE) +
+  scale_color_manual(values = c("darkorange","darkorchid","cyan4"))
+```
+
+## Facets {.smaller}
+
+```{r}
+#| fig-align: center
+#| code-fold: true
+
+library(ggplot2)
+library(palmerpenguins)
+
+penguins |>
+  ggplot(aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point(aes(color = sex)) +
+  geom_smooth(method = "lm", se = FALSE) +
+  scale_color_manual(
+    values = c("darkorange","cyan4"),
+    na.translate = FALSE
+  ) +
+  facet_wrap(~species)
+```
+
+## Correlation Matrices {.smaller}
+
+```{r}
+#| fig-align: center
+#| code-fold: true
+#| fig-width: 12
+#| fig-height: 7
+
+library(GGally)
+library(ggplot2)
+library(palmerpenguins)
+
+penguins |>
+  select(species, body_mass_g, ends_with("_mm")) |>
+  GGally::ggpairs(aes(color = species)) +
+  scale_colour_manual(values = c("darkorange","purple","cyan4")) +
+  scale_fill_manual(values = c("darkorange","purple","cyan4"))
+```
+
+::: {.notes}
+The [`GGally`](https://ggobi.github.io/ggally/index.html) package, an extension of `ggplot2`.
+:::

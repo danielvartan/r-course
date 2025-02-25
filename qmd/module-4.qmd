@@ -1,0 +1,114 @@
+## The Grammar of Graphics {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%;"}
+The Grammar of Graphics, by **Leland Wilkinson**, set the foundation thinking about data visualization.
+
+We will based this part of the course on the principles found in this book.
+:::
+::: {.column style="width: 50%;"}
+![](images/wilkinson-2005-book-cover.png){fig-align="center" style="width: 70%; padding-top: 0px;"}
+:::
+::::
+
+::: footer
+(Book cover image from @wilkinson2005)
+:::
+
+::: {.notes}
+:::
+
+## The `ggplot2` Package {.smaller}
+
+![](images/allison-horst-figure-34.png){fig-align="center" style="width: 90%; padding-top: 0px;"}
+
+::: footer
+(Artwork by [Allison Horst](https://twitter.com/allison_horst))
+:::
+
+::: {.notes}
+:::
+
+## The `ggplot2` Package {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 47.5%;"}
+[![](images/ggplot2-hex-logo.png){style="width: 25%; padding-top: 0px;"}](https://ggplot2.tidyverse.org/)
+
+::: {style="padding-top: 5px;"}
+```r
+install.packages("ggplot2")
+```
+::::
+
+The most powerful and flexible package for data visualization.
+
+A [Tidyverse](https://www.tidyverse.org/) package based on the principles of *The Grammar of Graphics*.
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+![](images/r-graph-gallery-hierarchical-edge-bundling-figure-1.png){style="width: 100%; padding-top: 0px;"}
+:::
+:::
+
+::: footer
+(Artwork by [R Chart Gallery](https://r-graph-gallery.com/hierarchical-edge-bundling.html))
+:::
+
+::: {.notes}
+:::
+
+## First Principles {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 47.5%;"}
+It's all about levels
+
+You only visualize data when you already have clean, tidy, and validated data.
+
+![](images/meme-seinfeld-kramer-levels.gif){style="width: 100%; padding-top: 15px;"}
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+``` {r}
+#| warning: false
+
+library(ggplot2)
+library(palmerpenguins)
+
+penguins |>
+  ggplot(aes(x = flipper_length_mm))+
+  geom_histogram(fill = "darkorange") +
+  labs(x = "Flipper Length (mm)", y = "Frequency")
+```
+:::
+::::
+
+::: footer
+(Artwork by [R Chart Gallery](https://r-graph-gallery.com/hierarchical-edge-bundling.html))
+:::
+
+::: {.notes}
+:::
+
+## How to Learn More {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 47.5%;"}
+[![](images/wickham-2016-book-cover.png){fig-align="center" style="width: 73.5%;"}](https://ggplot2-book.org/)
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+[![](images/chang-2018-book-cover.png){fig-align="center" style="width: 85%;"}](https://r-graphics.org/)
+:::
+::::
+
+::: footer
+(Book cover image from @wickham2016a and @chang2018)
+:::
+
+::: {.notes}
+:::

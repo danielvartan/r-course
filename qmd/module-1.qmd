@@ -54,7 +54,7 @@ It is essential to start from materiality; otherwise, things stop making sense.
 
 [**Universal Turing machine**](https://en.wikipedia.org/wiki/Universal_Turing_machine) (Alan Turing) [@turing1937]
 
-[**"von Neumann Architecture"**](https://en.wikipedia.org/wiki/Von_Neumann_architecture) [@vonneumann1993a]
+[**"von Neumann Architecture"**](https://en.wikipedia.org/wiki/Von_Neumann_architecture) (1945) [@vonneumann1993a]
 
 [**ENIAC**](https://en.wikipedia.org/wiki/ENIAC) (1945)
 :::
@@ -90,7 +90,7 @@ First proposed by **J. P. Eckert** and his team (1944-1945).
 
 **Input** -> **Storage** -> **Processing** -> **Output**
 
-![](images/brookshear-2020-figure-2-1.svg){fig-align="center" style="width: 70%; padding-top: 10px;"}
+![](images/brookshear-2020-figure-2-1.svg){fig-align="center" style="width: 70%; padding-top: 30px;"}
 
 ::: footer
 (Reproduced from @brookshear2020)
@@ -103,28 +103,35 @@ First proposed by **J. P. Eckert** and his team (1944-1945).
 
 :::: {.columns}
 ::: {.column style="width: 50%;"}
-```
-0 = 0    | 01 +
-1 = 1    | 01 +
-2 = 10   | 01
-3 = 11   | ---
-4 = 100  | 11
-```
+
+| Decimal | Binary |
+|---------|--------|
+| 0       | 0     |
+| 1       | 1      |
+| 2       | 10     |
+| 3       | 11     |
+| 4       | 100    |
+
+| Addition |
+|----------|
+| 01 +     |
+| 01 +     |
+| 01 =     |
+| 11       |
+
 :::
 ::: {.column style="width: 50%;"}
-```
- x  | y  | x ∧ y | x ∨ y
-----|----|-------|-------
- 0  | 0  |   0   |   0
- 0  | 1  |   0   |   1
- 1  | 0  |   0   |   1
- 1  | 1  |   1   |   1
+| x  | y  | x ∧ y | x ∨ y |
+|----|----|-------|-------|
+| 0  | 0  |   0   |   0   |
+| 0  | 1  |   0   |   1   |
+| 1  | 0  |   0   |   1   |
+| 1  | 1  |   1   |   1   |
 
- x  | ¬x
-----|----
- 0  |  1
- 1  |  0
-```
+| x  | ¬x |
+|----|----|
+| 0  |  1 |
+| 1  |  0 |
 :::
 ::::
 
@@ -142,7 +149,7 @@ First proposed by **J. P. Eckert** and his team (1944-1945).
 ::: {.notes}
 :::
 
-## What We Really Do When We Program? {.smaller}
+## What We Are Really Doing When We Program? {.smaller}
 
 ::: {.notes}
 A look inside a computer.
@@ -166,30 +173,69 @@ A look inside a computer.
 ::: {.notes}
 :::
 
+## Low and High-Level Prog. Lang. {.smaller}
+
+::: {.notes}
+:::
+
 ## Programming Paradigms {.smaller}
 
-A [programming paradigm](https://en.m.wikipedia.org/wiki/Programming_paradigm) is a specific approach to the programming proces [@brookshear2020[p. 325]].
+A [programming paradigm](https://en.m.wikipedia.org/wiki/Programming_paradigm) is a specific approach to the programming process [@brookshear2020].
 
 R is a multi-paradigm programming language, but is mainly **functional**.
 
-:::: {.columns}
-::: {.column style="width: 50%;"}
-**Imperative**
+:::: {.columns style="padding-top: 10px;"}
+::: {.column style="width: 33%;"}
+[Procedural](https://en.m.wikipedia.org/wiki/Procedural_programming) (Imperative)
 
-- [Procedural](https://en.m.wikipedia.org/wiki/Procedural_programming)
-- [Object-Oriented](https://en.m.wikipedia.org/wiki/Object-oriented_programming)
+```{r}
+x <- seq(1, 10)
+y <- numeric()
+z <- 0
+
+for (i in x) {
+  y <- c(y, i + 1)
+}
+
+for (i in y) {
+  z <- z + i
+}
+
+z / length(x)
+```
 :::
-::: {.column style="width: 50%;"}
-**Declarative**
+::: {.column style="width: 33%;"}
+[Functional](https://en.m.wikipedia.org/wiki/Functional_programming) (Declarative)
 
-- [Funcional](https://en.m.wikipedia.org/wiki/Functional_programming)
+```{r}
+seq(1, 10) |>
+  vapply(\(x) x + 1, numeric(1)) |>
+  mean()
+```
+:::
+::: {.column style="width: 34%;"}
+- [Object-Oriented](https://en.m.wikipedia.org/wiki/Object-oriented_programming) (Imperative)
+
+```{r}
+library(S7)
+
+dog <- new_class("dog", properties = list(
+  name = class_character,
+  age = class_numeric
+))
+
+lola <- dog(name = "Lola", age = 11)
+speak <- new_generic("speak", "x")
+method(speak, dog) <- function(x) "Woof"
+speak(lola)
+```
 :::
 ::::
 
 ::: {.notes}
 :::
 
-## Open-Source Programming Languages
+## Open-Source Prog. Lang.
 
 ![](images/calltutors-figure-1.png){.r-stretch fig-align="center"}
 
@@ -205,12 +251,9 @@ R is a multi-paradigm programming language, but is mainly **functional**.
 - Science-driven **versus** industry-driven.
 :::
 
-::: {.notes}
-:::
-
 ## Why R? {.smaller .nostretch}
 
-**R** is an excellent language to get started with programming because it's specialized. Unlike some other languages, it doesn't have an overwhelming amount of features for you to learn.
+R is an excellent language to get started with programming because it's specialized. Unlike some other languages, it doesn't have an overwhelming amount of features for you to learn.
 
 ![](images/allison-horst-figure-7.png){fig-align="center" style="width: 55%; padding-top: 10px;"}
 
@@ -223,7 +266,7 @@ R is a multi-paradigm programming language, but is mainly **functional**.
 
 ## Python is Fine Too, I Guess... {.smaller .nostretch}
 
-Python is good for learning how to program, but it is much easier to learn how to work with data in R. In academia, both programming languages are very important.
+In a general sense, Python is also good for learning how to program, but it is much easier to learn how to work with data in R. In academia, both programming languages are very important.
 
 ![](images/meme-python-r.png){fig-align="center" style="width: 50%;"}
 
@@ -251,6 +294,29 @@ Programming in movies **versus** programming in real life:
 
 ::: {.notes}
 * You don't have to be a math genius to learn how to code.
+:::
+
+## A Bit of R History {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 47.5%;"}
+R is a **free** and **open-source** programming language designed for data analysis grpahics [@ihaka1996].
+
+It was developed by **Ross Ihaka** and **Robert Gentleman** in the statistics department at the [University of Auckland](https://www.auckland.ac.nz/) (New Zealand) in 1991 and introduced to the scientific community in **1993**.
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+![](images/unknown-author-r-creators.jpg){fig-align="center" style="width: 100%; padding-top: 50px;"}
+:::
+::::
+
+::: footer
+(Robert Gentleman (Left) and Ross Ihaka (Right). Photos by an Unknown Author.)
+:::
+
+::: {.notes}
+Although R is a specialized language, you can stretch it to do almost anything (like this presentation!).
 :::
 
 ## Community {.smaller}

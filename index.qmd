@@ -8,26 +8,26 @@ source(here::here("R/_setup.R"))
 ```
 
 ::::: {.columns}
-:::: {.column style="width: 50%;"}
+:::: {.column style="width: 47.5%;"}
 This course will introuce you to the **R** programming language.
 
-::: {style="padding-top: 15px;"}
+![](images/allison-horst-figure-8.png){fig-align="center" style="width: 100%; padding-top: 80px;"}
+::::
+:::: {.column style="width: 5%;"}
+::::
+:::: {.column style="width: 47.5%;"}
 We'll explore the following topics:
 
-::: {style="font-size: 0.8em; padding-top: 15px;"}
+::: {style="font-size: 0.85em; padding-top: 15px;"}
 1. [**Introduction**]{.brand-brown}
 1. [**Computer Science**]{.brand-brown}
 1. [**R Basics**]{.brand-brown}
 1. [**Data Munging**]{.brand-brown}
 1. [**Data Visualization**]{.brand-brown}
+1. [**Exploratory Data Analysis**]{.brand-brown}
 1. [**Modeling**]{.brand-brown}
-1. [**Hypothesis Testing**]{.brand-brown}
 1. [**Conclusion**]{.brand-brown}
 :::
-:::
-::::
-:::: {.column style="width: 50%; padding-top: 120px;"}
-![](images/allison-horst-figure-8.png){fig-align="center" style="width: 100%;"}
 ::::
 :::::
 
@@ -63,7 +63,9 @@ Understand basic concepts of modeling
 
 Understand basic concepts of hypothesis testing
 
-(Future course: How to use Git)
+::: {style="padding-top: 30px;"}
+([**Future course?**]{.brand-red} An Introduction to [Git](https://en.wikipedia.org/wiki/Git))
+:::
 
 ::: {.notes}
 :::
@@ -81,11 +83,24 @@ Understand basic concepts of hypothesis testing
 
 ## Schedule {.smaller}
 
-- 24/03 13:00-14:00
-- 24/03 13:00-14:00
-- **24/03 13:00-18:00**
-- 24/03 13:00-14:00
-- 24/03 13:00-14:00
+:::: {.columns}
+::: {.column style="width: 47.5%;"}
+[![](images/usp-fsp-logo-bw-72-dpi.png){style="width: 35%; padding-top: 0px;"}](https://www.fsp.usp.br/)
+
+The course will take place in one of the laboratories of the Public Health School ([FSP]((https://www.fsp.usp.br/))) of the University of São Paulo ([USP](https://www5.usp.br/))/
+
+The classes are distributed over **5 days**, with a total of **9 hours**.
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+- 24/03 (Monday) 13:00-14:00
+- 25/03 (Tuesday) 13:00-14:00
+- 26/03 (Wednesday) [**13:00-18:00**]{.brand-red}
+- 27/03 (Thursday) 13:00-14:00
+- 28/03 (Friday) 13:00-14:00
+:::
+::::
 
 ::: {.notes}
 - FSP Laboratories
@@ -93,7 +108,7 @@ Understand basic concepts of hypothesis testing
 
 ## Main References {.smaller}
 
-::::: {.columns}
+:::: {.columns}
 ::: {.column style="width: 47.5%;"}
 [![](images/wickham-2023-book-cover.png){fig-align="center" style="width: 85%; padding-top: 0px;"}](https://r4ds.hadley.nz//)
 :::
@@ -109,12 +124,51 @@ Understand basic concepts of hypothesis testing
 :::
 
 ::: {.notes}
+- See also: [Advanced R Solutions](https://advanced-r-solutions.rbind.io/) [@grosser2021].
 :::
 
 ## Other Useful References {.smaller}
 
-- [W3Schools](https://www.w3schools.com/r/default.asp)
-- [How Computers Work](https://youtube.com/playlist?list=PLzdnOPI1iJNcsRwJhvksEo1tJqjIqWbN-&si=9nOuIefDZ2F-BJJ8)
+- [How Computers Work](Kttps://youtube.com/playlist?list=PLzdnOPI1iJNcsRwJhvksEo1tJqjIqWbN-&si=9nOuIefDZ2F-BJJ8)
+- [W3Schools: R Tutorial](https://www.w3schools.com/r/default.asp)
+- [What They Forgot to Teach You About R](https://rstats.wtf/)
+- [Happy Git and GitHub for the useR](http://happygitwithr.com/)
+
+::: {.notes}
+:::
+
+## Getting Help {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%;"}
+Don't be afraid to ask questions, even if they seem simple. Everyone has to start somewhere!
+
+The programming community is very active and there are many resources available to help you learn and solve problems.
+
+One of the best ways to get help is to search or ask questions on forums like [Stack Overflow](https://stackoverflow.com/).
+:::
+::: {.column style="width: 50%;"}
+![](images/stackoverflow-logo.svg){fig-align="center" style="width: 80%; padding-top: 175px;"}
+:::
+::::
+
+::: {.notes}
+:::
+
+## Examples of Data Reports {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%; text-align: center;"}
+![](images/sustentarea-logo.png){fig-align="center" style="width: 50%; padding-top: 75px;"}
+
+[Global Syndemic Project<br>Data Report 3](https://sustentarea.github.io/gs-data-analysis-report-3/)
+:::
+::: {.column style="width: 50%; text-align: center;"}
+![](images/allison-horst-figure-37.png){fig-align="center" style="width: 75%; padding-top: 50px;"}
+
+[A Demonstration of General Linear Models Using Penguins](https://github.com/danielvartan/linear-models)
+:::
+::::
 
 ::: {.notes}
 :::
@@ -147,28 +201,23 @@ Understand basic concepts of hypothesis testing
 ::: {.notes}
 :::
 
-# Module 5<br>[Modeling]{.brand-brown-750} {.smaller data-menu-title="Module 5: Modeling"}
+# Module 5<br>[Exploratory Data Analysis]{.brand-brown-750} {.smaller data-menu-title="Module 5: Exploratory Data Analysis"}
 
 {{< include ./qmd/module-5.qmd >}}
 
 ::: {.notes}
 :::
 
-# Module 6<br>[Hypothesis Testing]{.brand-brown-750} {.smaller data-menu-title="Module 6: Hypothesis Testing"}
+# Module 6<br>[Modeling]{.brand-brown-750} {.smaller data-menu-title="Module 6: Modeling"}
 
 {{< include ./qmd/module-6.qmd >}}
 
 ::: {.notes}
 :::
 
-# Module 7<br>[Some Things You May Need to Know]{.brand-brown-750} {.smaller data-menu-title="Module 7: Some Things You May Need to Know"}
+# Module 7<br>[Some Other Things You May Need to Know]{.brand-brown-750} {.smaller data-menu-title="Module 7: Some Other Things You May Need to Know"}
 
 {{< include ./qmd/module-7.qmd >}}
-
-::: {.notes}
-:::
-
-{{< include ./qmd/module-6.qmd >}}
 
 ::: {.notes}
 :::
@@ -178,7 +227,7 @@ Understand basic concepts of hypothesis testing
 ::: {.notes}
 :::
 
-## Want to Learn More? {.smaller}
+## How to Learn More? {.smaller}
 
 [Introdução à ciência da computação com python - Parte 1](https://www.coursera.org/learn/ciencia-computacao-python-conceitos) (USP-IME)
 
@@ -240,7 +289,22 @@ In accordance with the [American Psychological Association (APA) Style](https://
 ::: {.notes}
 :::
 
-## (AP) Placeholder {visibility="uncounted"}
+## (AP) Strings {visibility="uncounted"}
+
+::: {.notes}
+:::
+
+## (AP) Regular Expressions {visibility="uncounted"}
+
+::: {.notes}
+:::
+
+## (AP) Lookup Tables {visibility="uncounted"}
+
+::: {.notes}
+:::
+
+## (AP) Joins {visibility="uncounted"}
 
 ::: {.notes}
 :::

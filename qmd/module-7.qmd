@@ -4,7 +4,6 @@
 ::: {.column style="width: 47%;"}
 ![](images/doi-foundation-logo.svg){fig-align="center" style="width: 100%; padding-top: 75px;"}
 :::
-
 ::: {.column style="width: 6%;"}
 :::
 ::: {.column style="width: 47%;"}
@@ -46,16 +45,16 @@ Dynamic documents seamlessly integrate text with output from a programming langu
 
 ::::: {.columns}
 :::: {.column style="width: 50%; font-size: 0.9em; padding-top: 0px;"}
-- [Quarto](https://quarto.org/) (R, Python, Julia) (+Pandoc).
-- [Jupyter](https://jupyter.org/) (Python, R, Julia, +37 languages).
-- [Rmarkdown](https://rmarkdown.rstudio.com/) (R) (+Pandoc).
+- [Quarto](https://quarto.org/) (R, Python, Julia) (+Pandoc)
+- [Jupyter](https://jupyter.org/) (Python, R, Julia, +37 languages)
+- [Rmarkdown](https://rmarkdown.rstudio.com/) (R) (+Pandoc)
 
 ::: {style="padding-top: 10px;"}
 **Examples**
 
-- External-link: [Central limit theorem](https://danielvartan.github.io/central-limit-theorem/).
-- External-link: [Sample size](https://danielvartan.github.io/sample-size/).
-- External-link: [Fisher's hypothesis](https://danielvartan.github.io/fisher-hypothesis/).
+- External-link: [Central limit theorem](https://danielvartan.github.io/central-limit-theorem/)
+- External-link: [Sample size](https://danielvartan.github.io/sample-size/)
+- External-link: [Fisher's hypothesis](https://danielvartan.github.io/fisher-hypothesis/)
 :::
 ::::
 :::: {.column style="width: 50%; padding-top: 25px;"}
@@ -98,7 +97,7 @@ Reproducible environments ensure that your code will run the same way on differe
 
 :::: {.columns}
 ::: {.column style="width: 50%;"}
-[![](images/renv-logo.png){fig-align="center" style="width: 75%; padding-top: 25px;"}](https://rstudio.github.io/renv/)
+[![](images/renv-hex-logo.png){fig-align="center" style="width: 75%; padding-top: 25px;"}](https://rstudio.github.io/renv/)
 :::
 ::: {.column style="width: 50%;"}
 [![](images/docker-logo.png){fig-align="center" style="width: 75%; padding-top: 25px;"}](https://www.docker.com/)
@@ -116,14 +115,14 @@ APIs are a set of rules that allow different software applications to communicat
 
 :::: {.columns}
 ::: {.column style="width: 33%; font-size: 0.7em;"}
-* [OSF API](https://developer.osf.io/).
-* [Brazil's Central Bank APIs](https://dadosabertos.bcb.gov.br/dataset?res_format=API).
-* [NASA's APIs](https://api.nasa.gov/).
+* [OSF API](https://developer.osf.io/)
+* [Brazil's Central Bank APIs](https://dadosabertos.bcb.gov.br/dataset?res_format=API)
+* [NASA's APIs](https://api.nasa.gov/)
 :::
 ::: {.column style="width: 34%; font-size: 0.7em;"}
-* [OpenAI API](https://platform.openai.com/docs/api-reference/introduction).
-* [SIDRA API (IBGE)](https://api.sidra.ibge.gov.br/).
-* [SISVAN API](https://opendatasus.saude.gov.br/dataset/sisvan-estado-nutricional/resource/3ead4331-6424-471f-a811-4edf22f58e00).
+* [OpenAI API](https://platform.openai.com/docs/api-reference/introduction)
+* [SIDRA API (IBGE)](https://api.sidra.ibge.gov.br/)
+* [SISVAN API](https://opendatasus.saude.gov.br/dataset/sisvan-estado-nutricional/resource/3ead4331-6424-471f-a811-4edf22f58e00)
 :::
 ::: {.column style="width: 33%; font-size: 0.7em;"}
 ![](images/api-symbol.png){fig-align="center" style="width: 40%;"}
@@ -131,18 +130,15 @@ APIs are a set of rules that allow different software applications to communicat
 ::::
 
 ```{r}
-#| echo: true
-#| code-fold: false
-
-# library(magrittr)
-# library(sidrar)
+library(magrittr)
+library(sidrar)
 
 # Brazil's population in 2022 (Census data)
-sidrar::get_sidra(
+get_sidra(
   api = "/t/7358/n1/all/v/all/p/all/c2/6794/c287/100362/c1933/49039"
 ) |>
   suppressMessages() |>
-  magrittr::extract2("Valor") |>
+  extract2("Valor") |>
   prettyNum(big.mark = ",")
 ```
 
@@ -154,7 +150,7 @@ sidrar::get_sidra(
 
 We've only touched upon the vast landscape of open science. There are many other tools and concepts that we didn't cover, such as:
 
-:::: {.columns style="padding-top: 10px;"}
+::: {.columns style="padding-top: 10px;"}
 ::: {.column style="width: 50%; font-size: 0.75em;"}
 - Markup languages (e.g., [Markdown](https://daringfireball.net/projects/markdown/), [LaTeX](https://www.latex-project.org/))
 - Open source softwares (e.g., [rOpenSci](https://ropensci.org/), [CRAN](https://cran.r-project.org/), [Bioconductor](https://www.bioconductor.org/), [PyPI](https://pypi))
@@ -169,7 +165,7 @@ We've only touched upon the vast landscape of open science. There are many other
 - Open science policies (e.g., [FAPESP](https://fapesp.br/openscience/), [European Commission](https://research-and-innovation.ec.europa.eu/strategy/strategy-2020-2024/our-digital-future/open-science_en))
 - Ethical data sharing practices (See @meyer2018 to learn more)
 :::
-::::
+:::
 
 ::: {.notes}
 :::

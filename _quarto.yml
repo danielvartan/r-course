@@ -36,8 +36,9 @@ format:
     open-graph: true
     locale: en
     lang: en
+    echo: true
     code-link: true
-    code-fold: true
+    code-fold: false
     link-external-newwindow: true
     tbl-cap-location: top
     callout-appearance: simple

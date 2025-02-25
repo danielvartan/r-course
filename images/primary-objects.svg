@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1000"
+   height="1000"
+   viewBox="0 0 1000 1000"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   sodipodi:docname="primary-objects.svg"
+   inkscape:export-filename="primary-objects-rgb-96-dpi.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px"
+     showguides="true"
+     inkscape:zoom="0.35856832"
+     inkscape:cx="620.5233"
+     inkscape:cy="812.95525"
+     inkscape:window-width="1920"
+     inkscape:window-height="1020"
+     inkscape:window-x="0"
+     inkscape:window-y="28"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <sodipodi:guide
+       position="500,1000"
+       orientation="-1,0"
+       id="guide4"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="0,500"
+       orientation="0,1"
+       id="guide5"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="750,1000"
+       orientation="-1,0"
+       id="guide6"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="250,1000"
+       orientation="-1,0"
+       id="guide7"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="0,750"
+       orientation="0,1"
+       id="guide8"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="0,250"
+       orientation="0,1"
+       id="guide9"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Background"
+     style="display:none"
+     sodipodi:insensitive="true">
+    <rect
+       style="fill:#ffffff;stroke-width:2.5;stroke-linecap:round;stroke-miterlimit:10"
+       id="rect5"
+       width="500"
+       height="500"
+       x="0"
+       y="0" />
+    <rect
+       style="fill:#000000;stroke-width:2.5;stroke-linecap:round;stroke-miterlimit:10"
+       id="rect5-5"
+       width="500"
+       height="500"
+       x="500"
+       y="0" />
+    <rect
+       style="fill:#000000;stroke-width:2.5;stroke-linecap:round;stroke-miterlimit:10"
+       id="rect5-5-2"
+       width="500"
+       height="500"
+       x="0"
+       y="500" />
+    <rect
+       style="fill:#ffffff;stroke-width:2.5;stroke-linecap:round;stroke-miterlimit:10"
+       id="rect5-5-2-7"
+       width="500"
+       height="500"
+       x="500"
+       y="500" />
+    <rect
+       style="fill:#ffffff;stroke-width:5.6151;stroke-linecap:round;stroke-miterlimit:10"
+       id="rect10"
+       width="1000"
+       height="1000"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     inkscape:label="Objects"
+     inkscape:groupmode="layer"
+     id="layer1"
+     sodipodi:insensitive="true">
+    <path
+       sodipodi:type="star"
+       style="fill:#006909;stroke-width:2.5;stroke-linecap:round;stroke-miterlimit:10"
+       id="path6"
+       inkscape:flatsided="false"
+       sodipodi:sides="3"
+       sodipodi:cx="-276.09802"
+       sodipodi:cy="131.07683"
+       sodipodi:r1="300.62073"
+       sodipodi:r2="150.31036"
+       sodipodi:arg1="0.52359878"
+       sodipodi:arg2="1.5707963"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m -15.752836,281.38719 -260.345184,0 -260.34519,0 130.17259,-225.46554 130.1726,-225.46555 130.17259,225.465543 z"
+       inkscape:transform-center-y="-49.999995"
+       transform="matrix(0.66529012,0,0,0.66529012,433.68529,212.79588)"
+       inkscape:transform-center-x="-1.8401936e-06" />
+    <rect
+       style="fill:#ed6b4d;stroke-width:1.90159;stroke-linecap:round;stroke-miterlimit:10"
+       id="rect9"
+       width="300"
+       height="300"
+       x="600"
+       y="100" />
+    <rect
+       style="fill:#9ecd7a;stroke-width:2.00445;stroke-linecap:round;stroke-miterlimit:10"
+       id="rect9-6"
+       width="250"
+       height="400"
+       x="625"
+       y="550" />
+    <circle
+       style="fill:#513024;stroke-width:2.37699;stroke-linecap:round;stroke-miterlimit:10"
+       id="path9"
+       cx="250"
+       cy="750"
+       r="150" />
+  </g>
+  <metadata
+     id="metadata1">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/by/4.0/" />
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/by/4.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Notice" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Attribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>
