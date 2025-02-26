@@ -130,6 +130,7 @@ The classes are distributed over **5 days**, with a total of **9 hours**.
 ## Other Useful References {.smaller}
 
 - [How Computers Work](Kttps://youtube.com/playlist?list=PLzdnOPI1iJNcsRwJhvksEo1tJqjIqWbN-&si=9nOuIefDZ2F-BJJ8)
+- [How Are Microchips Made?](https://youtu.be/IkRXpFIRUl4?si=VcqPPrzLNWkGVJWQ)
 - [W3Schools: R Tutorial](https://www.w3schools.com/r/default.asp)
 - [What They Forgot to Teach You About R](https://rstats.wtf/)
 - [Happy Git and GitHub for the useR](http://happygitwithr.com/)
