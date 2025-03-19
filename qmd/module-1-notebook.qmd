@@ -1,0 +1,38 @@
+# An Introduction to the R Programming Language
+
+```{r}
+#| label: setup
+#| include: false
+
+source(here::here("R/_setup.R"))
+```
+
+## Module 1: Introduction
+
+This notebook corresponds to the first module of the course [An Introduction to the R Programming Language](https://github.com/danielvartan/r-course).
+
+## Explore
+
+At the moment, fell free to explore the RStudio IDE and the Quarto notebook.
+
+```{r}
+1 + 1
+```
+
+```{r}
+1 + 1
+```
+
+```{r}
+1 + 1
+```
+
+```{r}
+library(ggplot2)
+library(palmerpenguins)
+
+penguins |>
+  ggplot(aes(x = flipper_length_mm, fill = species)) +
+  geom_histogram(alpha = 0.5, position = "identity") +
+  scale_fill_manual(values = c("darkorange","darkorchid","cyan4"))
+```

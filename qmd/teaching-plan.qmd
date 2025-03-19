@@ -1,0 +1,230 @@
+# Teaching Plan {visibility="uncounted"}
+
+::: {.notes}
+:::
+
+## General Information {.smaller visibility="uncounted"}
+
+- **Course**: An Introduction to the R Language
+- **Instructors**: Daniel Vartanian and Jaqueline Lopes Pereira
+- **Place**: Public Health School ([FSP]((https://www.fsp.usp.br/))) of the University of São Paulo ([USP](https://www5.usp.br/)).
+- **Dates**: 24/03 to 28/03
+- **Time**: 13:00 to 14:00 (except on Wednesday, 26/03, from 13:00 to 18:00)
+- **Duration**: 9 hours
+
+::: {.notes}
+:::
+
+## Learning Objectives {.smaller visibility="uncounted"}
+
+Understand the thought and knowledge underlying computer science.
+
+Understand the structure and basic elements of the R language.
+
+Understand basic concepts of data munging in R.
+
+Understand basic concepts of data visualization in R.
+
+Understand basic concepts of exploratory data analysis in R.
+
+Understand basic concepts about modeling in R.
+
+::: {.notes}
+:::
+
+## Theoretical Basis {.smaller visibility="uncounted"}
+
+1. Dialectical materialism [@engels2020a].
+1. Cultural-historical theory [@vygotsky2012].
+1. Pedagogy of autonomy/Dialectal pedagogy [@freire2011].
+1. Dialectical unity in pedagogical activity [@bernardes2009a].
+
+::: {.notes}
+:::
+
+## The Unit of Pedagogical Activity {.smaller visibility="uncounted"}
+
+::: {style="font-size: 0.7em; padding-top: 30px;"}
+|                                      | Teaching Activity (Teacher)       | Learning Activity (Student)       |
+|--------------------------------------|----------------------------------|----------------------------------|
+| **Motive/Need**                      | Enable the transformation of students' constitution through access to culture — humanizing them. | Become an heir to culture — humanizing oneself. |
+| **Objective**                        | Teach socio-historical knowledge. | Appropriate socio-historical knowledge. |
+| **Actions and Operations**           | **Organizing teaching:**<br>- Defining the knowledge to be taught (*What*).<br>- Defining the conditions (modes of action) in which the knowledge will be taught (*How*). | - Execute study tasks.<br>- Perform study activities.<br>- Participate in control and evaluation actions. |
+:::
+
+::: footer
+[@bernardes2009a, Translated from Portuguese to English by the author]
+:::
+
+## Strategy {.smaller visibility="uncounted"}
+
+- Theory followed by practice.
+- In-class activities.
+- Data science exercise at the end of the course.
+- No formal evaluation.
+- Pre-course survey.
+- Post-course survey.
+
+## Resources {.smaller visibility="uncounted"}
+
+- Whiteboard
+- Data projector
+- Slides
+- Computers
+
+## Main References {.smaller visibility="uncounted"}
+
+:::: {.columns}
+::: {.column style="width: 47.5%;"}
+[![](images/wickham-2023-book-cover.png){fig-align="center" style="width: 85%; padding-top: 0px;"}](https://r4ds.hadley.nz//)
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+[![](images/wickham-2019-book-cover.png){fig-align="center" style="width: 75%;"}](https://adv-r.hadley.nz/)
+:::
+::::
+
+::: footer
+(Book cover image from @wickham2023e and @wickham2019)
+:::
+
+::: {.notes}
+- See also: [Advanced R Solutions](https://advanced-r-solutions.rbind.io/) [@grosser2021].
+:::
+
+## Monday (24/03) {.smaller visibility="uncounted"}
+
+:::: {.columns}
+::: {.column style="width: 47.5%;"}
+**Part 1** (13:00-13:30)
+
+- Introduction to the course.
+- Introduction to computer science.
+- Introduction to data science.
+- Introduction to the R language and the other tools.
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+**Part 2** (13:30-14:00)
+
+- Installing R and RStudio.
+- Introduction to the RStudio IDE.
+- Introduction to the project oriented workflow.
+- Introduction to Markdown and the Quarto notebook.
+:::
+::::
+
+::: {.notes}
+:::
+
+## Tuesday (25/03) {.smaller visibility="uncounted"}
+
+:::: {.columns}
+::: {.column style="width: 47.5%;"}
+**Part 1** (13:00-13:30)
+
+- R objects.
+- Operations.
+- Subsetting.
+- Pipes.
+- Control flow (Choice & Loop).
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+**Part 2** (13:30-14:00)
+
+- Functions and Functionals.
+- Missing values and commenting.
+- Environments.
+- Packages.
+- Documentation.
+- The tidyverse and rOpenSci suite.
+:::
+::::
+
+::: {.notes}
+:::
+
+## Wednesday (25/03) {.smaller visibility="uncounted"}
+
+:::: {.columns}
+::: {.column style="width: 47.5%;"}
+**Part 1** (13:00-14:00)
+
+- Data munging (Introduction)
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+**Part 2** (14:15-15:15)
+
+- Data munging (Importing and manipulating data)
+:::
+::::
+
+::: {.notes}
+:::
+
+## Wednesday (25/03) {.smaller visibility="uncounted"}
+
+:::: {.columns}
+::: {.column style="width: 47.5%;"}
+**Part 3** (15:30-16:30)
+
+- Data visualization and Exploratory Data Analysis
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+**Part 4** (16:45-18:00)
+
+- Modeling (One-Sample t-Test)
+:::
+::::
+
+::: {.notes}
+:::
+
+## Thursday (25/03) {.smaller visibility="uncounted"}
+
+:::: {.columns}
+::: {.column style="width: 47.5%;"}
+**Part 1** (13:00-13:30)
+
+- Modeling (ANOVA & ANCOVA)
+
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+**Part 2** (13:30-14:00)
+
+- Modeling (Linear regression)
+:::
+::::
+
+::: {.notes}
+:::
+
+## Friday (25/03) {.smaller visibility="uncounted"}
+
+:::: {.columns}
+::: {.column style="width: 47.5%;"}
+**Part 1** (13:00-13:30)
+
+- Exercise (Data report - SISVAN)
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+**Part 2** (13:30-14:00)
+
+- Conclusion
+:::
+::::
+
+::: {.notes}
+:::

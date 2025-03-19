@@ -9,26 +9,6 @@
 ::: {.notes}
 :::
 
-## Managing Your Project {.smaller}
-
-:::: {.columns}
-::: {.column style="width: 50%;"}
-It is important to have a structured project directory. A best practice is to follow the structure made for **R Packages**.
-
-Every data project must be accompanied, at least, by a **README** file, explaining the project, and a **LICENSE** file, defining the terms of use of the data.
-:::
-::: {.column style="width: 50%;"}
-![](images/marwick-2018-figure-2.png){fig-align="center" style="width: 80%; padding-top: 0px;"}
-:::
-::::
-
-::: footer
-(Reproduced from @marwick2018)
-:::
-
-::: {.notes}
-:::
-
 ## What Is Data After All? {.smaller}
 
 [Ackoff's DIKW pyramid](https://en.wikipedia.org/wiki/DIKW_pyramid)
@@ -108,15 +88,6 @@ Data validation techniques are used to ensure that data is accurate, consistent,
 ::: {.notes}
 :::
 
-## The Tidy Data Manifesto {.smaller}
-
-::: footer
-[@wickham2014]
-:::
-
-::: {.notes}
-:::
-
 ## Tidy Data {.smaller}
 
 ![](images/allison-horst-figure-13.jpg){fig-align="center" style="width: 100%;"}
@@ -147,48 +118,6 @@ Data validation techniques are used to ensure that data is accurate, consistent,
 
 ::: footer
 (Artwork by [Allison Horst](https://allisonhorst.com/horst-hill-collaborations))
-:::
-
-## Tidy Data
-
-![](images/allison-horst-figure-19.jpg){fig-align="center" style="width: 85%;"}
-
-::: footer
-(Artwork by [Allison Horst](https://allisonhorst.com/horst-hill-collaborations))
-:::
-
-## Best Practices {.smaller}
-
-- [Tidyverse style guide](https://style.tidyverse.org/)
-- [Tidy design principles](https://design.tidyverse.org/)
-
-## Big Data {.smaller}
-
-:::: {.columns}
-::: {.column style="width: 40%;"}
-> **Big data will be dead in 5 Years**: Everything will be big data, so it won't need a special name. [@gavin2020]
-:::
-::: {.column style="width: 60%;"}
-![](images/david-fletcher-big-data.jpeg){fig-align="center" style="width: 100%;"}
-:::
-::::
-
-::: footer
-(Artwork by [David Fletcher](https://en.wikipedia.org/wiki/David_Fletcher_(cartoonist)))
-:::
-
-::: {.notes}
-:::
-
-## Big Data Wrangling {.smaller}
-
-**Working with big data using Excel or GUI-based (Graphical User Interface) statistical software is extremely challenging, if not impossible**.
-
-Excel, for example, can struggle with performance issues and has a maximum row limit (1,048,576 rows), which is often insufficient for big data projects.
-
-The best tools for handling big data are [R](https://www.r-project.org/) and [Python](https://www.python.org/).
-
-::: {.notes}
 :::
 
 ## SISVAN Data (Tabular) {.smaller}
@@ -337,32 +266,6 @@ There are many open data formats available for researchers to use. Here are some
 ::: {.notes}
 :::
 
-## Fair Principles {.nostretch .smaller}
-
-![](images/fair-data-principles.png){fig-align="center" style="padding-top: 75px;"}
-
-::: footer
-(To learn more see: @wilkinson2016 and @gofairinitiative)
-:::
-
-::: {.notes}
-:::
-
-## Data Management Plans {.smaller}
-
-A data management plan (DMP) is a formal document that outlines how data will be managed throughout the research process.
-
-- [FAPESP](https://fapesp.br/gestaodedados)
-- [DMPTool](https://dmptool.org/)
-- [DMPonline](https://dmponline.dcc.ac.uk/)
-
-::: {}
-**Example**: [Associations between the duration and quality of sleep of pregnant women in the third trimester with the duration of labor](https://doi.org/10.48321/D1PS4M)
-:::
-
-::: {.notes}
-:::
-
 ## How to Read Data in R {.smaller}
 
 It will depend on what king of data you are working with.
@@ -463,7 +366,7 @@ If you need a better way to manage your WD, see the [`here`](https://here.r-lib.
 install.packages("readr")
 ```
 
-## Data Import {.smaller}
+## Importing Data {.smaller}
 
 ```r
 library(readr)
@@ -499,7 +402,7 @@ data |> glimpse()
 ::: {.notes}
 :::
 
-## Data Import {.smaller}
+## Importing Data {.smaller}
 
 ```{r}
 #| df-print: paged
@@ -510,7 +413,7 @@ data
 ::: {.notes}
 :::
 
-## Data Tidying {.smaller}
+## Tidying Data {.smaller}
 
 ## The `janitor` Package {.smaller}
 

@@ -1,3 +1,21 @@
+## Modeling with Tidyverse *versus* R base {.smaller}
+
+<!-- Teach only the tidymodels approach -->
+
+The [tidyverse](https://www.tidyverse.org/) ecosystem provides a structured and consistent approach to modeling in R through the [tidymodels](https://www.tidymodels.org/) framework.
+
+However, many users still rely on base R functions for modeling. Here, we’ll demonstrate both approaches, allowing you to choose the one that best suits your needs.
+
+We recommend the tidymodels approach for its simplicity and readability.
+
+::: {.notes}
+:::
+
+## The Tidymodels Collection
+
+::: {.notes}
+:::
+
 ## The *p*-value Problem {.smaller}
 
 ::::: {.columns}

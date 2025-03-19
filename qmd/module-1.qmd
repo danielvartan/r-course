@@ -7,6 +7,8 @@
 As such, we must understand the basics of how a computer works.
 
 It is essential to start from materiality; otherwise, things stop making sense.
+
+If you understand R at its core, you can navigate any challenge you encounter.
 :::
 ::: {.column style="width: 50%;"}
 ![](images/eroshka-ariadne-thread.png){fig-align="center" style="width: 55%;"}
@@ -21,54 +23,23 @@ It is essential to start from materiality; otherwise, things stop making sense.
 - If you just want to learn how to push buttons, stick to Excel or Stata.
 :::
 
-## A Bit of History {.smaller}
+## Computer Science {.smaller}
 
 :::: {.columns}
 ::: {.column style="width: 50%;"}
-[**Abacus**](https://en.wikipedia.org/wiki/Abacus) (~between 2700 and 2300 BCE) (Sumerians) [@ifrah2001]
+The science of information processes and their interactions with the world [@denning2005].
 
-[**Pascalina**](https://en.wikipedia.org/wiki/Pascaline) (1642) (Blaise Pascal (1623–1662)) [@ifrah2001]
-
-[**Babbage’s Difference Engine**](https://en.wikipedia.org/wiki/Difference_engine) (Charles Babbage (1792–1871))
+Computer science studies information processes both artificial and natural [@denning2005]. It seeks to build a scientific foundation
+for such topics as *computer design*, *computer programming*, *information processing*, *algorithmic solutions* of problems, and *the algorithmic process itself* [@brookshear2020].
 :::
 ::: {.column style="width: 50%;"}
 ![](images/richards-1950-chinese-abacus.jpg){fig-align="center" style="width: 80%; padding-top: 100px;"}
-:::
-::::
 
-::: footer
-(Photo by [Mark Richards](https://www.computerhistory.org/revolution/calculators/1/1/134?position=0))
-:::
-
-::: {.notes}
-:::
-
-## A Bit of History {.smaller}
-
-:::: {.columns}
-::: {.column style="width: 50%;"}
-**Keep in mind**
-
-- 1st World War (1914–1918)
-- 2nd World War (1939–1945)
-
-[**Universal Turing machine**](https://en.wikipedia.org/wiki/Universal_Turing_machine) (Alan Turing) [@turing1937]
-
-[**"von Neumann Architecture"**](https://en.wikipedia.org/wiki/Von_Neumann_architecture) (1945) [@vonneumann1993a]
-
-[**ENIAC**](https://en.wikipedia.org/wiki/ENIAC) (1945)
-:::
-::: {.column style="width: 50%;"}
 ![](images/science-history-images-eniac-figure-1.jpg){fig-align="center" style="width: 80%; padding-top: 50px;"}
 :::
 ::::
 
-::: footer
-(Photo by [Science History Images/Alamy Stock Photo](https://www.alamy.com/technicians-connecting-wires-of-eniac-image386295734.html))
-:::
-
 ::: {.notes}
-- [Enigma machine](https://en.wikipedia.org/wiki/Enigma_machine)
 :::
 
 ## Abstractions {.smaller}
@@ -361,23 +332,6 @@ Although R is a specialized language, you can stretch it to do almost anything (
 ::::
 
 ::: {.notes}
-:::
-
-## Data Engineering {.smaller .nostretch}
-
-::: {style="font-size: 0.75em"}
-> Data engineering is the development, implementation, and maintenance of systems and processes that take in raw data and produce high-quality, consistent information that supports downstream use cases, such as analysis and machine learning [@reis2022].
-:::
-
-![](images/reis-2022-figure-1-1.png){fig-align="center" style="width: 65%; padding-top: 0px;"}
-
-::: footer
-(Reproduced from @reis2022)
-:::
-
-::: {.notes}
-- Two main activities related to R.
-- You can think of data engineering as the **plumbing** of data science.
 :::
 
 ## Data Science {.nostretch .smaller}

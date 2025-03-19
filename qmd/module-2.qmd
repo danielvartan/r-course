@@ -10,7 +10,31 @@
 - Always use software in English.
 :::
 
+## Quarto Notebooks {.smaller}
+
 ## Creating a Project {.smaller}
+
+## Managing Your Project {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%;"}
+It is important to have a structured project directory. A best practice is to follow the structure made for **R Packages**.
+
+Every data project must be accompanied, at least, by a **README** file, explaining the project, and a **LICENSE** file, defining the terms of use of the data.
+:::
+::: {.column style="width: 50%;"}
+![](images/marwick-2018-figure-2.png){fig-align="center" style="width: 80%; padding-top: 0px;"}
+:::
+::::
+
+::: footer
+(Reproduced from @marwick2018)
+:::
+
+::: {.notes}
+:::
+
+## Quarto Notebooks {.smaller}
 
 ## Objects {.smaller}
 
@@ -899,16 +923,6 @@ help(mean)
 ::: {.notes}
 :::
 
-## Debugging {.smaller}
-
-![](images/allison-horst-figure-35.png){fig-align="center" style="width: 90%; padding-top: 0px;"}
-
-::: footer
-(Artwork by [Allison Horst](https://twitter.com/allison_horst))
-:::
-
-::: {.notes}
-:::
 
 ## The Tidyverse {.smaller}
 
@@ -959,6 +973,11 @@ You can do most of the things you need with the packages that come bundled with 
 In this course **we are going to focus on the Tidyverse and rOpenSci packages**, which are the most modern and efficient way to work with data in R.
 
 If you want a depper understanding of the R language, we encourage you to explore the base R solutions.
+
+## Best Practices {.smaller}
+
+- [Tidyverse style guide](https://style.tidyverse.org/)
+- [Tidy design principles](https://design.tidyverse.org/)
 
 ::: {.notes}
 :::

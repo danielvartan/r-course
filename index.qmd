@@ -41,7 +41,6 @@ We'll explore the following topics:
 # Introduction
 
 ::: {.notes}
-- See slides of the Open Science Presentation
 :::
 
 ## Pre-Course Survey {.smaller}
@@ -87,18 +86,18 @@ Understand basic concepts of hypothesis testing
 ::: {.column style="width: 47.5%;"}
 [![](images/usp-fsp-logo-bw-72-dpi.png){style="width: 35%; padding-top: 0px;"}](https://www.fsp.usp.br/)
 
-The course will take place in one of the laboratories of the Public Health School ([FSP]((https://www.fsp.usp.br/))) of the University of São Paulo ([USP](https://www5.usp.br/))/
+The course will take place in one of the laboratories of the Public Health School ([FSP]((https://www.fsp.usp.br/))) of the University of São Paulo ([USP](https://www5.usp.br/)).
 
 The classes are distributed over **5 days**, with a total of **9 hours**.
 :::
 ::: {.column style="width: 5%;"}
 :::
 ::: {.column style="width: 47.5%;"}
-- 24/03 (Monday) 13:00-14:00
-- 25/03 (Tuesday) 13:00-14:00
-- 26/03 (Wednesday) [**13:00-18:00**]{.brand-red}
-- 27/03 (Thursday) 13:00-14:00
-- 28/03 (Friday) 13:00-14:00
+- Monday (24/03)_13:00-14:00
+- Tuesday (25/03) 13:00-14:00
+- Wednesday (26/03) [**13:00-18:00**]{.brand-red}
+- Thursday (27/03) 13:00-14:00
+- Friday (28/03) 13:00-14:00
 :::
 ::::
 
@@ -174,47 +173,68 @@ One of the best ways to get help is to search or ask questions on forums like [S
 ::: {.notes}
 :::
 
+## Class Dynamic {.smaller}
+
+- Theory followed by practice.
+- Final project.
+
+::: {.notes}
+:::
+
+## Notes {.smaller}
+
+- 💾 Bring a flash drive/pen drive.
+- 👩‍💻 Use the same computer for all classes.
+- 💬 Always open this presentation in the browser.
+- 🤝 Help each other.
+- 🙋‍♂️ Ask questions.
+- 🎉 Have fun!
+
+::: {.notes}
+:::
+
 # Module 1<br>[Computer Science]{.brand-brown-750} {.smaller data-menu-title="Module 1: Computer Science"}
+
+::: {.notes}
+:::
+
 
 {{< include ./qmd/module-1.qmd >}}
 
+# Module 2<br>[R Basics]{.brand-brown-750} {.smaller data-menu-title="Module 2: R Basics"}
+
 ::: {.notes}
 :::
-
-# Module 2<br>[R Basics]{.brand-brown-750} {.smaller data-menu-title="Module 2: R Basics"}
 
 {{< include ./qmd/module-2.qmd >}}
 
+# Module 3<br>[Data Munging]{.brand-brown-750} {.smaller data-menu-title="Module 3: Data Munging"}
+
 ::: {.notes}
 :::
-
-# Module 3<br>[Data Munging]{.brand-brown-750} {.smaller data-menu-title="Module 3: Data Munging"}
 
 {{< include ./qmd/module-3.qmd >}}
 
+# Module 4<br>[Data Visualization]{.brand-brown-750} {.smaller data-menu-title="Module 4: Data Visualization"}
+
 ::: {.notes}
 :::
-
-# Module 4<br>[Data Visualization]{.brand-brown-750} {.smaller data-menu-title="Module 4: Data Visualization"}
 
 {{< include ./qmd/module-4.qmd >}}
 
+# Module 5<br>[Exploratory Data Analysis]{.brand-brown-750} {.smaller data-menu-title="Module 5: Exploratory Data Analysis"}
+
 ::: {.notes}
 :::
-
-# Module 5<br>[Exploratory Data Analysis]{.brand-brown-750} {.smaller data-menu-title="Module 5: Exploratory Data Analysis"}
 
 {{< include ./qmd/module-5.qmd >}}
 
-::: {.notes}
-:::
-
 # Module 6<br>[Modeling]{.brand-brown-750} {.smaller data-menu-title="Module 6: Modeling"}
 
-{{< include ./qmd/module-6.qmd >}}
-
 ::: {.notes}
 :::
+
+{{< include ./qmd/module-6.qmd >}}
 
 # Module 7<br>[Some Other Things You May Need to Know]{.brand-brown-750} {.smaller data-menu-title="Module 7: Some Other Things You May Need to Know"}
 
@@ -285,27 +305,6 @@ In accordance with the [American Psychological Association (APA) Style](https://
 ::: {.notes}
 :::
 
-# Appendices {visibility="uncounted"}
+{{< include ./qmd/appendices.qmd >}}
 
-::: {.notes}
-:::
-
-## (AP) Strings {visibility="uncounted"}
-
-::: {.notes}
-:::
-
-## (AP) Regular Expressions {visibility="uncounted"}
-
-::: {.notes}
-:::
-
-## (AP) Lookup Tables {visibility="uncounted"}
-
-::: {.notes}
-:::
-
-## (AP) Joins {visibility="uncounted"}
-
-::: {.notes}
-:::
+{{< include ./qmd/teaching-plan.qmd >}}

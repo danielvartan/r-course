@@ -32,7 +32,7 @@
     "href": "index.html#schedule",
     "title": "An Introduction to the R Programming Language",
     "section": "Schedule",
-    "text": "Schedule\n\n\n\nThe course will take place in one of the laboratories of the Public Health School (FSP) of the University of São Paulo (USP)/\nThe classes are distributed over 5 days, with a total of 9 hours.\n\n\n\n\n24/03 (Monday) 13:00-14:00\n25/03 (Tuesday) 13:00-14:00\n26/03 (Wednesday) 13:00-18:00\n\n27/03 (Thursday) 13:00-14:00\n28/03 (Friday) 13:00-14:00\n\n\n\nFSP Laboratories"
+    "text": "Schedule\n\n\n\nThe course will take place in one of the laboratories of the Public Health School (FSP) of the University of São Paulo (USP).\nThe classes are distributed over 5 days, with a total of 9 hours.\n\n\n\n\nMonday (24/03)_13:00-14:00\nTuesday (25/03) 13:00-14:00\nWednesday (26/03) 13:00-18:00\n\nThursday (27/03) 13:00-14:00\nFriday (28/03) 13:00-14:00\n\n\n\nFSP Laboratories"
   },
   {
     "objectID": "index.html#main-references",
@@ -63,25 +63,32 @@
     "text": "Examples of Data Reports\n\n\n\n\n\n\nGlobal Syndemic ProjectData Report 3\n\n\n\n\n\nA Demonstration of General Linear Models Using Penguins"
   },
   {
+    "objectID": "index.html#class-dynamic",
+    "href": "index.html#class-dynamic",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Class Dynamic",
+    "text": "Class Dynamic\n\nTheory followed by practice.\nFinal project."
+  },
+  {
+    "objectID": "index.html#notes",
+    "href": "index.html#notes",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Notes",
+    "text": "Notes\n\n💾 Bring a flash drive/pen drive.\n👩‍💻 Use the same computer for all classes.\n💬 Always open this presentation in the browser.\n🤝 Help each other.\n🙋‍♂️ Ask questions.\n🎉 Have fun!"
+  },
+  {
     "objectID": "index.html#lets-start-from-zero",
     "href": "index.html#lets-start-from-zero",
     "title": "An Introduction to the R Programming Language",
     "section": "Let’s Start from Zero",
-    "text": "Let’s Start from Zero\n\n\nThis is a programming course.\nAs such, we must understand the basics of how a computer works.\nIt is essential to start from materiality; otherwise, things stop making sense.\n\n\n\n\n\n\n\n(Artwork by Eroshka)\n\n\nIf you just want to learn how to push buttons, stick to Excel or Stata."
+    "text": "Let’s Start from Zero\n\n\nThis is a programming course.\nAs such, we must understand the basics of how a computer works.\nIt is essential to start from materiality; otherwise, things stop making sense.\nIf you understand R at its core, you can navigate any challenge you encounter.\n\n\n\n\n\n\n\n(Artwork by Eroshka)\n\n\nIf you just want to learn how to push buttons, stick to Excel or Stata."
   },
   {
-    "objectID": "index.html#a-bit-of-history",
-    "href": "index.html#a-bit-of-history",
+    "objectID": "index.html#computer-science",
+    "href": "index.html#computer-science",
     "title": "An Introduction to the R Programming Language",
-    "section": "A Bit of History",
-    "text": "A Bit of History\n\n\nAbacus (~between 2700 and 2300 BCE) (Sumerians) (Ifrah, 1994/2001)\nPascalina (1642) (Blaise Pascal (1623–1662)) (Ifrah, 1994/2001)\nBabbage’s Difference Engine (Charles Babbage (1792–1871))\n\n\n\n\n\n\n\n(Photo by Mark Richards)"
-  },
-  {
-    "objectID": "index.html#a-bit-of-history-1",
-    "href": "index.html#a-bit-of-history-1",
-    "title": "An Introduction to the R Programming Language",
-    "section": "A Bit of History",
-    "text": "A Bit of History\n\n\nKeep in mind\n\n1st World War (1914–1918)\n2nd World War (1939–1945)\n\nUniversal Turing machine (Alan Turing) (Turing, 1937)\n“von Neumann Architecture” (1945) (von Neumann, 1993)\nENIAC (1945)\n\n\n\n\n\n\n\n(Photo by Science History Images/Alamy Stock Photo)\n\n\nEnigma machine"
+    "section": "Computer Science",
+    "text": "Computer Science\n\n\nThe science of information processes and their interactions with the world (Denning, 2005).\nComputer science studies information processes both artificial and natural (Denning, 2005). It seeks to build a scientific foundation for such topics as computer design, computer programming, information processing, algorithmic solutions of problems, and the algorithmic process itself (Brookshear & Brylow, 2020)."
   },
   {
     "objectID": "index.html#abstractions",
@@ -189,13 +196,6 @@
     "text": "Important R Comm. and Events"
   },
   {
-    "objectID": "index.html#data-engineering",
-    "href": "index.html#data-engineering",
-    "title": "An Introduction to the R Programming Language",
-    "section": "Data Engineering",
-    "text": "Data Engineering\n\n\nData engineering is the development, implementation, and maintenance of systems and processes that take in raw data and produce high-quality, consistent information that supports downstream use cases, such as analysis and machine learning (Reis & Housley, 2022).\n\n\n\n\n\n\n\n(Reproduced from Reis & Housley (2022))\n\n\nTwo main activities related to R.\nYou can think of data engineering as the plumbing of data science."
-  },
-  {
     "objectID": "index.html#data-science",
     "href": "index.html#data-science",
     "title": "An Introduction to the R Programming Language",
@@ -224,11 +224,32 @@
     "text": "The RStudio IDE\n\nAlways use software in English."
   },
   {
+    "objectID": "index.html#quarto-notebooks",
+    "href": "index.html#quarto-notebooks",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Quarto Notebooks",
+    "text": "Quarto Notebooks"
+  },
+  {
     "objectID": "index.html#creating-a-project",
     "href": "index.html#creating-a-project",
     "title": "An Introduction to the R Programming Language",
     "section": "Creating a Project",
     "text": "Creating a Project"
+  },
+  {
+    "objectID": "index.html#managing-your-project",
+    "href": "index.html#managing-your-project",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Managing Your Project",
+    "text": "Managing Your Project\n\n\nIt is important to have a structured project directory. A best practice is to follow the structure made for R Packages.\nEvery data project must be accompanied, at least, by a README file, explaining the project, and a LICENSE file, defining the terms of use of the data.\n\n\n\n\n\n\n\n(Reproduced from Marwick et al. (2018))"
+  },
+  {
+    "objectID": "index.html#quarto-notebooks-1",
+    "href": "index.html#quarto-notebooks-1",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Quarto Notebooks",
+    "text": "Quarto Notebooks"
   },
   {
     "objectID": "index.html#objects",
@@ -368,7 +389,7 @@
     "href": "index.html#functionals",
     "title": "An Introduction to the R Programming Language",
     "section": "Functionals",
-    "text": "Functionals\n\n\nA functional is a function that takes a function as an input and returns a vector as output (Wickham, 2019).\nIt makes the work of the programmer easier, because it allows to apply a function to a vector without the need of a loop. Because these functions are written in C, they are very fast.\nR have native functionals (e.g., lapply()), but prefer solutions from the purrr package.\n\n\n\n\ntriple &lt;- function(x) x * 3\n\n\nwith_for_loop &lt;- function(x) {\n  out &lt;- numeric()\n  for (i in x) out &lt;- c(out, triple(i))\n  out\n}\n\n\nlibrary(purrr)\n\nwith_map &lt;- function(x) map_dbl(x, triple)\n\n\nlibrary(microbenchmark)\n\nmicrobenchmark(\n  with_for_loop(1:1000),\n  with_map(1:1000),\n  times = 100,\n  check = \"equal\"\n)\n#&gt; Unit: microseconds\n#&gt;                   expr     min       lq      mean   median       uq      max\n#&gt;  with_for_loop(1:1000) 702.957 754.5475 1119.5806 817.0240 907.1630 4625.675\n#&gt;       with_map(1:1000) 286.874 308.2195  342.9847 328.1075 353.9085 1012.771\n#&gt;  neval cld\n#&gt;    100  a \n#&gt;    100   b"
+    "text": "Functionals\n\n\nA functional is a function that takes a function as an input and returns a vector as output (Wickham, 2019).\nIt makes the work of the programmer easier, because it allows to apply a function to a vector without the need of a loop. Because these functions are written in C, they are very fast.\nR have native functionals (e.g., lapply()), but prefer solutions from the purrr package.\n\n\n\n\ntriple &lt;- function(x) x * 3\n\n\nwith_for_loop &lt;- function(x) {\n  out &lt;- numeric()\n  for (i in x) out &lt;- c(out, triple(i))\n  out\n}\n\n\nlibrary(purrr)\n\nwith_map &lt;- function(x) map_dbl(x, triple)\n\n\nlibrary(microbenchmark)\n\nmicrobenchmark(\n  with_for_loop(1:1000),\n  with_map(1:1000),\n  times = 100,\n  check = \"equal\"\n)\n#&gt; Unit: microseconds\n#&gt;                   expr     min      lq      mean   median       uq      max\n#&gt;  with_for_loop(1:1000) 784.623 845.168 1207.6154 898.5985 952.7205 5750.999\n#&gt;       with_map(1:1000) 299.510 314.445  350.2287 337.3155 368.4010 1025.327\n#&gt;  neval cld\n#&gt;    100  a \n#&gt;    100   b"
   },
   {
     "objectID": "index.html#enviroments",
@@ -413,13 +434,6 @@
     "text": "Documentation\nOne the most important things in programming is to know how to find help. In R, you can use the help() function to get help on a function or package.\nSince R has more an academic focus, documentation is usually plentiful and very well written.\n\nhelp(mean)\n?mean"
   },
   {
-    "objectID": "index.html#debugging",
-    "href": "index.html#debugging",
-    "title": "An Introduction to the R Programming Language",
-    "section": "Debugging",
-    "text": "Debugging\n\n\n(Artwork by Allison Horst)"
-  },
-  {
     "objectID": "index.html#the-tidyverse",
     "href": "index.html#the-tidyverse",
     "title": "An Introduction to the R Programming Language",
@@ -448,18 +462,18 @@
     "text": "Base R Solutions\nYou can do most of the things you need with the packages that come bundled with R. However, that is not the most efficient way to do things today.\nIn this course we are going to focus on the Tidyverse and rOpenSci packages, which are the most modern and efficient way to work with data in R.\nIf you want a depper understanding of the R language, we encourage you to explore the base R solutions."
   },
   {
+    "objectID": "index.html#best-practices",
+    "href": "index.html#best-practices",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Best Practices",
+    "text": "Best Practices\n\nTidyverse style guide\nTidy design principles"
+  },
+  {
     "objectID": "index.html#data-science-workflow",
     "href": "index.html#data-science-workflow",
     "title": "An Introduction to the R Programming Language",
     "section": "Data Science Workflow",
     "text": "Data Science Workflow\n\n\n(Reproduced from Wickham et al. (2023))"
-  },
-  {
-    "objectID": "index.html#managing-your-project",
-    "href": "index.html#managing-your-project",
-    "title": "An Introduction to the R Programming Language",
-    "section": "Managing Your Project",
-    "text": "Managing Your Project\n\n\nIt is important to have a structured project directory. A best practice is to follow the structure made for R Packages.\nEvery data project must be accompanied, at least, by a README file, explaining the project, and a LICENSE file, defining the terms of use of the data.\n\n\n\n\n\n\n\n(Reproduced from Marwick et al. (2018))"
   },
   {
     "objectID": "index.html#what-is-data-after-all",
@@ -497,13 +511,6 @@
     "text": "Valid Data\nData validation techniques are used to ensure that data is accurate, consistent, and reliable.\n\nExamples\n\nImpossible values (e.g., negative age);\nInconsistent values (e.g., a person with a height of 2 meters and a weight of 20 kg);\nImprobable values (e.g., a person 200 years old);\nDuplicated values (e.g., the same person with two different ages)."
   },
   {
-    "objectID": "index.html#the-tidy-data-manifesto",
-    "href": "index.html#the-tidy-data-manifesto",
-    "title": "An Introduction to the R Programming Language",
-    "section": "The Tidy Data Manifesto",
-    "text": "The Tidy Data Manifesto\n\n(Wickham, 2014)"
-  },
-  {
     "objectID": "index.html#tidy-data",
     "href": "index.html#tidy-data",
     "title": "An Introduction to the R Programming Language",
@@ -530,34 +537,6 @@
     "title": "An Introduction to the R Programming Language",
     "section": "Tidy Data",
     "text": "Tidy Data\n\n\n(Artwork by Allison Horst)"
-  },
-  {
-    "objectID": "index.html#tidy-data-3",
-    "href": "index.html#tidy-data-3",
-    "title": "An Introduction to the R Programming Language",
-    "section": "Tidy Data",
-    "text": "Tidy Data\n\n\n(Artwork by Allison Horst)"
-  },
-  {
-    "objectID": "index.html#best-practices",
-    "href": "index.html#best-practices",
-    "title": "An Introduction to the R Programming Language",
-    "section": "Best Practices",
-    "text": "Best Practices\n\nTidyverse style guide\nTidy design principles"
-  },
-  {
-    "objectID": "index.html#big-data",
-    "href": "index.html#big-data",
-    "title": "An Introduction to the R Programming Language",
-    "section": "Big Data",
-    "text": "Big Data\n\n\n\nBig data will be dead in 5 Years: Everything will be big data, so it won’t need a special name. (Gavin, 2020)\n\n\n\n\n\n\n\n\n(Artwork by David Fletcher)"
-  },
-  {
-    "objectID": "index.html#big-data-wrangling",
-    "href": "index.html#big-data-wrangling",
-    "title": "An Introduction to the R Programming Language",
-    "section": "Big Data Wrangling",
-    "text": "Big Data Wrangling\nWorking with big data using Excel or GUI-based (Graphical User Interface) statistical software is extremely challenging, if not impossible.\nExcel, for example, can struggle with performance issues and has a maximum row limit (1,048,576 rows), which is often insufficient for big data projects.\nThe best tools for handling big data are R and Python."
   },
   {
     "objectID": "index.html#sisvan-data-tabular",
@@ -616,20 +595,6 @@
     "text": "Open Data Formats\nThere are many open data formats available for researchers to use. Here are some examples:\nExcel files are not a open data format!\n\n\nTabular Data\n\nComma-Separated Values (CSV)\nApache Parquet\n\n\n\n\nHierarchical Data\n\nJSON\nYAML\nTOML\nXML"
   },
   {
-    "objectID": "index.html#fair-principles",
-    "href": "index.html#fair-principles",
-    "title": "An Introduction to the R Programming Language",
-    "section": "Fair Principles",
-    "text": "Fair Principles\n\n\n\n\n\n(To learn more see: M. D. Wilkinson et al. (2016) and GO FAIR initiative (n.d.))"
-  },
-  {
-    "objectID": "index.html#data-management-plans",
-    "href": "index.html#data-management-plans",
-    "title": "An Introduction to the R Programming Language",
-    "section": "Data Management Plans",
-    "text": "Data Management Plans\nA data management plan (DMP) is a formal document that outlines how data will be managed throughout the research process.\n\nFAPESP\nDMPTool\nDMPonline\n\n\nExample: Associations between the duration and quality of sleep of pregnant women in the third trimester with the duration of labor"
-  },
-  {
     "objectID": "index.html#how-to-read-data-in-r",
     "href": "index.html#how-to-read-data-in-r",
     "title": "An Introduction to the R Programming Language",
@@ -665,25 +630,25 @@
     "text": "The readr Package\ninstall.packages(\"readr\")"
   },
   {
-    "objectID": "index.html#data-import",
-    "href": "index.html#data-import",
+    "objectID": "index.html#importing-data",
+    "href": "index.html#importing-data",
     "title": "An Introduction to the R Programming Language",
-    "section": "Data Import",
-    "text": "Data Import\nlibrary(readr)\n\n?read_csv\n?read_delim\n\nlibrary(here)\nlibrary(palmerpenguins)\nlibrary(readr)\n\ndata &lt;-\n  here(\"data\", \"palmer-penguins-raw.csv\") |&gt;\n  read_csv(col_types = readr::cols(.default = \"c\"))\n\n\nView(data)\n\n\nlibrary(dplyr)\n\ndata |&gt; glimpse()"
+    "section": "Importing Data",
+    "text": "Importing Data\nlibrary(readr)\n\n?read_csv\n?read_delim\n\nlibrary(here)\nlibrary(palmerpenguins)\nlibrary(readr)\n\ndata &lt;-\n  here(\"data\", \"palmer-penguins-raw.csv\") |&gt;\n  read_csv(col_types = readr::cols(.default = \"c\"))\n\n\nView(data)\n\n\nlibrary(dplyr)\n\ndata |&gt; glimpse()"
   },
   {
-    "objectID": "index.html#data-import-1",
-    "href": "index.html#data-import-1",
+    "objectID": "index.html#importing-data-1",
+    "href": "index.html#importing-data-1",
     "title": "An Introduction to the R Programming Language",
-    "section": "Data Import",
-    "text": "Data Import\n\ndata\n#&gt; # A tibble: 344 × 17\n#&gt;    studyName `Sample Number` Species         Region Island Stage `Individual ID`\n#&gt;    &lt;chr&gt;     &lt;chr&gt;           &lt;chr&gt;           &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;          \n#&gt;  1 PAL0708   1               Adelie Penguin… Anvers Torge… Adul… N1A1           \n#&gt;  2 PAL0708   2               Adelie Penguin… Anvers Torge… Adul… N1A2           \n#&gt;  3 PAL0708   3               Adelie Penguin… Anvers Torge… Adul… N2A1           \n#&gt;  4 PAL0708   4               Adelie Penguin… Anvers Torge… Adul… N2A2           \n#&gt;  5 PAL0708   5               Adelie Penguin… Anvers Torge… Adul… N3A1           \n#&gt;  6 PAL0708   6               Adelie Penguin… Anvers Torge… Adul… N3A2           \n#&gt;  7 PAL0708   7               Adelie Penguin… Anvers Torge… Adul… N4A1           \n#&gt;  8 PAL0708   8               Adelie Penguin… Anvers Torge… Adul… N4A2           \n#&gt;  9 PAL0708   9               Adelie Penguin… Anvers Torge… Adul… N5A1           \n#&gt; 10 PAL0708   10              Adelie Penguin… Anvers Torge… Adul… N5A2           \n#&gt; # ℹ 334 more rows\n#&gt; # ℹ 10 more variables: `Clutch Completion` &lt;chr&gt;, `Date Egg` &lt;chr&gt;,\n#&gt; #   `Culmen Length (mm)` &lt;chr&gt;, `Culmen Depth (mm)` &lt;chr&gt;,\n#&gt; #   `Flipper Length (mm)` &lt;chr&gt;, `Body Mass (g)` &lt;chr&gt;, Sex &lt;chr&gt;,\n#&gt; #   `Delta 15 N (o/oo)` &lt;chr&gt;, `Delta 13 C (o/oo)` &lt;chr&gt;, Comments &lt;chr&gt;"
+    "section": "Importing Data",
+    "text": "Importing Data\n\ndata\n#&gt; # A tibble: 344 × 17\n#&gt;    studyName `Sample Number` Species         Region Island Stage `Individual ID`\n#&gt;    &lt;chr&gt;     &lt;chr&gt;           &lt;chr&gt;           &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;          \n#&gt;  1 PAL0708   1               Adelie Penguin… Anvers Torge… Adul… N1A1           \n#&gt;  2 PAL0708   2               Adelie Penguin… Anvers Torge… Adul… N1A2           \n#&gt;  3 PAL0708   3               Adelie Penguin… Anvers Torge… Adul… N2A1           \n#&gt;  4 PAL0708   4               Adelie Penguin… Anvers Torge… Adul… N2A2           \n#&gt;  5 PAL0708   5               Adelie Penguin… Anvers Torge… Adul… N3A1           \n#&gt;  6 PAL0708   6               Adelie Penguin… Anvers Torge… Adul… N3A2           \n#&gt;  7 PAL0708   7               Adelie Penguin… Anvers Torge… Adul… N4A1           \n#&gt;  8 PAL0708   8               Adelie Penguin… Anvers Torge… Adul… N4A2           \n#&gt;  9 PAL0708   9               Adelie Penguin… Anvers Torge… Adul… N5A1           \n#&gt; 10 PAL0708   10              Adelie Penguin… Anvers Torge… Adul… N5A2           \n#&gt; # ℹ 334 more rows\n#&gt; # ℹ 10 more variables: `Clutch Completion` &lt;chr&gt;, `Date Egg` &lt;chr&gt;,\n#&gt; #   `Culmen Length (mm)` &lt;chr&gt;, `Culmen Depth (mm)` &lt;chr&gt;,\n#&gt; #   `Flipper Length (mm)` &lt;chr&gt;, `Body Mass (g)` &lt;chr&gt;, Sex &lt;chr&gt;,\n#&gt; #   `Delta 15 N (o/oo)` &lt;chr&gt;, `Delta 13 C (o/oo)` &lt;chr&gt;, Comments &lt;chr&gt;"
   },
   {
-    "objectID": "index.html#data-tidying",
-    "href": "index.html#data-tidying",
+    "objectID": "index.html#tidying-data",
+    "href": "index.html#tidying-data",
     "title": "An Introduction to the R Programming Language",
-    "section": "Data Tidying",
-    "text": "Data Tidying"
+    "section": "Tidying Data",
+    "text": "Tidying Data"
   },
   {
     "objectID": "index.html#the-janitor-package",
@@ -894,6 +859,20 @@
     "title": "An Introduction to the R Programming Language",
     "section": "Correlation Matrices",
     "text": "Correlation Matrices\n\nCodelibrary(GGally)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\n\npenguins |&gt;\n  select(species, body_mass_g, ends_with(\"_mm\")) |&gt;\n  GGally::ggpairs(aes(color = species)) +\n  scale_colour_manual(values = c(\"darkorange\",\"purple\",\"cyan4\")) +\n  scale_fill_manual(values = c(\"darkorange\",\"purple\",\"cyan4\"))\n\n\nThe GGally package, an extension of ggplot2."
+  },
+  {
+    "objectID": "index.html#modeling-with-tidyverse-versus-r-base",
+    "href": "index.html#modeling-with-tidyverse-versus-r-base",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Modeling with Tidyverse versus R base",
+    "text": "Modeling with Tidyverse versus R base\n\nThe tidyverse ecosystem provides a structured and consistent approach to modeling in R through the tidymodels framework.\nHowever, many users still rely on base R functions for modeling. Here, we’ll demonstrate both approaches, allowing you to choose the one that best suits your needs.\nWe recommend the tidymodels approach for its simplicity and readability."
+  },
+  {
+    "objectID": "index.html#the-tidymodels-collection",
+    "href": "index.html#the-tidymodels-collection",
+    "title": "An Introduction to the R Programming Language",
+    "section": "The Tidymodels Collection",
+    "text": "The Tidymodels Collection"
   },
   {
     "objectID": "index.html#the-p-value-problem",
@@ -1222,7 +1201,7 @@
     "href": "index.html#references",
     "title": "An Introduction to the R Programming Language",
     "section": "References",
-    "text": "References\n\nIn accordance with the American Psychological Association (APA) Style, 7th edition.\n\n\n\nAckoff, R. (1989). From data to wisdom. Journal of Applied Systems Analysis, 16, 3–9.\n\n\nBroman, K. (2013, April 5). Data science is statistics. The stupidest thing... https://kbroman.wordpress.com/2013/04/05/data-science-is-statistics/\n\n\nBrookshear, J. G., & Brylow, D. (2020). Computer science: An overview (13 ed., Global edition). Pearson.\n\n\nCao, L. (2017). Data science: A comprehensive overview. ACM Computing Surveys, 50(3), 43. https://doi.org/10.1145/3076253\n\n\nChang, W. (2018). R graphics cookbook: Practical recipes for visualizing data (2nd ed.). O’Reilly Media. https://r-graphics.org\n\n\nCohen, J. (1988). Statistical power analysis for the behavioral sciences (2nd ed.). Lawrence Erlbaum Associates.\n\n\nCohen, J. (1992). A power primer. Psychological Bulletin, 112(1), 155–159. https://doi.org/10.1037/0033-2909.112.1.155\n\n\nCoronel, C., & Morris, S. A. (2019). Database systems: Design, implementation, and management (13th ed.). Cengage.\n\n\nDhar, V. (2023). Data science and prediction. Communications of the ACM, 56(12), 64–73. https://doi.org/10.1145/2500499\n\n\nEllis, S. E., & Leek, J. T. (2018). How to share data for collaboration. The American Statistician, 72(1), 53–57. https://doi.org/10.1080/00031305.2017.1375987\n\n\nGavin, L. (2020, October 20). Big data will be dead in 5 years. Towards Data Science. https://towardsdatascience.com/big-data-will-be-dead-in-5-years-ef4344269aef\n\n\nGO FAIR initiative. (n.d.). GO FAIR initiative: Make your data & services FAIR. GO FAIR. Retrieved June 10, 2024, from https://www.go-fair.org/\n\n\nGómez-de-Mariscal, E., Guerrero, V., Sneider, A., Jayatilaka, H., Phillip, J. M., Wirtz, D., & Muñoz-Barrutia, A. (2021). Use of the p-values as a size-dependent function to address practical differences when analyzing large datasets. Scientific Reports, 11(1, 1), 20942. https://doi.org/10.1038/s41598-021-00199-5\n\n\nGrosser, M., Bumann, H., & Wickham, H. (2021). Advanced R solutions. CRC Press.\n\n\nIfrah, G. (2001). The universal history of computing: From the abacus to the quantum computer (E. F. Harding, Trans.). John Wiley & Sons. (Original work published 1994)\n\n\nIhaka, R., & Gentleman, R. (1996). R: A language for data analysis and graphics. Journal of Computational and Graphical Statistics, 5(3), 299–314. https://doi.org/10.1080/10618600.1996.10474713\n\n\nLandau, W. (n.d.). The {targets} R package user manual.\n\n\nLohr, S. (2014, August 18). For big-data scientists, “Janitor work” is key hurdle to insights. The New York Times: Technology. https://www.nytimes.com/2014/08/18/technology/for-big-data-scientists-hurdle-to-insights-is-janitor-work.html\n\n\nMarwick, B., Boettiger, C., & Mullen, L. (2018). Packaging data analytical work reproducibly using R (and friends). The American Statistician, 72(1), 80–88. https://doi.org/10.1080/00031305.2017.1375986\n\n\nMeyer, M. N. (2018). Practical tips for ethical data sharing. Advances in Methods and Practices in Psychological Science, 1(1), 131–144. https://doi.org/10.1177/2515245917747656\n\n\nPeng, R. D. (2022). R programming for data science. https://bookdown.org/rdpeng/rprogdatascience/\n\n\nReis, J., & Housley, M. (2022). Fundamentals of data engineering: Plan and build robust data systems. O’Reilly.\n\n\nRowley, J. (2007). The wisdom hierarchy: Representations of the DIKW hierarchy. Journal of Information Science, 33(2), 163–180. https://doi.org/10.1177/0165551506070706\n\n\nTuring, A. M. (1937). On computable numbers, with an application to the entscheidungsproblem. Proceedings of the London Mathematical Society, s2-42(1), 230–265. https://doi.org/10.1112/plms/s2-42.1.230\n\n\nvan der Loo, M., & Jonge, E. de. (2018). Statistical data cleaning with applications in R. John Wiley & Sons.\n\n\nvon Neumann, J. (1993). First draft of a report on the EDVAC. IEEE Annals of the History of Computing, 15(4), 27–75. IEEE Annals of the History of Computing. https://doi.org/10.1109/85.238389\n\n\nWickham, H. (n.d.). The tidyverse style guide. Retrieved July 17, 2023, from https://style.tidyverse.org\n\n\nWickham, H. (2014). Tidy data. Journal of Statistical Software, 59(10). https://doi.org/10.18637/jss.v059.i10\n\n\nWickham, H. (2016). ggplot2: Elegant graphics for data analysis (2nd ed.). Springer. https://doi.org/10.1007/978-3-319-24277-4\n\n\nWickham, H. (2019). Advanced R (2nd ed.). CRC Press. https://adv-r.hadley.nz\n\n\nWickham, H., & Bryan, J. (2023). R packages (2nd ed.). O’Reilly Media. https://r-pkgs.org\n\n\nWickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2023). R for data science: Import, tidy, transform, visualize, and model data (2nd ed.). O’Reilly Media. https://r4ds.hadley.nz\n\n\nWilkinson, L. (2005). The grammar of graphics (J. Chambers, D. Hand, & W. Härdle, Eds.; 2nd ed.). Springer.\n\n\nWilkinson, M. D., Dumontier, M., Aalbersberg, Ij. J., Appleton, G., Axton, M., Baak, A., Blomberg, N., Boiten, J.-W., Da Silva Santos, L. B., Bourne, P. E., Bouwman, J., Brookes, A. J., Clark, T., Crosas, M., Dillo, I., Dumon, O., Edmunds, S., Evelo, C. T., Finkers, R., … Mons, B. (2016). The FAIR guiding principles for scientific data management and stewardship. Scientific Data, 3(1), 160018. https://doi.org/10.1038/sdata.2016.18"
+    "text": "References\n\nIn accordance with the American Psychological Association (APA) Style, 7th edition.\n\n\n\nAckoff, R. (1989). From data to wisdom. Journal of Applied Systems Analysis, 16, 3–9.\n\n\nBernardes, M. E. M. (2009). Ensino e aprendizagem como unidade dialética na atividade pedagógica. Psicologia Escolar e Educacional, 13(2), 235–242. https://doi.org/10.1590/S1413-85572009000200005\n\n\nBroman, K. (2013, April 5). Data science is statistics. The stupidest thing... https://kbroman.wordpress.com/2013/04/05/data-science-is-statistics/\n\n\nBrookshear, J. G., & Brylow, D. (2020). Computer science: An overview (13 ed., Global edition). Pearson.\n\n\nCao, L. (2017). Data science: A comprehensive overview. ACM Computing Surveys, 50(3), 43. https://doi.org/10.1145/3076253\n\n\nChang, W. (2018). R graphics cookbook: Practical recipes for visualizing data (2nd ed.). O’Reilly Media. https://r-graphics.org\n\n\nCohen, J. (1988). Statistical power analysis for the behavioral sciences (2nd ed.). Lawrence Erlbaum Associates.\n\n\nCohen, J. (1992). A power primer. Psychological Bulletin, 112(1), 155–159. https://doi.org/10.1037/0033-2909.112.1.155\n\n\nCoronel, C., & Morris, S. A. (2019). Database systems: Design, implementation, and management (13th ed.). Cengage.\n\n\nDenning, P. J. (2005). Is computer science science? Communications of the ACM, 48(4), 27–31. https://doi.org/10.1145/1053291.1053309\n\n\nDhar, V. (2023). Data science and prediction. Communications of the ACM, 56(12), 64–73. https://doi.org/10.1145/2500499\n\n\nEllis, S. E., & Leek, J. T. (2018). How to share data for collaboration. The American Statistician, 72(1), 53–57. https://doi.org/10.1080/00031305.2017.1375987\n\n\nEngels, F. (2020). Dialética da natureza (Traduzido do original em alemão Dialektik der natur (1873-1882).) (N. Schneider, Trans.). Boitempo.\n\n\nFreire, P. (2011). Pedagogia da autonomia: saberes necessários à prática educativa (OCLC: 1229931361). Paz e Terra.\n\n\nGavin, L. (2020, October 20). Big data will be dead in 5 years. Towards Data Science. https://towardsdatascience.com/big-data-will-be-dead-in-5-years-ef4344269aef\n\n\nGO FAIR initiative. (n.d.). GO FAIR initiative: Make your data & services FAIR. GO FAIR. Retrieved June 10, 2024, from https://www.go-fair.org/\n\n\nGómez-de-Mariscal, E., Guerrero, V., Sneider, A., Jayatilaka, H., Phillip, J. M., Wirtz, D., & Muñoz-Barrutia, A. (2021). Use of the p-values as a size-dependent function to address practical differences when analyzing large datasets. Scientific Reports, 11(1, 1), 20942. https://doi.org/10.1038/s41598-021-00199-5\n\n\nGrosser, M., Bumann, H., & Wickham, H. (2021). Advanced R solutions. CRC Press.\n\n\nIfrah, G. (2001). The universal history of computing: From the abacus to the quantum computer (E. F. Harding, Trans.). John Wiley & Sons. (Original work published 1994)\n\n\nIhaka, R., & Gentleman, R. (1996). R: A language for data analysis and graphics. Journal of Computational and Graphical Statistics, 5(3), 299–314. https://doi.org/10.1080/10618600.1996.10474713\n\n\nLandau, W. (n.d.). The {targets} R package user manual.\n\n\nLohr, S. (2014, August 18). For big-data scientists, “Janitor work” is key hurdle to insights. The New York Times: Technology. https://www.nytimes.com/2014/08/18/technology/for-big-data-scientists-hurdle-to-insights-is-janitor-work.html\n\n\nMarwick, B., Boettiger, C., & Mullen, L. (2018). Packaging data analytical work reproducibly using R (and friends). The American Statistician, 72(1), 80–88. https://doi.org/10.1080/00031305.2017.1375986\n\n\nMeyer, M. N. (2018). Practical tips for ethical data sharing. Advances in Methods and Practices in Psychological Science, 1(1), 131–144. https://doi.org/10.1177/2515245917747656\n\n\nPeng, R. D. (2022). R programming for data science. https://bookdown.org/rdpeng/rprogdatascience/\n\n\nReis, J., & Housley, M. (2022). Fundamentals of data engineering: Plan and build robust data systems. O’Reilly.\n\n\nRowley, J. (2007). The wisdom hierarchy: Representations of the DIKW hierarchy. Journal of Information Science, 33(2), 163–180. https://doi.org/10.1177/0165551506070706\n\n\nTuring, A. M. (1937). On computable numbers, with an application to the entscheidungsproblem. Proceedings of the London Mathematical Society, s2-42(1), 230–265. https://doi.org/10.1112/plms/s2-42.1.230\n\n\nvan der Loo, M., & Jonge, E. de. (2018). Statistical data cleaning with applications in R. John Wiley & Sons.\n\n\nvon Neumann, J. (1993). First draft of a report on the EDVAC. IEEE Annals of the History of Computing, 15(4), 27–75. IEEE Annals of the History of Computing. https://doi.org/10.1109/85.238389\n\n\nVygotsky, L. S. (2012). Thought and language (Publicado originalmente em 1934.) (E. Hanfmann, G. Vakar, & A. Kozulin, Trans.; Rev. exp. ed.). The MIT Press.\n\n\nWickham, H. (n.d.). The tidyverse style guide. Retrieved July 17, 2023, from https://style.tidyverse.org\n\n\nWickham, H. (2014). Tidy data. Journal of Statistical Software, 59(10). https://doi.org/10.18637/jss.v059.i10\n\n\nWickham, H. (2016). ggplot2: Elegant graphics for data analysis (2nd ed.). Springer. https://doi.org/10.1007/978-3-319-24277-4\n\n\nWickham, H. (2019). Advanced R (2nd ed.). CRC Press. https://adv-r.hadley.nz\n\n\nWickham, H., & Bryan, J. (2023). R packages (2nd ed.). O’Reilly Media. https://r-pkgs.org\n\n\nWickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2023). R for data science: Import, tidy, transform, visualize, and model data (2nd ed.). O’Reilly Media. https://r4ds.hadley.nz\n\n\nWilkinson, L. (2005). The grammar of graphics (J. Chambers, D. Hand, & W. Härdle, Eds.; 2nd ed.). Springer.\n\n\nWilkinson, M. D., Dumontier, M., Aalbersberg, Ij. J., Appleton, G., Axton, M., Baak, A., Blomberg, N., Boiten, J.-W., Da Silva Santos, L. B., Bourne, P. E., Bouwman, J., Brookes, A. J., Clark, T., Crosas, M., Dillo, I., Dumon, O., Edmunds, S., Evelo, C. T., Finkers, R., … Mons, B. (2016). The FAIR guiding principles for scientific data management and stewardship. Scientific Data, 3(1), 160018. https://doi.org/10.1038/sdata.2016.18"
   },
   {
     "objectID": "index.html#thank-you",
@@ -1230,6 +1209,76 @@
     "title": "An Introduction to the R Programming Language",
     "section": "Thank you!",
     "text": "Thank you!\n\n\n\n\n\n(Artwork by Allison Horst)"
+  },
+  {
+    "objectID": "index.html#ap-a-bit-of-history",
+    "href": "index.html#ap-a-bit-of-history",
+    "title": "An Introduction to the R Programming Language",
+    "section": "(AP) A Bit of History",
+    "text": "(AP) A Bit of History\n\n\nAbacus (~between 2700 and 2300 BCE) (Sumerians) (Ifrah, 1994/2001)\nPascalina (1642) (Blaise Pascal (1623–1662)) (Ifrah, 1994/2001)\nBabbage’s Difference Engine (Charles Babbage (1792–1871))\n\n\n\n\n\n\n\n(Photo by Mark Richards)"
+  },
+  {
+    "objectID": "index.html#ap-a-bit-of-history-1",
+    "href": "index.html#ap-a-bit-of-history-1",
+    "title": "An Introduction to the R Programming Language",
+    "section": "(AP) A Bit of History",
+    "text": "(AP) A Bit of History\n\n\nKeep in mind\n\n1st World War (1914–1918)\n2nd World War (1939–1945)\n\nUniversal Turing machine (Alan Turing) (Turing, 1937)\n“von Neumann Architecture” (1945) (von Neumann, 1993)\nENIAC (1945)\n\n\n\n\n\n\n\n(Photo by Science History Images/Alamy Stock Photo)\n\n\nEnigma machine"
+  },
+  {
+    "objectID": "index.html#ap-debugging",
+    "href": "index.html#ap-debugging",
+    "title": "An Introduction to the R Programming Language",
+    "section": "(AP) Debugging",
+    "text": "(AP) Debugging\n\n\n(Artwork by Allison Horst)"
+  },
+  {
+    "objectID": "index.html#ap-data-engineering",
+    "href": "index.html#ap-data-engineering",
+    "title": "An Introduction to the R Programming Language",
+    "section": "(AP) Data Engineering",
+    "text": "(AP) Data Engineering\n\n\nData engineering is the development, implementation, and maintenance of systems and processes that take in raw data and produce high-quality, consistent information that supports downstream use cases, such as analysis and machine learning (Reis & Housley, 2022).\n\n\n\n\n\n\n\n(Reproduced from Reis & Housley (2022))\n\n\nTwo main activities related to R.\nYou can think of data engineering as the plumbing of data science."
+  },
+  {
+    "objectID": "index.html#ap-the-tidy-data-manifesto",
+    "href": "index.html#ap-the-tidy-data-manifesto",
+    "title": "An Introduction to the R Programming Language",
+    "section": "(AP) The Tidy Data Manifesto",
+    "text": "(AP) The Tidy Data Manifesto\n\n(Wickham, 2014)"
+  },
+  {
+    "objectID": "index.html#ap-tidy-data",
+    "href": "index.html#ap-tidy-data",
+    "title": "An Introduction to the R Programming Language",
+    "section": "(AP) Tidy Data",
+    "text": "(AP) Tidy Data\n\n\n(Artwork by Allison Horst)"
+  },
+  {
+    "objectID": "index.html#ap-big-data",
+    "href": "index.html#ap-big-data",
+    "title": "An Introduction to the R Programming Language",
+    "section": "(AP) Big Data",
+    "text": "(AP) Big Data\n\n\n\nBig data will be dead in 5 Years: Everything will be big data, so it won’t need a special name. (Gavin, 2020)\n\n\n\n\n\n\n\n\n(Artwork by David Fletcher)"
+  },
+  {
+    "objectID": "index.html#ap-big-data-wrangling",
+    "href": "index.html#ap-big-data-wrangling",
+    "title": "An Introduction to the R Programming Language",
+    "section": "(AP) Big Data Wrangling",
+    "text": "(AP) Big Data Wrangling\nWorking with big data using Excel or GUI-based (Graphical User Interface) statistical software is extremely challenging, if not impossible.\nExcel, for example, can struggle with performance issues and has a maximum row limit (1,048,576 rows), which is often insufficient for big data projects.\nThe best tools for handling big data are R and Python."
+  },
+  {
+    "objectID": "index.html#ap-fair-principles",
+    "href": "index.html#ap-fair-principles",
+    "title": "An Introduction to the R Programming Language",
+    "section": "(AP) Fair Principles",
+    "text": "(AP) Fair Principles\n\n\n(To learn more see: M. D. Wilkinson et al. (2016) and GO FAIR initiative (n.d.))"
+  },
+  {
+    "objectID": "index.html#ap-data-management-plans",
+    "href": "index.html#ap-data-management-plans",
+    "title": "An Introduction to the R Programming Language",
+    "section": "(AP) Data Management Plans",
+    "text": "(AP) Data Management Plans\nA data management plan (DMP) is a formal document that outlines how data will be managed throughout the research process.\n\nFAPESP\nDMPTool\nDMPonline\n\n\nExample: Associations between the duration and quality of sleep of pregnant women in the third trimester with the duration of labor"
   },
   {
     "objectID": "index.html#ap-strings",
@@ -1258,5 +1307,96 @@
     "title": "An Introduction to the R Programming Language",
     "section": "(AP) Joins",
     "text": "(AP) Joins"
+  },
+  {
+    "objectID": "index.html#general-information",
+    "href": "index.html#general-information",
+    "title": "An Introduction to the R Programming Language",
+    "section": "General Information",
+    "text": "General Information\n\n\nCourse: An Introduction to the R Language\n\nInstructors: Daniel Vartanian and Jaqueline Lopes Pereira\n\nPlace: Public Health School (FSP) of the University of São Paulo (USP).\n\nDates: 24/03 to 28/03\n\nTime: 13:00 to 14:00 (except on Wednesday, 26/03, from 13:00 to 18:00)\n\nDuration: 9 hours"
+  },
+  {
+    "objectID": "index.html#learning-objectives",
+    "href": "index.html#learning-objectives",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nUnderstand the thought and knowledge underlying computer science.\nUnderstand the structure and basic elements of the R language.\nUnderstand basic concepts of data munging in R.\nUnderstand basic concepts of data visualization in R.\nUnderstand basic concepts of exploratory data analysis in R.\nUnderstand basic concepts about modeling in R."
+  },
+  {
+    "objectID": "index.html#theoretical-basis",
+    "href": "index.html#theoretical-basis",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Theoretical Basis",
+    "text": "Theoretical Basis\n\nDialectical materialism (Engels, 2020).\nCultural-historical theory (Vygotsky, 2012).\nPedagogy of autonomy/Dialectal pedagogy (Freire, 2011).\nDialectical unity in pedagogical activity (Bernardes, 2009)."
+  },
+  {
+    "objectID": "index.html#the-unit-of-pedagogical-activity",
+    "href": "index.html#the-unit-of-pedagogical-activity",
+    "title": "An Introduction to the R Programming Language",
+    "section": "The Unit of Pedagogical Activity",
+    "text": "The Unit of Pedagogical Activity\n\n\n\n\n\n\n\n\n\nTeaching Activity (Teacher)\nLearning Activity (Student)\n\n\n\nMotive/Need\nEnable the transformation of students’ constitution through access to culture — humanizing them.\nBecome an heir to culture — humanizing oneself.\n\n\nObjective\nTeach socio-historical knowledge.\nAppropriate socio-historical knowledge.\n\n\nActions and Operations\n\nOrganizing teaching:- Defining the knowledge to be taught (What).- Defining the conditions (modes of action) in which the knowledge will be taught (How).\n- Execute study tasks.- Perform study activities.- Participate in control and evaluation actions.\n\n\n\n\n\n(Bernardes, 2009, Translated from Portuguese to English by the author)"
+  },
+  {
+    "objectID": "index.html#strategy",
+    "href": "index.html#strategy",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Strategy",
+    "text": "Strategy\n\nTheory followed by practice.\nIn-class activities.\nData science exercise at the end of the course.\nNo formal evaluation.\nPre-course survey.\nPost-course survey."
+  },
+  {
+    "objectID": "index.html#resources",
+    "href": "index.html#resources",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Resources",
+    "text": "Resources\n\nWhiteboard\nData projector\nSlides\nComputers"
+  },
+  {
+    "objectID": "index.html#main-references-1",
+    "href": "index.html#main-references-1",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Main References",
+    "text": "Main References\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(Book cover image from Wickham et al. (2023) and Wickham (2019))\n\n\nSee also: Advanced R Solutions (Grosser et al., 2021)."
+  },
+  {
+    "objectID": "index.html#monday-2403",
+    "href": "index.html#monday-2403",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Monday (24/03)",
+    "text": "Monday (24/03)\n\n\nPart 1 (13:00-13:30)\n\nIntroduction to the course.\nIntroduction to computer science.\nIntroduction to data science.\nIntroduction to the R language and the other tools.\n\n\n\n\nPart 2 (13:30-14:00)\n\nInstalling R and RStudio.\nIntroduction to the RStudio IDE.\nIntroduction to the project oriented workflow.\nIntroduction to Markdown and the Quarto notebook."
+  },
+  {
+    "objectID": "index.html#tuesday-2503",
+    "href": "index.html#tuesday-2503",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Tuesday (25/03)",
+    "text": "Tuesday (25/03)\n\n\nPart 1 (13:00-13:30)\n\nR objects.\nOperations.\nSubsetting.\nPipes.\nControl flow (Choice & Loop).\n\n\n\n\nPart 2 (13:30-14:00)\n\nFunctions and Functionals.\nMissing values and commenting.\nEnvironments.\nPackages.\nDocumentation.\nThe tidyverse and rOpenSci suite."
+  },
+  {
+    "objectID": "index.html#wednesday-2503",
+    "href": "index.html#wednesday-2503",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Wednesday (25/03)",
+    "text": "Wednesday (25/03)\n\n\nPart 1 (13:00-14:00)\n\nData munging (Introduction)\n\n\n\n\nPart 2 (14:15-15:15)\n\nData munging (Importing and manipulating data)"
+  },
+  {
+    "objectID": "index.html#wednesday-2503-1",
+    "href": "index.html#wednesday-2503-1",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Wednesday (25/03)",
+    "text": "Wednesday (25/03)\n\n\nPart 3 (15:30-16:30)\n\nData visualization and Exploratory Data Analysis\n\n\n\n\nPart 4 (16:45-18:00)\n\nModeling (One-Sample t-Test)"
+  },
+  {
+    "objectID": "index.html#thursday-2503",
+    "href": "index.html#thursday-2503",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Thursday (25/03)",
+    "text": "Thursday (25/03)\n\n\nPart 1 (13:00-13:30)\n\nModeling (ANOVA & ANCOVA)\n\n\n\n\nPart 2 (13:30-14:00)\n\nModeling (Linear regression)"
+  },
+  {
+    "objectID": "index.html#friday-2503",
+    "href": "index.html#friday-2503",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Friday (25/03)",
+    "text": "Friday (25/03)\n\n\nPart 1 (13:00-13:30)\n\nExercise (Data report - SISVAN)\n\n\n\n\nPart 2 (13:30-14:00)\n\nConclusion"
   }
 ]

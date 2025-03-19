@@ -1,0 +1,174 @@
+# Appendices {visibility="uncounted"}
+
+::: {.notes}
+:::
+
+## (AP) A Bit of History {.smaller visibility="uncounted"}
+
+:::: {.columns}
+::: {.column style="width: 50%;"}
+[**Abacus**](https://en.wikipedia.org/wiki/Abacus) (~between 2700 and 2300 BCE) (Sumerians) [@ifrah2001]
+
+[**Pascalina**](https://en.wikipedia.org/wiki/Pascaline) (1642) (Blaise Pascal (1623–1662)) [@ifrah2001]
+
+[**Babbage’s Difference Engine**](https://en.wikipedia.org/wiki/Difference_engine) (Charles Babbage (1792–1871))
+:::
+::: {.column style="width: 50%;"}
+![](images/richards-1950-chinese-abacus.jpg){fig-align="center" style="width: 80%; padding-top: 100px;"}
+:::
+::::
+
+::: footer
+(Photo by [Mark Richards](https://www.computerhistory.org/revolution/calculators/1/1/134?position=0))
+:::
+
+::: {.notes}
+:::
+
+## (AP) A Bit of History {.smaller visibility="uncounted"}
+
+:::: {.columns}
+::: {.column style="width: 50%;"}
+**Keep in mind**
+
+- 1st World War (1914–1918)
+- 2nd World War (1939–1945)
+
+[**Universal Turing machine**](https://en.wikipedia.org/wiki/Universal_Turing_machine) (Alan Turing) [@turing1937]
+
+[**"von Neumann Architecture"**](https://en.wikipedia.org/wiki/Von_Neumann_architecture) (1945) [@vonneumann1993a]
+
+[**ENIAC**](https://en.wikipedia.org/wiki/ENIAC) (1945)
+:::
+::: {.column style="width: 50%;"}
+![](images/science-history-images-eniac-figure-1.jpg){fig-align="center" style="width: 80%; padding-top: 50px;"}
+:::
+::::
+
+::: footer
+(Photo by [Science History Images/Alamy Stock Photo](https://www.alamy.com/technicians-connecting-wires-of-eniac-image386295734.html))
+:::
+
+::: {.notes}
+- [Enigma machine](https://en.wikipedia.org/wiki/Enigma_machine)
+:::
+
+## (AP) Debugging {.smaller visibility="uncounted"}
+
+![](images/allison-horst-figure-35.png){fig-align="center" style="width: 90%; padding-top: 0px;"}
+
+::: footer
+(Artwork by [Allison Horst](https://twitter.com/allison_horst))
+:::
+
+::: {.notes}
+:::
+
+## (AP) Data Engineering {.smaller .nostretch visibility="uncounted"}
+
+::: {style="font-size: 0.75em"}
+> Data engineering is the development, implementation, and maintenance of systems and processes that take in raw data and produce high-quality, consistent information that supports downstream use cases, such as analysis and machine learning [@reis2022].
+:::
+
+![](images/reis-2022-figure-1-1.png){fig-align="center" style="width: 65%; padding-top: 0px;"}
+
+::: footer
+(Reproduced from @reis2022)
+:::
+
+::: {.notes}
+- Two main activities related to R.
+- You can think of data engineering as the **plumbing** of data science.
+:::
+
+## (AP) The Tidy Data Manifesto {.smaller visibility="uncounted"}
+
+::: footer
+[@wickham2014]
+:::
+
+::: {.notes}
+:::
+
+## (AP) Tidy Data {.smaller visibility="uncounted"}
+
+![](images/allison-horst-figure-19.jpg){fig-align="center" style="width: 85%;"}
+
+::: footer
+(Artwork by [Allison Horst](https://allisonhorst.com/horst-hill-collaborations))
+:::
+
+## (AP) Big Data {.smaller visibility="uncounted"}
+
+:::: {.columns}
+::: {.column style="width: 40%;"}
+> **Big data will be dead in 5 Years**: Everything will be big data, so it won't need a special name. [@gavin2020]
+:::
+::: {.column style="width: 60%;"}
+![](images/david-fletcher-big-data.jpeg){fig-align="center" style="width: 100%;"}
+:::
+::::
+
+::: footer
+(Artwork by [David Fletcher](https://en.wikipedia.org/wiki/David_Fletcher_(cartoonist)))
+:::
+
+::: {.notes}
+:::
+
+## (AP) Big Data Wrangling {.smaller visibility="uncounted"}
+
+**Working with big data using Excel or GUI-based (Graphical User Interface) statistical software is extremely challenging, if not impossible**.
+
+Excel, for example, can struggle with performance issues and has a maximum row limit (1,048,576 rows), which is often insufficient for big data projects.
+
+The best tools for handling big data are [R](https://www.r-project.org/) and [Python](https://www.python.org/).
+
+::: {.notes}
+:::
+
+## (AP) Fair Principles {.smaller visibility="uncounted"}
+
+![](images/fair-data-principles.png){fig-align="center" style="padding-top: 75px;"}
+
+::: footer
+(To learn more see: @wilkinson2016 and @gofairinitiative)
+:::
+
+::: {.notes}
+:::
+
+## (AP) Data Management Plans {.smaller visibility="uncounted"}
+
+A data management plan (DMP) is a formal document that outlines how data will be managed throughout the research process.
+
+- [FAPESP](https://fapesp.br/gestaodedados)
+- [DMPTool](https://dmptool.org/)
+- [DMPonline](https://dmponline.dcc.ac.uk/)
+
+::: {}
+**Example**: [Associations between the duration and quality of sleep of pregnant women in the third trimester with the duration of labor](https://doi.org/10.48321/D1PS4M)
+:::
+
+::: {.notes}
+:::
+
+## (AP) Strings {.smaller visibility="uncounted"}
+
+::: {.notes}
+:::
+
+## (AP) Regular Expressions {.smaller visibility="uncounted"}
+
+::: {.notes}
+:::
+
+## (AP) Lookup Tables {.smaller visibility="uncounted"}
+
+::: {.notes}
+:::
+
+## (AP) Joins {.smaller visibility="uncounted"}
+
+::: {.notes}
+:::
