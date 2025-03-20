@@ -16,7 +16,7 @@ If you understand R at its core, you can navigate any challenge you encounter.
 ::::
 
 ::: footer
-(Artwork by [Eroshka](https://www.shutterstock.com/image-vector/ariadne-thread-ancient-greek-woman-standing-2368887349))
+([Ariadne's thread](https://www.britannica.com/topic/Ariadne-Greek-mythology). Artwork by [Eroshka](https://www.shutterstock.com/image-vector/ariadne-thread-ancient-greek-woman-standing-2368887349))
 :::
 
 ::: {.notes}
@@ -27,15 +27,13 @@ If you understand R at its core, you can navigate any challenge you encounter.
 
 :::: {.columns}
 ::: {.column style="width: 50%;"}
-The science of information processes and their interactions with the world [@denning2005].
+**The science of information processes and their interactions with the world** [@denning2005].
 
 Computer science studies information processes both artificial and natural [@denning2005]. It seeks to build a scientific foundation
 for such topics as *computer design*, *computer programming*, *information processing*, *algorithmic solutions* of problems, and *the algorithmic process itself* [@brookshear2020].
 :::
 ::: {.column style="width: 50%;"}
 ![](images/richards-1950-chinese-abacus.jpg){fig-align="center" style="width: 80%; padding-top: 100px;"}
-
-![](images/science-history-images-eniac-figure-1.jpg){fig-align="center" style="width: 80%; padding-top: 50px;"}
 :::
 ::::
 
@@ -148,68 +146,6 @@ A look inside a computer.
 ::: footer
 (Photo by [Corbis Historical/Getty Images](https://www.gettyimages.com.br/detail/foto-jornal%C3%ADstica/john-von-neumann-was-a-brilliant-mathematician-who-foto-jornal%C3%ADstica/615303546?adppopup=true))
 :::
-
-::: {.notes}
-:::
-
-## Low and High-Level Prog. Lang. {.smaller}
-
-::: {.notes}
-:::
-
-## Programming Paradigms {.smaller}
-
-A [programming paradigm](https://en.m.wikipedia.org/wiki/Programming_paradigm) is a specific approach to the programming process [@brookshear2020].
-
-R is a multi-paradigm programming language, but is mainly **functional**.
-
-:::: {.columns style="padding-top: 10px;"}
-::: {.column style="width: 33%;"}
-[Procedural](https://en.m.wikipedia.org/wiki/Procedural_programming) (Imperative)
-
-```{r}
-x <- seq(1, 10)
-y <- numeric()
-z <- 0
-
-for (i in x) {
-  y <- c(y, i + 1)
-}
-
-for (i in y) {
-  z <- z + i
-}
-
-z / length(x)
-```
-:::
-::: {.column style="width: 33%;"}
-[Functional](https://en.m.wikipedia.org/wiki/Functional_programming) (Declarative)
-
-```{r}
-seq(1, 10) |>
-  vapply(\(x) x + 1, numeric(1)) |>
-  mean()
-```
-:::
-::: {.column style="width: 34%;"}
-- [Object-Oriented](https://en.m.wikipedia.org/wiki/Object-oriented_programming) (Imperative)
-
-```{r}
-library(S7)
-
-dog <- new_class("dog", properties = list(
-  name = class_character,
-  age = class_numeric
-))
-
-lola <- dog(name = "Lola", age = 11)
-speak <- new_generic("speak", "x")
-method(speak, dog) <- function(x) "Woof"
-speak(lola)
-```
-:::
-::::
 
 ::: {.notes}
 :::

@@ -53,6 +53,68 @@
 - [Enigma machine](https://en.wikipedia.org/wiki/Enigma_machine)
 :::
 
+## Low and High-Level Prog. Lang. {.smaller}
+
+::: {.notes}
+:::
+
+## Programming Paradigms {.smaller}
+
+A [programming paradigm](https://en.m.wikipedia.org/wiki/Programming_paradigm) is a specific approach to the programming process [@brookshear2020].
+
+R is a multi-paradigm programming language, but is mainly **functional**.
+
+:::: {.columns style="padding-top: 10px;"}
+::: {.column style="width: 33%;"}
+[Procedural](https://en.m.wikipedia.org/wiki/Procedural_programming) (Imperative)
+
+```{r}
+x <- seq(1, 10)
+y <- numeric()
+z <- 0
+
+for (i in x) {
+  y <- c(y, i + 1)
+}
+
+for (i in y) {
+  z <- z + i
+}
+
+z / length(x)
+```
+:::
+::: {.column style="width: 33%;"}
+[Functional](https://en.m.wikipedia.org/wiki/Functional_programming) (Declarative)
+
+```{r}
+seq(1, 10) |>
+  vapply(\(x) x + 1, numeric(1)) |>
+  mean()
+```
+:::
+::: {.column style="width: 34%;"}
+- [Object-Oriented](https://en.m.wikipedia.org/wiki/Object-oriented_programming) (Imperative)
+
+```{r}
+library(S7)
+
+dog <- new_class("dog", properties = list(
+  name = class_character,
+  age = class_numeric
+))
+
+lola <- dog(name = "Lola", age = 11)
+speak <- new_generic("speak", "x")
+method(speak, dog) <- function(x) "Woof"
+speak(lola)
+```
+:::
+::::
+
+::: {.notes}
+:::
+
 ## (AP) Debugging {.smaller visibility="uncounted"}
 
 ![](images/allison-horst-figure-35.png){fig-align="center" style="width: 90%; padding-top: 0px;"}
@@ -169,6 +231,189 @@ A data management plan (DMP) is a formal document that outlines how data will be
 :::
 
 ## (AP) Joins {.smaller visibility="uncounted"}
+
+::: {.notes}
+:::
+
+## Digital Objects & Version Control {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 47%;"}
+![](images/doi-foundation-logo.svg){fig-align="center" style="width: 100%; padding-top: 75px;"}
+:::
+::: {.column style="width: 6%;"}
+:::
+::: {.column style="width: 47%;"}
+![](images/version-control.png){fig-align="center" style="width: 60%; padding-top: 60px;"}
+:::
+::::
+
+::: {.notes}
+:::
+
+## Open Licenses {.smaller}
+
+A unlicensed work is an "all rights reserved" work. This means that you can't use it without the author's permission.
+
+:::: {.columns}
+::: {.column style="width: 50%; font-size: 0.85em;"}
+* Licences for data
+  * [Open Knowledge Foundation](https://okfn.org/)
+
+* Licences for software/code
+  * [OSI Approved Licenses](https://opensource.org/licenses)
+  * [The MIT licence](https://opensource.org/license/mit)
+  * [GNU General Public License version 3](https://opensource.org/license/gpl-3-0)
+
+* Licences for _everything else_ (e.g., documents, figures)
+  * [Creative Commons](https://creativecommons.org/)
+  * [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+:::
+::: {.column style="width: 50%;"}
+![](images/mit-license-logo.png){fig-align="center" style="width: 50%;"}
+
+![](images/cc-license-logo.png){fig-align="center" style="width: 50%;"}
+:::
+::::
+
+## Dynamic Documents {.smaller}
+
+Dynamic documents seamlessly integrate text with output from a programming language, automatically updating the output whenever the code is executed.
+
+::::: {.columns}
+:::: {.column style="width: 50%; font-size: 0.9em; padding-top: 0px;"}
+- [Quarto](https://quarto.org/) (R, Python, Julia) (+Pandoc)
+- [Jupyter](https://jupyter.org/) (Python, R, Julia, +37 languages)
+- [Rmarkdown](https://rmarkdown.rstudio.com/) (R) (+Pandoc)
+
+::: {style="padding-top: 10px;"}
+**Examples**
+
+- External-link: [Central limit theorem](https://danielvartan.github.io/central-limit-theorem/)
+- External-link: [Sample size](https://danielvartan.github.io/sample-size/)
+- External-link: [Fisher's hypothesis](https://danielvartan.github.io/fisher-hypothesis/)
+:::
+::::
+:::: {.column style="width: 50%; padding-top: 25px;"}
+![](images/quarto-logo.png){fig-align="center" style="width: 75%;"}
+
+![](images/jupyter-logo.png){fig-align="center" style="width: 40%;"}
+::::
+:::::
+
+::: {.notes}
+- You can write articles with dynamic documents.
+- Difference from LaTeX.
+- Quarto as an evolution from Rmarkdown.
+- Jupyter can be used with Quarto.
+:::
+
+## Pipelines {.smaller .nostretch}
+
+Pipeline tools coordinate the pieces of computationally demanding analysis projects. They can be used to automate the execution of a series of tasks.
+
+:::: {.columns}
+::: {.column style="width: 25%;"}
+[![](images/targets-logo.png){fig-align="center" style="width: 75%; padding-top: 70px;"}](https://github.com/ropensci/targets)
+:::
+::: {.column style="width: 75%;"}
+[![](images/targets-pipeline.png){fig-align="center" style="width: 70%; padding-top: 0px;"}](https://books.ropensci.org/targets/walkthrough.html#inspect-the-pipeline)
+:::
+::::
+
+::: footer
+(Reproduced from @landau)
+:::
+
+::: {.notes}
+:::
+
+## Reproducible Environments {.smaller}
+
+Reproducible environments ensure that your code will run the same way on different machines and regardless of the time.
+
+:::: {.columns}
+::: {.column style="width: 50%;"}
+[![](images/renv-hex-logo.png){fig-align="center" style="width: 75%; padding-top: 25px;"}](https://rstudio.github.io/renv/)
+:::
+::: {.column style="width: 50%;"}
+[![](images/docker-logo.png){fig-align="center" style="width: 75%; padding-top: 25px;"}](https://www.docker.com/)
+:::
+::::
+
+::: {.notes}
+:::
+
+## App. Prog. Interfaces (APIs) {.smaller}
+
+::: {style="font-size: 0.8em;"}
+APIs are a set of rules that allow different software applications to communicate with each other.
+:::
+
+:::: {.columns}
+::: {.column style="width: 33%; font-size: 0.7em;"}
+* [OSF API](https://developer.osf.io/)
+* [Brazil's Central Bank APIs](https://dadosabertos.bcb.gov.br/dataset?res_format=API)
+* [NASA's APIs](https://api.nasa.gov/)
+:::
+::: {.column style="width: 34%; font-size: 0.7em;"}
+* [OpenAI API](https://platform.openai.com/docs/api-reference/introduction)
+* [SIDRA API (IBGE)](https://api.sidra.ibge.gov.br/)
+* [SISVAN API](https://opendatasus.saude.gov.br/dataset/sisvan-estado-nutricional/resource/3ead4331-6424-471f-a811-4edf22f58e00)
+:::
+::: {.column style="width: 33%; font-size: 0.7em;"}
+![](images/api-symbol.png){fig-align="center" style="width: 40%;"}
+:::
+::::
+
+```{r}
+library(magrittr)
+library(sidrar)
+
+# Brazil's population in 2022 (Census data)
+get_sidra(
+  api = "/t/7358/n1/all/v/all/p/all/c2/6794/c287/100362/c1933/49039"
+) |>
+  suppressMessages() |>
+  extract2("Valor") |>
+  prettyNum(big.mark = ",")
+```
+
+## KISS Principle {.nostretch}
+
+![](images/kiss-principle.png){fig-align="center" style="width: 75%; padding-top: 50px;"}
+
+## Some Other Things... {.smaller}
+
+We've only touched upon the vast landscape of open science. There are many other tools and concepts that we didn't cover, such as:
+
+::: {.columns style="padding-top: 10px;"}
+::: {.column style="width: 50%; font-size: 0.75em;"}
+- Markup languages (e.g., [Markdown](https://daringfireball.net/projects/markdown/), [LaTeX](https://www.latex-project.org/))
+- Open source softwares (e.g., [rOpenSci](https://ropensci.org/), [CRAN](https://cran.r-project.org/), [Bioconductor](https://www.bioconductor.org/), [PyPI](https://pypi))
+- Version control systems (e.g. [Git](https://www.git-scm.com/), [SVN](https://subversion.apache.org/), [Semantic versioning](https://semver.org/))
+- Database systems (e.g., [Relational databases](https://en.wikipedia.org/wiki/Relational_database), [NoSQL](https://en.wikipedia.org/wiki/NoSQL))
+- Open source data management systems (e.g., [CKAN](https://www.ckan.org/) [Dataverse](https://dataverse.org/); [DSpace](https://dspace.lyrasis.org/))
+:::
+::: {.column style="width: 50%; font-size: 0.75em;"}
+- Git-based repositories (e.g., [GitHub](https://github.com), [GitLab](https://gitlab.com))
+- Open data formats (e.g., [CSV](https://en.wikipedia.org/wiki/Comma-separated_values), [JSON](https://www.json.org/json-en.html), [Apache Parquet](https://en.wikipedia.org/wiki/Apache_Parquet))
+- Cloud computing (e.g., [AWS](https://aws.amazon.com/), [Google Cloud](https://cloud.google.com/), [Azure](https://azure.microsoft.com/))
+- Open science policies (e.g., [FAPESP](https://fapesp.br/openscience/), [European Commission](https://research-and-innovation.ec.europa.eu/strategy/strategy-2020-2024/our-digital-future/open-science_en))
+- Ethical data sharing practices (See @meyer2018 to learn more)
+:::
+:::
+
+::: {.notes}
+:::
+
+## Some Other Things... {.smaller .nostretch}
+
+![](images/allison-horst-figure-9.png){fig-align="center" style="width: 90%; padding-top: 10px;"}
+
+::: footer
+(Artwork by [Allison Horst](https://allisonhorst.com/horst-hill-collaborations))
+:::
 
 ::: {.notes}
 :::

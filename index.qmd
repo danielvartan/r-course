@@ -50,17 +50,17 @@ We'll explore the following topics:
 
 ## Course Objectives {.smaller}
 
-Understand basically how a computer works
+Understand the thought and knowledge underlying computer science.
 
-Understand the structure and basic elements of the R language
+Understand the structure and basic elements of the R language.
 
-Understand basic concepts of data visualization
+Understand basic concepts of data munging in R.
 
-Understand basic concepts of data munging
+Understand basic concepts of data visualization in R.
 
-Understand basic concepts of modeling
+Understand basic concepts of exploratory data analysis in R.
 
-Understand basic concepts of hypothesis testing
+Understand basic concepts about modeling in R.
 
 ::: {style="padding-top: 30px;"}
 ([**Future course?**]{.brand-red} An Introduction to [Git](https://en.wikipedia.org/wiki/Git))
@@ -92,7 +92,7 @@ The classes are distributed over **5 days**, with a total of **9 hours**.
 :::
 ::: {.column style="width: 5%;"}
 :::
-::: {.column style="width: 47.5%;"}
+::: {.column style="width: 47.5%; padding-top: 50px;"}
 - Monday (24/03)_13:00-14:00
 - Tuesday (25/03) 13:00-14:00
 - Wednesday (26/03) [**13:00-18:00**]{.brand-red}
@@ -102,7 +102,6 @@ The classes are distributed over **5 days**, with a total of **9 hours**.
 ::::
 
 ::: {.notes}
-- FSP Laboratories
 :::
 
 ## Main References {.smaller}
@@ -126,13 +125,28 @@ The classes are distributed over **5 days**, with a total of **9 hours**.
 - See also: [Advanced R Solutions](https://advanced-r-solutions.rbind.io/) [@grosser2021].
 :::
 
-## Other Useful References {.smaller}
+## Other Useful References for Starters {.smaller}
 
-- [How Computers Work](Kttps://youtube.com/playlist?list=PLzdnOPI1iJNcsRwJhvksEo1tJqjIqWbN-&si=9nOuIefDZ2F-BJJ8)
-- [How Are Microchips Made?](https://youtu.be/IkRXpFIRUl4?si=VcqPPrzLNWkGVJWQ)
-- [W3Schools: R Tutorial](https://www.w3schools.com/r/default.asp)
-- [What They Forgot to Teach You About R](https://rstats.wtf/)
-- [Happy Git and GitHub for the useR](http://happygitwithr.com/)
+<!-- code.org2018 -->
+
+Code.org. (2018, January 30). *How computers work* [YouTube video]. https://youtube.com/playlist?list=PLzdnOPI1iJNcsRwJhvksEo1tJqjIqWbN-&si=WkuM8c-AKI-NZ3td
+
+<!-- zaidan2025 -->
+
+Zaidan, G., & Saini, S. (2025, February 25). _How are microchips made?_ [YouTube video]. TED-Ed. https://youtu.be/IkRXpFIRUl4?si=iQ7xQuFS6DZLuBY7
+
+<!-- w3schools -->
+
+W3Schools. (n.d.). _R Tutorial_. https://www.w3schools.com/r/
+
+<!-- bryana -->
+
+Bryan, J., Hester, J., Pileggi, S., & Aja, E. D. (n.d.). _What they forgot to teach you about R: The stuff you need to know about R, besides data analysis_. https://rstats.wtf/
+
+<!-- bryan -->
+
+Bryan, J. (n.d.). *Happy Git and GitHub for the useR*. https://happygitwithr.com/
+ (**Strongly recommended**)
 
 ::: {.notes}
 :::
@@ -176,19 +190,26 @@ One of the best ways to get help is to search or ask questions on forums like [S
 ## Class Dynamic {.smaller}
 
 - Theory followed by practice.
-- Final project.
+- In-class activities.
+- Data science exercise at the end of the course.
+- No formal evaluation.
 
 ::: {.notes}
 :::
 
 ## Notes {.smaller}
 
-- 💾 Bring a flash drive/pen drive.
-- 👩‍💻 Use the same computer for all classes.
-- 💬 Always open this presentation in the browser.
-- 🤝 Help each other.
-- 🙋‍♂️ Ask questions.
-- 🎉 Have fun!
+💾 Bring a flash drive/pen drive.
+
+👩‍💻 Use the same computer for all classes.
+
+💬 Always open this presentation in the browser.
+
+🤝 Help each other.
+
+🙋‍♂️ Ask questions.
+
+🎉 Have fun!
 
 ::: {.notes}
 :::

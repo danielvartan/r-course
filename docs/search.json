@@ -67,21 +67,21 @@
     "href": "index.html#class-dynamic",
     "title": "An Introduction to the R Programming Language",
     "section": "Class Dynamic",
-    "text": "Class Dynamic\n\nTheory followed by practice.\nFinal project."
+    "text": "Class Dynamic\n\nTheory followed by practice.\nIn-class activities.\nData science exercise at the end of the course.\nNo formal evaluation."
   },
   {
     "objectID": "index.html#notes",
     "href": "index.html#notes",
     "title": "An Introduction to the R Programming Language",
     "section": "Notes",
-    "text": "Notes\n\n💾 Bring a flash drive/pen drive.\n👩‍💻 Use the same computer for all classes.\n💬 Always open this presentation in the browser.\n🤝 Help each other.\n🙋‍♂️ Ask questions.\n🎉 Have fun!"
+    "text": "Notes\n💾 Bring a flash drive/pen drive.\n👩‍💻 Use the same computer for all classes.\n💬 Always open this presentation in the browser.\n🤝 Help each other.\n🙋‍♂️ Ask questions.\n🎉 Have fun!"
   },
   {
     "objectID": "index.html#lets-start-from-zero",
     "href": "index.html#lets-start-from-zero",
     "title": "An Introduction to the R Programming Language",
     "section": "Let’s Start from Zero",
-    "text": "Let’s Start from Zero\n\n\nThis is a programming course.\nAs such, we must understand the basics of how a computer works.\nIt is essential to start from materiality; otherwise, things stop making sense.\nIf you understand R at its core, you can navigate any challenge you encounter.\n\n\n\n\n\n\n\n(Artwork by Eroshka)\n\n\nIf you just want to learn how to push buttons, stick to Excel or Stata."
+    "text": "Let’s Start from Zero\n\n\nThis is a programming course.\nAs such, we must understand the basics of how a computer works.\nIt is essential to start from materiality; otherwise, things stop making sense.\nIf you understand R at its core, you can navigate any challenge you encounter.\n\n\n\n\n\n\n\n(Ariadne’s thread. Artwork by Eroshka)\n\n\nIf you just want to learn how to push buttons, stick to Excel or Stata."
   },
   {
     "objectID": "index.html#computer-science",
@@ -131,20 +131,6 @@
     "title": "An Introduction to the R Programming Language",
     "section": "Programming Languages",
     "text": "Programming Languages\n\n\n\nThe instructions which govern this operation must be given to the device in absolutely exhaustive detail. […] All these procedures require the use of some code to express the logical and the algebraical definition of the problem under consideration, as well as the necessary numerical material. (von Neumann, 1993)\n\n\n\n\n\n\n\n\n(Photo by Corbis Historical/Getty Images)"
-  },
-  {
-    "objectID": "index.html#low-and-high-level-prog.-lang.",
-    "href": "index.html#low-and-high-level-prog.-lang.",
-    "title": "An Introduction to the R Programming Language",
-    "section": "Low and High-Level Prog. Lang.",
-    "text": "Low and High-Level Prog. Lang."
-  },
-  {
-    "objectID": "index.html#programming-paradigms",
-    "href": "index.html#programming-paradigms",
-    "title": "An Introduction to the R Programming Language",
-    "section": "Programming Paradigms",
-    "text": "Programming Paradigms\nA programming paradigm is a specific approach to the programming process (Brookshear & Brylow, 2020).\nR is a multi-paradigm programming language, but is mainly functional.\n\n\nProcedural (Imperative)\n\nx &lt;- seq(1, 10)\ny &lt;- numeric()\nz &lt;- 0\n\nfor (i in x) {\n  y &lt;- c(y, i + 1)\n}\n\nfor (i in y) {\n  z &lt;- z + i\n}\n\nz / length(x)\n#&gt; [1] 6.5\n\n\nFunctional (Declarative)\n\nseq(1, 10) |&gt;\n  vapply(\\(x) x + 1, numeric(1)) |&gt;\n  mean()\n#&gt; [1] 6.5\n\n\n\n\nObject-Oriented (Imperative)\n\n\nlibrary(S7)\n\ndog &lt;- new_class(\"dog\", properties = list(\n  name = class_character,\n  age = class_numeric\n))\n\nlola &lt;- dog(name = \"Lola\", age = 11)\nspeak &lt;- new_generic(\"speak\", \"x\")\nmethod(speak, dog) &lt;- function(x) \"Woof\"\nspeak(lola)\n#&gt; [1] \"Woof\""
   },
   {
     "objectID": "index.html#open-source-prog.-lang.",
@@ -214,14 +200,14 @@
     "href": "index.html#installing-r",
     "title": "An Introduction to the R Programming Language",
     "section": "Installing R",
-    "text": "Installing R\nThe R Project for Statistical Computing\nThe Comprehensive R Archive Network"
+    "text": "Installing R\n\n\nInstalling R is very simple. You just need to download the installer from the Comprehensive R Archive Network (CRAN).\nGo to Download R for [YOUR OS] and then click on the base* link—The base version of R.\nSimply follow the instructions of the installer."
   },
   {
     "objectID": "index.html#the-rstudio-ide",
     "href": "index.html#the-rstudio-ide",
     "title": "An Introduction to the R Programming Language",
     "section": "The RStudio IDE",
-    "text": "The RStudio IDE\n\nAlways use software in English."
+    "text": "The RStudio IDE\nAn IDE (Integrated Development Environment) is a software that provides a set of tools to help the programmer to write code. It puts together things like a text editor, a console, a debugger, and a file manager.\nRStudio is the most popular IDE for R. Like R, it is also free and open-source.\n\n\nAlways use software in English."
   },
   {
     "objectID": "index.html#quarto-notebooks",
@@ -235,14 +221,7 @@
     "href": "index.html#creating-a-project",
     "title": "An Introduction to the R Programming Language",
     "section": "Creating a Project",
-    "text": "Creating a Project"
-  },
-  {
-    "objectID": "index.html#managing-your-project",
-    "href": "index.html#managing-your-project",
-    "title": "An Introduction to the R Programming Language",
-    "section": "Managing Your Project",
-    "text": "Managing Your Project\n\n\nIt is important to have a structured project directory. A best practice is to follow the structure made for R Packages.\nEvery data project must be accompanied, at least, by a README file, explaining the project, and a LICENSE file, defining the terms of use of the data.\n\n\n\n\n\n\n\n(Reproduced from Marwick et al. (2018))"
+    "text": "Creating a Project\n\n\nProject-oriented workflow: A project puts together all things in your place. It guarantees that your work is reproducible and organized (Never use setwd()!).\nIt is important to have a structured project directory. A best practice is to follow the structure made for R Packages (Marwick et al., 2018).\nEvery data project must be accompanied, at least, by a README file, explaining the project, and a LICENSE file, defining the terms of use of the data (See Open Source Licenses here).\n\n\n\n\n\n\n\n(Reproduced from Marwick et al. (2018))\n\n\nAdd a README file to the project using usethis::use_readme_md().\nAdd a License file to the project using usethis::use_mit_license()."
   },
   {
     "objectID": "index.html#quarto-notebooks-1",
@@ -389,7 +368,7 @@
     "href": "index.html#functionals",
     "title": "An Introduction to the R Programming Language",
     "section": "Functionals",
-    "text": "Functionals\n\n\nA functional is a function that takes a function as an input and returns a vector as output (Wickham, 2019).\nIt makes the work of the programmer easier, because it allows to apply a function to a vector without the need of a loop. Because these functions are written in C, they are very fast.\nR have native functionals (e.g., lapply()), but prefer solutions from the purrr package.\n\n\n\n\ntriple &lt;- function(x) x * 3\n\n\nwith_for_loop &lt;- function(x) {\n  out &lt;- numeric()\n  for (i in x) out &lt;- c(out, triple(i))\n  out\n}\n\n\nlibrary(purrr)\n\nwith_map &lt;- function(x) map_dbl(x, triple)\n\n\nlibrary(microbenchmark)\n\nmicrobenchmark(\n  with_for_loop(1:1000),\n  with_map(1:1000),\n  times = 100,\n  check = \"equal\"\n)\n#&gt; Unit: microseconds\n#&gt;                   expr     min      lq      mean   median       uq      max\n#&gt;  with_for_loop(1:1000) 784.623 845.168 1207.6154 898.5985 952.7205 5750.999\n#&gt;       with_map(1:1000) 299.510 314.445  350.2287 337.3155 368.4010 1025.327\n#&gt;  neval cld\n#&gt;    100  a \n#&gt;    100   b"
+    "text": "Functionals\n\n\nA functional is a function that takes a function as an input and returns a vector as output (Wickham, 2019).\nIt makes the work of the programmer easier, because it allows to apply a function to a vector without the need of a loop. Because these functions are written in C, they are very fast.\nR have native functionals (e.g., lapply()), but prefer solutions from the purrr package.\n\n\n\n\ntriple &lt;- function(x) x * 3\n\n\nwith_for_loop &lt;- function(x) {\n  out &lt;- numeric()\n  for (i in x) out &lt;- c(out, triple(i))\n  out\n}\n\n\nlibrary(purrr)\n\nwith_map &lt;- function(x) map_dbl(x, triple)\n\n\nlibrary(microbenchmark)\n\nmicrobenchmark(\n  with_for_loop(1:1000),\n  with_map(1:1000),\n  times = 100,\n  check = \"equal\"\n)\n#&gt; Unit: microseconds\n#&gt;                   expr     min       lq      mean  median       uq      max\n#&gt;  with_for_loop(1:1000) 672.314 709.7220 1027.5136 734.757 779.2605 4764.336\n#&gt;       with_map(1:1000) 292.412 303.7345  326.4403 316.335 328.2860  996.650\n#&gt;  neval cld\n#&gt;    100  a \n#&gt;    100   b"
   },
   {
     "objectID": "index.html#enviroments",
@@ -1223,6 +1202,20 @@
     "title": "An Introduction to the R Programming Language",
     "section": "(AP) A Bit of History",
     "text": "(AP) A Bit of History\n\n\nKeep in mind\n\n1st World War (1914–1918)\n2nd World War (1939–1945)\n\nUniversal Turing machine (Alan Turing) (Turing, 1937)\n“von Neumann Architecture” (1945) (von Neumann, 1993)\nENIAC (1945)\n\n\n\n\n\n\n\n(Photo by Science History Images/Alamy Stock Photo)\n\n\nEnigma machine"
+  },
+  {
+    "objectID": "index.html#low-and-high-level-prog.-lang.",
+    "href": "index.html#low-and-high-level-prog.-lang.",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Low and High-Level Prog. Lang.",
+    "text": "Low and High-Level Prog. Lang."
+  },
+  {
+    "objectID": "index.html#programming-paradigms",
+    "href": "index.html#programming-paradigms",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Programming Paradigms",
+    "text": "Programming Paradigms\nA programming paradigm is a specific approach to the programming process (Brookshear & Brylow, 2020).\nR is a multi-paradigm programming language, but is mainly functional.\n\n\nProcedural (Imperative)\n\nx &lt;- seq(1, 10)\ny &lt;- numeric()\nz &lt;- 0\n\nfor (i in x) {\n  y &lt;- c(y, i + 1)\n}\n\nfor (i in y) {\n  z &lt;- z + i\n}\n\nz / length(x)\n#&gt; [1] 6.5\n\n\nFunctional (Declarative)\n\nseq(1, 10) |&gt;\n  vapply(\\(x) x + 1, numeric(1)) |&gt;\n  mean()\n#&gt; [1] 6.5\n\n\n\n\nObject-Oriented (Imperative)\n\n\nlibrary(S7)\n\ndog &lt;- new_class(\"dog\", properties = list(\n  name = class_character,\n  age = class_numeric\n))\n\nlola &lt;- dog(name = \"Lola\", age = 11)\nspeak &lt;- new_generic(\"speak\", \"x\")\nmethod(speak, dog) &lt;- function(x) \"Woof\"\nspeak(lola)\n#&gt; [1] \"Woof\""
   },
   {
     "objectID": "index.html#ap-debugging",
