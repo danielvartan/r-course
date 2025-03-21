@@ -39,6 +39,29 @@ knitr::opts_chunk$set(
   fig.showtext = TRUE
 )
 
+# Set `brandr` options -----
+
+options(BRANDR_BRAND_YML = here::here("_brand.yml"))
+
+brandr_options <- list(
+  "BRANDR_COLOR_SEQUENTIAL" =
+    brandr::get_brand_color(c("primary", "secondary")),
+  "BRANDR_COLOR_DIVERGING" =
+    brandr::get_brand_color(c("primary", "white", "secondary")),
+  "BRANDR_COLOR_QUALITATIVE" = c(
+    brandr::get_brand_color("primary"),
+    brandr::get_brand_color("secondary"),
+    brandr::get_brand_color("tertiary"),
+    "#9ECD7A", # brandr::get_brand_color("light-green"),
+    "#B44522", # brandr::get_brand_color("dark-red"),
+    brandr::get_brand_color("black")
+  )
+)
+
+for (i in seq_along(brandr_options)) {
+  options(brandr_options[i])
+}
+
 # Set and load graph fonts -----
 
 sysfonts::font_paths(here::here("ttf"))
@@ -49,15 +72,6 @@ sysfonts::font_add(
   bold = here::here("ttf", "poppins-bold.ttf"),
   italic = here::here("ttf", "poppins-italic.ttf"),
   bolditalic = here::here("ttf", "poppins-bolditalic.ttf"),
-  symbol = NULL
-)
-
-sysfonts::font_add(
-  family = "dm-sans",
-  regular = here::here("ttf", "dmsans-regular.ttf"),
-  bold = here::here("ttf", "dmsans-bold.ttf"),
-  italic = here::here("ttf", "dmsans-italic.ttf"),
-  bolditalic = here::here("ttf", "dmsans-bolditalic.ttf"),
   symbol = NULL
 )
 
@@ -105,7 +119,7 @@ ggplot2::theme_set(
 # <https://github.com/paleolimbot/rbbt/issues/47>). If not, install `rbbt`
 # from @wmoldham fork `remotes::install_github("wmoldham/rbbt", force = TRUE)`.
 
-rutils:::bbt_write_quarto_bib(
+quartor::bbt_write_quarto_bib(
   bib_file = here::here("references.bib"),
   dir = c(".", "qmd"),
   pattern = "\\.qmd$",

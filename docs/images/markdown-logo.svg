@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 15.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   version="1.1"
+   id="Layer_1"
+   x="0px"
+   y="0px"
+   width="208px"
+   height="128px"
+   viewBox="0 0 208 128"
+   enable-background="new 0 0 208 128"
+   xml:space="preserve"
+   sodipodi:docname="markdown-logo.svg"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs2" /><sodipodi:namedview
+   id="namedview2"
+   pagecolor="#505050"
+   bordercolor="#eeeeee"
+   borderopacity="1"
+   inkscape:showpageshadow="0"
+   inkscape:pageopacity="0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#505050"
+   inkscape:zoom="2.2235194"
+   inkscape:cx="77.804584"
+   inkscape:cy="60.039954"
+   inkscape:window-width="1920"
+   inkscape:window-height="1020"
+   inkscape:window-x="0"
+   inkscape:window-y="28"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="Layer_1" />
+<path
+   fill="none"
+   stroke="#FFFFFF"
+   stroke-width="10"
+   d="M15,5h178c5.523,0,10,4.477,10,10v98c0,5.523-4.477,10-10,10H15  c-5.523,0-10-4.477-10-10V15C5,9.477,9.477,5,15,5z"
+   id="path1"
+   style="stroke:#000000;stroke-opacity:1" />
+<path
+   fill="#FFFFFF"
+   d="M30,98V30h20l20,25l20-25h20v68H90V59L70,84L50,59v39H30z M155,98l-30-33h20V30h20v35h20L155,98z"
+   id="path2"
+   style="fill:#000000;fill-opacity:1" />
+</svg>

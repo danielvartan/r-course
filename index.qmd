@@ -16,16 +16,16 @@ This course will introuce you to the **R** programming language.
 :::: {.column style="width: 5%;"}
 ::::
 :::: {.column style="width: 47.5%;"}
-We'll explore the following topics:
+Here are the main topics:
 
 ::: {style="font-size: 0.85em; padding-top: 15px;"}
 1. [**Introduction**]{.brand-brown}
 1. [**Computer Science**]{.brand-brown}
 1. [**R Basics**]{.brand-brown}
 1. [**Data Munging**]{.brand-brown}
-1. [**Data Visualization**]{.brand-brown}
 1. [**Exploratory Data Analysis**]{.brand-brown}
 1. [**Modeling**]{.brand-brown}
+1. [**Project**]{.brand-brown}
 1. [**Conclusion**]{.brand-brown}
 :::
 ::::
@@ -50,17 +50,17 @@ We'll explore the following topics:
 
 ## Course Objectives {.smaller}
 
-Understand the thought and knowledge underlying computer science.
+Grasp the fundamental principles and knowledge of computer science.
 
-Understand the structure and basic elements of the R language.
+Comprehend the structure and core elements of the R programming language.
 
-Understand basic concepts of data munging in R.
+Learn essential concepts of data munging.
 
-Understand basic concepts of data visualization in R.
+Understand the basics of data visualization.
 
-Understand basic concepts of exploratory data analysis in R.
+Explore fundamental techniques of exploratory data analysis.
 
-Understand basic concepts about modeling in R.
+Learn basic modeling concepts.
 
 ::: {style="padding-top: 30px;"}
 ([**Future course?**]{.brand-red} An Introduction to [Git](https://en.wikipedia.org/wiki/Git))
@@ -92,14 +92,31 @@ The classes are distributed over **5 days**, with a total of **9 hours**.
 :::
 ::: {.column style="width: 5%;"}
 :::
-::: {.column style="width: 47.5%; padding-top: 50px;"}
-- Monday (24/03)_13:00-14:00
-- Tuesday (25/03) 13:00-14:00
-- Wednesday (26/03) [**13:00-18:00**]{.brand-red}
-- Thursday (27/03) 13:00-14:00
-- Friday (28/03) 13:00-14:00
+::: {.column style="width: 47.5%; padding-top: 100px;"}
+Monday (24/03) 13:00-14:00
+
+Tuesday (25/03) 13:00-14:00
+
+Wednesday (26/03) [**13:00-18:00**]{.brand-red}
+
+Thursday (27/03) 13:00-14:00
+
+Friday (28/03) 13:00-14:00
 :::
 ::::
+
+::: {.notes}
+:::
+
+## Class Dynamic
+
+Theory ➡️ Practice.
+
+🏋 In-class activities.
+
+📓 Final project.
+
+😌 No formal evaluation.
 
 ::: {.notes}
 :::
@@ -125,28 +142,15 @@ The classes are distributed over **5 days**, with a total of **9 hours**.
 - See also: [Advanced R Solutions](https://advanced-r-solutions.rbind.io/) [@grosser2021].
 :::
 
-## Other Useful References for Starters {.smaller}
+## Let’s Get This Over With {.smaller}
 
-<!-- code.org2018 -->
+Mistakes will happen. Don't let them discourage you!
 
-Code.org. (2018, January 30). *How computers work* [YouTube video]. https://youtube.com/playlist?list=PLzdnOPI1iJNcsRwJhvksEo1tJqjIqWbN-&si=WkuM8c-AKI-NZ3td
+![](images/allison-horst-figure-48.jpg){fig-align="center" style="width: 100%; padding-top: 0px;"}
 
-<!-- zaidan2025 -->
-
-Zaidan, G., & Saini, S. (2025, February 25). _How are microchips made?_ [YouTube video]. TED-Ed. https://youtu.be/IkRXpFIRUl4?si=iQ7xQuFS6DZLuBY7
-
-<!-- w3schools -->
-
-W3Schools. (n.d.). _R Tutorial_. https://www.w3schools.com/r/
-
-<!-- bryana -->
-
-Bryan, J., Hester, J., Pileggi, S., & Aja, E. D. (n.d.). _What they forgot to teach you about R: The stuff you need to know about R, besides data analysis_. https://rstats.wtf/
-
-<!-- bryan -->
-
-Bryan, J. (n.d.). *Happy Git and GitHub for the useR*. https://happygitwithr.com/
- (**Strongly recommended**)
+::: footer
+(Artwork by [Allison Horst](https://allisonhorst.com/horst-hill-collaborations))
+:::
 
 ::: {.notes}
 :::
@@ -169,6 +173,149 @@ One of the best ways to get help is to search or ask questions on forums like [S
 ::: {.notes}
 :::
 
+## Notes
+
+💾 Bring a flash drive/pen drive.
+
+👩‍💻 Try to use the same computer for all classes.
+
+💬 Always open this presentation in the browser.
+
+❌ Don't miss a class.
+
+🙋‍♂️ Ask questions.
+
+🤝 Help each other.
+
+🎉 Have fun!
+
+::: {.notes}
+:::
+
+# Module 1<br>[Computer Science]{.brand-brown-750} {.smaller data-menu-title="Module 1: Computer Science"}
+
+::: {.notes}
+:::
+
+{{< include ./qmd/module-1.qmd >}}
+
+# Module 2<br>[R Basics]{.brand-brown-750} {.smaller data-menu-title="Module 2: R Basics"}
+
+::: {.notes}
+:::
+
+{{< include ./qmd/module-2.qmd >}}
+
+# Module 3<br>[Data Munging]{.brand-brown-750} {.smaller data-menu-title="Module 3: Data Munging"}
+
+::: {.notes}
+:::
+
+{{< include ./qmd/module-3.qmd >}}
+
+# Module 4<br>[Exploratory Data Analysis]{.brand-brown-750} {.smaller data-menu-title="Module 5: Exploratory Data Analysis"}
+
+::: {.notes}
+:::
+
+{{< include ./qmd/module-4.qmd >}}
+
+# Module 5<br>[Modeling]{.brand-brown-750} {.smaller data-menu-title="Module 6: Modeling"}
+
+::: {.notes}
+:::
+
+{{< include ./qmd/module-5.qmd >}}
+
+# Module 6<br>[Project]{.brand-brown-750} {.smaller data-menu-title="Module 7: Exercise"}
+
+{{< include ./qmd/module-6.qmd >}}
+
+::: {.notes}
+:::
+
+# Conclusion
+
+::: {.notes}
+:::
+
+## We Hope You Enjoyed the Course! {.smaller .nostretch}
+
+We sure enjoyed teaching you!
+
+![](images/allison-horst-figure-5.png){fig-align="center" style="width: 80%; padding-top: 10px;"}
+
+::: footer
+(Artwork by [Allison Horst](https://twitter.com/allison_horst))
+:::
+
+::: {.notes}
+:::
+
+## How to Learn More? {.smaller}
+
+Here are other great and free resources to learn more about R.
+
+🎓 **Online Courses**
+
+[Introdução à ciência da computação com python - Parte 1](https://www.coursera.org/learn/ciencia-computacao-python-conceitos) (USP-IME)
+
+[Introdução à ciência da computação com python - Parte 2](https://www.coursera.org/learn/ciencia-computacao-python-conceitos-2s) (USP-IME)
+
+[Data science specialization](https://www.coursera.org/specializations/jhu-data-science) (Johns Hopkins)
+
+::: {.notes}
+:::
+
+## How to Learn More? {.smaller}
+
+🎥 **Videos**
+
+<!-- @code.org2018 -->
+
+Code.org. (2018, January 30). **_How computers work_** [YouTube video]. <https://youtube.com/playlist?list=PLzdnOPI1iJNcsRwJhvksEo1tJqjIqWbN-&si=WkuM8c-AKI-NZ3td>
+
+<!-- @zaidan2025 -->
+
+Zaidan, G., & Saini, S. (2025, February 25). **_How are microchips made?_** [YouTube video]. TED-Ed. <https://youtu.be/IkRXpFIRUl4?si=iQ7xQuFS6DZLuBY7>
+
+::: {.notes}
+:::
+
+## How to Learn More? {.smaller}
+
+::: {style="font-size: 0.9em;"}
+📙 **Books**
+
+<!-- @wickham2023e -->
+
+Wickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2023). **_R for data science_**: *Import, tidy, transform, visualize, and model data* (2nd ed.). O’Reilly Media. <https://r4ds.hadley.nz>
+
+<!-- @bryana -->
+
+Bryan, J., Hester, J., Pileggi, S., & Aja, E. D. (n.d.). **_What they forgot to teach you about R_**: *The stuff you need to know about R, besides data analysis*. <https://rstats.wtf/>
+
+<!-- @bryan -->
+
+Bryan, J. (n.d.). **_Happy Git and GitHub for the useR_**. <https://happygitwithr.com/>
+ ([**Strongly recommended**]{.brand-red})
+
+<!-- @wickhamc -->
+
+Wickham, H. (n.d.). **_Tidy design principles_**. https://design.tidyverse.org
+
+<!-- @wickhamb -->
+
+Wickham, H. (n.d.). **_The tidyverse style guide_**. Retrieved July 17, 2023, from https://style.tidyverse.org
+
+<!-- @wickham2019 -->
+
+Wickham, H. (2019). **_Advanced R_** (2nd ed.). CRC Press. <https://adv-r.hadley.nz>
+:::
+
+::: {.notes}
+:::
+
 ## Examples of Data Reports {.smaller}
 
 :::: {.columns}
@@ -187,110 +334,10 @@ One of the best ways to get help is to search or ask questions on forums like [S
 ::: {.notes}
 :::
 
-## Class Dynamic {.smaller}
-
-- Theory followed by practice.
-- In-class activities.
-- Data science exercise at the end of the course.
-- No formal evaluation.
-
-::: {.notes}
-:::
-
-## Notes {.smaller}
-
-💾 Bring a flash drive/pen drive.
-
-👩‍💻 Use the same computer for all classes.
-
-💬 Always open this presentation in the browser.
-
-🤝 Help each other.
-
-🙋‍♂️ Ask questions.
-
-🎉 Have fun!
-
-::: {.notes}
-:::
-
-# Module 1<br>[Computer Science]{.brand-brown-750} {.smaller data-menu-title="Module 1: Computer Science"}
-
-::: {.notes}
-:::
-
-
-{{< include ./qmd/module-1.qmd >}}
-
-# Module 2<br>[R Basics]{.brand-brown-750} {.smaller data-menu-title="Module 2: R Basics"}
-
-::: {.notes}
-:::
-
-{{< include ./qmd/module-2.qmd >}}
-
-# Module 3<br>[Data Munging]{.brand-brown-750} {.smaller data-menu-title="Module 3: Data Munging"}
-
-::: {.notes}
-:::
-
-{{< include ./qmd/module-3.qmd >}}
-
-# Module 4<br>[Data Visualization]{.brand-brown-750} {.smaller data-menu-title="Module 4: Data Visualization"}
-
-::: {.notes}
-:::
-
-{{< include ./qmd/module-4.qmd >}}
-
-# Module 5<br>[Exploratory Data Analysis]{.brand-brown-750} {.smaller data-menu-title="Module 5: Exploratory Data Analysis"}
-
-::: {.notes}
-:::
-
-{{< include ./qmd/module-5.qmd >}}
-
-# Module 6<br>[Modeling]{.brand-brown-750} {.smaller data-menu-title="Module 6: Modeling"}
-
-::: {.notes}
-:::
-
-{{< include ./qmd/module-6.qmd >}}
-
-# Module 7<br>[Some Other Things You May Need to Know]{.brand-brown-750} {.smaller data-menu-title="Module 7: Some Other Things You May Need to Know"}
-
-{{< include ./qmd/module-7.qmd >}}
-
-::: {.notes}
-:::
-
-# Conclusion
-
-::: {.notes}
-:::
-
-## How to Learn More? {.smaller}
-
-[Introdução à ciência da computação com python - Parte 1](https://www.coursera.org/learn/ciencia-computacao-python-conceitos) (USP-IME)
-
-[Introdução à ciência da computação com python - Parte 2](https://www.coursera.org/learn/ciencia-computacao-python-conceitos-2s) (USP-IME)
-
-[Data science specialization](https://www.coursera.org/specializations/jhu-data-science) (Johns Hopkins)
-
-::: {.notes}
-:::
-
-## Post-Course Survey {.smaller}
-
-::: {.notes}
-:::
-
 ## Closing Remarks {.smaller}
 
-[![License:
-MIT](images/mit-license-badge.svg){style="width: 10.5%; padding-top: 0px;"}](https://choosealicense.com/licenses/mit/)
-[![License: CC BY
-4.0](images/cc-licence-badge.svg){style="width: 15%; padding-top: 0px;"}](https://creativecommons.org/licenses/by/4.0/)
+[![License: MIT](images/mit-license-badge.svg){style="width: 10.5%; padding-top: 0px;"}](https://choosealicense.com/licenses/mit/)
+[![License: CC BY 4.0](images/cc-licence-badge.svg){style="width: 15%; padding-top: 0px;"}](https://creativecommons.org/licenses/by/4.0/)
 
 This presentation was created with the [Quarto](https://quarto.org/) Publishing System. The code and materials are available on [GitHub](https://github.com/danielvartan/r-course).
 
@@ -326,6 +373,16 @@ In accordance with the [American Psychological Association (APA) Style](https://
 ::: {.notes}
 :::
 
+# Appendices {visibility="uncounted"}
+
+::: {.notes}
+:::
+
 {{< include ./qmd/appendices.qmd >}}
+
+# Teaching Plan {visibility="uncounted"}
+
+::: {.notes}
+:::
 
 {{< include ./qmd/teaching-plan.qmd >}}

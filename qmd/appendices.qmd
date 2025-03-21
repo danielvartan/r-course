@@ -1,8 +1,3 @@
-# Appendices {visibility="uncounted"}
-
-::: {.notes}
-:::
-
 ## (AP) A Bit of History {.smaller visibility="uncounted"}
 
 :::: {.columns}
@@ -53,12 +48,12 @@
 - [Enigma machine](https://en.wikipedia.org/wiki/Enigma_machine)
 :::
 
-## Low and High-Level Prog. Lang. {.smaller}
+## (AP) Low and High-Level Prog. Lang. {.smaller visibility="uncounted"}
 
 ::: {.notes}
 :::
 
-## Programming Paradigms {.smaller}
+## (AP) Programming Paradigms {.smaller visibility="uncounted"}
 
 A [programming paradigm](https://en.m.wikipedia.org/wiki/Programming_paradigm) is a specific approach to the programming process [@brookshear2020].
 
@@ -143,6 +138,21 @@ speak(lola)
 - You can think of data engineering as the **plumbing** of data science.
 :::
 
+## (AP) Data Eng. *versus* Data Science {.smaller .nostretch visibility="uncounted"}
+
+::: {style="padding-top: 25px;"}
+> Data scientists, according to interviews and expert estimates, spend **from 50 percent to 80 percent of their time mired in this more mundane labor of collecting and preparing unruly digital data**, before it can be explored for useful nuggets [@lohr2014].
+:::
+
+![](images/reis-2022-figure-1-6.png){fig-align="center" style="width: 90%; padding-top:50px;"}
+
+::: footer
+(Figure reproduced from @reis2022)
+:::
+
+::: {.notes}
+:::
+
 ## (AP) The Tidy Data Manifesto {.smaller visibility="uncounted"}
 
 ::: footer
@@ -152,9 +162,9 @@ speak(lola)
 ::: {.notes}
 :::
 
-## (AP) Tidy Data {.smaller visibility="uncounted"}
+## (AP) Tidy Data {.smaller .nostretch visibility="uncounted"}
 
-![](images/allison-horst-figure-19.jpg){fig-align="center" style="width: 85%;"}
+![](images/allison-horst-figure-19.jpg){fig-align="center" style="width: 80%; padding-top: 50px;"}
 
 ::: footer
 (Artwork by [Allison Horst](https://allisonhorst.com/horst-hill-collaborations))
@@ -189,9 +199,9 @@ The best tools for handling big data are [R](https://www.r-project.org/) and [Py
 ::: {.notes}
 :::
 
-## (AP) Fair Principles {.smaller visibility="uncounted"}
+## (AP) Fair Principles {.smaller .nostretch visibility="uncounted"}
 
-![](images/fair-data-principles.png){fig-align="center" style="padding-top: 75px;"}
+![](images/fair-data-principles.png){fig-align="center" style="width: 75%; padding-top: 75px;"}
 
 ::: footer
 (To learn more see: @wilkinson2016 and @gofairinitiative)
@@ -235,7 +245,61 @@ A data management plan (DMP) is a formal document that outlines how data will be
 ::: {.notes}
 :::
 
-## Digital Objects & Version Control {.smaller}
+## (AP) The `summarytools` Package {.smaller visibility="uncounted"}
+
+::: {style="font-size: 0.8em;"}
+```{r}
+#| code-fold: true
+#| warning: true
+#| output: asis
+
+library(palmerpenguins)
+library(summarytools)
+
+penguins |>
+  dplyr::select(species, island, bill_length_mm) |>
+  dfSummary(
+    plain.ascii = FALSE,
+    style = "grid",
+    headings = FALSE,
+    graph.magnif = 0.82,
+    varnumbers = FALSE,
+    valid.col = FALSE
+  )
+```
+:::
+
+::: {.notes}
+:::
+
+## (AP) The `visdat` Package {.smaller visibility="uncounted"}
+
+:::: {.columns}
+::: {.column style="width: 15%;"}
+[![](images/visdat-hex-logo.svg){style="width: 120px;"}](https://docs.ropensci.org/visdat/)
+:::
+::: {.column style="width: 85%; padding-top: 15px;"}
+`visdat` helps you diagnose missing values and other potential problems in your data.
+
+```r
+install.packages("visdat")
+```
+:::
+::::
+
+```{r}
+#| eval: false
+
+library(palmerpenguins)
+library(visdat)
+
+penguins |> vis_dat()
+```
+
+::: {.notes}
+:::
+
+## (AP) Digital Objects & Version Control {.smaller visibility="uncounted"}
 
 :::: {.columns}
 ::: {.column style="width: 47%;"}
@@ -251,7 +315,7 @@ A data management plan (DMP) is a formal document that outlines how data will be
 ::: {.notes}
 :::
 
-## Open Licenses {.smaller}
+## (AP) Open Licenses {.smaller visibility="uncounted"}
 
 A unlicensed work is an "all rights reserved" work. This means that you can't use it without the author's permission.
 
@@ -276,7 +340,7 @@ A unlicensed work is an "all rights reserved" work. This means that you can't us
 :::
 ::::
 
-## Dynamic Documents {.smaller}
+## (AP) Dynamic Documents {.smaller visibility="uncounted"}
 
 Dynamic documents seamlessly integrate text with output from a programming language, automatically updating the output whenever the code is executed.
 
@@ -308,7 +372,7 @@ Dynamic documents seamlessly integrate text with output from a programming langu
 - Jupyter can be used with Quarto.
 :::
 
-## Pipelines {.smaller .nostretch}
+## (AP) Pipelines {.smaller .nostretch visibility="uncounted"}
 
 Pipeline tools coordinate the pieces of computationally demanding analysis projects. They can be used to automate the execution of a series of tasks.
 
@@ -328,7 +392,7 @@ Pipeline tools coordinate the pieces of computationally demanding analysis proje
 ::: {.notes}
 :::
 
-## Reproducible Environments {.smaller}
+## (AP) Reproducible Environments {.smaller visibility="uncounted"}
 
 Reproducible environments ensure that your code will run the same way on different machines and regardless of the time.
 
@@ -344,7 +408,7 @@ Reproducible environments ensure that your code will run the same way on differe
 ::: {.notes}
 :::
 
-## App. Prog. Interfaces (APIs) {.smaller}
+## (AP) App. Prog. Interfaces (APIs) {.smaller visibility="uncounted"}
 
 ::: {style="font-size: 0.8em;"}
 APIs are a set of rules that allow different software applications to communicate with each other.
@@ -379,11 +443,11 @@ get_sidra(
   prettyNum(big.mark = ",")
 ```
 
-## KISS Principle {.nostretch}
+## (AP) KISS Principle {.nostretch visibility="uncounted"}
 
 ![](images/kiss-principle.png){fig-align="center" style="width: 75%; padding-top: 50px;"}
 
-## Some Other Things... {.smaller}
+## (AP) Some Other Things... {.smaller visibility="uncounted"}
 
 We've only touched upon the vast landscape of open science. There are many other tools and concepts that we didn't cover, such as:
 
@@ -407,7 +471,7 @@ We've only touched upon the vast landscape of open science. There are many other
 ::: {.notes}
 :::
 
-## Some Other Things... {.smaller .nostretch}
+## (AP) Some Other Things... {.smaller .nostretch visibility="uncounted"}
 
 ![](images/allison-horst-figure-9.png){fig-align="center" style="width: 90%; padding-top: 10px;"}
 

@@ -1,0 +1,316 @@
+# Dependências
+
+## Introdução
+
+Este notebook computacional foi desenvolvido para auxiliar os servidores da Superintendência de Tecnologia da Informação (STI) da Faculdade de Saúde Pública ([FSP](https://www.fsp.usp.br/)) da Universidade de São Paulo ([USP](https://www5.usp.br/)) na instalação e teste dos pacotes necessários para o curso de **Introdução à Linguagem de Programação R**.
+
+O repositório do curso no GitHub pode ser acessado através deste [link](https://github.com/danielvartan/r-course). Os slides das aulas estão disponíveis [aqui](https://danielvartan.github.io/r-course/).
+
+Agradecemos à equipe da STI pela atenção e apoio.
+
+## Como Usar
+
+Siga os passos abaixo para instalar e testar os pacotes necessários para o curso.
+
+1. Instale todas as dependências listadas abaixo.
+2. Abra este notebook no RStudio.
+3. Execute, em ordem, os blocos de código da seção *Pacotes/Importações* para instalar os pacotes necessários.
+4. Execute, em ordem, os blocos de código da seção *Teste* para verificar se tudo está funcionando corretamente.
+
+Caso ocorra algum problema durante os testes, verifique se algum pacote não foi instalado corretamente.
+
+Os instrutores do curso estão à disposição para ajudar a qualquer momento via e-mail ou WhatsApp.
+
+## Dependências
+
+O curso se baseia em três ferramentas: A linguagem de programação [R](https://cran.r-project.org/); o ambiente de desenvolvimento integrado (IDE) [RStudio](https://posit.co/download/rstudio-desktop/); e o sistema de notebooks computacionais [Quarto](https://quarto.org/docs/get-started/). Abaixo estão as versões mínimas necessárias para cada uma dessas ferramentas.
+
+- R >= 4.4 (Última versão: 4.4.3)
+- RStudio >= 2024.12 (Última versão: 2024.12.1)
+- Quarto >= 1.6.39 (Última versão: 1.6.42)
+
+## Pacotes/Importações
+
+### Tidyverse
+
+```{r}
+install.packages(
+  c(
+    "dplyr", "forcats", "fs", "ggplot2", "googledrive", "googlesheets4",
+    "haven", "hms", "lubridate", "magrittr", "purrr", "stringr", "tibble",
+    "tidyr", "readr", "readxl"
+  ),
+  dependencies = TRUE
+)
+```
+
+Instale também o meta-pacote, por via das dúvidas (o metapacote não contém todos os pacotes da coleção).
+
+```{r}
+install.packages("tidyverse", dependencies = TRUE)
+```
+
+### Tidymodels
+
+```{r}
+install.packages(
+  c(
+    "broom", "infer", "parsnip", "recipes", "rsample", "workflows", "yardstick"
+  ),
+  dependencies = TRUE
+)
+```
+
+Instale também o meta-pacote, por via das dúvidas (o metapacote não contém todos os pacotes da coleção).
+
+```{r}
+install.packages("tidymodels", dependencies = TRUE)
+```
+
+### R Infrastructure (R-Lib)
+
+```{r}
+install.packages(
+  c("cli", "here", "httr", "ragg", "remotes", "rlang", "usethis"),
+  dependencies = TRUE
+)
+```
+
+### Outros
+
+```{r}
+install.packages(
+  c(
+    "checkmate", "clipr", "curl", "effectsize", "geobr", "GGally", "janitor",
+    "jsonlite", "palmerpenguins", "patchwork", "psychometric", "RColorBrewer",
+    "sidrar", "summarytools", "tictoc", "viridis", "xml2", "knitr", "rmarkdown",
+    "summarytools", "gt", "osfr", "moments", "nortest", "performance", "report",
+    "DT", "rstudioapi", "pwrss", "car", "multcomp", "fBasics", "ggplotify",
+    "latex2exp", "olsrr", "skedastic", "yaml", "microbenchmark", "mctq",
+    "terra", "sf", "raster", "pwr", "pander"
+  ),
+  dependencies = TRUE
+)
+```
+
+### GitHub
+
+Para instalar pacotes remotos, use o pacote `remotes`.
+
+```{r}
+install.packages("remotes", dependencies = TRUE)
+```
+
+```{r}
+remotes::install_github(
+  c(
+    "danielvartan/brandr", "danielvartan/groomr", "danielvartan/orbis",
+    "danielvartan/plotr", "danielvartan/quartor", "danielvartan/rutils",
+    "danielvartan/iramuteqlike", "danielvartan/lockr",
+    "danielvartan/prettycheck"
+  ),
+  dependencies = TRUE
+)
+```
+
+## Testes
+
+Execute os blocos de código abaixo para verificar se todos os pacotes foram instalados corretamente.
+
+```{r}
+#| code-fold: true
+#| label: test-chunk-1
+#| warning: false
+#| fig-align: center
+
+library(brandr)
+library(ggplot2)
+library(palmerpenguins)
+
+penguins |>
+  ggplot(aes(x = island, fill = species)) +
+  geom_bar(alpha = 0.8) +
+  theme_minimal() +
+  facet_wrap(~species, ncol = 1) +
+  coord_flip() +
+  labs(
+    x = "Island",
+    y = "Count"
+  ) +
+  brandr::scale_fill_brand_d() +
+  theme(legend.position = "none")
+```
+
+```{r}
+#| code-fold: true
+#| warning: false
+#| fig-align: center
+
+library(brandr)
+library(ggplot2)
+library(palmerpenguins)
+library(tidyr)
+
+penguins |>
+  drop_na(flipper_length_mm, species) |>
+  ggplot(aes(x = flipper_length_mm, fill = species)) +
+  geom_histogram(bins = 30, alpha = 0.5, position = "identity") +
+  labs(x = "Flipper Length (mm)", y = "Frequency", fill = "Species") +
+  brandr::scale_fill_brand_d()
+```
+
+```{r}
+#| code-fold: true
+#| warning: false
+#| fig-align: center
+
+library(brandr)
+library(ggplot2)
+library(palmerpenguins)
+library(tidyr)
+
+penguins |>
+  drop_na(bill_length_mm, species) |>
+  ggplot(aes(x = species, y = bill_length_mm, fill = species)) +
+  geom_boxplot(outlier.color = brandr::get_brand_color("dark-red")) +
+  geom_jitter(width = 0.2, alpha = 0.1) +
+  brandr::scale_fill_brand_d(alpha = 0.7) +
+  labs(x = "Species", y = "Bill Length (mm)", fill = "Species")
+```
+
+```{r}
+#| code-fold: true
+#| warning: false
+#| fig-align: center
+
+library(brandr)
+library(ggplot2)
+library(palmerpenguins)
+library(tidyr)
+
+penguins |>
+  drop_na(flipper_length_mm, body_mass_g, species) |>
+  ggplot(
+    aes(
+      x = flipper_length_mm,
+      y = body_mass_g,
+      color = species,
+      shape = species
+    )
+  ) +
+  geom_point(size = 2) +
+  geom_smooth(method = "lm", formula = y ~ x, se = FALSE) +
+  labs(
+    x = "Flipper Length (mm)",
+    y = "Body Mass (g)",
+    color = "Species",
+    shape = "Species"
+  ) +
+  brandr::scale_color_brand_d(alpha = 0.7)
+```
+
+```{r}
+#| code-fold: true
+#| warning: false
+#| fig-align: center
+
+library(brandr)
+library(dplyr)
+library(ggplot2)
+library(palmerpenguins)
+library(tidyr)
+
+penguins |>
+  drop_na(flipper_length_mm, body_mass_g, sex) |>
+  mutate(sex = `levels<-`(sex, stringr::str_to_title(levels(sex)))) |>
+  ggplot(aes(x = flipper_length_mm, y = body_mass_g, color = sex)) +
+  geom_point(size = 2) +
+  geom_smooth(
+    method = "lm",
+    formula = y ~ x,
+    se = FALSE,
+    color = brandr::get_brand_color("brown")
+  ) +
+  labs(
+    x = "Flipper Length (mm)",
+    y = "Body Mass (g)",
+    color = "Sex"
+  ) +
+  brandr::scale_color_brand_d(alpha = 0.7) +
+  facet_wrap(~species)
+```
+
+```{r}
+#| code-fold: true
+#| warning: false
+#| fig-align: center
+
+library(brandr)
+library(ggplot2)
+library(palmerpenguins)
+library(patchwork)
+library(tidyr)
+
+plot_hist <-
+  penguins |>
+  drop_na(flipper_length_mm, species) |>
+  ggplot(aes(x = flipper_length_mm, fill = species)) +
+  geom_histogram(bins = 30, alpha = 0.5, position = "identity") +
+  labs(x = "Flipper Length (mm)", y = "Frequency") +
+  brandr::scale_fill_brand_d() +
+  theme(legend.position = "none")
+
+plot_boxplot <-
+  penguins |>
+  drop_na(bill_length_mm, species) |>
+  ggplot(aes(x = species, y = bill_length_mm, fill = species)) +
+  geom_boxplot(outlier.color = brandr::get_brand_color("dark-red")) +
+  geom_jitter(width = 0.2, alpha = 0.1) +
+  labs(x = "Species", y = "Bill Length (mm)", fill = "Species") +
+  brandr::scale_fill_brand_d(alpha = 0.7) +
+  theme(axis.title.x = element_blank(), legend.position = "none")
+
+plot_scatter <-
+  penguins |>
+  drop_na(flipper_length_mm, body_mass_g, species) |>
+  ggplot(
+    aes(
+      x = flipper_length_mm,
+      y = body_mass_g,
+      color = species,
+      shape = species
+    )
+  ) +
+  geom_point(size = 2) +
+  geom_smooth(method = "lm", formula = y ~ x, se = FALSE) +
+  labs(
+    x = "Flipper Length (mm)",
+    y = "Body Mass (g)",
+    color = "Species",
+    shape = "Species"
+  ) +
+  brandr::scale_color_brand_d(alpha = 0.7) +
+  theme(legend.position = "none")
+
+(plot_hist + plot_boxplot) / plot_scatter + plot_annotation(tag_levels = "A")
+```
+
+```{r}
+#| code-fold: true
+#| warning: false
+#| fig-align: center
+#| fig-width: 12
+#| fig-height: 7
+
+library(brandr)
+library(dplyr)
+library(GGally)
+library(ggplot2)
+library(palmerpenguins)
+
+penguins |>
+  select(species, body_mass_g, ends_with("_mm")) |>
+  GGally::ggpairs(aes(color = species)) +
+  brandr::scale_color_brand_d(alpha = 0.7) +
+  brandr::scale_fill_brand_d(alpha = 0.7)
+```

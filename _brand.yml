@@ -32,17 +32,14 @@ meta:
 
 color:
   palette:
-    # Primary Colors
     green: "#006909"
     red: "#ED6B4D"
     red-750: "#F5B4A5"
     brown: "#513024"
     brown-750: "#A79791"
-    # Secondary Colors
     light-green: "#9ECD7A"
     dark-red: "#B44522"
     dark-red-triadic-blue: "#4522B4" # colortools::triadic("#B44522")[3]
-    # Grayscale
     white: "#FFFFFF"
     grey: "#7A7A7A"
     grey-950: "#F1F1F1"
@@ -61,18 +58,15 @@ color:
 
 typography:
   fonts:
-    # Main fonts
     - family: Poppins
-      source: google
-    - family: DM Sans
       source: google
     - family: DM Mono
       source: google
-  base: # color: gray
+  base:
     family: Poppins
     line-height: 1.5
     weight: normal
-  headings: # h1 3rem; h2 1.6rem;
+  headings:
     family: Poppins
     color: brown
     weight: bold

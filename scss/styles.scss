@@ -55,7 +55,6 @@ h2 {
   color: $brand-grey;
 }
 
-
 /* Controls ----- */
 
 .reveal .controls button {
@@ -69,11 +68,23 @@ h2 {
   color: $brand-black;
 }
 
+/* rmarkdown::paged_table ----- */
+
+.pagedtable-footer {
+  font-size: 1rem;
+}
+
 /* Others ----- */
 
 .center-x {
   display: inline-block;
   text-align: center;
+}
+
+.center-y {
+  display: flex;
+  justify-content: center;
+  height: 90%;
 }
 
 .center-xy {

@@ -270,33 +270,21 @@ Although R is a specialized language, you can stretch it to do almost anything (
 ::: {.notes}
 :::
 
-## Data Science {.nostretch .smaller}
+## How to Learn More {.smaller}
 
-::: {style="font-size: 0.8em"}
-> Data science is the study of the generalizable extraction of knowledge from data [@dhar2023].
-
-For some, data science is just statistics [@broman2013] (_hype statistics_). For others, it's a new interdisciplinary field that synthesizes statistics, informatics, computing, communication, management, and sociology [@cao2017].
+:::: {.columns}
+::: {.column style="width: 47.5%;"}
+[![](images/brookshear-2020-book-cover.jpg){fig-align="center" style="width: 90%; padding-top: 0px;"}](https://books.google.com.br/books/about/Computer_Science_An_Overview_Global_Edit.html?id=uzKvwwEACAAJ&redir_esc=y)
 :::
-
-![](images/wickham-2023-figure-1.png){fig-align="center" style="width: 85%; padding-top: 10px;"}
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+[![](images/ifrah-2001-book-cover.jpg){fig-align="center" style="width: 75%;"}](https://archive.org/details/the-universal-history-of-computing-from-the-abacus-to-the-quantum-computer-by-ge)
+:::
+::::
 
 ::: footer
-(Figure reproduced from @wickham2023e)
-:::
-
-::: {.notes}
-:::
-
-## Data Eng. *versus* Data Science {.smaller .nostretch}
-
-::: {style="padding-top: 25px;"}
-> Data scientists, according to interviews and expert estimates, spend **from 50 percent to 80 percent of their time mired in this more mundane labor of collecting and preparing unruly digital data**, before it can be explored for useful nuggets [@lohr2014].
-:::
-
-![](images/reis-2022-figure-1-6.png){fig-align="center" style="width: 90%; padding-top:50px;"}
-
-::: footer
-(Figure reproduced from @reis2022)
+(Book cover image from @brookshear2020 and @ifrah2001)
 :::
 
 ::: {.notes}

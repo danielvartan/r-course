@@ -1,3 +1,178 @@
+## Simple Statistics {.smaller}
+
+The `stats` package, that comes with a typical R installation, provides a set of basic statistical functions.
+
+```{r}
+library(palmerpenguins)
+
+bill_length_mm <- penguins |> dplyr::pull(bill_length_mm)
+bill_depth_mm <- penguins |> dplyr::pull(bill_depth_mm)
+```
+```{r}
+bill_length_mm |> mean(na.rm = TRUE)
+```
+```{r}
+bill_length_mm |> sd(na.rm = TRUE)
+```
+```{r}
+bill_length_mm |> median(na.rm = TRUE)
+```
+```{r}
+bill_length_mm |> quantile(na.rm = TRUE)
+```
+```{r}
+cor(bill_length_mm, bill_depth_mm, use = "complete.obs")
+```
+
+::: {.notes}
+:::
+
+## `head()` & `tail()` {.smaller}
+
+```{r}
+library(palmerpenguins)
+```
+
+```{r}
+penguins %>% head(3)
+```
+
+```{r}
+penguins %>% tail(3)
+```
+
+```{r}
+penguins |>
+  dplyr::pull(bill_length_mm) |>
+  head(3)
+```
+
+::: {.notes}
+:::
+
+## `slice_sample()` {.smaller}
+
+```{r}
+library(dplyr)
+library(palmerpenguins)
+
+penguins |> slice_sample(n = 10)
+```
+
+::: {.notes}
+:::
+
+## `glimpse()` {.smaller}
+
+```{r}
+library(dplyr)
+library(palmerpenguins)
+
+penguins %>% dplyr::glimpse()
+```
+
+::: {.notes}
+:::
+
+## `count()` {.smaller}
+
+```{r}
+library(dplyr)
+library(palmerpenguins)
+
+penguins |> count(species, island, .drop = FALSE)
+```
+
+::: {.notes}
+:::
+
+## `summarize()` {.smaller}
+
+```{r}
+library(dplyr)
+library(palmerpenguins)
+
+penguins |>
+  summarize(
+    mean = mean(flipper_length_mm, na.rm = TRUE),
+    sd = sd(flipper_length_mm, na.rm = TRUE),
+    .by = species
+  )
+```
+
+::: {.notes}
+:::
+
+## The `summarytools` Package {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 33%;"}
+[![](images/summarytools-hex-logo.png){style="width: 120px; padding-top: 0px;"}](https://cran.r-project.org/web/packages/summarytools/vignettes/introduction.html)
+
+A simple package for descriptive statistics.
+:::
+::: {.column style="width: 67%;"}
+
+```{r}
+library(palmerpenguins)
+library(summarytools)
+
+penguins |> descr(bill_depth_mm)
+```
+:::
+::::
+
+::: {.notes}
+:::
+
+## The `janitor` Package {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 15%;"}
+[![](images/janitor-hex-logo.png){style="width: 120px; padding-top: 0px;"}](https://sfirke.github.io/janitor/)
+:::
+::: {.column style="width: 85%; padding-top: 15px;"}
+The `tabyl` system from the `janitor` package provides more control over the output compared to the `summarytools` package.
+:::
+::::
+
+::: {style="font-size: 1em;"}
+```{r}
+#| code-fold: true
+
+library(janitor)
+library(knitr)
+library(palmerpenguins)
+
+penguins |>
+  tabyl(island, species) |>
+  adorn_totals(c("row", "col")) |>
+  adorn_percentages("row") |>
+  adorn_pct_formatting(rounding = "half up", digits = 0) |>
+  adorn_ns() |>
+  kable()
+```
+:::
+
+::: {.notes}
+:::
+
+## The `gt` Package {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 30%; font-size: 0.9em;"}
+[![](images/gt-hex-logo.svg){style="width: 120px; padding-top: 0px;"}](https://sfirke.github.io/janitor/)
+
+The most powerful package for creating and customizing tables in R. It provides a flexible **grammar** for table creation and styling.
+:::
+::: {.column style="width: 70%;"}
+![](images/gt-parts-of-a-table.svg){fig-align="center" style="width: 100%; padding-top: 40px;"}
+:::
+::::
+
+::: {.notes}
+:::
+
 ## The Grammar of Graphics {.smaller}
 
 :::: {.columns}
@@ -33,13 +208,7 @@ We will based this part of the course on the principles found in this book.
 
 :::: {.columns}
 ::: {.column style="width: 47.5%;"}
-[![](images/ggplot2-hex-logo.png){style="width: 25%; padding-top: 0px;"}](https://ggplot2.tidyverse.org/)
-
-::: {style="padding-top: 5px;"}
-```r
-install.packages("ggplot2")
-```
-::::
+[![](images/ggplot2-hex-logo.png){style="width: 120px; padding-top: 0px;"}](https://ggplot2.tidyverse.org/)
 
 The most powerful and flexible package for data visualization.
 
@@ -50,7 +219,7 @@ A [Tidyverse](https://www.tidyverse.org/) package based on the principles of *Th
 ::: {.column style="width: 47.5%;"}
 ![](images/r-graph-gallery-hierarchical-edge-bundling-figure-1.png){style="width: 100%; padding-top: 0px;"}
 :::
-:::
+::::
 
 ::: footer
 (Artwork by [R Chart Gallery](https://r-graph-gallery.com/hierarchical-edge-bundling.html))
@@ -59,36 +228,349 @@ A [Tidyverse](https://www.tidyverse.org/) package based on the principles of *Th
 ::: {.notes}
 :::
 
-## First Principles {.smaller}
+## It's All About Layers {.smaller}
 
 :::: {.columns}
-::: {.column style="width: 47.5%;"}
-It's all about levels
-
-You only visualize data when you already have clean, tidy, and validated data.
-
-![](images/meme-seinfeld-kramer-levels.gif){style="width: 100%; padding-top: 15px;"}
-:::
-::: {.column style="width: 5%;"}
-:::
-::: {.column style="width: 47.5%;"}
+::: {.column style="width: 50%;"}
 ``` {r}
+#| code-fold: true
 #| warning: false
+#| fig-height: 10
+
+library(ggplot2)
+library(palmerpenguins)
+
+penguins |> ggplot()
+```
+:::
+::: {.column style="width: 50%;"}
+``` {r}
+#| code-fold: true
+#| warning: false
+#| fig-height: 10
 
 library(ggplot2)
 library(palmerpenguins)
 
 penguins |>
-  ggplot(aes(x = flipper_length_mm))+
-  geom_histogram(fill = "darkorange") +
-  labs(x = "Flipper Length (mm)", y = "Frequency")
+  ggplot(aes(x = flipper_length_mm)) +
+  theme(text = element_text(size = 20))
 ```
 :::
 ::::
 
-::: footer
-(Artwork by [R Chart Gallery](https://r-graph-gallery.com/hierarchical-edge-bundling.html))
+::: {.notes}
 :::
+
+## It's All About Layers {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%;"}
+``` {r}
+#| code-fold: true
+#| warning: false
+#| fig-height: 10
+
+library(brandr)
+library(ggplot2)
+library(palmerpenguins)
+
+penguins |>
+  ggplot(aes(x = flipper_length_mm))+
+  geom_histogram(fill = brandr::get_brand_color("secondary")) +
+  theme(text = element_text(size = 20))
+```
+:::
+::: {.column style="width: 50%;"}
+``` {r}
+#| code-fold: true
+#| warning: false
+#| fig-height: 10
+
+library(brandr)
+library(ggplot2)
+library(palmerpenguins)
+
+penguins |>
+  ggplot(aes(x = flipper_length_mm))+
+  geom_histogram(fill = brandr::get_brand_color("secondary")) +
+  labs(x = "Flipper Length (mm)", y = "Frequency") +
+  theme(text = element_text(size = 20))
+```
+:::
+::::
+
+::: {.notes}
+:::
+
+## Bar Plots {.smaller}
+
+```{r}
+#| code-fold: true
+#| label: test-chunk-1
+#| warning: false
+#| fig-align: center
+
+library(brandr)
+library(ggplot2)
+library(palmerpenguins)
+
+penguins |>
+  ggplot(aes(x = island, fill = species)) +
+  geom_bar(alpha = 0.8) +
+  theme_minimal() +
+  facet_wrap(~species, ncol = 1) +
+  coord_flip() +
+  labs(
+    x = "Island",
+    y = "Count"
+  ) +
+  brandr::scale_fill_brand_d() +
+  theme(legend.position = "none")
+```
+
+## Histograms {.smaller}
+
+```{r}
+#| code-fold: true
+#| warning: false
+#| fig-align: center
+
+library(brandr)
+library(ggplot2)
+library(palmerpenguins)
+library(tidyr)
+
+penguins |>
+  drop_na(flipper_length_mm, species) |>
+  ggplot(aes(x = flipper_length_mm, fill = species)) +
+  geom_histogram(bins = 30, alpha = 0.5, position = "identity") +
+  labs(x = "Flipper Length (mm)", y = "Frequency", fill = "Species") +
+  brandr::scale_fill_brand_d()
+```
+
+## Boxplots {.smaller}
+
+```{r}
+#| code-fold: true
+#| warning: false
+#| fig-align: center
+
+library(brandr)
+library(ggplot2)
+library(palmerpenguins)
+library(tidyr)
+
+penguins |>
+  drop_na(bill_length_mm, species) |>
+  ggplot(aes(x = species, y = bill_length_mm, fill = species)) +
+  geom_boxplot(outlier.color = brandr::get_brand_color("dark-red")) +
+  geom_jitter(width = 0.2, alpha = 0.1) +
+  brandr::scale_fill_brand_d(alpha = 0.7) +
+  labs(x = "Species", y = "Bill Length (mm)", fill = "Species")
+```
+
+## Scatterplots {.smaller}
+
+```{r}
+#| code-fold: true
+#| warning: false
+#| fig-align: center
+
+library(brandr)
+library(ggplot2)
+library(palmerpenguins)
+library(tidyr)
+
+penguins |>
+  drop_na(flipper_length_mm, body_mass_g, species) |>
+  ggplot(
+    aes(
+      x = flipper_length_mm,
+      y = body_mass_g,
+      color = species,
+      shape = species
+    )
+  ) +
+  geom_point(size = 2) +
+  geom_smooth(method = "lm", formula = y ~ x, se = FALSE) +
+  labs(
+    x = "Flipper Length (mm)",
+    y = "Body Mass (g)",
+    color = "Species",
+    shape = "Species"
+  ) +
+  brandr::scale_color_brand_d(alpha = 0.7)
+```
+
+## Facets {.smaller}
+
+```{r}
+#| code-fold: true
+#| warning: false
+#| fig-align: center
+
+library(brandr)
+library(dplyr)
+library(ggplot2)
+library(palmerpenguins)
+library(tidyr)
+
+penguins |>
+  drop_na(flipper_length_mm, body_mass_g, sex) |>
+  mutate(sex = `levels<-`(sex, stringr::str_to_title(levels(sex)))) |>
+  ggplot(aes(x = flipper_length_mm, y = body_mass_g, color = sex)) +
+  geom_point(size = 2) +
+  geom_smooth(
+    method = "lm",
+    formula = y ~ x,
+    se = FALSE,
+    color = brandr::get_brand_color("brown")
+  ) +
+  labs(
+    x = "Flipper Length (mm)",
+    y = "Body Mass (g)",
+    color = "Sex"
+  ) +
+  brandr::scale_color_brand_d(alpha = 0.7) +
+  facet_wrap(~species)
+```
+
+## Combined Plots {.smaller}
+
+```{r}
+#| code-fold: true
+#| warning: false
+#| fig-align: center
+
+library(brandr)
+library(ggplot2)
+library(palmerpenguins)
+library(patchwork)
+library(tidyr)
+
+plot_hist <-
+  penguins |>
+  drop_na(flipper_length_mm, species) |>
+  ggplot(aes(x = flipper_length_mm, fill = species)) +
+  geom_histogram(bins = 30, alpha = 0.5, position = "identity") +
+  labs(x = "Flipper Length (mm)", y = "Frequency") +
+  brandr::scale_fill_brand_d() +
+  theme(legend.position = "none")
+
+plot_boxplot <-
+  penguins |>
+  drop_na(bill_length_mm, species) |>
+  ggplot(aes(x = species, y = bill_length_mm, fill = species)) +
+  geom_boxplot(outlier.color = brandr::get_brand_color("dark-red")) +
+  geom_jitter(width = 0.2, alpha = 0.1) +
+  labs(x = "Species", y = "Bill Length (mm)", fill = "Species") +
+  brandr::scale_fill_brand_d(alpha = 0.7) +
+  theme(axis.title.x = element_blank(), legend.position = "none")
+
+plot_scatter <-
+  penguins |>
+  drop_na(flipper_length_mm, body_mass_g, species) |>
+  ggplot(
+    aes(
+      x = flipper_length_mm,
+      y = body_mass_g,
+      color = species,
+      shape = species
+    )
+  ) +
+  geom_point(size = 2) +
+  geom_smooth(method = "lm", formula = y ~ x, se = FALSE) +
+  labs(
+    x = "Flipper Length (mm)",
+    y = "Body Mass (g)",
+    color = "Species",
+    shape = "Species"
+  ) +
+  brandr::scale_color_brand_d(alpha = 0.7) +
+  theme(legend.position = "none")
+
+(plot_hist + plot_boxplot) / plot_scatter + plot_annotation(tag_levels = "A")
+```
+
+::: {.notes}
+:::
+
+## Correlation Matrices {.smaller}
+
+```{r}
+#| code-fold: true
+#| warning: false
+#| fig-align: center
+#| fig-width: 12
+#| fig-height: 7
+
+library(brandr)
+library(dplyr)
+library(GGally)
+library(ggplot2)
+library(palmerpenguins)
+
+penguins |>
+  select(species, body_mass_g, ends_with("_mm")) |>
+  GGally::ggpairs(aes(color = species)) +
+  brandr::scale_color_brand_d(alpha = 0.7) +
+  brandr::scale_fill_brand_d(alpha = 0.7)
+```
+
+::: {.notes}
+The [`GGally`](https://ggobi.github.io/ggally/index.html) package is an extension of `ggplot2`.
+:::
+
+## Color Palettes {.smaller}
+
+Color palettes can be sequential, diverging, or qualitative (discrete). Here are some examples of two popular packages for color palettes in R.
+
+:::: {.columns}
+::: {.column style="width: 50;"}
+[`viridis`](https://sjmgarnier.github.io/viridis/): Colorblind-Friendly Color Maps
+
+```{r}
+#| code-fold: true
+#| warning: false
+#| fig-align: center
+
+library(ggplot2)
+library(palmerpenguins)
+library(tidyr)
+library(viridis)
+
+penguins |>
+  drop_na(flipper_length_mm, species) |>
+  ggplot(aes(x = flipper_length_mm, fill = species)) +
+  geom_density(alpha = 0.5, position = "identity") +
+  viridis::scale_fill_viridis(discrete = TRUE) +
+  labs(x = "Flipper Length (mm)", y = "Frequency", fill = "Species") +
+  theme(text = element_text(size = 20), legend.position = "none")
+```
+:::
+::: {.column style="width: 50%;"}
+[`RColorBrewer`](https://colorbrewer2.org/#type=qualitative&scheme=Set1&n=6): Common Color Palettes
+
+```{r}
+#| code-fold: true
+#| warning: false
+#| fig-align: center
+
+library(ggplot2)
+library(palmerpenguins)
+library(tidyr)
+
+penguins |>
+  drop_na(flipper_length_mm, species) |>
+  ggplot(aes(x = flipper_length_mm, fill = species)) +
+  geom_density(alpha = 0.5, position = "identity") +
+  scale_fill_brewer(palette = "Set1") +
+  labs(x = "Flipper Length (mm)", y = "Frequency", fill = "Species") +
+  theme(text = element_text(size = 20), legend.position = "none")
+```
+:::
+::::
 
 ::: {.notes}
 :::

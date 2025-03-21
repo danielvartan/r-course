@@ -1,8 +1,3 @@
-# Teaching Plan {visibility="uncounted"}
-
-::: {.notes}
-:::
-
 ## General Information {.smaller visibility="uncounted"}
 
 - **Course**: An Introduction to the R Language
@@ -17,17 +12,17 @@
 
 ## Learning Objectives {.smaller visibility="uncounted"}
 
-Understand the thought and knowledge underlying computer science.
+Grasp the fundamental principles and knowledge of computer science.
 
-Understand the structure and basic elements of the R language.
+Comprehend the structure and core elements of the R programming language.
 
-Understand basic concepts of data munging in R.
+Learn essential concepts of data munging.
 
-Understand basic concepts of data visualization in R.
+Understand the basics of data visualization.
 
-Understand basic concepts of exploratory data analysis in R.
+Explore fundamental techniques of exploratory data analysis.
 
-Understand basic concepts about modeling in R.
+Learn basic modeling concepts.
 
 ::: {.notes}
 :::

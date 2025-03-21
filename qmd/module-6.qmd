@@ -1,547 +1,61 @@
-## Modeling with Tidyverse *versus* R base {.smaller}
+## Your Mission {.smaller}
 
-<!-- Teach only the tidymodels approach -->
+Answer the following question using the data provided:
 
-The [tidyverse](https://www.tidyverse.org/) ecosystem provides a structured and consistent approach to modeling in R through the [tidymodels](https://www.tidymodels.org/) framework.
-
-However, many users still rely on base R functions for modeling. Here, we’ll demonstrate both approaches, allowing you to choose the one that best suits your needs.
-
-We recommend the tidymodels approach for its simplicity and readability.
-
-::: {.notes}
-:::
-
-## The Tidymodels Collection
-
-::: {.notes}
-:::
-
-## The *p*-value Problem {.smaller}
-
-::::: {.columns}
-:::: {.column style="width: 40%; padding-top: 0px;"}
-Large samples and sensitivity
-
-Is a difference of $0.00001$ valid?
-
-Statistical ritual *versus* Statistical thinking
-
-::: {style="font-size: 0.5em; font-style: italic; padding-top: 15px;"}
-Comparison of a 95% of confidence level ($\alpha = 0.05$) and an *n*-dependent *p-value* curve. The parameter $n_{\alpha}$ represents the minimum sample size to detect statistically significant differences among compared groups. The parameter $n_{\gamma}$ represents the convergence point of the *p-value* curve. When the *p-value* curve expresses practical differences, the area under the red curve ($A_{p(n)}$) is smaller than the area under the constant function $\alpha = 0.05$ ($A_{\alpha = 0.05}$) when it is evaluated between $0$ and $n_{\gamma}$.
-:::
-::::
-:::: {.column style="width: 60%; padding-top: 100px;"}
-![](images/gomez-de-mariscal-2021-figure-3.png){fig-align="center" style="width: 75%; padding-top: 0px;"}
-::::
-:::::
-
-::: footer
-(Chart reproduced from @mariscal2021[Figure 3])
+::: {style="text-align: center; font-size: 1.1em; font-weight: bold; color: #ED6B4D; padding-top: 30px;"}
+Was there a **meaningful** difference in ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 across the clusters of the Revised Multidimensional Index for Sustainable Food Systems ([MISFS-R](https://doi.org/10.1002/sd.2376))?
 :::
 
 ::: {.notes}
 :::
 
-## Power Analysis {.smaller}
-
-::: {.notes}
-:::
-
-## Type I Errors ($\alpha$) {.smaller}
-
-![](images/allison-horst-figure-39.png){fig-align="center" style="width: 90%; padding-top: 0px;"}
-
-::: footer
-(Artwork by [Allison Horst](https://twitter.com/allison_horst))
-:::
-
-::: {.notes}
-:::
-
-## Type II Errors ($\beta$) {.smaller}
-
-![](images/allison-horst-figure-40.png){fig-align="center" style="width: 90%; padding-top: 30px;"}
-
-::: footer
-(Artwork by [Allison Horst](https://twitter.com/allison_horst))
-:::
-
-::: {.notes}
-:::
-
-## Cohen's Benchmark {.smaller}
+## The Data {.smaller}
 
 :::: {.columns}
-::: {.column style="width: 50%;"}
-> [...] in many circumstances, all that is intended by "proving" the null hypothesis is that the ES [Effect Size] is not necessarily zero but **small enough to be negligible** [...]. (p. 461)
+::: {.column style="width: 50%; text-align: center;"}
+2023
+: 34 cols $\times$ 50,544,073 rows<br>1,718,498,482 data points.
+
+2022
+: 34 cols $\times$ 45,862,105 rows<br>1,559,311,570 data points.
+
+2021
+: 34 cols $\times$ 29,853,217 rows<br>1,015,009,378 data points.
+
+2020
+: 34 cols $\times$ 22,720,515 rows<br>772,497,510 data points.
 :::
 ::: {.column style="width: 50%;"}
-![](images/jacob-cohen-figure-1.jpg){fig-align="center" style="width: 80%; padding-top: 25px;"}
-:::
-::::
-
-::: footer
-(Quotes reproduced from @cohen1988a. Photo by an unknown author.)
-:::
-
-::: {.notes}
-:::
-
-## Cohen's Benchmark {.smaller}
-
-![](images/cohen-1992-table-1.png){fig-align="center" style="padding-top: 10px; padding-bottom: 25px;"}
-
-::: footer
-(Reproduced from @cohen1992)
-:::
-
-::: {.notes}
-:::
-
-## One-Sample t-Test: Hypothesis {.smaller}
-
-$$
-\begin{cases}
-\text{H}_{0}: \mu_{A} = \mu_{B} \\
-\text{H}_{a}: \mu_{A} \neq \mu_{B} \\
-\end{cases}
-$$
-
-```{r}
-adelie <-
-  penguins |>
-  dplyr::filter(species == "Adelie") |>
-  dplyr::pull(flipper_length_mm)
-
-gentoo <-
-  penguins |>
-  dplyr::filter(species == "Gentoo") |>
-  dplyr::pull(flipper_length_mm)
-```
-
-::: {.notes}
-:::
-
-## One-Sample t-Test: Test {.smaller}
-
-```{r}
-test <- stats::t.test(
-  x = adelie,
-  y = gentoo,
-  alternative = "two.sided",
-  mu = 0,
-  paired = FALSE,
-  var.equal = FALSE, # Welch's t-test,
-  conf.level = 0.95
-)
-
-test
-```
-
-::: {.notes}
-:::
-
-## One-Sample t-Test: Effect Size {.smaller}
-
-:::: {.columns}
-::: {.column style="width: 47.5%;"}
-```{r}
-library(effectsize)
-
-effect_size <-
-  cohens_d(
-    x = adelie,
-    y = gentoo,
-    mu = 0,
-    adjust = TRUE, # Hedge's g
-    ci = 0.95,
-    alternative = "two.sided"
-  )
-
-effect_size
-```
-:::
-::: {.column style="width: 5%;"}
-:::
-::: {.column style="width: 47.5%;"}
-```{r}
-effect_size |> interpret_hedges_g(rules = "cohen1988")
-```
+![](images/sisvan-logo.png){fig-align="center" style="width: 75%; padding-top: 50px;"}
 :::
 ::::
 
 ::: {.notes}
 :::
 
-## One-Sample t-Test: Power Analysis {.smaller}
-
-```{r}
-# A posteriori
-
-library(pwrss)
-
-pwrss::pwrss.t.2means(
-  mu1 = adelie |> mean(na.rm = TRUE),
-  mu2 = gentoo |> mean(na.rm = TRUE),
-  sd1 = adelie |> sd(na.rm = TRUE),
-  sd2 = gentoo |> sd(na.rm = TRUE),
-  paired = FALSE,
-  n2 = gentoo |> length(),
-  kappa = (adelie |> length()) / (gentoo |> length()),
-  power = NULL,
-  alpha = 0.05,
-  welch.df = TRUE,
-  alternative = "not equal"
-)
-```
+## The Report {.smaller}
 
 ::: {.notes}
 :::
 
-## One-Way ANOVA: Hypothesis {.smaller}
+## Data Science Workflow {.smaller}
 
-$$
-\begin{cases}
-\text{H}_{0}: \mu_{A} = \mu_{B} = \mu_{C} \\
-\text{H}_{a}: \mu_{i} \neq \mu_{j}, \ \text{for some} \ i, j
-\end{cases}
-$$
+Remember the data science workflow:
 
-::: {.notes}
-:::
-
-## One-Way ANOVA: Fit {.smaller}
-
-```{r}
-fit <- aov(flipper_length_mm ~ species, data = penguins)
-
-fit
-```
-
-::: {.notes}
-:::
-
-## One-Way ANOVA: Fit Summary {.smaller}
-
-```{r}
-fit |> summary()
-```
-
-## One-Way ANOVA: Boxplots {.smaller}
-
-```{r}
-#| fig-align: center
-#| code-fold: true
-#| warning: false
-
-library(ggplot2)
-library(palmerpenguins)
-
-penguins |>
-  ggplot(aes(x = species, y = bill_length_mm, fill = species)) +
-  geom_boxplot(outlier.color = "red") +
-  geom_jitter(width = 0.2, alpha = 0.1) +
-  scale_fill_manual(values = c("darkorange","purple","cyan4"))
-```
-
-::: {.notes}
-:::
-
-## One-Way ANOVA: Tukey Test {.smaller}
-
-```{r}
- fit |> TukeyHSD()
-```
-
-::: {.notes}
-:::
-
-## One-Way ANOVA: Effect Size {.smaller}
-
-```{r}
-library(effectsize)
-
-effect_size <- fit |> eta_squared()
-
-effect_size
-```
-
-```{r}
-effect_size |> interpret_eta_squared(rules = "cohen1992")
-```
-
-::: {.notes}
-:::
-
-## One-Way ANOVA: Power Analysis {.smaller}
-
-```{r}
-# A posteriori
-
-library(pwrss)
-
-pwrss.f.ancova(
-  eta2 = effect_size$Eta2,
-  n.way = 1,
-  n.levels = 3,
-  n.covariates = 0,
-  alpha = 0.05,
-  n = penguins |> nrow(),
-  power = NULL
-)
-```
-
-::: {.notes}
-:::
-
-## One-Way ANCOVA: Hypothesis {.smaller}
-
-The ANCOCA hypothesis is similar to the ANOVA hypothesis, but it includes a covariate.
-
-$$
-\begin{cases}
-\text{H}_{0}: \mu_{A} = \mu_{B} = \mu_{C} \\
-\text{H}_{a}: \mu_{i} \neq \mu_{j}, \ \text{for some} \ i, j
-\end{cases}
-$$
-
-::: {.notes}
-:::
-
-## One-Way ANCOVA: Fit {.smaller}
-
-```{r}
-fit <- aov(flipper_length_mm ~ body_mass_g * species, data = penguins)
-
-fit
-```
-
-::: {.notes}
-:::
-
-## One-Way ANCOVA: Fit Summary {.smaller}
-
-```{r}
-library(car)
-
- fit |> Anova(type = "III")
-```
-
-::: {.notes}
-:::
-
-## One-Way ANCOVA: Tukey Test {.smaller}
-
-```{r}
-library(multcomp)
-
-post_hoc <-
-  fit |>
-  glht(linfct = mcp(species = "Tukey"))
-
-summary(post_hoc)
-```
-
-::: {.notes}
-:::
-
-## One-Way ANCOVA: Boxplots {.smaller}
-
-```{r}
-#| fig-align: center
-#| code-fold: true
-#| warning: false
-
-library(ggplot2)
-library(palmerpenguins)
-
-penguins |>
-  ggplot(aes(x = species, y = bill_length_mm, fill = species)) +
-  geom_boxplot(outlier.color = "red") +
-  geom_jitter(width = 0.2, alpha = 0.1) +
-  scale_fill_manual(values = c("darkorange","purple","cyan4"))
-```
-
-## One-Way ANCOVA: Effect Size {.smaller}
-
-```{r}
-library(effectsize)
-
-effect_size <- fit |> eta_squared()
-
-effect_size
-```
-
-```{r}
-effect_size |> interpret_eta_squared(rules = "cohen1992")
-```
-
-::: {.notes}
-:::
-
-## One-Way ANCOVA: Power Analysis {.smaller}
-
-```{r}
-# A posteriori
-
-library(pwrss)
-
-pwrss.f.ancova(
-  eta2 = effect_size$Eta2_partial[3],
-  n.way = 1,
-  n.levels = 3,
-  n.covariates = 1,
-  alpha = 0.05,
-  n = penguins |> nrow(),
-  power = NULL
-)
-```
-
-::: {.notes}
-:::
-
-## Linear Regression: Hypothesis {.smaller}
-
-To ensure practical significance, the adjusted $\text{R}^2$ of the model is analysed for its effect sizes considering a confidence interval of $95\%$. We are going to use @cohen1988a benchmark for interpretation.
-
-A $\text{R}^2$ less than $\approx 0.0196$ is considered negligeble.
-
-$$
-\begin{cases}
-\text{H}_{0}: \text{Adjusted} \ \text{R}^{2} \leq \text{MES} \quad \text{or} \quad \text{F-test is not significant} \ (\alpha \geq 0.05) \\
-\text{H}_{a}: \text{Adjusted} \ \text{R}^{2} > \text{MES} \quad \text{and} \quad \text{F-test is significant} \ (\alpha < 0.05)
-\end{cases}
-$$
-
-::: {.notes}
-:::
-
-## Linear Regression: Scatterplot 1 {.smaller}
-
-```{r}
-#| fig-align: center
-#| code-fold: true
-
-library(ggplot2)
-library(palmerpenguins)
-
-penguins |>
-  ggplot(
-    aes(
-      x = flipper_length_mm,
-      y = bill_length_mm,
-      color = species,
-      shape = species
-    )
-  ) +
-  geom_point(size = 2) +
-  geom_smooth(method = "lm", se = FALSE) +
-  scale_color_manual(values = c("darkorange","darkorchid","cyan4"))
-```
-
-::: {.notes}
-:::
-
-## Linear Regression: Scatterplot 2 {.smaller}
-
-```{r}
-#| fig-align: center
-#| code-fold: true
-
-library(ggplot2)
-library(palmerpenguins)
-
-penguins |>
-  ggplot(
-    aes(
-      x = flipper_length_mm,
-      y = bill_depth_mm,
-      color = species,
-      shape = species
-    )
-  ) +
-  geom_point(size = 2) +
-  geom_smooth(method = "lm", se = FALSE) +
-  scale_color_manual(values = c("darkorange","darkorchid","cyan4"))
-```
-
-::: {.notes}
-:::
-
-## Linear Regression: Fit {.smaller}
-
-```{r}
-fit <- lm(
-  formula = flipper_length_mm ~ bill_length_mm + bill_depth_mm,
-  data = penguins
-)
-
-fit
-```
-
-::: {.notes}
-:::
-
-## Linear Regression: Fit Summary {.smaller}
-
-```{r}
-fit_sum <- fit |> summary()
-
-fit_sum
-```
-
-::: {.notes}
-:::
-
-## Linear Regression: Effect Size {.smaller}
-
-```{r}
-library(effectsize)
-
-fit_sum$r.squared |> interpret_r2(rules = "cohen1988")
-```
-
-::: {.notes}
-:::
-
-## Linear Regression: Power Analysis {.smaller}
-
-```{r}
-# A posteriori
-
-library(pwrss)
-
-pwrss::pwrss.f.reg(
-  r2 = fit_sum$r.squared,
-  k = 2,
-  n = penguins |> nrow(),
-  power = NULL,
-  alpha = 0.05
-)
-```
-
-::: {.notes}
-:::
-
-## Diagnostics {.smaller}
-
-::: {.notes}
-:::
-
-## Objective Assumption Tests {.smaller}
-
-🚨 **Avoid Using!**
-
-::: {.notes}
-:::
-
-## Normality Assumption Tests {.smaller}
-
-![](images/allison-horst-figure-38.png){fig-align="center" style="width: 90%; padding-top: 10px; padding-bottom: 30px;"}
+![](images/wickham-2023-figure-1.png){fig-align="center" style="width: 85%; padding-top: 50px;"}
 
 ::: footer
-(Artwork by [Allison Horst](https://twitter.com/allison_horst))
+(Reproduced from @wickham2023e)
 :::
+
+::: {.notes}
+:::
+
+## Notes {.smaller}
+
+- You have 45 minutes.
+- If you're stuck, ask for help.
+- Have fun!
 
 ::: {.notes}
 :::

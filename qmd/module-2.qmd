@@ -2,39 +2,39 @@
 
 :::: {.columns}
 ::: {.column style="width: 50%;"}
-Installing R is very simple. You just need to download the installer from the [**Comprehensive R Archive Network**](https://cran.r-project.org/) (CRAN).
+Installing R is very simple.
 
-Go to *Download R for \[YOUR OS\] and then click on the *base* link---The base version  of R.
+You just need to download the installer from the [**Comprehensive R Archive Network**](https://cran.r-project.org/) (CRAN).
+
+Go to *Download R for \[YOUR OS\]* and then click on the *base* link---The base version  of R.
 
 Simply follow the instructions of the installer.
 :::
 ::: {.column style="width: 50%;"}
-![](images/cran-logo.png){fig-align="center" style="width: 80%; padding-top: 50px;"}
+![](images/cran-logo.png){fig-align="center" style="width: 60%; padding-top: 50px;"}
 :::
 ::::
 
 ::: {.notes}
 :::
 
-## The RStudio IDE {.smaller .nostrech}
+## The RStudio IDE {.smaller .nostretch}
 
 An IDE (Integrated Development Environment) is a software that provides a set of tools to help the programmer to write code. It puts together things like a text editor, a console, a debugger, and a file manager.
 
 [RStudio](https://rstudio.com/) is the most popular IDE for R. Like R, it is also free and open-source.
 
-![](images/rstudio-logo.png){fig-align="center" style="width: 75%; padding-top: 10px;"}
+![](images/rstudio-logo.png){fig-align="center" style="width: 60%; padding-top: 50px;"}
 
 ::: {.notes}
 - Always use software in English.
 :::
 
-## Quarto Notebooks {.smaller}
-
 ## Creating a Project {.smaller}
 
 :::: {.columns}
-::: {.column style="width: 50%;"}
-[Project-oriented workflow](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/): A project puts together all things in your place. It guarantees that your work is reproducible and organized ([Never use `setwd()`](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/#:~:text=such%20as%20these.-,What%E2%80%99s%20wrong%20with,%3F,-I%20run%20a)!).
+::: {.column style="width: 50%; font-size: 0.9em"}
+[Project-oriented workflow](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/): A project consolidates all related files and resources in one place, ensuring that your work is reproducible and well-organized.
 
 It is important to have a structured project directory. A best practice is to follow the structure made for **R Packages** [@marwick2018].
 
@@ -54,7 +54,53 @@ Every data project must be accompanied, at least, by a **README** file, explaini
 - Add a License file to the project using `usethis::use_mit_license()`.
 :::
 
+## 🚨 Warning For Your Future Self {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%;"}
+**Never use `setwd()`!**
+
+(How to detect a beginner R user)
+
+Always work inside a project directory. Your Working Directory (WD) should always be the root of your project.
+
+If you need a better way to manage your WD, see the [`here`](https://here.r-lib.org/) package.
+
+Click [here](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/#:~:text=such%20as%20these.-,What%E2%80%99s%20wrong%20with,setwd(),-%3F) to learn why.
+:::
+::: {.column style="width: 50%;"}
+![](images/allison-horst-figure-26.png){fig-align="center" style="width: 100%; padding-top: 125px;"}
+:::
+::::
+
+::: {.notes}
+:::
+
 ## Quarto Notebooks {.smaller}
+
+![](images/allison-horst-figure-49.png){fig-align="center" style="width: 100%; padding-top: 75px;"}
+
+::: footer
+(Artwork by [Allison Horst](https://allisonhorst.com/horst-hill-collaborations))
+:::
+
+## Markdown Basics {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%; font-size: 0.95em;"}
+[Markdown](https://en.wikipedia.org/wiki/Markdown) is a lightweight **markup language** with plain text formatting syntax. The great thing about Markdown is that you can forget about the formatting and focus on the content.
+
+Quarto Notebooks are a type of Markdown document that allows you to mix code, text, and output in a single document. These slides are all written in Markdown.
+
+Learn more about the Markdown syntax [here](https://www.markdownguide.org/basic-syntax/).
+:::
+::: {.column style="width: 50%;"}
+![](images/markdown-logo.svg){fig-align="center" style="width: 70%; padding-top: 100px;"}
+:::
+::::
+
+::: {.notes}
+:::
 
 ## Objects {.smaller}
 
@@ -96,9 +142,9 @@ The most important feature of R is that it is a **vectorized language**. This me
 This is achieved using the C programming language behind the scenes.
 
 ```{r}
-x <- c(1, 2, 3)
+c(1, 2, 3) + 1
 
-x + 1
+c(1, 2, 3) * c(1, 2, 3)
 ```
 :::
 ::: {.column style="width: 50%;"}
@@ -141,12 +187,12 @@ See: https://youtu.be/e1zJS31tr88?si=7-TamPi2tmwprCUL&t=900
 
 :::: {.columns}
 ::: {.column style="width: 50%;"}
-* `character` (e.g., "Maria", "John")
-* `factor`<br>(e.g., 1 = "Male", 2 = "Female")
-* `integer` (e.g., 1, 2, 3)
-* `double` (e.g., 1.0, 2.0, 3.0)
-* `complex` (e.g., 1 + 2i, 3 + 4i)
-* `logical` (e.g., TRUE, FALSE)
+- `character` (e.g., "Maria", "John")
+- `factor`<br>(e.g., 1 = "Male", 2 = "Female")
+- `integer` (e.g., 1, 2, 3)
+- `double` (e.g., 1.0, 2.0, 3.0)
+- `complex` (e.g., 1 + 2i, 3 + 4i)
+- `logical` (e.g., TRUE, FALSE)
 :::
 ::: {.column style="width: 50%;"}
 * `Date` (e.g., 2023-01-01) ([Linear time](https://danielvartan.github.io/lubritime/reference/cycle_time.html#linear-versus-circular-time))
@@ -170,9 +216,10 @@ Atomic types are **non-recursive objects**, i.e., objects that can't hold themse
 ::: {style="padding-top: 30px;"}
 **Non-Atomic Objects**
 
-- Matrices (`matrix()`)
-- Lists (`list()`)
-- Data Frames (`data.frame()`)
+- Matrices (`matrix()`) (2D)
+- Arrays (`array()`) (nD)
+- Lists (`list()`) (nD)
+- Data Frames (`data.frame()`) (a special case of `list`) (2D)
 :::
 ::::
 :::: {.column style="width: 50%;"}
@@ -269,6 +316,47 @@ x = 1; x
 
 1 = x; x # Error!
 ```
+:::
+::::
+
+::: {.notes}
+:::
+
+## Names {.smaller}
+
+![](images/allison-horst-figure-46.png){fig-align="center" style="width: 100%;"}
+
+::: footer
+(Artwork by [Allison Horst](https://allisonhorst.com/horst-hill-collaborations))
+:::
+
+## Names {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 47.5%;"}
+R has strict rules regarding the names of objects.
+
+- Names can only contain letters, numbers, dots, and underscores.
+- Names can't start with a number or a dot.
+- Names can't be reserved words (e.g., `if`, `else`, `TRUE`, `FALSE`).
+- Names are case-sensitive.
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+`variable-name` **Bad**
+
+`variable.name` **Good**, but not advisable
+
+`variable_name` **Good** (snake_case) --- Most used in R
+
+`1variable_name` **Bad**
+
+`.variable_name` **Bad**
+
+`variableName` **Good** (camelCase)
+
+`VariableName` **Good** (PascalCase)
 :::
 ::::
 
@@ -420,8 +508,8 @@ matrix(1:4, nrow = 2) %*% matrix(1:4, nrow = 2)
 
 ## Subsetting {.smaller}
 
-:::: {.columns}
-::: {.column style="width: 47.5%;"}
+::::: {.columns}
+:::: {.column style="width: 47.5%;"}
 **Atomic**
 
 - ``` `[`() ``` 1 level extraction
@@ -429,10 +517,26 @@ matrix(1:4, nrow = 2) %*% matrix(1:4, nrow = 2)
 ```{r}
 c("a", "b", "c")[1]
 ```
+
+::: {style="padding-top: 15px;"}
+**Indexation**
+
+Indexation starts at `1` in R!
+
+```{r}
+c("a", "b", "c")[1]
+```
+```{r}
+c("a", "b", "c")[2]
+```
+```{r}
+c("a", "b", "c")[0]
+```
 :::
-::: {.column style="width: 5%;"}
-:::
-::: {.column style="width: 47.5%;"}
+::::
+:::: {.column style="width: 5%;"}
+::::
+:::: {.column style="width: 47.5%;"}
 **Non-Atomic**
 
 - ``` `[`() ``` 1 level extraction
@@ -454,8 +558,8 @@ data$a
 ```{r}
 data[["a"]] # == data$a
 ```
-:::
 ::::
+:::::
 
 ::: {.notes}
 :::
@@ -594,13 +698,13 @@ seq(1, 8) %>%
 
 ## Control Flow: Choices {.smaller}
 
-:::: {.columns}
-::: {.column style="width: 47.5%;"}
 ```r
 if (condition) true_action
 if (condition) true_action else false_action
 ```
 
+:::: {.columns}
+::: {.column style="width: 47.5%;"}
 ```{r}
 x <- 60
 
@@ -679,19 +783,16 @@ for (i in 1:5) {
 ::: {.notes}
 :::
 
+```r
+name <- function(parameter_1, parameter_2, ...) expression
+```
 ## Functions {.smaller}
 
 ::::: {.columns}
 :::: {.column style="width: 47.5%;"}
 The last evaluated expression is the return value of the function.
 
-You can use `return()` to return a value before the end of the function.
-
-```r
-name <- function(parameter_1, parameter_2, ...) {
-  expression
-}
-```
+You can use `return()` to return a value before the end of the function, but this is a bad practice.
 
 ```{r}
 foo <- function(x) {
@@ -820,12 +921,13 @@ x
 In R, the fundamental unit of shareable code is the package.
 
 A package bundles together code, data, documentation, and tests, and is easy to share with others [@wickham2023d].
+
+**Note**: Other programming languages refer to packages as *libraries*.
 ::::
 :::: {.column style="width: 5%;"}
 ::::
 :::: {.column style="width: 47.5%;"}
 ```r
-# From `utils` package
 install.packages("package_name")
 ```
 
@@ -914,11 +1016,15 @@ as.POSIXct("1970-01-01 00:00:00", tz = "UTC") + 1
 
 Your code must speak for itself.
 
-In data analysis code, only use comments to **record important things**. If you need comments to explain what your code is doing, consider rewriting your code to be clearer [@wickhamb].
+In data analysis code, **only use comments to record important things**. If you need comments to explain what your code is doing, consider rewriting your code to be clearer [@wickhamb].
 
 ::: {style="padding-top: 15px;"}
 ```r
 # This is a comment
+
+1 + 1 # This is also a comment
+
+# 1 + 1 # You can also comment code that you don't want to run
 ```
 :::
 
@@ -943,18 +1049,13 @@ help(mean)
 ::: {.notes}
 :::
 
-
 ## The Tidyverse {.smaller}
 
-[![](images/tidyverse-hex-logo.png){style="width: 150px; padding-top: 0px;"}](https://www.tidyverse.org/)
+[![](images/tidyverse-hex-logo.png){style="width: 120px;"}](https://www.tidyverse.org/)
 
-```r
-install.packages("tidyverse")
-```
+[Tidyverse](https://www.tidyverse.org/) is a framework and a collection of R packages designed for data science. All packages share an underlying design philosophy ([The Tidy Manifesto](https://tidyverse.tidyverse.org/articles/manifesto.html)), grammar, and data structures.
 
-[Tidyverse](https://www.tidyverse.org/) is a collection of R packages designed for data science. All packages share an underlying design philosophy ([The tidy Manifesto](https://tidyverse.tidyverse.org/articles/manifesto.html)), grammar, and data structures.
-
-It was created by [Hadley Wickham](https://hadley.nz/) (the "R God", and author of the main refrences of this course). **We could say that there is an R befeore and after Hadley Wickham**.
+It was created by [Hadley Wickham](https://hadley.nz/), a prominent figure in the R community and author of several key references for this course. Hadley Wickham's contributions have significantly shaped modern R programming.
 
 ::: {.notes}
 :::
@@ -975,7 +1076,7 @@ It was created by [Hadley Wickham](https://hadley.nz/) (the "R God", and author 
 
 ## The rOpenSci {.smaller}
 
-[![](images/ropensci-hex-logo.png){style="width: 150px; padding-top: 0px;"}](https://ropensci.org/)
+[![](images/ropensci-hex-logo.png){style="width: 150px;"}](https://ropensci.org/)
 
 The importance of relying on good packages is crucial.
 
@@ -996,8 +1097,57 @@ If you want a depper understanding of the R language, we encourage you to explor
 
 ## Best Practices {.smaller}
 
-- [Tidyverse style guide](https://style.tidyverse.org/)
-- [Tidy design principles](https://design.tidyverse.org/)
+You can learn a lot about a person just by looking at their code 👀.
+
+:::: {.columns}
+::: {.column style="width: 47.5%; font-size: 0.9em;"}
+[**Tidyverse Style Guide**](https://style.tidyverse.org/)
+
+> Variable and function names should use only lowercase letters, numbers, and _. Use underscores (_) (so called snake case) to separate words within a name.
+
+```r
+# Good
+day_one
+day_1
+
+# Bad
+DayOne
+dayone
+```
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%; font-size: 0.9em;"}
+[**Tidy Design Principles**](https://design.tidyverse.org/)
+
+The tidyverse has four guiding principles:
+
+- It is **human centered**.
+- It is **consistent**.
+- It is **composable**.
+- It is **inclusive**.
+:::
+::::
+
+::: {.notes}
+:::
+
+## How to Learn More {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 47.5%;"}
+[![](images/wickham-2023-book-cover.png){fig-align="center" style="width: 85%; padding-top: 0px;"}](https://r4ds.hadley.nz//)
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+[![](images/wickham-2019-book-cover.png){fig-align="center" style="width: 75%;"}](https://adv-r.hadley.nz/)
+:::
+::::
+
+::: footer
+(Book cover image from @wickham2023e and @wickham2019)
+:::
 
 ::: {.notes}
 :::
