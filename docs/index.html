@@ -1998,9 +1998,9 @@
 <span id="cb75-7"><a></a>  <span class="at">check =</span> <span class="st">"equal"</span></span>
 <span id="cb75-8"><a></a>)</span>
 <span id="cb75-9"><a></a><span class="co">#&gt; Unit: microseconds</span></span>
-<span id="cb75-10"><a></a><span class="co">#&gt;                   expr     min       lq     mean   median      uq      max</span></span>
-<span id="cb75-11"><a></a><span class="co">#&gt;  with_for_loop(1:1000) 665.784 710.4045 1026.330 737.5775 783.559 4423.450</span></span>
-<span id="cb75-12"><a></a><span class="co">#&gt;       with_map(1:1000) 292.864 304.2655  330.547 315.0925 340.993 1028.031</span></span>
+<span id="cb75-10"><a></a><span class="co">#&gt;                   expr     min       lq      mean   median       uq      max</span></span>
+<span id="cb75-11"><a></a><span class="co">#&gt;  with_for_loop(1:1000) 685.706 745.9640 1341.5586 870.0370 1160.428 9034.261</span></span>
+<span id="cb75-12"><a></a><span class="co">#&gt;       with_map(1:1000) 291.909 314.8655  388.3719 347.3425  392.040 1413.755</span></span>
 <span id="cb75-13"><a></a><span class="co">#&gt;  neval cld</span></span>
 <span id="cb75-14"><a></a><span class="co">#&gt;    100  a </span></span>
 <span id="cb75-15"><a></a><span class="co">#&gt;    100   b</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2188,7 +2188,7 @@
       }</style></aside></section><section id="the-tidyverse" class="slide level2 smaller"><h2>The Tidyverse</h2>
 <p><a href="https://www.tidyverse.org/"><img data-src="images/tidyverse-hex-logo.png" style="width: 120px;"></a></p>
 <p><a href="https://www.tidyverse.org/">Tidyverse</a> is a framework and a collection of R packages designed for data science. All packages share an underlying design philosophy (<a href="https://tidyverse.tidyverse.org/articles/manifesto.html">The Tidy Manifesto</a>), grammar, and data structures.</p>
-<p>It was created by <a href="https://hadley.nz/">Hadley Wickham</a> (the “R God”, and author of the main refrences of this course). <strong>We could say that there is an R befeore and after Hadley Wickham</strong>.</p>
+<p>It was created by <a href="https://hadley.nz/">Hadley Wickham</a>, a prominent figure in the R community and author of several key references for this course. Hadley Wickham’s contributions have significantly shaped modern R programming.</p>
 <aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -2221,7 +2221,7 @@
 <li>
 <code>ggplot2</code>: An implementation of the Grammar of Graphics in R</li>
 </ul></section><section id="the-ropensci" class="slide level2 smaller"><h2>The rOpenSci</h2>
-<p><a href="https://ropensci.org/"><img data-src="images/ropensci-hex-logo.png" style="width: 120px;"></a></p>
+<p><a href="https://ropensci.org/"><img data-src="images/ropensci-hex-logo.png" style="width: 150px;"></a></p>
 <p>The importance of relying on good packages is crucial.</p>
 <p><a href="https://ropensci.org/">rOpenSci</a> project is a community of researchers and developers working on open science and open data. They develop R packages that allow access to data and tools from a wide range of sources.</p>
 <p>All packages go through a <strong>peer-review</strong> process, which ensures that they are well written and reliable.</p>
@@ -5955,16 +5955,66 @@
 \text{H}_{a}: \mu_{A} \neq \mu_{B} \\
 \end{cases}
 \]</span></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb155"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb155-1"><a></a>adelie <span class="ot">&lt;-</span></span>
-<span id="cb155-2"><a></a>  penguins <span class="sc">|&gt;</span></span>
-<span id="cb155-3"><a></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb155-4"><a></a>  dplyr<span class="sc">::</span><span class="fu">pull</span>(flipper_length_mm)</span>
+<aside class="notes"><style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="one-sample-t-test-hypothesis-1" class="slide level2 smaller"><h2>One-Sample t-Test: Hypothesis</h2>
+<div class="cell" data-layout-align="center">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb155"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb155-1"><a></a><span class="fu">library</span>(brandr)</span>
+<span id="cb155-2"><a></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb155-3"><a></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb155-4"><a></a><span class="fu">library</span>(tidyr)</span>
 <span id="cb155-5"><a></a></span>
-<span id="cb155-6"><a></a>gentoo <span class="ot">&lt;-</span></span>
-<span id="cb155-7"><a></a>  penguins <span class="sc">|&gt;</span></span>
-<span id="cb155-8"><a></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Gentoo"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb155-9"><a></a>  dplyr<span class="sc">::</span><span class="fu">pull</span>(flipper_length_mm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb155-6"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb155-7"><a></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(species <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Adelie"</span>, <span class="st">"Gentoo"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb155-8"><a></a>  tidyr<span class="sc">::</span><span class="fu">drop_na</span>(flipper_length_mm, species) <span class="sc">|&gt;</span></span>
+<span id="cb155-9"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> flipper_length_mm, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
+<span id="cb155-10"><a></a>  <span class="fu">geom_boxplot</span>(<span class="at">outlier.color =</span> brandr<span class="sc">::</span><span class="fu">get_brand_color</span>(<span class="st">"dark-red"</span>)) <span class="sc">+</span></span>
+<span id="cb155-11"><a></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">alpha =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb155-12"><a></a>  brandr<span class="sc">::</span><span class="fu">scale_fill_brand_d</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb155-13"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Species"</span>, <span class="at">y =</span> <span class="st">"Flipper Length (mm)"</span>, <span class="at">fill =</span> <span class="st">"Species"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-122-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><aside class="notes"><style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="one-sample-t-test-tidymodels" class="slide level2 smaller"><h2>One-Sample t-Test: <code>tidymodels</code>
+</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb156"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb156-1"><a></a><span class="fu">library</span>(infer)</span>
+<span id="cb156-2"><a></a><span class="fu">library</span>(palmerpenguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb157"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb157-1"><a></a>observed_statistic <span class="ot">&lt;-</span></span>
+<span id="cb157-2"><a></a>  penguins <span class="sc">|&gt;</span></span>
+<span id="cb157-3"><a></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(species <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Adelie"</span>, <span class="st">"Gentoo"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb157-4"><a></a>  tidyr<span class="sc">::</span><span class="fu">drop_na</span>(flipper_length_mm, species) <span class="sc">|&gt;</span></span>
+<span id="cb157-5"><a></a>  <span class="fu">specify</span>(flipper_length_mm <span class="sc">~</span> species) <span class="sc">|&gt;</span></span>
+<span id="cb157-6"><a></a>  <span class="fu">hypothesize</span>(<span class="at">null =</span> <span class="st">"independence"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb157-7"><a></a>  <span class="fu">calculate</span>(<span class="st">"t"</span>, <span class="at">order =</span> <span class="fu">c</span>(<span class="st">"Adelie"</span>, <span class="st">"Gentoo"</span>))</span>
+<span id="cb157-8"><a></a></span>
+<span id="cb157-9"><a></a>observed_statistic</span>
+<span id="cb157-10"><a></a><span class="co">#&gt; Response: flipper_length_mm (numeric)</span></span>
+<span id="cb157-11"><a></a><span class="co">#&gt; Explanatory: species (factor)</span></span>
+<span id="cb157-12"><a></a><span class="co">#&gt; Null Hypothesis: independence</span></span>
+<span id="cb157-13"><a></a><span class="co">#&gt; # A tibble: 1 × 1</span></span>
+<span id="cb157-14"><a></a><span class="co">#&gt;    stat</span></span>
+<span id="cb157-15"><a></a><span class="co">#&gt;   &lt;dbl&gt;</span></span>
+<span id="cb157-16"><a></a><span class="co">#&gt; 1 -34.4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
@@ -5976,30 +6026,119 @@
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section><section id="one-sample-t-test-test" class="slide level2 smaller"><h2>One-Sample t-Test: Test</h2>
+      }</style></aside></section><section id="one-sample-t-test-tidymodels-1" class="slide level2 smaller"><h2>One-Sample t-Test: <code>tidymodels</code>
+</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb156"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb156-1"><a></a>test <span class="ot">&lt;-</span> stats<span class="sc">::</span><span class="fu">t.test</span>(</span>
-<span id="cb156-2"><a></a>  <span class="at">x =</span> adelie,</span>
-<span id="cb156-3"><a></a>  <span class="at">y =</span> gentoo,</span>
-<span id="cb156-4"><a></a>  <span class="at">alternative =</span> <span class="st">"two.sided"</span>,</span>
-<span id="cb156-5"><a></a>  <span class="at">mu =</span> <span class="dv">0</span>,</span>
-<span id="cb156-6"><a></a>  <span class="at">paired =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb156-7"><a></a>  <span class="at">var.equal =</span> <span class="cn">FALSE</span>, <span class="co"># Welch's t-test,</span></span>
-<span id="cb156-8"><a></a>  <span class="at">conf.level =</span> <span class="fl">0.95</span></span>
-<span id="cb156-9"><a></a>)</span>
-<span id="cb156-10"><a></a></span>
-<span id="cb156-11"><a></a>test</span>
-<span id="cb156-12"><a></a><span class="co">#&gt; </span></span>
-<span id="cb156-13"><a></a><span class="co">#&gt;  Welch Two Sample t-test</span></span>
-<span id="cb156-14"><a></a><span class="co">#&gt; </span></span>
-<span id="cb156-15"><a></a><span class="co">#&gt; data:  adelie and gentoo</span></span>
-<span id="cb156-16"><a></a><span class="co">#&gt; t = -34.445, df = 261.75, p-value &lt; 2.2e-16</span></span>
-<span id="cb156-17"><a></a><span class="co">#&gt; alternative hypothesis: true difference in means is not equal to 0</span></span>
-<span id="cb156-18"><a></a><span class="co">#&gt; 95 percent confidence interval:</span></span>
-<span id="cb156-19"><a></a><span class="co">#&gt;  -28.79018 -25.67652</span></span>
-<span id="cb156-20"><a></a><span class="co">#&gt; sample estimates:</span></span>
-<span id="cb156-21"><a></a><span class="co">#&gt; mean of x mean of y </span></span>
-<span id="cb156-22"><a></a><span class="co">#&gt;  189.9536  217.1870</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb158"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb158-1"><a></a>null_dist <span class="ot">&lt;-</span></span>
+<span id="cb158-2"><a></a>  penguins <span class="sc">|&gt;</span></span>
+<span id="cb158-3"><a></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(species <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Adelie"</span>, <span class="st">"Gentoo"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb158-4"><a></a>  tidyr<span class="sc">::</span><span class="fu">drop_na</span>(flipper_length_mm, species) <span class="sc">|&gt;</span></span>
+<span id="cb158-5"><a></a>  <span class="fu">specify</span>(flipper_length_mm <span class="sc">~</span> species) <span class="sc">|&gt;</span></span>
+<span id="cb158-6"><a></a>  <span class="fu">hypothesize</span>(<span class="at">null =</span> <span class="st">"independence"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb158-7"><a></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">type =</span> <span class="st">"permute"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb158-8"><a></a>  <span class="fu">calculate</span>(<span class="st">"t"</span>, <span class="at">order =</span> <span class="fu">c</span>(<span class="st">"Adelie"</span>, <span class="st">"Gentoo"</span>))</span>
+<span id="cb158-9"><a></a></span>
+<span id="cb158-10"><a></a>null_dist</span>
+<span id="cb158-11"><a></a><span class="co">#&gt; Response: flipper_length_mm (numeric)</span></span>
+<span id="cb158-12"><a></a><span class="co">#&gt; Explanatory: species (factor)</span></span>
+<span id="cb158-13"><a></a><span class="co">#&gt; Null Hypothesis: independence</span></span>
+<span id="cb158-14"><a></a><span class="co">#&gt; # A tibble: 1,000 × 2</span></span>
+<span id="cb158-15"><a></a><span class="co">#&gt;    replicate    stat</span></span>
+<span id="cb158-16"><a></a><span class="co">#&gt;        &lt;int&gt;   &lt;dbl&gt;</span></span>
+<span id="cb158-17"><a></a><span class="co">#&gt;  1         1 -0.546 </span></span>
+<span id="cb158-18"><a></a><span class="co">#&gt;  2         2  0.209 </span></span>
+<span id="cb158-19"><a></a><span class="co">#&gt;  3         3  0.0804</span></span>
+<span id="cb158-20"><a></a><span class="co">#&gt;  4         4 -0.533 </span></span>
+<span id="cb158-21"><a></a><span class="co">#&gt;  5         5  0.162 </span></span>
+<span id="cb158-22"><a></a><span class="co">#&gt;  6         6 -0.651 </span></span>
+<span id="cb158-23"><a></a><span class="co">#&gt;  7         7 -0.457 </span></span>
+<span id="cb158-24"><a></a><span class="co">#&gt;  8         8 -0.965 </span></span>
+<span id="cb158-25"><a></a><span class="co">#&gt;  9         9 -0.376 </span></span>
+<span id="cb158-26"><a></a><span class="co">#&gt; 10        10  0.506 </span></span>
+<span id="cb158-27"><a></a><span class="co">#&gt; # ℹ 990 more rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<aside class="notes"><style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="one-sample-t-test-tidymodels-2" class="slide level2 smaller"><h2>One-Sample t-Test: <code>tidymodels</code>
+</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb159"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb159-1"><a></a>null_dist <span class="sc">|&gt;</span></span>
+<span id="cb159-2"><a></a>  <span class="fu">visualize</span>() <span class="sc">+</span></span>
+<span id="cb159-3"><a></a>  <span class="fu">shade_p_value</span>(<span class="at">obs_stat =</span> observed_statistic, <span class="at">direction =</span> <span class="st">"two-sided"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-126-1.png" width="960" class="r-stretch"><div class="cell">
+<div class="sourceCode cell-code" id="cb160"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb160-1"><a></a>null_dist <span class="sc">|&gt;</span></span>
+<span id="cb160-2"><a></a>  <span class="fu">get_p_value</span>(<span class="at">obs_stat =</span> observed_statistic, <span class="at">direction =</span> <span class="st">"two-sided"</span>)</span>
+<span id="cb160-3"><a></a><span class="co">#&gt; # A tibble: 1 × 1</span></span>
+<span id="cb160-4"><a></a><span class="co">#&gt;   p_value</span></span>
+<span id="cb160-5"><a></a><span class="co">#&gt;     &lt;dbl&gt;</span></span>
+<span id="cb160-6"><a></a><span class="co">#&gt; 1       0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<aside class="notes"><style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="one-sample-t-test-base-r" class="slide level2 smaller"><h2>One-Sample t-Test: Base R</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb161"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb161-1"><a></a>adelie <span class="ot">&lt;-</span></span>
+<span id="cb161-2"><a></a>  penguins <span class="sc">|&gt;</span></span>
+<span id="cb161-3"><a></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb161-4"><a></a>  dplyr<span class="sc">::</span><span class="fu">pull</span>(flipper_length_mm)</span>
+<span id="cb161-5"><a></a></span>
+<span id="cb161-6"><a></a>gentoo <span class="ot">&lt;-</span></span>
+<span id="cb161-7"><a></a>  penguins <span class="sc">|&gt;</span></span>
+<span id="cb161-8"><a></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Gentoo"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb161-9"><a></a>  dplyr<span class="sc">::</span><span class="fu">pull</span>(flipper_length_mm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<aside class="notes"><style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="one-sample-t-test-base-r-1" class="slide level2 smaller"><h2>One-Sample t-Test: Base R</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb162"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb162-1"><a></a>test <span class="ot">&lt;-</span> stats<span class="sc">::</span><span class="fu">t.test</span>(</span>
+<span id="cb162-2"><a></a>  <span class="at">x =</span> adelie,</span>
+<span id="cb162-3"><a></a>  <span class="at">y =</span> gentoo,</span>
+<span id="cb162-4"><a></a>  <span class="at">alternative =</span> <span class="st">"two.sided"</span>,</span>
+<span id="cb162-5"><a></a>  <span class="at">mu =</span> <span class="dv">0</span>,</span>
+<span id="cb162-6"><a></a>  <span class="at">paired =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb162-7"><a></a>  <span class="at">var.equal =</span> <span class="cn">FALSE</span>, <span class="co"># Welch's t-test,</span></span>
+<span id="cb162-8"><a></a>  <span class="at">conf.level =</span> <span class="fl">0.95</span></span>
+<span id="cb162-9"><a></a>)</span>
+<span id="cb162-10"><a></a></span>
+<span id="cb162-11"><a></a>test</span>
+<span id="cb162-12"><a></a><span class="co">#&gt; </span></span>
+<span id="cb162-13"><a></a><span class="co">#&gt;  Welch Two Sample t-test</span></span>
+<span id="cb162-14"><a></a><span class="co">#&gt; </span></span>
+<span id="cb162-15"><a></a><span class="co">#&gt; data:  adelie and gentoo</span></span>
+<span id="cb162-16"><a></a><span class="co">#&gt; t = -34.445, df = 261.75, p-value &lt; 2.2e-16</span></span>
+<span id="cb162-17"><a></a><span class="co">#&gt; alternative hypothesis: true difference in means is not equal to 0</span></span>
+<span id="cb162-18"><a></a><span class="co">#&gt; 95 percent confidence interval:</span></span>
+<span id="cb162-19"><a></a><span class="co">#&gt;  -28.79018 -25.67652</span></span>
+<span id="cb162-20"><a></a><span class="co">#&gt; sample estimates:</span></span>
+<span id="cb162-21"><a></a><span class="co">#&gt; mean of x mean of y </span></span>
+<span id="cb162-22"><a></a><span class="co">#&gt;  189.9536  217.1870</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
@@ -6015,36 +6154,36 @@
 <div class="columns">
 <div class="column" style="width: 47.5%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb157"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb157-1"><a></a><span class="fu">library</span>(effectsize)</span>
-<span id="cb157-2"><a></a></span>
-<span id="cb157-3"><a></a>effect_size <span class="ot">&lt;-</span></span>
-<span id="cb157-4"><a></a>  <span class="fu">cohens_d</span>(</span>
-<span id="cb157-5"><a></a>    <span class="at">x =</span> adelie,</span>
-<span id="cb157-6"><a></a>    <span class="at">y =</span> gentoo,</span>
-<span id="cb157-7"><a></a>    <span class="at">mu =</span> <span class="dv">0</span>,</span>
-<span id="cb157-8"><a></a>    <span class="at">adjust =</span> <span class="cn">TRUE</span>, <span class="co"># Hedge's g</span></span>
-<span id="cb157-9"><a></a>    <span class="at">ci =</span> <span class="fl">0.95</span>,</span>
-<span id="cb157-10"><a></a>    <span class="at">alternative =</span> <span class="st">"two.sided"</span></span>
-<span id="cb157-11"><a></a>  )</span>
-<span id="cb157-12"><a></a></span>
-<span id="cb157-13"><a></a>effect_size</span>
-<span id="cb157-14"><a></a><span class="co">#&gt; Hedges' g |         95% CI</span></span>
-<span id="cb157-15"><a></a><span class="co">#&gt; --------------------------</span></span>
-<span id="cb157-16"><a></a><span class="co">#&gt; -4.17     | [-4.59, -3.74]</span></span>
-<span id="cb157-17"><a></a><span class="co">#&gt; </span></span>
-<span id="cb157-18"><a></a><span class="co">#&gt; - Estimated using pooled SD.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb163"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb163-1"><a></a><span class="fu">library</span>(effectsize)</span>
+<span id="cb163-2"><a></a></span>
+<span id="cb163-3"><a></a>effect_size <span class="ot">&lt;-</span></span>
+<span id="cb163-4"><a></a>  <span class="fu">cohens_d</span>(</span>
+<span id="cb163-5"><a></a>    <span class="at">x =</span> adelie,</span>
+<span id="cb163-6"><a></a>    <span class="at">y =</span> gentoo,</span>
+<span id="cb163-7"><a></a>    <span class="at">mu =</span> <span class="dv">0</span>,</span>
+<span id="cb163-8"><a></a>    <span class="at">adjust =</span> <span class="cn">TRUE</span>, <span class="co"># Hedge's g</span></span>
+<span id="cb163-9"><a></a>    <span class="at">ci =</span> <span class="fl">0.95</span>,</span>
+<span id="cb163-10"><a></a>    <span class="at">alternative =</span> <span class="st">"two.sided"</span></span>
+<span id="cb163-11"><a></a>  )</span>
+<span id="cb163-12"><a></a></span>
+<span id="cb163-13"><a></a>effect_size</span>
+<span id="cb163-14"><a></a><span class="co">#&gt; Hedges' g |         95% CI</span></span>
+<span id="cb163-15"><a></a><span class="co">#&gt; --------------------------</span></span>
+<span id="cb163-16"><a></a><span class="co">#&gt; -4.17     | [-4.59, -3.74]</span></span>
+<span id="cb163-17"><a></a><span class="co">#&gt; </span></span>
+<span id="cb163-18"><a></a><span class="co">#&gt; - Estimated using pooled SD.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width: 5%;">
 
 </div><div class="column" style="width: 47.5%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb158"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb158-1"><a></a>effect_size <span class="sc">|&gt;</span> <span class="fu">interpret_hedges_g</span>(<span class="at">rules =</span> <span class="st">"cohen1988"</span>)</span>
-<span id="cb158-2"><a></a><span class="co">#&gt; Hedges' g |         95% CI | Interpretation</span></span>
-<span id="cb158-3"><a></a><span class="co">#&gt; -------------------------------------------</span></span>
-<span id="cb158-4"><a></a><span class="co">#&gt; -4.17     | [-4.59, -3.74] |          large</span></span>
-<span id="cb158-5"><a></a><span class="co">#&gt; </span></span>
-<span id="cb158-6"><a></a><span class="co">#&gt; - Estimated using pooled SD.</span></span>
-<span id="cb158-7"><a></a><span class="co">#&gt; - Interpretation rule: cohen1988</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb164"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb164-1"><a></a>effect_size <span class="sc">|&gt;</span> <span class="fu">interpret_hedges_g</span>(<span class="at">rules =</span> <span class="st">"cohen1988"</span>)</span>
+<span id="cb164-2"><a></a><span class="co">#&gt; Hedges' g |         95% CI | Interpretation</span></span>
+<span id="cb164-3"><a></a><span class="co">#&gt; -------------------------------------------</span></span>
+<span id="cb164-4"><a></a><span class="co">#&gt; -4.17     | [-4.59, -3.74] |          large</span></span>
+<span id="cb164-5"><a></a><span class="co">#&gt; </span></span>
+<span id="cb164-6"><a></a><span class="co">#&gt; - Estimated using pooled SD.</span></span>
+<span id="cb164-7"><a></a><span class="co">#&gt; - Interpretation rule: cohen1988</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div></div>
 <aside class="notes"><style type="text/css">
@@ -6059,37 +6198,37 @@
           display:block!important;
       }</style></aside></section><section id="one-sample-t-test-power-analysis" class="slide level2 smaller"><h2>One-Sample t-Test: Power Analysis</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb159"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb159-1"><a></a><span class="co"># A posteriori</span></span>
-<span id="cb159-2"><a></a></span>
-<span id="cb159-3"><a></a><span class="fu">library</span>(pwrss)</span>
-<span id="cb159-4"><a></a></span>
-<span id="cb159-5"><a></a><span class="fu">pwrss.t.2means</span>(</span>
-<span id="cb159-6"><a></a>  <span class="at">mu1 =</span> adelie <span class="sc">|&gt;</span> <span class="fu">mean</span>(<span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb159-7"><a></a>  <span class="at">mu2 =</span> gentoo <span class="sc">|&gt;</span> <span class="fu">mean</span>(<span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb159-8"><a></a>  <span class="at">sd1 =</span> adelie <span class="sc">|&gt;</span> <span class="fu">sd</span>(<span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb159-9"><a></a>  <span class="at">sd2 =</span> gentoo <span class="sc">|&gt;</span> <span class="fu">sd</span>(<span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb159-10"><a></a>  <span class="at">paired =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb159-11"><a></a>  <span class="at">n2 =</span> gentoo <span class="sc">|&gt;</span> <span class="fu">length</span>(),</span>
-<span id="cb159-12"><a></a>  <span class="at">kappa =</span> (adelie <span class="sc">|&gt;</span> <span class="fu">length</span>()) <span class="sc">/</span> (gentoo <span class="sc">|&gt;</span> <span class="fu">length</span>()),</span>
-<span id="cb159-13"><a></a>  <span class="at">power =</span> <span class="cn">NULL</span>,</span>
-<span id="cb159-14"><a></a>  <span class="at">alpha =</span> <span class="fl">0.05</span>,</span>
-<span id="cb159-15"><a></a>  <span class="at">welch.df =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb159-16"><a></a>  <span class="at">alternative =</span> <span class="st">"not equal"</span></span>
-<span id="cb159-17"><a></a>)</span>
-<span id="cb159-18"><a></a><span class="co">#&gt;  Difference between Two means </span></span>
-<span id="cb159-19"><a></a><span class="co">#&gt;  (Independent Samples t Test) </span></span>
-<span id="cb159-20"><a></a><span class="co">#&gt;  H0: mu1 = mu2 </span></span>
-<span id="cb159-21"><a></a><span class="co">#&gt;  HA: mu1 != mu2 </span></span>
-<span id="cb159-22"><a></a><span class="co">#&gt;  ------------------------------ </span></span>
-<span id="cb159-23"><a></a><span class="co">#&gt;   Statistical power = 1 </span></span>
-<span id="cb159-24"><a></a><span class="co">#&gt;   n1 = 152 </span></span>
-<span id="cb159-25"><a></a><span class="co">#&gt;   n2 = 124 </span></span>
-<span id="cb159-26"><a></a><span class="co">#&gt;  ------------------------------ </span></span>
-<span id="cb159-27"><a></a><span class="co">#&gt;  Alternative = "not equal" </span></span>
-<span id="cb159-28"><a></a><span class="co">#&gt;  Degrees of freedom = 263.83 </span></span>
-<span id="cb159-29"><a></a><span class="co">#&gt;  Non-centrality parameter = -34.573 </span></span>
-<span id="cb159-30"><a></a><span class="co">#&gt;  Type I error rate = 0.05 </span></span>
-<span id="cb159-31"><a></a><span class="co">#&gt;  Type II error rate = 0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb165"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb165-1"><a></a><span class="co"># A posteriori</span></span>
+<span id="cb165-2"><a></a></span>
+<span id="cb165-3"><a></a><span class="fu">library</span>(pwrss)</span>
+<span id="cb165-4"><a></a></span>
+<span id="cb165-5"><a></a><span class="fu">pwrss.t.2means</span>(</span>
+<span id="cb165-6"><a></a>  <span class="at">mu1 =</span> adelie <span class="sc">|&gt;</span> <span class="fu">mean</span>(<span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb165-7"><a></a>  <span class="at">mu2 =</span> gentoo <span class="sc">|&gt;</span> <span class="fu">mean</span>(<span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb165-8"><a></a>  <span class="at">sd1 =</span> adelie <span class="sc">|&gt;</span> <span class="fu">sd</span>(<span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb165-9"><a></a>  <span class="at">sd2 =</span> gentoo <span class="sc">|&gt;</span> <span class="fu">sd</span>(<span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb165-10"><a></a>  <span class="at">paired =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb165-11"><a></a>  <span class="at">n2 =</span> gentoo <span class="sc">|&gt;</span> <span class="fu">length</span>(),</span>
+<span id="cb165-12"><a></a>  <span class="at">kappa =</span> (adelie <span class="sc">|&gt;</span> <span class="fu">length</span>()) <span class="sc">/</span> (gentoo <span class="sc">|&gt;</span> <span class="fu">length</span>()),</span>
+<span id="cb165-13"><a></a>  <span class="at">power =</span> <span class="cn">NULL</span>,</span>
+<span id="cb165-14"><a></a>  <span class="at">alpha =</span> <span class="fl">0.05</span>,</span>
+<span id="cb165-15"><a></a>  <span class="at">welch.df =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb165-16"><a></a>  <span class="at">alternative =</span> <span class="st">"not equal"</span></span>
+<span id="cb165-17"><a></a>)</span>
+<span id="cb165-18"><a></a><span class="co">#&gt;  Difference between Two means </span></span>
+<span id="cb165-19"><a></a><span class="co">#&gt;  (Independent Samples t Test) </span></span>
+<span id="cb165-20"><a></a><span class="co">#&gt;  H0: mu1 = mu2 </span></span>
+<span id="cb165-21"><a></a><span class="co">#&gt;  HA: mu1 != mu2 </span></span>
+<span id="cb165-22"><a></a><span class="co">#&gt;  ------------------------------ </span></span>
+<span id="cb165-23"><a></a><span class="co">#&gt;   Statistical power = 1 </span></span>
+<span id="cb165-24"><a></a><span class="co">#&gt;   n1 = 152 </span></span>
+<span id="cb165-25"><a></a><span class="co">#&gt;   n2 = 124 </span></span>
+<span id="cb165-26"><a></a><span class="co">#&gt;  ------------------------------ </span></span>
+<span id="cb165-27"><a></a><span class="co">#&gt;  Alternative = "not equal" </span></span>
+<span id="cb165-28"><a></a><span class="co">#&gt;  Degrees of freedom = 263.83 </span></span>
+<span id="cb165-29"><a></a><span class="co">#&gt;  Non-centrality parameter = -34.573 </span></span>
+<span id="cb165-30"><a></a><span class="co">#&gt;  Type I error rate = 0.05 </span></span>
+<span id="cb165-31"><a></a><span class="co">#&gt;  Type II error rate = 0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
@@ -6118,22 +6257,52 @@
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section><section id="one-way-anova-fit" class="slide level2 smaller"><h2>One-Way ANOVA: Fit</h2>
+      }</style></aside></section><section id="one-way-anova-boxplots" class="slide level2 smaller"><h2>One-Way ANOVA: Boxplots</h2>
+<div class="cell" data-layout-align="center">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb166"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb166-1"><a></a><span class="fu">library</span>(brandr)</span>
+<span id="cb166-2"><a></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb166-3"><a></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb166-4"><a></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb166-5"><a></a></span>
+<span id="cb166-6"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb166-7"><a></a>  <span class="fu">drop_na</span>(bill_length_mm, species) <span class="sc">|&gt;</span></span>
+<span id="cb166-8"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> flipper_length_mm, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
+<span id="cb166-9"><a></a>  <span class="fu">geom_boxplot</span>(<span class="at">outlier.color =</span> brandr<span class="sc">::</span><span class="fu">get_brand_color</span>(<span class="st">"dark-red"</span>)) <span class="sc">+</span></span>
+<span id="cb166-10"><a></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">alpha =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb166-11"><a></a>  brandr<span class="sc">::</span><span class="fu">scale_fill_brand_d</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb166-12"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Species"</span>, <span class="at">y =</span> <span class="st">"Bill Length (mm)"</span>, <span class="at">fill =</span> <span class="st">"Species"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-133-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><aside class="notes"><style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="one-way-anova-base-r" class="slide level2 smaller"><h2>One-Way ANOVA: Base R</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb160"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb160-1"><a></a>fit <span class="ot">&lt;-</span> <span class="fu">aov</span>(flipper_length_mm <span class="sc">~</span> species, <span class="at">data =</span> penguins)</span>
-<span id="cb160-2"><a></a></span>
-<span id="cb160-3"><a></a>fit</span>
-<span id="cb160-4"><a></a><span class="co">#&gt; Call:</span></span>
-<span id="cb160-5"><a></a><span class="co">#&gt;    aov(formula = flipper_length_mm ~ species, data = penguins)</span></span>
-<span id="cb160-6"><a></a><span class="co">#&gt; </span></span>
-<span id="cb160-7"><a></a><span class="co">#&gt; Terms:</span></span>
-<span id="cb160-8"><a></a><span class="co">#&gt;                  species Residuals</span></span>
-<span id="cb160-9"><a></a><span class="co">#&gt; Sum of Squares  52473.28  14953.26</span></span>
-<span id="cb160-10"><a></a><span class="co">#&gt; Deg. of Freedom        2       339</span></span>
-<span id="cb160-11"><a></a><span class="co">#&gt; </span></span>
-<span id="cb160-12"><a></a><span class="co">#&gt; Residual standard error: 6.641529</span></span>
-<span id="cb160-13"><a></a><span class="co">#&gt; Estimated effects may be unbalanced</span></span>
-<span id="cb160-14"><a></a><span class="co">#&gt; 2 observations deleted due to missingness</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb167"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb167-1"><a></a><span class="fu">library</span>(effectsize)</span>
+<span id="cb167-2"><a></a><span class="fu">library</span>(stats)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb168"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb168-1"><a></a>fit <span class="ot">&lt;-</span> <span class="fu">aov</span>(flipper_length_mm <span class="sc">~</span> species, <span class="at">data =</span> penguins)</span>
+<span id="cb168-2"><a></a></span>
+<span id="cb168-3"><a></a>fit</span>
+<span id="cb168-4"><a></a><span class="co">#&gt; Call:</span></span>
+<span id="cb168-5"><a></a><span class="co">#&gt;    aov(formula = flipper_length_mm ~ species, data = penguins)</span></span>
+<span id="cb168-6"><a></a><span class="co">#&gt; </span></span>
+<span id="cb168-7"><a></a><span class="co">#&gt; Terms:</span></span>
+<span id="cb168-8"><a></a><span class="co">#&gt;                  species Residuals</span></span>
+<span id="cb168-9"><a></a><span class="co">#&gt; Sum of Squares  52473.28  14953.26</span></span>
+<span id="cb168-10"><a></a><span class="co">#&gt; Deg. of Freedom        2       339</span></span>
+<span id="cb168-11"><a></a><span class="co">#&gt; </span></span>
+<span id="cb168-12"><a></a><span class="co">#&gt; Residual standard error: 6.641529</span></span>
+<span id="cb168-13"><a></a><span class="co">#&gt; Estimated effects may be unbalanced</span></span>
+<span id="cb168-14"><a></a><span class="co">#&gt; 2 observations deleted due to missingness</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
@@ -6145,55 +6314,29 @@
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section><section id="one-way-anova-fit-summary" class="slide level2 smaller"><h2>One-Way ANOVA: Fit Summary</h2>
+      }</style></aside></section><section id="one-way-anova-base-r-1" class="slide level2 smaller"><h2>One-Way ANOVA: Base R</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb161"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb161-1"><a></a>fit <span class="sc">|&gt;</span> <span class="fu">summary</span>()</span>
-<span id="cb161-2"><a></a><span class="co">#&gt;              Df Sum Sq Mean Sq F value Pr(&gt;F)    </span></span>
-<span id="cb161-3"><a></a><span class="co">#&gt; species       2  52473   26237   594.8 &lt;2e-16 ***</span></span>
-<span id="cb161-4"><a></a><span class="co">#&gt; Residuals   339  14953      44                   </span></span>
-<span id="cb161-5"><a></a><span class="co">#&gt; ---</span></span>
-<span id="cb161-6"><a></a><span class="co">#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
-<span id="cb161-7"><a></a><span class="co">#&gt; 2 observations deleted due to missingness</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb169"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb169-1"><a></a>fit <span class="sc">|&gt;</span> <span class="fu">summary</span>()</span>
+<span id="cb169-2"><a></a><span class="co">#&gt;              Df Sum Sq Mean Sq F value Pr(&gt;F)    </span></span>
+<span id="cb169-3"><a></a><span class="co">#&gt; species       2  52473   26237   594.8 &lt;2e-16 ***</span></span>
+<span id="cb169-4"><a></a><span class="co">#&gt; Residuals   339  14953      44                   </span></span>
+<span id="cb169-5"><a></a><span class="co">#&gt; ---</span></span>
+<span id="cb169-6"><a></a><span class="co">#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
+<span id="cb169-7"><a></a><span class="co">#&gt; 2 observations deleted due to missingness</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="one-way-anova-boxplots" class="slide level2 smaller"><h2>One-Way ANOVA: Boxplots</h2>
-<div class="cell" data-layout-align="center">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb162"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb162-1"><a></a><span class="fu">library</span>(brandr)</span>
-<span id="cb162-2"><a></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb162-3"><a></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb162-4"><a></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb162-5"><a></a></span>
-<span id="cb162-6"><a></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb162-7"><a></a>  <span class="fu">drop_na</span>(bill_length_mm, species) <span class="sc">|&gt;</span></span>
-<span id="cb162-8"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> bill_length_mm, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
-<span id="cb162-9"><a></a>  <span class="fu">geom_boxplot</span>(<span class="at">outlier.color =</span> brandr<span class="sc">::</span><span class="fu">get_brand_color</span>(<span class="st">"dark-red"</span>)) <span class="sc">+</span></span>
-<span id="cb162-10"><a></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">alpha =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
-<span id="cb162-11"><a></a>  brandr<span class="sc">::</span><span class="fu">scale_fill_brand_d</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb162-12"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Species"</span>, <span class="at">y =</span> <span class="st">"Bill Length (mm)"</span>, <span class="at">fill =</span> <span class="st">"Species"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<img data-src="index_files/figure-revealjs/unnamed-chunk-129-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="one-way-anova-tukey-test" class="slide level2 smaller"><h2>One-Way ANOVA: Tukey Test</h2>
+</section><section id="one-way-anova-base-r-2" class="slide level2 smaller"><h2>One-Way ANOVA: Base R</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb163"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb163-1"><a></a> fit <span class="sc">|&gt;</span> <span class="fu">TukeyHSD</span>()</span>
-<span id="cb163-2"><a></a><span class="co">#&gt;   Tukey multiple comparisons of means</span></span>
-<span id="cb163-3"><a></a><span class="co">#&gt;     95% family-wise confidence level</span></span>
-<span id="cb163-4"><a></a><span class="co">#&gt; </span></span>
-<span id="cb163-5"><a></a><span class="co">#&gt; Fit: aov(formula = flipper_length_mm ~ species, data = penguins)</span></span>
-<span id="cb163-6"><a></a><span class="co">#&gt; </span></span>
-<span id="cb163-7"><a></a><span class="co">#&gt; $species</span></span>
-<span id="cb163-8"><a></a><span class="co">#&gt;                       diff       lwr       upr p adj</span></span>
-<span id="cb163-9"><a></a><span class="co">#&gt; Chinstrap-Adelie  5.869887  3.586583  8.153191     0</span></span>
-<span id="cb163-10"><a></a><span class="co">#&gt; Gentoo-Adelie    27.233349 25.334376 29.132323     0</span></span>
-<span id="cb163-11"><a></a><span class="co">#&gt; Gentoo-Chinstrap 21.363462 19.000841 23.726084     0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb170"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb170-1"><a></a> fit <span class="sc">|&gt;</span> <span class="fu">TukeyHSD</span>()</span>
+<span id="cb170-2"><a></a><span class="co">#&gt;   Tukey multiple comparisons of means</span></span>
+<span id="cb170-3"><a></a><span class="co">#&gt;     95% family-wise confidence level</span></span>
+<span id="cb170-4"><a></a><span class="co">#&gt; </span></span>
+<span id="cb170-5"><a></a><span class="co">#&gt; Fit: aov(formula = flipper_length_mm ~ species, data = penguins)</span></span>
+<span id="cb170-6"><a></a><span class="co">#&gt; </span></span>
+<span id="cb170-7"><a></a><span class="co">#&gt; $species</span></span>
+<span id="cb170-8"><a></a><span class="co">#&gt;                       diff       lwr       upr p adj</span></span>
+<span id="cb170-9"><a></a><span class="co">#&gt; Chinstrap-Adelie  5.869887  3.586583  8.153191     0</span></span>
+<span id="cb170-10"><a></a><span class="co">#&gt; Gentoo-Adelie    27.233349 25.334376 29.132323     0</span></span>
+<span id="cb170-11"><a></a><span class="co">#&gt; Gentoo-Chinstrap 21.363462 19.000841 23.726084     0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
@@ -6207,29 +6350,27 @@
           display:block!important;
       }</style></aside></section><section id="one-way-anova-effect-size" class="slide level2 smaller"><h2>One-Way ANOVA: Effect Size</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb164"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb164-1"><a></a><span class="fu">library</span>(effectsize)</span>
-<span id="cb164-2"><a></a></span>
-<span id="cb164-3"><a></a>effect_size <span class="ot">&lt;-</span> fit <span class="sc">|&gt;</span> <span class="fu">eta_squared</span>()</span>
-<span id="cb164-4"><a></a></span>
-<span id="cb164-5"><a></a>effect_size</span>
-<span id="cb164-6"><a></a><span class="co">#&gt; # Effect Size for ANOVA</span></span>
-<span id="cb164-7"><a></a><span class="co">#&gt; </span></span>
-<span id="cb164-8"><a></a><span class="co">#&gt; Parameter | Eta2 |       95% CI</span></span>
-<span id="cb164-9"><a></a><span class="co">#&gt; -------------------------------</span></span>
-<span id="cb164-10"><a></a><span class="co">#&gt; species   | 0.78 | [0.75, 1.00]</span></span>
-<span id="cb164-11"><a></a><span class="co">#&gt; </span></span>
-<span id="cb164-12"><a></a><span class="co">#&gt; - One-sided CIs: upper bound fixed at [1.00].</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb171"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb171-1"><a></a>effect_size <span class="ot">&lt;-</span> fit <span class="sc">|&gt;</span> <span class="fu">eta_squared</span>()</span>
+<span id="cb171-2"><a></a></span>
+<span id="cb171-3"><a></a>effect_size</span>
+<span id="cb171-4"><a></a><span class="co">#&gt; # Effect Size for ANOVA</span></span>
+<span id="cb171-5"><a></a><span class="co">#&gt; </span></span>
+<span id="cb171-6"><a></a><span class="co">#&gt; Parameter | Eta2 |       95% CI</span></span>
+<span id="cb171-7"><a></a><span class="co">#&gt; -------------------------------</span></span>
+<span id="cb171-8"><a></a><span class="co">#&gt; species   | 0.78 | [0.75, 1.00]</span></span>
+<span id="cb171-9"><a></a><span class="co">#&gt; </span></span>
+<span id="cb171-10"><a></a><span class="co">#&gt; - One-sided CIs: upper bound fixed at [1.00].</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb165"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb165-1"><a></a>effect_size <span class="sc">|&gt;</span> <span class="fu">interpret_eta_squared</span>(<span class="at">rules =</span> <span class="st">"cohen1992"</span>)</span>
-<span id="cb165-2"><a></a><span class="co">#&gt; # Effect Size for ANOVA</span></span>
-<span id="cb165-3"><a></a><span class="co">#&gt; </span></span>
-<span id="cb165-4"><a></a><span class="co">#&gt; Parameter | Eta2 |       95% CI | Interpretation</span></span>
-<span id="cb165-5"><a></a><span class="co">#&gt; ------------------------------------------------</span></span>
-<span id="cb165-6"><a></a><span class="co">#&gt; species   | 0.78 | [0.75, 1.00] |          large</span></span>
-<span id="cb165-7"><a></a><span class="co">#&gt; </span></span>
-<span id="cb165-8"><a></a><span class="co">#&gt; - One-sided CIs: upper bound fixed at [1.00].</span></span>
-<span id="cb165-9"><a></a><span class="co">#&gt; - Interpretation rule: cohen1992</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb172"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb172-1"><a></a>effect_size <span class="sc">|&gt;</span> <span class="fu">interpret_eta_squared</span>(<span class="at">rules =</span> <span class="st">"cohen1992"</span>)</span>
+<span id="cb172-2"><a></a><span class="co">#&gt; # Effect Size for ANOVA</span></span>
+<span id="cb172-3"><a></a><span class="co">#&gt; </span></span>
+<span id="cb172-4"><a></a><span class="co">#&gt; Parameter | Eta2 |       95% CI | Interpretation</span></span>
+<span id="cb172-5"><a></a><span class="co">#&gt; ------------------------------------------------</span></span>
+<span id="cb172-6"><a></a><span class="co">#&gt; species   | 0.78 | [0.75, 1.00] |          large</span></span>
+<span id="cb172-7"><a></a><span class="co">#&gt; </span></span>
+<span id="cb172-8"><a></a><span class="co">#&gt; - One-sided CIs: upper bound fixed at [1.00].</span></span>
+<span id="cb172-9"><a></a><span class="co">#&gt; - Interpretation rule: cohen1992</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
@@ -6243,29 +6384,29 @@
           display:block!important;
       }</style></aside></section><section id="one-way-anova-power-analysis" class="slide level2 smaller"><h2>One-Way ANOVA: Power Analysis</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb166"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb166-1"><a></a><span class="co"># A posteriori</span></span>
-<span id="cb166-2"><a></a></span>
-<span id="cb166-3"><a></a><span class="fu">library</span>(pwrss)</span>
-<span id="cb166-4"><a></a></span>
-<span id="cb166-5"><a></a><span class="fu">pwrss.f.ancova</span>(</span>
-<span id="cb166-6"><a></a>  <span class="at">eta2 =</span> effect_size<span class="sc">$</span>Eta2,</span>
-<span id="cb166-7"><a></a>  <span class="at">n.way =</span> <span class="dv">1</span>,</span>
-<span id="cb166-8"><a></a>  <span class="at">n.levels =</span> <span class="dv">3</span>,</span>
-<span id="cb166-9"><a></a>  <span class="at">n.covariates =</span> <span class="dv">0</span>,</span>
-<span id="cb166-10"><a></a>  <span class="at">alpha =</span> <span class="fl">0.05</span>,</span>
-<span id="cb166-11"><a></a>  <span class="at">n =</span> penguins <span class="sc">|&gt;</span> <span class="fu">nrow</span>(),</span>
-<span id="cb166-12"><a></a>  <span class="at">power =</span> <span class="cn">NULL</span></span>
-<span id="cb166-13"><a></a>)</span>
-<span id="cb166-14"><a></a><span class="co">#&gt;  One-way Analysis of Variance (ANOVA) </span></span>
-<span id="cb166-15"><a></a><span class="co">#&gt;   H0: 'eta2' or 'f2' = 0 </span></span>
-<span id="cb166-16"><a></a><span class="co">#&gt;   HA: 'eta2' or 'f2' &gt; 0 </span></span>
-<span id="cb166-17"><a></a><span class="co">#&gt;  --------------------------------------</span></span>
-<span id="cb166-18"><a></a><span class="co">#&gt;  Factor A: 3 levels </span></span>
-<span id="cb166-19"><a></a><span class="co">#&gt;  --------------------------------------</span></span>
-<span id="cb166-20"><a></a><span class="co">#&gt;  effect power n.total      ncp df1 df2</span></span>
-<span id="cb166-21"><a></a><span class="co">#&gt;       A     1     344 1207.149   2 341</span></span>
-<span id="cb166-22"><a></a><span class="co">#&gt;  --------------------------------------</span></span>
-<span id="cb166-23"><a></a><span class="co">#&gt;  Type I error rate: 0.05</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb173"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb173-1"><a></a><span class="co"># A posteriori</span></span>
+<span id="cb173-2"><a></a></span>
+<span id="cb173-3"><a></a><span class="fu">library</span>(pwrss)</span>
+<span id="cb173-4"><a></a></span>
+<span id="cb173-5"><a></a><span class="fu">pwrss.f.ancova</span>(</span>
+<span id="cb173-6"><a></a>  <span class="at">eta2 =</span> effect_size<span class="sc">$</span>Eta2,</span>
+<span id="cb173-7"><a></a>  <span class="at">n.way =</span> <span class="dv">1</span>,</span>
+<span id="cb173-8"><a></a>  <span class="at">n.levels =</span> <span class="dv">3</span>,</span>
+<span id="cb173-9"><a></a>  <span class="at">n.covariates =</span> <span class="dv">0</span>,</span>
+<span id="cb173-10"><a></a>  <span class="at">alpha =</span> <span class="fl">0.05</span>,</span>
+<span id="cb173-11"><a></a>  <span class="at">n =</span> penguins <span class="sc">|&gt;</span> <span class="fu">nrow</span>(),</span>
+<span id="cb173-12"><a></a>  <span class="at">power =</span> <span class="cn">NULL</span></span>
+<span id="cb173-13"><a></a>)</span>
+<span id="cb173-14"><a></a><span class="co">#&gt;  One-way Analysis of Variance (ANOVA) </span></span>
+<span id="cb173-15"><a></a><span class="co">#&gt;   H0: 'eta2' or 'f2' = 0 </span></span>
+<span id="cb173-16"><a></a><span class="co">#&gt;   HA: 'eta2' or 'f2' &gt; 0 </span></span>
+<span id="cb173-17"><a></a><span class="co">#&gt;  --------------------------------------</span></span>
+<span id="cb173-18"><a></a><span class="co">#&gt;  Factor A: 3 levels </span></span>
+<span id="cb173-19"><a></a><span class="co">#&gt;  --------------------------------------</span></span>
+<span id="cb173-20"><a></a><span class="co">#&gt;  effect power n.total      ncp df1 df2</span></span>
+<span id="cb173-21"><a></a><span class="co">#&gt;       A     1     344 1207.149   2 341</span></span>
+<span id="cb173-22"><a></a><span class="co">#&gt;  --------------------------------------</span></span>
+<span id="cb173-23"><a></a><span class="co">#&gt;  Type I error rate: 0.05</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
@@ -6297,20 +6438,26 @@
           display:block!important;
       }</style></aside></section><section id="one-way-ancova-fit" class="slide level2 smaller"><h2>One-Way ANCOVA: Fit</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb167"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb167-1"><a></a>fit <span class="ot">&lt;-</span> <span class="fu">aov</span>(flipper_length_mm <span class="sc">~</span> body_mass_g <span class="sc">*</span> species, <span class="at">data =</span> penguins)</span>
-<span id="cb167-2"><a></a></span>
-<span id="cb167-3"><a></a>fit</span>
-<span id="cb167-4"><a></a><span class="co">#&gt; Call:</span></span>
-<span id="cb167-5"><a></a><span class="co">#&gt;    aov(formula = flipper_length_mm ~ body_mass_g * species, data = penguins)</span></span>
-<span id="cb167-6"><a></a><span class="co">#&gt; </span></span>
-<span id="cb167-7"><a></a><span class="co">#&gt; Terms:</span></span>
-<span id="cb167-8"><a></a><span class="co">#&gt;                 body_mass_g  species body_mass_g:species Residuals</span></span>
-<span id="cb167-9"><a></a><span class="co">#&gt; Sum of Squares     51176.24  6411.23              227.91   9611.17</span></span>
-<span id="cb167-10"><a></a><span class="co">#&gt; Deg. of Freedom           1        2                   2       336</span></span>
-<span id="cb167-11"><a></a><span class="co">#&gt; </span></span>
-<span id="cb167-12"><a></a><span class="co">#&gt; Residual standard error: 5.348333</span></span>
-<span id="cb167-13"><a></a><span class="co">#&gt; Estimated effects may be unbalanced</span></span>
-<span id="cb167-14"><a></a><span class="co">#&gt; 2 observations deleted due to missingness</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb174"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb174-1"><a></a><span class="fu">library</span>(car)</span>
+<span id="cb174-2"><a></a><span class="fu">library</span>(effectsize)</span>
+<span id="cb174-3"><a></a><span class="fu">library</span>(multcomp)</span>
+<span id="cb174-4"><a></a><span class="fu">library</span>(stats)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb175"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb175-1"><a></a>fit <span class="ot">&lt;-</span> <span class="fu">aov</span>(flipper_length_mm <span class="sc">~</span> body_mass_g <span class="sc">*</span> species, <span class="at">data =</span> penguins)</span>
+<span id="cb175-2"><a></a></span>
+<span id="cb175-3"><a></a>fit</span>
+<span id="cb175-4"><a></a><span class="co">#&gt; Call:</span></span>
+<span id="cb175-5"><a></a><span class="co">#&gt;    aov(formula = flipper_length_mm ~ body_mass_g * species, data = penguins)</span></span>
+<span id="cb175-6"><a></a><span class="co">#&gt; </span></span>
+<span id="cb175-7"><a></a><span class="co">#&gt; Terms:</span></span>
+<span id="cb175-8"><a></a><span class="co">#&gt;                 body_mass_g  species body_mass_g:species Residuals</span></span>
+<span id="cb175-9"><a></a><span class="co">#&gt; Sum of Squares     51176.24  6411.23              227.91   9611.17</span></span>
+<span id="cb175-10"><a></a><span class="co">#&gt; Deg. of Freedom           1        2                   2       336</span></span>
+<span id="cb175-11"><a></a><span class="co">#&gt; </span></span>
+<span id="cb175-12"><a></a><span class="co">#&gt; Residual standard error: 5.348333</span></span>
+<span id="cb175-13"><a></a><span class="co">#&gt; Estimated effects may be unbalanced</span></span>
+<span id="cb175-14"><a></a><span class="co">#&gt; 2 observations deleted due to missingness</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
@@ -6324,20 +6471,18 @@
           display:block!important;
       }</style></aside></section><section id="one-way-ancova-fit-summary" class="slide level2 smaller"><h2>One-Way ANCOVA: Fit Summary</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb168"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb168-1"><a></a><span class="fu">library</span>(car)</span>
-<span id="cb168-2"><a></a></span>
-<span id="cb168-3"><a></a> fit <span class="sc">|&gt;</span> <span class="fu">Anova</span>(<span class="at">type =</span> <span class="st">"III"</span>)</span>
-<span id="cb168-4"><a></a><span class="co">#&gt; Anova Table (Type III tests)</span></span>
-<span id="cb168-5"><a></a><span class="co">#&gt; </span></span>
-<span id="cb168-6"><a></a><span class="co">#&gt; Response: flipper_length_mm</span></span>
-<span id="cb168-7"><a></a><span class="co">#&gt;                     Sum Sq  Df   F value    Pr(&gt;F)    </span></span>
-<span id="cb168-8"><a></a><span class="co">#&gt; (Intercept)          61947   1 2165.6129 &lt; 2.2e-16 ***</span></span>
-<span id="cb168-9"><a></a><span class="co">#&gt; body_mass_g           1406   1   49.1591 1.302e-11 ***</span></span>
-<span id="cb168-10"><a></a><span class="co">#&gt; species                177   2    3.0994   0.04637 *  </span></span>
-<span id="cb168-11"><a></a><span class="co">#&gt; body_mass_g:species    228   2    3.9837   0.01950 *  </span></span>
-<span id="cb168-12"><a></a><span class="co">#&gt; Residuals             9611 336                        </span></span>
-<span id="cb168-13"><a></a><span class="co">#&gt; ---</span></span>
-<span id="cb168-14"><a></a><span class="co">#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb176"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb176-1"><a></a> fit <span class="sc">|&gt;</span> <span class="fu">Anova</span>(<span class="at">type =</span> <span class="st">"III"</span>)</span>
+<span id="cb176-2"><a></a><span class="co">#&gt; Anova Table (Type III tests)</span></span>
+<span id="cb176-3"><a></a><span class="co">#&gt; </span></span>
+<span id="cb176-4"><a></a><span class="co">#&gt; Response: flipper_length_mm</span></span>
+<span id="cb176-5"><a></a><span class="co">#&gt;                     Sum Sq  Df   F value    Pr(&gt;F)    </span></span>
+<span id="cb176-6"><a></a><span class="co">#&gt; (Intercept)          61947   1 2165.6129 &lt; 2.2e-16 ***</span></span>
+<span id="cb176-7"><a></a><span class="co">#&gt; body_mass_g           1406   1   49.1591 1.302e-11 ***</span></span>
+<span id="cb176-8"><a></a><span class="co">#&gt; species                177   2    3.0994   0.04637 *  </span></span>
+<span id="cb176-9"><a></a><span class="co">#&gt; body_mass_g:species    228   2    3.9837   0.01950 *  </span></span>
+<span id="cb176-10"><a></a><span class="co">#&gt; Residuals             9611 336                        </span></span>
+<span id="cb176-11"><a></a><span class="co">#&gt; ---</span></span>
+<span id="cb176-12"><a></a><span class="co">#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
@@ -6351,29 +6496,27 @@
           display:block!important;
       }</style></aside></section><section id="one-way-ancova-tukey-test" class="slide level2 smaller"><h2>One-Way ANCOVA: Tukey Test</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb169"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb169-1"><a></a><span class="fu">library</span>(multcomp)</span>
-<span id="cb169-2"><a></a></span>
-<span id="cb169-3"><a></a>post_hoc <span class="ot">&lt;-</span></span>
-<span id="cb169-4"><a></a>  fit <span class="sc">|&gt;</span></span>
-<span id="cb169-5"><a></a>  <span class="fu">glht</span>(<span class="at">linfct =</span> <span class="fu">mcp</span>(<span class="at">species =</span> <span class="st">"Tukey"</span>))</span>
-<span id="cb169-6"><a></a></span>
-<span id="cb169-7"><a></a><span class="fu">summary</span>(post_hoc)</span>
-<span id="cb169-8"><a></a><span class="co">#&gt; </span></span>
-<span id="cb169-9"><a></a><span class="co">#&gt;   Simultaneous Tests for General Linear Hypotheses</span></span>
-<span id="cb169-10"><a></a><span class="co">#&gt; </span></span>
-<span id="cb169-11"><a></a><span class="co">#&gt; Multiple Comparisons of Means: Tukey Contrasts</span></span>
-<span id="cb169-12"><a></a><span class="co">#&gt; </span></span>
-<span id="cb169-13"><a></a><span class="co">#&gt; </span></span>
-<span id="cb169-14"><a></a><span class="co">#&gt; Fit: aov(formula = flipper_length_mm ~ body_mass_g * species, data = penguins)</span></span>
-<span id="cb169-15"><a></a><span class="co">#&gt; </span></span>
-<span id="cb169-16"><a></a><span class="co">#&gt; Linear Hypotheses:</span></span>
-<span id="cb169-17"><a></a><span class="co">#&gt;                         Estimate Std. Error t value Pr(&gt;|t|)  </span></span>
-<span id="cb169-18"><a></a><span class="co">#&gt; Chinstrap - Adelie == 0  -13.864      7.301  -1.899   0.1383  </span></span>
-<span id="cb169-19"><a></a><span class="co">#&gt; Gentoo - Adelie == 0       6.059      6.051   1.001   0.5729  </span></span>
-<span id="cb169-20"><a></a><span class="co">#&gt; Gentoo - Chinstrap == 0   19.923      8.044   2.477   0.0359 *</span></span>
-<span id="cb169-21"><a></a><span class="co">#&gt; ---</span></span>
-<span id="cb169-22"><a></a><span class="co">#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
-<span id="cb169-23"><a></a><span class="co">#&gt; (Adjusted p values reported -- single-step method)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb177"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb177-1"><a></a>post_hoc <span class="ot">&lt;-</span></span>
+<span id="cb177-2"><a></a>  fit <span class="sc">|&gt;</span></span>
+<span id="cb177-3"><a></a>  <span class="fu">glht</span>(<span class="at">linfct =</span> <span class="fu">mcp</span>(<span class="at">species =</span> <span class="st">"Tukey"</span>))</span>
+<span id="cb177-4"><a></a></span>
+<span id="cb177-5"><a></a><span class="fu">summary</span>(post_hoc)</span>
+<span id="cb177-6"><a></a><span class="co">#&gt; </span></span>
+<span id="cb177-7"><a></a><span class="co">#&gt;   Simultaneous Tests for General Linear Hypotheses</span></span>
+<span id="cb177-8"><a></a><span class="co">#&gt; </span></span>
+<span id="cb177-9"><a></a><span class="co">#&gt; Multiple Comparisons of Means: Tukey Contrasts</span></span>
+<span id="cb177-10"><a></a><span class="co">#&gt; </span></span>
+<span id="cb177-11"><a></a><span class="co">#&gt; </span></span>
+<span id="cb177-12"><a></a><span class="co">#&gt; Fit: aov(formula = flipper_length_mm ~ body_mass_g * species, data = penguins)</span></span>
+<span id="cb177-13"><a></a><span class="co">#&gt; </span></span>
+<span id="cb177-14"><a></a><span class="co">#&gt; Linear Hypotheses:</span></span>
+<span id="cb177-15"><a></a><span class="co">#&gt;                         Estimate Std. Error t value Pr(&gt;|t|)  </span></span>
+<span id="cb177-16"><a></a><span class="co">#&gt; Chinstrap - Adelie == 0  -13.864      7.301  -1.899   0.1383  </span></span>
+<span id="cb177-17"><a></a><span class="co">#&gt; Gentoo - Adelie == 0       6.059      6.051   1.001   0.5729  </span></span>
+<span id="cb177-18"><a></a><span class="co">#&gt; Gentoo - Chinstrap == 0   19.923      8.044   2.477   0.0359 *</span></span>
+<span id="cb177-19"><a></a><span class="co">#&gt; ---</span></span>
+<span id="cb177-20"><a></a><span class="co">#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
+<span id="cb177-21"><a></a><span class="co">#&gt; (Adjusted p values reported -- single-step method)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
@@ -6387,49 +6530,49 @@
           display:block!important;
       }</style></aside></section><section id="one-way-ancova-boxplots" class="slide level2 smaller"><h2>One-Way ANCOVA: Boxplots</h2>
 <div class="cell" data-layout-align="center">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb170"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb170-1"><a></a><span class="fu">library</span>(brandr)</span>
-<span id="cb170-2"><a></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb170-3"><a></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb170-4"><a></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb170-5"><a></a></span>
-<span id="cb170-6"><a></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb170-7"><a></a>  <span class="fu">drop_na</span>(bill_length_mm, species) <span class="sc">|&gt;</span></span>
-<span id="cb170-8"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> bill_length_mm, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
-<span id="cb170-9"><a></a>  <span class="fu">geom_boxplot</span>(<span class="at">outlier.color =</span> brandr<span class="sc">::</span><span class="fu">get_brand_color</span>(<span class="st">"dark-red"</span>)) <span class="sc">+</span></span>
-<span id="cb170-10"><a></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">alpha =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
-<span id="cb170-11"><a></a>  brandr<span class="sc">::</span><span class="fu">scale_fill_brand_d</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb170-12"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Species"</span>, <span class="at">y =</span> <span class="st">"Bill Length (mm)"</span>, <span class="at">fill =</span> <span class="st">"Species"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb178"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb178-1"><a></a><span class="fu">library</span>(brandr)</span>
+<span id="cb178-2"><a></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb178-3"><a></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb178-4"><a></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb178-5"><a></a></span>
+<span id="cb178-6"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb178-7"><a></a>  <span class="fu">drop_na</span>(bill_length_mm, species) <span class="sc">|&gt;</span></span>
+<span id="cb178-8"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> bill_length_mm, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
+<span id="cb178-9"><a></a>  <span class="fu">geom_boxplot</span>(<span class="at">outlier.color =</span> brandr<span class="sc">::</span><span class="fu">get_brand_color</span>(<span class="st">"dark-red"</span>)) <span class="sc">+</span></span>
+<span id="cb178-10"><a></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">alpha =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb178-11"><a></a>  brandr<span class="sc">::</span><span class="fu">scale_fill_brand_d</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb178-12"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Species"</span>, <span class="at">y =</span> <span class="st">"Bill Length (mm)"</span>, <span class="at">fill =</span> <span class="st">"Species"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<img data-src="index_files/figure-revealjs/unnamed-chunk-137-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section><section id="one-way-ancova-effect-size" class="slide level2 smaller"><h2>One-Way ANCOVA: Effect Size</h2>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-145-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section><section id="one-way-ancova-effect-size" class="slide level2 smaller"><h2>One-Way ANCOVA: Effect Size</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb171"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb171-1"><a></a><span class="fu">library</span>(effectsize)</span>
-<span id="cb171-2"><a></a></span>
-<span id="cb171-3"><a></a>effect_size <span class="ot">&lt;-</span> fit <span class="sc">|&gt;</span> <span class="fu">eta_squared</span>()</span>
-<span id="cb171-4"><a></a></span>
-<span id="cb171-5"><a></a>effect_size</span>
-<span id="cb171-6"><a></a><span class="co">#&gt; # Effect Size for ANOVA (Type I)</span></span>
-<span id="cb171-7"><a></a><span class="co">#&gt; </span></span>
-<span id="cb171-8"><a></a><span class="co">#&gt; Parameter           | Eta2 (partial) |       95% CI</span></span>
-<span id="cb171-9"><a></a><span class="co">#&gt; ---------------------------------------------------</span></span>
-<span id="cb171-10"><a></a><span class="co">#&gt; body_mass_g         |           0.84 | [0.82, 1.00]</span></span>
-<span id="cb171-11"><a></a><span class="co">#&gt; species             |           0.40 | [0.34, 1.00]</span></span>
-<span id="cb171-12"><a></a><span class="co">#&gt; body_mass_g:species |           0.02 | [0.00, 1.00]</span></span>
-<span id="cb171-13"><a></a><span class="co">#&gt; </span></span>
-<span id="cb171-14"><a></a><span class="co">#&gt; - One-sided CIs: upper bound fixed at [1.00].</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb179"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb179-1"><a></a><span class="fu">library</span>(effectsize)</span>
+<span id="cb179-2"><a></a></span>
+<span id="cb179-3"><a></a>effect_size <span class="ot">&lt;-</span> fit <span class="sc">|&gt;</span> <span class="fu">eta_squared</span>()</span>
+<span id="cb179-4"><a></a></span>
+<span id="cb179-5"><a></a>effect_size</span>
+<span id="cb179-6"><a></a><span class="co">#&gt; # Effect Size for ANOVA (Type I)</span></span>
+<span id="cb179-7"><a></a><span class="co">#&gt; </span></span>
+<span id="cb179-8"><a></a><span class="co">#&gt; Parameter           | Eta2 (partial) |       95% CI</span></span>
+<span id="cb179-9"><a></a><span class="co">#&gt; ---------------------------------------------------</span></span>
+<span id="cb179-10"><a></a><span class="co">#&gt; body_mass_g         |           0.84 | [0.82, 1.00]</span></span>
+<span id="cb179-11"><a></a><span class="co">#&gt; species             |           0.40 | [0.34, 1.00]</span></span>
+<span id="cb179-12"><a></a><span class="co">#&gt; body_mass_g:species |           0.02 | [0.00, 1.00]</span></span>
+<span id="cb179-13"><a></a><span class="co">#&gt; </span></span>
+<span id="cb179-14"><a></a><span class="co">#&gt; - One-sided CIs: upper bound fixed at [1.00].</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb172"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb172-1"><a></a>effect_size <span class="sc">|&gt;</span> <span class="fu">interpret_eta_squared</span>(<span class="at">rules =</span> <span class="st">"cohen1992"</span>)</span>
-<span id="cb172-2"><a></a><span class="co">#&gt; # Effect Size for ANOVA (Type I)</span></span>
-<span id="cb172-3"><a></a><span class="co">#&gt; </span></span>
-<span id="cb172-4"><a></a><span class="co">#&gt; Parameter           | Eta2 (partial) |       95% CI | Interpretation</span></span>
-<span id="cb172-5"><a></a><span class="co">#&gt; --------------------------------------------------------------------</span></span>
-<span id="cb172-6"><a></a><span class="co">#&gt; body_mass_g         |           0.84 | [0.82, 1.00] |          large</span></span>
-<span id="cb172-7"><a></a><span class="co">#&gt; species             |           0.40 | [0.34, 1.00] |          large</span></span>
-<span id="cb172-8"><a></a><span class="co">#&gt; body_mass_g:species |           0.02 | [0.00, 1.00] |          small</span></span>
-<span id="cb172-9"><a></a><span class="co">#&gt; </span></span>
-<span id="cb172-10"><a></a><span class="co">#&gt; - One-sided CIs: upper bound fixed at [1.00].</span></span>
-<span id="cb172-11"><a></a><span class="co">#&gt; - Interpretation rule: cohen1992</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb180"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb180-1"><a></a>effect_size <span class="sc">|&gt;</span> <span class="fu">interpret_eta_squared</span>(<span class="at">rules =</span> <span class="st">"cohen1992"</span>)</span>
+<span id="cb180-2"><a></a><span class="co">#&gt; # Effect Size for ANOVA (Type I)</span></span>
+<span id="cb180-3"><a></a><span class="co">#&gt; </span></span>
+<span id="cb180-4"><a></a><span class="co">#&gt; Parameter           | Eta2 (partial) |       95% CI | Interpretation</span></span>
+<span id="cb180-5"><a></a><span class="co">#&gt; --------------------------------------------------------------------</span></span>
+<span id="cb180-6"><a></a><span class="co">#&gt; body_mass_g         |           0.84 | [0.82, 1.00] |          large</span></span>
+<span id="cb180-7"><a></a><span class="co">#&gt; species             |           0.40 | [0.34, 1.00] |          large</span></span>
+<span id="cb180-8"><a></a><span class="co">#&gt; body_mass_g:species |           0.02 | [0.00, 1.00] |          small</span></span>
+<span id="cb180-9"><a></a><span class="co">#&gt; </span></span>
+<span id="cb180-10"><a></a><span class="co">#&gt; - One-sided CIs: upper bound fixed at [1.00].</span></span>
+<span id="cb180-11"><a></a><span class="co">#&gt; - Interpretation rule: cohen1992</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
@@ -6443,29 +6586,29 @@
           display:block!important;
       }</style></aside></section><section id="one-way-ancova-power-analysis" class="slide level2 smaller"><h2>One-Way ANCOVA: Power Analysis</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb173"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb173-1"><a></a><span class="co"># A posteriori</span></span>
-<span id="cb173-2"><a></a></span>
-<span id="cb173-3"><a></a><span class="fu">library</span>(pwrss)</span>
-<span id="cb173-4"><a></a></span>
-<span id="cb173-5"><a></a><span class="fu">pwrss.f.ancova</span>(</span>
-<span id="cb173-6"><a></a>  <span class="at">eta2 =</span> effect_size<span class="sc">$</span>Eta2_partial[<span class="dv">3</span>],</span>
-<span id="cb173-7"><a></a>  <span class="at">n.way =</span> <span class="dv">1</span>,</span>
-<span id="cb173-8"><a></a>  <span class="at">n.levels =</span> <span class="dv">3</span>,</span>
-<span id="cb173-9"><a></a>  <span class="at">n.covariates =</span> <span class="dv">1</span>,</span>
-<span id="cb173-10"><a></a>  <span class="at">alpha =</span> <span class="fl">0.05</span>,</span>
-<span id="cb173-11"><a></a>  <span class="at">n =</span> penguins <span class="sc">|&gt;</span> <span class="fu">nrow</span>(),</span>
-<span id="cb173-12"><a></a>  <span class="at">power =</span> <span class="cn">NULL</span></span>
-<span id="cb173-13"><a></a>)</span>
-<span id="cb173-14"><a></a><span class="co">#&gt;  One-way Analysis of Covariance (ANCOVA) </span></span>
-<span id="cb173-15"><a></a><span class="co">#&gt;   H0: 'eta2' or 'f2' = 0 </span></span>
-<span id="cb173-16"><a></a><span class="co">#&gt;   HA: 'eta2' or 'f2' &gt; 0 </span></span>
-<span id="cb173-17"><a></a><span class="co">#&gt;  --------------------------------------</span></span>
-<span id="cb173-18"><a></a><span class="co">#&gt;  Factor A: 3 levels </span></span>
-<span id="cb173-19"><a></a><span class="co">#&gt;  --------------------------------------</span></span>
-<span id="cb173-20"><a></a><span class="co">#&gt;  effect power n.total   ncp df1 df2</span></span>
-<span id="cb173-21"><a></a><span class="co">#&gt;       A 0.722     344 8.157   2 340</span></span>
-<span id="cb173-22"><a></a><span class="co">#&gt;  --------------------------------------</span></span>
-<span id="cb173-23"><a></a><span class="co">#&gt;  Type I error rate: 0.05</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb181"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb181-1"><a></a><span class="co"># A posteriori</span></span>
+<span id="cb181-2"><a></a></span>
+<span id="cb181-3"><a></a><span class="fu">library</span>(pwrss)</span>
+<span id="cb181-4"><a></a></span>
+<span id="cb181-5"><a></a><span class="fu">pwrss.f.ancova</span>(</span>
+<span id="cb181-6"><a></a>  <span class="at">eta2 =</span> effect_size<span class="sc">$</span>Eta2_partial[<span class="dv">3</span>],</span>
+<span id="cb181-7"><a></a>  <span class="at">n.way =</span> <span class="dv">1</span>,</span>
+<span id="cb181-8"><a></a>  <span class="at">n.levels =</span> <span class="dv">3</span>,</span>
+<span id="cb181-9"><a></a>  <span class="at">n.covariates =</span> <span class="dv">1</span>,</span>
+<span id="cb181-10"><a></a>  <span class="at">alpha =</span> <span class="fl">0.05</span>,</span>
+<span id="cb181-11"><a></a>  <span class="at">n =</span> penguins <span class="sc">|&gt;</span> <span class="fu">nrow</span>(),</span>
+<span id="cb181-12"><a></a>  <span class="at">power =</span> <span class="cn">NULL</span></span>
+<span id="cb181-13"><a></a>)</span>
+<span id="cb181-14"><a></a><span class="co">#&gt;  One-way Analysis of Covariance (ANCOVA) </span></span>
+<span id="cb181-15"><a></a><span class="co">#&gt;   H0: 'eta2' or 'f2' = 0 </span></span>
+<span id="cb181-16"><a></a><span class="co">#&gt;   HA: 'eta2' or 'f2' &gt; 0 </span></span>
+<span id="cb181-17"><a></a><span class="co">#&gt;  --------------------------------------</span></span>
+<span id="cb181-18"><a></a><span class="co">#&gt;  Factor A: 3 levels </span></span>
+<span id="cb181-19"><a></a><span class="co">#&gt;  --------------------------------------</span></span>
+<span id="cb181-20"><a></a><span class="co">#&gt;  effect power n.total   ncp df1 df2</span></span>
+<span id="cb181-21"><a></a><span class="co">#&gt;       A 0.722     344 8.157   2 340</span></span>
+<span id="cb181-22"><a></a><span class="co">#&gt;  --------------------------------------</span></span>
+<span id="cb181-23"><a></a><span class="co">#&gt;  Type I error rate: 0.05</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
@@ -6498,33 +6641,33 @@
           display:block!important;
       }</style></aside></section><section id="linear-regression-scatterplot-1" class="slide level2 smaller"><h2>Linear Regression: Scatterplot 1</h2>
 <div class="cell" data-layout-align="center">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb174"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb174-1"><a></a><span class="fu">library</span>(brandr)</span>
-<span id="cb174-2"><a></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb174-3"><a></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb174-4"><a></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb174-5"><a></a></span>
-<span id="cb174-6"><a></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb174-7"><a></a>  <span class="fu">drop_na</span>(flipper_length_mm, body_mass_g, species) <span class="sc">|&gt;</span></span>
-<span id="cb174-8"><a></a>  <span class="fu">ggplot</span>(</span>
-<span id="cb174-9"><a></a>    <span class="fu">aes</span>(</span>
-<span id="cb174-10"><a></a>      <span class="at">x =</span> flipper_length_mm,</span>
-<span id="cb174-11"><a></a>      <span class="at">y =</span> bill_length_mm,</span>
-<span id="cb174-12"><a></a>      <span class="at">color =</span> species,</span>
-<span id="cb174-13"><a></a>      <span class="at">shape =</span> species</span>
-<span id="cb174-14"><a></a>    )</span>
-<span id="cb174-15"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb174-16"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb174-17"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb174-18"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb174-19"><a></a>    <span class="at">x =</span> <span class="st">"Flipper Length (mm)"</span>,</span>
-<span id="cb174-20"><a></a>    <span class="at">y =</span> <span class="st">"Bill Length (mm)"</span>,</span>
-<span id="cb174-21"><a></a>    <span class="at">color =</span> <span class="st">"Species"</span>,</span>
-<span id="cb174-22"><a></a>    <span class="at">shape =</span> <span class="st">"Species"</span></span>
-<span id="cb174-23"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb174-24"><a></a>  brandr<span class="sc">::</span><span class="fu">scale_color_brand_d</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb182"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb182-1"><a></a><span class="fu">library</span>(brandr)</span>
+<span id="cb182-2"><a></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb182-3"><a></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb182-4"><a></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb182-5"><a></a></span>
+<span id="cb182-6"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb182-7"><a></a>  <span class="fu">drop_na</span>(flipper_length_mm, body_mass_g, species) <span class="sc">|&gt;</span></span>
+<span id="cb182-8"><a></a>  <span class="fu">ggplot</span>(</span>
+<span id="cb182-9"><a></a>    <span class="fu">aes</span>(</span>
+<span id="cb182-10"><a></a>      <span class="at">x =</span> flipper_length_mm,</span>
+<span id="cb182-11"><a></a>      <span class="at">y =</span> bill_length_mm,</span>
+<span id="cb182-12"><a></a>      <span class="at">color =</span> species,</span>
+<span id="cb182-13"><a></a>      <span class="at">shape =</span> species</span>
+<span id="cb182-14"><a></a>    )</span>
+<span id="cb182-15"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb182-16"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb182-17"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb182-18"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb182-19"><a></a>    <span class="at">x =</span> <span class="st">"Flipper Length (mm)"</span>,</span>
+<span id="cb182-20"><a></a>    <span class="at">y =</span> <span class="st">"Bill Length (mm)"</span>,</span>
+<span id="cb182-21"><a></a>    <span class="at">color =</span> <span class="st">"Species"</span>,</span>
+<span id="cb182-22"><a></a>    <span class="at">shape =</span> <span class="st">"Species"</span></span>
+<span id="cb182-23"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb182-24"><a></a>  brandr<span class="sc">::</span><span class="fu">scale_color_brand_d</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<img data-src="index_files/figure-revealjs/unnamed-chunk-141-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><aside class="notes"><style type="text/css">
+<img data-src="index_files/figure-revealjs/unnamed-chunk-149-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
           clip: rect(1px, 1px, 1px, 1px);
@@ -6536,33 +6679,33 @@
           display:block!important;
       }</style></aside></section><section id="linear-regression-scatterplot-2" class="slide level2 smaller"><h2>Linear Regression: Scatterplot 2</h2>
 <div class="cell" data-layout-align="center">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb175"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb175-1"><a></a><span class="fu">library</span>(brandr)</span>
-<span id="cb175-2"><a></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb175-3"><a></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb175-4"><a></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb175-5"><a></a></span>
-<span id="cb175-6"><a></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb175-7"><a></a>  <span class="fu">drop_na</span>(flipper_length_mm, body_mass_g, species) <span class="sc">|&gt;</span></span>
-<span id="cb175-8"><a></a>  <span class="fu">ggplot</span>(</span>
-<span id="cb175-9"><a></a>    <span class="fu">aes</span>(</span>
-<span id="cb175-10"><a></a>      <span class="at">x =</span> flipper_length_mm,</span>
-<span id="cb175-11"><a></a>      <span class="at">y =</span> bill_depth_mm,</span>
-<span id="cb175-12"><a></a>      <span class="at">color =</span> species,</span>
-<span id="cb175-13"><a></a>      <span class="at">shape =</span> species</span>
-<span id="cb175-14"><a></a>    )</span>
-<span id="cb175-15"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb175-16"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb175-17"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb175-18"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb175-19"><a></a>    <span class="at">x =</span> <span class="st">"Flipper Length (mm)"</span>,</span>
-<span id="cb175-20"><a></a>    <span class="at">y =</span> <span class="st">"Bill Depth (mm)"</span>,</span>
-<span id="cb175-21"><a></a>    <span class="at">color =</span> <span class="st">"Species"</span>,</span>
-<span id="cb175-22"><a></a>    <span class="at">shape =</span> <span class="st">"Species"</span></span>
-<span id="cb175-23"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb175-24"><a></a>  brandr<span class="sc">::</span><span class="fu">scale_color_brand_d</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb183"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb183-1"><a></a><span class="fu">library</span>(brandr)</span>
+<span id="cb183-2"><a></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb183-3"><a></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb183-4"><a></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb183-5"><a></a></span>
+<span id="cb183-6"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb183-7"><a></a>  <span class="fu">drop_na</span>(flipper_length_mm, body_mass_g, species) <span class="sc">|&gt;</span></span>
+<span id="cb183-8"><a></a>  <span class="fu">ggplot</span>(</span>
+<span id="cb183-9"><a></a>    <span class="fu">aes</span>(</span>
+<span id="cb183-10"><a></a>      <span class="at">x =</span> flipper_length_mm,</span>
+<span id="cb183-11"><a></a>      <span class="at">y =</span> bill_depth_mm,</span>
+<span id="cb183-12"><a></a>      <span class="at">color =</span> species,</span>
+<span id="cb183-13"><a></a>      <span class="at">shape =</span> species</span>
+<span id="cb183-14"><a></a>    )</span>
+<span id="cb183-15"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb183-16"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb183-17"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb183-18"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb183-19"><a></a>    <span class="at">x =</span> <span class="st">"Flipper Length (mm)"</span>,</span>
+<span id="cb183-20"><a></a>    <span class="at">y =</span> <span class="st">"Bill Depth (mm)"</span>,</span>
+<span id="cb183-21"><a></a>    <span class="at">color =</span> <span class="st">"Species"</span>,</span>
+<span id="cb183-22"><a></a>    <span class="at">shape =</span> <span class="st">"Species"</span></span>
+<span id="cb183-23"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb183-24"><a></a>  brandr<span class="sc">::</span><span class="fu">scale_color_brand_d</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<img data-src="index_files/figure-revealjs/unnamed-chunk-142-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><aside class="notes"><style type="text/css">
+<img data-src="index_files/figure-revealjs/unnamed-chunk-150-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
           clip: rect(1px, 1px, 1px, 1px);
@@ -6574,20 +6717,20 @@
           display:block!important;
       }</style></aside></section><section id="linear-regression-fit" class="slide level2 smaller"><h2>Linear Regression: Fit</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb176"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb176-1"><a></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(</span>
-<span id="cb176-2"><a></a>  <span class="at">formula =</span> flipper_length_mm <span class="sc">~</span> bill_length_mm <span class="sc">+</span> bill_depth_mm,</span>
-<span id="cb176-3"><a></a>  <span class="at">data =</span> penguins</span>
-<span id="cb176-4"><a></a>)</span>
-<span id="cb176-5"><a></a></span>
-<span id="cb176-6"><a></a>fit</span>
-<span id="cb176-7"><a></a><span class="co">#&gt; </span></span>
-<span id="cb176-8"><a></a><span class="co">#&gt; Call:</span></span>
-<span id="cb176-9"><a></a><span class="co">#&gt; lm(formula = flipper_length_mm ~ bill_length_mm + bill_depth_mm, </span></span>
-<span id="cb176-10"><a></a><span class="co">#&gt;     data = penguins)</span></span>
-<span id="cb176-11"><a></a><span class="co">#&gt; </span></span>
-<span id="cb176-12"><a></a><span class="co">#&gt; Coefficients:</span></span>
-<span id="cb176-13"><a></a><span class="co">#&gt;    (Intercept)  bill_length_mm   bill_depth_mm  </span></span>
-<span id="cb176-14"><a></a><span class="co">#&gt;        194.312           1.415          -3.238</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb184"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb184-1"><a></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(</span>
+<span id="cb184-2"><a></a>  <span class="at">formula =</span> flipper_length_mm <span class="sc">~</span> bill_length_mm <span class="sc">+</span> bill_depth_mm,</span>
+<span id="cb184-3"><a></a>  <span class="at">data =</span> penguins</span>
+<span id="cb184-4"><a></a>)</span>
+<span id="cb184-5"><a></a></span>
+<span id="cb184-6"><a></a>fit</span>
+<span id="cb184-7"><a></a><span class="co">#&gt; </span></span>
+<span id="cb184-8"><a></a><span class="co">#&gt; Call:</span></span>
+<span id="cb184-9"><a></a><span class="co">#&gt; lm(formula = flipper_length_mm ~ bill_length_mm + bill_depth_mm, </span></span>
+<span id="cb184-10"><a></a><span class="co">#&gt;     data = penguins)</span></span>
+<span id="cb184-11"><a></a><span class="co">#&gt; </span></span>
+<span id="cb184-12"><a></a><span class="co">#&gt; Coefficients:</span></span>
+<span id="cb184-13"><a></a><span class="co">#&gt;    (Intercept)  bill_length_mm   bill_depth_mm  </span></span>
+<span id="cb184-14"><a></a><span class="co">#&gt;        194.312           1.415          -3.238</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
@@ -6601,30 +6744,30 @@
           display:block!important;
       }</style></aside></section><section id="linear-regression-fit-summary" class="slide level2 smaller"><h2>Linear Regression: Fit Summary</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb177"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb177-1"><a></a>fit_sum <span class="ot">&lt;-</span> fit <span class="sc">|&gt;</span> <span class="fu">summary</span>()</span>
-<span id="cb177-2"><a></a></span>
-<span id="cb177-3"><a></a>fit_sum</span>
-<span id="cb177-4"><a></a><span class="co">#&gt; </span></span>
-<span id="cb177-5"><a></a><span class="co">#&gt; Call:</span></span>
-<span id="cb177-6"><a></a><span class="co">#&gt; lm(formula = flipper_length_mm ~ bill_length_mm + bill_depth_mm, </span></span>
-<span id="cb177-7"><a></a><span class="co">#&gt;     data = penguins)</span></span>
-<span id="cb177-8"><a></a><span class="co">#&gt; </span></span>
-<span id="cb177-9"><a></a><span class="co">#&gt; Residuals:</span></span>
-<span id="cb177-10"><a></a><span class="co">#&gt;     Min      1Q  Median      3Q     Max </span></span>
-<span id="cb177-11"><a></a><span class="co">#&gt; -37.731  -5.855   0.041   6.112  23.059 </span></span>
-<span id="cb177-12"><a></a><span class="co">#&gt; </span></span>
-<span id="cb177-13"><a></a><span class="co">#&gt; Coefficients:</span></span>
-<span id="cb177-14"><a></a><span class="co">#&gt;                 Estimate Std. Error t value Pr(&gt;|t|)    </span></span>
-<span id="cb177-15"><a></a><span class="co">#&gt; (Intercept)    194.31175    6.33800   30.66   &lt;2e-16 ***</span></span>
-<span id="cb177-16"><a></a><span class="co">#&gt; bill_length_mm   1.41476    0.08802   16.07   &lt;2e-16 ***</span></span>
-<span id="cb177-17"><a></a><span class="co">#&gt; bill_depth_mm   -3.23801    0.24335  -13.31   &lt;2e-16 ***</span></span>
-<span id="cb177-18"><a></a><span class="co">#&gt; ---</span></span>
-<span id="cb177-19"><a></a><span class="co">#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
-<span id="cb177-20"><a></a><span class="co">#&gt; </span></span>
-<span id="cb177-21"><a></a><span class="co">#&gt; Residual standard error: 8.626 on 339 degrees of freedom</span></span>
-<span id="cb177-22"><a></a><span class="co">#&gt;   (2 observations deleted due to missingness)</span></span>
-<span id="cb177-23"><a></a><span class="co">#&gt; Multiple R-squared:  0.6259, Adjusted R-squared:  0.6237 </span></span>
-<span id="cb177-24"><a></a><span class="co">#&gt; F-statistic: 283.6 on 2 and 339 DF,  p-value: &lt; 2.2e-16</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb185"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb185-1"><a></a>fit_sum <span class="ot">&lt;-</span> fit <span class="sc">|&gt;</span> <span class="fu">summary</span>()</span>
+<span id="cb185-2"><a></a></span>
+<span id="cb185-3"><a></a>fit_sum</span>
+<span id="cb185-4"><a></a><span class="co">#&gt; </span></span>
+<span id="cb185-5"><a></a><span class="co">#&gt; Call:</span></span>
+<span id="cb185-6"><a></a><span class="co">#&gt; lm(formula = flipper_length_mm ~ bill_length_mm + bill_depth_mm, </span></span>
+<span id="cb185-7"><a></a><span class="co">#&gt;     data = penguins)</span></span>
+<span id="cb185-8"><a></a><span class="co">#&gt; </span></span>
+<span id="cb185-9"><a></a><span class="co">#&gt; Residuals:</span></span>
+<span id="cb185-10"><a></a><span class="co">#&gt;     Min      1Q  Median      3Q     Max </span></span>
+<span id="cb185-11"><a></a><span class="co">#&gt; -37.731  -5.855   0.041   6.112  23.059 </span></span>
+<span id="cb185-12"><a></a><span class="co">#&gt; </span></span>
+<span id="cb185-13"><a></a><span class="co">#&gt; Coefficients:</span></span>
+<span id="cb185-14"><a></a><span class="co">#&gt;                 Estimate Std. Error t value Pr(&gt;|t|)    </span></span>
+<span id="cb185-15"><a></a><span class="co">#&gt; (Intercept)    194.31175    6.33800   30.66   &lt;2e-16 ***</span></span>
+<span id="cb185-16"><a></a><span class="co">#&gt; bill_length_mm   1.41476    0.08802   16.07   &lt;2e-16 ***</span></span>
+<span id="cb185-17"><a></a><span class="co">#&gt; bill_depth_mm   -3.23801    0.24335  -13.31   &lt;2e-16 ***</span></span>
+<span id="cb185-18"><a></a><span class="co">#&gt; ---</span></span>
+<span id="cb185-19"><a></a><span class="co">#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
+<span id="cb185-20"><a></a><span class="co">#&gt; </span></span>
+<span id="cb185-21"><a></a><span class="co">#&gt; Residual standard error: 8.626 on 339 degrees of freedom</span></span>
+<span id="cb185-22"><a></a><span class="co">#&gt;   (2 observations deleted due to missingness)</span></span>
+<span id="cb185-23"><a></a><span class="co">#&gt; Multiple R-squared:  0.6259, Adjusted R-squared:  0.6237 </span></span>
+<span id="cb185-24"><a></a><span class="co">#&gt; F-statistic: 283.6 on 2 and 339 DF,  p-value: &lt; 2.2e-16</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
@@ -6638,11 +6781,11 @@
           display:block!important;
       }</style></aside></section><section id="linear-regression-effect-size" class="slide level2 smaller"><h2>Linear Regression: Effect Size</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb178"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb178-1"><a></a><span class="fu">library</span>(effectsize)</span>
-<span id="cb178-2"><a></a></span>
-<span id="cb178-3"><a></a>fit_sum<span class="sc">$</span>r.squared <span class="sc">|&gt;</span> <span class="fu">interpret_r2</span>(<span class="at">rules =</span> <span class="st">"cohen1988"</span>)</span>
-<span id="cb178-4"><a></a><span class="co">#&gt; [1] "substantial"</span></span>
-<span id="cb178-5"><a></a><span class="co">#&gt; (Rules: cohen1988)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb186"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb186-1"><a></a><span class="fu">library</span>(effectsize)</span>
+<span id="cb186-2"><a></a></span>
+<span id="cb186-3"><a></a>fit_sum<span class="sc">$</span>r.squared <span class="sc">|&gt;</span> <span class="fu">interpret_r2</span>(<span class="at">rules =</span> <span class="st">"cohen1988"</span>)</span>
+<span id="cb186-4"><a></a><span class="co">#&gt; [1] "substantial"</span></span>
+<span id="cb186-5"><a></a><span class="co">#&gt; (Rules: cohen1988)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
@@ -6656,30 +6799,30 @@
           display:block!important;
       }</style></aside></section><section id="linear-regression-power-analysis" class="slide level2 smaller"><h2>Linear Regression: Power Analysis</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb179"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb179-1"><a></a><span class="co"># A posteriori</span></span>
-<span id="cb179-2"><a></a></span>
-<span id="cb179-3"><a></a><span class="fu">library</span>(pwrss)</span>
-<span id="cb179-4"><a></a></span>
-<span id="cb179-5"><a></a><span class="fu">pwrss.f.reg</span>(</span>
-<span id="cb179-6"><a></a>  <span class="at">r2 =</span> fit_sum<span class="sc">$</span>r.squared,</span>
-<span id="cb179-7"><a></a>  <span class="at">k =</span> <span class="dv">2</span>,</span>
-<span id="cb179-8"><a></a>  <span class="at">n =</span> penguins <span class="sc">|&gt;</span> <span class="fu">nrow</span>(),</span>
-<span id="cb179-9"><a></a>  <span class="at">power =</span> <span class="cn">NULL</span>,</span>
-<span id="cb179-10"><a></a>  <span class="at">alpha =</span> <span class="fl">0.05</span></span>
-<span id="cb179-11"><a></a>)</span>
-<span id="cb179-12"><a></a><span class="co">#&gt;  Linear Regression (F test) </span></span>
-<span id="cb179-13"><a></a><span class="co">#&gt;  R-squared Deviation from 0 (zero) </span></span>
-<span id="cb179-14"><a></a><span class="co">#&gt;  H0: r2 = 0 </span></span>
-<span id="cb179-15"><a></a><span class="co">#&gt;  HA: r2 &gt; 0 </span></span>
-<span id="cb179-16"><a></a><span class="co">#&gt;  ------------------------------ </span></span>
-<span id="cb179-17"><a></a><span class="co">#&gt;   Statistical power = 1 </span></span>
-<span id="cb179-18"><a></a><span class="co">#&gt;   n = 344 </span></span>
-<span id="cb179-19"><a></a><span class="co">#&gt;  ------------------------------ </span></span>
-<span id="cb179-20"><a></a><span class="co">#&gt;  Numerator degrees of freedom = 2 </span></span>
-<span id="cb179-21"><a></a><span class="co">#&gt;  Denominator degrees of freedom = 341 </span></span>
-<span id="cb179-22"><a></a><span class="co">#&gt;  Non-centrality parameter = 575.628 </span></span>
-<span id="cb179-23"><a></a><span class="co">#&gt;  Type I error rate = 0.05 </span></span>
-<span id="cb179-24"><a></a><span class="co">#&gt;  Type II error rate = 0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb187"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb187-1"><a></a><span class="co"># A posteriori</span></span>
+<span id="cb187-2"><a></a></span>
+<span id="cb187-3"><a></a><span class="fu">library</span>(pwrss)</span>
+<span id="cb187-4"><a></a></span>
+<span id="cb187-5"><a></a><span class="fu">pwrss.f.reg</span>(</span>
+<span id="cb187-6"><a></a>  <span class="at">r2 =</span> fit_sum<span class="sc">$</span>r.squared,</span>
+<span id="cb187-7"><a></a>  <span class="at">k =</span> <span class="dv">2</span>,</span>
+<span id="cb187-8"><a></a>  <span class="at">n =</span> penguins <span class="sc">|&gt;</span> <span class="fu">nrow</span>(),</span>
+<span id="cb187-9"><a></a>  <span class="at">power =</span> <span class="cn">NULL</span>,</span>
+<span id="cb187-10"><a></a>  <span class="at">alpha =</span> <span class="fl">0.05</span></span>
+<span id="cb187-11"><a></a>)</span>
+<span id="cb187-12"><a></a><span class="co">#&gt;  Linear Regression (F test) </span></span>
+<span id="cb187-13"><a></a><span class="co">#&gt;  R-squared Deviation from 0 (zero) </span></span>
+<span id="cb187-14"><a></a><span class="co">#&gt;  H0: r2 = 0 </span></span>
+<span id="cb187-15"><a></a><span class="co">#&gt;  HA: r2 &gt; 0 </span></span>
+<span id="cb187-16"><a></a><span class="co">#&gt;  ------------------------------ </span></span>
+<span id="cb187-17"><a></a><span class="co">#&gt;   Statistical power = 1 </span></span>
+<span id="cb187-18"><a></a><span class="co">#&gt;   n = 344 </span></span>
+<span id="cb187-19"><a></a><span class="co">#&gt;  ------------------------------ </span></span>
+<span id="cb187-20"><a></a><span class="co">#&gt;  Numerator degrees of freedom = 2 </span></span>
+<span id="cb187-21"><a></a><span class="co">#&gt;  Denominator degrees of freedom = 341 </span></span>
+<span id="cb187-22"><a></a><span class="co">#&gt;  Non-centrality parameter = 575.628 </span></span>
+<span id="cb187-23"><a></a><span class="co">#&gt;  Type I error rate = 0.05 </span></span>
+<span id="cb187-24"><a></a><span class="co">#&gt;  Type II error rate = 0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
@@ -7241,28 +7384,28 @@ Wilkinson, M. D., Dumontier, M., Aalbersberg, Ij. J., Appleton, G., Axton, M., B
 <div class="column" style="width: 33%;">
 <p><a href="https://en.m.wikipedia.org/wiki/Procedural_programming">Procedural</a> (Imperative)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb180"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb180-1"><a></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>)</span>
-<span id="cb180-2"><a></a>y <span class="ot">&lt;-</span> <span class="fu">numeric</span>()</span>
-<span id="cb180-3"><a></a>z <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb180-4"><a></a></span>
-<span id="cb180-5"><a></a><span class="cf">for</span> (i <span class="cf">in</span> x) {</span>
-<span id="cb180-6"><a></a>  y <span class="ot">&lt;-</span> <span class="fu">c</span>(y, i <span class="sc">+</span> <span class="dv">1</span>)</span>
-<span id="cb180-7"><a></a>}</span>
-<span id="cb180-8"><a></a></span>
-<span id="cb180-9"><a></a><span class="cf">for</span> (i <span class="cf">in</span> y) {</span>
-<span id="cb180-10"><a></a>  z <span class="ot">&lt;-</span> z <span class="sc">+</span> i</span>
-<span id="cb180-11"><a></a>}</span>
-<span id="cb180-12"><a></a></span>
-<span id="cb180-13"><a></a>z <span class="sc">/</span> <span class="fu">length</span>(x)</span>
-<span id="cb180-14"><a></a><span class="co">#&gt; [1] 6.5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb188"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb188-1"><a></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>)</span>
+<span id="cb188-2"><a></a>y <span class="ot">&lt;-</span> <span class="fu">numeric</span>()</span>
+<span id="cb188-3"><a></a>z <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb188-4"><a></a></span>
+<span id="cb188-5"><a></a><span class="cf">for</span> (i <span class="cf">in</span> x) {</span>
+<span id="cb188-6"><a></a>  y <span class="ot">&lt;-</span> <span class="fu">c</span>(y, i <span class="sc">+</span> <span class="dv">1</span>)</span>
+<span id="cb188-7"><a></a>}</span>
+<span id="cb188-8"><a></a></span>
+<span id="cb188-9"><a></a><span class="cf">for</span> (i <span class="cf">in</span> y) {</span>
+<span id="cb188-10"><a></a>  z <span class="ot">&lt;-</span> z <span class="sc">+</span> i</span>
+<span id="cb188-11"><a></a>}</span>
+<span id="cb188-12"><a></a></span>
+<span id="cb188-13"><a></a>z <span class="sc">/</span> <span class="fu">length</span>(x)</span>
+<span id="cb188-14"><a></a><span class="co">#&gt; [1] 6.5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width: 33%;">
 <p><a href="https://en.m.wikipedia.org/wiki/Functional_programming">Functional</a> (Declarative)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb181"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb181-1"><a></a><span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>) <span class="sc">|&gt;</span></span>
-<span id="cb181-2"><a></a>  <span class="fu">vapply</span>(\(x) x <span class="sc">+</span> <span class="dv">1</span>, <span class="fu">numeric</span>(<span class="dv">1</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb181-3"><a></a>  <span class="fu">mean</span>()</span>
-<span id="cb181-4"><a></a><span class="co">#&gt; [1] 6.5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb189"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb189-1"><a></a><span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>) <span class="sc">|&gt;</span></span>
+<span id="cb189-2"><a></a>  <span class="fu">vapply</span>(\(x) x <span class="sc">+</span> <span class="dv">1</span>, <span class="fu">numeric</span>(<span class="dv">1</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb189-3"><a></a>  <span class="fu">mean</span>()</span>
+<span id="cb189-4"><a></a><span class="co">#&gt; [1] 6.5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width: 34%;">
 <ul>
@@ -7270,18 +7413,18 @@ Wilkinson, M. D., Dumontier, M., Aalbersberg, Ij. J., Appleton, G., Axton, M., B
 <a href="https://en.m.wikipedia.org/wiki/Object-oriented_programming">Object-Oriented</a> (Imperative)</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb182"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb182-1"><a></a><span class="fu">library</span>(S7)</span>
-<span id="cb182-2"><a></a></span>
-<span id="cb182-3"><a></a>dog <span class="ot">&lt;-</span> <span class="fu">new_class</span>(<span class="st">"dog"</span>, <span class="at">properties =</span> <span class="fu">list</span>(</span>
-<span id="cb182-4"><a></a>  <span class="at">name =</span> class_character,</span>
-<span id="cb182-5"><a></a>  <span class="at">age =</span> class_numeric</span>
-<span id="cb182-6"><a></a>))</span>
-<span id="cb182-7"><a></a></span>
-<span id="cb182-8"><a></a>lola <span class="ot">&lt;-</span> <span class="fu">dog</span>(<span class="at">name =</span> <span class="st">"Lola"</span>, <span class="at">age =</span> <span class="dv">11</span>)</span>
-<span id="cb182-9"><a></a>speak <span class="ot">&lt;-</span> <span class="fu">new_generic</span>(<span class="st">"speak"</span>, <span class="st">"x"</span>)</span>
-<span id="cb182-10"><a></a><span class="fu">method</span>(speak, dog) <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="st">"Woof"</span></span>
-<span id="cb182-11"><a></a><span class="fu">speak</span>(lola)</span>
-<span id="cb182-12"><a></a><span class="co">#&gt; [1] "Woof"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb190"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb190-1"><a></a><span class="fu">library</span>(S7)</span>
+<span id="cb190-2"><a></a></span>
+<span id="cb190-3"><a></a>dog <span class="ot">&lt;-</span> <span class="fu">new_class</span>(<span class="st">"dog"</span>, <span class="at">properties =</span> <span class="fu">list</span>(</span>
+<span id="cb190-4"><a></a>  <span class="at">name =</span> class_character,</span>
+<span id="cb190-5"><a></a>  <span class="at">age =</span> class_numeric</span>
+<span id="cb190-6"><a></a>))</span>
+<span id="cb190-7"><a></a></span>
+<span id="cb190-8"><a></a>lola <span class="ot">&lt;-</span> <span class="fu">dog</span>(<span class="at">name =</span> <span class="st">"Lola"</span>, <span class="at">age =</span> <span class="dv">11</span>)</span>
+<span id="cb190-9"><a></a>speak <span class="ot">&lt;-</span> <span class="fu">new_generic</span>(<span class="st">"speak"</span>, <span class="st">"x"</span>)</span>
+<span id="cb190-10"><a></a><span class="fu">method</span>(speak, dog) <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="st">"Woof"</span></span>
+<span id="cb190-11"><a></a><span class="fu">speak</span>(lola)</span>
+<span id="cb190-12"><a></a><span class="co">#&gt; [1] "Woof"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div></div>
 <aside class="notes"><style type="text/css">
@@ -7503,19 +7646,19 @@ Wilkinson, M. D., Dumontier, M., Aalbersberg, Ij. J., Appleton, G., Axton, M., B
           display:block!important;
       }</style></aside></section><section id="ap-the-summarytools-package" class="slide level2 smaller" data-visibility="uncounted"><h2>(AP) The <code>summarytools</code> Package</h2>
 <div style="font-size: 0.8em;">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb183"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb183-1"><a></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb183-2"><a></a><span class="fu">library</span>(summarytools)</span>
-<span id="cb183-3"><a></a></span>
-<span id="cb183-4"><a></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb183-5"><a></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(species, island, bill_length_mm) <span class="sc">|&gt;</span></span>
-<span id="cb183-6"><a></a>  <span class="fu">dfSummary</span>(</span>
-<span id="cb183-7"><a></a>    <span class="at">plain.ascii =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb183-8"><a></a>    <span class="at">style =</span> <span class="st">"grid"</span>,</span>
-<span id="cb183-9"><a></a>    <span class="at">headings =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb183-10"><a></a>    <span class="at">graph.magnif =</span> <span class="fl">0.82</span>,</span>
-<span id="cb183-11"><a></a>    <span class="at">varnumbers =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb183-12"><a></a>    <span class="at">valid.col =</span> <span class="cn">FALSE</span></span>
-<span id="cb183-13"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb191"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb191-1"><a></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb191-2"><a></a><span class="fu">library</span>(summarytools)</span>
+<span id="cb191-3"><a></a></span>
+<span id="cb191-4"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb191-5"><a></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(species, island, bill_length_mm) <span class="sc">|&gt;</span></span>
+<span id="cb191-6"><a></a>  <span class="fu">dfSummary</span>(</span>
+<span id="cb191-7"><a></a>    <span class="at">plain.ascii =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb191-8"><a></a>    <span class="at">style =</span> <span class="st">"grid"</span>,</span>
+<span id="cb191-9"><a></a>    <span class="at">headings =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb191-10"><a></a>    <span class="at">graph.magnif =</span> <span class="fl">0.82</span>,</span>
+<span id="cb191-11"><a></a>    <span class="at">varnumbers =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb191-12"><a></a>    <span class="at">valid.col =</span> <span class="cn">FALSE</span></span>
+<span id="cb191-13"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><table class="caption-top" style="width:97%;">
 <colgroup>
 <col style="width: 17%">
@@ -7597,13 +7740,13 @@ IQR (CV) : 9.3 (0.1)</td>
 <p><a href="https://docs.ropensci.org/visdat/"><img data-src="images/visdat-hex-logo.svg" style="width: 120px;"></a></p>
 </div><div class="column" style="width: 85%; padding-top: 15px;">
 <p><code>visdat</code> helps you diagnose missing values and other potential problems in your data.</p>
-<div class="sourceCode" id="cb184"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb184-1"><a></a><span class="fu">install.packages</span>(<span class="st">"visdat"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb192"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb192-1"><a></a><span class="fu">install.packages</span>(<span class="st">"visdat"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb185"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb185-1"><a></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb185-2"><a></a><span class="fu">library</span>(visdat)</span>
-<span id="cb185-3"><a></a></span>
-<span id="cb185-4"><a></a>penguins <span class="sc">|&gt;</span> <span class="fu">vis_dat</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb193"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb193-1"><a></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb193-2"><a></a><span class="fu">library</span>(visdat)</span>
+<span id="cb193-3"><a></a></span>
+<span id="cb193-4"><a></a>penguins <span class="sc">|&gt;</span> <span class="fu">vis_dat</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
@@ -7797,17 +7940,17 @@ IQR (CV) : 9.3 (0.1)</td>
 </div>
 </div></div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb186"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb186-1"><a></a><span class="fu">library</span>(magrittr)</span>
-<span id="cb186-2"><a></a><span class="fu">library</span>(sidrar)</span>
-<span id="cb186-3"><a></a></span>
-<span id="cb186-4"><a></a><span class="co"># Brazil's population in 2022 (Census data)</span></span>
-<span id="cb186-5"><a></a><span class="fu">get_sidra</span>(</span>
-<span id="cb186-6"><a></a>  <span class="at">api =</span> <span class="st">"/t/7358/n1/all/v/all/p/all/c2/6794/c287/100362/c1933/49039"</span></span>
-<span id="cb186-7"><a></a>) <span class="sc">|&gt;</span></span>
-<span id="cb186-8"><a></a>  <span class="fu">suppressMessages</span>() <span class="sc">|&gt;</span></span>
-<span id="cb186-9"><a></a>  <span class="fu">extract2</span>(<span class="st">"Valor"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb186-10"><a></a>  <span class="fu">prettyNum</span>(<span class="at">big.mark =</span> <span class="st">","</span>)</span>
-<span id="cb186-11"><a></a><span class="co">#&gt; [1] "216,284,269"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb194"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb194-1"><a></a><span class="fu">library</span>(magrittr)</span>
+<span id="cb194-2"><a></a><span class="fu">library</span>(sidrar)</span>
+<span id="cb194-3"><a></a></span>
+<span id="cb194-4"><a></a><span class="co"># Brazil's population in 2022 (Census data)</span></span>
+<span id="cb194-5"><a></a><span class="fu">get_sidra</span>(</span>
+<span id="cb194-6"><a></a>  <span class="at">api =</span> <span class="st">"/t/7358/n1/all/v/all/p/all/c2/6794/c287/100362/c1933/49039"</span></span>
+<span id="cb194-7"><a></a>) <span class="sc">|&gt;</span></span>
+<span id="cb194-8"><a></a>  <span class="fu">suppressMessages</span>() <span class="sc">|&gt;</span></span>
+<span id="cb194-9"><a></a>  <span class="fu">extract2</span>(<span class="st">"Valor"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb194-10"><a></a>  <span class="fu">prettyNum</span>(<span class="at">big.mark =</span> <span class="st">","</span>)</span>
+<span id="cb194-11"><a></a><span class="co">#&gt; [1] "216,284,269"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="ap-kiss-principle" class="slide level2 nostretch" data-visibility="uncounted"><h2>(AP) KISS Principle</h2>
 <div class="quarto-figure quarto-figure-center">

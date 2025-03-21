@@ -2,24 +2,24 @@
 
 ## Introdução
 
-Este notebook computacional foi desenvolvido para auxiliar os servidores da Superintendência de Tecnologia da Informação (STI) da Faculdade de Saúde Pública ([FSP](https://www.fsp.usp.br/)) da Universidade de São Paulo ([USP](https://www5.usp.br/)) na instalação e teste dos pacotes necessários para o curso de **Introdução à Linguagem de Programação R**.
+Este notebook foi desenvolvido para auxiliar os servidores da Superintendência de Tecnologia da Informação (STI) da Faculdade de Saúde Pública ([FSP](https://www.fsp.usp.br/)) da Universidade de São Paulo ([USP](https://www5.usp.br/)) na instalação e teste dos softwares necessários para o curso **Introdução à Linguagem de Programação R**.
 
-O repositório do curso no GitHub pode ser acessado através deste [link](https://github.com/danielvartan/r-course). Os slides das aulas estão disponíveis [aqui](https://danielvartan.github.io/r-course/).
+O repositório do curso no GitHub está disponível [neste link](https://github.com/danielvartan/r-course), e os slides das aulas podem ser acessados [aqui](https://danielvartan.github.io/r-course/).
 
-Agradecemos à equipe da STI pela atenção e apoio.
+Agradecemos à equipe da STI pelo suporte e colaboração.
 
 ## Como Usar
 
-Siga os passos abaixo para instalar e testar os pacotes necessários para o curso.
+Siga os passos abaixo para instalar e testar os softwares necessários para o curso:
 
 1. Instale todas as dependências listadas abaixo.
 2. Abra este notebook no RStudio.
 3. Execute, em ordem, os blocos de código da seção *Pacotes/Importações* para instalar os pacotes necessários.
 4. Execute, em ordem, os blocos de código da seção *Teste* para verificar se tudo está funcionando corretamente.
 
-Caso ocorra algum problema durante os testes, verifique se algum pacote não foi instalado corretamente.
+Se ocorrer algum problema durante os testes, confira se todos os pacotes foram instalados corretamente.
 
-Os instrutores do curso estão à disposição para ajudar a qualquer momento via e-mail ou WhatsApp.
+Os instrutores do curso estão disponíveis para ajudar a qualquer momento via e-mail ou WhatsApp.
 
 ## Dependências
 
@@ -44,7 +44,7 @@ install.packages(
 )
 ```
 
-Instale também o meta-pacote, por via das dúvidas (o metapacote não contém todos os pacotes da coleção).
+Instale também o meta-pacote, por via das dúvidas (o metapacote não contém todos os pacotes da coleção):
 
 ```{r}
 install.packages("tidyverse", dependencies = TRUE)
@@ -55,13 +55,14 @@ install.packages("tidyverse", dependencies = TRUE)
 ```{r}
 install.packages(
   c(
-    "broom", "infer", "parsnip", "recipes", "rsample", "workflows", "yardstick"
+    "broom", "corrr", "infer", "parsnip", "recipes", "rsample", "textrecipes",
+    "tidyposterior", "workflows", "yardstick"
   ),
   dependencies = TRUE
 )
 ```
 
-Instale também o meta-pacote, por via das dúvidas (o metapacote não contém todos os pacotes da coleção).
+Instale também o meta-pacote, por via das dúvidas (o metapacote não contém todos os pacotes da coleção):
 
 ```{r}
 install.packages("tidymodels", dependencies = TRUE)
@@ -81,13 +82,13 @@ install.packages(
 ```{r}
 install.packages(
   c(
-    "checkmate", "clipr", "curl", "effectsize", "geobr", "GGally", "janitor",
-    "jsonlite", "palmerpenguins", "patchwork", "psychometric", "RColorBrewer",
-    "sidrar", "summarytools", "tictoc", "viridis", "xml2", "knitr", "rmarkdown",
-    "summarytools", "gt", "osfr", "moments", "nortest", "performance", "report",
-    "DT", "rstudioapi", "pwrss", "car", "multcomp", "fBasics", "ggplotify",
-    "latex2exp", "olsrr", "skedastic", "yaml", "microbenchmark", "mctq",
-    "terra", "sf", "raster", "pwr", "pander"
+    "car", "checkmate", "clipr", "curl", "DT", "effectsize", "fBasics",
+    "geobr", "GGally", "ggplotify", "gt", "janitor", "jsonlite", "knitr",
+    "latex2exp", "mctq", "microbenchmark", "moments", "multcomp", "nortest",
+    "olsrr", "osfr", "palmerpenguins", "pander", "patchwork", "performance",
+    "psychometric", "pwr", "pwrss", "raster", "RColorBrewer", "report",
+    "rmarkdown", "rstudioapi", "sf", "sidrar", "skedastic", "summarytools",
+    "summarytools", "terra", "tictoc", "viridis", "xml2", "yaml"
   ),
   dependencies = TRUE
 )
@@ -95,7 +96,7 @@ install.packages(
 
 ### GitHub
 
-Para instalar pacotes remotos, use o pacote `remotes`.
+Para instalar pacotes remotos, é preciso instalar o pacote `remotes`:
 
 ```{r}
 install.packages("remotes", dependencies = TRUE)
@@ -104,25 +105,24 @@ install.packages("remotes", dependencies = TRUE)
 ```{r}
 remotes::install_github(
   c(
-    "danielvartan/brandr", "danielvartan/groomr", "danielvartan/orbis",
-    "danielvartan/plotr", "danielvartan/quartor", "danielvartan/rutils",
-    "danielvartan/iramuteqlike", "danielvartan/lockr",
-    "danielvartan/prettycheck"
+    "danielvartan/brandr", "danielvartan/groomr", "danielvartan/iramuteqlike",
+    "danielvartan/lockr", "danielvartan/orbis", "danielvartan/plotr",
+    "danielvartan/prettycheck", "danielvartan/quartor", "danielvartan/rutils"
   ),
-  dependencies = TRUE
+  dependencies = TRUE,
+  upgrade = "always"
 )
 ```
 
 ## Testes
 
-Execute os blocos de código abaixo para verificar se todos os pacotes foram instalados corretamente.
+Execute os blocos de código abaixo, na ordem indicada, para verificar se todos os pacotes foram instalados corretamente.
+
+No RStudio, você pode executar todos os blocos de código de uma vez acessando *Run > Run All Chunks Below*.
+
+### Gráficos
 
 ```{r}
-#| code-fold: true
-#| label: test-chunk-1
-#| warning: false
-#| fig-align: center
-
 library(brandr)
 library(ggplot2)
 library(palmerpenguins)
@@ -142,10 +142,6 @@ penguins |>
 ```
 
 ```{r}
-#| code-fold: true
-#| warning: false
-#| fig-align: center
-
 library(brandr)
 library(ggplot2)
 library(palmerpenguins)
@@ -160,10 +156,6 @@ penguins |>
 ```
 
 ```{r}
-#| code-fold: true
-#| warning: false
-#| fig-align: center
-
 library(brandr)
 library(ggplot2)
 library(palmerpenguins)
@@ -179,10 +171,6 @@ penguins |>
 ```
 
 ```{r}
-#| code-fold: true
-#| warning: false
-#| fig-align: center
-
 library(brandr)
 library(ggplot2)
 library(palmerpenguins)
@@ -210,10 +198,6 @@ penguins |>
 ```
 
 ```{r}
-#| code-fold: true
-#| warning: false
-#| fig-align: center
-
 library(brandr)
 library(dplyr)
 library(ggplot2)
@@ -241,10 +225,6 @@ penguins |>
 ```
 
 ```{r}
-#| code-fold: true
-#| warning: false
-#| fig-align: center
-
 library(brandr)
 library(ggplot2)
 library(palmerpenguins)
@@ -296,12 +276,6 @@ plot_scatter <-
 ```
 
 ```{r}
-#| code-fold: true
-#| warning: false
-#| fig-align: center
-#| fig-width: 12
-#| fig-height: 7
-
 library(brandr)
 library(dplyr)
 library(GGally)
@@ -313,4 +287,270 @@ penguins |>
   GGally::ggpairs(aes(color = species)) +
   brandr::scale_color_brand_d(alpha = 0.7) +
   brandr::scale_fill_brand_d(alpha = 0.7)
+```
+
+### Modelos
+
+```{r}
+library(dplyr)
+library(effectsize)
+library(infer)
+library(palmerpenguins)
+library(pwrss)
+library(stats)
+library(tidyr)
+```
+
+```{r}
+observed_statistic <-
+  penguins |>
+  dplyr::filter(species %in% c("Adelie", "Gentoo")) |>
+  tidyr::drop_na(flipper_length_mm, species) |>
+  specify(flipper_length_mm ~ species) |>
+  hypothesize(null = "independence") |>
+  calculate("t", order = c("Adelie", "Gentoo"))
+
+observed_statistic
+```
+
+```{r}
+null_dist <-
+  penguins |>
+  dplyr::filter(species %in% c("Adelie", "Gentoo")) |>
+  tidyr::drop_na(flipper_length_mm, species) |>
+  specify(flipper_length_mm ~ species) |>
+  hypothesize(null = "independence") |>
+  generate(reps = 1000, type = "permute") |>
+  calculate("t", order = c("Adelie", "Gentoo"))
+
+null_dist
+```
+
+```{r}
+null_dist |>
+  visualize() +
+  shade_p_value(obs_stat = observed_statistic, direction = "two-sided")
+```
+
+```{r}
+null_dist |>
+  get_p_value(obs_stat = observed_statistic, direction = "two-sided")
+```
+
+```{r}
+adelie <-
+  penguins |>
+  filter(species == "Adelie") |>
+  drop_na(flipper_length_mm) |>
+  dplyr::pull(flipper_length_mm)
+
+gentoo <-
+  penguins |>
+  dplyr::filter(species == "Gentoo") |>
+  drop_na(flipper_length_mm) |>
+  dplyr::pull(flipper_length_mm)
+```
+
+```{r}
+test <- t.test(
+  x = adelie,
+  y = gentoo,
+  alternative = "two.sided",
+  mu = 0,
+  paired = FALSE,
+  var.equal = FALSE, # Welch's t-test,
+  conf.level = 0.95
+)
+
+test
+```
+
+```{r}
+effect_size <-
+  cohens_d(
+    x = adelie,
+    y = gentoo,
+    mu = 0,
+    adjust = TRUE, # Hedge's g
+    ci = 0.95,
+    alternative = "two.sided"
+  )
+
+effect_size
+```
+
+```{r}
+effect_size |> interpret_hedges_g(rules = "cohen1988")
+```
+
+```{r}
+pwrss.t.2means(
+  mu1 = adelie |> mean(na.rm = TRUE),
+  mu2 = gentoo |> mean(na.rm = TRUE),
+  sd1 = adelie |> sd(na.rm = TRUE),
+  sd2 = gentoo |> sd(na.rm = TRUE),
+  paired = FALSE,
+  n2 = gentoo |> length(),
+  kappa = (adelie |> length()) / (gentoo |> length()),
+  power = NULL,
+  alpha = 0.05,
+  welch.df = TRUE,
+  alternative = "not equal"
+)
+```
+
+```{r}
+library(effectsize)
+library(stats)
+```
+
+```{r}
+fit <- aov(flipper_length_mm ~ species, data = penguins)
+
+fit
+```
+
+```{r}
+fit |> summary()
+```
+
+```{r}
+ fit |> TukeyHSD()
+```
+
+```{r}
+effect_size <- fit |> eta_squared()
+
+effect_size
+```
+
+```{r}
+effect_size |> interpret_eta_squared(rules = "cohen1992")
+```
+
+```{r}
+library(car)
+library(effectsize)
+library(multcomp)
+library(stats)
+```
+
+```{r}
+fit <- aov(flipper_length_mm ~ body_mass_g * species, data = penguins)
+
+fit
+```
+
+```{r}
+ fit |> Anova(type = "III")
+```
+
+```{r}
+post_hoc <-
+  fit |>
+  glht(linfct = mcp(species = "Tukey"))
+
+summary(post_hoc)
+```
+
+### Projeto SISVAN
+
+```{r}
+library(curl)
+library(dplyr)
+library(readxl)
+library(stringr)
+library(tidyr)
+```
+
+```{r}
+file <- tempfile()
+
+paste0(
+    "https://sisaps.saude.gov.br/sisvan/public/file/relatorios/",
+    "consumo/2oumais/entre2a4anos/CONS_ULTRA.xlsx"
+  ) |>
+  curl::curl_download(file)
+```
+
+```{r}
+#| output: false
+
+data <- NULL
+
+for (i in 2015:2022) {
+  data_i <-
+      file |>
+      readxl::read_xlsx(
+        sheet = as.character(i),
+        skip = 1,
+        col_types = "text",
+        col_names = FALSE
+      ) |>
+      dplyr::slice(-1)
+
+  if (!i == 2022) data_i <- data_i |> dplyr::select(-1, -2)
+
+  data_i <-
+    data_i |>
+    dplyr::rename_with(~ paste0("x", seq(length(.x)))) |>
+    dplyr::mutate(year = i) |>
+    dplyr::relocate(year)
+
+  data <- dplyr::bind_rows(data, data_i)
+}
+```
+
+```{r}
+data <-
+  data |>
+  dplyr::rename(
+    state_abbrev = x1,
+    municipality_code = x2,
+    municipality_name = x3,
+    n_upf = x4,
+    n_upf_rel = x5,
+    n_monitored = x6
+  ) |>
+  dplyr::mutate(
+    municipality_code = as.integer(municipality_code),
+    municipality_name = stringr::str_to_title(municipality_name),
+    n_upf = as.integer(n_upf),
+    n_monitored = as.integer(n_monitored)
+  )
+```
+
+```{r}
+data <-
+  data |>
+  dplyr::filter(
+    !n_upf > n_monitored,
+    n_monitored >= 10,
+    !state_abbrev == "DF"
+  ) |>
+  tidyr::drop_na(n_upf, n_monitored) |>
+  dplyr::mutate(n_upf_rel = n_upf / n_monitored)
+```
+
+```{r}
+data <-
+  data |>
+  dplyr::mutate(
+    misfs = dplyr::case_when(
+      state_abbrev %in% c(
+        "AC", "GO", "MS", "MT", "RO", "TO"
+      ) ~ "A",
+      state_abbrev %in% c(
+        "ES", "MG", "PR", "RJ", "RS", "SC", "SP"
+      ) ~ "B",
+      state_abbrev %in% c(
+        "AL", "BA", "CE", "MA", "PB", "PE", "PI", "RN", "SE"
+      ) ~ "C",
+      state_abbrev %in% c(
+        "AM", "AP", "PA", "RR"
+      ) ~ "D",
+    ),
+    misfs = factor(misfs, levels = c("A", "B", "C", "D"))
+  ) |>
+  dplyr::relocate(misfs, .before = state_abbrev)
 ```

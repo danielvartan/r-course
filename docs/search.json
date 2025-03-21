@@ -375,7 +375,7 @@
     "href": "index.html#functionals",
     "title": "An Introduction to the R Programming Language",
     "section": "Functionals",
-    "text": "Functionals\n\n\nA functional is a function that takes a function as an input and returns a vector as output (Wickham, 2019).\nIt makes the work of the programmer easier, because it allows to apply a function to a vector without the need of a loop. Because these functions are written in C, they are very fast.\nR have native functionals (e.g., lapply()), but prefer solutions from the purrr package.\n\n\n\n\ntriple &lt;- function(x) x * 3\n\n\nwith_for_loop &lt;- function(x) {\n  out &lt;- numeric()\n  for (i in x) out &lt;- c(out, triple(i))\n  out\n}\n\n\nlibrary(purrr)\n\nwith_map &lt;- function(x) map_dbl(x, triple)\n\n\nlibrary(microbenchmark)\n\nmicrobenchmark(\n  with_for_loop(1:1000),\n  with_map(1:1000),\n  times = 100,\n  check = \"equal\"\n)\n#&gt; Unit: microseconds\n#&gt;                   expr     min       lq     mean   median      uq      max\n#&gt;  with_for_loop(1:1000) 665.784 710.4045 1026.330 737.5775 783.559 4423.450\n#&gt;       with_map(1:1000) 292.864 304.2655  330.547 315.0925 340.993 1028.031\n#&gt;  neval cld\n#&gt;    100  a \n#&gt;    100   b"
+    "text": "Functionals\n\n\nA functional is a function that takes a function as an input and returns a vector as output (Wickham, 2019).\nIt makes the work of the programmer easier, because it allows to apply a function to a vector without the need of a loop. Because these functions are written in C, they are very fast.\nR have native functionals (e.g., lapply()), but prefer solutions from the purrr package.\n\n\n\n\ntriple &lt;- function(x) x * 3\n\n\nwith_for_loop &lt;- function(x) {\n  out &lt;- numeric()\n  for (i in x) out &lt;- c(out, triple(i))\n  out\n}\n\n\nlibrary(purrr)\n\nwith_map &lt;- function(x) map_dbl(x, triple)\n\n\nlibrary(microbenchmark)\n\nmicrobenchmark(\n  with_for_loop(1:1000),\n  with_map(1:1000),\n  times = 100,\n  check = \"equal\"\n)\n#&gt; Unit: microseconds\n#&gt;                   expr     min       lq      mean   median       uq      max\n#&gt;  with_for_loop(1:1000) 685.706 745.9640 1341.5586 870.0370 1160.428 9034.261\n#&gt;       with_map(1:1000) 291.909 314.8655  388.3719 347.3425  392.040 1413.755\n#&gt;  neval cld\n#&gt;    100  a \n#&gt;    100   b"
   },
   {
     "objectID": "index.html#enviroments",
@@ -424,7 +424,7 @@
     "href": "index.html#the-tidyverse",
     "title": "An Introduction to the R Programming Language",
     "section": "The Tidyverse",
-    "text": "The Tidyverse\n\nTidyverse is a framework and a collection of R packages designed for data science. All packages share an underlying design philosophy (The Tidy Manifesto), grammar, and data structures.\nIt was created by Hadley Wickham (the “R God”, and author of the main refrences of this course). We could say that there is an R befeore and after Hadley Wickham."
+    "text": "The Tidyverse\n\nTidyverse is a framework and a collection of R packages designed for data science. All packages share an underlying design philosophy (The Tidy Manifesto), grammar, and data structures.\nIt was created by Hadley Wickham, a prominent figure in the R community and author of several key references for this course. Hadley Wickham’s contributions have significantly shaped modern R programming."
   },
   {
     "objectID": "index.html#the-tidyverse-1",
@@ -1047,14 +1047,49 @@
     "href": "index.html#one-sample-t-test-hypothesis",
     "title": "An Introduction to the R Programming Language",
     "section": "One-Sample t-Test: Hypothesis",
-    "text": "One-Sample t-Test: Hypothesis\n\\[\n\\begin{cases}\n\\text{H}_{0}: \\mu_{A} = \\mu_{B} \\\\\n\\text{H}_{a}: \\mu_{A} \\neq \\mu_{B} \\\\\n\\end{cases}\n\\]\n\nadelie &lt;-\n  penguins |&gt;\n  dplyr::filter(species == \"Adelie\") |&gt;\n  dplyr::pull(flipper_length_mm)\n\ngentoo &lt;-\n  penguins |&gt;\n  dplyr::filter(species == \"Gentoo\") |&gt;\n  dplyr::pull(flipper_length_mm)"
+    "text": "One-Sample t-Test: Hypothesis\n\\[\n\\begin{cases}\n\\text{H}_{0}: \\mu_{A} = \\mu_{B} \\\\\n\\text{H}_{a}: \\mu_{A} \\neq \\mu_{B} \\\\\n\\end{cases}\n\\]"
   },
   {
-    "objectID": "index.html#one-sample-t-test-test",
-    "href": "index.html#one-sample-t-test-test",
+    "objectID": "index.html#one-sample-t-test-hypothesis-1",
+    "href": "index.html#one-sample-t-test-hypothesis-1",
     "title": "An Introduction to the R Programming Language",
-    "section": "One-Sample t-Test: Test",
-    "text": "One-Sample t-Test: Test\n\ntest &lt;- stats::t.test(\n  x = adelie,\n  y = gentoo,\n  alternative = \"two.sided\",\n  mu = 0,\n  paired = FALSE,\n  var.equal = FALSE, # Welch's t-test,\n  conf.level = 0.95\n)\n\ntest\n#&gt; \n#&gt;  Welch Two Sample t-test\n#&gt; \n#&gt; data:  adelie and gentoo\n#&gt; t = -34.445, df = 261.75, p-value &lt; 2.2e-16\n#&gt; alternative hypothesis: true difference in means is not equal to 0\n#&gt; 95 percent confidence interval:\n#&gt;  -28.79018 -25.67652\n#&gt; sample estimates:\n#&gt; mean of x mean of y \n#&gt;  189.9536  217.1870"
+    "section": "One-Sample t-Test: Hypothesis",
+    "text": "One-Sample t-Test: Hypothesis\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  dplyr::filter(species %in% c(\"Adelie\", \"Gentoo\")) |&gt;\n  tidyr::drop_na(flipper_length_mm, species) |&gt;\n  ggplot(aes(x = species, y = flipper_length_mm, fill = species)) +\n  geom_boxplot(outlier.color = brandr::get_brand_color(\"dark-red\")) +\n  geom_jitter(width = 0.2, alpha = 0.1) +\n  brandr::scale_fill_brand_d(alpha = 0.7) +\n  labs(x = \"Species\", y = \"Flipper Length (mm)\", fill = \"Species\")"
+  },
+  {
+    "objectID": "index.html#one-sample-t-test-tidymodels",
+    "href": "index.html#one-sample-t-test-tidymodels",
+    "title": "An Introduction to the R Programming Language",
+    "section": "One-Sample t-Test: tidymodels\n",
+    "text": "One-Sample t-Test: tidymodels\n\n\nlibrary(infer)\nlibrary(palmerpenguins)\n\n\nobserved_statistic &lt;-\n  penguins |&gt;\n  dplyr::filter(species %in% c(\"Adelie\", \"Gentoo\")) |&gt;\n  tidyr::drop_na(flipper_length_mm, species) |&gt;\n  specify(flipper_length_mm ~ species) |&gt;\n  hypothesize(null = \"independence\") |&gt;\n  calculate(\"t\", order = c(\"Adelie\", \"Gentoo\"))\n\nobserved_statistic\n#&gt; Response: flipper_length_mm (numeric)\n#&gt; Explanatory: species (factor)\n#&gt; Null Hypothesis: independence\n#&gt; # A tibble: 1 × 1\n#&gt;    stat\n#&gt;   &lt;dbl&gt;\n#&gt; 1 -34.4"
+  },
+  {
+    "objectID": "index.html#one-sample-t-test-tidymodels-1",
+    "href": "index.html#one-sample-t-test-tidymodels-1",
+    "title": "An Introduction to the R Programming Language",
+    "section": "One-Sample t-Test: tidymodels\n",
+    "text": "One-Sample t-Test: tidymodels\n\n\nnull_dist &lt;-\n  penguins |&gt;\n  dplyr::filter(species %in% c(\"Adelie\", \"Gentoo\")) |&gt;\n  tidyr::drop_na(flipper_length_mm, species) |&gt;\n  specify(flipper_length_mm ~ species) |&gt;\n  hypothesize(null = \"independence\") |&gt;\n  generate(reps = 1000, type = \"permute\") |&gt;\n  calculate(\"t\", order = c(\"Adelie\", \"Gentoo\"))\n\nnull_dist\n#&gt; Response: flipper_length_mm (numeric)\n#&gt; Explanatory: species (factor)\n#&gt; Null Hypothesis: independence\n#&gt; # A tibble: 1,000 × 2\n#&gt;    replicate    stat\n#&gt;        &lt;int&gt;   &lt;dbl&gt;\n#&gt;  1         1 -0.546 \n#&gt;  2         2  0.209 \n#&gt;  3         3  0.0804\n#&gt;  4         4 -0.533 \n#&gt;  5         5  0.162 \n#&gt;  6         6 -0.651 \n#&gt;  7         7 -0.457 \n#&gt;  8         8 -0.965 \n#&gt;  9         9 -0.376 \n#&gt; 10        10  0.506 \n#&gt; # ℹ 990 more rows"
+  },
+  {
+    "objectID": "index.html#one-sample-t-test-tidymodels-2",
+    "href": "index.html#one-sample-t-test-tidymodels-2",
+    "title": "An Introduction to the R Programming Language",
+    "section": "One-Sample t-Test: tidymodels\n",
+    "text": "One-Sample t-Test: tidymodels\n\n\nnull_dist |&gt;\n  visualize() +\n  shade_p_value(obs_stat = observed_statistic, direction = \"two-sided\")\n\n\n\nnull_dist |&gt;\n  get_p_value(obs_stat = observed_statistic, direction = \"two-sided\")\n#&gt; # A tibble: 1 × 1\n#&gt;   p_value\n#&gt;     &lt;dbl&gt;\n#&gt; 1       0"
+  },
+  {
+    "objectID": "index.html#one-sample-t-test-base-r",
+    "href": "index.html#one-sample-t-test-base-r",
+    "title": "An Introduction to the R Programming Language",
+    "section": "One-Sample t-Test: Base R",
+    "text": "One-Sample t-Test: Base R\n\nadelie &lt;-\n  penguins |&gt;\n  dplyr::filter(species == \"Adelie\") |&gt;\n  dplyr::pull(flipper_length_mm)\n\ngentoo &lt;-\n  penguins |&gt;\n  dplyr::filter(species == \"Gentoo\") |&gt;\n  dplyr::pull(flipper_length_mm)"
+  },
+  {
+    "objectID": "index.html#one-sample-t-test-base-r-1",
+    "href": "index.html#one-sample-t-test-base-r-1",
+    "title": "An Introduction to the R Programming Language",
+    "section": "One-Sample t-Test: Base R",
+    "text": "One-Sample t-Test: Base R\n\ntest &lt;- stats::t.test(\n  x = adelie,\n  y = gentoo,\n  alternative = \"two.sided\",\n  mu = 0,\n  paired = FALSE,\n  var.equal = FALSE, # Welch's t-test,\n  conf.level = 0.95\n)\n\ntest\n#&gt; \n#&gt;  Welch Two Sample t-test\n#&gt; \n#&gt; data:  adelie and gentoo\n#&gt; t = -34.445, df = 261.75, p-value &lt; 2.2e-16\n#&gt; alternative hypothesis: true difference in means is not equal to 0\n#&gt; 95 percent confidence interval:\n#&gt;  -28.79018 -25.67652\n#&gt; sample estimates:\n#&gt; mean of x mean of y \n#&gt;  189.9536  217.1870"
   },
   {
     "objectID": "index.html#one-sample-t-test-effect-size",
@@ -1078,39 +1113,39 @@
     "text": "One-Way ANOVA: Hypothesis\n\\[\n\\begin{cases}\n\\text{H}_{0}: \\mu_{A} = \\mu_{B} = \\mu_{C} \\\\\n\\text{H}_{a}: \\mu_{i} \\neq \\mu_{j}, \\ \\text{for some} \\ i, j\n\\end{cases}\n\\]"
   },
   {
-    "objectID": "index.html#one-way-anova-fit",
-    "href": "index.html#one-way-anova-fit",
-    "title": "An Introduction to the R Programming Language",
-    "section": "One-Way ANOVA: Fit",
-    "text": "One-Way ANOVA: Fit\n\nfit &lt;- aov(flipper_length_mm ~ species, data = penguins)\n\nfit\n#&gt; Call:\n#&gt;    aov(formula = flipper_length_mm ~ species, data = penguins)\n#&gt; \n#&gt; Terms:\n#&gt;                  species Residuals\n#&gt; Sum of Squares  52473.28  14953.26\n#&gt; Deg. of Freedom        2       339\n#&gt; \n#&gt; Residual standard error: 6.641529\n#&gt; Estimated effects may be unbalanced\n#&gt; 2 observations deleted due to missingness"
-  },
-  {
-    "objectID": "index.html#one-way-anova-fit-summary",
-    "href": "index.html#one-way-anova-fit-summary",
-    "title": "An Introduction to the R Programming Language",
-    "section": "One-Way ANOVA: Fit Summary",
-    "text": "One-Way ANOVA: Fit Summary\n\nfit |&gt; summary()\n#&gt;              Df Sum Sq Mean Sq F value Pr(&gt;F)    \n#&gt; species       2  52473   26237   594.8 &lt;2e-16 ***\n#&gt; Residuals   339  14953      44                   \n#&gt; ---\n#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n#&gt; 2 observations deleted due to missingness"
-  },
-  {
     "objectID": "index.html#one-way-anova-boxplots",
     "href": "index.html#one-way-anova-boxplots",
     "title": "An Introduction to the R Programming Language",
     "section": "One-Way ANOVA: Boxplots",
-    "text": "One-Way ANOVA: Boxplots\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(bill_length_mm, species) |&gt;\n  ggplot(aes(x = species, y = bill_length_mm, fill = species)) +\n  geom_boxplot(outlier.color = brandr::get_brand_color(\"dark-red\")) +\n  geom_jitter(width = 0.2, alpha = 0.1) +\n  brandr::scale_fill_brand_d(alpha = 0.7) +\n  labs(x = \"Species\", y = \"Bill Length (mm)\", fill = \"Species\")"
+    "text": "One-Way ANOVA: Boxplots\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(bill_length_mm, species) |&gt;\n  ggplot(aes(x = species, y = flipper_length_mm, fill = species)) +\n  geom_boxplot(outlier.color = brandr::get_brand_color(\"dark-red\")) +\n  geom_jitter(width = 0.2, alpha = 0.1) +\n  brandr::scale_fill_brand_d(alpha = 0.7) +\n  labs(x = \"Species\", y = \"Bill Length (mm)\", fill = \"Species\")"
   },
   {
-    "objectID": "index.html#one-way-anova-tukey-test",
-    "href": "index.html#one-way-anova-tukey-test",
+    "objectID": "index.html#one-way-anova-base-r",
+    "href": "index.html#one-way-anova-base-r",
     "title": "An Introduction to the R Programming Language",
-    "section": "One-Way ANOVA: Tukey Test",
-    "text": "One-Way ANOVA: Tukey Test\n\n fit |&gt; TukeyHSD()\n#&gt;   Tukey multiple comparisons of means\n#&gt;     95% family-wise confidence level\n#&gt; \n#&gt; Fit: aov(formula = flipper_length_mm ~ species, data = penguins)\n#&gt; \n#&gt; $species\n#&gt;                       diff       lwr       upr p adj\n#&gt; Chinstrap-Adelie  5.869887  3.586583  8.153191     0\n#&gt; Gentoo-Adelie    27.233349 25.334376 29.132323     0\n#&gt; Gentoo-Chinstrap 21.363462 19.000841 23.726084     0"
+    "section": "One-Way ANOVA: Base R",
+    "text": "One-Way ANOVA: Base R\n\nlibrary(effectsize)\nlibrary(stats)\n\n\nfit &lt;- aov(flipper_length_mm ~ species, data = penguins)\n\nfit\n#&gt; Call:\n#&gt;    aov(formula = flipper_length_mm ~ species, data = penguins)\n#&gt; \n#&gt; Terms:\n#&gt;                  species Residuals\n#&gt; Sum of Squares  52473.28  14953.26\n#&gt; Deg. of Freedom        2       339\n#&gt; \n#&gt; Residual standard error: 6.641529\n#&gt; Estimated effects may be unbalanced\n#&gt; 2 observations deleted due to missingness"
+  },
+  {
+    "objectID": "index.html#one-way-anova-base-r-1",
+    "href": "index.html#one-way-anova-base-r-1",
+    "title": "An Introduction to the R Programming Language",
+    "section": "One-Way ANOVA: Base R",
+    "text": "One-Way ANOVA: Base R\n\nfit |&gt; summary()\n#&gt;              Df Sum Sq Mean Sq F value Pr(&gt;F)    \n#&gt; species       2  52473   26237   594.8 &lt;2e-16 ***\n#&gt; Residuals   339  14953      44                   \n#&gt; ---\n#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n#&gt; 2 observations deleted due to missingness"
+  },
+  {
+    "objectID": "index.html#one-way-anova-base-r-2",
+    "href": "index.html#one-way-anova-base-r-2",
+    "title": "An Introduction to the R Programming Language",
+    "section": "One-Way ANOVA: Base R",
+    "text": "One-Way ANOVA: Base R\n\n fit |&gt; TukeyHSD()\n#&gt;   Tukey multiple comparisons of means\n#&gt;     95% family-wise confidence level\n#&gt; \n#&gt; Fit: aov(formula = flipper_length_mm ~ species, data = penguins)\n#&gt; \n#&gt; $species\n#&gt;                       diff       lwr       upr p adj\n#&gt; Chinstrap-Adelie  5.869887  3.586583  8.153191     0\n#&gt; Gentoo-Adelie    27.233349 25.334376 29.132323     0\n#&gt; Gentoo-Chinstrap 21.363462 19.000841 23.726084     0"
   },
   {
     "objectID": "index.html#one-way-anova-effect-size",
     "href": "index.html#one-way-anova-effect-size",
     "title": "An Introduction to the R Programming Language",
     "section": "One-Way ANOVA: Effect Size",
-    "text": "One-Way ANOVA: Effect Size\n\nlibrary(effectsize)\n\neffect_size &lt;- fit |&gt; eta_squared()\n\neffect_size\n#&gt; # Effect Size for ANOVA\n#&gt; \n#&gt; Parameter | Eta2 |       95% CI\n#&gt; -------------------------------\n#&gt; species   | 0.78 | [0.75, 1.00]\n#&gt; \n#&gt; - One-sided CIs: upper bound fixed at [1.00].\n\n\neffect_size |&gt; interpret_eta_squared(rules = \"cohen1992\")\n#&gt; # Effect Size for ANOVA\n#&gt; \n#&gt; Parameter | Eta2 |       95% CI | Interpretation\n#&gt; ------------------------------------------------\n#&gt; species   | 0.78 | [0.75, 1.00] |          large\n#&gt; \n#&gt; - One-sided CIs: upper bound fixed at [1.00].\n#&gt; - Interpretation rule: cohen1992"
+    "text": "One-Way ANOVA: Effect Size\n\neffect_size &lt;- fit |&gt; eta_squared()\n\neffect_size\n#&gt; # Effect Size for ANOVA\n#&gt; \n#&gt; Parameter | Eta2 |       95% CI\n#&gt; -------------------------------\n#&gt; species   | 0.78 | [0.75, 1.00]\n#&gt; \n#&gt; - One-sided CIs: upper bound fixed at [1.00].\n\n\neffect_size |&gt; interpret_eta_squared(rules = \"cohen1992\")\n#&gt; # Effect Size for ANOVA\n#&gt; \n#&gt; Parameter | Eta2 |       95% CI | Interpretation\n#&gt; ------------------------------------------------\n#&gt; species   | 0.78 | [0.75, 1.00] |          large\n#&gt; \n#&gt; - One-sided CIs: upper bound fixed at [1.00].\n#&gt; - Interpretation rule: cohen1992"
   },
   {
     "objectID": "index.html#one-way-anova-power-analysis",
@@ -1131,21 +1166,21 @@
     "href": "index.html#one-way-ancova-fit",
     "title": "An Introduction to the R Programming Language",
     "section": "One-Way ANCOVA: Fit",
-    "text": "One-Way ANCOVA: Fit\n\nfit &lt;- aov(flipper_length_mm ~ body_mass_g * species, data = penguins)\n\nfit\n#&gt; Call:\n#&gt;    aov(formula = flipper_length_mm ~ body_mass_g * species, data = penguins)\n#&gt; \n#&gt; Terms:\n#&gt;                 body_mass_g  species body_mass_g:species Residuals\n#&gt; Sum of Squares     51176.24  6411.23              227.91   9611.17\n#&gt; Deg. of Freedom           1        2                   2       336\n#&gt; \n#&gt; Residual standard error: 5.348333\n#&gt; Estimated effects may be unbalanced\n#&gt; 2 observations deleted due to missingness"
+    "text": "One-Way ANCOVA: Fit\n\nlibrary(car)\nlibrary(effectsize)\nlibrary(multcomp)\nlibrary(stats)\n\n\nfit &lt;- aov(flipper_length_mm ~ body_mass_g * species, data = penguins)\n\nfit\n#&gt; Call:\n#&gt;    aov(formula = flipper_length_mm ~ body_mass_g * species, data = penguins)\n#&gt; \n#&gt; Terms:\n#&gt;                 body_mass_g  species body_mass_g:species Residuals\n#&gt; Sum of Squares     51176.24  6411.23              227.91   9611.17\n#&gt; Deg. of Freedom           1        2                   2       336\n#&gt; \n#&gt; Residual standard error: 5.348333\n#&gt; Estimated effects may be unbalanced\n#&gt; 2 observations deleted due to missingness"
   },
   {
     "objectID": "index.html#one-way-ancova-fit-summary",
     "href": "index.html#one-way-ancova-fit-summary",
     "title": "An Introduction to the R Programming Language",
     "section": "One-Way ANCOVA: Fit Summary",
-    "text": "One-Way ANCOVA: Fit Summary\n\nlibrary(car)\n\n fit |&gt; Anova(type = \"III\")\n#&gt; Anova Table (Type III tests)\n#&gt; \n#&gt; Response: flipper_length_mm\n#&gt;                     Sum Sq  Df   F value    Pr(&gt;F)    \n#&gt; (Intercept)          61947   1 2165.6129 &lt; 2.2e-16 ***\n#&gt; body_mass_g           1406   1   49.1591 1.302e-11 ***\n#&gt; species                177   2    3.0994   0.04637 *  \n#&gt; body_mass_g:species    228   2    3.9837   0.01950 *  \n#&gt; Residuals             9611 336                        \n#&gt; ---\n#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1"
+    "text": "One-Way ANCOVA: Fit Summary\n\n fit |&gt; Anova(type = \"III\")\n#&gt; Anova Table (Type III tests)\n#&gt; \n#&gt; Response: flipper_length_mm\n#&gt;                     Sum Sq  Df   F value    Pr(&gt;F)    \n#&gt; (Intercept)          61947   1 2165.6129 &lt; 2.2e-16 ***\n#&gt; body_mass_g           1406   1   49.1591 1.302e-11 ***\n#&gt; species                177   2    3.0994   0.04637 *  \n#&gt; body_mass_g:species    228   2    3.9837   0.01950 *  \n#&gt; Residuals             9611 336                        \n#&gt; ---\n#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1"
   },
   {
     "objectID": "index.html#one-way-ancova-tukey-test",
     "href": "index.html#one-way-ancova-tukey-test",
     "title": "An Introduction to the R Programming Language",
     "section": "One-Way ANCOVA: Tukey Test",
-    "text": "One-Way ANCOVA: Tukey Test\n\nlibrary(multcomp)\n\npost_hoc &lt;-\n  fit |&gt;\n  glht(linfct = mcp(species = \"Tukey\"))\n\nsummary(post_hoc)\n#&gt; \n#&gt;   Simultaneous Tests for General Linear Hypotheses\n#&gt; \n#&gt; Multiple Comparisons of Means: Tukey Contrasts\n#&gt; \n#&gt; \n#&gt; Fit: aov(formula = flipper_length_mm ~ body_mass_g * species, data = penguins)\n#&gt; \n#&gt; Linear Hypotheses:\n#&gt;                         Estimate Std. Error t value Pr(&gt;|t|)  \n#&gt; Chinstrap - Adelie == 0  -13.864      7.301  -1.899   0.1383  \n#&gt; Gentoo - Adelie == 0       6.059      6.051   1.001   0.5729  \n#&gt; Gentoo - Chinstrap == 0   19.923      8.044   2.477   0.0359 *\n#&gt; ---\n#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n#&gt; (Adjusted p values reported -- single-step method)"
+    "text": "One-Way ANCOVA: Tukey Test\n\npost_hoc &lt;-\n  fit |&gt;\n  glht(linfct = mcp(species = \"Tukey\"))\n\nsummary(post_hoc)\n#&gt; \n#&gt;   Simultaneous Tests for General Linear Hypotheses\n#&gt; \n#&gt; Multiple Comparisons of Means: Tukey Contrasts\n#&gt; \n#&gt; \n#&gt; Fit: aov(formula = flipper_length_mm ~ body_mass_g * species, data = penguins)\n#&gt; \n#&gt; Linear Hypotheses:\n#&gt;                         Estimate Std. Error t value Pr(&gt;|t|)  \n#&gt; Chinstrap - Adelie == 0  -13.864      7.301  -1.899   0.1383  \n#&gt; Gentoo - Adelie == 0       6.059      6.051   1.001   0.5729  \n#&gt; Gentoo - Chinstrap == 0   19.923      8.044   2.477   0.0359 *\n#&gt; ---\n#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n#&gt; (Adjusted p values reported -- single-step method)"
   },
   {
     "objectID": "index.html#one-way-ancova-boxplots",

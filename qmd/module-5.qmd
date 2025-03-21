@@ -109,6 +109,92 @@ $$
 \end{cases}
 $$
 
+::: {.notes}
+:::
+
+## One-Sample t-Test: Hypothesis {.smaller}
+
+```{r}
+#| fig-align: center
+#| code-fold: true
+#| warning: false
+
+library(brandr)
+library(ggplot2)
+library(palmerpenguins)
+library(tidyr)
+
+penguins |>
+  dplyr::filter(species %in% c("Adelie", "Gentoo")) |>
+  tidyr::drop_na(flipper_length_mm, species) |>
+  ggplot(aes(x = species, y = flipper_length_mm, fill = species)) +
+  geom_boxplot(outlier.color = brandr::get_brand_color("dark-red")) +
+  geom_jitter(width = 0.2, alpha = 0.1) +
+  brandr::scale_fill_brand_d(alpha = 0.7) +
+  labs(x = "Species", y = "Flipper Length (mm)", fill = "Species")
+```
+
+::: {.notes}
+:::
+
+## One-Sample t-Test: `tidymodels` {.smaller}
+
+```{r}
+library(infer)
+library(palmerpenguins)
+```
+
+```{r}
+observed_statistic <-
+  penguins |>
+  dplyr::filter(species %in% c("Adelie", "Gentoo")) |>
+  tidyr::drop_na(flipper_length_mm, species) |>
+  specify(flipper_length_mm ~ species) |>
+  hypothesize(null = "independence") |>
+  calculate("t", order = c("Adelie", "Gentoo"))
+
+observed_statistic
+```
+
+::: {.notes}
+:::
+
+## One-Sample t-Test: `tidymodels` {.smaller}
+
+```{r}
+null_dist <-
+  penguins |>
+  dplyr::filter(species %in% c("Adelie", "Gentoo")) |>
+  tidyr::drop_na(flipper_length_mm, species) |>
+  specify(flipper_length_mm ~ species) |>
+  hypothesize(null = "independence") |>
+  generate(reps = 1000, type = "permute") |>
+  calculate("t", order = c("Adelie", "Gentoo"))
+
+null_dist
+```
+
+::: {.notes}
+:::
+
+## One-Sample t-Test: `tidymodels` {.smaller}
+
+```{r}
+null_dist |>
+  visualize() +
+  shade_p_value(obs_stat = observed_statistic, direction = "two-sided")
+```
+
+```{r}
+null_dist |>
+  get_p_value(obs_stat = observed_statistic, direction = "two-sided")
+```
+
+::: {.notes}
+:::
+
+## One-Sample t-Test: Base R {.smaller}
+
 ```{r}
 adelie <-
   penguins |>
@@ -124,7 +210,7 @@ gentoo <-
 ::: {.notes}
 :::
 
-## One-Sample t-Test: Test {.smaller}
+## One-Sample t-Test: Base R {.smaller}
 
 ```{r}
 test <- stats::t.test(
@@ -212,23 +298,6 @@ $$
 ::: {.notes}
 :::
 
-## One-Way ANOVA: Fit {.smaller}
-
-```{r}
-fit <- aov(flipper_length_mm ~ species, data = penguins)
-
-fit
-```
-
-::: {.notes}
-:::
-
-## One-Way ANOVA: Fit Summary {.smaller}
-
-```{r}
-fit |> summary()
-```
-
 ## One-Way ANOVA: Boxplots {.smaller}
 
 ```{r}
@@ -243,7 +312,7 @@ library(tidyr)
 
 penguins |>
   drop_na(bill_length_mm, species) |>
-  ggplot(aes(x = species, y = bill_length_mm, fill = species)) +
+  ggplot(aes(x = species, y = flipper_length_mm, fill = species)) +
   geom_boxplot(outlier.color = brandr::get_brand_color("dark-red")) +
   geom_jitter(width = 0.2, alpha = 0.1) +
   brandr::scale_fill_brand_d(alpha = 0.7) +
@@ -253,7 +322,29 @@ penguins |>
 ::: {.notes}
 :::
 
-## One-Way ANOVA: Tukey Test {.smaller}
+## One-Way ANOVA: Base R {.smaller}
+
+```{r}
+library(effectsize)
+library(stats)
+```
+
+```{r}
+fit <- aov(flipper_length_mm ~ species, data = penguins)
+
+fit
+```
+
+::: {.notes}
+:::
+
+## One-Way ANOVA: Base R {.smaller}
+
+```{r}
+fit |> summary()
+```
+
+## One-Way ANOVA: Base R {.smaller}
 
 ```{r}
  fit |> TukeyHSD()
@@ -265,8 +356,6 @@ penguins |>
 ## One-Way ANOVA: Effect Size {.smaller}
 
 ```{r}
-library(effectsize)
-
 effect_size <- fit |> eta_squared()
 
 effect_size
@@ -317,6 +406,13 @@ $$
 ## One-Way ANCOVA: Fit {.smaller}
 
 ```{r}
+library(car)
+library(effectsize)
+library(multcomp)
+library(stats)
+```
+
+```{r}
 fit <- aov(flipper_length_mm ~ body_mass_g * species, data = penguins)
 
 fit
@@ -328,8 +424,6 @@ fit
 ## One-Way ANCOVA: Fit Summary {.smaller}
 
 ```{r}
-library(car)
-
  fit |> Anova(type = "III")
 ```
 
@@ -339,8 +433,6 @@ library(car)
 ## One-Way ANCOVA: Tukey Test {.smaller}
 
 ```{r}
-library(multcomp)
-
 post_hoc <-
   fit |>
   glht(linfct = mcp(species = "Tukey"))
