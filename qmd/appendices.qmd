@@ -110,6 +110,28 @@ speak(lola)
 ::: {.notes}
 :::
 
+## 🚨 Warning For Your Future Self {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%;"}
+**Never use `setwd()`!**
+
+(How to detect a beginner R user)
+
+Always work inside a project directory. Your Working Directory (WD) should always be the root of your project.
+
+If you need a better way to manage your WD, see the [`here`](https://here.r-lib.org/) package.
+
+Click [here](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/#:~:text=such%20as%20these.-,What%E2%80%99s%20wrong%20with,setwd(),-%3F) to learn why.
+:::
+::: {.column style="width: 50%;"}
+![](images/allison-horst-figure-26.png){fig-align="center" style="width: 100%; padding-top: 125px;"}
+:::
+::::
+
+::: {.notes}
+:::
+
 ## (AP) Debugging {.smaller visibility="uncounted"}
 
 ![](images/allison-horst-figure-35.png){fig-align="center" style="width: 90%; padding-top: 0px;"}

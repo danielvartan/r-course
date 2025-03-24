@@ -156,7 +156,7 @@ Data validation techniques are used to ensure that data is accurate, consistent,
 : 34 cols $\times$ 22,720,515 rows<br>772,497,510 data points.
 :::
 ::: {.column style="width: 50%;"}
-![](images/sisvan-logo.png){fig-align="center" style="width: 75%; padding-top: 100px;"}
+![](images/sisvan-logo.png){fig-align="center" style="width: 75%; padding-top: 50px;"}
 :::
 ::::
 
@@ -432,18 +432,22 @@ Pointing to files inside your project.
 getwd()
 #> E:\r-course
 ```
+
 ```r
 list.files()
 #> [1] "data" "README.md" "LICENSE.md" "r-course.Rproj"
 ```
+
 ```r
 list.files("data")
 #> [1] "palmerpenguins-raw.csv"
 ```
+
 ```r
 list.files("./data")
 #> [1] "palmerpenguins-raw.csv"
 ```
+
 ```r
 file <- "./data/palmerpenguins-raw.csv"
 ```
@@ -459,13 +463,16 @@ It turns file management much easier.
 ```r
 install.packages("here")
 ```
+
 ```r
 library(here)
 ```
+
 ```r
 here()
 #> E:\r-course
 ```
+
 ```r
 here("data", "palmerpenguins-raw.csv")
 #> E:\r-course\data\palmerpenguins-raw.csv
@@ -502,12 +509,15 @@ install.packages("readr")
 ```r
 library(readr)
 ```
+
 ```r
 ?read_csv
 ```
+
 ```r
 ?read_csv2
 ```
+
 ```r
 ?read_delim
 ```
@@ -815,19 +825,26 @@ palmerpenguins::penguins |>
 ## Exporting the Data {.smaller}
 
 ```{r}
+library(here)
 library(readr)
 ```
 
 ```{r}
-#| eval: false
-
-data |> readr::write_csv(here("data", "palmerpenguins-valid.csv"))
+if (!dir.exists(here("data"))) {
+  dir.create(here("data"))
+}
 ```
 
 ```{r}
 #| eval: false
 
-data |> readr::write_rds(here("data", "palmerpenguins-valid.rds"))
+data |> write_csv(here("data", "palmerpenguins-valid.csv"))
+```
+
+```{r}
+#| eval: false
+
+data |> write_rds(here("data", "palmerpenguins-valid.rds"))
 ```
 
 ::: {style="font-size: 0.9em; padding-top: 30px;"}

@@ -3,23 +3,31 @@
 The `stats` package, that comes with a typical R installation, provides a set of basic statistical functions.
 
 ```{r}
+library(dplyr)
 library(palmerpenguins)
+```
 
+```{r}
 bill_length_mm <- penguins |> dplyr::pull(bill_length_mm)
 bill_depth_mm <- penguins |> dplyr::pull(bill_depth_mm)
 ```
+
 ```{r}
 bill_length_mm |> mean(na.rm = TRUE)
 ```
+
 ```{r}
 bill_length_mm |> sd(na.rm = TRUE)
 ```
+
 ```{r}
 bill_length_mm |> median(na.rm = TRUE)
 ```
+
 ```{r}
 bill_length_mm |> quantile(na.rm = TRUE)
 ```
+
 ```{r}
 cor(bill_length_mm, bill_depth_mm, use = "complete.obs")
 ```
@@ -30,6 +38,7 @@ cor(bill_length_mm, bill_depth_mm, use = "complete.obs")
 ## `head()` & `tail()` {.smaller}
 
 ```{r}
+library(dplyr)
 library(palmerpenguins)
 ```
 
@@ -55,7 +64,9 @@ penguins |>
 ```{r}
 library(dplyr)
 library(palmerpenguins)
+```
 
+```{r}
 penguins |> slice_sample(n = 10)
 ```
 
@@ -67,8 +78,10 @@ penguins |> slice_sample(n = 10)
 ```{r}
 library(dplyr)
 library(palmerpenguins)
+```
 
-penguins %>% dplyr::glimpse()
+```{r}
+penguins |> dplyr::glimpse()
 ```
 
 ::: {.notes}
@@ -79,7 +92,9 @@ penguins %>% dplyr::glimpse()
 ```{r}
 library(dplyr)
 library(palmerpenguins)
+```
 
+```{r}
 penguins |> count(species, island, .drop = FALSE)
 ```
 
@@ -91,7 +106,9 @@ penguins |> count(species, island, .drop = FALSE)
 ```{r}
 library(dplyr)
 library(palmerpenguins)
+```
 
+```{r}
 penguins |>
   summarize(
     mean = mean(flipper_length_mm, na.rm = TRUE),
@@ -116,7 +133,9 @@ A simple package for descriptive statistics.
 ```{r}
 library(palmerpenguins)
 library(summarytools)
+```
 
+```{r}
 penguins |> descr(bill_depth_mm)
 ```
 :::
@@ -137,6 +156,7 @@ The `tabyl` system from the `janitor` package provides more control over the out
 ::::
 
 ::: {style="font-size: 1em;"}
+
 ```{r}
 #| code-fold: true
 
@@ -277,7 +297,7 @@ library(palmerpenguins)
 
 penguins |>
   ggplot(aes(x = flipper_length_mm))+
-  geom_histogram(fill = brandr::get_brand_color("secondary")) +
+  geom_histogram(fill = get_brand_color("secondary")) +
   theme(text = element_text(size = 20))
 ```
 :::
@@ -293,7 +313,7 @@ library(palmerpenguins)
 
 penguins |>
   ggplot(aes(x = flipper_length_mm))+
-  geom_histogram(fill = brandr::get_brand_color("secondary")) +
+  geom_histogram(fill = get_brand_color("secondary")) +
   labs(x = "Flipper Length (mm)", y = "Frequency") +
   theme(text = element_text(size = 20))
 ```
@@ -325,7 +345,7 @@ penguins |>
     x = "Island",
     y = "Count"
   ) +
-  brandr::scale_fill_brand_d() +
+  scale_fill_brand_d() +
   theme(legend.position = "none")
 ```
 
@@ -346,7 +366,7 @@ penguins |>
   ggplot(aes(x = flipper_length_mm, fill = species)) +
   geom_histogram(bins = 30, alpha = 0.5, position = "identity") +
   labs(x = "Flipper Length (mm)", y = "Frequency", fill = "Species") +
-  brandr::scale_fill_brand_d()
+  scale_fill_brand_d()
 ```
 
 ## Boxplots {.smaller}
@@ -364,9 +384,9 @@ library(tidyr)
 penguins |>
   drop_na(bill_length_mm, species) |>
   ggplot(aes(x = species, y = bill_length_mm, fill = species)) +
-  geom_boxplot(outlier.color = brandr::get_brand_color("dark-red")) +
+  geom_boxplot(outlier.color = get_brand_color("dark-red")) +
   geom_jitter(width = 0.2, alpha = 0.1) +
-  brandr::scale_fill_brand_d(alpha = 0.7) +
+  scale_fill_brand_d(alpha = 0.7) +
   labs(x = "Species", y = "Bill Length (mm)", fill = "Species")
 ```
 
@@ -400,7 +420,7 @@ penguins |>
     color = "Species",
     shape = "Species"
   ) +
-  brandr::scale_color_brand_d(alpha = 0.7)
+  scale_color_brand_d(alpha = 0.7)
 ```
 
 ## Facets {.smaller}
@@ -414,25 +434,26 @@ library(brandr)
 library(dplyr)
 library(ggplot2)
 library(palmerpenguins)
+library(stringr)
 library(tidyr)
 
 penguins |>
   drop_na(flipper_length_mm, body_mass_g, sex) |>
-  mutate(sex = `levels<-`(sex, stringr::str_to_title(levels(sex)))) |>
+  mutate(sex = `levels<-`(sex, str_to_title(levels(sex)))) |>
   ggplot(aes(x = flipper_length_mm, y = body_mass_g, color = sex)) +
   geom_point(size = 2) +
   geom_smooth(
     method = "lm",
     formula = y ~ x,
     se = FALSE,
-    color = brandr::get_brand_color("brown")
+    color = get_brand_color("brown")
   ) +
   labs(
     x = "Flipper Length (mm)",
     y = "Body Mass (g)",
     color = "Sex"
   ) +
-  brandr::scale_color_brand_d(alpha = 0.7) +
+  scale_color_brand_d(alpha = 0.7) +
   facet_wrap(~species)
 ```
 
@@ -455,17 +476,17 @@ plot_hist <-
   ggplot(aes(x = flipper_length_mm, fill = species)) +
   geom_histogram(bins = 30, alpha = 0.5, position = "identity") +
   labs(x = "Flipper Length (mm)", y = "Frequency") +
-  brandr::scale_fill_brand_d() +
+  scale_fill_brand_d() +
   theme(legend.position = "none")
 
 plot_boxplot <-
   penguins |>
   drop_na(bill_length_mm, species) |>
   ggplot(aes(x = species, y = bill_length_mm, fill = species)) +
-  geom_boxplot(outlier.color = brandr::get_brand_color("dark-red")) +
+  geom_boxplot(outlier.color = get_brand_color("dark-red")) +
   geom_jitter(width = 0.2, alpha = 0.1) +
   labs(x = "Species", y = "Bill Length (mm)", fill = "Species") +
-  brandr::scale_fill_brand_d(alpha = 0.7) +
+  scale_fill_brand_d(alpha = 0.7) +
   theme(axis.title.x = element_blank(), legend.position = "none")
 
 plot_scatter <-
@@ -487,7 +508,7 @@ plot_scatter <-
     color = "Species",
     shape = "Species"
   ) +
-  brandr::scale_color_brand_d(alpha = 0.7) +
+  scale_color_brand_d(alpha = 0.7) +
   theme(legend.position = "none")
 
 (plot_hist + plot_boxplot) / plot_scatter + plot_annotation(tag_levels = "A")
@@ -513,9 +534,9 @@ library(palmerpenguins)
 
 penguins |>
   select(species, body_mass_g, ends_with("_mm")) |>
-  GGally::ggpairs(aes(color = species)) +
-  brandr::scale_color_brand_d(alpha = 0.7) +
-  brandr::scale_fill_brand_d(alpha = 0.7)
+  ggpairs(aes(color = species)) +
+  scale_color_brand_d(alpha = 0.7) +
+  scale_fill_brand_d(alpha = 0.7)
 ```
 
 ::: {.notes}
@@ -544,7 +565,7 @@ penguins |>
   drop_na(flipper_length_mm, species) |>
   ggplot(aes(x = flipper_length_mm, fill = species)) +
   geom_density(alpha = 0.5, position = "identity") +
-  viridis::scale_fill_viridis(discrete = TRUE) +
+  scale_fill_viridis(discrete = TRUE) +
   labs(x = "Flipper Length (mm)", y = "Frequency", fill = "Species") +
   theme(text = element_text(size = 20), legend.position = "none")
 ```

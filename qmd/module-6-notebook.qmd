@@ -259,7 +259,7 @@ penguins |>
 
 ## Acknowledgments
 
-![](../images/sustentarea-icon-rgb-150-dpi.png){style="width: 17.5%;"}
+![](../images/sustentarea-icon.svg){style="width: 17.5%;"}
 
 This analysis was produced during the course [An Introduction to the R Programming Language](https://github.com/danielvartan/r-course) made for the [Sustentarea](https://www.fsp.usp.br/sustentarea) Research and Extension Group at the University of São Paulo.
 

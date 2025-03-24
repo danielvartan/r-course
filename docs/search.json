@@ -18,7 +18,7 @@
     "href": "index.html#course-objectives",
     "title": "An Introduction to the R Programming Language",
     "section": "Course Objectives",
-    "text": "Course Objectives\nGrasp the fundamental principles and knowledge of computer science.\nComprehend the structure and core elements of the R programming language.\nLearn essential concepts of data munging.\nUnderstand the basics of data visualization.\nExplore fundamental techniques of exploratory data analysis.\nLearn basic modeling concepts.\n\n(Future course? An Introduction to Git)"
+    "text": "Course Objectives\nGrasp the some fundamental principles and knowledge of computer science.\nComprehend the structure and core elements of the R programming language.\nLearn essential concepts of data munging.\nUnderstand the basics of data visualization.\nExplore fundamental techniques of exploratory data analysis.\nLearn basic modeling techniques.\n\n(Future course? An Introduction to Git)"
   },
   {
     "objectID": "index.html#course-content",
@@ -68,6 +68,13 @@
     "title": "An Introduction to the R Programming Language",
     "section": "Notes",
     "text": "Notes\n💾 Bring a flash drive/pen drive.\n👩‍💻 Try to use the same computer for all classes.\n💬 Always open this presentation in the browser.\n❌ Don’t miss a class.\n🙋‍♂️ Ask questions.\n🤝 Help each other.\n🎉 Have fun!"
+  },
+  {
+    "objectID": "index.html#course-presentation",
+    "href": "index.html#course-presentation",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Course Presentation",
+    "text": "Course Presentation\n\n\nAlways have this presentation open in your browser.\n\nWe will use it to navigate through the course content.\nUse it to access the course materials and exercises.\n\n\nTip: Want to create QR Codes like this? Check the qrcode R package.\n\n\n\n\n\n\n\n\n\ndanielvartan.github.io/r-course"
   },
   {
     "objectID": "index.html#lets-start-from-zero",
@@ -158,7 +165,7 @@
     "href": "index.html#a-bit-of-r-history",
     "title": "An Introduction to the R Programming Language",
     "section": "A Bit of R History",
-    "text": "A Bit of R History\n\n\nR is a free and open-source programming language designed for data analysis grpahics (Ihaka & Gentleman, 1996).\nIt was developed by Ross Ihaka and Robert Gentleman in the statistics department at the University of Auckland (New Zealand) in 1991 and introduced to the scientific community in 1993 (Peng, 2022).\n\n\n\n\n\n\n\n\n\n(Robert Gentleman (Left) and Ross Ihaka (Right). Photos by an Unknown Author.)\n\nAlthough R is a specialized language, you can stretch it to do almost anything (like this presentation!)."
+    "text": "A Bit of R History\n\n\nR is a free and open-source programming language designed for data analysis graphics (Ihaka & Gentleman, 1996).\nIt was developed by Ross Ihaka and Robert Gentleman in the statistics department at the University of Auckland (New Zealand) in 1991 and introduced to the scientific community in 1993 (Peng, 2022).\n\n\n\n\n\n\n\n\n\n(Robert Gentleman (Left) and Ross Ihaka (Right). Photos by an Unknown Author.)\n\nAlthough R is a specialized language, you can stretch it to do almost anything (like this presentation!)."
   },
   {
     "objectID": "index.html#community",
@@ -189,6 +196,13 @@
     "text": "Installing R\n\n\nInstalling R is very simple.\nYou just need to download the installer from the Comprehensive R Archive Network (CRAN).\nGo to Download R for [YOUR OS] and then click on the base link—The base version of R.\nSimply follow the instructions of the installer."
   },
   {
+    "objectID": "index.html#installing-r-1",
+    "href": "index.html#installing-r-1",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Installing R",
+    "text": "Installing R"
+  },
+  {
     "objectID": "index.html#the-rstudio-ide",
     "href": "index.html#the-rstudio-ide",
     "title": "An Introduction to the R Programming Language",
@@ -196,18 +210,32 @@
     "text": "The RStudio IDE\nAn IDE (Integrated Development Environment) is a software that provides a set of tools to help the programmer to write code. It puts together things like a text editor, a console, a debugger, and a file manager.\nRStudio is the most popular IDE for R. Like R, it is also free and open-source.\n\n\n\n\n\nAlways use software in English."
   },
   {
+    "objectID": "index.html#installing-rstudio",
+    "href": "index.html#installing-rstudio",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Installing RStudio",
+    "text": "Installing RStudio"
+  },
+  {
     "objectID": "index.html#creating-a-project",
     "href": "index.html#creating-a-project",
     "title": "An Introduction to the R Programming Language",
     "section": "Creating a Project",
-    "text": "Creating a Project\n\n\nProject-oriented workflow: A project consolidates all related files and resources in one place, ensuring that your work is reproducible and well-organized.\nIt is important to have a structured project directory. A best practice is to follow the structure made for R Packages (Marwick et al., 2018).\nEvery data project must be accompanied, at least, by a README file, explaining the project, and a LICENSE file, defining the terms of use of the data (See Open Source Licenses here).\n\n\n\n\n\n\n\n(Reproduced from Marwick et al. (2018))\n\n\nAdd a README file to the project using usethis::use_readme_md().\nAdd a License file to the project using usethis::use_mit_license()."
+    "text": "Creating a Project\n\n\nProject-oriented workflow: A project consolidates all related files and resources in one place, ensuring that your work is reproducible and well-organized.\nIt is important to have a structured project directory. A best practice is to follow the structure made for R Packages (Marwick et al., 2018).\nEvery data project must be accompanied, at least, by a README file, explaining the project, and a LICENSE file, defining the terms of use of the data (See Open Source Licenses here).\n\n\n\n\n\n\n\n(Reproduced from Marwick et al. (2018))"
   },
   {
-    "objectID": "index.html#warning-for-your-future-self",
-    "href": "index.html#warning-for-your-future-self",
+    "objectID": "index.html#creating-a-project-1",
+    "href": "index.html#creating-a-project-1",
     "title": "An Introduction to the R Programming Language",
-    "section": "🚨 Warning For Your Future Self",
-    "text": "🚨 Warning For Your Future Self\n\n\nNever use setwd()!\n(How to detect a beginner R user)\nAlways work inside a project directory. Your Working Directory (WD) should always be the root of your project.\nIf you need a better way to manage your WD, see the here package.\nClick here to learn why."
+    "section": "Creating a Project",
+    "text": "Creating a Project"
+  },
+  {
+    "objectID": "index.html#adding-a-readme-license-file",
+    "href": "index.html#adding-a-readme-license-file",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Adding a README & LICENSE File",
+    "text": "Adding a README & LICENSE File\n\n\nYou can use the usethis R package to create these files.\n\nFirst, call the package using:\n# install.packages(\"usethis\")\nlibrary(usethis)\nAdd a README file using:\nuse_readme_md()\nAdd a MIT License file using:\nuse_mit_license()"
   },
   {
     "objectID": "index.html#quarto-notebooks",
@@ -228,14 +256,14 @@
     "href": "index.html#objects",
     "title": "An Introduction to the R Programming Language",
     "section": "Objects",
-    "text": "Objects\n\n\nEverything in R is an object.\nEverything that happens in R is the result of a function call.\n\nScalars (0D): 1\nVectors (1D): c(1, 2, 3)\nMatrices (2D):matrix(1:9, nrow = 3, ncol = 3)\nArrays (nD):array(1:27, dim = c(3, 3, 3))\n\n\n\n\n\n\n\n(Artwork by Kanishk Srivastava)\n\n\nData frames are a special case of 2D objects."
+    "text": "Objects\n\n\nEverything in R is an object.\nEverything that happens in R is the result of a function call.\n\nScalars (0D): 1\nVectors (1D): c(1, 2, 3)\nMatrices (2D):matrix(1:9, nrow = 3, ncol = 3)\nArrays (nD):array(1:27, dim = c(3, 3, 3))\n\n\n\n\n\n\n\n\n(Artwork by Kanishk Srivastava)\n\n\nData frames are a special case of 2D objects."
   },
   {
     "objectID": "index.html#vectorized-operations",
     "href": "index.html#vectorized-operations",
     "title": "An Introduction to the R Programming Language",
     "section": "Vectorized Operations",
-    "text": "Vectorized Operations\n\n\nThe most important feature of R is that it is a vectorized language. This means that most operations are performed element-wise.\nThis is achieved using the C programming language behind the scenes.\n\nc(1, 2, 3) + 1\n#&gt; [1] 2 3 4\n\nc(1, 2, 3) * c(1, 2, 3)\n#&gt; [1] 1 4 9\n\n\n\n\n\n\n\n\n(Artwork by Kanishk Srivastava)"
+    "text": "Vectorized Operations\n\n\nThe most important feature of R is that it is a vectorized language. This means that most operations are performed element-wise.\nThis is achieved using the C programming language behind the scenes.\n\nc(1, 2, 3) + 1\n#&gt; [1] 2 3 4\n\n\nc(1, 2, 3) * c(1, 2, 3)\n#&gt; [1] 1 4 9\n\n\n\n\n\n\n\n\n(Artwork by Kanishk Srivastava)"
   },
   {
     "objectID": "index.html#primary-data-types",
@@ -277,7 +305,7 @@
     "href": "index.html#assignment-operators",
     "title": "An Introduction to the R Programming Language",
     "section": "Assignment Operators",
-    "text": "Assignment Operators\n\n\n\n\n`&lt;-`() Leftwards assignment (Use this!)\n\n`&lt;&lt;-`() Leftwards assignment (Global Environment)\n\n`-&gt;`() Rightwards assignment\n\n`-&gt;&gt;`() Rightwards assignment (Global Environment)\n\n`=`() Equals sign assignment\n\n\n\nx &lt;- 1; x\n#&gt; [1] 1\n\n\nx &lt;&lt;- 1; x\n#&gt; [1] 1\n\n\n1 -&gt; x; x\n#&gt; [1] 1\n\n\n1 -&gt;&gt; x; x\n#&gt; [1] 1\n\n\nx = 1; x\n#&gt; [1] 1\n\n\n1 = x; x # Error!"
+    "text": "Assignment Operators\n\n\n\n\n`&lt;-`() Leftwards assignment (Use this!)\n\n`&lt;&lt;-`() Leftwards assignment (Global Environment)\n\n`-&gt;`() Rightwards assignment\n\n`-&gt;&gt;`() Rightwards assignment (Global Environment)\n\n`=`() Equals sign assignment\n\n\n\nx &lt;- 1; x\n#&gt; [1] 1\n\n\nx &lt;&lt;- 1; x\n#&gt; [1] 1\n\n\n1 -&gt; x; x\n#&gt; [1] 1\n\n\n1 -&gt;&gt; x; x\n#&gt; [1] 1\n\n\nx = 1; x\n#&gt; [1] 1\n\n1 = x; x # Error!"
   },
   {
     "objectID": "index.html#names",
@@ -305,7 +333,7 @@
     "href": "index.html#logical-operators",
     "title": "An Introduction to the R Programming Language",
     "section": "Logical Operators",
-    "text": "Logical Operators\n\n\n\n\n`&`() AND (Element-wise)\n\n`&&`() AND\n\n`|`() OR\n\n`||`() OR (Element-wise)\n\n`!`() NOT\n\n\n\nc(TRUE, FALSE) & c(TRUE, TRUE)\n#&gt; [1]  TRUE FALSE\n\n\nTRUE && FALSE\n#&gt; [1] FALSE\n\n\nc(TRUE, FALSE) && c(TRUE, TRUE) # Error!\n\n\nc(TRUE, FALSE) | c(TRUE, TRUE)\n#&gt; [1] TRUE TRUE\n\n\nTRUE || FALSE\n#&gt; [1] TRUE\n\n\nc(TRUE, FALSE) || c(TRUE, TRUE) # Error!\n\n\n!TRUE\n#&gt; [1] FALSE"
+    "text": "Logical Operators\n\n\n\n\n`&`() AND (Element-wise)\n\n`&&`() AND\n\n`|`() OR\n\n`||`() OR (Element-wise)\n\n`!`() NOT\n\n\n\nc(TRUE, FALSE) & c(TRUE, TRUE)\n#&gt; [1]  TRUE FALSE\n\n\nTRUE && FALSE\n#&gt; [1] FALSE\n\nc(TRUE, FALSE) && c(TRUE, TRUE) # Error!\n\nc(TRUE, FALSE) | c(TRUE, TRUE)\n#&gt; [1] TRUE TRUE\n\n\nTRUE || FALSE\n#&gt; [1] TRUE\n\nc(TRUE, FALSE) || c(TRUE, TRUE) # Error!\n\n!TRUE\n#&gt; [1] FALSE"
   },
   {
     "objectID": "index.html#other-operators",
@@ -347,7 +375,7 @@
     "href": "index.html#pipes",
     "title": "An Introduction to the R Programming Language",
     "section": "Pipes",
-    "text": "Pipes\n\n\nR Native Pipe(Introduced in R 4.1.0)\n\nobject |&gt; function()\nobject |&gt; function(1, par = _)\n\nseq(1, 8) |&gt;\n  c(9) |&gt;\n  mean()\n#&gt; [1] 5\n\n\n\n\n\nmagrittr Pipe\n\nobject %&gt;% function()\nobject %&gt;% function(1, par = .)\nobject %&gt;% function(1, .)\n\nlibrary(magrittr)\n\nseq(1, 8) %&gt;%\n  c(9) %&gt;%\n  mean()\n#&gt; [1] 5"
+    "text": "Pipes\n\n\nR Native Pipe(Introduced in R 4.1.0)\n\nobject |&gt; function()\nobject |&gt; function(1, par = _)\n\nseq(1, 8) |&gt;\n  c(9) |&gt;\n  mean()\n#&gt; [1] 5\n\n\n\n\n\nmagrittr Pipe\n\nobject %&gt;% function()\nobject %&gt;% function(1, par = .)\nobject %&gt;% function(1, .)\n\nlibrary(magrittr)\n\n\nseq(1, 8) %&gt;%\n  c(9) %&gt;%\n  mean()\n#&gt; [1] 5"
   },
   {
     "objectID": "index.html#control-flow-choices",
@@ -361,21 +389,21 @@
     "href": "index.html#control-flow-loops",
     "title": "An Introduction to the R Programming Language",
     "section": "Control Flow: Loops",
-    "text": "Control Flow: Loops\n🚨 Avoid loops if you can.\nUse vectorized operations instead (functionals).\n\n\nwhile (condition) perform_action\n\nx &lt;- 0\n\nwhile (x &lt; 5) {\n  x &lt;- x + 1\n  print(x)\n}\n#&gt; [1] 1\n#&gt; [1] 2\n#&gt; [1] 3\n#&gt; [1] 4\n#&gt; [1] 5\n\n\n\n\nfor (item in vector) perform_action\n\nfor (i in 1:5) {\n  print(i)\n}\n#&gt; [1] 1\n#&gt; [1] 2\n#&gt; [1] 3\n#&gt; [1] 4\n#&gt; [1] 5\n\n\nname &lt;- function(parameter_1, parameter_2, ...) expression"
+    "text": "Control Flow: Loops\n🚨 Avoid loops if you can.\nUse vectorized operations instead (functionals).\n\n\nwhile (condition) perform_action\n\nx &lt;- 0\n\nwhile (x &lt; 5) {\n  x &lt;- x + 1\n  print(x)\n}\n#&gt; [1] 1\n#&gt; [1] 2\n#&gt; [1] 3\n#&gt; [1] 4\n#&gt; [1] 5\n\n\n\n\nfor (item in vector) perform_action\n\nfor (i in 1:5) {\n  print(i)\n}\n#&gt; [1] 1\n#&gt; [1] 2\n#&gt; [1] 3\n#&gt; [1] 4\n#&gt; [1] 5"
   },
   {
     "objectID": "index.html#functions",
     "href": "index.html#functions",
     "title": "An Introduction to the R Programming Language",
     "section": "Functions",
-    "text": "Functions\n\n\nThe last evaluated expression is the return value of the function.\nYou can use return() to return a value before the end of the function, but this is a bad practice.\n\nfoo &lt;- function(x) {\n  x + 1\n}\n\nfoo(9)\n#&gt; [1] 10\n\n\n\n\n\nfoo &lt;- function(x) {\n  return(x + 1)\n\n  \"a\"\n}\n\nfoo(9)\n#&gt; [1] 10\n\n\nShorthand Notation(Introduced in R 4.1.0)\n\nfoo &lt;- function(x) x(9)\n\nfoo(\\(x) x + 1)\n#&gt; [1] 10"
+    "text": "Functions\nname &lt;- function(parameter_1, parameter_2, ...) expression\n\n\nThe last evaluated expression is the return value of the function.\nYou can use return() to return a value before the end of the function, but this is a bad practice.\n\nfoo &lt;- function(x) {\n  x + 1\n}\n\nfoo(9)\n#&gt; [1] 10\n\n\n\n\n\nfoo &lt;- function(x) {\n  return(x + 1)\n\n  \"a\"\n}\n\nfoo(9)\n#&gt; [1] 10\n\n\nShorthand Notation(Introduced in R 4.1.0)\n\nfoo &lt;- function(x) x(9)\n\nfoo(\\(x) x + 1)\n#&gt; [1] 10"
   },
   {
     "objectID": "index.html#functionals",
     "href": "index.html#functionals",
     "title": "An Introduction to the R Programming Language",
     "section": "Functionals",
-    "text": "Functionals\n\n\nA functional is a function that takes a function as an input and returns a vector as output (Wickham, 2019).\nIt makes the work of the programmer easier, because it allows to apply a function to a vector without the need of a loop. Because these functions are written in C, they are very fast.\nR have native functionals (e.g., lapply()), but prefer solutions from the purrr package.\n\n\n\n\ntriple &lt;- function(x) x * 3\n\n\nwith_for_loop &lt;- function(x) {\n  out &lt;- numeric()\n  for (i in x) out &lt;- c(out, triple(i))\n  out\n}\n\n\nlibrary(purrr)\n\nwith_map &lt;- function(x) map_dbl(x, triple)\n\n\nlibrary(microbenchmark)\n\nmicrobenchmark(\n  with_for_loop(1:1000),\n  with_map(1:1000),\n  times = 100,\n  check = \"equal\"\n)\n#&gt; Unit: microseconds\n#&gt;                   expr     min       lq      mean   median       uq      max\n#&gt;  with_for_loop(1:1000) 685.706 745.9640 1341.5586 870.0370 1160.428 9034.261\n#&gt;       with_map(1:1000) 291.909 314.8655  388.3719 347.3425  392.040 1413.755\n#&gt;  neval cld\n#&gt;    100  a \n#&gt;    100   b"
+    "text": "Functionals\n\n\nA functional is a function that takes a function as an input and returns a vector as output (Wickham, 2019).\nIt makes the work of the programmer easier, because it allows to apply a function to a vector without the need of a loop. Because these functions are written in C, they are very fast.\nR have native functionals (e.g., lapply()), but prefer solutions from the purrr package.\n\n\n\n\ntriple &lt;- function(x) x * 3\n\n\nwith_for_loop &lt;- function(x) {\n  out &lt;- numeric()\n  for (i in x) out &lt;- c(out, triple(i))\n  out\n}\n\n\nlibrary(purrr)\n\nwith_map &lt;- function(x) map_dbl(x, triple)\n\n\nlibrary(microbenchmark)\n\nmicrobenchmark(\n  with_for_loop(1:1000),\n  with_map(1:1000),\n  times = 100,\n  check = \"equal\"\n)\n#&gt; Unit: microseconds\n#&gt;                   expr     min       lq      mean   median      uq      max\n#&gt;  with_for_loop(1:1000) 659.582 703.1605 1017.4245 728.8025 785.887 4218.672\n#&gt;       with_map(1:1000) 291.047 306.3245  331.7077 317.0090 334.473 1029.714\n#&gt;  neval cld\n#&gt;    100  a \n#&gt;    100   b"
   },
   {
     "objectID": "index.html#enviroments",
@@ -389,7 +417,7 @@
     "href": "index.html#packages",
     "title": "An Introduction to the R Programming Language",
     "section": "Packages",
-    "text": "Packages\n\n\nThe Unix philosophy\nIn R, the fundamental unit of shareable code is the package.\nA package bundles together code, data, documentation, and tests, and is easy to share with others (Wickham & Bryan, 2023).\nNote: Other programming languages refer to packages as libraries.\n\n\n\ninstall.packages(\"package_name\")\n\nlibrary(\"package_name\")\n\nlibrary(hms)\nlibrary(lubridate)\nlibrary(mctq)\n\nso(parse_hm(\"23:00\"), lubridate::dhours(2))\n#&gt; 01:00:00\n\n\n\npackage_name::function_name()\n\nhms::parse_hm(\"23:00\")\n#&gt; 23:00:00"
+    "text": "Packages\n\n\nThe Unix philosophy\nIn R, the fundamental unit of shareable code is the package.\nA package bundles together code, data, documentation, and tests, and is easy to share with others (Wickham & Bryan, 2023).\n\nNote: Other programming languages refer to packages as libraries.\n\n\n\n\ninstall.packages(\"package_name\")\n\nlibrary(\"package_name\")\n\nlibrary(hms)\nlibrary(lubridate)\nlibrary(mctq)\n\n\nso(parse_hm(\"23:00\"), lubridate::dhours(2))\n#&gt; 01:00:00\n\n\n\npackage_name::function_name()\n\nhms::parse_hm(\"23:00\")\n#&gt; 23:00:00"
   },
   {
     "objectID": "index.html#packages-1",
@@ -816,7 +844,7 @@
     "href": "index.html#exporting-the-data",
     "title": "An Introduction to the R Programming Language",
     "section": "Exporting the Data",
-    "text": "Exporting the Data\n\nlibrary(readr)\n\n\ndata |&gt; readr::write_csv(here(\"data\", \"palmerpenguins-valid.csv\"))\n\n\ndata |&gt; readr::write_rds(here(\"data\", \"palmerpenguins-valid.rds\"))\n\n\nTip: Store your data in research repositories like The Open Science Framework (See the osfr package). If you are working with sensitive or human data, ensure it is encrypted before storing it in the cloud (See the lockr package)."
+    "text": "Exporting the Data\n\nlibrary(here)\nlibrary(readr)\n\n\nif (!dir.exists(here(\"data\"))) {\n  dir.create(here(\"data\"))\n}\n\n\ndata |&gt; write_csv(here(\"data\", \"palmerpenguins-valid.csv\"))\n\n\ndata |&gt; write_rds(here(\"data\", \"palmerpenguins-valid.rds\"))\n\n\nTip: Store your data in research repositories like The Open Science Framework (See the osfr package). If you are working with sensitive or human data, ensure it is encrypted before storing it in the cloud (See the lockr package)."
   },
   {
     "objectID": "index.html#how-to-learn-more-2",
@@ -830,49 +858,49 @@
     "href": "index.html#simple-statistics",
     "title": "An Introduction to the R Programming Language",
     "section": "Simple Statistics",
-    "text": "Simple Statistics\nThe stats package, that comes with a typical R installation, provides a set of basic statistical functions.\n\nlibrary(palmerpenguins)\n\nbill_length_mm &lt;- penguins |&gt; dplyr::pull(bill_length_mm)\nbill_depth_mm &lt;- penguins |&gt; dplyr::pull(bill_depth_mm)\n\n\nbill_length_mm |&gt; mean(na.rm = TRUE)\n#&gt; [1] 43.92193\n\n\nbill_length_mm |&gt; sd(na.rm = TRUE)\n#&gt; [1] 5.459584\n\n\nbill_length_mm |&gt; median(na.rm = TRUE)\n#&gt; [1] 44.45\n\n\nbill_length_mm |&gt; quantile(na.rm = TRUE)\n#&gt;     0%    25%    50%    75%   100% \n#&gt; 32.100 39.225 44.450 48.500 59.600\n\n\ncor(bill_length_mm, bill_depth_mm, use = \"complete.obs\")\n#&gt; [1] -0.2350529"
+    "text": "Simple Statistics\nThe stats package, that comes with a typical R installation, provides a set of basic statistical functions.\n\nlibrary(dplyr)\nlibrary(palmerpenguins)\n\n\nbill_length_mm &lt;- penguins |&gt; dplyr::pull(bill_length_mm)\nbill_depth_mm &lt;- penguins |&gt; dplyr::pull(bill_depth_mm)\n\n\nbill_length_mm |&gt; mean(na.rm = TRUE)\n#&gt; [1] 43.92193\n\n\nbill_length_mm |&gt; sd(na.rm = TRUE)\n#&gt; [1] 5.459584\n\n\nbill_length_mm |&gt; median(na.rm = TRUE)\n#&gt; [1] 44.45\n\n\nbill_length_mm |&gt; quantile(na.rm = TRUE)\n#&gt;     0%    25%    50%    75%   100% \n#&gt; 32.100 39.225 44.450 48.500 59.600\n\n\ncor(bill_length_mm, bill_depth_mm, use = \"complete.obs\")\n#&gt; [1] -0.2350529"
   },
   {
     "objectID": "index.html#head-tail",
     "href": "index.html#head-tail",
     "title": "An Introduction to the R Programming Language",
     "section": "\nhead() & tail()\n",
-    "text": "head() & tail()\n\n\nlibrary(palmerpenguins)\n\n\npenguins %&gt;% head(3)\n#&gt; # A tibble: 3 × 8\n#&gt;   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n#&gt;   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n#&gt; 1 Adelie  Torgersen           39.1          18.7               181        3750\n#&gt; 2 Adelie  Torgersen           39.5          17.4               186        3800\n#&gt; 3 Adelie  Torgersen           40.3          18                 195        3250\n#&gt; # ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n\npenguins %&gt;% tail(3)\n#&gt; # A tibble: 3 × 8\n#&gt;   species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n#&gt;   &lt;fct&gt;     &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n#&gt; 1 Chinstrap Dream            49.6          18.2               193        3775\n#&gt; 2 Chinstrap Dream            50.8          19                 210        4100\n#&gt; 3 Chinstrap Dream            50.2          18.7               198        3775\n#&gt; # ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n\npenguins |&gt;\n  dplyr::pull(bill_length_mm) |&gt;\n  head(3)\n#&gt; [1] 39.1 39.5 40.3"
+    "text": "head() & tail()\n\n\nlibrary(dplyr)\nlibrary(palmerpenguins)\n\n\npenguins %&gt;% head(3)\n#&gt; # A tibble: 3 × 8\n#&gt;   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n#&gt;   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n#&gt; 1 Adelie  Torgersen           39.1          18.7               181        3750\n#&gt; 2 Adelie  Torgersen           39.5          17.4               186        3800\n#&gt; 3 Adelie  Torgersen           40.3          18                 195        3250\n#&gt; # ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n\npenguins %&gt;% tail(3)\n#&gt; # A tibble: 3 × 8\n#&gt;   species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n#&gt;   &lt;fct&gt;     &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n#&gt; 1 Chinstrap Dream            49.6          18.2               193        3775\n#&gt; 2 Chinstrap Dream            50.8          19                 210        4100\n#&gt; 3 Chinstrap Dream            50.2          18.7               198        3775\n#&gt; # ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n\npenguins |&gt;\n  dplyr::pull(bill_length_mm) |&gt;\n  head(3)\n#&gt; [1] 39.1 39.5 40.3"
   },
   {
     "objectID": "index.html#slice_sample",
     "href": "index.html#slice_sample",
     "title": "An Introduction to the R Programming Language",
     "section": "slice_sample()",
-    "text": "slice_sample()\n\nlibrary(dplyr)\nlibrary(palmerpenguins)\n\npenguins |&gt; slice_sample(n = 10)\n#&gt; # A tibble: 10 × 8\n#&gt;    species   island   bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n#&gt;    &lt;fct&gt;     &lt;fct&gt;             &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n#&gt;  1 Gentoo    Biscoe             48.4          14.4               203        4625\n#&gt;  2 Adelie    Dream              43.2          18.5               192        4100\n#&gt;  3 Gentoo    Biscoe             42            13.5               210        4150\n#&gt;  4 Adelie    Biscoe             41.1          18.2               192        4050\n#&gt;  5 Adelie    Biscoe             38.6          17.2               199        3750\n#&gt;  6 Chinstrap Dream              55.8          19.8               207        4000\n#&gt;  7 Adelie    Dream              39.8          19.1               184        4650\n#&gt;  8 Adelie    Dream              40.3          18.5               196        4350\n#&gt;  9 Gentoo    Biscoe             45.5          13.9               210        4200\n#&gt; 10 Adelie    Torgers…           36.6          17.8               185        3700\n#&gt; # ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;"
+    "text": "slice_sample()\n\nlibrary(dplyr)\nlibrary(palmerpenguins)\n\n\npenguins |&gt; slice_sample(n = 10)\n#&gt; # A tibble: 10 × 8\n#&gt;    species   island   bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n#&gt;    &lt;fct&gt;     &lt;fct&gt;             &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n#&gt;  1 Gentoo    Biscoe             48.4          14.4               203        4625\n#&gt;  2 Adelie    Dream              43.2          18.5               192        4100\n#&gt;  3 Gentoo    Biscoe             42            13.5               210        4150\n#&gt;  4 Adelie    Biscoe             41.1          18.2               192        4050\n#&gt;  5 Adelie    Biscoe             38.6          17.2               199        3750\n#&gt;  6 Chinstrap Dream              55.8          19.8               207        4000\n#&gt;  7 Adelie    Dream              39.8          19.1               184        4650\n#&gt;  8 Adelie    Dream              40.3          18.5               196        4350\n#&gt;  9 Gentoo    Biscoe             45.5          13.9               210        4200\n#&gt; 10 Adelie    Torgers…           36.6          17.8               185        3700\n#&gt; # ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;"
   },
   {
     "objectID": "index.html#glimpse",
     "href": "index.html#glimpse",
     "title": "An Introduction to the R Programming Language",
     "section": "glimpse()",
-    "text": "glimpse()\n\nlibrary(dplyr)\nlibrary(palmerpenguins)\n\npenguins %&gt;% dplyr::glimpse()\n#&gt; Rows: 344\n#&gt; Columns: 8\n#&gt; $ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adel…\n#&gt; $ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgerse…\n#&gt; $ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, …\n#&gt; $ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, …\n#&gt; $ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186…\n#&gt; $ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, …\n#&gt; $ sex               &lt;fct&gt; male, female, female, NA, female, male, female, male…\n#&gt; $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…"
+    "text": "glimpse()\n\nlibrary(dplyr)\nlibrary(palmerpenguins)\n\n\npenguins |&gt; dplyr::glimpse()\n#&gt; Rows: 344\n#&gt; Columns: 8\n#&gt; $ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adel…\n#&gt; $ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgerse…\n#&gt; $ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, …\n#&gt; $ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, …\n#&gt; $ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186…\n#&gt; $ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, …\n#&gt; $ sex               &lt;fct&gt; male, female, female, NA, female, male, female, male…\n#&gt; $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…"
   },
   {
     "objectID": "index.html#count",
     "href": "index.html#count",
     "title": "An Introduction to the R Programming Language",
     "section": "count()",
-    "text": "count()\n\nlibrary(dplyr)\nlibrary(palmerpenguins)\n\npenguins |&gt; count(species, island, .drop = FALSE)\n#&gt; # A tibble: 9 × 3\n#&gt;   species   island        n\n#&gt;   &lt;fct&gt;     &lt;fct&gt;     &lt;int&gt;\n#&gt; 1 Adelie    Biscoe       44\n#&gt; 2 Adelie    Dream        56\n#&gt; 3 Adelie    Torgersen    52\n#&gt; 4 Chinstrap Biscoe        0\n#&gt; 5 Chinstrap Dream        68\n#&gt; 6 Chinstrap Torgersen     0\n#&gt; 7 Gentoo    Biscoe      124\n#&gt; 8 Gentoo    Dream         0\n#&gt; 9 Gentoo    Torgersen     0"
+    "text": "count()\n\nlibrary(dplyr)\nlibrary(palmerpenguins)\n\n\npenguins |&gt; count(species, island, .drop = FALSE)\n#&gt; # A tibble: 9 × 3\n#&gt;   species   island        n\n#&gt;   &lt;fct&gt;     &lt;fct&gt;     &lt;int&gt;\n#&gt; 1 Adelie    Biscoe       44\n#&gt; 2 Adelie    Dream        56\n#&gt; 3 Adelie    Torgersen    52\n#&gt; 4 Chinstrap Biscoe        0\n#&gt; 5 Chinstrap Dream        68\n#&gt; 6 Chinstrap Torgersen     0\n#&gt; 7 Gentoo    Biscoe      124\n#&gt; 8 Gentoo    Dream         0\n#&gt; 9 Gentoo    Torgersen     0"
   },
   {
     "objectID": "index.html#summarize-1",
     "href": "index.html#summarize-1",
     "title": "An Introduction to the R Programming Language",
     "section": "summarize()",
-    "text": "summarize()\n\nlibrary(dplyr)\nlibrary(palmerpenguins)\n\npenguins |&gt;\n  summarize(\n    mean = mean(flipper_length_mm, na.rm = TRUE),\n    sd = sd(flipper_length_mm, na.rm = TRUE),\n    .by = species\n  )\n#&gt; # A tibble: 3 × 3\n#&gt;   species    mean    sd\n#&gt;   &lt;fct&gt;     &lt;dbl&gt; &lt;dbl&gt;\n#&gt; 1 Adelie     190.  6.54\n#&gt; 2 Gentoo     217.  6.48\n#&gt; 3 Chinstrap  196.  7.13"
+    "text": "summarize()\n\nlibrary(dplyr)\nlibrary(palmerpenguins)\n\n\npenguins |&gt;\n  summarize(\n    mean = mean(flipper_length_mm, na.rm = TRUE),\n    sd = sd(flipper_length_mm, na.rm = TRUE),\n    .by = species\n  )\n#&gt; # A tibble: 3 × 3\n#&gt;   species    mean    sd\n#&gt;   &lt;fct&gt;     &lt;dbl&gt; &lt;dbl&gt;\n#&gt; 1 Adelie     190.  6.54\n#&gt; 2 Gentoo     217.  6.48\n#&gt; 3 Chinstrap  196.  7.13"
   },
   {
     "objectID": "index.html#the-summarytools-package",
     "href": "index.html#the-summarytools-package",
     "title": "An Introduction to the R Programming Language",
     "section": "The summarytools Package",
-    "text": "The summarytools Package\n\n\n\nA simple package for descriptive statistics.\n\n\nlibrary(palmerpenguins)\nlibrary(summarytools)\n\npenguins |&gt; descr(bill_depth_mm)\n#&gt; Descriptive Statistics  \n#&gt; penguins  \n#&gt; N: 344  \n#&gt; \n#&gt;                     bill_depth_mm\n#&gt; ----------------- ---------------\n#&gt;              Mean           17.15\n#&gt;           Std.Dev            1.97\n#&gt;               Min           13.10\n#&gt;                Q1           15.60\n#&gt;            Median           17.30\n#&gt;                Q3           18.70\n#&gt;               Max           21.50\n#&gt;               MAD            2.22\n#&gt;               IQR            3.10\n#&gt;                CV            0.12\n#&gt;          Skewness           -0.14\n#&gt;       SE.Skewness            0.13\n#&gt;          Kurtosis           -0.92\n#&gt;           N.Valid          342.00\n#&gt;                 N          344.00\n#&gt;         Pct.Valid           99.42"
+    "text": "The summarytools Package\n\n\n\nA simple package for descriptive statistics.\n\n\nlibrary(palmerpenguins)\nlibrary(summarytools)\n\n\npenguins |&gt; descr(bill_depth_mm)\n#&gt; Descriptive Statistics  \n#&gt; penguins  \n#&gt; N: 344  \n#&gt; \n#&gt;                     bill_depth_mm\n#&gt; ----------------- ---------------\n#&gt;              Mean           17.15\n#&gt;           Std.Dev            1.97\n#&gt;               Min           13.10\n#&gt;                Q1           15.60\n#&gt;            Median           17.30\n#&gt;                Q3           18.70\n#&gt;               Max           21.50\n#&gt;               MAD            2.22\n#&gt;               IQR            3.10\n#&gt;                CV            0.12\n#&gt;          Skewness           -0.14\n#&gt;       SE.Skewness            0.13\n#&gt;          Kurtosis           -0.92\n#&gt;           N.Valid          342.00\n#&gt;                 N          344.00\n#&gt;         Pct.Valid           99.42"
   },
   {
     "objectID": "index.html#the-janitor-package-1",
@@ -921,63 +949,63 @@
     "href": "index.html#its-all-about-layers-1",
     "title": "An Introduction to the R Programming Language",
     "section": "It’s All About Layers",
-    "text": "It’s All About Layers\n\n\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\n\npenguins |&gt;\n  ggplot(aes(x = flipper_length_mm))+\n  geom_histogram(fill = brandr::get_brand_color(\"secondary\")) +\n  theme(text = element_text(size = 20))\n\n\n\n\n\n\n\n\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\n\npenguins |&gt;\n  ggplot(aes(x = flipper_length_mm))+\n  geom_histogram(fill = brandr::get_brand_color(\"secondary\")) +\n  labs(x = \"Flipper Length (mm)\", y = \"Frequency\") +\n  theme(text = element_text(size = 20))"
+    "text": "It’s All About Layers\n\n\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\n\npenguins |&gt;\n  ggplot(aes(x = flipper_length_mm))+\n  geom_histogram(fill = get_brand_color(\"secondary\")) +\n  theme(text = element_text(size = 20))\n\n\n\n\n\n\n\n\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\n\npenguins |&gt;\n  ggplot(aes(x = flipper_length_mm))+\n  geom_histogram(fill = get_brand_color(\"secondary\")) +\n  labs(x = \"Flipper Length (mm)\", y = \"Frequency\") +\n  theme(text = element_text(size = 20))"
   },
   {
     "objectID": "index.html#bar-plots",
     "href": "index.html#bar-plots",
     "title": "An Introduction to the R Programming Language",
     "section": "Bar Plots",
-    "text": "Bar Plots\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\n\npenguins |&gt;\n  ggplot(aes(x = island, fill = species)) +\n  geom_bar(alpha = 0.8) +\n  theme_minimal() +\n  facet_wrap(~species, ncol = 1) +\n  coord_flip() +\n  labs(\n    x = \"Island\",\n    y = \"Count\"\n  ) +\n  brandr::scale_fill_brand_d() +\n  theme(legend.position = \"none\")"
+    "text": "Bar Plots\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\n\npenguins |&gt;\n  ggplot(aes(x = island, fill = species)) +\n  geom_bar(alpha = 0.8) +\n  theme_minimal() +\n  facet_wrap(~species, ncol = 1) +\n  coord_flip() +\n  labs(\n    x = \"Island\",\n    y = \"Count\"\n  ) +\n  scale_fill_brand_d() +\n  theme(legend.position = \"none\")"
   },
   {
     "objectID": "index.html#histograms",
     "href": "index.html#histograms",
     "title": "An Introduction to the R Programming Language",
     "section": "Histograms",
-    "text": "Histograms\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(flipper_length_mm, species) |&gt;\n  ggplot(aes(x = flipper_length_mm, fill = species)) +\n  geom_histogram(bins = 30, alpha = 0.5, position = \"identity\") +\n  labs(x = \"Flipper Length (mm)\", y = \"Frequency\", fill = \"Species\") +\n  brandr::scale_fill_brand_d()"
+    "text": "Histograms\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(flipper_length_mm, species) |&gt;\n  ggplot(aes(x = flipper_length_mm, fill = species)) +\n  geom_histogram(bins = 30, alpha = 0.5, position = \"identity\") +\n  labs(x = \"Flipper Length (mm)\", y = \"Frequency\", fill = \"Species\") +\n  scale_fill_brand_d()"
   },
   {
     "objectID": "index.html#boxplots",
     "href": "index.html#boxplots",
     "title": "An Introduction to the R Programming Language",
     "section": "Boxplots",
-    "text": "Boxplots\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(bill_length_mm, species) |&gt;\n  ggplot(aes(x = species, y = bill_length_mm, fill = species)) +\n  geom_boxplot(outlier.color = brandr::get_brand_color(\"dark-red\")) +\n  geom_jitter(width = 0.2, alpha = 0.1) +\n  brandr::scale_fill_brand_d(alpha = 0.7) +\n  labs(x = \"Species\", y = \"Bill Length (mm)\", fill = \"Species\")"
+    "text": "Boxplots\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(bill_length_mm, species) |&gt;\n  ggplot(aes(x = species, y = bill_length_mm, fill = species)) +\n  geom_boxplot(outlier.color = get_brand_color(\"dark-red\")) +\n  geom_jitter(width = 0.2, alpha = 0.1) +\n  scale_fill_brand_d(alpha = 0.7) +\n  labs(x = \"Species\", y = \"Bill Length (mm)\", fill = \"Species\")"
   },
   {
     "objectID": "index.html#scatterplots",
     "href": "index.html#scatterplots",
     "title": "An Introduction to the R Programming Language",
     "section": "Scatterplots",
-    "text": "Scatterplots\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(flipper_length_mm, body_mass_g, species) |&gt;\n  ggplot(\n    aes(\n      x = flipper_length_mm,\n      y = body_mass_g,\n      color = species,\n      shape = species\n    )\n  ) +\n  geom_point(size = 2) +\n  geom_smooth(method = \"lm\", formula = y ~ x, se = FALSE) +\n  labs(\n    x = \"Flipper Length (mm)\",\n    y = \"Body Mass (g)\",\n    color = \"Species\",\n    shape = \"Species\"\n  ) +\n  brandr::scale_color_brand_d(alpha = 0.7)"
+    "text": "Scatterplots\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(flipper_length_mm, body_mass_g, species) |&gt;\n  ggplot(\n    aes(\n      x = flipper_length_mm,\n      y = body_mass_g,\n      color = species,\n      shape = species\n    )\n  ) +\n  geom_point(size = 2) +\n  geom_smooth(method = \"lm\", formula = y ~ x, se = FALSE) +\n  labs(\n    x = \"Flipper Length (mm)\",\n    y = \"Body Mass (g)\",\n    color = \"Species\",\n    shape = \"Species\"\n  ) +\n  scale_color_brand_d(alpha = 0.7)"
   },
   {
     "objectID": "index.html#facets",
     "href": "index.html#facets",
     "title": "An Introduction to the R Programming Language",
     "section": "Facets",
-    "text": "Facets\n\nCodelibrary(brandr)\nlibrary(dplyr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(flipper_length_mm, body_mass_g, sex) |&gt;\n  mutate(sex = `levels&lt;-`(sex, stringr::str_to_title(levels(sex)))) |&gt;\n  ggplot(aes(x = flipper_length_mm, y = body_mass_g, color = sex)) +\n  geom_point(size = 2) +\n  geom_smooth(\n    method = \"lm\",\n    formula = y ~ x,\n    se = FALSE,\n    color = brandr::get_brand_color(\"brown\")\n  ) +\n  labs(\n    x = \"Flipper Length (mm)\",\n    y = \"Body Mass (g)\",\n    color = \"Sex\"\n  ) +\n  brandr::scale_color_brand_d(alpha = 0.7) +\n  facet_wrap(~species)"
+    "text": "Facets\n\nCodelibrary(brandr)\nlibrary(dplyr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(stringr)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(flipper_length_mm, body_mass_g, sex) |&gt;\n  mutate(sex = `levels&lt;-`(sex, str_to_title(levels(sex)))) |&gt;\n  ggplot(aes(x = flipper_length_mm, y = body_mass_g, color = sex)) +\n  geom_point(size = 2) +\n  geom_smooth(\n    method = \"lm\",\n    formula = y ~ x,\n    se = FALSE,\n    color = get_brand_color(\"brown\")\n  ) +\n  labs(\n    x = \"Flipper Length (mm)\",\n    y = \"Body Mass (g)\",\n    color = \"Sex\"\n  ) +\n  scale_color_brand_d(alpha = 0.7) +\n  facet_wrap(~species)"
   },
   {
     "objectID": "index.html#combined-plots",
     "href": "index.html#combined-plots",
     "title": "An Introduction to the R Programming Language",
     "section": "Combined Plots",
-    "text": "Combined Plots\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(patchwork)\nlibrary(tidyr)\n\nplot_hist &lt;-\n  penguins |&gt;\n  drop_na(flipper_length_mm, species) |&gt;\n  ggplot(aes(x = flipper_length_mm, fill = species)) +\n  geom_histogram(bins = 30, alpha = 0.5, position = \"identity\") +\n  labs(x = \"Flipper Length (mm)\", y = \"Frequency\") +\n  brandr::scale_fill_brand_d() +\n  theme(legend.position = \"none\")\n\nplot_boxplot &lt;-\n  penguins |&gt;\n  drop_na(bill_length_mm, species) |&gt;\n  ggplot(aes(x = species, y = bill_length_mm, fill = species)) +\n  geom_boxplot(outlier.color = brandr::get_brand_color(\"dark-red\")) +\n  geom_jitter(width = 0.2, alpha = 0.1) +\n  labs(x = \"Species\", y = \"Bill Length (mm)\", fill = \"Species\") +\n  brandr::scale_fill_brand_d(alpha = 0.7) +\n  theme(axis.title.x = element_blank(), legend.position = \"none\")\n\nplot_scatter &lt;-\n  penguins |&gt;\n  drop_na(flipper_length_mm, body_mass_g, species) |&gt;\n  ggplot(\n    aes(\n      x = flipper_length_mm,\n      y = body_mass_g,\n      color = species,\n      shape = species\n    )\n  ) +\n  geom_point(size = 2) +\n  geom_smooth(method = \"lm\", formula = y ~ x, se = FALSE) +\n  labs(\n    x = \"Flipper Length (mm)\",\n    y = \"Body Mass (g)\",\n    color = \"Species\",\n    shape = \"Species\"\n  ) +\n  brandr::scale_color_brand_d(alpha = 0.7) +\n  theme(legend.position = \"none\")\n\n(plot_hist + plot_boxplot) / plot_scatter + plot_annotation(tag_levels = \"A\")"
+    "text": "Combined Plots\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(patchwork)\nlibrary(tidyr)\n\nplot_hist &lt;-\n  penguins |&gt;\n  drop_na(flipper_length_mm, species) |&gt;\n  ggplot(aes(x = flipper_length_mm, fill = species)) +\n  geom_histogram(bins = 30, alpha = 0.5, position = \"identity\") +\n  labs(x = \"Flipper Length (mm)\", y = \"Frequency\") +\n  scale_fill_brand_d() +\n  theme(legend.position = \"none\")\n\nplot_boxplot &lt;-\n  penguins |&gt;\n  drop_na(bill_length_mm, species) |&gt;\n  ggplot(aes(x = species, y = bill_length_mm, fill = species)) +\n  geom_boxplot(outlier.color = get_brand_color(\"dark-red\")) +\n  geom_jitter(width = 0.2, alpha = 0.1) +\n  labs(x = \"Species\", y = \"Bill Length (mm)\", fill = \"Species\") +\n  scale_fill_brand_d(alpha = 0.7) +\n  theme(axis.title.x = element_blank(), legend.position = \"none\")\n\nplot_scatter &lt;-\n  penguins |&gt;\n  drop_na(flipper_length_mm, body_mass_g, species) |&gt;\n  ggplot(\n    aes(\n      x = flipper_length_mm,\n      y = body_mass_g,\n      color = species,\n      shape = species\n    )\n  ) +\n  geom_point(size = 2) +\n  geom_smooth(method = \"lm\", formula = y ~ x, se = FALSE) +\n  labs(\n    x = \"Flipper Length (mm)\",\n    y = \"Body Mass (g)\",\n    color = \"Species\",\n    shape = \"Species\"\n  ) +\n  scale_color_brand_d(alpha = 0.7) +\n  theme(legend.position = \"none\")\n\n(plot_hist + plot_boxplot) / plot_scatter + plot_annotation(tag_levels = \"A\")"
   },
   {
     "objectID": "index.html#correlation-matrices",
     "href": "index.html#correlation-matrices",
     "title": "An Introduction to the R Programming Language",
     "section": "Correlation Matrices",
-    "text": "Correlation Matrices\n\nCodelibrary(brandr)\nlibrary(dplyr)\nlibrary(GGally)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\n\npenguins |&gt;\n  select(species, body_mass_g, ends_with(\"_mm\")) |&gt;\n  GGally::ggpairs(aes(color = species)) +\n  brandr::scale_color_brand_d(alpha = 0.7) +\n  brandr::scale_fill_brand_d(alpha = 0.7)\n\n\nThe GGally package is an extension of ggplot2."
+    "text": "Correlation Matrices\n\nCodelibrary(brandr)\nlibrary(dplyr)\nlibrary(GGally)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\n\npenguins |&gt;\n  select(species, body_mass_g, ends_with(\"_mm\")) |&gt;\n  ggpairs(aes(color = species)) +\n  scale_color_brand_d(alpha = 0.7) +\n  scale_fill_brand_d(alpha = 0.7)\n\n\nThe GGally package is an extension of ggplot2."
   },
   {
     "objectID": "index.html#color-palettes",
     "href": "index.html#color-palettes",
     "title": "An Introduction to the R Programming Language",
     "section": "Color Palettes",
-    "text": "Color Palettes\nColor palettes can be sequential, diverging, or qualitative (discrete). Here are some examples of two popular packages for color palettes in R.\n\n\nviridis: Colorblind-Friendly Color Maps\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\nlibrary(viridis)\n\npenguins |&gt;\n  drop_na(flipper_length_mm, species) |&gt;\n  ggplot(aes(x = flipper_length_mm, fill = species)) +\n  geom_density(alpha = 0.5, position = \"identity\") +\n  viridis::scale_fill_viridis(discrete = TRUE) +\n  labs(x = \"Flipper Length (mm)\", y = \"Frequency\", fill = \"Species\") +\n  theme(text = element_text(size = 20), legend.position = \"none\")\n\n\n\n\n\n\n\n\nRColorBrewer: Common Color Palettes\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(flipper_length_mm, species) |&gt;\n  ggplot(aes(x = flipper_length_mm, fill = species)) +\n  geom_density(alpha = 0.5, position = \"identity\") +\n  scale_fill_brewer(palette = \"Set1\") +\n  labs(x = \"Flipper Length (mm)\", y = \"Frequency\", fill = \"Species\") +\n  theme(text = element_text(size = 20), legend.position = \"none\")"
+    "text": "Color Palettes\nColor palettes can be sequential, diverging, or qualitative (discrete). Here are some examples of two popular packages for color palettes in R.\n\n\nviridis: Colorblind-Friendly Color Maps\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\nlibrary(viridis)\n\npenguins |&gt;\n  drop_na(flipper_length_mm, species) |&gt;\n  ggplot(aes(x = flipper_length_mm, fill = species)) +\n  geom_density(alpha = 0.5, position = \"identity\") +\n  scale_fill_viridis(discrete = TRUE) +\n  labs(x = \"Flipper Length (mm)\", y = \"Frequency\", fill = \"Species\") +\n  theme(text = element_text(size = 20), legend.position = \"none\")\n\n\n\n\n\n\n\n\nRColorBrewer: Common Color Palettes\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(flipper_length_mm, species) |&gt;\n  ggplot(aes(x = flipper_length_mm, fill = species)) +\n  geom_density(alpha = 0.5, position = \"identity\") +\n  scale_fill_brewer(palette = \"Set1\") +\n  labs(x = \"Flipper Length (mm)\", y = \"Frequency\", fill = \"Species\") +\n  theme(text = element_text(size = 20), legend.position = \"none\")"
   },
   {
     "objectID": "index.html#how-to-learn-more-3",
@@ -991,7 +1019,7 @@
     "href": "index.html#modeling-with-tidyverse-versus-modeling-with-base-r",
     "title": "An Introduction to the R Programming Language",
     "section": "Modeling with Tidyverse versus Modeling with base R",
-    "text": "Modeling with Tidyverse versus Modeling with base R\n\nThe tidyverse framework offers a structured and consistent approach to modeling in R through the tidymodels ecosystem.\nWhile many users still utilize base R functions for modeling, we will focus on the tidyverse approach due to its simplicity and readability."
+    "text": "Modeling with Tidyverse versus Modeling with base R\nThe tidyverse framework offers a structured and consistent approach to modeling in R through the tidymodels ecosystem.\nWhile many users still utilize base R functions for modeling, we will focus on the tidyverse approach due to its simplicity and readability."
   },
   {
     "objectID": "index.html#the-tidymodels-framework",
@@ -1001,18 +1029,18 @@
     "text": "The Tidymodels Framework\n\nThe tidymodels framework is a collection of packages for modeling and machine learning using tidyverse principles."
   },
   {
-    "objectID": "index.html#the-p-value-problem",
-    "href": "index.html#the-p-value-problem",
+    "objectID": "index.html#power-analysis-.smaller",
+    "href": "index.html#power-analysis-.smaller",
     "title": "An Introduction to the R Programming Language",
-    "section": "The p-value Problem",
-    "text": "The p-value Problem\n\n\nLarge samples and sensitivity\nIs a difference of \\(0.00001\\) valid?\nStatistical ritual versus Statistical thinking\n\nComparison of a 95% of confidence level (\\(\\alpha = 0.05\\)) and an n-dependent p-value curve. The parameter \\(n_{\\alpha}\\) represents the minimum sample size to detect statistically significant differences among compared groups. The parameter \\(n_{\\gamma}\\) represents the convergence point of the p-value curve. When the p-value curve expresses practical differences, the area under the red curve (\\(A_{p(n)}\\)) is smaller than the area under the constant function \\(\\alpha = 0.05\\) (\\(A_{\\alpha = 0.05}\\)) when it is evaluated between \\(0\\) and \\(n_{\\gamma}\\).\n\n\n\n\n\n\n\n\n(Chart reproduced from Gómez-de-Mariscal et al. (2021, Figure 3))"
+    "section": "Power Analysis (.smaller)",
+    "text": "Power Analysis (.smaller)\n\n\n\n\n\n\n\n\n\nDecision about \\(H_{0}\\)\n\n\n\\(H_{0}\\) True\n\n\n\\(H_{0}\\) False\n\n\n\n\nAccept\nCorrect inference (true negative) (\\(\\text{prob} = 1 - \\alpha\\))\nType II error (False negative) (\\(\\text{prob} = \\beta\\))\n\n\nReject\nType I error (False positive) (\\(\\text{prob} = \\alpha\\))\nCorrect inference (true positive) (\\(\\text{prob} = 1 - \\beta\\))\n\n\n\n\n\n(Based on @Casella & Berger (2002, p. 383))"
   },
   {
     "objectID": "index.html#power-analysis",
     "href": "index.html#power-analysis",
     "title": "An Introduction to the R Programming Language",
     "section": "Power Analysis",
-    "text": "Power Analysis"
+    "text": "Power Analysis\n\n\n\n\n\n(Artwork by VWO)"
   },
   {
     "objectID": "index.html#type-i-errors-alpha",
@@ -1029,11 +1057,18 @@
     "text": "Type II Errors (\\(\\beta\\))\n\n\n(Artwork by Allison Horst)"
   },
   {
+    "objectID": "index.html#the-p-value-problem",
+    "href": "index.html#the-p-value-problem",
+    "title": "An Introduction to the R Programming Language",
+    "section": "The p-value Problem",
+    "text": "The p-value Problem\n\n\nLarge samples and sensitivity\nIs a difference of \\(0.00001\\) valid?\nStatistical ritual versus Statistical thinking\n\nComparison of a 95% of confidence level (\\(\\alpha = 0.05\\)) and an n-dependent p-value curve. The parameter \\(n_{\\alpha}\\) represents the minimum sample size to detect statistically significant differences among compared groups. The parameter \\(n_{\\gamma}\\) represents the convergence point of the p-value curve. When the p-value curve expresses practical differences, the area under the red curve (\\(A_{p(n)}\\)) is smaller than the area under the constant function \\(\\alpha = 0.05\\) (\\(A_{\\alpha = 0.05}\\)) when it is evaluated between \\(0\\) and \\(n_{\\gamma}\\).\n\n\n\n\n\n\n\n\n(Reproduced from Gómez-de-Mariscal et al. (2021, Figure 3))"
+  },
+  {
     "objectID": "index.html#cohens-benchmark",
     "href": "index.html#cohens-benchmark",
     "title": "An Introduction to the R Programming Language",
     "section": "Cohen’s Benchmark",
-    "text": "Cohen’s Benchmark\n\n\n\n[…] in many circumstances, all that is intended by “proving” the null hypothesis is that the ES [Effect Size] is not necessarily zero but small enough to be negligible […]. (p. 461)\n\n\n\n\n\n\n\n\n(Quotes reproduced from Cohen (1988). Photo by an unknown author.)"
+    "text": "Cohen’s Benchmark\n\n\n\n[…] in many circumstances, all that is intended by “proving” the null hypothesis is that the ES [Effect Size] is not necessarily zero but small enough to be negligible […] (Cohen, 1988[p. 461]).\n\n\n\n\n\n\n\n\n(Photo by an unknown author.)"
   },
   {
     "objectID": "index.html#cohens-benchmark-1",
@@ -1047,175 +1082,140 @@
     "href": "index.html#one-sample-t-test-hypothesis",
     "title": "An Introduction to the R Programming Language",
     "section": "One-Sample t-Test: Hypothesis",
-    "text": "One-Sample t-Test: Hypothesis\n\\[\n\\begin{cases}\n\\text{H}_{0}: \\mu_{A} = \\mu_{B} \\\\\n\\text{H}_{a}: \\mu_{A} \\neq \\mu_{B} \\\\\n\\end{cases}\n\\]"
+    "text": "One-Sample t-Test: Hypothesis\nTo ensure practical significance, the difference in means must be analyzed for its effect size considering a 95% confidence interval.\nWe will use Cohen’s benchmark for a small effect size as our Minimum Effect Size (MES) (Cohen (1988)).\n\\[\n\\begin{cases}\n\\text{H}_{0}: \\mu_{A} = \\mu_{B} \\\\\n\\text{H}_{a}: \\mu_{A} \\neq \\mu_{B} \\\\\n\\end{cases}\n\\]\n\\[\n\\begin{cases}\n\\text{H}_{0}: \\mu_{A} - \\mu_{B} &lt;= \\text{MES} \\\\\n\\text{H}_{a}: \\mu_{A} - \\mu_{B} &gt; \\text{MES} \\\\\n\\end{cases}\n\\]"
   },
   {
     "objectID": "index.html#one-sample-t-test-hypothesis-1",
     "href": "index.html#one-sample-t-test-hypothesis-1",
     "title": "An Introduction to the R Programming Language",
     "section": "One-Sample t-Test: Hypothesis",
-    "text": "One-Sample t-Test: Hypothesis\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  dplyr::filter(species %in% c(\"Adelie\", \"Gentoo\")) |&gt;\n  tidyr::drop_na(flipper_length_mm, species) |&gt;\n  ggplot(aes(x = species, y = flipper_length_mm, fill = species)) +\n  geom_boxplot(outlier.color = brandr::get_brand_color(\"dark-red\")) +\n  geom_jitter(width = 0.2, alpha = 0.1) +\n  brandr::scale_fill_brand_d(alpha = 0.7) +\n  labs(x = \"Species\", y = \"Flipper Length (mm)\", fill = \"Species\")"
+    "text": "One-Sample t-Test: Hypothesis\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  filter(species %in% c(\"Adelie\", \"Gentoo\")) |&gt;\n  drop_na(flipper_length_mm, species) |&gt;\n  ggplot(aes(x = species, y = flipper_length_mm, fill = species)) +\n  geom_boxplot(outlier.color = brandr::get_brand_color(\"dark-red\")) +\n  geom_jitter(width = 0.2, alpha = 0.1) +\n  scale_fill_brand_d(alpha = 0.7) +\n  labs(x = \"Species\", y = \"Flipper Length (mm)\", fill = \"Species\")"
   },
   {
-    "objectID": "index.html#one-sample-t-test-tidymodels",
-    "href": "index.html#one-sample-t-test-tidymodels",
+    "objectID": "index.html#one-sample-t-test-p.-analysis",
+    "href": "index.html#one-sample-t-test-p.-analysis",
     "title": "An Introduction to the R Programming Language",
-    "section": "One-Sample t-Test: tidymodels\n",
-    "text": "One-Sample t-Test: tidymodels\n\n\nlibrary(infer)\nlibrary(palmerpenguins)\n\n\nobserved_statistic &lt;-\n  penguins |&gt;\n  dplyr::filter(species %in% c(\"Adelie\", \"Gentoo\")) |&gt;\n  tidyr::drop_na(flipper_length_mm, species) |&gt;\n  specify(flipper_length_mm ~ species) |&gt;\n  hypothesize(null = \"independence\") |&gt;\n  calculate(\"t\", order = c(\"Adelie\", \"Gentoo\"))\n\nobserved_statistic\n#&gt; Response: flipper_length_mm (numeric)\n#&gt; Explanatory: species (factor)\n#&gt; Null Hypothesis: independence\n#&gt; # A tibble: 1 × 1\n#&gt;    stat\n#&gt;   &lt;dbl&gt;\n#&gt; 1 -34.4"
+    "section": "One-Sample t-Test: P. Analysis",
+    "text": "One-Sample t-Test: P. Analysis\n\nlibrary(pwrss)\n\n\nlibrary(pwrss)\n\npwrss.t.2means(\n  mu1 = 0.2, # Cohen's d for small effect size\n  mu2 = 0,\n  power = 0.8,\n  alpha = 0.05,\n  welch.df = TRUE,\n  alternative = \"not equal\"\n)\n#&gt;  Difference between Two means \n#&gt;  (Independent Samples t Test) \n#&gt;  H0: mu1 = mu2 \n#&gt;  HA: mu1 != mu2 \n#&gt;  ------------------------------ \n#&gt;   Statistical power = 0.8 \n#&gt;   n1 = 394 \n#&gt;   n2 = 394 \n#&gt;  ------------------------------ \n#&gt;  Alternative = \"not equal\" \n#&gt;  Degrees of freedom = 786 \n#&gt;  Non-centrality parameter = 2.807 \n#&gt;  Type I error rate = 0.05 \n#&gt;  Type II error rate = 0.2"
   },
   {
-    "objectID": "index.html#one-sample-t-test-tidymodels-1",
-    "href": "index.html#one-sample-t-test-tidymodels-1",
+    "objectID": "index.html#one-sample-t-test-p.-analysis-1",
+    "href": "index.html#one-sample-t-test-p.-analysis-1",
     "title": "An Introduction to the R Programming Language",
-    "section": "One-Sample t-Test: tidymodels\n",
-    "text": "One-Sample t-Test: tidymodels\n\n\nnull_dist &lt;-\n  penguins |&gt;\n  dplyr::filter(species %in% c(\"Adelie\", \"Gentoo\")) |&gt;\n  tidyr::drop_na(flipper_length_mm, species) |&gt;\n  specify(flipper_length_mm ~ species) |&gt;\n  hypothesize(null = \"independence\") |&gt;\n  generate(reps = 1000, type = \"permute\") |&gt;\n  calculate(\"t\", order = c(\"Adelie\", \"Gentoo\"))\n\nnull_dist\n#&gt; Response: flipper_length_mm (numeric)\n#&gt; Explanatory: species (factor)\n#&gt; Null Hypothesis: independence\n#&gt; # A tibble: 1,000 × 2\n#&gt;    replicate    stat\n#&gt;        &lt;int&gt;   &lt;dbl&gt;\n#&gt;  1         1 -0.546 \n#&gt;  2         2  0.209 \n#&gt;  3         3  0.0804\n#&gt;  4         4 -0.533 \n#&gt;  5         5  0.162 \n#&gt;  6         6 -0.651 \n#&gt;  7         7 -0.457 \n#&gt;  8         8 -0.965 \n#&gt;  9         9 -0.376 \n#&gt; 10        10  0.506 \n#&gt; # ℹ 990 more rows"
+    "section": "One-Sample t-Test: P. Analysis",
+    "text": "One-Sample t-Test: P. Analysis\n\nlibrary(pwrss)\n\n\npwrss.t.2means(\n  mu1 = 0.5, # Cohen's d for medium effect size\n  mu2 = 0,\n  power = 0.8,\n  alpha = 0.05,\n  welch.df = TRUE,\n  alternative = \"not equal\"\n)\n#&gt;  Difference between Two means \n#&gt;  (Independent Samples t Test) \n#&gt;  H0: mu1 = mu2 \n#&gt;  HA: mu1 != mu2 \n#&gt;  ------------------------------ \n#&gt;   Statistical power = 0.8 \n#&gt;   n1 = 64 \n#&gt;   n2 = 64 \n#&gt;  ------------------------------ \n#&gt;  Alternative = \"not equal\" \n#&gt;  Degrees of freedom = 126 \n#&gt;  Non-centrality parameter = 2.828 \n#&gt;  Type I error rate = 0.05 \n#&gt;  Type II error rate = 0.2"
   },
   {
-    "objectID": "index.html#one-sample-t-test-tidymodels-2",
-    "href": "index.html#one-sample-t-test-tidymodels-2",
+    "objectID": "index.html#one-sample-t-test-observed-statistic",
+    "href": "index.html#one-sample-t-test-observed-statistic",
     "title": "An Introduction to the R Programming Language",
-    "section": "One-Sample t-Test: tidymodels\n",
-    "text": "One-Sample t-Test: tidymodels\n\n\nnull_dist |&gt;\n  visualize() +\n  shade_p_value(obs_stat = observed_statistic, direction = \"two-sided\")\n\n\n\nnull_dist |&gt;\n  get_p_value(obs_stat = observed_statistic, direction = \"two-sided\")\n#&gt; # A tibble: 1 × 1\n#&gt;   p_value\n#&gt;     &lt;dbl&gt;\n#&gt; 1       0"
+    "section": "One-Sample t-Test: Observed Statistic",
+    "text": "One-Sample t-Test: Observed Statistic\n\nlibrary(dplyr)\nlibrary(infer)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\n\nobserved_statistic &lt;-\n  penguins |&gt;\n  filter(species %in% c(\"Adelie\", \"Gentoo\")) |&gt;\n  drop_na(flipper_length_mm, species) |&gt;\n  specify(flipper_length_mm ~ species) |&gt;\n  hypothesize(null = \"independence\") |&gt;\n  calculate(\"t\", order = c(\"Adelie\", \"Gentoo\"))\n\nobserved_statistic\n#&gt; Response: flipper_length_mm (numeric)\n#&gt; Explanatory: species (factor)\n#&gt; Null Hypothesis: independence\n#&gt; # A tibble: 1 × 1\n#&gt;    stat\n#&gt;   &lt;dbl&gt;\n#&gt; 1 -34.4"
   },
   {
-    "objectID": "index.html#one-sample-t-test-base-r",
-    "href": "index.html#one-sample-t-test-base-r",
+    "objectID": "index.html#one-sample-t-test-n.-dist.",
+    "href": "index.html#one-sample-t-test-n.-dist.",
     "title": "An Introduction to the R Programming Language",
-    "section": "One-Sample t-Test: Base R",
-    "text": "One-Sample t-Test: Base R\n\nadelie &lt;-\n  penguins |&gt;\n  dplyr::filter(species == \"Adelie\") |&gt;\n  dplyr::pull(flipper_length_mm)\n\ngentoo &lt;-\n  penguins |&gt;\n  dplyr::filter(species == \"Gentoo\") |&gt;\n  dplyr::pull(flipper_length_mm)"
+    "section": "One-Sample t-Test: N. Dist.",
+    "text": "One-Sample t-Test: N. Dist.\n\nlibrary(dplyr)\nlibrary(infer)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\n\nnull_dist &lt;-\n  penguins |&gt;\n  filter(species %in% c(\"Adelie\", \"Gentoo\")) |&gt;\n  drop_na(flipper_length_mm, species) |&gt;\n  specify(flipper_length_mm ~ species) |&gt;\n  hypothesize(null = \"independence\") |&gt;\n  generate(reps = 1000, type = \"permute\") |&gt;\n  calculate(\"t\", order = c(\"Adelie\", \"Gentoo\"))\n\nnull_dist\n#&gt; Response: flipper_length_mm (numeric)\n#&gt; Explanatory: species (factor)\n#&gt; Null Hypothesis: independence\n#&gt; # A tibble: 1,000 × 2\n#&gt;    replicate    stat\n#&gt;        &lt;int&gt;   &lt;dbl&gt;\n#&gt;  1         1 -0.546 \n#&gt;  2         2  0.209 \n#&gt;  3         3  0.0804\n#&gt;  4         4 -0.533 \n#&gt;  5         5  0.162 \n#&gt;  6         6 -0.651 \n#&gt;  7         7 -0.457 \n#&gt;  8         8 -0.965 \n#&gt;  9         9 -0.376 \n#&gt; 10        10  0.506 \n#&gt; # ℹ 990 more rows"
   },
   {
-    "objectID": "index.html#one-sample-t-test-base-r-1",
-    "href": "index.html#one-sample-t-test-base-r-1",
+    "objectID": "index.html#one-sample-t-test-visualizing",
+    "href": "index.html#one-sample-t-test-visualizing",
     "title": "An Introduction to the R Programming Language",
-    "section": "One-Sample t-Test: Base R",
-    "text": "One-Sample t-Test: Base R\n\ntest &lt;- stats::t.test(\n  x = adelie,\n  y = gentoo,\n  alternative = \"two.sided\",\n  mu = 0,\n  paired = FALSE,\n  var.equal = FALSE, # Welch's t-test,\n  conf.level = 0.95\n)\n\ntest\n#&gt; \n#&gt;  Welch Two Sample t-test\n#&gt; \n#&gt; data:  adelie and gentoo\n#&gt; t = -34.445, df = 261.75, p-value &lt; 2.2e-16\n#&gt; alternative hypothesis: true difference in means is not equal to 0\n#&gt; 95 percent confidence interval:\n#&gt;  -28.79018 -25.67652\n#&gt; sample estimates:\n#&gt; mean of x mean of y \n#&gt;  189.9536  217.1870"
+    "section": "One-Sample t-Test: Visualizing",
+    "text": "One-Sample t-Test: Visualizing\n\nnull_dist |&gt;\n  visualize() +\n  shade_p_value(obs_stat = observed_statistic, direction = \"two-sided\") +\n  ggplot2::labs(\n    title = NULL,\n    x = \"t-statistic\",\n    y = \"Frequency\"\n  ) +\n  theme(text = element_text(size = 14))"
   },
   {
-    "objectID": "index.html#one-sample-t-test-effect-size",
-    "href": "index.html#one-sample-t-test-effect-size",
+    "objectID": "index.html#one-sample-t-test-p-value",
+    "href": "index.html#one-sample-t-test-p-value",
     "title": "An Introduction to the R Programming Language",
-    "section": "One-Sample t-Test: Effect Size",
-    "text": "One-Sample t-Test: Effect Size\n\n\n\nlibrary(effectsize)\n\neffect_size &lt;-\n  cohens_d(\n    x = adelie,\n    y = gentoo,\n    mu = 0,\n    adjust = TRUE, # Hedge's g\n    ci = 0.95,\n    alternative = \"two.sided\"\n  )\n\neffect_size\n#&gt; Hedges' g |         95% CI\n#&gt; --------------------------\n#&gt; -4.17     | [-4.59, -3.74]\n#&gt; \n#&gt; - Estimated using pooled SD.\n\n\n\n\n\neffect_size |&gt; interpret_hedges_g(rules = \"cohen1988\")\n#&gt; Hedges' g |         95% CI | Interpretation\n#&gt; -------------------------------------------\n#&gt; -4.17     | [-4.59, -3.74] |          large\n#&gt; \n#&gt; - Estimated using pooled SD.\n#&gt; - Interpretation rule: cohen1988"
+    "section": "One-Sample t-Test: p-value",
+    "text": "One-Sample t-Test: p-value\n\nnull_dist |&gt;\n  get_p_value(obs_stat = observed_statistic, direction = \"two-sided\")\n#&gt; # A tibble: 1 × 1\n#&gt;   p_value\n#&gt;     &lt;dbl&gt;\n#&gt; 1       0"
   },
   {
     "objectID": "index.html#one-sample-t-test-power-analysis",
     "href": "index.html#one-sample-t-test-power-analysis",
     "title": "An Introduction to the R Programming Language",
     "section": "One-Sample t-Test: Power Analysis",
-    "text": "One-Sample t-Test: Power Analysis\n\n# A posteriori\n\nlibrary(pwrss)\n\npwrss.t.2means(\n  mu1 = adelie |&gt; mean(na.rm = TRUE),\n  mu2 = gentoo |&gt; mean(na.rm = TRUE),\n  sd1 = adelie |&gt; sd(na.rm = TRUE),\n  sd2 = gentoo |&gt; sd(na.rm = TRUE),\n  paired = FALSE,\n  n2 = gentoo |&gt; length(),\n  kappa = (adelie |&gt; length()) / (gentoo |&gt; length()),\n  power = NULL,\n  alpha = 0.05,\n  welch.df = TRUE,\n  alternative = \"not equal\"\n)\n#&gt;  Difference between Two means \n#&gt;  (Independent Samples t Test) \n#&gt;  H0: mu1 = mu2 \n#&gt;  HA: mu1 != mu2 \n#&gt;  ------------------------------ \n#&gt;   Statistical power = 1 \n#&gt;   n1 = 152 \n#&gt;   n2 = 124 \n#&gt;  ------------------------------ \n#&gt;  Alternative = \"not equal\" \n#&gt;  Degrees of freedom = 263.83 \n#&gt;  Non-centrality parameter = -34.573 \n#&gt;  Type I error rate = 0.05 \n#&gt;  Type II error rate = 0"
+    "text": "One-Sample t-Test: Power Analysis\n\nlibrary(dplyr)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\n\nadelie &lt;-\n  penguins |&gt;\n  dplyr::filter(species == \"Adelie\") |&gt;\n  tidyr::drop_na() |&gt;\n  dplyr::pull(flipper_length_mm)\n\ngentoo &lt;-\n  penguins |&gt;\n  dplyr::filter(species == \"Gentoo\") |&gt;\n  tidyr::drop_na() |&gt;\n  dplyr::pull(flipper_length_mm)"
+  },
+  {
+    "objectID": "index.html#one-sample-t-test-effect-size",
+    "href": "index.html#one-sample-t-test-effect-size",
+    "title": "An Introduction to the R Programming Language",
+    "section": "One-Sample t-Test: Effect Size",
+    "text": "One-Sample t-Test: Effect Size\n\nlibrary(effectsize)\n\n\neffect_size &lt;-\n  cohens_d(\n    x = adelie,\n    y = gentoo,\n    mu = 0,\n    adjust = TRUE, # Hedge's g\n    ci = 0.95,\n    alternative = \"two.sided\"\n  )\n\neffect_size\n#&gt; Hedges' g |         95% CI\n#&gt; --------------------------\n#&gt; -4.13     | [-4.56, -3.70]\n#&gt; \n#&gt; - Estimated using pooled SD.\n\n\neffect_size |&gt; interpret_hedges_g(rules = \"cohen1988\")\n#&gt; Hedges' g |         95% CI | Interpretation\n#&gt; -------------------------------------------\n#&gt; -4.13     | [-4.56, -3.70] |          large\n#&gt; \n#&gt; - Estimated using pooled SD.\n#&gt; - Interpretation rule: cohen1988"
+  },
+  {
+    "objectID": "index.html#one-sample-t-test-p.-analysis-2",
+    "href": "index.html#one-sample-t-test-p.-analysis-2",
+    "title": "An Introduction to the R Programming Language",
+    "section": "One-Sample t-Test: P. Analysis",
+    "text": "One-Sample t-Test: P. Analysis\n\nlibrary(pwrss)\n\n\npwrss.t.2means(\n  mu1 = adelie |&gt; mean(na.rm = TRUE),\n  mu2 = gentoo |&gt; mean(na.rm = TRUE),\n  sd1 = adelie |&gt; sd(na.rm = TRUE),\n  sd2 = gentoo |&gt; sd(na.rm = TRUE),\n  paired = FALSE,\n  n2 = gentoo |&gt; length(),\n  kappa = (adelie |&gt; length()) / (gentoo |&gt; length()),\n  power = NULL,\n  alpha = 0.05,\n  welch.df = TRUE,\n  alternative = \"not equal\"\n)\n#&gt;  Difference between Two means \n#&gt;  (Independent Samples t Test) \n#&gt;  H0: mu1 = mu2 \n#&gt;  HA: mu1 != mu2 \n#&gt;  ------------------------------ \n#&gt;   Statistical power = 1 \n#&gt;   n1 = 146 \n#&gt;   n2 = 119 \n#&gt;  ------------------------------ \n#&gt;  Alternative = \"not equal\" \n#&gt;  Degrees of freedom = 251.35 \n#&gt;  Non-centrality parameter = -33.506 \n#&gt;  Type I error rate = 0.05 \n#&gt;  Type II error rate = 0"
   },
   {
     "objectID": "index.html#one-way-anova-hypothesis",
     "href": "index.html#one-way-anova-hypothesis",
     "title": "An Introduction to the R Programming Language",
     "section": "One-Way ANOVA: Hypothesis",
-    "text": "One-Way ANOVA: Hypothesis\n\\[\n\\begin{cases}\n\\text{H}_{0}: \\mu_{A} = \\mu_{B} = \\mu_{C} \\\\\n\\text{H}_{a}: \\mu_{i} \\neq \\mu_{j}, \\ \\text{for some} \\ i, j\n\\end{cases}\n\\]"
+    "text": "One-Way ANOVA: Hypothesis\nTo ensure practical significance, the difference in means must be analyzed for its effect size considering a 95% confidence interval.\nWe will use Cohen’s benchmark for a small effect size as our Minimum Effect Size (MES) (Cohen (1988)).\n\\[\n\\begin{cases}\n\\text{H}_{0}: \\mu_{A} = \\mu_{B} = \\mu_{C} \\\\\n\\text{H}_{a}: \\mu_{i} \\neq \\mu_{j}, \\ \\text{for some} \\ i, j\n\\end{cases}\n\\]"
   },
   {
     "objectID": "index.html#one-way-anova-boxplots",
     "href": "index.html#one-way-anova-boxplots",
     "title": "An Introduction to the R Programming Language",
     "section": "One-Way ANOVA: Boxplots",
-    "text": "One-Way ANOVA: Boxplots\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(bill_length_mm, species) |&gt;\n  ggplot(aes(x = species, y = flipper_length_mm, fill = species)) +\n  geom_boxplot(outlier.color = brandr::get_brand_color(\"dark-red\")) +\n  geom_jitter(width = 0.2, alpha = 0.1) +\n  brandr::scale_fill_brand_d(alpha = 0.7) +\n  labs(x = \"Species\", y = \"Bill Length (mm)\", fill = \"Species\")"
+    "text": "One-Way ANOVA: Boxplots\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(flipper_length_mm, species) |&gt;\n  ggplot(aes(x = species, y = flipper_length_mm, fill = species)) +\n  geom_boxplot(outlier.color = get_brand_color(\"dark-red\")) +\n  geom_jitter(width = 0.2, alpha = 0.1) +\n  scale_fill_brand_d(alpha = 0.7) +\n  labs(x = \"Species\", y = \"Flipper Length (mm)\", fill = \"Species\")"
   },
   {
-    "objectID": "index.html#one-way-anova-base-r",
-    "href": "index.html#one-way-anova-base-r",
+    "objectID": "index.html#one-way-anova-fit-base-r",
+    "href": "index.html#one-way-anova-fit-base-r",
     "title": "An Introduction to the R Programming Language",
-    "section": "One-Way ANOVA: Base R",
-    "text": "One-Way ANOVA: Base R\n\nlibrary(effectsize)\nlibrary(stats)\n\n\nfit &lt;- aov(flipper_length_mm ~ species, data = penguins)\n\nfit\n#&gt; Call:\n#&gt;    aov(formula = flipper_length_mm ~ species, data = penguins)\n#&gt; \n#&gt; Terms:\n#&gt;                  species Residuals\n#&gt; Sum of Squares  52473.28  14953.26\n#&gt; Deg. of Freedom        2       339\n#&gt; \n#&gt; Residual standard error: 6.641529\n#&gt; Estimated effects may be unbalanced\n#&gt; 2 observations deleted due to missingness"
+    "section": "One-Way ANOVA: Fit (Base R)",
+    "text": "One-Way ANOVA: Fit (Base R)\n\nfit &lt;- aov(flipper_length_mm ~ species, data = penguins)\n\nfit\n#&gt; Call:\n#&gt;    aov(formula = flipper_length_mm ~ species, data = penguins)\n#&gt; \n#&gt; Terms:\n#&gt;                  species Residuals\n#&gt; Sum of Squares  52473.28  14953.26\n#&gt; Deg. of Freedom        2       339\n#&gt; \n#&gt; Residual standard error: 6.641529\n#&gt; Estimated effects may be unbalanced\n#&gt; 2 observations deleted due to missingness"
   },
   {
-    "objectID": "index.html#one-way-anova-base-r-1",
-    "href": "index.html#one-way-anova-base-r-1",
+    "objectID": "index.html#one-way-anova-fit-summary-base-r",
+    "href": "index.html#one-way-anova-fit-summary-base-r",
     "title": "An Introduction to the R Programming Language",
-    "section": "One-Way ANOVA: Base R",
-    "text": "One-Way ANOVA: Base R\n\nfit |&gt; summary()\n#&gt;              Df Sum Sq Mean Sq F value Pr(&gt;F)    \n#&gt; species       2  52473   26237   594.8 &lt;2e-16 ***\n#&gt; Residuals   339  14953      44                   \n#&gt; ---\n#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n#&gt; 2 observations deleted due to missingness"
+    "section": "One-Way ANOVA: Fit Summary (Base R)",
+    "text": "One-Way ANOVA: Fit Summary (Base R)\n\nfit |&gt; summary()\n#&gt;              Df Sum Sq Mean Sq F value Pr(&gt;F)    \n#&gt; species       2  52473   26237   594.8 &lt;2e-16 ***\n#&gt; Residuals   339  14953      44                   \n#&gt; ---\n#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n#&gt; 2 observations deleted due to missingness"
   },
   {
-    "objectID": "index.html#one-way-anova-base-r-2",
-    "href": "index.html#one-way-anova-base-r-2",
+    "objectID": "index.html#one-way-anova-tukey-hsd-base-r",
+    "href": "index.html#one-way-anova-tukey-hsd-base-r",
     "title": "An Introduction to the R Programming Language",
-    "section": "One-Way ANOVA: Base R",
-    "text": "One-Way ANOVA: Base R\n\n fit |&gt; TukeyHSD()\n#&gt;   Tukey multiple comparisons of means\n#&gt;     95% family-wise confidence level\n#&gt; \n#&gt; Fit: aov(formula = flipper_length_mm ~ species, data = penguins)\n#&gt; \n#&gt; $species\n#&gt;                       diff       lwr       upr p adj\n#&gt; Chinstrap-Adelie  5.869887  3.586583  8.153191     0\n#&gt; Gentoo-Adelie    27.233349 25.334376 29.132323     0\n#&gt; Gentoo-Chinstrap 21.363462 19.000841 23.726084     0"
+    "section": "One-Way ANOVA: Tukey HSD (Base R)",
+    "text": "One-Way ANOVA: Tukey HSD (Base R)\n\n fit |&gt; TukeyHSD()\n#&gt;   Tukey multiple comparisons of means\n#&gt;     95% family-wise confidence level\n#&gt; \n#&gt; Fit: aov(formula = flipper_length_mm ~ species, data = penguins)\n#&gt; \n#&gt; $species\n#&gt;                       diff       lwr       upr p adj\n#&gt; Chinstrap-Adelie  5.869887  3.586583  8.153191     0\n#&gt; Gentoo-Adelie    27.233349 25.334376 29.132323     0\n#&gt; Gentoo-Chinstrap 21.363462 19.000841 23.726084     0"
   },
   {
     "objectID": "index.html#one-way-anova-effect-size",
     "href": "index.html#one-way-anova-effect-size",
     "title": "An Introduction to the R Programming Language",
     "section": "One-Way ANOVA: Effect Size",
-    "text": "One-Way ANOVA: Effect Size\n\neffect_size &lt;- fit |&gt; eta_squared()\n\neffect_size\n#&gt; # Effect Size for ANOVA\n#&gt; \n#&gt; Parameter | Eta2 |       95% CI\n#&gt; -------------------------------\n#&gt; species   | 0.78 | [0.75, 1.00]\n#&gt; \n#&gt; - One-sided CIs: upper bound fixed at [1.00].\n\n\neffect_size |&gt; interpret_eta_squared(rules = \"cohen1992\")\n#&gt; # Effect Size for ANOVA\n#&gt; \n#&gt; Parameter | Eta2 |       95% CI | Interpretation\n#&gt; ------------------------------------------------\n#&gt; species   | 0.78 | [0.75, 1.00] |          large\n#&gt; \n#&gt; - One-sided CIs: upper bound fixed at [1.00].\n#&gt; - Interpretation rule: cohen1992"
+    "text": "One-Way ANOVA: Effect Size\n\nlibrary(effectsize)\n\n\neffect_size &lt;- fit |&gt; eta_squared()\n\neffect_size\n#&gt; # Effect Size for ANOVA\n#&gt; \n#&gt; Parameter | Eta2 |       95% CI\n#&gt; -------------------------------\n#&gt; species   | 0.78 | [0.75, 1.00]\n#&gt; \n#&gt; - One-sided CIs: upper bound fixed at [1.00].\n\n\neffect_size |&gt; interpret_eta_squared(rules = \"cohen1992\")\n#&gt; # Effect Size for ANOVA\n#&gt; \n#&gt; Parameter | Eta2 |       95% CI | Interpretation\n#&gt; ------------------------------------------------\n#&gt; species   | 0.78 | [0.75, 1.00] |          large\n#&gt; \n#&gt; - One-sided CIs: upper bound fixed at [1.00].\n#&gt; - Interpretation rule: cohen1992"
   },
   {
     "objectID": "index.html#one-way-anova-power-analysis",
     "href": "index.html#one-way-anova-power-analysis",
     "title": "An Introduction to the R Programming Language",
     "section": "One-Way ANOVA: Power Analysis",
-    "text": "One-Way ANOVA: Power Analysis\n\n# A posteriori\n\nlibrary(pwrss)\n\npwrss.f.ancova(\n  eta2 = effect_size$Eta2,\n  n.way = 1,\n  n.levels = 3,\n  n.covariates = 0,\n  alpha = 0.05,\n  n = penguins |&gt; nrow(),\n  power = NULL\n)\n#&gt;  One-way Analysis of Variance (ANOVA) \n#&gt;   H0: 'eta2' or 'f2' = 0 \n#&gt;   HA: 'eta2' or 'f2' &gt; 0 \n#&gt;  --------------------------------------\n#&gt;  Factor A: 3 levels \n#&gt;  --------------------------------------\n#&gt;  effect power n.total      ncp df1 df2\n#&gt;       A     1     344 1207.149   2 341\n#&gt;  --------------------------------------\n#&gt;  Type I error rate: 0.05"
-  },
-  {
-    "objectID": "index.html#one-way-ancova-hypothesis",
-    "href": "index.html#one-way-ancova-hypothesis",
-    "title": "An Introduction to the R Programming Language",
-    "section": "One-Way ANCOVA: Hypothesis",
-    "text": "One-Way ANCOVA: Hypothesis\nThe ANCOCA hypothesis is similar to the ANOVA hypothesis, but it includes a covariate.\n\\[\n\\begin{cases}\n\\text{H}_{0}: \\mu_{A} = \\mu_{B} = \\mu_{C} \\\\\n\\text{H}_{a}: \\mu_{i} \\neq \\mu_{j}, \\ \\text{for some} \\ i, j\n\\end{cases}\n\\]"
-  },
-  {
-    "objectID": "index.html#one-way-ancova-fit",
-    "href": "index.html#one-way-ancova-fit",
-    "title": "An Introduction to the R Programming Language",
-    "section": "One-Way ANCOVA: Fit",
-    "text": "One-Way ANCOVA: Fit\n\nlibrary(car)\nlibrary(effectsize)\nlibrary(multcomp)\nlibrary(stats)\n\n\nfit &lt;- aov(flipper_length_mm ~ body_mass_g * species, data = penguins)\n\nfit\n#&gt; Call:\n#&gt;    aov(formula = flipper_length_mm ~ body_mass_g * species, data = penguins)\n#&gt; \n#&gt; Terms:\n#&gt;                 body_mass_g  species body_mass_g:species Residuals\n#&gt; Sum of Squares     51176.24  6411.23              227.91   9611.17\n#&gt; Deg. of Freedom           1        2                   2       336\n#&gt; \n#&gt; Residual standard error: 5.348333\n#&gt; Estimated effects may be unbalanced\n#&gt; 2 observations deleted due to missingness"
-  },
-  {
-    "objectID": "index.html#one-way-ancova-fit-summary",
-    "href": "index.html#one-way-ancova-fit-summary",
-    "title": "An Introduction to the R Programming Language",
-    "section": "One-Way ANCOVA: Fit Summary",
-    "text": "One-Way ANCOVA: Fit Summary\n\n fit |&gt; Anova(type = \"III\")\n#&gt; Anova Table (Type III tests)\n#&gt; \n#&gt; Response: flipper_length_mm\n#&gt;                     Sum Sq  Df   F value    Pr(&gt;F)    \n#&gt; (Intercept)          61947   1 2165.6129 &lt; 2.2e-16 ***\n#&gt; body_mass_g           1406   1   49.1591 1.302e-11 ***\n#&gt; species                177   2    3.0994   0.04637 *  \n#&gt; body_mass_g:species    228   2    3.9837   0.01950 *  \n#&gt; Residuals             9611 336                        \n#&gt; ---\n#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1"
-  },
-  {
-    "objectID": "index.html#one-way-ancova-tukey-test",
-    "href": "index.html#one-way-ancova-tukey-test",
-    "title": "An Introduction to the R Programming Language",
-    "section": "One-Way ANCOVA: Tukey Test",
-    "text": "One-Way ANCOVA: Tukey Test\n\npost_hoc &lt;-\n  fit |&gt;\n  glht(linfct = mcp(species = \"Tukey\"))\n\nsummary(post_hoc)\n#&gt; \n#&gt;   Simultaneous Tests for General Linear Hypotheses\n#&gt; \n#&gt; Multiple Comparisons of Means: Tukey Contrasts\n#&gt; \n#&gt; \n#&gt; Fit: aov(formula = flipper_length_mm ~ body_mass_g * species, data = penguins)\n#&gt; \n#&gt; Linear Hypotheses:\n#&gt;                         Estimate Std. Error t value Pr(&gt;|t|)  \n#&gt; Chinstrap - Adelie == 0  -13.864      7.301  -1.899   0.1383  \n#&gt; Gentoo - Adelie == 0       6.059      6.051   1.001   0.5729  \n#&gt; Gentoo - Chinstrap == 0   19.923      8.044   2.477   0.0359 *\n#&gt; ---\n#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n#&gt; (Adjusted p values reported -- single-step method)"
-  },
-  {
-    "objectID": "index.html#one-way-ancova-boxplots",
-    "href": "index.html#one-way-ancova-boxplots",
-    "title": "An Introduction to the R Programming Language",
-    "section": "One-Way ANCOVA: Boxplots",
-    "text": "One-Way ANCOVA: Boxplots\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(bill_length_mm, species) |&gt;\n  ggplot(aes(x = species, y = bill_length_mm, fill = species)) +\n  geom_boxplot(outlier.color = brandr::get_brand_color(\"dark-red\")) +\n  geom_jitter(width = 0.2, alpha = 0.1) +\n  brandr::scale_fill_brand_d(alpha = 0.7) +\n  labs(x = \"Species\", y = \"Bill Length (mm)\", fill = \"Species\")"
-  },
-  {
-    "objectID": "index.html#one-way-ancova-effect-size",
-    "href": "index.html#one-way-ancova-effect-size",
-    "title": "An Introduction to the R Programming Language",
-    "section": "One-Way ANCOVA: Effect Size",
-    "text": "One-Way ANCOVA: Effect Size\n\nlibrary(effectsize)\n\neffect_size &lt;- fit |&gt; eta_squared()\n\neffect_size\n#&gt; # Effect Size for ANOVA (Type I)\n#&gt; \n#&gt; Parameter           | Eta2 (partial) |       95% CI\n#&gt; ---------------------------------------------------\n#&gt; body_mass_g         |           0.84 | [0.82, 1.00]\n#&gt; species             |           0.40 | [0.34, 1.00]\n#&gt; body_mass_g:species |           0.02 | [0.00, 1.00]\n#&gt; \n#&gt; - One-sided CIs: upper bound fixed at [1.00].\n\n\neffect_size |&gt; interpret_eta_squared(rules = \"cohen1992\")\n#&gt; # Effect Size for ANOVA (Type I)\n#&gt; \n#&gt; Parameter           | Eta2 (partial) |       95% CI | Interpretation\n#&gt; --------------------------------------------------------------------\n#&gt; body_mass_g         |           0.84 | [0.82, 1.00] |          large\n#&gt; species             |           0.40 | [0.34, 1.00] |          large\n#&gt; body_mass_g:species |           0.02 | [0.00, 1.00] |          small\n#&gt; \n#&gt; - One-sided CIs: upper bound fixed at [1.00].\n#&gt; - Interpretation rule: cohen1992"
-  },
-  {
-    "objectID": "index.html#one-way-ancova-power-analysis",
-    "href": "index.html#one-way-ancova-power-analysis",
-    "title": "An Introduction to the R Programming Language",
-    "section": "One-Way ANCOVA: Power Analysis",
-    "text": "One-Way ANCOVA: Power Analysis\n\n# A posteriori\n\nlibrary(pwrss)\n\npwrss.f.ancova(\n  eta2 = effect_size$Eta2_partial[3],\n  n.way = 1,\n  n.levels = 3,\n  n.covariates = 1,\n  alpha = 0.05,\n  n = penguins |&gt; nrow(),\n  power = NULL\n)\n#&gt;  One-way Analysis of Covariance (ANCOVA) \n#&gt;   H0: 'eta2' or 'f2' = 0 \n#&gt;   HA: 'eta2' or 'f2' &gt; 0 \n#&gt;  --------------------------------------\n#&gt;  Factor A: 3 levels \n#&gt;  --------------------------------------\n#&gt;  effect power n.total   ncp df1 df2\n#&gt;       A 0.722     344 8.157   2 340\n#&gt;  --------------------------------------\n#&gt;  Type I error rate: 0.05"
+    "text": "One-Way ANOVA: Power Analysis\n\nlibrary(pwrss)\n\npwrss.f.ancova(\n  eta2 = effect_size$Eta2,\n  n.way = 1,\n  n.levels = 3,\n  n.covariates = 0,\n  alpha = 0.05,\n  n = penguins |&gt; nrow(),\n  power = NULL\n)\n#&gt;  One-way Analysis of Variance (ANOVA) \n#&gt;   H0: 'eta2' or 'f2' = 0 \n#&gt;   HA: 'eta2' or 'f2' &gt; 0 \n#&gt;  --------------------------------------\n#&gt;  Factor A: 3 levels \n#&gt;  --------------------------------------\n#&gt;  effect power n.total      ncp df1 df2\n#&gt;       A     1     344 1207.149   2 341\n#&gt;  --------------------------------------\n#&gt;  Type I error rate: 0.05"
   },
   {
     "objectID": "index.html#linear-regression-hypothesis",
     "href": "index.html#linear-regression-hypothesis",
     "title": "An Introduction to the R Programming Language",
     "section": "Linear Regression: Hypothesis",
-    "text": "Linear Regression: Hypothesis\nTo ensure practical significance, the adjusted \\(\\text{R}^2\\) of the model is analysed for its effect sizes considering a confidence interval of \\(95\\%\\). We are going to use Cohen (1988) benchmark for interpretation.\nA \\(\\text{R}^2\\) less than \\(\\approx 0.0196\\) is considered negligeble.\n\\[\n\\begin{cases}\n\\text{H}_{0}: \\text{Adjusted} \\ \\text{R}^{2} \\leq \\text{MES} \\quad \\text{or} \\quad \\text{F-test is not significant} \\ (\\alpha \\geq 0.05) \\\\\n\\text{H}_{a}: \\text{Adjusted} \\ \\text{R}^{2} &gt; \\text{MES} \\quad \\text{and} \\quad \\text{F-test is significant} \\ (\\alpha &lt; 0.05)\n\\end{cases}\n\\]"
+    "text": "Linear Regression: Hypothesis\nTo ensure practical significance, the adjusted \\(\\text{R}^2\\) of the model must be analyzed for its effect size considering a 95% confidence interval.\nWe will use Cohen’s benchmark for a small effect size as our Minimum Effect Size (MES) (Cohen (1988)).\n\\[\n\\begin{cases}\n\\text{H}_{0}: \\text{Adjusted} \\ \\text{R}^{2} \\leq \\text{MES} \\quad \\text{or} \\quad \\text{F-test is not significant} \\ (\\alpha \\geq 0.05) \\\\\n\\text{H}_{a}: \\text{Adjusted} \\ \\text{R}^{2} &gt; \\text{MES} \\quad \\text{and} \\quad \\text{F-test is significant} \\ (\\alpha &lt; 0.05)\n\\end{cases}\n\\]"
   },
   {
     "objectID": "index.html#linear-regression-scatterplot-1",
     "href": "index.html#linear-regression-scatterplot-1",
     "title": "An Introduction to the R Programming Language",
     "section": "Linear Regression: Scatterplot 1",
-    "text": "Linear Regression: Scatterplot 1\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(flipper_length_mm, body_mass_g, species) |&gt;\n  ggplot(\n    aes(\n      x = flipper_length_mm,\n      y = bill_length_mm,\n      color = species,\n      shape = species\n    )\n  ) +\n  geom_point(size = 2) +\n  geom_smooth(method = \"lm\", formula = y ~ x, se = FALSE) +\n  labs(\n    x = \"Flipper Length (mm)\",\n    y = \"Bill Length (mm)\",\n    color = \"Species\",\n    shape = \"Species\"\n  ) +\n  brandr::scale_color_brand_d(alpha = 0.7)"
+    "text": "Linear Regression: Scatterplot 1\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\n\npenguins |&gt;\n  drop_na(flipper_length_mm, body_mass_g, species) |&gt;\n  ggplot(\n    aes(\n      x = flipper_length_mm,\n      y = bill_length_mm,\n      color = species,\n      shape = species\n    )\n  ) +\n  geom_point(size = 2) +\n  geom_smooth(method = \"lm\", formula = y ~ x, se = FALSE) +\n  labs(\n    x = \"Flipper Length (mm)\",\n    y = \"Bill Length (mm)\",\n    color = \"Species\",\n    shape = \"Species\"\n  ) +\n  brandr::scale_color_brand_d(alpha = 0.7)"
   },
   {
     "objectID": "index.html#linear-regression-scatterplot-2",
@@ -1225,53 +1225,53 @@
     "text": "Linear Regression: Scatterplot 2\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(flipper_length_mm, body_mass_g, species) |&gt;\n  ggplot(\n    aes(\n      x = flipper_length_mm,\n      y = bill_depth_mm,\n      color = species,\n      shape = species\n    )\n  ) +\n  geom_point(size = 2) +\n  geom_smooth(method = \"lm\", formula = y ~ x, se = FALSE) +\n  labs(\n    x = \"Flipper Length (mm)\",\n    y = \"Bill Depth (mm)\",\n    color = \"Species\",\n    shape = \"Species\"\n  ) +\n  brandr::scale_color_brand_d(alpha = 0.7)"
   },
   {
-    "objectID": "index.html#linear-regression-fit",
-    "href": "index.html#linear-regression-fit",
+    "objectID": "index.html#linear-regression-fit-base-r",
+    "href": "index.html#linear-regression-fit-base-r",
     "title": "An Introduction to the R Programming Language",
-    "section": "Linear Regression: Fit",
-    "text": "Linear Regression: Fit\n\nfit &lt;- lm(\n  formula = flipper_length_mm ~ bill_length_mm + bill_depth_mm,\n  data = penguins\n)\n\nfit\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = flipper_length_mm ~ bill_length_mm + bill_depth_mm, \n#&gt;     data = penguins)\n#&gt; \n#&gt; Coefficients:\n#&gt;    (Intercept)  bill_length_mm   bill_depth_mm  \n#&gt;        194.312           1.415          -3.238"
+    "section": "Linear Regression: Fit (Base R)",
+    "text": "Linear Regression: Fit (Base R)\n\nfit &lt;- lm(\n  formula = flipper_length_mm ~ bill_length_mm + bill_depth_mm,\n  data = penguins\n)\n\nfit\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = flipper_length_mm ~ bill_length_mm + bill_depth_mm, \n#&gt;     data = penguins)\n#&gt; \n#&gt; Coefficients:\n#&gt;    (Intercept)  bill_length_mm   bill_depth_mm  \n#&gt;        194.312           1.415          -3.238"
   },
   {
-    "objectID": "index.html#linear-regression-fit-summary",
-    "href": "index.html#linear-regression-fit-summary",
+    "objectID": "index.html#linear-regression-fit-summary-base-r",
+    "href": "index.html#linear-regression-fit-summary-base-r",
     "title": "An Introduction to the R Programming Language",
-    "section": "Linear Regression: Fit Summary",
-    "text": "Linear Regression: Fit Summary\n\nfit_sum &lt;- fit |&gt; summary()\n\nfit_sum\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = flipper_length_mm ~ bill_length_mm + bill_depth_mm, \n#&gt;     data = penguins)\n#&gt; \n#&gt; Residuals:\n#&gt;     Min      1Q  Median      3Q     Max \n#&gt; -37.731  -5.855   0.041   6.112  23.059 \n#&gt; \n#&gt; Coefficients:\n#&gt;                 Estimate Std. Error t value Pr(&gt;|t|)    \n#&gt; (Intercept)    194.31175    6.33800   30.66   &lt;2e-16 ***\n#&gt; bill_length_mm   1.41476    0.08802   16.07   &lt;2e-16 ***\n#&gt; bill_depth_mm   -3.23801    0.24335  -13.31   &lt;2e-16 ***\n#&gt; ---\n#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n#&gt; \n#&gt; Residual standard error: 8.626 on 339 degrees of freedom\n#&gt;   (2 observations deleted due to missingness)\n#&gt; Multiple R-squared:  0.6259, Adjusted R-squared:  0.6237 \n#&gt; F-statistic: 283.6 on 2 and 339 DF,  p-value: &lt; 2.2e-16"
+    "section": "Linear Regression: Fit Summary (Base R)",
+    "text": "Linear Regression: Fit Summary (Base R)\n\nfit_sum &lt;- fit |&gt; summary()\n\nfit_sum\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = flipper_length_mm ~ bill_length_mm + bill_depth_mm, \n#&gt;     data = penguins)\n#&gt; \n#&gt; Residuals:\n#&gt;     Min      1Q  Median      3Q     Max \n#&gt; -37.731  -5.855   0.041   6.112  23.059 \n#&gt; \n#&gt; Coefficients:\n#&gt;                 Estimate Std. Error t value Pr(&gt;|t|)    \n#&gt; (Intercept)    194.31175    6.33800   30.66   &lt;2e-16 ***\n#&gt; bill_length_mm   1.41476    0.08802   16.07   &lt;2e-16 ***\n#&gt; bill_depth_mm   -3.23801    0.24335  -13.31   &lt;2e-16 ***\n#&gt; ---\n#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n#&gt; \n#&gt; Residual standard error: 8.626 on 339 degrees of freedom\n#&gt;   (2 observations deleted due to missingness)\n#&gt; Multiple R-squared:  0.6259, Adjusted R-squared:  0.6237 \n#&gt; F-statistic: 283.6 on 2 and 339 DF,  p-value: &lt; 2.2e-16"
   },
   {
     "objectID": "index.html#linear-regression-effect-size",
     "href": "index.html#linear-regression-effect-size",
     "title": "An Introduction to the R Programming Language",
     "section": "Linear Regression: Effect Size",
-    "text": "Linear Regression: Effect Size\n\nlibrary(effectsize)\n\nfit_sum$r.squared |&gt; interpret_r2(rules = \"cohen1988\")\n#&gt; [1] \"substantial\"\n#&gt; (Rules: cohen1988)"
+    "text": "Linear Regression: Effect Size\n\\[\n\\text{Cohen's } f^2 = \\cfrac{\\text{R}^{2}}{1 - \\text{R}^{2}}\n\\]\n\\[\n\\text{Cohen's } f^2 \\text{small threshold} = 0.02\n\\]\n\\[\n0.02 = \\cfrac{\\text{R}^{2}}{1 - \\text{R}^{2}} \\quad \\text{or} \\quad \\text{R}^{2} = \\cfrac{0.02}{1.02} \\eqsim 0.01960784\n\\]"
+  },
+  {
+    "objectID": "index.html#linear-regression-effect-size-1",
+    "href": "index.html#linear-regression-effect-size-1",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Linear Regression: Effect Size",
+    "text": "Linear Regression: Effect Size\n\nlibrary(effectsize)\n\n\nfit_sum$r.squared |&gt; interpret_r2(rules = \"cohen1988\")\n#&gt; [1] \"substantial\"\n#&gt; (Rules: cohen1988)"
   },
   {
     "objectID": "index.html#linear-regression-power-analysis",
     "href": "index.html#linear-regression-power-analysis",
     "title": "An Introduction to the R Programming Language",
     "section": "Linear Regression: Power Analysis",
-    "text": "Linear Regression: Power Analysis\n\n# A posteriori\n\nlibrary(pwrss)\n\npwrss.f.reg(\n  r2 = fit_sum$r.squared,\n  k = 2,\n  n = penguins |&gt; nrow(),\n  power = NULL,\n  alpha = 0.05\n)\n#&gt;  Linear Regression (F test) \n#&gt;  R-squared Deviation from 0 (zero) \n#&gt;  H0: r2 = 0 \n#&gt;  HA: r2 &gt; 0 \n#&gt;  ------------------------------ \n#&gt;   Statistical power = 1 \n#&gt;   n = 344 \n#&gt;  ------------------------------ \n#&gt;  Numerator degrees of freedom = 2 \n#&gt;  Denominator degrees of freedom = 341 \n#&gt;  Non-centrality parameter = 575.628 \n#&gt;  Type I error rate = 0.05 \n#&gt;  Type II error rate = 0"
+    "text": "Linear Regression: Power Analysis\n\nlibrary(pwrss)\n\n\npwrss.f.reg(\n  r2 = fit_sum$r.squared,\n  k = 2,\n  n = penguins |&gt; nrow(),\n  power = NULL,\n  alpha = 0.05\n)\n#&gt;  Linear Regression (F test) \n#&gt;  R-squared Deviation from 0 (zero) \n#&gt;  H0: r2 = 0 \n#&gt;  HA: r2 &gt; 0 \n#&gt;  ------------------------------ \n#&gt;   Statistical power = 1 \n#&gt;   n = 344 \n#&gt;  ------------------------------ \n#&gt;  Numerator degrees of freedom = 2 \n#&gt;  Denominator degrees of freedom = 341 \n#&gt;  Non-centrality parameter = 575.628 \n#&gt;  Type I error rate = 0.05 \n#&gt;  Type II error rate = 0"
   },
   {
-    "objectID": "index.html#diagnostics",
-    "href": "index.html#diagnostics",
+    "objectID": "index.html#model-diagnostics",
+    "href": "index.html#model-diagnostics",
     "title": "An Introduction to the R Programming Language",
-    "section": "Diagnostics",
-    "text": "Diagnostics"
+    "section": "Model Diagnostics",
+    "text": "Model Diagnostics\n\n\nModel diagnostics are crucial!\nIt’s essential to verify that all model assumptions hold. However, a detailed discussion on this topic is beyond the scope of this course.\nYou can find these assumptions in most statistical textbooks, or you can look at the original papers that introduced the models (e.g., fot t-Tests, see Student (1908)).\n\n\n\n\n\n\n\n\n\n(Artwork by Allison Horst)"
   },
   {
     "objectID": "index.html#objective-assumption-tests",
     "href": "index.html#objective-assumption-tests",
     "title": "An Introduction to the R Programming Language",
     "section": "Objective Assumption Tests",
-    "text": "Objective Assumption Tests\n🚨 Avoid Using!"
-  },
-  {
-    "objectID": "index.html#normality-assumption-tests",
-    "href": "index.html#normality-assumption-tests",
-    "title": "An Introduction to the R Programming Language",
-    "section": "Normality Assumption Tests",
-    "text": "Normality Assumption Tests\n\n\n(Artwork by Allison Horst)"
+    "text": "Objective Assumption Tests\n🚨 Avoid Using!\nObjective assumption tests (e.g., Anderson–Darling test) are not advisable for large samples, as they can be overly sensitive to minor deviations. Additionally, they might overlook visual patterns that are not captured by a single metric.\nUsually, a visual inspection of the data is the preferred approach in most cases.\nFor a straightforward critique of normality tests specifically, refer to this article by Greener (2020).\nSee also: Kozak & Piepho (2018), Schucany & Ng (2006), and Shatz (2024)."
   },
   {
     "objectID": "index.html#how-to-learn-more-4",
@@ -1292,7 +1292,21 @@
     "href": "index.html#the-data",
     "title": "An Introduction to the R Programming Language",
     "section": "The Data",
-    "text": "The Data\n\n\n\n2023\n\n34 cols \\(\\times\\) 50,544,073 rows1,718,498,482 data points.\n\n2022\n\n34 cols \\(\\times\\) 45,862,105 rows1,559,311,570 data points.\n\n2021\n\n34 cols \\(\\times\\) 29,853,217 rows1,015,009,378 data points.\n\n2020\n\n34 cols \\(\\times\\) 22,720,515 rows772,497,510 data points."
+    "text": "The Data\n\n(If you could not download the data, click here)"
+  },
+  {
+    "objectID": "index.html#misfs-r-clusters",
+    "href": "index.html#misfs-r-clusters",
+    "title": "An Introduction to the R Programming Language",
+    "section": "MISFS-R Clusters",
+    "text": "MISFS-R Clusters\n\n\nThe Multidimensional Index for Sustainable Food Systems (MISFS) is a tool designed to assess the sustainability of food systems at a subnational level in Brazil, incorporating local behaviors and practices.\nThe MISFS-R is a revised version that introduces new indicators and a refined methodology for calculating the index.\nFor more details, see Carvalho et al. (2021) and Norde et al. (2023).\n\n\n\n\n\n\n\n(Adapted from Norde et al. (2023, Figure 6))"
+  },
+  {
+    "objectID": "index.html#misfs-r-clusters-1",
+    "href": "index.html#misfs-r-clusters-1",
+    "title": "An Introduction to the R Programming Language",
+    "section": "MISFS-R Clusters",
+    "text": "MISFS-R Clusters\n\n\n(Reproduced from Norde et al. (2023, Figure 6))"
   },
   {
     "objectID": "index.html#the-report",
@@ -1313,7 +1327,7 @@
     "href": "index.html#notes-1",
     "title": "An Introduction to the R Programming Language",
     "section": "Notes",
-    "text": "Notes\n\nYou have 45 minutes.\nIf you’re stuck, ask for help.\nHave fun!"
+    "text": "Notes\n⌛ You have 45 minutes.\n🙋‍♂️ If you’re stuck, ask for help.\n🎉 Have fun!"
   },
   {
     "objectID": "index.html#we-hope-you-enjoyed-the-course",
@@ -1327,7 +1341,7 @@
     "href": "index.html#how-to-learn-more-5",
     "title": "An Introduction to the R Programming Language",
     "section": "How to Learn More?",
-    "text": "How to Learn More?\nHere are other great and free resources to learn more about R.\n🎓 Online Courses\nIntrodução à ciência da computação com python - Parte 1 (USP-IME)\nIntrodução à ciência da computação com python - Parte 2 (USP-IME)\nData science specialization (Johns Hopkins)"
+    "text": "How to Learn More?\nHere are other great and free resources to learn more about R.\n\n🎓 Online Courses\nIntrodução à ciência da computação com python - Parte 1 (USP-IME)\nIntrodução à ciência da computação com python - Parte 2 (USP-IME)\nData science specialization (Johns Hopkins)"
   },
   {
     "objectID": "index.html#how-to-learn-more-6",
@@ -1362,7 +1376,7 @@
     "href": "index.html#references",
     "title": "An Introduction to the R Programming Language",
     "section": "References",
-    "text": "References\n\nIn accordance with the American Psychological Association (APA) Style, 7th edition.\n\n\n\nAckoff, R. (1989). From data to wisdom. Journal of Applied Systems Analysis, 16, 3–9.\n\n\nBernardes, M. E. M. (2009). Ensino e aprendizagem como unidade dialética na atividade pedagógica. Psicologia Escolar e Educacional, 13(2), 235–242. https://doi.org/10.1590/S1413-85572009000200005\n\n\nBroman, K. (2013, April 5). Data science is statistics. The stupidest thing... https://kbroman.wordpress.com/2013/04/05/data-science-is-statistics/\n\n\nBrookshear, J. G., & Brylow, D. (2020). Computer science: An overview (13 ed., Global edition). Pearson.\n\n\nCao, L. (2017). Data science: A comprehensive overview. ACM Computing Surveys, 50(3), 43. https://doi.org/10.1145/3076253\n\n\nChang, W. (2018). R graphics cookbook: Practical recipes for visualizing data (2nd ed.). O’Reilly Media. https://r-graphics.org\n\n\nCohen, J. (1988). Statistical power analysis for the behavioral sciences (2nd ed.). Lawrence Erlbaum Associates.\n\n\nCohen, J. (1992). A power primer. Psychological Bulletin, 112(1), 155–159. https://doi.org/10.1037/0033-2909.112.1.155\n\n\nCoronel, C., & Morris, S. A. (2019). Database systems: Design, implementation, and management (13th ed.). Cengage.\n\n\nDeGroot, M. H., & Schervish, M. J. (2012). Probability and statistics (OCLC: ocn502674206) (4th ed.). Addison-Wesley.\n\n\nDenning, P. J. (2005). Is computer science science? Communications of the ACM, 48(4), 27–31. https://doi.org/10.1145/1053291.1053309\n\n\nDhar, V. (2023). Data science and prediction. Communications of the ACM, 56(12), 64–73. https://doi.org/10.1145/2500499\n\n\nEllis, S. E., & Leek, J. T. (2018). How to share data for collaboration. The American Statistician, 72(1), 53–57. https://doi.org/10.1080/00031305.2017.1375987\n\n\nEngels, F. (2020). Dialética da natureza (Traduzido do original em alemão Dialektik der natur (1873-1882).) (N. Schneider, Trans.). Boitempo.\n\n\nFreire, P. (2011). Pedagogia da autonomia: saberes necessários à prática educativa (OCLC: 1229931361). Paz e Terra.\n\n\nGavin, L. (2020, October 20). Big data will be dead in 5 years. Towards Data Science. https://towardsdatascience.com/big-data-will-be-dead-in-5-years-ef4344269aef\n\n\nGO FAIR initiative. (n.d.). GO FAIR initiative: Make your data & services FAIR. GO FAIR. Retrieved June 10, 2024, from https://www.go-fair.org/\n\n\nGómez-de-Mariscal, E., Guerrero, V., Sneider, A., Jayatilaka, H., Phillip, J. M., Wirtz, D., & Muñoz-Barrutia, A. (2021). Use of the p-values as a size-dependent function to address practical differences when analyzing large datasets. Scientific Reports, 11(1, 1), 20942. https://doi.org/10.1038/s41598-021-00199-5\n\n\nGrosser, M., Bumann, H., & Wickham, H. (2021). Advanced R solutions. CRC Press.\n\n\nIfrah, G. (2001). The universal history of computing: From the abacus to the quantum computer (E. F. Harding, Trans.). John Wiley & Sons. (Original work published 1994)\n\n\nIhaka, R., & Gentleman, R. (1996). R: A language for data analysis and graphics. Journal of Computational and Graphical Statistics, 5(3), 299–314. https://doi.org/10.1080/10618600.1996.10474713\n\n\nKuhn, M., & Silge, J. (2022). Tidy modeling with R: A framework for modeling in the tidyverse (OCLC: on1338675673). O’Reilly Media. https://www.tmwr.org/\n\n\nLandau, W. (n.d.). The {targets} R package user manual.\n\n\nLohr, S. (2014, August 18). For big-data scientists, “Janitor work” is key hurdle to insights. The New York Times: Technology. https://www.nytimes.com/2014/08/18/technology/for-big-data-scientists-hurdle-to-insights-is-janitor-work.html\n\n\nMarwick, B., Boettiger, C., & Mullen, L. (2018). Packaging data analytical work reproducibly using R (and friends). The American Statistician, 72(1), 80–88. https://doi.org/10.1080/00031305.2017.1375986\n\n\nMeyer, M. N. (2018). Practical tips for ethical data sharing. Advances in Methods and Practices in Psychological Science, 1(1), 131–144. https://doi.org/10.1177/2515245917747656\n\n\nPeng, R. D. (2022). R programming for data science. https://bookdown.org/rdpeng/rprogdatascience/\n\n\nReis, J., & Housley, M. (2022). Fundamentals of data engineering: Plan and build robust data systems. O’Reilly.\n\n\nRowley, J. (2007). The wisdom hierarchy: Representations of the DIKW hierarchy. Journal of Information Science, 33(2), 163–180. https://doi.org/10.1177/0165551506070706\n\n\nTuring, A. M. (1937). On computable numbers, with an application to the entscheidungsproblem. Proceedings of the London Mathematical Society, s2-42(1), 230–265. https://doi.org/10.1112/plms/s2-42.1.230\n\n\nvan der Loo, M., & Jonge, E. de. (2018). Statistical data cleaning with applications in R. John Wiley & Sons.\n\n\nvon Neumann, J. (1993). First draft of a report on the EDVAC. IEEE Annals of the History of Computing, 15(4), 27–75. IEEE Annals of the History of Computing. https://doi.org/10.1109/85.238389\n\n\nVygotsky, L. S. (2012). Thought and language (Publicado originalmente em 1934.) (E. Hanfmann, G. Vakar, & A. Kozulin, Trans.; Rev. exp. ed.). The MIT Press.\n\n\nWickham, H. (n.d.). The tidyverse style guide. Retrieved July 17, 2023, from https://style.tidyverse.org\n\n\nWickham, H. (2014). Tidy data. Journal of Statistical Software, 59(10). https://doi.org/10.18637/jss.v059.i10\n\n\nWickham, H. (2016). ggplot2: Elegant graphics for data analysis (2nd ed.). Springer. https://doi.org/10.1007/978-3-319-24277-4\n\n\nWickham, H. (2019). Advanced R (2nd ed.). CRC Press. https://adv-r.hadley.nz\n\n\nWickham, H., & Bryan, J. (2023). R packages (2nd ed.). O’Reilly Media. https://r-pkgs.org\n\n\nWickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2023). R for data science: Import, tidy, transform, visualize, and model data (2nd ed.). O’Reilly Media. https://r4ds.hadley.nz\n\n\nWilkinson, L. (2005). The grammar of graphics (J. Chambers, D. Hand, & W. Härdle, Eds.; 2nd ed.). Springer.\n\n\nWilkinson, M. D., Dumontier, M., Aalbersberg, Ij. J., Appleton, G., Axton, M., Baak, A., Blomberg, N., Boiten, J.-W., Da Silva Santos, L. B., Bourne, P. E., Bouwman, J., Brookes, A. J., Clark, T., Crosas, M., Dillo, I., Dumon, O., Edmunds, S., Evelo, C. T., Finkers, R., … Mons, B. (2016). The FAIR guiding principles for scientific data management and stewardship. Scientific Data, 3(1), 160018. https://doi.org/10.1038/sdata.2016.18"
+    "text": "References\n\nIn accordance with the American Psychological Association (APA) Style, 7th edition.\n\n\n\nAckoff, R. (1989). From data to wisdom. Journal of Applied Systems Analysis, 16, 3–9.\n\n\nBernardes, M. E. M. (2009). Ensino e aprendizagem como unidade dialética na atividade pedagógica. Psicologia Escolar e Educacional, 13(2), 235–242. https://doi.org/10.1590/S1413-85572009000200005\n\n\nBroman, K. (2013, April 5). Data science is statistics. The stupidest thing... https://kbroman.wordpress.com/2013/04/05/data-science-is-statistics/\n\n\nBrookshear, J. G., & Brylow, D. (2020). Computer science: An overview (13 ed., Global edition). Pearson.\n\n\nCao, L. (2017). Data science: A comprehensive overview. ACM Computing Surveys, 50(3), 43. https://doi.org/10.1145/3076253\n\n\nCarvalho, A. M. de, Verly Jr, E., Marchioni, D. M., & Jones, A. D. (2021). Measuring sustainable food systems in Brazil: A framework and multidimensional index to evaluate socioeconomic, nutritional, and environmental aspects. World Development, 143, 105470. https://doi.org/10.1016/j.worlddev.2021.105470\n\n\nCasella, G., & Berger, R. L. (2002). Statistical inference (2nd ed.). Duxbury.\n\n\nChang, W. (2018). R graphics cookbook: Practical recipes for visualizing data (2nd ed.). O’Reilly Media. https://r-graphics.org\n\n\nCohen, J. (1988). Statistical power analysis for the behavioral sciences (2nd ed.). Lawrence Erlbaum Associates.\n\n\nCohen, J. (1992). A power primer. Psychological Bulletin, 112(1), 155–159. https://doi.org/10.1037/0033-2909.112.1.155\n\n\nCoronel, C., & Morris, S. A. (2019). Database systems: Design, implementation, and management (13th ed.). Cengage.\n\n\nDeGroot, M. H., & Schervish, M. J. (2012). Probability and statistics (OCLC: ocn502674206) (4th ed.). Addison-Wesley.\n\n\nDenning, P. J. (2005). Is computer science science? Communications of the ACM, 48(4), 27–31. https://doi.org/10.1145/1053291.1053309\n\n\nDhar, V. (2023). Data science and prediction. Communications of the ACM, 56(12), 64–73. https://doi.org/10.1145/2500499\n\n\nEllis, S. E., & Leek, J. T. (2018). How to share data for collaboration. The American Statistician, 72(1), 53–57. https://doi.org/10.1080/00031305.2017.1375987\n\n\nEngels, F. (2020). Dialética da natureza (Traduzido do original em alemão Dialektik der natur (1873-1882).) (N. Schneider, Trans.). Boitempo.\n\n\nFreire, P. (2011). Pedagogia da autonomia: saberes necessários à prática educativa (OCLC: 1229931361). Paz e Terra.\n\n\nGavin, L. (2020, October 20). Big data will be dead in 5 years. Towards Data Science. https://towardsdatascience.com/big-data-will-be-dead-in-5-years-ef4344269aef\n\n\nGO FAIR initiative. (n.d.). GO FAIR initiative: Make your data & services FAIR. GO FAIR. Retrieved June 10, 2024, from https://www.go-fair.org/\n\n\nGómez-de-Mariscal, E., Guerrero, V., Sneider, A., Jayatilaka, H., Phillip, J. M., Wirtz, D., & Muñoz-Barrutia, A. (2021). Use of the p-values as a size-dependent function to address practical differences when analyzing large datasets. Scientific Reports, 11(1, 1), 20942. https://doi.org/10.1038/s41598-021-00199-5\n\n\nGreener, R. (2020, August 4). Stop testing for normality. Medium. https://towardsdatascience.com/stop-testing-for-normality-dba96bb73f90\n\n\nGrosser, M., Bumann, H., & Wickham, H. (2021). Advanced R solutions. CRC Press.\n\n\nIfrah, G. (2001). The universal history of computing: From the abacus to the quantum computer (E. F. Harding, Trans.). John Wiley & Sons. (Original work published 1994)\n\n\nIhaka, R., & Gentleman, R. (1996). R: A language for data analysis and graphics. Journal of Computational and Graphical Statistics, 5(3), 299–314. https://doi.org/10.1080/10618600.1996.10474713\n\n\nKozak, M., & Piepho, H.-P. (2018). What’s normal anyway? Residual plots are more telling than significance tests when checking ANOVA assumptions. Journal of Agronomy and Crop Science, 204(1), 86–98. https://doi.org/10.1111/jac.12220\n\n\nKuhn, M., & Silge, J. (2022). Tidy modeling with R: A framework for modeling in the tidyverse (OCLC: on1338675673). O’Reilly Media. https://www.tmwr.org/\n\n\nLandau, W. (n.d.). The {targets} R package user manual.\n\n\nLohr, S. (2014, August 18). For big-data scientists, “Janitor work” is key hurdle to insights. The New York Times: Technology. https://www.nytimes.com/2014/08/18/technology/for-big-data-scientists-hurdle-to-insights-is-janitor-work.html\n\n\nMarwick, B., Boettiger, C., & Mullen, L. (2018). Packaging data analytical work reproducibly using R (and friends). The American Statistician, 72(1), 80–88. https://doi.org/10.1080/00031305.2017.1375986\n\n\nMeyer, M. N. (2018). Practical tips for ethical data sharing. Advances in Methods and Practices in Psychological Science, 1(1), 131–144. https://doi.org/10.1177/2515245917747656\n\n\nNorde, M. M., Porciuncula, L., Garrido, G., Nunes-Galbes, N. M., Sarti, F. M., Marchioni, D. M. L., & de Carvalho, A. M. (2023). Measuring food systems sustainability in heterogenous countries: The Brazilian multidimensional index updated version applicability. Sustainable Development, 31(1), 91–107. https://doi.org/10.1002/sd.2376\n\n\nPeng, R. D. (2022). R programming for data science. https://bookdown.org/rdpeng/rprogdatascience/\n\n\nReis, J., & Housley, M. (2022). Fundamentals of data engineering: Plan and build robust data systems. O’Reilly.\n\n\nRowley, J. (2007). The wisdom hierarchy: Representations of the DIKW hierarchy. Journal of Information Science, 33(2), 163–180. https://doi.org/10.1177/0165551506070706\n\n\nSchucany, W. R., & Ng, H. K. T. (2006). Preliminary goodness-of-fit tests for normality do not validate the one-sample Student t. Communications in Statistics - Theory and Methods, 35(12), 2275–2286. https://doi.org/10.1080/03610920600853308\n\n\nShatz, I. (2024). Assumption-checking rather than (just) testing: The importance of visualization and effect size in statistical diagnostics. Behavior Research Methods, 56(2), 826–845. https://doi.org/10.3758/s13428-023-02072-x\n\n\nStudent. (1908). The probable error of a mean. Biometrika, 6(1), 1–25. https://doi.org/10.2307/2331554\n\n\nTuring, A. M. (1937). On computable numbers, with an application to the entscheidungsproblem. Proceedings of the London Mathematical Society, s2-42(1), 230–265. https://doi.org/10.1112/plms/s2-42.1.230\n\n\nvan der Loo, M., & Jonge, E. de. (2018). Statistical data cleaning with applications in R. John Wiley & Sons.\n\n\nvon Neumann, J. (1993). First draft of a report on the EDVAC. IEEE Annals of the History of Computing, 15(4), 27–75. IEEE Annals of the History of Computing. https://doi.org/10.1109/85.238389\n\n\nVygotsky, L. S. (2012). Thought and language (Publicado originalmente em 1934.) (E. Hanfmann, G. Vakar, & A. Kozulin, Trans.; Rev. exp. ed.). The MIT Press.\n\n\nWickham, H. (n.d.). The tidyverse style guide. Retrieved July 17, 2023, from https://style.tidyverse.org\n\n\nWickham, H. (2014). Tidy data. Journal of Statistical Software, 59(10). https://doi.org/10.18637/jss.v059.i10\n\n\nWickham, H. (2016). ggplot2: Elegant graphics for data analysis (2nd ed.). Springer. https://doi.org/10.1007/978-3-319-24277-4\n\n\nWickham, H. (2019). Advanced R (2nd ed.). CRC Press. https://adv-r.hadley.nz\n\n\nWickham, H., & Bryan, J. (2023). R packages (2nd ed.). O’Reilly Media. https://r-pkgs.org\n\n\nWickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2023). R for data science: Import, tidy, transform, visualize, and model data (2nd ed.). O’Reilly Media. https://r4ds.hadley.nz\n\n\nWilkinson, L. (2005). The grammar of graphics (J. Chambers, D. Hand, & W. Härdle, Eds.; 2nd ed.). Springer.\n\n\nWilkinson, M. D., Dumontier, M., Aalbersberg, Ij. J., Appleton, G., Axton, M., Baak, A., Blomberg, N., Boiten, J.-W., Da Silva Santos, L. B., Bourne, P. E., Bouwman, J., Brookes, A. J., Clark, T., Crosas, M., Dillo, I., Dumon, O., Edmunds, S., Evelo, C. T., Finkers, R., … Mons, B. (2016). The FAIR guiding principles for scientific data management and stewardship. Scientific Data, 3(1), 160018. https://doi.org/10.1038/sdata.2016.18"
   },
   {
     "objectID": "index.html#thank-you",
@@ -1398,6 +1412,13 @@
     "title": "An Introduction to the R Programming Language",
     "section": "(AP) Programming Paradigms",
     "text": "(AP) Programming Paradigms\nA programming paradigm is a specific approach to the programming process (Brookshear & Brylow, 2020).\nR is a multi-paradigm programming language, but is mainly functional.\n\n\nProcedural (Imperative)\n\nx &lt;- seq(1, 10)\ny &lt;- numeric()\nz &lt;- 0\n\nfor (i in x) {\n  y &lt;- c(y, i + 1)\n}\n\nfor (i in y) {\n  z &lt;- z + i\n}\n\nz / length(x)\n#&gt; [1] 6.5\n\n\nFunctional (Declarative)\n\nseq(1, 10) |&gt;\n  vapply(\\(x) x + 1, numeric(1)) |&gt;\n  mean()\n#&gt; [1] 6.5\n\n\n\n\nObject-Oriented (Imperative)\n\n\nlibrary(S7)\n\ndog &lt;- new_class(\"dog\", properties = list(\n  name = class_character,\n  age = class_numeric\n))\n\nlola &lt;- dog(name = \"Lola\", age = 11)\nspeak &lt;- new_generic(\"speak\", \"x\")\nmethod(speak, dog) &lt;- function(x) \"Woof\"\nspeak(lola)\n#&gt; [1] \"Woof\""
+  },
+  {
+    "objectID": "index.html#warning-for-your-future-self",
+    "href": "index.html#warning-for-your-future-self",
+    "title": "An Introduction to the R Programming Language",
+    "section": "🚨 Warning For Your Future Self",
+    "text": "🚨 Warning For Your Future Self\n\n\nNever use setwd()!\n(How to detect a beginner R user)\nAlways work inside a project directory. Your Working Directory (WD) should always be the root of your project.\nIf you need a better way to manage your WD, see the here package.\nClick here to learn why."
   },
   {
     "objectID": "index.html#ap-debugging",

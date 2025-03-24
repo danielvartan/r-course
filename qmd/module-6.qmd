@@ -2,7 +2,7 @@
 
 Answer the following question using the data provided:
 
-::: {style="text-align: center; font-size: 1.1em; font-weight: bold; color: #ED6B4D; padding-top: 30px;"}
+::: {style="text-align: center; font-size: 1.1em; font-weight: bold; color: #ED6B4D; padding-top: 100px;"}
 Was there a **meaningful** difference in ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 across the clusters of the Revised Multidimensional Index for Sustainable Food Systems ([MISFS-R](https://doi.org/10.1002/sd.2376))?
 :::
 
@@ -11,24 +11,48 @@ Was there a **meaningful** difference in ultra-processed food consumption among 
 
 ## The Data {.smaller}
 
-:::: {.columns}
-::: {.column style="width: 50%; text-align: center;"}
-2023
-: 34 cols $\times$ 50,544,073 rows<br>1,718,498,482 data points.
+```{=html}
+<video width="100%" style="display: block; margin: 0 auto;" muted controls>
+  <source src="images/downloading-sisvan-data.webm" type="video/webm">
+</video>
+```
 
-2022
-: 34 cols $\times$ 45,862,105 rows<br>1,559,311,570 data points.
-
-2021
-: 34 cols $\times$ 29,853,217 rows<br>1,015,009,378 data points.
-
-2020
-: 34 cols $\times$ 22,720,515 rows<br>772,497,510 data points.
+::: footer
+(If you could not download the data, click [here](https://github.com/danielvartan/r-course/blob/f3d8a2e8e249ee7ff3eb69a94a77e483104c7cc4/data/sisvan-raw.xlsx))
 :::
-::: {.column style="width: 50%;"}
-![](images/sisvan-logo.png){fig-align="center" style="width: 75%; padding-top: 50px;"}
+
+::: {.notes}
+:::
+
+## MISFS-R Clusters {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%; font-size: 0.95em;"}
+The Multidimensional Index for Sustainable Food Systems (MISFS) is a tool designed to assess the sustainability of food systems at a subnational level in Brazil, incorporating local behaviors and practices.
+
+The **MISFS-R** is a revised version that introduces new indicators and a refined methodology for calculating the index.
+
+For more details, see @carvalho2021a and @norde2023.
+:::
+::: {.column style="width: 50%; padding-top: 0px;"}
+![](images/norde-2023-figure-6-adapted.png){fig-align="center" style="width: 90%; padding-top: 30px;"}
 :::
 ::::
+
+::: footer
+(Adapted from @norde2023[Figure 6])
+:::
+
+::: {.notes}
+:::
+
+## MISFS-R Clusters {.smaller}
+
+![](images/norde-2023-figure-6.jpg){fig-align="center" style="width: 90%; padding-top: 30px;"}
+
+::: footer
+(Reproduced from @norde2023[Figure 6])
+:::
 
 ::: {.notes}
 :::
@@ -53,9 +77,11 @@ Remember the data science workflow:
 
 ## Notes {.smaller}
 
-- You have 45 minutes.
-- If you're stuck, ask for help.
-- Have fun!
+⌛ You have 45 minutes.
+
+🙋‍♂️ If you're stuck, ask for help.
+
+🎉 Have fun!
 
 ::: {.notes}
 :::

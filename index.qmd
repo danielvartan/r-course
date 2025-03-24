@@ -43,14 +43,16 @@ Here are the main topics:
 ::: {.notes}
 :::
 
-## Pre-Course Survey {.smaller}
+## Pre-Course Survey {.smaller .nostretch .scrollable}
+
+![](images/pre-course-survey.png){fig-align="center" style="width: 100%; padding-top: 0px;"}
 
 ::: {.notes}
 :::
 
 ## Course Objectives {.smaller}
 
-Grasp the fundamental principles and knowledge of computer science.
+Grasp the some fundamental principles and knowledge of computer science.
 
 Comprehend the structure and core elements of the R programming language.
 
@@ -60,7 +62,7 @@ Understand the basics of data visualization.
 
 Explore fundamental techniques of exploratory data analysis.
 
-Learn basic modeling concepts.
+Learn basic modeling techniques.
 
 ::: {style="padding-top: 30px;"}
 ([**Future course?**]{.brand-red} An Introduction to [Git](https://en.wikipedia.org/wiki/Git))
@@ -192,6 +194,47 @@ One of the best ways to get help is to search or ask questions on forums like [S
 ::: {.notes}
 :::
 
+## Course Presentation {.smaller}
+
+::::: {.columns}
+:::: {.column style="width: 47.5%;"}
+**Always have this presentation open in your browser**.
+
+::: {style="padding-top: 50px;"}
+We will use it to navigate through the course content.
+
+Use it to access the course materials and exercises.
+:::
+
+::: {style="padding-top: 100px;"}
+**Tip**: Want to create QR Codes like this? Check the [`qrcode`](https://thierryo.github.io/qrcode/) R package.
+:::
+::::
+:::: {.column style="width: 5%;"}
+::::
+:::: {.column style="width: 47.5%;"}
+```{r}
+#| eval: false
+#| echo: false
+
+qrcode::qr_code("https://danielvartan.github.io/r-course/", ecl = "H") |>
+  qrcode::add_logo(
+    here::here("images", "sustentarea-icon-w-margins-w-bg.png")
+  ) |>
+  qrcode::generate_svg(here::here("images", "qr-code.svg"), size = 500)
+```
+
+[![](images/qr-code.svg){fig-align="center" style="width: 100%; padding-top: 0px;"}](https://danielvartan.github.io/r-course)
+
+::: {style="text-align: center; font-size: 0.85em; font-weight: bold; color: #ED6B4D; margin-top:-50px;"}
+danielvartan.github.io/r-course
+:::
+::::
+:::::
+
+::: {.notes}
+:::
+
 # Module 1<br>[Computer Science]{.brand-brown-750} {.smaller data-menu-title="Module 1: Computer Science"}
 
 ::: {.notes}
@@ -256,6 +299,7 @@ We sure enjoyed teaching you!
 
 Here are other great and free resources to learn more about R.
 
+::: {style="padding-top: 15px;"}
 🎓 **Online Courses**
 
 [Introdução à ciência da computação com python - Parte 1](https://www.coursera.org/learn/ciencia-computacao-python-conceitos) (USP-IME)
@@ -263,6 +307,7 @@ Here are other great and free resources to learn more about R.
 [Introdução à ciência da computação com python - Parte 2](https://www.coursera.org/learn/ciencia-computacao-python-conceitos-2s) (USP-IME)
 
 [Data science specialization](https://www.coursera.org/specializations/jhu-data-science) (Johns Hopkins)
+:::
 
 ::: {.notes}
 :::
@@ -320,7 +365,7 @@ Wickham, H. (2019). **_Advanced R_** (2nd ed.). CRC Press. <https://adv-r.hadley
 
 :::: {.columns}
 ::: {.column style="width: 50%; text-align: center;"}
-![](images/sustentarea-logo.png){fig-align="center" style="width: 50%; padding-top: 75px;"}
+![](images/sustentarea-logo.svg){fig-align="center" style="width: 50%; padding-top: 75px;"}
 
 [Global Syndemic Project<br>Data Report 3](https://sustentarea.github.io/gs-data-analysis-report-3/)
 :::

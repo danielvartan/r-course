@@ -120,9 +120,11 @@ First proposed by **J. P. Eckert** and his team (1944-1945).
 
 ## What We Are Really Doing When We Program? {.smaller}
 
-<video width="82.5%" style="display: block; margin: 0 auto;" muted autoplay loop>
+```{=html}
+<video width="82.5%" style="display: block; margin: 0 auto;" muted controls autoplay loop>
   <source src="images/zaidan-2025-video-1.webm" type="video/webm">
 </video>
+```
 
 ::: footer
 (Video by [George Zaidan and Sajan Saini, on TED-ED](https://youtu.be/IkRXpFIRUl4?si=GmoLRiRKRFiPXgUL))
@@ -215,7 +217,7 @@ Programming in movies **versus** programming in real life:
 
 :::: {.columns}
 ::: {.column style="width: 47.5%;"}
-R is a **free** and **open-source** programming language designed for data analysis grpahics [@ihaka1996].
+R is a **free** and **open-source** programming language designed for data analysis graphics [@ihaka1996].
 
 It was developed by **Ross Ihaka** and **Robert Gentleman** in the statistics department at the [University of Auckland](https://www.auckland.ac.nz/) (New Zealand) in 1991 and introduced to the scientific community in **1993** [@peng2022].
 :::

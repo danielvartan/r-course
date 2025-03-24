@@ -1,4 +1,5 @@
 # library(beepr)
+# library(fs)
 # library(readr)
 # library(stringr)
 
@@ -15,6 +16,12 @@ data <-
   )
 
 data |> readr::write_lines(file)
+
+# Add `og-image.png` to `./docs/images` -----
+
+file <- here::here("docs", "images", "og-image.png")
+
+fs::file_copy(here::here("images", "og-image.png"), file, overwrite = TRUE)
 
 # Check if the script ran successfully -----
 
