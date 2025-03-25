@@ -1,5 +1,3 @@
-## Based on <https://github.com/hadley/r4ds/blob/main/_common.R>.
-
 # Load packages -----
 
 library(downlit)

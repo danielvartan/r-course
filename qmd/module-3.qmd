@@ -1,9 +1,14 @@
+```{r}
+#| include: false
+#| label: module-3-first-chunk
+```
+
 ## Data Science {.nostretch .smaller}
 
 ::: {style="font-size: 0.8em"}
 > Data science is the study of the generalizable extraction of knowledge from data [@dhar2023].
 
-For some, data science is just statistics [@broman2013] (_hype statistics_). For others, it's a new interdisciplinary field that synthesizes statistics, informatics, computing, communication, management, and sociology [@cao2017]. I let you decide.
+For some, data science is just statistics [@broman2013] (_hype statistics_). For others, it's a new interdisciplinary field that synthesizes statistics, informatics, computing, communication, management, and sociology [@cao2017].
 :::
 
 ![](images/wickham-2023-figure-1.png){fig-align="center" style="width: 85%; padding-top: 10px;"}
@@ -179,6 +184,8 @@ Interest rate representing the adjusted average rate of overnight repurchase agr
 ```{r}
 #| eval: false
 
+library(jsonlite)
+
 paste0(
   "https://api.bcb.gov.br/dados/serie/",
   "bcdata.sgs.11", "/",
@@ -187,7 +194,7 @@ paste0(
   "dataInicial=01/12/2024", "&",
   "dataFinal=03/12/2024"
 ) |>
-  jsonlite::read_json()
+  read_json()
 #> [[1]]
 #> [[1]]$data
 # [1] "02/12/2024"
@@ -257,9 +264,11 @@ Spreadsheet syndrome is a term used to describe the problems that arise from usi
 
 ## Data Documentation {visibility="uncounted"}
 
+Documentation is essential for data sharing and reproducibility
+
 Data dictionaries/Codebooks (e.g., [SISVAN](https://s3.sa-east-1.amazonaws.com/ckan.saude.gov.br/SISVAN/estado_nutricional/Dicionário+de+Dados+-+Estado+Nutricional.pdf))
 
-[Guide to writing “readme” style metadata](https://data.research.cornell.edu/data-management/sharing/readme/)
+[Guide to Writing “README” Style Metadata](https://data.research.cornell.edu/data-management/sharing/readme/).
 
 [Metadata Standards Catalog](https://rdamsc.bath.ac.uk/)
 
@@ -331,27 +340,15 @@ install.packages("palmerpenguins")
 :::
 ::::
 
-:::: {.columns}
-::: {.column style="width: 47.5%; font-size: 1em;"}
-Data were collected and made available by [Dr. Kristen Gorman](https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php) and the [Palmer Station, Antarctica LTER](https://pallter.marine.rutgers.edu/), a member of the [Long Term Ecological Research Network](https://lternet.edu/).
+The `palmerpenguins` data contains size measurements for **three penguin species** observed on three islands in the Palmer Archipelago, Antarctica.
+
+These data were collected from 2007--2009 by [Dr. Kristen Gorman](https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php) with the [Palmer Station Long Term Ecological Research Program](https://pal.lternet.edu/), part of th [US Long Term Ecological Research Network](https://lternet.edu/).
 
 We will use this package in the first part of the course to get familiar with R.
-:::
-::: {.column style="width: 5%;"}
-:::
-::: {.column style="width: 47.5%;"}
-![](images/allison-horst-figure-23.png){style="width: 100%; padding-top: 0px;"}
-:::
-::::
 
 ```{r}
 #| echo: false
 #| eval: false
-
-library(fs)
-library(here)
-library(palmerpenguins)
-library(readr)
 
 palmerpenguins::path_to_file("penguins_raw.csv") |>
   fs::file_copy(here::here("data", "palmerpenguins-raw.csv"))
@@ -362,6 +359,20 @@ palmerpenguins::path_to_file("penguins.csv") |>
 palmerpenguins::penguins |>
   readr::write_rds(here::here("data", "palmerpenguins-valid.rds"))
 ```
+
+::: {.notes}
+:::
+
+## Meet the Penguins {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 47.5%;"}
+![](images/allison-horst-figure-23.png){style="width: 100%; padding-top: 100px;"}
+:::
+::: {.column style="width: 47.5%;"}
+![](images/allison-horst-figure-51.png){style="width: 100%; padding-top: 100px;"}
+:::
+::::
 
 ::: footer
 (Artwork by [Allison Horst](https://twitter.com/allison_horst))
@@ -381,15 +392,20 @@ palmerpenguins::penguins |>
 The data documentation can be accessed by running:
 
 ```r
-?palmerpenguins::penguins_raw
+library(palmerpenguins)
+```
+
+```r
+?penguins_raw
 ```
 
 You can also use the following code to open the file:
 
 ```r
-library(palmerpenguins)
 library(rstudioapi)
+```
 
+```r
 path_to_file("penguins_raw.csv") |> documentOpen()
 ```
 
@@ -535,7 +551,7 @@ library(readr)
 
 data <-
   here("data", "palmerpenguins-raw.csv") |>
-  read_csv(col_types = readr::cols(.default = "c"))
+  read_csv(col_types = cols(.default = "c"))
 ```
 
 ```{r}

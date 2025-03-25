@@ -189,7 +189,7 @@ Learn basic modeling concepts.
 ::: {.column style="width: 47.5%;"}
 **Part 1** (13:00-13:30)
 
-- Modeling (ANOVA & ANCOVA)
+- Modeling (ANOVA).
 
 :::
 ::: {.column style="width: 5%;"}
@@ -197,7 +197,7 @@ Learn basic modeling concepts.
 ::: {.column style="width: 47.5%;"}
 **Part 2** (13:30-14:00)
 
-- Modeling (Linear regression)
+- Modeling (Linear regression).
 :::
 ::::
 
@@ -210,14 +210,14 @@ Learn basic modeling concepts.
 ::: {.column style="width: 47.5%;"}
 **Part 1** (13:00-13:30)
 
-- Exercise (Data report - SISVAN)
+- Exercise (Data report---SISVAN).
 :::
 ::: {.column style="width: 5%;"}
 :::
 ::: {.column style="width: 47.5%;"}
 **Part 2** (13:30-14:00)
 
-- Conclusion
+- Conclusion.
 :::
 ::::
 

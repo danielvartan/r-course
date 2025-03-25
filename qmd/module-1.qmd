@@ -1,3 +1,8 @@
+```{r}
+#| include: false
+#| label: module-1-first-chunk
+```
+
 ## Let's Start from Zero {.smaller}
 
 :::: {.columns}
@@ -36,6 +41,10 @@ for such topics as *computer design*, *computer programming*, *information proce
 ![](images/richards-1950-chinese-abacus.jpg){fig-align="center" style="width: 80%; padding-top: 100px;"}
 :::
 ::::
+
+::: footer
+(Photo by [Mark Richards](https://www.computerhistory.org/revolution/calculators/1/1/134?position=0))
+:::
 
 ::: {.notes}
 :::

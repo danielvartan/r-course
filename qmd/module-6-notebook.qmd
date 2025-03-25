@@ -4,7 +4,9 @@
 #| label: setup
 #| include: false
 
-source(here::here("R/_setup.R"))
+library(here)
+
+source(here("R", "setup.R"))
 ```
 
 ## Module 7: Exercise
@@ -103,15 +105,16 @@ trivial**. (Cohen, 1988, p. 16).
 ## Setting the Environment
 
 ```{r}
-#| eval: false
-
 library(curl)
 library(dplyr)
 library(geobr)
 library(ggplot2)
+library(janitor)
 library(readr)
 library(readxl)
 library(stringr)
+library(summarytools)
+library(tidyr)
 ```
 
 ## Importing and Tidying the Data
@@ -121,22 +124,22 @@ Source: SISVAN [Food Consumption](https://opendatasus.saude.gov.br/dataset/sisva
 ### Downloading the Data
 
 ```{r}
-if (!dir.exists(here::here("data"))) dir.create("data")
-file <- here::here("data", "sisvan-raw.xlsx")
+if (!dir.exists(here("data"))) dir.create("data")
+file <- here("data", "sisvan-raw.xlsx")
 
 paste0(
     "https://sisaps.saude.gov.br/sisvan/public/file/relatorios/",
     "consumo/2oumais/entre2a4anos/CONS_ULTRA.xlsx"
   ) |>
-  curl::curl_download(file)
+  curl_download(file)
 ```
 
 ### Reading the Data
 
 ```{r}
 data <-
-  here::here("data", "sisvan-raw.xlsx") |>
-  readxl::read_xlsx(
+  here("data", "sisvan-raw.xlsx") |>
+  read_xlsx(
     sheet = "2022",
     skip = 1,
     col_types = "text"
@@ -148,8 +151,8 @@ data <-
 ```{r}
 data <-
   data |>
-  janitor::clean_names() |>
-  dplyr::rename(
+  clean_names() |>
+  rename(
     state_abbrev = uf,
     municipality_code = codigo_ibge,
     municipality_name = municipio,
@@ -157,9 +160,9 @@ data <-
     n_upf_rel = percent,
     n_monitored = x6
   ) |>
-  dplyr::mutate(
+  mutate(
     municipality_code = as.integer(municipality_code),
-    municipality_name = stringr::str_to_title(municipality_name),
+    municipality_name = str_to_title(municipality_name),
     n_upf = as.integer(n_upf),
     n_monitored = as.integer(n_monitored)
   )
@@ -170,13 +173,13 @@ data <-
 ```{r}
 data <-
   data |>
-  dplyr::filter(
+  filter(
     !n_upf > n_monitored,
     n_monitored >= 10,
     !state_abbrev == "DF"
   ) |>
-  tidyr::drop_na(n_upf, n_monitored) |>
-  dplyr::mutate(n_upf_rel = n_upf / n_monitored)
+  drop_na(n_upf, n_monitored) |>
+  mutate(n_upf_rel = n_upf / n_monitored)
 ```
 
 ### Transforming the Data
@@ -184,8 +187,8 @@ data <-
 ```{r}
 data <-
   data |>
-  dplyr::mutate(
-    misfs = dplyr::case_when(
+  mutate(
+    misfs = case_when(
       state_abbrev %in% c(
         "AC", "GO", "MS", "MT", "RO", "TO"
       ) ~ "A",
@@ -201,7 +204,7 @@ data <-
     ),
     misfs = factor(misfs, levels = c("A", "B", "C", "D"))
   ) |>
-  dplyr::relocate(misfs, .before = state_abbrev)
+  relocate(misfs, .before = state_abbrev)
 ```
 
 ```{r}
@@ -212,7 +215,7 @@ data |> View()
 ```
 
 ```{r}
-data |> dplyr::glimpse()
+data |> glimpse()
 ```
 
 ## Data Dictionary
@@ -232,7 +235,7 @@ data |> dplyr::glimpse()
 #| output: asis
 
 data |>
-  summarytools::freq(
+  freq(
     var = misfs,
     style = "rmarkdown",
     plain.ascii = FALSE,
@@ -240,22 +243,7 @@ data |>
   )
 ```
 
-```{r}
-#| fig-align: center
-#| code-fold: true
-
-library(ggplot2)
-library(palmerpenguins)
-
-penguins |>
-  ggplot(aes(x = flipper_length_mm, fill = species)) +
-  geom_histogram(alpha = 0.5, position = "identity") +
-  scale_fill_manual(values = c("darkorange","darkorchid","cyan4"))
-```
-
-
 ## Conclusion
-
 
 ## Acknowledgments
 

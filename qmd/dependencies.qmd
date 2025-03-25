@@ -137,7 +137,7 @@ penguins |>
     x = "Island",
     y = "Count"
   ) +
-  brandr::scale_fill_brand_d() +
+  scale_fill_brand_d() +
   theme(legend.position = "none")
 ```
 
@@ -152,7 +152,7 @@ penguins |>
   ggplot(aes(x = flipper_length_mm, fill = species)) +
   geom_histogram(bins = 30, alpha = 0.5, position = "identity") +
   labs(x = "Flipper Length (mm)", y = "Frequency", fill = "Species") +
-  brandr::scale_fill_brand_d()
+  scale_fill_brand_d()
 ```
 
 ```{r}
@@ -164,9 +164,9 @@ library(tidyr)
 penguins |>
   drop_na(bill_length_mm, species) |>
   ggplot(aes(x = species, y = bill_length_mm, fill = species)) +
-  geom_boxplot(outlier.color = brandr::get_brand_color("dark-red")) +
+  geom_boxplot(outlier.color = get_brand_color("dark-red")) +
   geom_jitter(width = 0.2, alpha = 0.1) +
-  brandr::scale_fill_brand_d(alpha = 0.7) +
+  scale_fill_brand_d(alpha = 0.7) +
   labs(x = "Species", y = "Bill Length (mm)", fill = "Species")
 ```
 
@@ -194,7 +194,7 @@ penguins |>
     color = "Species",
     shape = "Species"
   ) +
-  brandr::scale_color_brand_d(alpha = 0.7)
+  scale_color_brand_d(alpha = 0.7)
 ```
 
 ```{r}
@@ -202,25 +202,26 @@ library(brandr)
 library(dplyr)
 library(ggplot2)
 library(palmerpenguins)
+library(stringr)
 library(tidyr)
 
 penguins |>
   drop_na(flipper_length_mm, body_mass_g, sex) |>
-  mutate(sex = `levels<-`(sex, stringr::str_to_title(levels(sex)))) |>
+  mutate(sex = `levels<-`(sex, str_to_title(levels(sex)))) |>
   ggplot(aes(x = flipper_length_mm, y = body_mass_g, color = sex)) +
   geom_point(size = 2) +
   geom_smooth(
     method = "lm",
     formula = y ~ x,
     se = FALSE,
-    color = brandr::get_brand_color("brown")
+    color = get_brand_color("brown")
   ) +
   labs(
     x = "Flipper Length (mm)",
     y = "Body Mass (g)",
     color = "Sex"
   ) +
-  brandr::scale_color_brand_d(alpha = 0.7) +
+  scale_color_brand_d(alpha = 0.7) +
   facet_wrap(~species)
 ```
 
@@ -237,17 +238,17 @@ plot_hist <-
   ggplot(aes(x = flipper_length_mm, fill = species)) +
   geom_histogram(bins = 30, alpha = 0.5, position = "identity") +
   labs(x = "Flipper Length (mm)", y = "Frequency") +
-  brandr::scale_fill_brand_d() +
+  scale_fill_brand_d() +
   theme(legend.position = "none")
 
 plot_boxplot <-
   penguins |>
   drop_na(bill_length_mm, species) |>
   ggplot(aes(x = species, y = bill_length_mm, fill = species)) +
-  geom_boxplot(outlier.color = brandr::get_brand_color("dark-red")) +
+  geom_boxplot(outlier.color = get_brand_color("dark-red")) +
   geom_jitter(width = 0.2, alpha = 0.1) +
   labs(x = "Species", y = "Bill Length (mm)", fill = "Species") +
-  brandr::scale_fill_brand_d(alpha = 0.7) +
+  scale_fill_brand_d(alpha = 0.7) +
   theme(axis.title.x = element_blank(), legend.position = "none")
 
 plot_scatter <-
@@ -269,7 +270,7 @@ plot_scatter <-
     color = "Species",
     shape = "Species"
   ) +
-  brandr::scale_color_brand_d(alpha = 0.7) +
+  scale_color_brand_d(alpha = 0.7) +
   theme(legend.position = "none")
 
 (plot_hist + plot_boxplot) / plot_scatter + plot_annotation(tag_levels = "A")
@@ -284,9 +285,9 @@ library(palmerpenguins)
 
 penguins |>
   select(species, body_mass_g, ends_with("_mm")) |>
-  GGally::ggpairs(aes(color = species)) +
-  brandr::scale_color_brand_d(alpha = 0.7) +
-  brandr::scale_fill_brand_d(alpha = 0.7)
+  ggpairs(aes(color = species)) +
+  scale_color_brand_d(alpha = 0.7) +
+  scale_fill_brand_d(alpha = 0.7)
 ```
 
 ### Modelos
@@ -304,8 +305,8 @@ library(tidyr)
 ```{r}
 observed_statistic <-
   penguins |>
-  dplyr::filter(species %in% c("Adelie", "Gentoo")) |>
-  tidyr::drop_na(flipper_length_mm, species) |>
+  filter(species %in% c("Adelie", "Gentoo")) |>
+  drop_na(flipper_length_mm, species) |>
   specify(flipper_length_mm ~ species) |>
   hypothesize(null = "independence") |>
   calculate("t", order = c("Adelie", "Gentoo"))
@@ -316,8 +317,8 @@ observed_statistic
 ```{r}
 null_dist <-
   penguins |>
-  dplyr::filter(species %in% c("Adelie", "Gentoo")) |>
-  tidyr::drop_na(flipper_length_mm, species) |>
+  filter(species %in% c("Adelie", "Gentoo")) |>
+  drop_na(flipper_length_mm, species) |>
   specify(flipper_length_mm ~ species) |>
   hypothesize(null = "independence") |>
   generate(reps = 1000, type = "permute") |>
@@ -342,13 +343,13 @@ adelie <-
   penguins |>
   filter(species == "Adelie") |>
   drop_na(flipper_length_mm) |>
-  dplyr::pull(flipper_length_mm)
+  pull(flipper_length_mm)
 
 gentoo <-
   penguins |>
-  dplyr::filter(species == "Gentoo") |>
+  filter(species == "Gentoo") |>
   drop_na(flipper_length_mm) |>
-  dplyr::pull(flipper_length_mm)
+  pull(flipper_length_mm)
 ```
 
 ```{r}
@@ -470,7 +471,7 @@ paste0(
     "https://sisaps.saude.gov.br/sisvan/public/file/relatorios/",
     "consumo/2oumais/entre2a4anos/CONS_ULTRA.xlsx"
   ) |>
-  curl::curl_download(file)
+  curl_download(file)
 ```
 
 ```{r}
@@ -481,30 +482,30 @@ data <- NULL
 for (i in 2015:2022) {
   data_i <-
       file |>
-      readxl::read_xlsx(
+      read_xlsx(
         sheet = as.character(i),
         skip = 1,
         col_types = "text",
         col_names = FALSE
       ) |>
-      dplyr::slice(-1)
+      slice(-1)
 
-  if (!i == 2022) data_i <- data_i |> dplyr::select(-1, -2)
+  if (!i == 2022) data_i <- data_i |> select(-1, -2)
 
   data_i <-
     data_i |>
-    dplyr::rename_with(~ paste0("x", seq(length(.x)))) |>
-    dplyr::mutate(year = i) |>
-    dplyr::relocate(year)
+    rename_with(~ paste0("x", seq(length(.x)))) |>
+    mutate(year = i) |>
+    relocate(year)
 
-  data <- dplyr::bind_rows(data, data_i)
+  data <- bind_rows(data, data_i)
 }
 ```
 
 ```{r}
 data <-
   data |>
-  dplyr::rename(
+  rename(
     state_abbrev = x1,
     municipality_code = x2,
     municipality_name = x3,
@@ -512,9 +513,9 @@ data <-
     n_upf_rel = x5,
     n_monitored = x6
   ) |>
-  dplyr::mutate(
+  mutate(
     municipality_code = as.integer(municipality_code),
-    municipality_name = stringr::str_to_title(municipality_name),
+    municipality_name = str_to_title(municipality_name),
     n_upf = as.integer(n_upf),
     n_monitored = as.integer(n_monitored)
   )
@@ -523,20 +524,20 @@ data <-
 ```{r}
 data <-
   data |>
-  dplyr::filter(
+  filter(
     !n_upf > n_monitored,
     n_monitored >= 10,
     !state_abbrev == "DF"
   ) |>
-  tidyr::drop_na(n_upf, n_monitored) |>
-  dplyr::mutate(n_upf_rel = n_upf / n_monitored)
+  drop_na(n_upf, n_monitored) |>
+  mutate(n_upf_rel = n_upf / n_monitored)
 ```
 
 ```{r}
 data <-
   data |>
-  dplyr::mutate(
-    misfs = dplyr::case_when(
+  mutate(
+    misfs = case_when(
       state_abbrev %in% c(
         "AC", "GO", "MS", "MT", "RO", "TO"
       ) ~ "A",
@@ -552,5 +553,5 @@ data <-
     ),
     misfs = factor(misfs, levels = c("A", "B", "C", "D"))
   ) |>
-  dplyr::relocate(misfs, .before = state_abbrev)
+  relocate(misfs, .before = state_abbrev)
 ```

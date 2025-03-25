@@ -1,3 +1,8 @@
+```{r}
+#| include: false
+#| label: module-5-first-chunk
+```
+
 ## Modeling with Tidyverse *versus* Modeling with base R {.smaller}
 
 The [tidyverse](https://www.tidyverse.org/) framework offers a structured and consistent approach to modeling in R through the [tidymodels](https://www.tidymodels.org/) ecosystem.
@@ -16,17 +21,59 @@ The `tidymodels` framework is a collection of packages for modeling and machine 
 ::: {.notes}
 :::
 
-## Power Analysis (.smaller)
+## Power Analysis {.smaller}
 
-::: {style="font-size: 0.7em; padding-top: 75px;"}
-| **Decision about** $H_{0}$ | $H_{0}$ **True**                                               | $H_{0}$ **False**                                                |
-|------------------------------|-----------------------------------------------------------------|--------------------------------------------------------------------|
-| **Accept**               | Correct inference (true negative) ($\text{prob} = 1 - \alpha$) | Type II error (False negative) ($\text{prob} = \beta$)           |
-| **Reject**                   | Type I error (False positive) ($\text{prob} = \alpha$)         | Correct inference (true positive) ($\text{prob} = 1 - \beta$)    |
+::: {style="padding-top: 100px;"}
+```{r}
+#| echo: false
+
+dplyr::tibble(
+  decision = c("Accept", "Reject"),
+  h0_true = c(
+    "Correct inference<br>(True negative)<br>($\\text{prob} = 1 - \\alpha$)",
+    "Type I error<br>(False positive)<br>($\\text{prob} = \\alpha$)"
+  ),
+  h0_false = c(
+    "Type II error<br>(False negative)<br>($\\text{prob} = \\beta$)",
+    "Correct inference<br>(True positive)<br>($\\text{prob} = 1 - \\beta$)"
+  )
+) |>
+  gt::gt() |>
+  gt::tab_options(
+    table.width = gt::pct(70),
+    table.font.size = gt::pct(80)
+  ) |>
+  gt::cols_label(
+    decision = gt::md("Decision about $H_{0}$"),
+    h0_true = gt::md("$H_{0}$ True"),
+    h0_false = gt::md("$H_{0}$ False")
+  ) |>
+  gt::cols_align(
+    align = "center",
+    columns = c(decision, h0_true, h0_false)
+  ) |>
+  # gt::cols_width(
+  #   gt::starts_with("decision") ~ gt::px(200),
+  #   gt::everything() ~ gt::px(300)
+  # ) |>
+  gt::tab_options(column_labels.font.weight = "bold") |>
+  gt::fmt_markdown(columns = gt::everything()) |>
+  gt::tab_style(
+    style = gt::cell_text(weight = "bold"),
+    locations = gt::cells_body(
+      columns = decision,
+      rows = gt::everything()
+    )
+  ) |>
+  gt::tab_style(
+    style = gt::cell_text(align = "center"),
+    locations = gt::cells_body(columns = c(decision, h0_true, h0_false))
+  )
+```
 :::
 
 ::: footer
-(Based on @@casella2002[p. 383])
+(Based on @casella2002[p. 383])
 :::
 
 ::: {.notes}
@@ -43,9 +90,9 @@ The `tidymodels` framework is a collection of packages for modeling and machine 
 ::: {.notes}
 :::
 
-## Type I Errors ($\alpha$) {.smaller}
+## Type I Errors ($\alpha$) {.smaller .nostretch data-menu-title="Type I Errors"}
 
-![](images/allison-horst-figure-39.png){fig-align="center" style="width: 90%; padding-top: 30px;"}
+![](images/allison-horst-figure-39.png){fig-align="center" style="width: 90%; padding-top: 0px;"}
 
 ::: footer
 (Artwork by [Allison Horst](https://twitter.com/allison_horst))
@@ -54,7 +101,7 @@ The `tidymodels` framework is a collection of packages for modeling and machine 
 ::: {.notes}
 :::
 
-## Type II Errors ($\beta$) {.smaller}
+## Type II Errors ($\beta$) {.smaller data-menu-title="Type II Errors"}
 
 ![](images/allison-horst-figure-40.png){fig-align="center" style="width: 90%; padding-top: 30px;"}
 
@@ -95,7 +142,7 @@ Comparison of a 95% of confidence level ($\alpha = 0.05$) and an *n*-dependent *
 
 :::: {.columns}
 ::: {.column style="width: 50%;"}
-> [...] in many circumstances, all that is intended by "proving" the null hypothesis is that the ES [Effect Size] is not necessarily zero but **small enough to be negligible** [...] [@cohen1988a[p. 461]].
+> [...] in many circumstances, all that is intended by "proving" the null hypothesis is that the ES [Effect Size] is not necessarily zero but **small enough to be negligible** [...] (@cohen1988a[p. 461]).
 :::
 ::: {.column style="width: 50%;"}
 ![](images/jacob-cohen-figure-1.jpg){fig-align="center" style="width: 80%; padding-top: 25px;"}
@@ -111,21 +158,160 @@ Comparison of a 95% of confidence level ($\alpha = 0.05$) and an *n*-dependent *
 
 ## Cohen's Benchmark {.smaller}
 
-![](images/cohen-1992-table-1.png){fig-align="center" style="padding-top: 10px; padding-bottom: 25px;"}
+```{r}
+#| echo: false
+
+dplyr::tibble(
+  test = c(
+    "Comparison of independent means", "Comparison of two correlations",
+    "Difference between proportions", "Correlation", "", "Crosstabulation",
+    "ANOVA", "", "Multiple regression", ""
+  ),
+  relevant_effect_size = c(
+    "$d$, $\\Delta$, Hedges’ $g$", "$q$", "Cohen’s $g$", "$r$", "$r^{2}$",
+    "$w$, $\\varphi$, $V$, $C$", "$f$", "$\\eta^{2}$", "$R^{2}$", "$f^{2}$"
+  ),
+  small = c(.20, .10, .05, .10, .01, .10, .10, .01, .02, .02),
+  medium = c(.50, .30, .15, .30, .09, .30, .25, .06, .13, .15),
+  large = c(.80, .50, .25, .50, .25, .50, .40, .14, .26, .35)
+) |>
+  gt::gt() |>
+  gt::tab_options(table.font.size = gt::pct(50)) |>
+  gt::cols_label(
+    test = "Test",
+    relevant_effect_size = "Relevant Effect Size",
+    small = "Small",
+    medium = "Medium",
+    large = "Large"
+  ) |>
+  gt::fmt_markdown(columns = relevant_effect_size) |>
+  gt::tab_spanner(
+    label = "Effect Size Classes",
+    columns = c(small, medium, large)
+  ) |>
+  gt::tab_source_note(
+    source_note = gt::md(
+      paste0(
+        "Notes: The rationale for most of these benchmarks can be found ",
+        "in Cohen (1988) at the following pages: Cohen’s $d$ (p. 40), ",
+        "$q$ (p. 115), Cohen’s $g$ (pp. 147–149), $r$ and $r^{2}$ ",
+        "(pp. 79–80), Cohen’s $w$ (pp. 224–227), $f$ and $\\eta^{2}$ ",
+        "(pp. 285–287), $R^{2}$ and $f^{2}$ (pp. 413–414)."
+      )
+    )
+  ) |>
+  gt::cols_align(
+    align = "center",
+    columns = c(small, medium, large)
+  ) |>
+  gt::tab_style(
+    style = gt::cell_text(weight = "bold"),
+    locations = gt::cells_column_spanners()
+  ) |>
+  gt::tab_style(
+    style = gt::cell_text(weight = "bold"),
+    locations = gt::cells_column_labels(gt::everything())
+  )
+```
 
 ::: footer
-(Reproduced from @cohen1992)
+(Adapted from @ellis2010. Based on @cohen1988a)
 :::
 
 ::: {.notes}
 :::
 
-## One-Sample t-Test: Hypothesis {.smaller}
+## What Test Should I Use? {.smaller}
+
+::: {style="padding-top: 50px;"}
+```{r}
+#| echo: false
+
+dplyr::tibble(
+  type_of_data = c(
+    "Normally distributed continuous data<br>(summarized as mean)",
+    paste0(
+      "Ranks, scores, and non-normally<br>distributed continuous data<br>",
+      "(Summarized as median)"
+    ),
+    "Dichotomous data<br>(Summarized as proportion)"
+  ),
+  two_data_sets_paired = c(
+    "Paired t-test",
+    "Wilcoxon signed-rank test",
+    "Mc Nemar's test"
+  ),
+  two_data_sets_unpaired = c(
+    "Unpaired t-test",
+    "Mann-Whitney U test",
+    "Fishers test or Chi-square test"
+  ),
+  more_than_two_data_sets_paired = c(
+    "Repeated measures ANOVA",
+    "Friedman's test",
+    "Cochrane Q test"
+  ),
+  more_than_two_data_sets_unpaired = c(
+    "One-way ANOVA",
+    "Kruskal-Wallis test",
+    "Chi-square test"
+  ),
+  correlation_analysis = c(
+    "Pearson's correlation",
+    "Spearman's rank correlation",
+    "Contingency coefficient"
+  ),
+  regression_analysis = c(
+    "Linear regression",
+    "Nonparametric regression",
+    "Logistic regression"
+  )
+) |>
+  gt::gt() |>
+  gt::tab_spanner(
+    label = "Comparison Analysis",
+    columns = c(
+      two_data_sets_paired, two_data_sets_unpaired,
+      more_than_two_data_sets_paired, more_than_two_data_sets_unpaired
+    )
+  ) |>
+  gt::tab_spanner(
+    label = "Other Analysis",
+    columns = c(correlation_analysis, regression_analysis)
+  ) |>
+  gt::cols_label(
+    type_of_data = "Type of Data",
+    two_data_sets_paired = "2 Data Sets - Paired",
+    two_data_sets_unpaired = "2 Data Sets - Unpaired",
+    more_than_two_data_sets_paired = "More than 2 Data Sets - Paired",
+    more_than_two_data_sets_unpaired = "More than 2 Data Sets - Unpaired",
+    correlation_analysis = "Correlation Analysis",
+    regression_analysis = "Regression Analysis"
+  ) |>
+  gt::fmt_markdown(columns = type_of_data) |>
+  gt::tab_style(
+    style = gt::cell_text(weight = "bold"),
+    locations = gt::cells_column_labels()
+  )
+```
+:::
+
+::: footer
+(Adapted from @najmi2021)
+:::
+
+::: {.notes}
+:::
+
+## t-Test: Hypothesis {.smaller}
+
+**t-test for Independent Samples**.
 
 To ensure practical significance, the difference in means must be analyzed for its effect size considering a 95% confidence interval.
 
-We will use Cohen's benchmark for a small effect size as our Minimum Effect Size (MES) (@cohen1988a).
+We will use Cohen's benchmark for a small effect size as our Minimum Effect Size (MES) [@cohen1988a].
 
+::: {style="padding-top: 15px;"}
 $$
 \begin{cases}
 \text{H}_{0}: \mu_{A} = \mu_{B} \\
@@ -140,11 +326,12 @@ $$
 \text{H}_{a}: \mu_{A} - \mu_{B} > \text{MES} \\
 \end{cases}
 $$
+:::
 
 ::: {.notes}
 :::
 
-## One-Sample t-Test: Hypothesis {.smaller}
+## t-Test: Boxplots {.smaller}
 
 ```{r}
 #| fig-align: center
@@ -160,7 +347,7 @@ penguins |>
   filter(species %in% c("Adelie", "Gentoo")) |>
   drop_na(flipper_length_mm, species) |>
   ggplot(aes(x = species, y = flipper_length_mm, fill = species)) +
-  geom_boxplot(outlier.color = brandr::get_brand_color("dark-red")) +
+  geom_boxplot(outlier.color = get_brand_color("dark-red")) +
   geom_jitter(width = 0.2, alpha = 0.1) +
   scale_fill_brand_d(alpha = 0.7) +
   labs(x = "Species", y = "Flipper Length (mm)", fill = "Species")
@@ -169,17 +356,99 @@ penguins |>
 ::: {.notes}
 :::
 
-## One-Sample t-Test: P. Analysis {.smaller}
+## t-Test: Density Plots {.smaller}
+
+```{r}
+#| fig-align: center
+#| code-fold: true
+
+library(brandr)
+library(ggplot2)
+library(palmerpenguins)
+library(tidyr)
+
+penguins |>
+  filter(species %in% c("Adelie", "Gentoo")) |>
+  drop_na(flipper_length_mm, species) |>
+  ggplot(aes(x = flipper_length_mm, fill = species)) +
+  geom_density(alpha = 0.7) +
+  scale_fill_brand_d() +
+  labs(x = "Flipper Length (mm)", y = "Density", fill = "Species")
+```
+
+::: {.notes}
+:::
+
+## t-Test: Power Analysis {.smaller}
+
+```{r}
+library(dplyr)
+library(palmerpenguins)
+library(tidyr)
+```
+
+```{r}
+penguins |>
+  filter(species %in% c("Adelie")) |>
+  drop_na(flipper_length_mm, species) |>
+  nrow()
+```
+
+```{r}
+penguins |>
+  filter(species %in% c("Gentoo")) |>
+  drop_na(flipper_length_mm, species) |>
+  nrow()
+```
+
+::: {.notes}
+:::
+
+## t-Test: Power Analysis {.smaller}
 
 ```{r}
 library(pwrss)
 ```
 
 ```{r}
+pwr_analysis <- pwrss.t.2means(
+  mu1 = 0.2, # Cohen's d for small effect sizes
+  mu2 = 0,
+  power = 0.8,
+  alpha = 0.05,
+  welch.df = TRUE,
+  alternative = "not equal"
+)
+```
+
+## t-Test: Power Analysis {.smaller}
+
+```{r}
+#| code-fold: true
+#| warning: false
+#| fig-align: center
+
 library(pwrss)
 
-pwrss.t.2means(
-  mu1 = 0.2, # Cohen's d for small effect size
+power.t.test(
+  ncp = pwr_analysis$ncp,
+  df = pwr_analysis$df,
+  alpha = 0.05,
+  alternative = "not equal",
+  plot = TRUE,
+  verbose = FALSE
+)
+```
+
+## t-Test: Power Analysis {.smaller}
+
+```{r}
+library(pwrss)
+```
+
+```{r}
+pwr_analysis <- pwrss.t.2means(
+  mu1 = 3, # Cohen's d for a very large effect
   mu2 = 0,
   power = 0.8,
   alpha = 0.05,
@@ -191,27 +460,29 @@ pwrss.t.2means(
 ::: {.notes}
 :::
 
-## One-Sample t-Test: P. Analysis {.smaller}
+## t-Test: Power Analysis {.smaller}
 
 ```{r}
+#| code-fold: true
+#| warning: false
+#| fig-align: center
+
 library(pwrss)
-```
 
-```{r}
-pwrss.t.2means(
-  mu1 = 0.5, # Cohen's d for medium effect size
-  mu2 = 0,
-  power = 0.8,
+power.t.test(
+  ncp = pwr_analysis$ncp,
+  df = pwr_analysis$df,
   alpha = 0.05,
-  welch.df = TRUE,
-  alternative = "not equal"
+  alternative = "not equal",
+  plot = TRUE,
+  verbose = FALSE
 )
 ```
 
 ::: {.notes}
 :::
 
-## One-Sample t-Test: Observed Statistic {.smaller}
+## t-Test: Observed Statistic {.smaller}
 
 ```{r}
 library(dplyr)
@@ -223,11 +494,11 @@ library(tidyr)
 ```{r}
 observed_statistic <-
   penguins |>
-  filter(species %in% c("Adelie", "Gentoo")) |>
+  filter(species %in% c("Gentoo", "Adelie")) |>
   drop_na(flipper_length_mm, species) |>
   specify(flipper_length_mm ~ species) |>
   hypothesize(null = "independence") |>
-  calculate("t", order = c("Adelie", "Gentoo"))
+  calculate("t", order = c("Gentoo", "Adelie"))
 
 observed_statistic
 ```
@@ -235,7 +506,7 @@ observed_statistic
 ::: {.notes}
 :::
 
-## One-Sample t-Test: N. Dist. {.smaller}
+## t-Test: Null Distribution {.smaller}
 
 ```{r}
 library(dplyr)
@@ -247,12 +518,12 @@ library(tidyr)
 ```{r}
 null_dist <-
   penguins |>
-  filter(species %in% c("Adelie", "Gentoo")) |>
+  filter(species %in% c("Gentoo", "Adelie")) |>
   drop_na(flipper_length_mm, species) |>
   specify(flipper_length_mm ~ species) |>
   hypothesize(null = "independence") |>
   generate(reps = 1000, type = "permute") |>
-  calculate("t", order = c("Adelie", "Gentoo"))
+  calculate("t", order = c("Gentoo", "Adelie"))
 
 null_dist
 ```
@@ -260,17 +531,21 @@ null_dist
 ::: {.notes}
 :::
 
-## One-Sample t-Test: Visualizing {.smaller}
+## t-Test: Visualizing {.smaller}
 
 ```{r}
+#| code-fold: true
 #| fig-align: center
-#| fig-height: 5
+#| fig-height: 7
 #| fig-width: 15
+
+library(infer)
+library(ggplot2)
 
 null_dist |>
   visualize() +
   shade_p_value(obs_stat = observed_statistic, direction = "two-sided") +
-  ggplot2::labs(
+  labs(
     title = NULL,
     x = "t-statistic",
     y = "Frequency"
@@ -281,9 +556,11 @@ null_dist |>
 ::: {.notes}
 :::
 
-## One-Sample t-Test: p-value {.smaller}
+## t-Test: p-value {.smaller}
 
 ```{r}
+#| warning: false
+
 null_dist |>
   get_p_value(obs_stat = observed_statistic, direction = "two-sided")
 ```
@@ -291,7 +568,7 @@ null_dist |>
 ::: {.notes}
 :::
 
-## One-Sample t-Test: Power Analysis {.smaller}
+## t-Test: Effect Size {.smaller}
 
 ```{r}
 library(dplyr)
@@ -302,18 +579,18 @@ library(tidyr)
 ```{r}
 adelie <-
   penguins |>
-  dplyr::filter(species == "Adelie") |>
-  tidyr::drop_na() |>
-  dplyr::pull(flipper_length_mm)
+  filter(species == "Adelie") |>
+  drop_na() |>
+  pull(flipper_length_mm)
 
 gentoo <-
   penguins |>
-  dplyr::filter(species == "Gentoo") |>
-  tidyr::drop_na() |>
-  dplyr::pull(flipper_length_mm)
+  filter(species == "Gentoo") |>
+  drop_na() |>
+  pull(flipper_length_mm)
 ```
 
-## One-Sample t-Test: Effect Size {.smaller}
+## t-Test: Effect Size {.smaller}
 
 ```{r}
 library(effectsize)
@@ -340,7 +617,7 @@ effect_size |> interpret_hedges_g(rules = "cohen1988")
 ::: {.notes}
 :::
 
-## One-Sample t-Test: P. Analysis {.smaller}
+## t-Test: Power Analysis {.smaller}
 
 ```{r}
 library(pwrss)
@@ -349,13 +626,13 @@ library(pwrss)
 ```{r}
 #| warning: false
 
-pwrss.t.2means(
-  mu1 = adelie |> mean(na.rm = TRUE),
-  mu2 = gentoo |> mean(na.rm = TRUE),
+pwr_analysis <- pwrss.t.2means(
+  mu1 = gentoo |> mean(na.rm = TRUE),
+  mu2 = adelie |> mean(na.rm = TRUE),
   sd1 = adelie |> sd(na.rm = TRUE),
   sd2 = gentoo |> sd(na.rm = TRUE),
   paired = FALSE,
-  n2 = gentoo |> length(),
+  n2 = min(gentoo |> length(), adelie |> length()),
   kappa = (adelie |> length()) / (gentoo |> length()),
   power = NULL,
   alpha = 0.05,
@@ -367,12 +644,37 @@ pwrss.t.2means(
 ::: {.notes}
 :::
 
-## One-Way ANOVA: Hypothesis {.smaller}
+## t-Test: Power Analysis {.smaller}
+
+```{r}
+#| code-fold: true
+#| warning: false
+#| fig-align: center
+
+library(pwrss)
+
+power.t.test(
+  ncp = pwr_analysis$ncp,
+  df = pwr_analysis$df,
+  alpha = 0.05,
+  alternative = "not equal",
+  plot = TRUE,
+  verbose = FALSE
+)
+```
+
+::: {.notes}
+:::
+
+## ANOVA: Hypothesis {.smaller}
+
+**One-Way ANOVA**.
 
 To ensure practical significance, the difference in means must be analyzed for its effect size considering a 95% confidence interval.
 
-We will use Cohen's benchmark for a small effect size as our Minimum Effect Size (MES) (@cohen1988a).
+We will use Cohen's benchmark for a small effect size as our Minimum Effect Size (MES) [@cohen1988a].
 
+::: {style="padding-top: 15px;"}
 $$
 \begin{cases}
 \text{H}_{0}: \mu_{A} = \mu_{B} = \mu_{C} \\
@@ -380,10 +682,19 @@ $$
 \end{cases}
 $$
 
+
+$$
+\begin{cases}
+\text{H}_{0}: \eta^{2} <= \text{MES} \\
+\text{H}_{a}: \eta^{2} > \text{MES} \\
+\end{cases}
+$$
+:::
+
 ::: {.notes}
 :::
 
-## One-Way ANOVA: Boxplots {.smaller}
+## ANOVA: Boxplots {.smaller}
 
 ```{r}
 #| fig-align: center
@@ -407,7 +718,75 @@ penguins |>
 ::: {.notes}
 :::
 
-## One-Way ANOVA: Fit (Base R) {.smaller}
+## ANOVA: Density Plots {.smaller}
+
+```{r}
+#| fig-align: center
+#| code-fold: true
+
+library(brandr)
+library(ggplot2)
+library(palmerpenguins)
+library(tidyr)
+
+penguins |>
+  drop_na(flipper_length_mm, species) |>
+  ggplot(aes(x = flipper_length_mm, fill = species)) +
+  geom_density(alpha = 0.7) +
+  scale_fill_brand_d() +
+  labs(x = "Flipper Length (mm)", y = "Density", fill = "Species")
+```
+
+::: {.notes}
+:::
+
+## ANOVA: Power Analysis {.smaller}
+
+```{r}
+library(dplyr)
+library(palmerpenguins)
+library(tidyr)
+```
+
+```{r}
+adelie <-
+  penguins |>
+  filter(species == "Adelie") |>
+  drop_na() |>
+  pull(flipper_length_mm)
+
+chinstrap <-
+  penguins |>
+  filter(species == "Chinstrap") |>
+  drop_na() |>
+  pull(flipper_length_mm)
+
+gentoo <-
+  penguins |>
+  filter(species == "Gentoo") |>
+  drop_na() |>
+  pull(flipper_length_mm)
+```
+
+## ANOVA: Power Analysis {.smaller}
+
+```{r}
+library(pwrss)
+```
+
+```{r}
+pwrss.f.ancova(
+  eta2 = 0.01,
+  n.way = 1,
+  n.levels = 3,
+  n.covariates = 0,
+  alpha = 0.05,
+  n = NULL,
+  power = 0.8
+)
+```
+
+## ANOVA: Fit (Base R) {.smaller}
 
 ```{r}
 fit <- aov(flipper_length_mm ~ species, data = penguins)
@@ -415,16 +794,13 @@ fit <- aov(flipper_length_mm ~ species, data = penguins)
 fit
 ```
 
-::: {.notes}
-:::
-
-## One-Way ANOVA: Fit Summary (Base R) {.smaller}
-
 ```{r}
-fit |> summary()
+fit_sum <- fit |> summary()
+
+fit_sum
 ```
 
-## One-Way ANOVA: Tukey HSD (Base R) {.smaller}
+## ANOVA: Tukey HSD (Base R) {.smaller}
 
 ```{r}
  fit |> TukeyHSD()
@@ -433,13 +809,16 @@ fit |> summary()
 ::: {.notes}
 :::
 
-## One-Way ANOVA: Effect Size {.smaller}
+## ANOVA: Effect Size {.smaller}
 
 ```{r}
 library(effectsize)
 ```
 
 ```{r}
+#| messages: false
+#| warning: false
+
 effect_size <- fit |> eta_squared()
 
 effect_size
@@ -452,18 +831,20 @@ effect_size |> interpret_eta_squared(rules = "cohen1992")
 ::: {.notes}
 :::
 
-## One-Way ANOVA: Power Analysis {.smaller}
+## ANOVA: Power Analysis {.smaller}
 
 ```{r}
 library(pwrss)
+```
 
+```{r}
 pwrss.f.ancova(
   eta2 = effect_size$Eta2,
   n.way = 1,
   n.levels = 3,
   n.covariates = 0,
   alpha = 0.05,
-  n = penguins |> nrow(),
+  n = min(length(adelie), length(chinstrap), length(gentoo)),
   power = NULL
 )
 ```
@@ -471,23 +852,74 @@ pwrss.f.ancova(
 ::: {.notes}
 :::
 
-## Linear Regression: Hypothesis {.smaller}
+## Linear Reg.: Hypothesis {.smaller}
+
+**Nested Models**: Adding `bill_depth_mm` as a predictor improve the prediction of `flipper_length_mm`?
 
 To ensure practical significance, the adjusted $\text{R}^2$ of the model must be analyzed for its effect size considering a 95% confidence interval.
 
-We will use Cohen's benchmark for a small effect size as our Minimum Effect Size (MES) (@cohen1988a).
+We will use Cohen's benchmark for a small effect size as our Minimum Effect Size (MES) [@cohen1988a].
 
+::: {style="padding-top: 15px;"}
 $$
 \begin{cases}
 \text{H}_{0}: \text{Adjusted} \ \text{R}^{2} \leq \text{MES} \quad \text{or} \quad \text{F-test is not significant} \ (\alpha \geq 0.05) \\
 \text{H}_{a}: \text{Adjusted} \ \text{R}^{2} > \text{MES} \quad \text{and} \quad \text{F-test is significant} \ (\alpha < 0.05)
 \end{cases}
 $$
+:::
 
 ::: {.notes}
 :::
 
-## Linear Regression: Scatterplot 1 {.smaller}
+## Linear Reg.: Power Analysis {.smaller}
+
+```{r}
+library(pwrss)
+```
+
+```{r}
+penguins |> nrow()
+```
+
+```{r}
+pwrss.f.reg(
+  r2 = 0.02, # Cohen's f^2 for small effect sizes
+  k = 2,
+  power = 0.8,
+  alpha = 0.05
+)
+```
+
+::: {.notes}
+:::
+
+## Linear Reg.: Power Analysis {.smaller}
+
+```{r}
+library(pwrss)
+library(tidyr)
+```
+
+```{r}
+penguins |>
+  drop_na(flipper_length_mm, bill_length_mm, bill_depth_mm) |>
+  nrow()
+```
+
+```{r}
+pwrss.f.reg(
+  r2 = 0.15, # Cohen's f^2 for medium effect sizes
+  k = 2,
+  power = 0.8,
+  alpha = 0.05
+)
+```
+
+::: {.notes}
+:::
+
+## Linear Reg.: Scatterplot 1 {.smaller}
 
 ```{r}
 #| fig-align: center
@@ -498,30 +930,38 @@ library(ggplot2)
 library(palmerpenguins)
 
 penguins |>
-  drop_na(flipper_length_mm, body_mass_g, species) |>
+  drop_na(bill_length_mm, flipper_length_mm, species) |>
   ggplot(
     aes(
-      x = flipper_length_mm,
-      y = bill_length_mm,
+      x = bill_length_mm,
+      y = flipper_length_mm,
       color = species,
       shape = species
     )
   ) +
+  geom_smooth(
+    inherit.aes = FALSE,
+    mapping = aes(x = bill_length_mm, y = flipper_length_mm),
+    method = "lm",
+    formula = y ~ x,
+    se = FALSE,
+    color = get_brand_color("black")
+  ) +
   geom_point(size = 2) +
   geom_smooth(method = "lm", formula = y ~ x, se = FALSE) +
   labs(
-    x = "Flipper Length (mm)",
-    y = "Bill Length (mm)",
+    x = "Bill Length (mm)",
+    y = "Flipper Length (mm)",
     color = "Species",
     shape = "Species"
   ) +
-  brandr::scale_color_brand_d(alpha = 0.7)
+  scale_color_brand_d(alpha = 0.7)
 ```
 
 ::: {.notes}
 :::
 
-## Linear Regression: Scatterplot 2 {.smaller}
+## Linear Reg.: Scatterplot 2 {.smaller}
 
 ```{r}
 #| fig-align: center
@@ -533,56 +973,203 @@ library(palmerpenguins)
 library(tidyr)
 
 penguins |>
-  drop_na(flipper_length_mm, body_mass_g, species) |>
+  drop_na(bill_depth_mm, flipper_length_mm, species) |>
   ggplot(
     aes(
-      x = flipper_length_mm,
-      y = bill_depth_mm,
+      x = bill_depth_mm,
+      y = flipper_length_mm,
       color = species,
       shape = species
     )
   ) +
   geom_point(size = 2) +
   geom_smooth(method = "lm", formula = y ~ x, se = FALSE) +
+  geom_smooth(
+    inherit.aes = FALSE,
+    mapping = aes(x = bill_depth_mm, y = flipper_length_mm),
+    method = "lm",
+    formula = y ~ x,
+    se = FALSE,
+    color = get_brand_color("black")
+  ) +
   labs(
-    x = "Flipper Length (mm)",
-    y = "Bill Depth (mm)",
+    x = "Bill Depth (mm)",
+    y = "Flipper Length (mm)",
     color = "Species",
     shape = "Species"
   ) +
-  brandr::scale_color_brand_d(alpha = 0.7)
+  scale_color_brand_d(alpha = 0.7)
 ```
 
 ::: {.notes}
 :::
 
-## Linear Regression: Fit (Base R) {.smaller}
+## Linear Reg.: Prediciton {.smaller}
 
 ```{r}
-fit <- lm(
-  formula = flipper_length_mm ~ bill_length_mm + bill_depth_mm,
-  data = penguins
-)
+#| code-fold: true
+#| fig-align: center
 
-fit
+library(brandr)
+library(broom)
+library(ggplot2)
+library(palmerpenguins)
+# library(rutils) # github.com/danielvartan/rutils
+library(tidyr)
+
+data <- penguins |> drop_na(flipper_length_mm, bill_length_mm, bill_depth_mm)
+
+fit <-
+  formula(flipper_length_mm ~ bill_length_mm + bill_depth_mm) |>
+  lm(data)
+
+fit |>
+  augment(data) |>
+  ggplot(aes(x = bill_length_mm, y = flipper_length_mm)) +
+  geom_point() +
+  geom_line(
+    aes(y = .fitted, color = "Prediction"),
+    linewidth = 0.5,
+    alpha = 0.5,
+  ) +
+  geom_function(
+    aes(color = "Adjusted prediction"),
+    fun = rutils:::lm_fun(fit, fix_all_but = 1, data = data),
+    linewidth = 1
+  ) +
+  labs(
+    x = "Bill depth (mm)",
+    y = "Flipper length (mm)",
+    subtitle = rutils:::lm_str_fun(fit, fix_all_but = 1),
+    color = NULL
+  ) +
+  ggplot2::scale_color_manual(
+    values = c(
+      "Prediction" = get_brand_color("green"),
+      "Adjusted prediction" = get_brand_color("red")
+    )
+  )
 ```
 
-::: {.notes}
-:::
-
-## Linear Regression: Fit Summary (Base R) {.smaller}
+## Linear Reg.: Plane {.smaller}
 
 ```{r}
-fit_sum <- fit |> summary()
+#| eval: false
+#| include: false
 
-fit_sum
+# Source: https://stackoverflow.com/a/70979149/8258804
+
+# To find the `theta` and `phi` angles, do the following:
+#
+# * Install the `orientlib` package before doing this.
+#
+# 1. Run the chunk below to get a viewport open.
+# 2. Adjust the size of the viewport to the size of the Quarto chart rendering.
+# 3. Run `user_matrix <- rgl::par3d()$userMatrix` to get the user matrix.
+# 4. Run `zoom <- rgl::par3d()$zoom` to get the zoom.
+# 5. Add `user_matrix` and `zoom` to the `rgl::view3d()` function.
+
+# install.packages("orientlib")
+# user_matrix <- rgl::par3d()$userMatrix
+# zoom <- rgl::par3d()$zoom
+```
+
+```{r}
+#| code-fold: true
+
+library(dplyr)
+library(palmerpenguins)
+library(predict3d)
+library(rgl)
+library(tidyr)
+
+user_matrix <-
+  dplyr::tribble(
+    ~a,         ~b,         ~c,          ~d,
+    0.6233152,  -0.7817951, -0.01657271, 0,
+    0.1739255,  0.1179437,  0.97767037,  0,
+    -0.7623830, -0.6122792, 0.20949011,  0,
+    0,          0,          0,           1
+  ) |>
+  as.matrix() |>
+  `colnames<-`(NULL)
+
+data <- penguins |> drop_na(flipper_length_mm, bill_length_mm, bill_depth_mm)
+
+formula(flipper_length_mm ~ bill_length_mm + bill_depth_mm) |>
+  lm(data) |>
+  predict3d(
+    xlab = "Bill length (mm)",
+    ylab = "Bill depth (mm)",
+    zlab = "Flipper length (mm)",
+    radius = 0.75,
+    type = "s",
+    color = "red",
+    show.subtitle = FALSE,
+    show.error = FALSE
+  )
+
+view3d(userMatrix = user_matrix, zoom = 0.9)
+
+rglwidget(elementId = "1st") |>
+  suppressMessages() |>
+  suppressWarnings()
+```
+
+::: {.notes}
+In a multiple linear regression with two predictors, the model is fit by adjusting a **plane** to the data points (**Use the mouse to explore**).
+:::
+
+## Linear Reg.: Fit (Rest.) (Base R) {.smaller}
+
+```{r}
+data <- penguins |> drop_na(flipper_length_mm, bill_length_mm, bill_depth_mm)
+
+fit_restricted <-
+  formula(flipper_length_mm ~ bill_length_mm) |>
+  lm(data)
+```
+
+```{r}
+fit_restricted_sum <- fit_restricted |> summary()
+
+fit_restricted_sum
 ```
 
 ::: {.notes}
 :::
 
-## Linear Regression: Effect Size {.smaller}
+## Linear Reg.: Fit (Full) (Base R) {.smaller}
 
+```{r}
+data <- penguins |> drop_na(flipper_length_mm, bill_length_mm, bill_depth_mm)
+
+fit_full <-
+  formula(flipper_length_mm ~ bill_length_mm + bill_depth_mm) |>
+  lm(data)
+```
+
+```{r}
+fit_full_sum <- fit_full |> summary()
+
+fit_full_sum
+```
+
+::: {.notes}
+:::
+
+## Linear Reg.: ANOVA (Base R) {.smaller}
+
+```{r}
+anova(fit_restricted, fit_full)
+```
+
+::: {.notes}
+:::
+
+## Linear Reg.: Effect Size {.smaller}
+
+::: {style="padding-top: 100px;"}
 $$
 \text{Cohen's } f^2 = \cfrac{\text{R}^{2}}{1 - \text{R}^{2}}
 $$
@@ -594,31 +1181,58 @@ $$
 $$
 0.02 = \cfrac{\text{R}^{2}}{1 - \text{R}^{2}} \quad \text{or} \quad \text{R}^{2} = \cfrac{0.02}{1.02} \eqsim 0.01960784
 $$
+:::
 
-## Linear Regression: Effect Size {.smaller}
+## Linear Reg.: Effect Size {.smaller}
 
 ```{r}
 library(effectsize)
 ```
 
 ```{r}
-fit_sum$r.squared |> interpret_r2(rules = "cohen1988")
+fit_restricted_sum$adj.r.squared
+```
+
+```{r}
+fit_restricted_sum$adj.r.squared |> interpret_r2(rules = "cohen1988")
+```
+
+```{r}
+fit_full_sum$adj.r.squared
+```
+
+```{r}
+fit_full_sum$adj.r.squared |> interpret_r2(rules = "cohen1988")
+```
+
+```{r}
+delta <- fit_full_sum$adj.r.squared - fit_restricted_sum$adj.r.squared
+
+delta
+```
+
+```{r}
+delta |> interpret_r2(rules = "cohen1988")
 ```
 
 ::: {.notes}
 :::
 
-## Linear Regression: Power Analysis {.smaller}
+## Linear Reg.: Power Analysis {.smaller}
 
 ```{r}
 library(pwrss)
+library(tidyr)
 ```
 
 ```{r}
 pwrss.f.reg(
-  r2 = fit_sum$r.squared,
+  r2 = fit_full_sum$adj.r.squared,
   k = 2,
-  n = penguins |> nrow(),
+  n =
+    penguins |>
+    drop_na(flipper_length_mm, bill_length_mm, bill_depth_mm) |>
+    nrow(),
   power = NULL,
   alpha = 0.05
 )

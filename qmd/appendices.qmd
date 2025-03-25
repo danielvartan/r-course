@@ -110,11 +110,11 @@ speak(lola)
 ::: {.notes}
 :::
 
-## 🚨 Warning For Your Future Self {.smaller}
+## (AP) Warning For Your Future Self {.smaller visibility="uncounted"}
 
 :::: {.columns}
 ::: {.column style="width: 50%;"}
-**Never use `setwd()`!**
+🚨 **Never use `setwd()`!**
 
 (How to detect a beginner R user)
 
@@ -275,11 +275,12 @@ A data management plan (DMP) is a formal document that outlines how data will be
 #| warning: true
 #| output: asis
 
+library(dplyr)
 library(palmerpenguins)
 library(summarytools)
 
 penguins |>
-  dplyr::select(species, island, bill_length_mm) |>
+  select(species, island, bill_length_mm) |>
   dfSummary(
     plain.ascii = FALSE,
     style = "grid",
@@ -321,7 +322,27 @@ penguins |> vis_dat()
 ::: {.notes}
 :::
 
-## (AP) Digital Objects & Version Control {.smaller visibility="uncounted"}
+## (AP) ANOVA: Power Analysis  {.smaller visibility="uncounted"}
+
+```{r}
+#| eval: false
+#| warning: false
+
+library(pwrss)
+
+power.f.test(
+  ncp = pwr_analysis$ncp,
+  df1 = pwr_analysis$df1,
+  df2 = pwr_analysis$df2,
+  alpha = 0.05,
+  plot = TRUE
+)
+```
+
+::: {.notes}
+:::
+
+## (AP) Dig. Objects & Ver. Control {.smaller visibility="uncounted"}
 
 :::: {.columns}
 ::: {.column style="width: 47%;"}
@@ -414,7 +435,7 @@ Pipeline tools coordinate the pieces of computationally demanding analysis proje
 ::: {.notes}
 :::
 
-## (AP) Reproducible Environments {.smaller visibility="uncounted"}
+## (AP) Reproducible Env. {.smaller visibility="uncounted"}
 
 Reproducible environments ensure that your code will run the same way on different machines and regardless of the time.
 
@@ -430,7 +451,7 @@ Reproducible environments ensure that your code will run the same way on differe
 ::: {.notes}
 :::
 
-## (AP) App. Prog. Interfaces (APIs) {.smaller visibility="uncounted"}
+## (AP) App. Prog. Interf. (APIs) {.smaller visibility="uncounted"}
 
 ::: {style="font-size: 0.8em;"}
 APIs are a set of rules that allow different software applications to communicate with each other.
@@ -455,6 +476,10 @@ APIs are a set of rules that allow different software applications to communicat
 ```{r}
 library(magrittr)
 library(sidrar)
+```
+
+```{r}
+#| eval: false
 
 # Brazil's population in 2022 (Census data)
 get_sidra(
@@ -463,13 +488,14 @@ get_sidra(
   suppressMessages() |>
   extract2("Valor") |>
   prettyNum(big.mark = ",")
+#> [1] "216,284,269"
 ```
 
 ## (AP) KISS Principle {.nostretch visibility="uncounted"}
 
 ![](images/kiss-principle.png){fig-align="center" style="width: 75%; padding-top: 50px;"}
 
-## (AP) Some Other Things... {.smaller visibility="uncounted"}
+## (AP) Some Other Things ... {.smaller visibility="uncounted"}
 
 We've only touched upon the vast landscape of open science. There are many other tools and concepts that we didn't cover, such as:
 
@@ -493,7 +519,7 @@ We've only touched upon the vast landscape of open science. There are many other
 ::: {.notes}
 :::
 
-## (AP) Some Other Things... {.smaller .nostretch visibility="uncounted"}
+## (AP) Some Other Things ... {.smaller .nostretch visibility="uncounted"}
 
 ![](images/allison-horst-figure-9.png){fig-align="center" style="width: 90%; padding-top: 10px;"}
 

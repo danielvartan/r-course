@@ -1,3 +1,8 @@
+```{r}
+#| include: false
+#| label: module-2-first-chunk
+```
+
 ## Installing R {.smaller}
 
 :::: {.columns}
@@ -465,8 +470,8 @@ R has strict rules regarding the names of objects.
 ::: {.column style="width: 50%;"}
 - ``` `&`() ``` AND (Element-wise)
 - ``` `&&`() ``` AND
-- ``` `|`() ``` OR
-- ``` `||`() ``` OR (Element-wise)
+- ``` `|`() ``` OR (Element-wise)
+- ``` `||`() ``` OR
 - ``` `!`() ``` NOT
 :::
 ::: {.column style="width: 50%;"}
@@ -871,7 +876,7 @@ name <- function(parameter_1, parameter_2, ...) expression
 ```
 
 ::::: {.columns}
-:::: {.column style="width: 47.5%;"}
+:::: {.column style="width: 47.5%; padding-top: 0px;"}
 The last evaluated expression is the return value of the function.
 
 You can use `return()` to return a value before the end of the function, but this is a bad practice.
@@ -884,9 +889,9 @@ foo <- function(x) {
 foo(9)
 ```
 ::::
-:::: {.column style="width: 5%;"}
+:::: {.column style="width: 5%; padding-top: 0px;"}
 ::::
-:::: {.column style="width: 47.5%;"}
+:::: {.column style="width: 47.5%; padding-top: 30px;"}
 ```{r}
 foo <- function(x) {
   return(x + 1)
@@ -959,10 +964,10 @@ microbenchmark(
 
 ## Enviroments {.smaller}
 
-[Scoping](https://adv-r.hadley.nz/functions.html?q=scoping#lexical-scoping)
+[Scoping](https://adv-r.hadley.nz/functions.html?q=scoping#lexical-scoping):  The act of finding the value associated with a name.
 
-:::: {.columns style="padding-top: 10px;"}
-::: {.column style="width: 47.5%;"}
+:::: {.columns}
+::: {.column style="width: 47.5%; padding-top: 15px;"}
 ```{r}
 x <- 10
 
@@ -977,7 +982,7 @@ foo()
 :::
 ::: {.column style="width: 5%;"}
 :::
-::: {.column style="width: 47.5%;"}
+::: {.column style="width: 47.5%; padding-top: 15px;"}
 ```{r}
 foo <- function() {
   x <<- 50
@@ -1027,7 +1032,7 @@ library(mctq)
 ```
 
 ```{r}
-so(parse_hm("23:00"), lubridate::dhours(2))
+so(parse_hm("23:00"), dhours(2))
 ```
 :::
 
@@ -1037,7 +1042,7 @@ package_name::function_name()
 ```
 
 ```{r}
-hms::parse_hm("23:00")
+parse_hm("23:00")
 ```
 :::
 ::::

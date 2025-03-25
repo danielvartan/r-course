@@ -1,3 +1,8 @@
+```{r}
+#| include: false
+#| label: module-6-first-chunk
+```
+
 ## Your Mission {.smaller}
 
 Answer the following question using the data provided:

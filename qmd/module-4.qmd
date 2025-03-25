@@ -1,3 +1,8 @@
+```{r}
+#| include: false
+#| label: module-4-first-chunk
+```
+
 ## Simple Statistics {.smaller}
 
 The `stats` package, that comes with a typical R installation, provides a set of basic statistical functions.
@@ -8,8 +13,8 @@ library(palmerpenguins)
 ```
 
 ```{r}
-bill_length_mm <- penguins |> dplyr::pull(bill_length_mm)
-bill_depth_mm <- penguins |> dplyr::pull(bill_depth_mm)
+bill_length_mm <- penguins |> pull(bill_length_mm)
+bill_depth_mm <- penguins |> pull(bill_depth_mm)
 ```
 
 ```{r}
@@ -52,7 +57,7 @@ penguins %>% tail(3)
 
 ```{r}
 penguins |>
-  dplyr::pull(bill_length_mm) |>
+  pull(bill_length_mm) |>
   head(3)
 ```
 
@@ -81,7 +86,7 @@ library(palmerpenguins)
 ```
 
 ```{r}
-penguins |> dplyr::glimpse()
+penguins |> glimpse()
 ```
 
 ::: {.notes}
@@ -271,10 +276,19 @@ penguins |> ggplot()
 
 library(ggplot2)
 library(palmerpenguins)
+library(tidyr)
 
 penguins |>
-  ggplot(aes(x = flipper_length_mm)) +
-  theme(text = element_text(size = 20))
+  drop_na(body_mass_g, flipper_length_mm, species) |>
+  ggplot(
+    aes(
+      x = body_mass_g,
+      y = flipper_length_mm,
+      color = species,
+      shape = species
+    )
+  ) +
+  theme(text = element_text(size = 20), legend.position = "none")
 ```
 :::
 ::::
@@ -294,11 +308,21 @@ penguins |>
 library(brandr)
 library(ggplot2)
 library(palmerpenguins)
+library(tidyr)
 
 penguins |>
-  ggplot(aes(x = flipper_length_mm))+
-  geom_histogram(fill = get_brand_color("secondary")) +
-  theme(text = element_text(size = 20))
+  drop_na(body_mass_g, flipper_length_mm, species) |>
+  ggplot(
+    aes(
+      x = body_mass_g,
+      y = flipper_length_mm,
+      color = species,
+      shape = species
+    )
+  ) +
+  geom_point(size = 3) +
+  scale_color_brand_d(alpha = 0.7) +
+  theme(text = element_text(size = 20), legend.position = "none")
 ```
 :::
 ::: {.column style="width: 50%;"}
@@ -310,12 +334,33 @@ penguins |>
 library(brandr)
 library(ggplot2)
 library(palmerpenguins)
+library(tidyr)
 
 penguins |>
-  ggplot(aes(x = flipper_length_mm))+
-  geom_histogram(fill = get_brand_color("secondary")) +
-  labs(x = "Flipper Length (mm)", y = "Frequency") +
-  theme(text = element_text(size = 20))
+  drop_na(body_mass_g, flipper_length_mm, species) |>
+  ggplot(
+    aes(
+      x = body_mass_g,
+      y = flipper_length_mm,
+      color = species,
+      shape = species
+    )
+  ) +
+  geom_point(size = 3) +
+  geom_smooth(
+    method = "lm",
+    formula = y ~ x,
+    se = FALSE,
+    linewidth = 1.5
+  ) +
+  labs(
+    x = "Body Mass (g)",
+    y = "Flipper Length (mm)",
+    color = "Species",
+    shape = "Species"
+  ) +
+  scale_color_brand_d(alpha = 0.7) +
+  theme(text = element_text(size = 20), legend.position = "none")
 ```
 :::
 ::::
@@ -403,11 +448,11 @@ library(palmerpenguins)
 library(tidyr)
 
 penguins |>
-  drop_na(flipper_length_mm, body_mass_g, species) |>
+  drop_na(body_mass_g, flipper_length_mm, species) |>
   ggplot(
     aes(
-      x = flipper_length_mm,
-      y = body_mass_g,
+      x = body_mass_g,
+      y = flipper_length_mm,
       color = species,
       shape = species
     )
@@ -415,8 +460,8 @@ penguins |>
   geom_point(size = 2) +
   geom_smooth(method = "lm", formula = y ~ x, se = FALSE) +
   labs(
-    x = "Flipper Length (mm)",
-    y = "Body Mass (g)",
+    x = "Body Mass (g)",
+    y = "Flipper Length (mm)",
     color = "Species",
     shape = "Species"
   ) +
@@ -438,9 +483,9 @@ library(stringr)
 library(tidyr)
 
 penguins |>
-  drop_na(flipper_length_mm, body_mass_g, sex) |>
+  drop_na(body_mass_g, flipper_length_mm, sex) |>
   mutate(sex = `levels<-`(sex, str_to_title(levels(sex)))) |>
-  ggplot(aes(x = flipper_length_mm, y = body_mass_g, color = sex)) +
+  ggplot(aes(x = body_mass_g, y = flipper_length_mm, color = sex)) +
   geom_point(size = 2) +
   geom_smooth(
     method = "lm",
@@ -449,8 +494,8 @@ penguins |>
     color = get_brand_color("brown")
   ) +
   labs(
-    x = "Flipper Length (mm)",
-    y = "Body Mass (g)",
+    x = "Body Mass (g)",
+    y = "Flipper Length (mm)",
     color = "Sex"
   ) +
   scale_color_brand_d(alpha = 0.7) +
@@ -491,11 +536,11 @@ plot_boxplot <-
 
 plot_scatter <-
   penguins |>
-  drop_na(flipper_length_mm, body_mass_g, species) |>
+  drop_na(body_mass_g, flipper_length_mm, species) |>
   ggplot(
     aes(
-      x = flipper_length_mm,
-      y = body_mass_g,
+      x = body_mass_g,
+      y = flipper_length_mm,
       color = species,
       shape = species
     )
@@ -503,8 +548,8 @@ plot_scatter <-
   geom_point(size = 2) +
   geom_smooth(method = "lm", formula = y ~ x, se = FALSE) +
   labs(
-    x = "Flipper Length (mm)",
-    y = "Body Mass (g)",
+    x = "Body Mass (g)",
+    y = "Flipper Length (mm)",
     color = "Species",
     shape = "Species"
   ) +
