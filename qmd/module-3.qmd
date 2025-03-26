@@ -5,7 +5,7 @@
 
 ## Data Science {.nostretch .smaller}
 
-::: {style="font-size: 0.8em"}
+::: {style="font-size: 0.8em; padding-bottom: 0px;"}
 > Data science is the study of the generalizable extraction of knowledge from data [@dhar2023].
 
 For some, data science is just statistics [@broman2013] (_hype statistics_). For others, it's a new interdisciplinary field that synthesizes statistics, informatics, computing, communication, management, and sociology [@cao2017].
@@ -96,22 +96,6 @@ Data is an abstraction. It's a representation of the world around us. Without co
 ::: {.notes}
 :::
 
-## Valid Data {.smaller}
-
-Data validation techniques are used to ensure that data is accurate, consistent, and reliable.
-
-::: {style="padding-top: 10px;"}
-**Examples**
-
-- Impossible values (e.g., negative age);
-- Inconsistent values (e.g., a person with a height of 2 meters and a weight of 20 kg);
-- Improbable values (e.g., a person 200 years old);
-- Duplicated values (e.g., the same person with two different ages).
-:::
-
-::: {.notes}
-:::
-
 ## Tidy Data {.smaller}
 
 ![](images/allison-horst-figure-13.jpg){fig-align="center" style="width: 100%;"}
@@ -120,20 +104,7 @@ Data validation techniques are used to ensure that data is accurate, consistent,
 (Artwork by [Allison Horst](https://allisonhorst.com/horst-hill-collaborations))
 :::
 
-## Tidy Data {.smaller}
-
-![](images/allison-horst-figure-14.jpg){fig-align="center" style="width: 100%;"}
-
-::: footer
-(Artwork by [Allison Horst](https://allisonhorst.com/horst-hill-collaborations))
-:::
-
-## Untidy to Tidy {.smaller}
-
-![](images/wickham-2023-figure-5-3.png){fig-align="center" style="width: 100%;"}
-
-::: footer
-(Reproduced from @wickham2023e)
+::: {.notes}
 :::
 
 ## Tidy Data
@@ -144,26 +115,56 @@ Data validation techniques are used to ensure that data is accurate, consistent,
 (Artwork by [Allison Horst](https://allisonhorst.com/horst-hill-collaborations))
 :::
 
+::: {.notes}
+:::
+
+## Untidy to Tidy {.smaller}
+
+![](images/wickham-2023-figure-5-3.png){fig-align="center" style="width: 100%;  padding-top: 15px;"}
+
+::: footer
+(Reproduced from @wickham2023e)
+:::
+
+::: {.notes}
+:::
+
+## Valid Data {.smaller}
+
+Data validation techniques are used to ensure that data is accurate, consistent, and reliable.
+
+::: {style="padding-top: 10px; padding-bottom: 15px;"}
+**Examples**
+
+- Impossible values (e.g., negative age);
+- Inconsistent values (e.g., a person with a height of 2 meters and a weight of 20 kg);
+- Improbable values (e.g., a person 200 years old);
+- Duplicated values (e.g., the same person with two different ages).
+:::
+
+**Tip**: Check out Mark van der Loo's [`validate`](https://cran.r-project.org/web/packages/validate/vignettes/cookbook.html) R package for data validation techniques.
+
+::: {.notes}
+:::
+
 ## Tabular Data {.smaller}
 
-:::: {.columns}
-::: {.column style="width: 50%; text-align: center;"}
-2023
-: 34 cols $\times$ 50,544,073 rows<br>1,718,498,482 data points.
-
-2022
-: 34 cols $\times$ 45,862,105 rows<br>1,559,311,570 data points.
-
-2021
-: 34 cols $\times$ 29,853,217 rows<br>1,015,009,378 data points.
-
-2020
-: 34 cols $\times$ 22,720,515 rows<br>772,497,510 data points.
+::: {style="font-size: 0.8em; font-style: italic; padding-bottom: 15px;"}
+Daily air quality measurements in New York (May to September 1973).
 :::
-::: {.column style="width: 50%;"}
-![](images/sisvan-logo.png){fig-align="center" style="width: 75%; padding-top: 50px;"}
+
+```r
+?airquality
+```
+
+::: {style="font-size: 1em; padding-top: 30px;"}
+```{r}
+#| echo: false
+
+datasets::airquality |>
+  rmarkdown::paged_table(options = list(rows.print = 11))
+```
 :::
-::::
 
 ::: {.notes}
 :::
@@ -251,7 +252,10 @@ Spreadsheet syndrome is a term used to describe the problems that arise from usi
 ::::
 
 ::: footer
-(Figure by 9Dots Management)
+(Artwork by 9Dots Management)
+:::
+
+::: {.notes}
 :::
 
 ## Relational Databases {.nostretch .smaller}
@@ -262,24 +266,30 @@ Spreadsheet syndrome is a term used to describe the problems that arise from usi
 
 ![](images/relational-database.png){fig-align="center" style="width: 80%; padding-top: 10px;"}
 
-## Data Documentation {visibility="uncounted"}
+## Data Documentation {.smaller visibility="uncounted"}
 
-Documentation is essential for data sharing and reproducibility
+:::: {.columns}
+::: {.column style="width: 50%; font-size: 0.85em;"}
+Proper documentation is crucial for data sharing, reproducibility, and ensuring that others can understand and use your data effectively.
 
-Data dictionaries/Codebooks (e.g., [SISVAN](https://s3.sa-east-1.amazonaws.com/ckan.saude.gov.br/SISVAN/estado_nutricional/Dicionário+de+Dados+-+Estado+Nutricional.pdf))
+Here are some examples and guides to help you document your data:
 
-[Guide to Writing “README” Style Metadata](https://data.research.cornell.edu/data-management/sharing/readme/).
+- [SISVAN nutritional status dataset dictionary](https://s3.sa-east-1.amazonaws.com/ckan.saude.gov.br/SISVAN/estado_nutricional/Dicionário+de+Dados+-+Estado+Nutricional.pdf).
+- [Guide to Writing “README” Style Metadata](https://data.research.cornell.edu/data-management/sharing/readme/).
+- [Metadata Standards Catalog](https://rdamsc.bath.ac.uk/)
 
-[Metadata Standards Catalog](https://rdamsc.bath.ac.uk/)
-
-[Data Documentation Initiative (DDI)](https://ddialliance.org/)
-
-## The Codebook {.nostretch}
-
-![](images/ellis-2018-figure-1.jpg){fig-align="center" style="width: 80%;"}
+Check @ellis2018 for a detailed guide on data documentation.
+:::
+::: {.column style="width: 50%;"}
+![](images/ellis-2018-figure-1-adapted.png){fig-align="center" style="width: 90%; padding-top: 15px;"}
+:::
+::::
 
 ::: footer
-(Reproduced from @ellis2018)
+(Adapted from @ellis2018[Figure 1])
+:::
+
+::: {.notes}
 :::
 
 ## Open Data Formats {.smaller}
@@ -290,7 +300,7 @@ There are many open data formats available for researchers to use. *Open* can me
 ⚠️ **Excel files are not a open data format!** ⚠️
 :::
 
-:::: {.columns stye="padding-top: 15px;"}
+:::: {.columns}
 ::: {.column style="width: 47.5%;"}
 **Tabular Data**
 
@@ -307,6 +317,92 @@ There are many open data formats available for researchers to use. *Open* can me
 - [YAML](https://en.wikipedia.org/wiki/YAML)
 - [TOML](https://en.wikipedia.org/wiki/TOML)
 - [XML](https://en.wikipedia.org/wiki/XML)
+:::
+::::
+
+::: {.notes}
+:::
+
+## Data Frames {.smaller}
+
+Data frames are a special type of `list` used for storing data tables. They are the most common way of storing data in R.
+
+:::: {.columns}
+::: {.column style="width: 50%; padding-top: 10px; padding-bottom: 15px;"}
+```r
+data.frame(a = 1:3, b = c("A", "B", "C"))
+```
+
+```r
+library(dplyr)
+```
+
+```r
+tibble(a = 1:3, b = c("A", "B", "C"))
+```
+:::
+::: {.column style="width: 50%; padding-top: 10px; padding-bottom: 15px;"}
+```{r}
+library(mctq)
+```
+
+```r
+?std_mctq
+```
+
+```r
+View(std_mctq)
+```
+:::
+::::
+
+::: {style="font-size: 1em; padding-top: 15px;"}
+```{r}
+#| echo: false
+
+mctq::std_mctq |>
+  rmarkdown::paged_table(options = list(rows.print = 7))
+```
+:::
+
+::: {.notes}
+:::
+
+## The `tibble` Package {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 15%;"}
+[![](images/tibble-hex-logo.svg){style="width: 120px;"}](https://tidyr.tidyverse.org/)
+:::
+::: {.column style="width: 85%; padding-top: 15px;"}
+[`tibble`](https://tibble.tidyverse.org/) is a modern reimagining of the data frame, keeping what time has proven to be effective, and throwing out what is not.
+
+```r
+install.packages("tibble")
+```
+:::
+::::
+
+:::: {.columns"}
+::: {.column style="width: 50%; padding-top: 30px;"}
+Using R native `data.frame` class
+
+```{r}
+#| attr-source: "style='height: 250px;'"
+
+mtcars
+```
+:::
+::: {.column style="width: 50%; padding-top: 30px;"}
+Using `tibble` (Tidyverse way)
+
+```{r}
+#| attr-source: "style='height: 250px;'"
+
+library(dplyr) # or library(tibble)
+
+mtcars |> as_tibble()
+```
 :::
 ::::
 
@@ -344,7 +440,7 @@ The `palmerpenguins` data contains size measurements for **three penguin species
 
 These data were collected from 2007--2009 by [Dr. Kristen Gorman](https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php) with the [Palmer Station Long Term Ecological Research Program](https://pal.lternet.edu/), part of th [US Long Term Ecological Research Network](https://lternet.edu/).
 
-We will use this package in the first part of the course to get familiar with R.
+We will use this package to get familiar with R.
 
 ```{r}
 #| echo: false
@@ -383,9 +479,9 @@ palmerpenguins::penguins |>
 
 ## Inspecting the Raw Data File  {.smaller}
 
-**Known your data**.
+🕵 **Known your data**.
 
-1. Click [here](https://github.com/danielvartan/r-course/blob/352b75a01db92ea175fe4cc59246f96799421909/data/palmer-penguins-raw.csv) to download the Palmer Penguis raw data file.
+1. Click [here](https://github.com/danielvartan/r-course/blob/main/data/palmerpenguins-raw.csv) to download the Palmer Penguis raw data file.
 2. Save it in a folder named `data` in the root of your project.
 3. Using the file manager, open the file in RStudio.
 
@@ -399,7 +495,7 @@ library(palmerpenguins)
 ?penguins_raw
 ```
 
-You can also use the following code to open the file:
+You can also use the following code to open the file in RStudio:
 
 ```r
 library(rstudioapi)
@@ -414,7 +510,7 @@ path_to_file("penguins_raw.csv") |> documentOpen()
 
 ## Inspecting the Raw Data File  {.smaller}
 
-Before importing the data to R, let's first take a look at the content of this data file in a text editor.
+Before importing the data to R, let's first take a look at the content of the data file in a text editor.
 
 ``` {.csv filename="palmerpenguins-raw.csv"}
 studyName,Sample Number,Species,Region,Island,Stage,Individual ID,Clutch Completion,Date Egg,Culmen Length (mm),Culmen Depth (mm),Flipper Length (mm),Body Mass (g),Sex,Delta 15 N (o/oo),Delta 13 C (o/oo),Comments
@@ -542,13 +638,15 @@ library(readr)
 ::: {.notes}
 :::
 
-## Importing the Data {.smaller}
+## The `readr` Package {.smaller}
 
 ```{r}
+library(dplyr)
 library(here)
-library(palmerpenguins)
 library(readr)
+```
 
+```{r}
 data <-
   here("data", "palmerpenguins-raw.csv") |>
   read_csv(col_types = cols(.default = "c"))
@@ -556,8 +654,6 @@ data <-
 
 ```{r}
 #| attr-source: "style='height: 400px;'"
-
-library(dplyr)
 
 data |> glimpse()
 ```
@@ -582,8 +678,6 @@ data |> rmarkdown::paged_table(options = list(rows.print = 12))
 ::: {.notes}
 :::
 
-## Tidying the Data {.smaller}
-
 ## The `janitor` Package {.smaller}
 
 :::: {.columns}
@@ -599,12 +693,7 @@ install.packages("janitor")
 :::
 ::::
 
-::: {.notes}
-:::
-
-## `clean_names()` {.smaller}
-
-![](images/allison-horst-figure-25.png){fig-align="center" style="width: 90%; padding-top: 25px;"}
+![](images/allison-horst-figure-25.png){fig-align="center" style="width: 70%;"}
 
 ::: footer
 (Artwork by [Allison Horst](https://twitter.com/allison_horst))
@@ -614,6 +703,10 @@ install.packages("janitor")
 :::
 
 ## `clean_names()` {.smaller}
+
+The `clean_names()` function returns [machine-readable](https://en.m.wikipedia.org/wiki/Machine-readable_medium_and_data) names.
+
+This makes it easier to work with the data.
 
 ```{r}
 data |> names()
@@ -632,6 +725,39 @@ data |> names()
 ::: {.notes}
 :::
 
+## Data Masking {.smaller}
+
+Most tidyverse functions use data masking, allowing you to refer to data frame columns directly by their names (e.g., `my_variable`) instead of using more verbose syntax like `data[["my_variable"]]`.
+
+This is part of a concept called [tidy evaluation](https://dplyr.tidyverse.org/articles/programming.html).
+
+::: {style="padding-top: 15px;"}
+```{r}
+library(dplyr)
+```
+
+```{r}
+some_data <- tibble(a = c(1, 2, 3), b = c(4, 5, 6))
+```
+:::
+
+:::: {.columns}
+::: {.column style="width: 50%; padding-top: 30px;"}
+**With Data Masking**
+
+```{r}
+some_data |> pull(a) # No quotes
+```
+:::
+::: {.column style="width: 50%; padding-top: 30px;"}
+**Without Data Masking**
+
+```{r}
+some_data[["a"]]
+```
+:::
+::::
+
 ## The `tidyr` Package {.smaller}
 
 :::: {.columns}
@@ -647,41 +773,29 @@ install.packages("tidyr")
 :::
 ::::
 
-::: {.notes}
-:::
-
-## The `tibble` Package {.smaller}
-
 :::: {.columns}
-::: {.column style="width: 15%;"}
-[![](images/tibble-hex-logo.svg){style="width: 120px;"}](https://tidyr.tidyverse.org/)
-:::
-::: {.column style="width: 85%; padding-top: 15px;"}
-[`tibble`](https://tibble.tidyverse.org/) is a modern reimagining of the data frame, keeping what time has proven to be effective, and throwing out what is not.
-
-```r
-install.packages("tibble")
+::: {.column style="width: 50%;"}
+```{r}
+library(dplyr)
+library(tidyr)
+library(stringr)
 ```
-:::
-::::
-
-:::: {.columns"}
-::: {.column style="width: 50%; padding-top: 30px;"}
-Using R native `data.frame` class
 
 ```{r}
-#| attr-source: "style='height: 250px;'"
-
-data |> as.data.frame()
+data <-
+  data |>
+  separate_wider_delim(
+    col = stage,
+    delim = ", ",
+    names = c("life_stage", "egg_stage"),
+  )
 ```
 :::
-::: {.column style="width: 50%; padding-top: 30px;"}
-Using `tibble` (Tidyverse way)
-
+::: {.column style="width: 50%;"}
 ```{r}
-#| attr-source: "style='height: 250px;'"
+#| attr-source: "style='height: 400px;'"
 
-data
+data |> glimpse()
 ```
 :::
 ::::
@@ -704,25 +818,88 @@ install.packages("dplyr")
 :::
 ::::
 
-::: {.notes}
-:::
-
-## `dplyr` Verbs {.smaller}
-
-- `mutate()`: Create, modify, and delete columns
+:::: {.columns}
+::: {.column style="width: 50%; font-size: 0.9em;"}
+- `mutate()`: Create, modify, and delete columns.
 - `transmute()`: Creates a new data frame containing only specified computations
-- `select()`: Keep or drop columns using their names and types
-- `slice()`: Subset rows using their positions
-- `filter()`: Keep rows that match a condition
-- `summarize()`: Summarise each group down to one row
-- `arrange()`: Order rows using column values
-- `rename()`: Rename columns
-- `relocate()`: Change column order
+- `select()`: Keep or drop columns using their names and types.
+- `slice()`: Subset rows using their positions.
+:::
+::: {.column style="width: 50%; font-size: 0.9em;"}
+- `filter()`: Keep rows that match a condition.
+- `arrange()`: Order rows using column values.
+- `rename()`: Rename columns.
+- `relocate()`: Change column order.
+- `summarize()`: Summarise each group down to one row.
+:::
+::::
 
 ::: {.notes}
 :::
 
-## `mutate()`
+## `select()` {.smaller}
+
+The `select()` function is used to select columns from a data frame.
+
+In our case, we are not interested in using alll the variables in the raw data. We will select only the variables we need.
+
+```{r}
+library(dplyr)
+```
+
+```{r}
+data <-
+  data |>
+  select(
+    date_egg, species, island, culmen_length_mm, culmen_depth_mm,
+    flipper_length_mm, body_mass_g, sex
+  )
+```
+
+```{r}
+data |> glimpse()
+```
+
+::: {.notes}
+:::
+
+## `rename()` {.smaller}
+
+![](images/allison-horst-figure-29.png){fig-align="center" style="width: 90%; padding-top: 15px;"}
+
+::: footer
+(Artwork by [Allison Horst](https://twitter.com/allison_horst))
+:::
+
+::: {.notes}
+:::
+
+## `rename()` {.smaller}
+
+Let's rename *culmen* to *bill* for clarity. Likewise, we'll change `date_egg` to `year`, extracting the year value in another moment.
+
+```{r}
+library(dplyr)
+```
+
+```{r}
+data <-
+  data |>
+  rename(
+    bill_length_mm = culmen_length_mm,
+    bill_depth_mm = culmen_depth_mm,
+    year = date_egg
+  )
+```
+
+```{r}
+data |> glimpse()
+```
+
+::: {.notes}
+:::
+
+## `mutate()` {.smaller}
 
 ![](images/allison-horst-figure-24.png){fig-align="center" style="width: 90%; padding-top: 0px;"}
 
@@ -733,22 +910,91 @@ install.packages("dplyr")
 ::: {.notes}
 :::
 
-## `transmute()`
+## `mutate()` {.smaller}
+
+The `mutate()` function is used to create new columns or modify existing columns in a data frame.
+
+We need assign proper classes to the variables. We also need to transform the `year` column, extracting just the year value.
+
+```{r}
+library(dplyr)
+```
+
+```{r}
+data |> glimpse()
+```
+
+## `mutate()` {.smaller}
+
+```{r}
+data |> pull(species) |> unique()
+```
+
+```{r}
+data |> pull(island) |> unique()
+```
+
+```{r}
+data |> pull(sex) |> unique()
+```
 
 ::: {.notes}
 :::
 
-## `select()`
+## `mutate()` {.smaller}
+
+```{r}
+library(dplyr)
+library(lubridate)
+library(stringr)
+```
+
+```{r}
+data <-
+  data |>
+  mutate(
+    year =
+      year |>
+      as.Date() |>
+      year() |>
+      as.integer(),
+    species =
+      case_match(
+        species,
+        "Adelie Penguin (Pygoscelis adeliae)" ~ "Adelie",
+        "Chinstrap penguin (Pygoscelis antarctica)" ~ "Chinstrap",
+        "Gentoo penguin (Pygoscelis papua)" ~ "Gentoo"
+      ) |>
+      as.factor(),
+    island = as.factor(island),
+    bill_length_mm = bill_length_mm |> as.numeric(),
+    bill_depth_mm = bill_depth_mm |> as.numeric(),
+    flipper_length_mm = flipper_length_mm |> as.integer(),
+    body_mass_g = body_mass_g |> as.integer(),
+    sex =
+      sex |>
+      str_to_lower() |>
+      as.factor()
+  )
+```
 
 ::: {.notes}
 :::
 
-## `slice()`
+## `mutate()` {.smaller}
+
+```{r}
+library(dplyr)
+```
+
+```{r}
+data |> glimpse()
+```
 
 ::: {.notes}
 :::
 
-## `filter()`
+## `filter()` {.smaller}
 
 ![](images/allison-horst-figure-31.png){fig-align="center" style="width: 90%; padding-top: 0px;"}
 
@@ -759,28 +1005,31 @@ install.packages("dplyr")
 ::: {.notes}
 :::
 
-## `summarize()`
+## `filter()` {.smaller}
+
+Let's filter the data to keep only penguins with a body mass greater than 2000 grams and a bill length less than 50 mm.
+
+```{r}
+library(dplyr)
+```
+
+```{r}
+data <-
+  data |>
+  filter(
+    body_mass_g > 2000 | is.na(body_mass_g),
+    bill_length_mm < 60 | is.na(bill_length_mm)
+  )
+```
+
+```{r}
+data |> glimpse()
+```
 
 ::: {.notes}
 :::
 
-## `arrange()`
-
-::: {.notes}
-:::
-
-## `rename()`
-
-![](images/allison-horst-figure-29.png){fig-align="center" style="width: 90%; padding-top: 0px;"}
-
-::: footer
-(Artwork by [Allison Horst](https://twitter.com/allison_horst))
-:::
-
-::: {.notes}
-:::
-
-## `relocate()`
+## `relocate()` {.smaller}
 
 ![](images/allison-horst-figure-30.png){fig-align="center" style="width: 90%; padding-top: 0px;"}
 
@@ -791,34 +1040,26 @@ install.packages("dplyr")
 ::: {.notes}
 :::
 
-## `across()`
+## `relocate()` {.smaller}
 
-![](images/allison-horst-figure-33.png){fig-align="center" style="width: 90%; padding-top: 0px;"}
+Let's organize our columns in a more logical order. The `year` column is best placed next to the `sex` column.
 
-::: footer
-(Artwork by [Allison Horst](https://twitter.com/allison_horst))
-:::
+```{r}
+library(dplyr)
+```
 
-::: {.notes}
-:::
+```{r}
+data <-
+  data |>
+  relocate(year, .after = sex)
+```
 
-## `case_when()`
-
-![](images/allison-horst-figure-32.png){fig-align="center" style="width: 90%; padding-top: 0px;"}
-
-::: footer
-(Artwork by [Allison Horst](https://twitter.com/allison_horst))
-:::
-
-::: {.notes}
-:::
-
-## `if_else()`
+```{r}
+data |> glimpse()
+```
 
 ::: {.notes}
 :::
-
-## Data Validation {.smaller}
 
 ## Inspecting the Valid Data {.smaller}
 
@@ -830,7 +1071,7 @@ data |> View()
 ```{r}
 #| echo: false
 
-palmerpenguins::penguins |>
+data |>
   rmarkdown::paged_table(options = list(rows.print = 12))
 ```
 :::
@@ -838,7 +1079,39 @@ palmerpenguins::penguins |>
 ::: {.notes}
 :::
 
+## Comparing the Valid Data {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%;"}
+```{r}
+library(palmerpenguins)
+```
+:::
+::: {.column style="width: 50%;"}
+```{r}
+identical(data, penguins)
+```
+:::
+::::
+
+```{r}
+data |> glimpse()
+```
+
+```{r}
+penguins |> glimpse()
+```
+
+::: {.notes}
+:::
+
 ## Exporting the Data {.smaller}
+
+::: {style="padding-bottom: 15px;"}
+Always save your data in non-binary formats like `csv` to ensure that it can be read by other software.
+
+`rds` stands for R Data Serialization. It is a binary data format that allows you to load an object into R preserving all its attributes.
+:::
 
 ```{r}
 library(here)

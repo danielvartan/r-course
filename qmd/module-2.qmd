@@ -567,7 +567,7 @@ matrix(1:4, nrow = 2) %*% matrix(1:4, nrow = 2)
 :::
 ::: {.column style="width: 47.5%; font-size: 0.9em;"}
 ```{r}
-!FALSE & TRUE
+!FALSE && TRUE
 ```
 :::
 ::::
@@ -704,7 +704,7 @@ is.na(c(1, NA, 3))
 :::: {.column style="width: 5%;"}
 ::::
 :::: {.column style="width: 47.5%;"}
-`Nan` (*Not a Number*)
+`NaN` (*Not a Number*)
 
 ```{r}
 0 / 0
@@ -743,43 +743,47 @@ is.infinite(1 / 0)
 **R Native Pipe**<br>
 [(Introduced in [R 4.1.0](https://cran.r-project.org/bin/windows/base/old/4.1.0/NEWS.R-4.1.0.html))]{style="font-size: 0.7em"}
 
-::: {style="padding-top: 10px;"}
+::: {style="padding-top: 10px; padding-bottom: 15px;"}
 ```r
 object |> function()
 object |> function(1, par = _)
 ```
+:::
 
 ```{r}
-seq(1, 8) |>
-  c(9) |>
-  mean()
+pi |>
+  round() |>
+  rep("pi", times = _)
 ```
-:::
 ::::
 :::: {.column style="width: 5%;"}
 ::::
 :::: {.column style="width: 47.5%;"}
 **[`magrittr`](https://magrittr.tidyverse.org/) Pipe**
 
-::: {style="padding-top: 20px;"}
+::: {style="padding-top: 15px;  padding-bottom: 15px;"}
 ```r
 object %>% function()
 object %>% function(1, par = .)
 object %>% function(1, .)
 ```
+:::
 
 ```{r}
 library(magrittr)
 ```
 
 ```{r}
-seq(1, 8) %>%
-  c(9) %>%
-  mean()
+pi %>%
+  round() %>%
+  rep("pi", times = .)
 ```
-:::
 ::::
 :::::
+
+::: {style="padding-top: 15px;"}
+Click [here](https://www.tidyverse.org/blog/2023/04/base-vs-magrittr-pipe/) to learn the differences between the base R and `magrittr` pipes.
+:::
 
 ## Control Flow: Choices {.smaller}
 
@@ -797,10 +801,12 @@ if (x > 90) {
     "A"
   } else if (x > 80) {
     "B"
-  } else if (x > 50) {
+  } else if (x > 50 && x < 100) {
     "C"
+  } else if (x > 1) {
+    "D"
   } else {
-    "F"
+    "E"
   }
 ```
 :::
@@ -831,12 +837,12 @@ if (is.numeric(x)) {
 
 ## Control Flow: Loops {.smaller}
 
-🚨 **Avoid loops** if you can.
+🚨 **Avoid loops** 🚨 (if you can).
 
-Use vectorized operations instead (**functionals**).
+Especially when dealing with large datasets. Use  **functionals** instead.
 
-:::: {.columns style="padding-top: 30px;"}
-::: {.column style="width: 47.5%;"}
+:::: {.columns}
+::: {.column style="width: 47.5%; padding-top: 15px;"}
 ```r
 while (condition) perform_action
 ```
@@ -852,7 +858,7 @@ while (x < 5) {
 :::
 ::: {.column style="width: 5%;"}
 :::
-::: {.column style="width: 47.5%;"}
+::: {.column style="width: 47.5%; padding-top: 15px;"}
 ```r
 for (item in vector) perform_action
 ```
@@ -876,7 +882,7 @@ name <- function(parameter_1, parameter_2, ...) expression
 ```
 
 ::::: {.columns}
-:::: {.column style="width: 47.5%; padding-top: 0px;"}
+:::: {.column style="width: 47.5%; padding-top: 10px;"}
 The last evaluated expression is the return value of the function.
 
 You can use `return()` to return a value before the end of the function, but this is a bad practice.
@@ -1009,9 +1015,7 @@ In R, the fundamental unit of shareable code is the package.
 
 A package bundles together code, data, documentation, and tests, and is easy to share with others [@wickham2023d].
 
-::: {style="padding-top: 30px;"}
-**Note**: Other programming languages refer to packages as *libraries*.
-:::
+Documentation example: The [`mctq`](https://github.com/ropensci/mctq) R package.
 ::::
 :::: {.column style="width: 5%;"}
 ::::
@@ -1047,6 +1051,10 @@ parse_hm("23:00")
 :::
 ::::
 :::::
+
+::: {style="padding-top: 15px;"}
+**Note**: Other programming languages refer to packages as *libraries*.
+:::
 
 ::: {.notes}
 :::
@@ -1106,7 +1114,7 @@ as.POSIXct("1970-01-01 00:00:00", tz = "UTC") + 1
 
 ## Commenting {.smaller}
 
-🚨 **Only if Necessary**
+🚨 **Only if Necessary** 🚨
 
 Your code must speak for itself.
 
@@ -1141,6 +1149,10 @@ help(mean)
 ```
 :::
 
+::: {style="padding-top: 15px;"}
+**Documentation Websites**: The `mctq` R package [documentation](https://docs.ropensci.org/mctq/).
+:::
+
 ::: {.notes}
 :::
 
@@ -1155,19 +1167,33 @@ It was created by [Hadley Wickham](https://hadley.nz/), a prominent figure in th
 ::: {.notes}
 :::
 
-## The Tidyverse {.smaller}
+## Main Tidyverse Packages {.smaller}
 
-**Main Tidyverse Packages**
+The Tidyverse also has a meta-package (bundle) that installs or load the most important packages from the collection.
+
+:::: {.columns}
+::: {.column style="width: 50%; padding-top: 10px; padding-bottom: 10px;"}
+```r
+install.packages("tidyverse")
+```
+:::
+::: {.column style="width: 50%; padding-top: 10px; padding-bottom: 10px;"}
+```r
+library("tidyverse")
+```
+:::
+::::
 
 - `readr`: Read flat files (csv, tsv, fwf) into R
-- `tibble`: A modern re-imagining of the data frame
 - `stringr`: A fresh approach to string manipulation in R
 - `lubridate`: Make working with dates in R just that little bit easier
 - `dplyr`: A grammar of data manipulation
-- `tidyr`: Tidy messy data
 - `purrr`: A functional programming toolkit for R
 - `forcats`: Tools for working with categorical variables (factors)
 - `ggplot2`: An implementation of the Grammar of Graphics in R
+
+::: {.notes}
+:::
 
 ## The rOpenSci {.smaller}
 
@@ -1178,6 +1204,8 @@ The importance of relying on good packages is crucial.
 [rOpenSci](https://ropensci.org/) project is a community of researchers and developers working on open science and open data. They develop R packages that allow access to data and tools from a wide range of sources.
 
 All packages go through a **peer-review** process, which ensures that they are well written and reliable.
+
+**Example**: [`mctq`](https://github.com/ropensci/mctq) R package peer-review.
 
 ::: {.notes}
 :::
@@ -1190,6 +1218,9 @@ In this course **we are going to focus on the Tidyverse and rOpenSci packages**,
 
 If you want a depper understanding of the R language, we encourage you to explore the base R solutions.
 
+::: {.notes}
+:::
+
 ## Best Practices {.smaller}
 
 You can learn a lot about a person just by looking at their code 👀.
@@ -1198,7 +1229,7 @@ You can learn a lot about a person just by looking at their code 👀.
 ::: {.column style="width: 47.5%; font-size: 0.9em;"}
 [**Tidyverse Style Guide**](https://style.tidyverse.org/)
 
-> Variable and function names should use only lowercase letters, numbers, and _. Use underscores (_) (so called snake case) to separate words within a name.
+> Variable and function names should use only lowercase letters, numbers, and \_. Use underscores (\_) (so called snake case) to separate words within a name.
 
 ```r
 # Good

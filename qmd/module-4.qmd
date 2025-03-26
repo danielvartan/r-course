@@ -14,7 +14,6 @@ library(palmerpenguins)
 
 ```{r}
 bill_length_mm <- penguins |> pull(bill_length_mm)
-bill_depth_mm <- penguins |> pull(bill_depth_mm)
 ```
 
 ```{r}
@@ -26,11 +25,47 @@ bill_length_mm |> sd(na.rm = TRUE)
 ```
 
 ```{r}
+bill_length_mm |> min(na.rm = TRUE)
+```
+
+```{r}
 bill_length_mm |> median(na.rm = TRUE)
 ```
 
 ```{r}
+bill_length_mm |> max(na.rm = TRUE)
+```
+
+## Simple Statistics {.smaller}
+
+```{r}
+library(dplyr)
+library(palmerpenguins)
+```
+
+```{r}
+bill_length_mm <- penguins |> pull(bill_length_mm)
+bill_depth_mm <- penguins |> pull(bill_depth_mm)
+```
+
+```{r}
 bill_length_mm |> quantile(na.rm = TRUE)
+```
+
+```{r}
+bill_length_mm |> quantile(prob = 0.25, na.rm = TRUE)
+```
+
+```{r}
+bill_length_mm |> quantile(prob = 0.75, na.rm = TRUE)
+```
+
+```{r}
+bill_length_mm |> sum(na.rm = TRUE)
+```
+
+```{r}
+bill_length_mm |> prod(na.rm = TRUE)
 ```
 
 ```{r}
@@ -72,7 +107,7 @@ library(palmerpenguins)
 ```
 
 ```{r}
-penguins |> slice_sample(n = 10)
+penguins |> slice_sample(n = 15)
 ```
 
 ::: {.notes}
@@ -188,7 +223,9 @@ penguins |>
 ::: {.column style="width: 30%; font-size: 0.9em;"}
 [![](images/gt-hex-logo.svg){style="width: 120px; padding-top: 0px;"}](https://sfirke.github.io/janitor/)
 
-The most powerful package for creating and customizing tables in R. It provides a flexible **grammar** for table creation and styling.
+The most powerful package for creating and customizing tables in R.
+
+It provides a flexible **grammar** for table creation and styling.
 :::
 ::: {.column style="width: 70%;"}
 ![](images/gt-parts-of-a-table.svg){fig-align="center" style="width: 100%; padding-top: 40px;"}
@@ -637,6 +674,32 @@ penguins |>
 ```
 :::
 ::::
+
+::: {.notes}
+:::
+
+## How to Choose the Right Vis. {.smaller}
+
+Check out the amazing work by [Yan Holtz](https://github.com/holtzy). Visit [From Data to Viz](https://www.data-to-viz.com/) too see the diagram below and many others.
+
+![](images/holtz-2018-from-data-to-viz-poster-adapted.png){fig-align="center" style="width: 100%; padding-top: 50px;"}
+
+::: footer
+(Artwork by [Yan Holtz](https://github.com/holtzy))
+:::
+
+::: {.notes}
+:::
+
+## The R Graph Gallery {.smaller}
+
+Another amazing work by [Yan Holtz](https://github.com/holtzy) is the [R Graph Gallery](https://r-graph-gallery.com/), which provides numerous examples of R graphics and how to create them.
+
+![](images/holtz-connection-map.png){fig-align="center" style="width: 100%; padding-top: 15px;}"}
+
+::: footer
+(Artwork by [Yan Holtz](https://www.data-to-viz.com/story/MapConnection.html))
+:::
 
 ::: {.notes}
 :::

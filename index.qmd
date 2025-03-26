@@ -52,7 +52,7 @@ Here are the main topics:
 
 ## Course Objectives {.smaller}
 
-Grasp the some fundamental principles and knowledge of computer science.
+Understand fundamental principles and concepts of computer science.
 
 Comprehend the structure and core elements of the R programming language.
 

@@ -114,7 +114,7 @@ speak(lola)
 
 :::: {.columns}
 ::: {.column style="width: 50%;"}
-🚨 **Never use `setwd()`!**
+🚨 **Never use `setwd()`!** 🚨
 
 (How to detect a beginner R user)
 
@@ -179,6 +179,17 @@ Click [here](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/#:~:text=
 
 ::: footer
 [@wickham2014]
+:::
+
+::: {.notes}
+:::
+
+## (AP) Tidy Data {.smaller .nostretch visibility="uncounted"}
+
+![](images/allison-horst-figure-14.jpg){fig-align="center" style="width: 100%;"}
+
+::: footer
+(Artwork by [Allison Horst](https://allisonhorst.com/horst-hill-collaborations))
 :::
 
 ::: {.notes}

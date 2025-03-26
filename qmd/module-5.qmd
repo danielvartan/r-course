@@ -18,6 +18,38 @@ While many users still utilize base R functions for modeling, we will focus on t
 
 The `tidymodels` framework is a collection of packages for modeling and machine learning using [tidyverse](https://www.tidyverse.org/) principles.
 
+It is created by the same team that developed the `tidyverse` and is designed to work seamlessly with it.
+
+Although it is a relative newcomer to the R ecosystem (2018), it has quickly gained popularity due to its simplicity and consistency.
+
+::: {.notes}
+:::
+
+## Main Tidymodels Packages {.smaller}
+
+Like Tidyverse, Tidymodels also has a meta-package (bundle) that installs or load the most important packages from the collection.
+
+:::: {.columns}
+::: {.column style="width: 50%; padding-top: 10px; padding-bottom: 10px;"}
+```r
+install.packages("tidymodels")
+```
+:::
+::: {.column style="width: 50%; padding-top: 10px; padding-bottom: 10px;"}
+```r
+library("tidymodels")
+```
+:::
+::::
+
+::: {style="font-size: 1em;"}
+- `rsample`: Provides infrastructure for efficient data splitting and resampling.
+- `parsnip`: A tidy, unified interface to models.
+- `recipes`: A tidy interface to data pre-processing tools for feature engineering.
+- `workflows`: A package to bundle the pre-processing, modeling, and post-processing together.
+- `infer`: A statistical **grammar** for inferential statistics.
+:::
+
 ::: {.notes}
 :::
 
@@ -305,7 +337,7 @@ dplyr::tibble(
 
 ## t-Test: Hypothesis {.smaller}
 
-**t-test for Independent Samples**.
+**t-Test for Independent Samples**
 
 To ensure practical significance, the difference in means must be analyzed for its effect size considering a 95% confidence interval.
 
@@ -599,8 +631,8 @@ library(effectsize)
 ```{r}
 effect_size <-
   cohens_d(
-    x = adelie,
-    y = gentoo,
+    x = gentoo,
+    y = adelie,
     mu = 0,
     adjust = TRUE, # Hedge's g
     ci = 0.95,
@@ -629,8 +661,8 @@ library(pwrss)
 pwr_analysis <- pwrss.t.2means(
   mu1 = gentoo |> mean(na.rm = TRUE),
   mu2 = adelie |> mean(na.rm = TRUE),
-  sd1 = adelie |> sd(na.rm = TRUE),
-  sd2 = gentoo |> sd(na.rm = TRUE),
+  sd1 = gentoo |> sd(na.rm = TRUE),
+  sd2 = adelie |> sd(na.rm = TRUE),
   paired = FALSE,
   n2 = min(gentoo |> length(), adelie |> length()),
   kappa = (adelie |> length()) / (gentoo |> length()),
@@ -668,7 +700,7 @@ power.t.test(
 
 ## ANOVA: Hypothesis {.smaller}
 
-**One-Way ANOVA**.
+**One-Way ANOVA**
 
 To ensure practical significance, the difference in means must be analyzed for its effect size considering a 95% confidence interval.
 
@@ -1247,7 +1279,7 @@ pwrss.f.reg(
 ::: {.column style="width: 47.5%;"}
 **Model diagnostics are crucial!**
 
-It's essential to verify that all model assumptions hold. However, a detailed discussion on this topic is beyond the scope of this course.
+It's essential to verify that all model assumptions hold. However, a discussion on this topic is beyond the scope of this course.
 
 You can find these assumptions in most statistical textbooks, or you can look at the original papers that introduced the models (e.g., fot t-Tests, see @student1908).
 :::

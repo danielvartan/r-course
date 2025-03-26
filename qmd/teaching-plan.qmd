@@ -12,7 +12,7 @@
 
 ## Learning Objectives {.smaller visibility="uncounted"}
 
-Grasp the fundamental principles and knowledge of computer science.
+Understand fundamental principles and concepts of computer science.
 
 Comprehend the structure and core elements of the R programming language.
 

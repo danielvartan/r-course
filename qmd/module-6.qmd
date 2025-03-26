@@ -82,6 +82,10 @@ Remember the data science workflow:
 
 ## Notes {.smaller}
 
+🧮 Recalculate the relative frequency.
+
+❌ Remove municipalities with less than 10 monitored children.
+
 ⌛ You have 45 minutes.
 
 🙋‍♂️ If you're stuck, ask for help.
