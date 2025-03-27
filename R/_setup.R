@@ -24,6 +24,10 @@ source(here::here("R", "utils.R"))
 
 set.seed(2025)
 
+# Set general options -----
+
+options(scipen = 999)
+
 # Set knitr -----
 
 knitr::clean_cache() |> rutils:::shush()

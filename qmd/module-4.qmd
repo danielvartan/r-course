@@ -83,11 +83,11 @@ library(palmerpenguins)
 ```
 
 ```{r}
-penguins %>% head(3)
+penguins |> head(3)
 ```
 
 ```{r}
-penguins %>% tail(3)
+penguins |> tail(3)
 ```
 
 ```{r}
@@ -409,7 +409,6 @@ penguins |>
 
 ```{r}
 #| code-fold: true
-#| label: test-chunk-1
 #| warning: false
 #| fig-align: center
 

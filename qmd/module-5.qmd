@@ -3,20 +3,11 @@
 #| label: module-5-first-chunk
 ```
 
-## Modeling with Tidyverse *versus* Modeling with base R {.smaller}
-
-The [tidyverse](https://www.tidyverse.org/) framework offers a structured and consistent approach to modeling in R through the [tidymodels](https://www.tidymodels.org/) ecosystem.
-
-While many users still utilize base R functions for modeling, we will focus on the tidyverse approach due to its simplicity and readability.
-
-::: {.notes}
-:::
-
 ## The Tidymodels Framework {.smaller}
 
 [![](images/tidymodels-hex-logo.png){style="width: 120px;"}](https://www.tidymodels.org/)
 
-The `tidymodels` framework is a collection of packages for modeling and machine learning using [tidyverse](https://www.tidyverse.org/) principles.
+The Tidymodels framework is a collection of packages for modeling and machine learning using [Tidyverse](https://www.tidyverse.org/) principles.
 
 It is created by the same team that developed the `tidyverse` and is designed to work seamlessly with it.
 
@@ -76,9 +67,9 @@ dplyr::tibble(
     table.font.size = gt::pct(80)
   ) |>
   gt::cols_label(
-    decision = gt::md("Decision about $H_{0}$"),
-    h0_true = gt::md("$H_{0}$ True"),
-    h0_false = gt::md("$H_{0}$ False")
+    decision = gt::md("Decision about $\\text{H}_{0}$"),
+    h0_true = gt::md("$\\text{H}_{0}$ True"),
+    h0_false = gt::md("$\\text{H}_{0}$ False")
   ) |>
   gt::cols_align(
     align = "center",
@@ -100,6 +91,26 @@ dplyr::tibble(
   gt::tab_style(
     style = gt::cell_text(align = "center"),
     locations = gt::cells_body(columns = c(decision, h0_true, h0_false))
+  ) |>
+  gt::data_color(
+    columns = "h0_true",
+    rows = 1,
+    palette = brandr::get_brand_color_tint(900, "green")
+  )  |>
+  gt::data_color(
+    columns = "h0_true",
+    rows = 2,
+    palette = brandr::get_brand_color_tint(900, "red")
+  )  |>
+  gt::data_color(
+    columns = "h0_false",
+    rows = 1,
+    palette = brandr::get_brand_color_tint(900, "red")
+  )  |>
+  gt::data_color(
+    columns = "h0_false",
+    rows = 2,
+    palette = brandr::get_brand_color_tint(900, "green")
   )
 ```
 :::
@@ -113,11 +124,93 @@ dplyr::tibble(
 
 ## Power Analysis {.smaller .nostretch}
 
-![](images/type-1-and-type-2-errors-chart.webp){fig-align="center" style="width: 80%; padding-top: 15px;"}
+```{r}
+#| code-fold: true
+#| warning: false
+#| fig-align: center
 
-::: footer
-(Artwork by [VWO](https://vwo.com/blog/errors-in-ab-testing/))
+library(pwrss)
+
+pwr_analysis <- pwrss.t.2means(
+  mu1 = 0.2, # Cohen's d for small effect sizes
+  mu2 = 0,
+  power = 0.8,
+  alpha = 0.05,
+  welch.df = TRUE,
+  alternative = "greater"
+)
+
+power.t.test(
+  ncp = pwr_analysis$ncp,
+  df = pwr_analysis$df,
+  alpha = pwr_analysis$parms$alpha,
+  alternative = "greater",
+  plot = TRUE,
+  verbose = FALSE
+)
+```
+
+::: {.notes}
 :::
+
+## Power Analysis {.smaller .nostretch}
+
+```{r}
+#| code-fold: true
+#| warning: false
+#| fig-align: center
+
+library(pwrss)
+
+pwr_analysis <- pwrss.t.2means(
+  mu1 = 0.2, # Cohen's d for small effect sizes
+  mu2 = 0,
+  power = 0.3,
+  alpha = 0.05,
+  welch.df = TRUE,
+  alternative = "greater",
+)
+
+power.t.test(
+  ncp = pwr_analysis$ncp,
+  df = pwr_analysis$df,
+  alpha = pwr_analysis$parms$alpha,
+  alternative = "greater",
+  plot = TRUE,
+  verbose = FALSE
+)
+```
+
+::: {.notes}
+:::
+
+## Power Analysis {.smaller .nostretch}
+
+```{r}
+#| code-fold: true
+#| warning: false
+#| fig-align: center
+
+library(pwrss)
+
+pwr_analysis <- pwrss.t.2means(
+  mu1 = 0.2, # Cohen's d for small effect sizes
+  mu2 = 0,
+  power = 0.999,
+  alpha = 0.001,
+  welch.df = TRUE,
+  alternative = "greater",
+)
+
+power.t.test(
+  ncp = pwr_analysis$ncp,
+  df = pwr_analysis$df,
+  alpha = pwr_analysis$parms$alpha,
+  alternative = "greater",
+  plot = TRUE,
+  verbose = FALSE
+)
+```
 
 ::: {.notes}
 :::
@@ -189,7 +282,6 @@ Comparison of a 95% of confidence level ($\alpha = 0.05$) and an *n*-dependent *
 :::
 
 ## Cohen's Benchmark {.smaller}
-
 ```{r}
 #| echo: false
 
@@ -253,97 +345,70 @@ dplyr::tibble(
 ::: {.notes}
 :::
 
-## What Test Should I Use? {.smaller}
+## The *p*-value Problem: Example {.smaller}
 
-::: {style="padding-top: 50px;"}
-```{r}
-#| echo: false
+::::: {.columns}
+:::: {.column style="width: 45%; font-size: 0.9em;"}
+Cohen’s $f^{2}$ of 0.004143174`<br>`{=html}($\Delta\text{R}^{2} \approx$ 0,0041260789)
 
-dplyr::tibble(
-  type_of_data = c(
-    "Normally distributed continuous data<br>(summarized as mean)",
-    paste0(
-      "Ranks, scores, and non-normally<br>distributed continuous data<br>",
-      "(Summarized as median)"
-    ),
-    "Dichotomous data<br>(Summarized as proportion)"
-  ),
-  two_data_sets_paired = c(
-    "Paired t-test",
-    "Wilcoxon signed-rank test",
-    "Mc Nemar's test"
-  ),
-  two_data_sets_unpaired = c(
-    "Unpaired t-test",
-    "Mann-Whitney U test",
-    "Fishers test or Chi-square test"
-  ),
-  more_than_two_data_sets_paired = c(
-    "Repeated measures ANOVA",
-    "Friedman's test",
-    "Cochrane Q test"
-  ),
-  more_than_two_data_sets_unpaired = c(
-    "One-way ANOVA",
-    "Kruskal-Wallis test",
-    "Chi-square test"
-  ),
-  correlation_analysis = c(
-    "Pearson's correlation",
-    "Spearman's rank correlation",
-    "Contingency coefficient"
-  ),
-  regression_analysis = c(
-    "Linear regression",
-    "Nonparametric regression",
-    "Logistic regression"
-  )
-) |>
-  gt::gt() |>
-  gt::tab_spanner(
-    label = "Comparison Analysis",
-    columns = c(
-      two_data_sets_paired, two_data_sets_unpaired,
-      more_than_two_data_sets_paired, more_than_two_data_sets_unpaired
-    )
-  ) |>
-  gt::tab_spanner(
-    label = "Other Analysis",
-    columns = c(correlation_analysis, regression_analysis)
-  ) |>
-  gt::cols_label(
-    type_of_data = "Type of Data",
-    two_data_sets_paired = "2 Data Sets - Paired",
-    two_data_sets_unpaired = "2 Data Sets - Unpaired",
-    more_than_two_data_sets_paired = "More than 2 Data Sets - Paired",
-    more_than_two_data_sets_unpaired = "More than 2 Data Sets - Unpaired",
-    correlation_analysis = "Correlation Analysis",
-    regression_analysis = "Regression Analysis"
-  ) |>
-  gt::fmt_markdown(columns = type_of_data) |>
-  gt::tab_style(
-    style = gt::cell_text(weight = "bold"),
-    locations = gt::cells_column_labels()
-  )
-```
+Latitudinal cline of chronotype [@leocadio-miguel2017].
+
+[Critique](https://danielvartan.github.io/mastersthesis/web/qmd/supplementary-material-9.html) of Leocadio-Miguel et al. latitude article [@vartanian2025a].
+
+The ASA statement on p-values [@wasserstein2016].
+
+Authors who rely solely on the p-value demonstrate a preference for statistical rituals over statistical reasoning [@gigerenzer2004].
+::::
+:::: {.column style="width: 55%;"}
+![](images/leocadio-miguel-2017-figure-2.png){fig-align="center" style="width: 100%; padding-top: 25px;"}
+
+::: {style="font-size: 0.5em; padding-left: 35px; padding-right: 15px;"}
+**Note**: The HO score [@horne1976] goes from 16 to 86, with higher scores indicating a preference for morningness.
 :::
+::::
+:::::
 
 ::: footer
-(Adapted from @najmi2021)
+(Reproduced from @leocadio-miguel2017[Figure 2])
 :::
 
 ::: {.notes}
 :::
 
+## What Test Should I Use? {.smaller .nostretch}
+
+Check Antoine Soetewey's [flowchart](https://statsandr.com/blog/what-statistical-test-should-i-do/) to help you decide the appropriate statistical test for your data.
+
+![](images/soetewey-2021-flowchart.svg){fig-align="center" style="width: 65%; padding-top: 0px;"}
+
+::: footer
+(Artwork by [Antoine Soetewey](https://statsandr.com/blog/what-statistical-test-should-i-do/))
+:::
+
+::: {.notes}
+:::
+
+## `infer` Pipeline Examples {.smaller .nostretch}
+
+[![](images/infer-hex-logo.png){style="width: 120px;"}](https://readr.tidyverse.org/)
+
+`infer` is a [Tidymodels](https://www.tidymodels.org/) package that provides a statistical **grammar** for inferential statistics.
+
+It also offers [pipeline examples](https://infer.tidymodels.org/articles/observed_stat_examples.html) for various hypothesis tests. These pipelines can serve as a helpful starting point for implementing other types of models.
+
 ## t-Test: Hypothesis {.smaller}
 
-**t-Test for Independent Samples**
+:::: {.columns}
+::: {.column style="width: 50%; font-size: 0.85em;"}
+[Is there a meaningful difference in flipper length between Adelie and Gentoo penguins?]{style="font-size: 1.1em; font-weight: bold; color: #ED6B4D;"}
 
-To ensure practical significance, the difference in means must be analyzed for its effect size considering a 95% confidence interval.
+To test this, we will perform a **t-Test for Independent Samples** using a randomization-based empirical null distribution approach.
 
-We will use Cohen's benchmark for a small effect size as our Minimum Effect Size (MES) [@cohen1988a].
+To ensure [practical significance]{style="text-decoration: underline;"}, we will analyze the difference in means for its effect size, considering a 95% confidence interval.
 
-::: {style="padding-top: 15px;"}
+Cohen's benchmark for a small effect size will be used as our Minimum Effect Size (MES) [@cohen1988a].
+:::
+::: {.column style="width: 50%; padding-top: 130px;"}
 $$
 \begin{cases}
 \text{H}_{0}: \mu_{A} = \mu_{B} \\
@@ -354,11 +419,12 @@ $$
 
 $$
 \begin{cases}
-\text{H}_{0}: \mu_{A} - \mu_{B} <= \text{MES} \\
-\text{H}_{a}: \mu_{A} - \mu_{B} > \text{MES} \\
+\text{H}_{0}: d < \text{MES} \\
+\text{H}_{a}: d \geq \text{MES} \\
 \end{cases}
 $$
 :::
+::::
 
 ::: {.notes}
 :::
@@ -371,6 +437,7 @@ $$
 #| warning: false
 
 library(brandr)
+library(dplyr)
 library(ggplot2)
 library(palmerpenguins)
 library(tidyr)
@@ -395,6 +462,7 @@ penguins |>
 #| code-fold: true
 
 library(brandr)
+library(dplyr)
 library(ggplot2)
 library(palmerpenguins)
 library(tidyr)
@@ -439,54 +507,40 @@ penguins |>
 ## t-Test: Power Analysis {.smaller}
 
 ```{r}
-library(pwrss)
+library(pwr)
 ```
 
 ```{r}
-pwr_analysis <- pwrss.t.2means(
-  mu1 = 0.2, # Cohen's d for small effect sizes
-  mu2 = 0,
+pwr_analysis <- pwr.t.test(
+  d = 0.2, # Cohen's d for small effect sizes
+  sig.level = 0.05,
   power = 0.8,
-  alpha = 0.05,
-  welch.df = TRUE,
-  alternative = "not equal"
+  type = "two.sample",
+  alternative = "two.sided"
 )
+
+pwr_analysis
 ```
+
+::: {.notes}
+:::
 
 ## t-Test: Power Analysis {.smaller}
 
 ```{r}
-#| code-fold: true
-#| warning: false
-#| fig-align: center
-
-library(pwrss)
-
-power.t.test(
-  ncp = pwr_analysis$ncp,
-  df = pwr_analysis$df,
-  alpha = 0.05,
-  alternative = "not equal",
-  plot = TRUE,
-  verbose = FALSE
-)
-```
-
-## t-Test: Power Analysis {.smaller}
-
-```{r}
-library(pwrss)
+library(pwr)
 ```
 
 ```{r}
-pwr_analysis <- pwrss.t.2means(
-  mu1 = 3, # Cohen's d for a very large effect
-  mu2 = 0,
+pwr_analysis <- pwr.t.test(
+  d = 0.5, # Cohen's d for medium effect sizes
+  sig.level = 0.05,
   power = 0.8,
-  alpha = 0.05,
-  welch.df = TRUE,
-  alternative = "not equal"
+  type = "two.sample",
+  alternative = "two.sided"
 )
+
+pwr_analysis
 ```
 
 ::: {.notes}
@@ -499,16 +553,14 @@ pwr_analysis <- pwrss.t.2means(
 #| warning: false
 #| fig-align: center
 
-library(pwrss)
+library(pwr)
 
-power.t.test(
-  ncp = pwr_analysis$ncp,
-  df = pwr_analysis$df,
-  alpha = 0.05,
-  alternative = "not equal",
-  plot = TRUE,
-  verbose = FALSE
-)
+pwr_analysis |>
+  plot.power.htest(
+    xlab = "Sample Size Per Group",
+    ylab = "Power (1 - Beta)",
+    main = NULL
+  )
 ```
 
 ::: {.notes}
@@ -530,7 +582,7 @@ observed_statistic <-
   drop_na(flipper_length_mm, species) |>
   specify(flipper_length_mm ~ species) |>
   hypothesize(null = "independence") |>
-  calculate("t", order = c("Gentoo", "Adelie"))
+  calculate(stat = "t", order = c("Gentoo", "Adelie"))
 
 observed_statistic
 ```
@@ -555,7 +607,7 @@ null_dist <-
   specify(flipper_length_mm ~ species) |>
   hypothesize(null = "independence") |>
   generate(reps = 1000, type = "permute") |>
-  calculate("t", order = c("Gentoo", "Adelie"))
+  calculate(stat = "t", order = c("Gentoo", "Adelie"))
 
 null_dist
 ```
@@ -602,8 +654,11 @@ null_dist |>
 
 ## t-Test: Effect Size {.smaller}
 
+:::: {.columns}
+::: {.column style="width: 50%;"}
 ```{r}
 library(dplyr)
+library(effectsize)
 library(palmerpenguins)
 library(tidyr)
 ```
@@ -621,13 +676,8 @@ gentoo <-
   drop_na() |>
   pull(flipper_length_mm)
 ```
-
-## t-Test: Effect Size {.smaller}
-
-```{r}
-library(effectsize)
-```
-
+:::
+::: {.column style="width: 50%;"}
 ```{r}
 effect_size <-
   cohens_d(
@@ -645,6 +695,8 @@ effect_size
 ```{r}
 effect_size |> interpret_hedges_g(rules = "cohen1988")
 ```
+:::
+::::
 
 ::: {.notes}
 :::
@@ -664,8 +716,8 @@ pwr_analysis <- pwrss.t.2means(
   sd1 = gentoo |> sd(na.rm = TRUE),
   sd2 = adelie |> sd(na.rm = TRUE),
   paired = FALSE,
-  n2 = min(gentoo |> length(), adelie |> length()),
-  kappa = (adelie |> length()) / (gentoo |> length()),
+  n2 = min(length(gentoo), length(adelie)),
+  kappa = length(adelie) / length(gentoo),
   power = NULL,
   alpha = 0.05,
   welch.df = TRUE,
@@ -698,15 +750,52 @@ power.t.test(
 ::: {.notes}
 :::
 
+## t-Test: Conclusion {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 60%; font-size: 0.85em;"}
+[Is there a meaningful difference in flipper length between Adelie and Gentoo penguins?]{style="font-size: 1.1em; font-weight: bold; color: #ED6B4D;"}
+
+Our analysis indicates that the difference in means is statistically significant ($t$ = 34.4, $p <$ 0.001). Additionally, the effect size is very large and exceeds the Minimal Effect Size (MES) threshold ($d$ = 4.13 [3.70, 4.56]).
+
+The power (1 - $\beta$) of the test is 1, indicating that the probability of a false negative is zero.
+
+Based on these results, we conclude that **there is a meaningful difference in flipper length between Adelie and Gentoo penguins**, with Gentoo penguins having significantly longer flippers. Consequently, we reject the null hypothesis in favor of the alternative hypothesis.
+:::
+::: {.column style="width: 40%; padding-top: 130px;"}
+$$
+\begin{cases}
+\text{H}_{0}: \mu_{A} = \mu_{B} \\
+\text{H}_{a}: \mu_{A} \neq \mu_{B} \\
+\end{cases}
+$$
+
+
+$$
+\begin{cases}
+\text{H}_{0}: d < \text{MES} \\
+\text{H}_{a}: d \geq \text{MES} \\
+\end{cases}
+$$
+:::
+::::
+
+::: {.notes}
+:::
+
 ## ANOVA: Hypothesis {.smaller}
 
-**One-Way ANOVA**
+:::: {.columns}
+::: {.column style="width: 50%; font-size: 0.85em;"}
+[Is there a meaningful difference in flipper length between Adelie, Chinstrap, and Gentoo penguins?]{style="font-size: 1.1em; font-weight: bold; color: #ED6B4D;"}
 
-To ensure practical significance, the difference in means must be analyzed for its effect size considering a 95% confidence interval.
+To test this, we will perform a **One-Way ANOVA** using a randomization-based empirical null distribution approach.
 
-We will use Cohen's benchmark for a small effect size as our Minimum Effect Size (MES) [@cohen1988a].
+To ensure [practical significance]{style="text-decoration: underline;"}, we will analyze the difference in means for its effect size, considering a 95% confidence interval.
 
-::: {style="padding-top: 15px;"}
+Cohen's benchmark for a small effect size will be used as our Minimum Effect Size (MES) [@cohen1988a].
+:::
+::: {.column style="width: 50%; padding-top: 125px;"}
 $$
 \begin{cases}
 \text{H}_{0}: \mu_{A} = \mu_{B} = \mu_{C} \\
@@ -717,11 +806,12 @@ $$
 
 $$
 \begin{cases}
-\text{H}_{0}: \eta^{2} <= \text{MES} \\
-\text{H}_{a}: \eta^{2} > \text{MES} \\
+\text{H}_{0}: f < \text{MES} \\
+\text{H}_{a}: f \geq \text{MES} \\
 \end{cases}
 $$
 :::
+::::
 
 ::: {.notes}
 :::
@@ -780,6 +870,8 @@ library(palmerpenguins)
 library(tidyr)
 ```
 
+:::: {.columns}
+::: {.column style="width: 50%; padding-top: 15px;"}
 ```{r}
 adelie <-
   penguins |>
@@ -787,55 +879,183 @@ adelie <-
   drop_na() |>
   pull(flipper_length_mm)
 
+adelie |> length()
+```
+
+```{r}
 chinstrap <-
   penguins |>
   filter(species == "Chinstrap") |>
   drop_na() |>
   pull(flipper_length_mm)
 
+chinstrap |> length()
+```
+:::
+::: {.column style="width: 50%; padding-top: 15px;"}
+```{r}
 gentoo <-
   penguins |>
   filter(species == "Gentoo") |>
   drop_na() |>
   pull(flipper_length_mm)
+
+gentoo |> length()
 ```
+:::
+::::
 
 ## ANOVA: Power Analysis {.smaller}
 
 ```{r}
-library(pwrss)
+library(pwr)
 ```
 
 ```{r}
-pwrss.f.ancova(
-  eta2 = 0.01,
-  n.way = 1,
-  n.levels = 3,
-  n.covariates = 0,
-  alpha = 0.05,
-  n = NULL,
+pwr_analysis <- pwr.anova.test(
+  k = 3,
+  f = 0.25, # Cohen's f for medium effect sizes
+  sig.level = 0.05,
   power = 0.8
 )
+
+pwr_analysis
 ```
 
-## ANOVA: Fit (Base R) {.smaller}
+::: {.notes}
+:::
+
+## ANOVA: Power Analysis {.smaller}
 
 ```{r}
-fit <- aov(flipper_length_mm ~ species, data = penguins)
+#| code-fold: true
+#| warning: false
+#| fig-align: center
 
-fit
+library(pwr)
+
+pwr_analysis |>
+  plot.power.htest(
+    xlab = "Sample size per group",
+    ylab = "Power (1 - Beta)",
+    main = NULL
+  )
+```
+
+::: {.notes}
+:::
+
+## ANOVA: Observed Statistic {.smaller}
+
+```{r}
+library(dplyr)
+library(infer)
+library(palmerpenguins)
+library(tidyr)
 ```
 
 ```{r}
-fit_sum <- fit |> summary()
+observed_statistic <-
+  penguins |>
+  drop_na(flipper_length_mm, species) |>
+  specify(flipper_length_mm ~ species) |>
+  hypothesize(null = "independence") |>
+  calculate(stat = "F")
 
-fit_sum
+observed_statistic
 ```
 
-## ANOVA: Tukey HSD (Base R) {.smaller}
+::: {.notes}
+:::
+
+## ANOVA: Null Distribution {.smaller}
 
 ```{r}
- fit |> TukeyHSD()
+library(dplyr)
+library(infer)
+library(palmerpenguins)
+library(tidyr)
+```
+
+```{r}
+null_dist <-
+  penguins |>
+  drop_na(flipper_length_mm, species) |>
+  specify(flipper_length_mm ~ species) |>
+  hypothesize(null = "independence") |>
+  generate(reps = 1000, type = "permute") |>
+  calculate(stat = "F")
+
+null_dist
+```
+
+::: {.notes}
+:::
+
+## ANOVA: Visualizing {.smaller}
+
+```{r}
+#| code-fold: true
+#| fig-align: center
+#| fig-height: 7
+#| fig-width: 15
+
+library(infer)
+library(ggplot2)
+
+null_dist |>
+  visualize(method = "both") +
+  shade_p_value(
+    obs_stat = observed_statistic,
+    direction = "greater"
+  ) +
+  labs(
+    title = NULL,
+    x = "F-statistic",
+    y = "Frequency"
+  ) +
+  theme(text = element_text(size = 14))
+```
+
+::: {.notes}
+:::
+
+## ANOVA: p-value {.smaller}
+
+```{r}
+#| warning: false
+
+null_dist |>
+  get_p_value(
+    obs_stat = observed_statistic,
+    direction = "two-sided"
+  )
+```
+
+::: {.notes}
+:::
+
+## ANOVA: Tukey HSD {.smaller}
+
+Tukey Honest Significant Differences (HSD) test.
+
+```{r}
+library(broom)
+```
+
+```r
+aov(flipper_length_mm ~ species, data = penguins) |>
+  TukeyHSD(conf.level = 0.95) |>
+  tidy()
+```
+
+```{r}
+#| echo: false
+
+aov(flipper_length_mm ~ species, data = penguins) |>
+  TukeyHSD(conf.level = 0.95) |>
+  broom::tidy() |>
+  rmarkdown::paged_table()
 ```
 
 ::: {.notes}
@@ -851,13 +1071,17 @@ library(effectsize)
 #| messages: false
 #| warning: false
 
-effect_size <- fit |> eta_squared()
+effect_size <-
+  aov(flipper_length_mm ~ species, data = penguins) |>
+  cohens_f()
 
 effect_size
 ```
 
 ```{r}
-effect_size |> interpret_eta_squared(rules = "cohen1992")
+effect_size[[2]] |>
+  f_to_eta2() |>
+  interpret_eta_squared(rules = "cohen1992")
 ```
 
 ::: {.notes}
@@ -866,37 +1090,69 @@ effect_size |> interpret_eta_squared(rules = "cohen1992")
 ## ANOVA: Power Analysis {.smaller}
 
 ```{r}
-library(pwrss)
+library(pwr)
 ```
 
 ```{r}
-pwrss.f.ancova(
-  eta2 = effect_size$Eta2,
-  n.way = 1,
-  n.levels = 3,
-  n.covariates = 0,
-  alpha = 0.05,
+pwr.anova.test(
+  k = 3,
   n = min(length(adelie), length(chinstrap), length(gentoo)),
-  power = NULL
+  f = effect_size[[2]],
+  sig.level = 0.05
 )
 ```
 
 ::: {.notes}
 :::
 
+## ANOVA: Conclusion {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 60%; font-size: 0.8em;"}
+[Is there a meaningful difference in flipper length between Adelie, Chinstrap, and Gentoo penguins?]{style="font-size: 1.1em; font-weight: bold; color: #ED6B4D;"}
+
+Our analysis indicates that the difference in means is statistically significant ($\text{F}$ = 595, $p <$ 0.001). Additionally, the effect size is very large and exceeds the Minimal Effect Size (MES) threshold ($f$ = 1.873 [1.72, Inf]).
+
+The power (1 - $\beta$) of the test is 1, indicating that the probability of a false negative is zero.
+
+Based on these results, we conclude that **there is a meaningful difference in flipper length between Adelie, Chinstrap, and Gentoo penguins**, with Gentoo penguins having significantly longer flippers, followed by Chinstrap penguins. Consequently, we reject the null hypothesis in favor of the alternative hypothesis.
+:::
+::: {.column style="width: 40%; padding-top: 130px;"}
+$$
+\begin{cases}
+\text{H}_{0}: \mu_{A} = \mu_{B} = \mu_{C} \\
+\text{H}_{a}: \mu_{i} \neq \mu_{j}, \ \text{for some} \ i, j
+\end{cases}
+$$
+
+
+$$
+\begin{cases}
+\text{H}_{0}: f < \text{MES} \\
+\text{H}_{a}: f \geq \text{MES} \\
+\end{cases}
+$$
+:::
+::::
+
+::: {.notes}
+:::
+
 ## Linear Reg.: Hypothesis {.smaller}
 
-**Nested Models**: Adding `bill_depth_mm` as a predictor improve the prediction of `flipper_length_mm`?
+[Adding `bill_depth_mm` as a predictor improve the prediction of `flipper_length_mm`?]{style="font-size: 1.1em; font-weight: bold; color: #ED6B4D;"}
 
-To ensure practical significance, the adjusted $\text{R}^2$ of the model must be analyzed for its effect size considering a 95% confidence interval.
+To test this, we will use **Nested Linear Models**.
+
+To ensure [practical significance]{style="text-decoration: underline;"}, we will analyze the delta of the adjusted $\text{R}^2$ of the models considering a 95% confidence interval.
 
 We will use Cohen's benchmark for a small effect size as our Minimum Effect Size (MES) [@cohen1988a].
 
 ::: {style="padding-top: 15px;"}
 $$
 \begin{cases}
-\text{H}_{0}: \text{Adjusted} \ \text{R}^{2} \leq \text{MES} \quad \text{or} \quad \text{F-test is not significant} \ (\alpha \geq 0.05) \\
-\text{H}_{a}: \text{Adjusted} \ \text{R}^{2} > \text{MES} \quad \text{and} \quad \text{F-test is significant} \ (\alpha < 0.05)
+\text{H}_{0}: \text{Adjusted} \ \text{R}^{2} < \text{MES} \quad \text{or} \quad \text{F-test is not significant} \ (\alpha \geq 0.05) \\
+\text{H}_{a}: \text{Adjusted} \ \text{R}^{2} \geq \text{MES} \quad \text{and} \quad \text{F-test is significant} \ (\alpha < 0.05)
 \end{cases}
 $$
 :::
@@ -908,10 +1164,13 @@ $$
 
 ```{r}
 library(pwrss)
+library(tidyr)
 ```
 
 ```{r}
-penguins |> nrow()
+penguins |>
+  drop_na(flipper_length_mm, bill_length_mm, bill_depth_mm) |>
+  nrow()
 ```
 
 ```{r}
@@ -1152,95 +1411,155 @@ rglwidget(elementId = "1st") |>
 In a multiple linear regression with two predictors, the model is fit by adjusting a **plane** to the data points (**Use the mouse to explore**).
 :::
 
-## Linear Reg.: Fit (Rest.) (Base R) {.smaller}
+## Linear Reg.: Fit (Rest.) {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%;"}
+```{r}
+library(broom)
+library(palmerpenguins)
+library(parsnip)
+```
 
 ```{r}
-data <- penguins |> drop_na(flipper_length_mm, bill_length_mm, bill_depth_mm)
+model <-
+  linear_reg() |>
+  set_engine("lm")
+```
 
+```{r}
 fit_restricted <-
-  formula(flipper_length_mm ~ bill_length_mm) |>
-  lm(data)
+  model |>
+  fit(flipper_length_mm ~ bill_length_mm, data = penguins)
 ```
 
 ```{r}
-fit_restricted_sum <- fit_restricted |> summary()
-
-fit_restricted_sum
+fit_restricted |> tidy() |> adorn_rounding(5)
 ```
+:::
+::: {.column style="width: 50%;"}
+```{r}
+fit_restricted_stats <- fit_restricted |> glance()
+```
+
+```{r}
+fit_restricted_stats |>
+  tidyr::pivot_longer(cols = dplyr::everything()) |>
+  adorn_rounding(5)
+```
+:::
+::::
 
 ::: {.notes}
 :::
 
-## Linear Reg.: Fit (Full) (Base R) {.smaller}
+## Linear Reg.: Fit (Full) {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%;"}
+```{r}
+library(broom)
+library(palmerpenguins)
+library(parsnip)
+```
 
 ```{r}
-data <- penguins |> drop_na(flipper_length_mm, bill_length_mm, bill_depth_mm)
+model <-
+  linear_reg() |>
+  set_engine("lm")
+```
 
+```{r}
 fit_full <-
-  formula(flipper_length_mm ~ bill_length_mm + bill_depth_mm) |>
-  lm(data)
+  model |>
+  fit(flipper_length_mm ~ bill_length_mm + bill_depth_mm, data = penguins)
 ```
 
 ```{r}
-fit_full_sum <- fit_full |> summary()
-
-fit_full_sum
+fit_full |> tidy() |> adorn_rounding(5)
 ```
+:::
+::: {.column style="width: 50%;"}
+```{r}
+fit_full_stats <- fit_full |> glance()
+```
+
+```{r}
+fit_full_stats |>
+  tidyr::pivot_longer(cols = dplyr::everything()) |>
+  adorn_rounding(5)
+```
+:::
+::::
 
 ::: {.notes}
 :::
 
-## Linear Reg.: ANOVA (Base R) {.smaller}
+## Linear Reg.: ANOVA {.smaller}
 
 ```{r}
-anova(fit_restricted, fit_full)
+library(broom)
+library(janitor)
+```
+
+```r
+anova(fit_restricted$fit, fit_full$fit) |>
+  tidy() |>
+  adorn_rounding(5)
+```
+
+```{r}
+#| echo: false
+
+anova(fit_restricted$fit, fit_full$fit) |>
+  broom::tidy() |>
+  adorn_rounding(5) |>
+  rmarkdown::paged_table()
 ```
 
 ::: {.notes}
-:::
-
-## Linear Reg.: Effect Size {.smaller}
-
-::: {style="padding-top: 100px;"}
-$$
-\text{Cohen's } f^2 = \cfrac{\text{R}^{2}}{1 - \text{R}^{2}}
-$$
-
-$$
-\text{Cohen's } f^2 \text{small threshold} = 0.02
-$$
-
-$$
-0.02 = \cfrac{\text{R}^{2}}{1 - \text{R}^{2}} \quad \text{or} \quad \text{R}^{2} = \cfrac{0.02}{1.02} \eqsim 0.01960784
-$$
 :::
 
 ## Linear Reg.: Effect Size {.smaller}
 
 ```{r}
 library(effectsize)
+library(psychometric)
 ```
 
 ```{r}
-fit_restricted_sum$adj.r.squared
+fit_restricted_stats$adj.r.squared
 ```
 
 ```{r}
-fit_restricted_sum$adj.r.squared |> interpret_r2(rules = "cohen1988")
+fit_restricted_stats$adj.r.squared |> interpret_r2(rules = "cohen1988")
 ```
 
 ```{r}
-fit_full_sum$adj.r.squared
+fit_full_stats$adj.r.squared
 ```
 
 ```{r}
-fit_full_sum$adj.r.squared |> interpret_r2(rules = "cohen1988")
+fit_full_stats$adj.r.squared |> interpret_r2(rules = "cohen1988")
 ```
 
 ```{r}
-delta <- fit_full_sum$adj.r.squared - fit_restricted_sum$adj.r.squared
+delta <- fit_full_stats$adj.r.squared - fit_restricted_stats$adj.r.squared
 
 delta
+```
+
+::: {.notes}
+:::
+
+## Linear Reg.: Effect Size {.smaller}
+
+```{r}
+CI.Rsq(
+  rsq = delta,
+  n = penguins |> nrow(),
+  k = 2
+)
 ```
 
 ```{r}
@@ -1259,7 +1578,7 @@ library(tidyr)
 
 ```{r}
 pwrss.f.reg(
-  r2 = fit_full_sum$adj.r.squared,
+  r2 = fit_full_stats$adj.r.squared,
   k = 2,
   n =
     penguins |>
@@ -1269,6 +1588,30 @@ pwrss.f.reg(
   alpha = 0.05
 )
 ```
+
+::: {.notes}
+:::
+
+## Linear Reg.: Conclusion {.smaller}
+
+::: {style="font-size: 0.9em;"}
+[Adding `bill_depth_mm` as a predictor meaningful improve the prediction of `flipper_length_mm`?]{style="font-size: 1.1em; font-weight: bold; color: #ED6B4D;"}
+
+Our analysis indicates that adding `bill_depth_mm` as a predictor improves the model adjusted $\text{R}^{2}$ in 0.19483 \[0.12069, 0.26897\] ($\text{F}$(2, 339) = 284, $p <$ 0.001).
+
+The power (1 - $\beta$) of the test is 1, indicating that the probability of a false negative is zero.
+
+Based on these results, we conclude that **`bill_depth_mm` meaningful improve the prediction of `flipper_length_mm`**. Consequently, we reject the null hypothesis in favor of the alternative hypothesis.
+:::
+
+::: {style="padding-top: 15px;"}
+$$
+\begin{cases}
+\text{H}_{0}: \text{Adjusted} \ \text{R}^{2} < \text{MES} \quad \text{or} \quad \text{F-test is not significant} \ (\alpha \geq 0.05) \\
+\text{H}_{a}: \text{Adjusted} \ \text{R}^{2} \geq \text{MES} \quad \text{and} \quad \text{F-test is significant} \ (\alpha < 0.05)
+\end{cases}
+$$
+:::
 
 ::: {.notes}
 :::
@@ -1299,7 +1642,7 @@ You can find these assumptions in most statistical textbooks, or you can look at
 
 ## Objective Assumption Tests {.smaller}
 
-🚨 **Avoid Using!**
+🚨 **Avoid Using!** 🚨
 
 Objective assumption tests (e.g., Anderson–Darling test) are not advisable for large samples, as they can be overly sensitive to minor deviations. Additionally, they might overlook visual patterns that are not captured by a single metric.
 
@@ -1328,6 +1671,24 @@ See also: @kozak2018, @schucany2006, and @shatz2024.
 ::: footer
 (Book cover image from @degroot2012a and @kuhn2022)
 :::
+
+::: {.notes}
+:::
+
+## How to Learn More {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%; text-align: center; padding-top: 50px;"}
+[![](images/statquest-logo.jpg){fig-align="center" style="width: 50%; border-radius:50%; border:1px solid black;"}](https://www.youtube.com/c/joshstarmer)
+
+**StatQuest**`<br>`{=html}by Josh Starmer
+:::
+::: {.column style="width: 50%; text-align: center; padding-top: 50px;"}
+[![](images/very-normal-logo.png){fig-align="center" style="width: 50%; border-radius:50%; border:1px solid black;"}](https://www.youtube.com/@very-normal)
+
+**Very Normal**`<br>`{=html}by Christian Pascual
+:::
+::::
 
 ::: {.notes}
 :::

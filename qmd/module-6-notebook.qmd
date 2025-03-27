@@ -308,11 +308,11 @@ Perezgonzalez, J. D. (2015). Fisher, Neyman-Pearson or NHST? A tutorial for teac
 
 Popper, K. R. (1979). *Objective knowledge: An evolutionary approach*. Oxford University Press.
 
-<!-- positteama -->
+<!-- @positteama -->
 
 Posit Team. (n.d.). *RStudio: Integrated development environment for R* [Software]. Posit Software. <http://www.posit.co>
 
-<!-- rcoreteama -->
+<!-- @rcoreteama -->
 
 R Core Team. (n.d.). *R: A language and environment for statistical computing* [Software]. R Foundation for Statistical Computing. <https://www.R-project.org>
 
@@ -320,22 +320,22 @@ R Core Team. (n.d.). *R: A language and environment for statistical computing* [
 
 Sistema de Vigilância Alimentar e Nutricional. (n.d.). *Relatórios de acesso público* [Dataset]. <https://sisaps.saude.gov.br/sisvan/relatoriopublico/>
 
-<!-- wasserstein2016 -->
+<!-- @wasserstein2016 -->
 
 Wasserstein, R. L., & Lazar, N. A. (2016). The ASA statement on p-values: Context, process, and purpose. *The American Statistician*, *70*(2). <https://doi.org/10.1080/00031305.2016.1154108>
 
-<!-- wickham2014 -->
+<!-- @wickham2014 -->
 
 Wickham, H. (2014). Tidy data. *Journal of Statistical Software*, *59*(10). <https://doi.org/10.18637/jss.v059.i10>
 
-<!-- wickham2023c -->
+<!-- @wickham2023c -->
 
 Wickham, H. (2023, February 23). *The tidy tools manifesto*. Tidyverse. <https://tidyverse.tidyverse.org/articles/manifesto.html>
 
-<!-- wickham2023e -->
+<!-- @wickham2023e -->
 
 Wickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2023). *R for data science: Import, tidy, transform, visualize, and model data* (2nd ed.). O’Reilly Media. https://r4ds.hadley.nz
 
-<!-- wilkinson2016 -->
+<!-- @wilkinson2016 -->
 
 Wilkinson, M. D., Dumontier, M., Aalbersberg, Ij. J., Appleton, G., Axton, M., Baak, A., Blomberg, N., Boiten, J.-W., Da Silva Santos, L. B., Bourne, P. E., Bouwman, J., Brookes, A. J., Clark, T., Crosas, M., Dillo, I., Dumon, O., Edmunds, S., Evelo, C. T., Finkers, R., … Mons, B. (2016). The FAIR guiding principles for scientific data management and stewardship. *Scientific Data*, *3*(1), 160018. <https://doi.org/10.1038/sdata.2016.18>

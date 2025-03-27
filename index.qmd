@@ -256,21 +256,21 @@ danielvartan.github.io/r-course
 
 {{< include ./qmd/module-3.qmd >}}
 
-# Module 4<br>[Exploratory Data Analysis]{.brand-brown-750} {.smaller data-menu-title="Module 5: Exploratory Data Analysis"}
+# Module 4<br>[Exploratory Data Analysis]{.brand-brown-750} {.smaller data-menu-title="Module 4: Exploratory Data Analysis"}
 
 ::: {.notes}
 :::
 
 {{< include ./qmd/module-4.qmd >}}
 
-# Module 5<br>[Modeling]{.brand-brown-750} {.smaller data-menu-title="Module 6: Modeling"}
+# Module 5<br>[Modeling]{.brand-brown-750} {.smaller data-menu-title="Module 5: Modeling"}
 
 ::: {.notes}
 :::
 
 {{< include ./qmd/module-5.qmd >}}
 
-# Module 6<br>[Project]{.brand-brown-750} {.smaller data-menu-title="Module 7: Exercise"}
+# Module 6<br>[Project]{.brand-brown-750} {.smaller data-menu-title="Module 6: Exercise"}
 
 {{< include ./qmd/module-6.qmd >}}
 

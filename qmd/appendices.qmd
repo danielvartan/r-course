@@ -278,34 +278,6 @@ A data management plan (DMP) is a formal document that outlines how data will be
 ::: {.notes}
 :::
 
-## (AP) The `summarytools` Package {.smaller visibility="uncounted"}
-
-::: {style="font-size: 0.8em;"}
-```{r}
-#| code-fold: true
-#| warning: true
-#| output: asis
-
-library(dplyr)
-library(palmerpenguins)
-library(summarytools)
-
-penguins |>
-  select(species, island, bill_length_mm) |>
-  dfSummary(
-    plain.ascii = FALSE,
-    style = "grid",
-    headings = FALSE,
-    graph.magnif = 0.82,
-    varnumbers = FALSE,
-    valid.col = FALSE
-  )
-```
-:::
-
-::: {.notes}
-:::
-
 ## (AP) The `visdat` Package {.smaller visibility="uncounted"}
 
 :::: {.columns}
@@ -333,7 +305,110 @@ penguins |> vis_dat()
 ::: {.notes}
 :::
 
-## (AP) ANOVA: Power Analysis  {.smaller visibility="uncounted"}
+## (AP) What Test Should I Use? {.smaller visibility="uncounted"}
+
+::: {style="padding-top: 50px;"}
+```{r}
+#| echo: false
+
+dplyr::tibble(
+  type_of_data = c(
+    "Normally distributed continuous data<br>(summarized as mean)",
+    paste0(
+      "Ranks, scores, and non-normally<br>distributed continuous data<br>",
+      "(Summarized as median)"
+    ),
+    "Dichotomous data<br>(Summarized as proportion)"
+  ),
+  two_data_sets_paired = c(
+    "Paired t-test",
+    "Wilcoxon signed-rank test",
+    "Mc Nemar's test"
+  ),
+  two_data_sets_unpaired = c(
+    "Unpaired t-test",
+    "Mann-Whitney U test",
+    "Fishers test or Chi-square test"
+  ),
+  more_than_two_data_sets_paired = c(
+    "Repeated measures ANOVA",
+    "Friedman's test",
+    "Cochrane Q test"
+  ),
+  more_than_two_data_sets_unpaired = c(
+    "One-way ANOVA",
+    "Kruskal-Wallis test",
+    "Chi-square test"
+  ),
+  correlation_analysis = c(
+    "Pearson's correlation",
+    "Spearman's rank correlation",
+    "Contingency coefficient"
+  ),
+  regression_analysis = c(
+    "Linear regression",
+    "Nonparametric regression",
+    "Logistic regression"
+  )
+) |>
+  gt::gt() |>
+  gt::tab_spanner(
+    label = "Comparison Analysis",
+    columns = c(
+      two_data_sets_paired, two_data_sets_unpaired,
+      more_than_two_data_sets_paired, more_than_two_data_sets_unpaired
+    )
+  ) |>
+  gt::tab_spanner(
+    label = "Other Analysis",
+    columns = c(correlation_analysis, regression_analysis)
+  ) |>
+  gt::cols_label(
+    type_of_data = "Type of Data",
+    two_data_sets_paired = "2 Data Sets - Paired",
+    two_data_sets_unpaired = "2 Data Sets - Unpaired",
+    more_than_two_data_sets_paired = "More than 2 Data Sets - Paired",
+    more_than_two_data_sets_unpaired = "More than 2 Data Sets - Unpaired",
+    correlation_analysis = "Correlation Analysis",
+    regression_analysis = "Regression Analysis"
+  ) |>
+  gt::fmt_markdown(columns = type_of_data) |>
+  gt::tab_style(
+    style = gt::cell_text(weight = "bold"),
+    locations = gt::cells_column_labels()
+  )
+```
+:::
+
+::: footer
+(Adapted from @najmi2021)
+:::
+
+::: {.notes}
+:::
+
+## (AP) ANOVA: Power Analysis {.smaller visibility="uncounted"}
+
+```{r}
+library(pwrss)
+```
+
+```{r}
+pwrss.f.ancova(
+  eta2 = 0.01,
+  n.way = 1,
+  n.levels = 3,
+  n.covariates = 0,
+  alpha = 0.05,
+  n = NULL,
+  power = 0.8
+)
+```
+
+::: {.notes}
+:::
+
+## (AP) ANOVA: Power Analysis {.smaller visibility="uncounted"}
 
 ```{r}
 #| eval: false
