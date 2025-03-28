@@ -24,7 +24,7 @@ For some, data science is just statistics [@broman2013] (_hype statistics_). For
 
 You only analyze or visualize data when you already have clean, tidy, and validated data.
 
-The processing for getting data ready for analysis is called **data munging**. You cans also see it as **data wrangling** (usually when dealing with models) or, simply, **data cleaning**.
+The processing for getting data ready for analysis is called **data munging**. You can also see it as **data wrangling** (usually when dealing with machine learning) or, simply, **data cleaning**.
 
 ::: {style="padding-top: 25px;"}
 > Data scientists, according to interviews and expert estimates, spend **from 50 percent to 80 percent of their time mired in this more mundane labor of collecting and preparing unruly digital data**, before it can be explored for useful nuggets [@lohr2014].
@@ -35,11 +35,11 @@ The processing for getting data ready for analysis is called **data munging**. Y
 
 ## What Is Data After All? {.smaller}
 
-[Ackoff's DIKW pyramid](https://en.wikipedia.org/wiki/DIKW_pyramid)
+[Ackoff's DIKW pyramid](https://en.wikipedia.org/wiki/DIKW_pyramid) [@ackoff1989]
 
 **Data** < **Information** < **Knowledge** < **Wisdom**
 
-Data _versus_ the interpretation of the data
+Data *versus* the interpretation of the data.
 
 ![](images/dikw-drawing.jpeg){fig-align="center" style="padding-top: 25px;"}
 
@@ -134,11 +134,11 @@ Data is an abstraction. It's a representation of the world around us. Without co
 Data validation techniques are used to ensure that data is accurate, consistent, and reliable.
 
 ::: {style="padding-top: 10px; padding-bottom: 15px;"}
-**Examples**
+**Examples of invalid data**:
 
-- Impossible values (e.g., negative age);
-- Inconsistent values (e.g., a person with a height of 2 meters and a weight of 20 kg);
-- Improbable values (e.g., a person 200 years old);
+- Impossible values (e.g., negative age).
+- Inconsistent values (e.g., a person with a height of 2 meters and a weight of 20 kg).
+- Improbable values (e.g., a person 200 years old).
 - Duplicated values (e.g., the same person with two different ages).
 :::
 
@@ -218,8 +218,6 @@ paste0(
 
 ::::: {.columns}
 :::: {.column style="width: 60%;"}
-![](images/worldclim-logo.png){style="width: 40%;"}
-
 Not all data is tabular; spatial data can be very large and complex.
 
 Excel cannot handle spatial data, and GUI-based statistical softwares, when capable of handling spatial data, are often limited and struggles with performance issues.
@@ -375,8 +373,7 @@ mctq::std_mctq |>
 [![](images/tibble-hex-logo.svg){style="width: 120px;"}](https://tidyr.tidyverse.org/)
 :::
 ::: {.column style="width: 85%; padding-top: 15px;"}
-[`tibble`](https://tibble.tidyverse.org/) is a modern reimagining of the data frame, keeping what time has proven to be effective, and throwing out what is not.
-
+[`tibble`](https://tibble.tidyverse.org/) is a modern take on data frames in R, offering improved usability and integration with the Tidyverse. It enhances readability while retaining essential data frame features.
 ```r
 install.packages("tibble")
 ```
@@ -385,7 +382,7 @@ install.packages("tibble")
 
 :::: {.columns"}
 ::: {.column style="width: 50%; padding-top: 30px;"}
-Using R native `data.frame` class
+Using R native `data.frame` class.
 
 ```{r}
 #| attr-source: "style='height: 250px;'"
@@ -394,7 +391,7 @@ mtcars
 ```
 :::
 ::: {.column style="width: 50%; padding-top: 30px;"}
-Using `tibble` (Tidyverse way)
+Using `tibble` (Tidyverse way).
 
 ```{r}
 #| attr-source: "style='height: 250px;'"
@@ -414,6 +411,8 @@ mtcars |> as_tibble()
 It will depend on what king of data you are working with.
 
 Different from Excel or GUI-based statistical software, R can deal with any kind of data.
+
+**Examples of R functions to read data**:
 
 - Tabular data: `utils::read.csv()`, `readr::read_csv()`
 - Geographical data: `terra::vect()`, `st::st_read()`
@@ -564,13 +563,21 @@ list.files("./data")
 file <- "./data/palmerpenguins-raw.csv"
 ```
 
+::: {style="padding-top: 15px;"}
+🚨 **Never use `setwd()`!** 🚨
+
+(How to detect a beginner R user)
+
+Click [here](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/#:~:text=such%20as%20these.-,What%E2%80%99s%20wrong%20with,setwd(),-%3F) to learn why.
+:::
+
 ## The `here` Package {.smaller}
 
 :::: {.columns}
 ::: {.column style="width: 45%;"}
 [`here`](https://here.r-lib.org/) is a package that helps you use relative paths in your R projects.
 
-It turns file management much easier.
+It turns file management much easier and OS independent.
 
 ```r
 install.packages("here")
@@ -609,7 +616,7 @@ here("data", "palmerpenguins-raw.csv")
 [![](images/readr-hex-logo.png){style="width: 120px;"}](https://readr.tidyverse.org/)
 :::
 ::: {.column style="width: 85%; padding-top: 15px;"}
-`readr` provides a fast and friendly way to read rectangular data from delimited files, such as comma-separated values (CSV) and tab-separated values (TSV).
+`readr` provides a fast and easy way to read rectangular data from delimited files, such as Comma-Separated Values (CSV) and Tab-Separated Values (TSV).
 
 ```r
 install.packages("readr")
@@ -638,7 +645,7 @@ library(readr)
 ::: {.notes}
 :::
 
-## The `readr` Package {.smaller}
+## Importing the Raw Data {.smaller}
 
 ```{r}
 library(dplyr)
@@ -704,7 +711,7 @@ install.packages("janitor")
 
 ## `clean_names()` {.smaller}
 
-The `clean_names()` function returns [machine-readable](https://en.m.wikipedia.org/wiki/Machine-readable_medium_and_data) names.
+The `clean_names()` function transforms data frame column names into [machine-readable](https://en.m.wikipedia.org/wiki/Machine-readable_medium_and_data) formats.
 
 This makes it easier to work with the data.
 
@@ -914,7 +921,7 @@ data |> glimpse()
 
 The `mutate()` function is used to create new columns or modify existing columns in a data frame.
 
-We need assign proper classes to the variables. We also need to transform the `year` column, extracting just the year value.
+Let's assign proper classes to the variables. We also need to transform the `year` column, extracting just the year value.
 
 ```{r}
 library(dplyr)
@@ -925,6 +932,12 @@ data |> glimpse()
 ```
 
 ## `mutate()` {.smaller}
+
+::: {style="padding-bottom: 15px;"}
+For categorical variables, it is helpful to inspect their unique values.
+
+If the vector contains a limited number of unique values, it is likely a good candidate to be converted into a `factor` for better data handling and analysis.
+:::
 
 ```{r}
 data |> pull(species) |> unique()
@@ -1042,7 +1055,9 @@ data |> glimpse()
 
 ## `relocate()` {.smaller}
 
-Let's organize our columns in a more logical order. The `year` column is best placed next to the `sex` column.
+Let's organize our columns in a more logical order.
+
+The `year` column is best placed next to the `sex` column.
 
 ```{r}
 library(dplyr)
@@ -1087,7 +1102,7 @@ data |>
 library(palmerpenguins)
 ```
 :::
-::: {.column style="width: 50%;"}
+::: {.column style="width: 50%; padding-bottom: 15px;"}
 ```{r}
 identical(data, penguins)
 ```
@@ -1119,9 +1134,7 @@ library(readr)
 ```
 
 ```{r}
-if (!dir.exists(here("data"))) {
-  dir.create(here("data"))
-}
+if (!dir.exists(here("data"))) dir.create(here("data"))
 ```
 
 ```{r}

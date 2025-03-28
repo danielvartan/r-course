@@ -530,7 +530,7 @@ Reproducible environments ensure that your code will run the same way on differe
 [![](images/renv-hex-logo.png){fig-align="center" style="width: 75%; padding-top: 25px;"}](https://rstudio.github.io/renv/)
 :::
 ::: {.column style="width: 50%;"}
-[![](images/docker-logo.png){fig-align="center" style="width: 75%; padding-top: 25px;"}](https://www.docker.com/)
+[![](images/podman-hex-logo.png){fig-align="center" style="width: 75%; padding-top: 25px;"}](https://podman.io/)
 :::
 ::::
 
@@ -581,7 +581,7 @@ get_sidra(
 
 ![](images/kiss-principle.png){fig-align="center" style="width: 75%; padding-top: 50px;"}
 
-## (AP) Some Other Things ... {.smaller visibility="uncounted"}
+## (AP) Some Other Things {.smaller visibility="uncounted"}
 
 We've only touched upon the vast landscape of open science. There are many other tools and concepts that we didn't cover, such as:
 
@@ -605,7 +605,7 @@ We've only touched upon the vast landscape of open science. There are many other
 ::: {.notes}
 :::
 
-## (AP) Some Other Things ... {.smaller .nostretch visibility="uncounted"}
+## (AP) Some Other Things {.smaller .nostretch visibility="uncounted"}
 
 ![](images/allison-horst-figure-9.png){fig-align="center" style="width: 90%; padding-top: 10px;"}
 

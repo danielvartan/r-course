@@ -16,7 +16,7 @@ Go to *Download R for \[YOUR OS\]* and then click on the *base* link---The base 
 Simply follow the instructions of the installer.
 :::
 ::: {.column style="width: 50%;"}
-[![](images/cran-logo.png){fig-align="center" style="width: 60%; padding-top: 75px;"}](https://cran.r-project.org/)
+[![](images/cran-logo.png){fig-align="center" style="width: 60%; padding-top: 80px;"}](https://cran.r-project.org/)
 :::
 ::::
 
@@ -68,7 +68,7 @@ It is important to have a structured project directory. A best practice is to fo
 Every data project must be accompanied, at least, by a **README** file, explaining the project, and a **LICENSE** file, defining the terms of use of the data (See Open Source Licenses [here](https://choosealicense.com/licenses/)).
 :::
 ::: {.column style="width: 50%;"}
-![](images/marwick-2018-figure-2.png){fig-align="center" style="width: 80%; padding-top: 0px;"}
+![](images/marwick-2018-figure-2.png){fig-align="center" style="width: 80%; padding-top: 25px;"}
 :::
 ::::
 
@@ -184,12 +184,13 @@ Everything that happens in R is the result of a function call.
 
 ## Vectorized Operations {.smaller}
 
-:::: {.columns}
-::: {.column style="width: 50%;"}
-The most important feature of R is that it is a **vectorized language**. This means that most operations are performed element-wise.
+::::: {.columns}
+:::: {.column style="width: 50%;"}
+In R, most operations are *vectorized*, meaning they operate on all elements of a vector at once, without needing explicit loops.
 
-This is achieved using the C programming language behind the scenes.
+This makes code more concise, readable, and less error-prone, while improving efficiency compared to non-vectorized languages.
 
+::: {style="padding-top: 15px;"}
 ```{r}
 c(1, 2, 3) + 1
 ```
@@ -198,10 +199,11 @@ c(1, 2, 3) + 1
 c(1, 2, 3) * c(1, 2, 3)
 ```
 :::
-::: {.column style="width: 50%;"}
-![](images/srivastava-2019-figure-2-adapted-rgb-72-dpi.gif){fig-align="center" style="width: 60%; padding-top: 150px;"}
-:::
 ::::
+:::: {.column style="width: 50%;"}
+![](images/srivastava-2019-figure-2-adapted-rgb-72-dpi.gif){fig-align="center" style="width: 60%; padding-top: 150px;"}
+::::
+:::::
 
 ::: footer
 (Artwork by [Kanishk Srivastava](https://medium.com/@kaaanishk/illustrated-introduction-to-linear-algebra-using-numpy-11d503d244a1))
@@ -212,8 +214,8 @@ c(1, 2, 3) * c(1, 2, 3)
 
 ## Primary Data Types {.smaller}
 
-:::: {.columns}
-::: {.column style="width: 50%;"}
+::::: {.columns}
+:::: {.column style="width: 50%;"}
 These are part of the [**atomic**](https://adv-r.hadley.nz/vectors-chap.html?q=atomic#atomic-vectors) data types in R.
 
 - `logical`: TRUE/FALSE.
@@ -221,14 +223,16 @@ These are part of the [**atomic**](https://adv-r.hadley.nz/vectors-chap.html?q=a
 - `double`: 1.0, 2.0, 3.0.
 - `character`: "Hello, World!".
 
+::: {style="padding-top: 15px;"}
 ```{r}
 typeof(as.Date("2025-01-01"))
 ```
 :::
-::: {.column style="width: 50%;"}
-![](images/primary-objects-rgb-96-dpi.png){fig-align="center" style="width: 80%; padding-top: 50px;"}
-:::
 ::::
+:::: {.column style="width: 50%;"}
+![](images/primary-objects-rgb-96-dpi.png){fig-align="center" style="width: 80%; padding-top: 50px;"}
+::::
+:::::
 
 ::: {.notes}
 See: https://youtu.be/e1zJS31tr88?si=7-TamPi2tmwprCUL&t=900
@@ -264,7 +268,7 @@ See: https://youtu.be/e1zJS31tr88?si=7-TamPi2tmwprCUL&t=900
 :::: {.column style="width: 50%;"}
 Atomic types are **non-recursive objects**, i.e., objects that can't hold themselfs as an entry (e.g., `logical`, `integer`, `double`, `character`).
 
-::: {style="padding-top: 30px;"}
+::: {style="padding-top: 15px;"}
 **Non-Atomic Objects**
 
 - Matrices (`matrix()`) (2D)
@@ -290,7 +294,7 @@ list(
 ## Operations {.smaller}
 
 ::: {style="font-size: 1.5em; text-align: center; padding-top: 175px;"}
-[**Left Hand Side**]{.brand-red} = [**Right Hand Side**]{.brand-red}
+[**Left Hand Side**]{.brand-red} `Operator` [**Right Hand Side**]{.brand-red}
 :::
 
 ::: {.notes}
@@ -306,7 +310,7 @@ list(
 - ``` `/`() ``` Division
 - ``` `^`() ``` Exponentiation
 - ``` `%/%`() ``` Integer division
-- ``` `%%`() ``` Modulus (Remainder from Division)
+- ``` `%%`() ``` Modulus`br`{=html}(Remainder from Division)
 :::
 ::: {.column style="width: 50%;"}
 ```{r}
@@ -346,7 +350,7 @@ list(
 
 :::: {.columns}
 ::: {.column style="width: 50%;"}
-- ``` `<-`() ``` Leftwards assignment (**Use this!**)
+- ``` `<-`() ``` Leftwards assignment`<br>`{=html}(**Use this!**)
 - ``` `<<-`() ``` Leftwards assignment (Global Environment)
 - ``` `->`() ``` Rightwards assignment
 - ``` `->>`() ``` Rightwards assignment (Global Environment)
@@ -683,11 +687,13 @@ data[1, 1]
 ::: {.notes}
 :::
 
-## Missing Values {.smaller}
+## Special Values {.smaller}
 
 ::::: {.columns}
 :::: {.column style="width: 47.5%;"}
-Missing values must me explicitly declared in R. For that R uses the `NA` value (*Not Available*).
+`NA` (*Not Available*)
+
+Missing values must be explicitly declared in R. For that R uses the `NA` value.
 
 `NA` comes in different flavors, for example: `NA_integer_`, `NA_real_`, `NA_character_`, `NA_complex_`.
 
@@ -793,7 +799,7 @@ if (condition) true_action else false_action
 ```
 
 :::: {.columns}
-::: {.column style="width: 47.5%; padding-top: 30px;"}
+::: {.column style="width: 47.5%; padding-top: 15px;"}
 ```{r}
 x <- 60
 
@@ -930,7 +936,7 @@ foo(\(x) x + 1)
 ::: {.column style="width: 47.5%; font-size: 0.95em;"}
 A **functional** is a function that takes a function as an input and returns a vector as output [@wickham2019].
 
-It makes the work of the programmer easier, because it allows to apply a function to a vector without the need of a loop. Because these functions are written in C, they are very fast.
+It makes the work of the programmer easier, because it allows to apply a function to a vector without the need of a loop. Because these functions are usually written in C (a low-level programminng language), they are very fast.
 
 R have native functionals (e.g., `lapply()`), but prefer solutions from the [`purrr`](https://purrr.tidyverse.org/) package.
 :::
@@ -1011,11 +1017,13 @@ x
 :::: {.column style="width: 47.5%;"}
 [**The Unix philosophy**](https://en.wikipedia.org/wiki/Unix_philosophy)
 
+Each program must do one thing well [@mcilroy1978].
+
 In R, the fundamental unit of shareable code is the package.
 
 A package bundles together code, data, documentation, and tests, and is easy to share with others [@wickham2023d].
 
-Documentation example: The [`mctq`](https://github.com/ropensci/mctq) R package.
+Documentation example:`<br>`{=html}The [`mctq`](https://github.com/ropensci/mctq) R package.
 ::::
 :::: {.column style="width: 5%;"}
 ::::
@@ -1046,7 +1054,7 @@ package_name::function_name()
 ```
 
 ```{r}
-parse_hm("23:00")
+hms::parse_hm("23:00")
 ```
 :::
 ::::
@@ -1077,15 +1085,17 @@ A tipycal installation of R comes with a [set](https://cran.r-project.org/manual
 ## Other Kind of Objects {.smaller}
 
 ::::: {.columns}
-:::: {.column style="width: 47.5%; font-size: 0.9em;"}
-Based on the atomic types, we can create other types of objects. **Using the right kind of object in R is very important**, because these objects also include methods to deal with particular types of data.
+:::: {.column style="width: 47.5%; font-size: 0.85em;"}
+Based on the atomic types, we can create other types of objects.
 
-For example, time can be expressed in diffent ways, like linear time (e.g., durations, periods, data-time, intervals) and circular time (e.g., time of day). We can also have time series, which are a sequence of data points taken at successive equally spaced points in time.
+**Using the right kind of object in R is very important**, because these objects also include methods to deal with particular types of data.
+
+For example, time can be expressed in diffent ways, like linear time (e.g., durations, periods, data-time, intervals) and circular time (e.g., time of day). We can also have time series, which are a sequence of data points taken at successive points in time.
 ::::
 :::: {.column style="width: 5%;"}
 ::::
 :::: {.column style="width: 47.5%; font-size: 0.9em;"}
-`Date`<br>(Days since 1970-01-01 (UNIX epoch))
+`Date`<br>(Days since 1970-01-01 ([UNIX epoch](https://en.wikipedia.org/wiki/Unix_time)))
 
 ```{r}
 as.Date("1970-01-01") |> as.numeric()
@@ -1096,7 +1106,7 @@ as.Date("1970-01-01") + 1
 ```
 
 ::: {style="padding-top: 15px;"}
-`POSIXct`<br>(Seconds since 1970-01-01)
+`POSIXct`<br>(Seconds since 1970-01-01 ([UNIX epoch](https://en.wikipedia.org/wiki/Unix_time)))
 ```{r}
 as.POSIXct("1970-01-01 00:00:00", tz = "UTC") |>
   as.numeric()
@@ -1114,7 +1124,7 @@ as.POSIXct("1970-01-01 00:00:00", tz = "UTC") + 1
 
 ## Commenting {.smaller}
 
-🚨 **Only if Necessary** 🚨
+🚨 **Only if necessary** 🚨
 
 Your code must speak for itself.
 
@@ -1122,11 +1132,11 @@ In data analysis code, **only use comments to record important things**. If you 
 
 ::: {style="padding-top: 15px;"}
 ```r
-# This is a comment
+# This is a comment.
 
-1 + 1 # This is also a comment
+1 + 1 # This is also a comment.
 
-# 1 + 1 # You can also comment code that you don't want to run
+# 1 + 1 # You can also comment code that you don't want to run.
 ```
 :::
 
@@ -1160,7 +1170,7 @@ help(mean)
 
 [![](images/tidyverse-hex-logo.png){style="width: 120px;"}](https://www.tidyverse.org/)
 
-[Tidyverse](https://www.tidyverse.org/) is a framework and a collection of R packages designed for data science. All packages share an underlying design philosophy ([The Tidy Manifesto](https://tidyverse.tidyverse.org/articles/manifesto.html)), grammar, and data structures.
+[Tidyverse](https://www.tidyverse.org/) is a collection of R packages designed for data science. All packages share an underlying design philosophy ([The Tidy Manifesto](https://tidyverse.tidyverse.org/articles/manifesto.html)), grammar, and data structures.
 
 It was created by [Hadley Wickham](https://hadley.nz/), a prominent figure in the R community and author of several key references for this course. Hadley Wickham's contributions have significantly shaped modern R programming.
 
@@ -1169,7 +1179,7 @@ It was created by [Hadley Wickham](https://hadley.nz/), a prominent figure in th
 
 ## Main Tidyverse Packages {.smaller}
 
-The Tidyverse also has a meta-package (bundle) that installs or load the most important packages from the collection.
+The Tidyverse also has a meta-package that installs or load the most important packages from the collection.
 
 :::: {.columns}
 ::: {.column style="width: 50%; padding-top: 10px; padding-bottom: 10px;"}
@@ -1184,13 +1194,13 @@ library("tidyverse")
 :::
 ::::
 
-- `readr`: Read flat files (csv, tsv, fwf) into R
-- `stringr`: A fresh approach to string manipulation in R
-- `lubridate`: Make working with dates in R just that little bit easier
-- `dplyr`: A grammar of data manipulation
-- `purrr`: A functional programming toolkit for R
-- `forcats`: Tools for working with categorical variables (factors)
-- `ggplot2`: An implementation of the Grammar of Graphics in R
+- `readr`: Read flat files (csv, tsv, fwf) into R.
+- `stringr`: A fresh approach to string manipulation in R.
+- `lubridate`: Make working with dates in R just that little bit easier.
+- `dplyr`: A grammar of data manipulation.
+- `purrr`: A functional programming toolkit for R.
+- `forcats`: Tools for working with categorical variables (factors).
+- `ggplot2`: An implementation of the Grammar of Graphics in R.
 
 ::: {.notes}
 :::
@@ -1199,9 +1209,7 @@ library("tidyverse")
 
 [![](images/ropensci-hex-logo.png){style="width: 150px;"}](https://ropensci.org/)
 
-The importance of relying on good packages is crucial.
-
-[rOpenSci](https://ropensci.org/) project is a community of researchers and developers working on open science and open data. They develop R packages that allow access to data and tools from a wide range of sources.
+[rOpenSci](https://ropensci.org/) is a non-profit initiative founded in 2011 that brings together a community of researchers and developers committed to open science. They create and maintain high-quality R packages that provide access to data and tools from diverse sources, ensuring reliability and reproducibility in scientific research.
 
 All packages go through a **peer-review** process, which ensures that they are well written and reliable.
 
@@ -1229,7 +1237,7 @@ You can learn a lot about a person just by looking at their code 👀.
 ::: {.column style="width: 47.5%; font-size: 0.9em;"}
 [**Tidyverse Style Guide**](https://style.tidyverse.org/)
 
-> Variable and function names should use only lowercase letters, numbers, and \_. Use underscores (\_) (so called snake case) to separate words within a name.
+> Variable and function names should use only lowercase letters, numbers, and `_`. Use underscores (`_`) (so called snake case) to separate words within a name.
 
 ```r
 # Good

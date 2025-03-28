@@ -224,11 +224,10 @@
 
 <section id="title-slide" class="center"><h1 class="title" style="text-align: left; padding-bottom: 15px;">An Introduction to the R Programming Language</h1>
   <div style="text-align: left; float: left;">
-    <p class="author">Daniel Vartanian &amp; Jaqueline Lopes Pereira</p>
-    <p class="institute">University of São Paulo</p>
-    <p class="date">2025-03-24</p>
+    <p class="author">Daniel Vartanian</p>
+    <p class="author">Jaqueline Lopes Pereira</p>
   </div>
-  <div style="text-align: left; float: right; margin-top: -160px;">
+  <div style="text-align: left; float: right;">
     <a href="https://www.fsp.usp.br/sustentarea/" target="_blank"><img src="images/sustentarea-logo.svg" style="width: 125px; padding-left: 20px"></a>
     <a href="https://www.fsp.usp.br" target="_blank"><img src="images/usp-fsp-logo-bw-72-dpi.png" style="width: 125px; padding-left: 15px"></a>
     <a href="https://www5.usp.br" target="_blank"><img src="images/usp-logo.svg" style="width: 150px; padding-left: 20px; padding-bottom: 25px;"></a>
@@ -298,12 +297,14 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside></section><section id="course-objectives" class="slide level2 smaller"><h2>Course Objectives</h2>
-<p>Understand fundamental principles and concepts of computer science.</p>
-<p>Comprehend the structure and core elements of the R programming language.</p>
-<p>Learn essential concepts of data munging.</p>
-<p>Understand the basics of data visualization.</p>
-<p>Explore fundamental techniques of exploratory data analysis.</p>
-<p>Learn basic modeling techniques.</p>
+<ol type="1">
+<li>Grasp the foundational principles and key concepts of computer science.</li>
+<li>Understand the structure and essential components of the R programming language.</li>
+<li>Master fundamental techniques for data munging.</li>
+<li>Develop skills in creating insightful data visualizations.</li>
+<li>Learn techniques for conducting exploratory data analysis.</li>
+<li>Gain an introduction to basic modeling approaches.</li>
+</ol>
 <div style="padding-top: 30px;">
 <p>(<span class="brand-red"><strong>Future course?</strong></span> An Introduction to <a href="https://en.wikipedia.org/wiki/Git">Git</a>)</p>
 </div>
@@ -405,10 +406,13 @@
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section><section id="lets-get-this-over-with" class="slide level2 smaller"><h2>Let’s Get This Over With</h2>
+      }</style></aside></section><section id="learn-from-mistakes" class="slide level2 smaller nostretch"><h2>Learn from Mistakes</h2>
 <p>Mistakes will happen. Don’t let them discourage you!</p>
-
-<img data-src="images/allison-horst-figure-48.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width: 100%; padding-top: 0px;"><div class="footer">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/allison-horst-figure-47.png" class="quarto-figure quarto-figure-center" style="width: 70%; padding-top: 30px;"></p>
+</figure>
+</div>
+<div class="footer">
 <p>(Artwork by <a href="https://allisonhorst.com/horst-hill-collaborations">Allison Horst</a>)</p>
 </div>
 <aside class="notes"><style type="text/css">
@@ -809,9 +813,6 @@
 <figure><p><img data-src="images/meme-python-r.png" class="quarto-figure quarto-figure-center" style="width: 50%;"></p>
 </figure>
 </div>
-<div class="footer">
-<p>(Image by Unknown Author)</p>
-</div>
 <aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -983,7 +984,7 @@
 <p>Simply follow the instructions of the installer.</p>
 </div><div class="column" style="width: 50%;">
 <div class="quarto-figure quarto-figure-center">
-<figure><p><a href="https://cran.r-project.org/"><img data-src="images/cran-logo.png" class="quarto-figure quarto-figure-center" style="width: 60%; padding-top: 75px;"></a></p>
+<figure><p><a href="https://cran.r-project.org/"><img data-src="images/cran-logo.png" class="quarto-figure quarto-figure-center" style="width: 60%; padding-top: 80px;"></a></p>
 </figure>
 </div>
 </div></div>
@@ -1046,7 +1047,7 @@
 <p>Every data project must be accompanied, at least, by a <strong>README</strong> file, explaining the project, and a <strong>LICENSE</strong> file, defining the terms of use of the data (See Open Source Licenses <a href="https://choosealicense.com/licenses/">here</a>).</p>
 </div><div class="column" style="width: 50%;">
 <div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="images/marwick-2018-figure-2.png" class="quarto-figure quarto-figure-center" style="width: 80%; padding-top: 0px;"></p>
+<figure><p><img data-src="images/marwick-2018-figure-2.png" class="quarto-figure quarto-figure-center" style="width: 80%; padding-top: 25px;"></p>
 </figure>
 </div>
 </div></div>
@@ -1165,8 +1166,9 @@
       }</style></aside></section><section id="vectorized-operations" class="slide level2 smaller"><h2>Vectorized Operations</h2>
 <div class="columns">
 <div class="column" style="width: 50%;">
-<p>The most important feature of R is that it is a <strong>vectorized language</strong>. This means that most operations are performed element-wise.</p>
-<p>This is achieved using the C programming language behind the scenes.</p>
+<p>In R, most operations are <em>vectorized</em>, meaning they operate on all elements of a vector at once, without needing explicit loops.</p>
+<p>This makes code more concise, readable, and less error-prone, while improving efficiency compared to non-vectorized languages.</p>
+<div style="padding-top: 15px;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">+</span> <span class="dv">1</span></span>
 <span id="cb4-2"><a></a><span class="co">#&gt; [1] 2 3 4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1174,6 +1176,7 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">*</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
 <span id="cb5-2"><a></a><span class="co">#&gt; [1] 1 4 9</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div><div class="column" style="width: 50%;">
 <div class="quarto-figure quarto-figure-center">
@@ -1208,9 +1211,11 @@
 <li>
 <code>character</code>: “Hello, World!”.</li>
 </ul>
+<div style="padding-top: 15px;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">typeof</span>(<span class="fu">as.Date</span>(<span class="st">"2025-01-01"</span>))</span>
 <span id="cb6-2"><a></a><span class="co">#&gt; [1] "double"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div><div class="column" style="width: 50%;">
 <div class="quarto-figure quarto-figure-center">
@@ -1276,7 +1281,7 @@
 <div class="columns">
 <div class="column" style="width: 50%;">
 <p>Atomic types are <strong>non-recursive objects</strong>, i.e., objects that can’t hold themselfs as an entry (e.g., <code>logical</code>, <code>integer</code>, <code>double</code>, <code>character</code>).</p>
-<div style="padding-top: 30px;">
+<div style="padding-top: 15px;">
 <p><strong>Non-Atomic Objects</strong></p>
 <ul>
 <li>Matrices (<code><a href="https://rdrr.io/r/base/matrix.html">matrix()</a></code>) (2D)</li>
@@ -1333,7 +1338,7 @@
           display:block!important;
       }</style></aside></section><section id="operations" class="slide level2 smaller"><h2>Operations</h2>
 <div style="font-size: 1.5em; text-align: center; padding-top: 175px;">
-<p><span class="brand-red"><strong>Left Hand Side</strong></span> = <span class="brand-red"><strong>Right Hand Side</strong></span></p>
+<p><span class="brand-red"><strong>Left Hand Side</strong></span> <code>Operator</code> <span class="brand-red"><strong>Right Hand Side</strong></span></p>
 </div>
 <aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
@@ -1362,7 +1367,7 @@
 <li>
 <code><a href="https://rdrr.io/r/base/Arithmetic.html">`%/%`()</a></code> Integer division</li>
 <li>
-<code><a href="https://rdrr.io/r/base/Arithmetic.html">`%%`()</a></code> Modulus (Remainder from Division)</li>
+<code><a href="https://rdrr.io/r/base/Arithmetic.html">`%%`()</a></code> Modulusbr(Remainder from Division)</li>
 </ul>
 </div><div class="column" style="width: 50%;">
 <div class="cell">
@@ -1409,7 +1414,7 @@
 <div class="column" style="width: 50%;">
 <ul>
 <li>
-<code><a href="https://rdrr.io/r/base/assignOps.html">`&lt;-`()</a></code> Leftwards assignment (<strong>Use this!</strong>)</li>
+<code><a href="https://rdrr.io/r/base/assignOps.html">`&lt;-`()</a></code> Leftwards assignment<br>(<strong>Use this!</strong>)</li>
 <li>
 <code><a href="https://rdrr.io/r/base/assignOps.html">`&lt;&lt;-`()</a></code> Leftwards assignment (Global Environment)</li>
 <li>
@@ -1817,10 +1822,11 @@
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section><section id="missing-values" class="slide level2 smaller"><h2>Missing Values</h2>
+      }</style></aside></section><section id="special-values" class="slide level2 smaller"><h2>Special Values</h2>
 <div class="columns">
 <div class="column" style="width: 47.5%;">
-<p>Missing values must me explicitly declared in R. For that R uses the <code>NA</code> value (<em>Not Available</em>).</p>
+<p><code>NA</code> (<em>Not Available</em>)</p>
+<p>Missing values must be explicitly declared in R. For that R uses the <code>NA</code> value.</p>
 <p><code>NA</code> comes in different flavors, for example: <code>NA_integer_</code>, <code>NA_real_</code>, <code>NA_character_</code>, <code>NA_complex_</code>.</p>
 <p>If you use just <code>NA</code>, R will use the most appropriate type.</p>
 <div class="cell">
@@ -1902,7 +1908,7 @@
 <div class="sourceCode" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a></a><span class="cf">if</span> (condition) true_action</span>
 <span id="cb66-2"><a></a><span class="cf">if</span> (condition) true_action <span class="cf">else</span> false_action</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="columns">
-<div class="column" style="width: 47.5%; padding-top: 30px;">
+<div class="column" style="width: 47.5%; padding-top: 15px;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a></a>x <span class="ot">&lt;-</span> <span class="dv">60</span></span>
 <span id="cb67-2"><a></a></span>
@@ -2045,7 +2051,7 @@
 <div class="columns">
 <div class="column" style="width: 47.5%; font-size: 0.95em;">
 <p>A <strong>functional</strong> is a function that takes a function as an input and returns a vector as output <span class="citation" data-cites="wickham2019">(<a href="#/references" role="doc-biblioref" onclick="">Wickham, 2019</a>)</span>.</p>
-<p>It makes the work of the programmer easier, because it allows to apply a function to a vector without the need of a loop. Because these functions are written in C, they are very fast.</p>
+<p>It makes the work of the programmer easier, because it allows to apply a function to a vector without the need of a loop. Because these functions are usually written in C (a low-level programminng language), they are very fast.</p>
 <p>R have native functionals (e.g., <code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code>), but prefer solutions from the <a href="https://purrr.tidyverse.org/"><code>purrr</code></a> package.</p>
 </div><div class="column" style="width: 5%;">
 
@@ -2075,12 +2081,12 @@
 <span id="cb80-7"><a></a>  <span class="at">check =</span> <span class="st">"equal"</span></span>
 <span id="cb80-8"><a></a>)</span>
 <span id="cb80-9"><a></a><span class="co">#&gt; Unit: microseconds</span></span>
-<span id="cb80-10"><a></a><span class="co">#&gt;                   expr     min       lq      mean   median       uq      max</span></span>
-<span id="cb80-11"><a></a><span class="co">#&gt;  with_for_loop(1:1000) 686.169 726.2415 1686.1347 749.8285 801.8420 67380.04</span></span>
-<span id="cb80-12"><a></a><span class="co">#&gt;       with_map(1:1000) 290.830 303.3560  323.8058 312.7305 328.1855   973.27</span></span>
+<span id="cb80-10"><a></a><span class="co">#&gt;                   expr     min      lq      mean   median       uq       max</span></span>
+<span id="cb80-11"><a></a><span class="co">#&gt;  with_for_loop(1:1000) 700.382 723.905 1677.3751 751.8105 775.2860 68878.780</span></span>
+<span id="cb80-12"><a></a><span class="co">#&gt;       with_map(1:1000) 300.393 314.428  335.4093 322.1340 340.7045  1007.185</span></span>
 <span id="cb80-13"><a></a><span class="co">#&gt;  neval cld</span></span>
-<span id="cb80-14"><a></a><span class="co">#&gt;    100  a </span></span>
-<span id="cb80-15"><a></a><span class="co">#&gt;    100   b</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb80-14"><a></a><span class="co">#&gt;    100   a</span></span>
+<span id="cb80-15"><a></a><span class="co">#&gt;    100   a</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div></div>
 </section><section id="enviroments" class="slide level2 smaller"><h2>Enviroments</h2>
@@ -2128,9 +2134,10 @@
 <div class="columns">
 <div class="column" style="width: 47.5%;">
 <p><a href="https://en.wikipedia.org/wiki/Unix_philosophy"><strong>The Unix philosophy</strong></a></p>
+<p>Each program must do one thing well <span class="citation" data-cites="mcilroy1978">(<a href="#/references" role="doc-biblioref" onclick="">McIlroy et al., 1978</a>)</span>.</p>
 <p>In R, the fundamental unit of shareable code is the package.</p>
 <p>A package bundles together code, data, documentation, and tests, and is easy to share with others <span class="citation" data-cites="wickham2023d">(<a href="#/references" role="doc-biblioref" onclick="">Wickham &amp; Bryan, 2023</a>)</span>.</p>
-<p>Documentation example: The <a href="https://github.com/ropensci/mctq"><code>mctq</code></a> R package.</p>
+<p>Documentation example:<br>The <a href="https://github.com/ropensci/mctq"><code>mctq</code></a> R package.</p>
 </div><div class="column" style="width: 5%;">
 
 </div><div class="column" style="width: 47.5%;">
@@ -2150,7 +2157,7 @@
 <div style="padding-top: 15px;">
 <div class="sourceCode" id="cb87"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a></a>package_name<span class="sc">::</span><span class="fu">function_name</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a></a><span class="fu">parse_hm</span>(<span class="st">"23:00"</span>)</span>
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a></a>hms<span class="sc">::</span><span class="fu">parse_hm</span>(<span class="st">"23:00"</span>)</span>
 <span id="cb88-2"><a></a><span class="co">#&gt; 23:00:00</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
@@ -2190,13 +2197,14 @@
 <code>utils</code>: Utility functions (e.g., <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages()</a></code>)</li>
 </ul></section><section id="other-kind-of-objects" class="slide level2 smaller"><h2>Other Kind of Objects</h2>
 <div class="columns">
-<div class="column" style="width: 47.5%; font-size: 0.9em;">
-<p>Based on the atomic types, we can create other types of objects. <strong>Using the right kind of object in R is very important</strong>, because these objects also include methods to deal with particular types of data.</p>
-<p>For example, time can be expressed in diffent ways, like linear time (e.g., durations, periods, data-time, intervals) and circular time (e.g., time of day). We can also have time series, which are a sequence of data points taken at successive equally spaced points in time.</p>
+<div class="column" style="width: 47.5%; font-size: 0.85em;">
+<p>Based on the atomic types, we can create other types of objects.</p>
+<p><strong>Using the right kind of object in R is very important</strong>, because these objects also include methods to deal with particular types of data.</p>
+<p>For example, time can be expressed in diffent ways, like linear time (e.g., durations, periods, data-time, intervals) and circular time (e.g., time of day). We can also have time series, which are a sequence of data points taken at successive points in time.</p>
 </div><div class="column" style="width: 5%;">
 
 </div><div class="column" style="width: 47.5%; font-size: 0.9em;">
-<p><code>Date</code><br>(Days since 1970-01-01 (UNIX epoch))</p>
+<p><code>Date</code><br>(Days since 1970-01-01 (<a href="https://en.wikipedia.org/wiki/Unix_time">UNIX epoch</a>))</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb89"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a></a><span class="fu">as.Date</span>(<span class="st">"1970-01-01"</span>) <span class="sc">|&gt;</span> <span class="fu">as.numeric</span>()</span>
 <span id="cb89-2"><a></a><span class="co">#&gt; [1] 0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2206,7 +2214,7 @@
 <span id="cb90-2"><a></a><span class="co">#&gt; [1] "1970-01-02"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div style="padding-top: 15px;">
-<p><code>POSIXct</code><br>(Seconds since 1970-01-01)</p>
+<p><code>POSIXct</code><br>(Seconds since 1970-01-01 (<a href="https://en.wikipedia.org/wiki/Unix_time">UNIX epoch</a>))</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb91"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a></a><span class="fu">as.POSIXct</span>(<span class="st">"1970-01-01 00:00:00"</span>, <span class="at">tz =</span> <span class="st">"UTC"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb91-2"><a></a>  <span class="fu">as.numeric</span>()</span>
@@ -2229,15 +2237,15 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside></section><section id="commenting" class="slide level2 smaller"><h2>Commenting</h2>
-<p>🚨 <strong>Only if Necessary</strong> 🚨</p>
+<p>🚨 <strong>Only if necessary</strong> 🚨</p>
 <p>Your code must speak for itself.</p>
 <p>In data analysis code, <strong>only use comments to record important things</strong>. If you need comments to explain what your code is doing, consider rewriting your code to be clearer <span class="citation" data-cites="wickhamb">(<a href="#/references" role="doc-biblioref" onclick="">Wickham, n.d.</a>)</span>.</p>
 <div style="padding-top: 15px;">
-<div class="sourceCode" id="cb93"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a></a><span class="co"># This is a comment</span></span>
+<div class="sourceCode" id="cb93"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a></a><span class="co"># This is a comment.</span></span>
 <span id="cb93-2"><a></a></span>
-<span id="cb93-3"><a></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span> <span class="co"># This is also a comment</span></span>
+<span id="cb93-3"><a></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span> <span class="co"># This is also a comment.</span></span>
 <span id="cb93-4"><a></a></span>
-<span id="cb93-5"><a></a><span class="co"># 1 + 1 # You can also comment code that you don't want to run</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb93-5"><a></a><span class="co"># 1 + 1 # You can also comment code that you don't want to run.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
@@ -2271,7 +2279,7 @@
           display:block!important;
       }</style></aside></section><section id="the-tidyverse" class="slide level2 smaller"><h2>The Tidyverse</h2>
 <p><a href="https://www.tidyverse.org/"><img data-src="images/tidyverse-hex-logo.png" style="width: 120px;"></a></p>
-<p><a href="https://www.tidyverse.org/">Tidyverse</a> is a framework and a collection of R packages designed for data science. All packages share an underlying design philosophy (<a href="https://tidyverse.tidyverse.org/articles/manifesto.html">The Tidy Manifesto</a>), grammar, and data structures.</p>
+<p><a href="https://www.tidyverse.org/">Tidyverse</a> is a collection of R packages designed for data science. All packages share an underlying design philosophy (<a href="https://tidyverse.tidyverse.org/articles/manifesto.html">The Tidy Manifesto</a>), grammar, and data structures.</p>
 <p>It was created by <a href="https://hadley.nz/">Hadley Wickham</a>, a prominent figure in the R community and author of several key references for this course. Hadley Wickham’s contributions have significantly shaped modern R programming.</p>
 <aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
@@ -2284,7 +2292,7 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside></section><section id="main-tidyverse-packages" class="slide level2 smaller"><h2>Main Tidyverse Packages</h2>
-<p>The Tidyverse also has a meta-package (bundle) that installs or load the most important packages from the collection.</p>
+<p>The Tidyverse also has a meta-package that installs or load the most important packages from the collection.</p>
 <div class="columns">
 <div class="column" style="width: 50%; padding-top: 10px; padding-bottom: 10px;">
 <div class="sourceCode" id="cb96"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2293,19 +2301,19 @@
 </div></div>
 <ul>
 <li>
-<code>readr</code>: Read flat files (csv, tsv, fwf) into R</li>
+<code>readr</code>: Read flat files (csv, tsv, fwf) into R.</li>
 <li>
-<code>stringr</code>: A fresh approach to string manipulation in R</li>
+<code>stringr</code>: A fresh approach to string manipulation in R.</li>
 <li>
-<code>lubridate</code>: Make working with dates in R just that little bit easier</li>
+<code>lubridate</code>: Make working with dates in R just that little bit easier.</li>
 <li>
-<code>dplyr</code>: A grammar of data manipulation</li>
+<code>dplyr</code>: A grammar of data manipulation.</li>
 <li>
-<code>purrr</code>: A functional programming toolkit for R</li>
+<code>purrr</code>: A functional programming toolkit for R.</li>
 <li>
-<code>forcats</code>: Tools for working with categorical variables (factors)</li>
+<code>forcats</code>: Tools for working with categorical variables (factors).</li>
 <li>
-<code>ggplot2</code>: An implementation of the Grammar of Graphics in R</li>
+<code>ggplot2</code>: An implementation of the Grammar of Graphics in R.</li>
 </ul>
 <aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
@@ -2319,8 +2327,7 @@
           display:block!important;
       }</style></aside></section><section id="the-ropensci" class="slide level2 smaller"><h2>The rOpenSci</h2>
 <p><a href="https://ropensci.org/"><img data-src="images/ropensci-hex-logo.png" style="width: 150px;"></a></p>
-<p>The importance of relying on good packages is crucial.</p>
-<p><a href="https://ropensci.org/">rOpenSci</a> project is a community of researchers and developers working on open science and open data. They develop R packages that allow access to data and tools from a wide range of sources.</p>
+<p><a href="https://ropensci.org/">rOpenSci</a> is a non-profit initiative founded in 2011 that brings together a community of researchers and developers committed to open science. They create and maintain high-quality R packages that provide access to data and tools from diverse sources, ensuring reliability and reproducibility in scientific research.</p>
 <p>All packages go through a <strong>peer-review</strong> process, which ensures that they are well written and reliable.</p>
 <p><strong>Example</strong>: <a href="https://github.com/ropensci/mctq"><code>mctq</code></a> R package peer-review.</p>
 <aside class="notes"><style type="text/css">
@@ -2353,7 +2360,7 @@
 <div class="column" style="width: 47.5%; font-size: 0.9em;">
 <p><a href="https://style.tidyverse.org/"><strong>Tidyverse Style Guide</strong></a></p>
 <blockquote>
-<p>Variable and function names should use only lowercase letters, numbers, and _. Use underscores (_) (so called snake case) to separate words within a name.</p>
+<p>Variable and function names should use only lowercase letters, numbers, and <code>_</code>. Use underscores (<code>_</code>) (so called snake case) to separate words within a name.</p>
 </blockquote>
 <div class="sourceCode" id="cb98"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a></a><span class="co"># Good</span></span>
 <span id="cb98-2"><a></a>day_one</span>
@@ -2450,7 +2457,7 @@
           display:block!important;
       }</style></aside></section><section id="first-things-first" class="slide level2 smaller"><h2>First Things First</h2>
 <p>You only analyze or visualize data when you already have clean, tidy, and validated data.</p>
-<p>The processing for getting data ready for analysis is called <strong>data munging</strong>. You cans also see it as <strong>data wrangling</strong> (usually when dealing with models) or, simply, <strong>data cleaning</strong>.</p>
+<p>The processing for getting data ready for analysis is called <strong>data munging</strong>. You can also see it as <strong>data wrangling</strong> (usually when dealing with machine learning) or, simply, <strong>data cleaning</strong>.</p>
 <div style="padding-top: 25px;">
 <blockquote>
 <p>Data scientists, according to interviews and expert estimates, spend <strong>from 50 percent to 80 percent of their time mired in this more mundane labor of collecting and preparing unruly digital data</strong>, before it can be explored for useful nuggets <span class="citation" data-cites="lohr2014">(<a href="#/references" role="doc-biblioref" onclick="">Lohr, 2014</a>)</span>.</p>
@@ -2467,9 +2474,9 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside></section><section id="what-is-data-after-all" class="slide level2 smaller"><h2>What Is Data After All?</h2>
-<p><a href="https://en.wikipedia.org/wiki/DIKW_pyramid">Ackoff’s DIKW pyramid</a></p>
+<p><a href="https://en.wikipedia.org/wiki/DIKW_pyramid">Ackoff’s DIKW pyramid</a> <span class="citation" data-cites="ackoff1989">(<a href="#/references" role="doc-biblioref" onclick="">Ackoff, 1989</a>)</span></p>
 <p><strong>Data</strong> &lt; <strong>Information</strong> &lt; <strong>Knowledge</strong> &lt; <strong>Wisdom</strong></p>
-<p>Data <em>versus</em> the interpretation of the data</p>
+<p>Data <em>versus</em> the interpretation of the data.</p>
 
 <img data-src="images/dikw-drawing.jpeg" class="quarto-figure quarto-figure-center r-stretch" style="padding-top: 25px;"><div class="footer">
 <p>(To learn more see: <span class="citation" data-cites="ackoff1989">Ackoff (<a href="#/references" role="doc-biblioref" onclick="">1989</a>)</span> and <span class="citation" data-cites="rowley2007">Rowley (<a href="#/references" role="doc-biblioref" onclick="">2007</a>)</span>)</p>
@@ -2594,11 +2601,11 @@
       }</style></aside></section><section id="valid-data" class="slide level2 smaller"><h2>Valid Data</h2>
 <p>Data validation techniques are used to ensure that data is accurate, consistent, and reliable.</p>
 <div style="padding-top: 10px; padding-bottom: 15px;">
-<p><strong>Examples</strong></p>
+<p><strong>Examples of invalid data</strong>:</p>
 <ul>
-<li>Impossible values (e.g., negative age);</li>
-<li>Inconsistent values (e.g., a person with a height of 2 meters and a weight of 20 kg);</li>
-<li>Improbable values (e.g., a person 200 years old);</li>
+<li>Impossible values (e.g., negative age).</li>
+<li>Inconsistent values (e.g., a person with a height of 2 meters and a weight of 20 kg).</li>
+<li>Improbable values (e.g., a person 200 years old).</li>
 <li>Duplicated values (e.g., the same person with two different ages).</li>
 </ul>
 </div>
@@ -2680,7 +2687,6 @@
 </section><section id="spatial-data" class="slide level2 smaller"><h2>Spatial Data</h2>
 <div class="columns">
 <div class="column" style="width: 60%;">
-<p><img data-src="images/worldclim-logo.png" style="width: 40%;"></p>
 <p>Not all data is tabular; spatial data can be very large and complex.</p>
 <p>Excel cannot handle spatial data, and GUI-based statistical softwares, when capable of handling spatial data, are often limited and struggles with performance issues.</p>
 <div style="font-size: 0.8em; font-style: italic; padding-top: 50px;">
@@ -2844,12 +2850,12 @@
 <div class="column" style="width: 15%;">
 <p><a href="https://tidyr.tidyverse.org/"><img data-src="images/tibble-hex-logo.svg" style="width: 120px;"></a></p>
 </div><div class="column" style="width: 85%; padding-top: 15px;">
-<p><a href="https://tibble.tidyverse.org/"><code>tibble</code></a> is a modern reimagining of the data frame, keeping what time has proven to be effective, and throwing out what is not.</p>
+<p><a href="https://tibble.tidyverse.org/"><code>tibble</code></a> is a modern take on data frames in R, offering improved usability and integration with the Tidyverse. It enhances readability while retaining essential data frame features.</p>
 <div class="sourceCode" id="cb107"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb107-1"><a></a><span class="fu">install.packages</span>(<span class="st">"tibble"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
 <div class="{.columns&quot;}">
 <div class="column" style="width: 50%; padding-top: 30px;">
-<p>Using R native <code>data.frame</code> class</p>
+<p>Using R native <code>data.frame</code> class.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb108" style="height: 250px;"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a></a>mtcars</span>
 <span id="cb108-2"><a></a><span class="co">#&gt;                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb</span></span>
@@ -2887,7 +2893,7 @@
 <span id="cb108-34"><a></a><span class="co">#&gt; Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width: 50%; padding-top: 30px;">
-<p>Using <code>tibble</code> (Tidyverse way)</p>
+<p>Using <code>tibble</code> (Tidyverse way).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb109" style="height: 250px;"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb109-1"><a></a><span class="fu">library</span>(dplyr) <span class="co"># or library(tibble)</span></span>
 <span id="cb109-2"><a></a></span>
@@ -2921,6 +2927,7 @@
       }</style></aside></section><section id="how-to-read-data-in-r" class="slide level2 smaller"><h2>How to Read Data in R</h2>
 <p>It will depend on what king of data you are working with.</p>
 <p>Different from Excel or GUI-based statistical software, R can deal with any kind of data.</p>
+<p><strong>Examples of R functions to read data</strong>:</p>
 <ul>
 <li>Tabular data: <code><a href="https://rdrr.io/r/utils/read.table.html">utils::read.csv()</a></code>, <code><a href="https://readr.tidyverse.org/reference/read_delim.html">readr::read_csv()</a></code>
 </li>
@@ -3048,11 +3055,16 @@
 <div class="sourceCode" id="cb119"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb119-1"><a></a><span class="fu">list.files</span>(<span class="st">"./data"</span>)</span>
 <span id="cb119-2"><a></a><span class="co">#&gt; [1] "palmerpenguins-raw.csv"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb120"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a></a>file <span class="ot">&lt;-</span> <span class="st">"./data/palmerpenguins-raw.csv"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div style="padding-top: 15px;">
+<p>🚨 <strong>Never use <code><a href="https://rdrr.io/r/base/getwd.html">setwd()</a></code>!</strong> 🚨</p>
+<p>(How to detect a beginner R user)</p>
+<p>Click <a href="https://www.tidyverse.org/blog/2017/12/workflow-vs-script/#:~:text=such%20as%20these.-,What%E2%80%99s%20wrong%20with,setwd(),-%3F">here</a> to learn why.</p>
+</div>
 </section><section id="the-here-package" class="slide level2 smaller"><h2>The <code>here</code> Package</h2>
 <div class="columns">
 <div class="column" style="width: 45%;">
 <p><a href="https://here.r-lib.org/"><code>here</code></a> is a package that helps you use relative paths in your R projects.</p>
-<p>It turns file management much easier.</p>
+<p>It turns file management much easier and OS independent.</p>
 <div class="sourceCode" id="cb121"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb121-1"><a></a><span class="fu">install.packages</span>(<span class="st">"here"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb122"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb122-1"><a></a><span class="fu">library</span>(here)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb123"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb123-1"><a></a><span class="fu">here</span>()</span>
@@ -3083,7 +3095,7 @@
 <div class="column" style="width: 15%;">
 <p><a href="https://readr.tidyverse.org/"><img data-src="images/readr-hex-logo.png" style="width: 120px;"></a></p>
 </div><div class="column" style="width: 85%; padding-top: 15px;">
-<p><code>readr</code> provides a fast and friendly way to read rectangular data from delimited files, such as comma-separated values (CSV) and tab-separated values (TSV).</p>
+<p><code>readr</code> provides a fast and easy way to read rectangular data from delimited files, such as Comma-Separated Values (CSV) and Tab-Separated Values (TSV).</p>
 <div class="sourceCode" id="cb125"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb125-1"><a></a><span class="fu">install.packages</span>(<span class="st">"readr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
 <div style="padding-top: 30px">
@@ -3102,7 +3114,7 @@
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section><section id="the-readr-package-1" class="slide level2 smaller"><h2>The <code>readr</code> Package</h2>
+      }</style></aside></section><section id="importing-the-raw-data" class="slide level2 smaller"><h2>Importing the Raw Data</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb130"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb130-1"><a></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb130-2"><a></a><span class="fu">library</span>(here)</span>
@@ -3194,7 +3206,7 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside></section><section id="clean_names" class="slide level2 smaller"><h2><code>clean_names()</code></h2>
-<p>The <code>clean_names()</code> function returns <a href="https://en.m.wikipedia.org/wiki/Machine-readable_medium_and_data">machine-readable</a> names.</p>
+<p>The <code>clean_names()</code> function transforms data frame column names into <a href="https://en.m.wikipedia.org/wiki/Machine-readable_medium_and_data">machine-readable</a> formats.</p>
 <p>This makes it easier to work with the data.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb135"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb135-1"><a></a>data <span class="sc">|&gt;</span> <span class="fu">names</span>()</span>
@@ -3463,7 +3475,7 @@
           display:block!important;
       }</style></aside></section><section id="mutate-1" class="slide level2 smaller"><h2><code>mutate()</code></h2>
 <p>The <code>mutate()</code> function is used to create new columns or modify existing columns in a data frame.</p>
-<p>We need assign proper classes to the variables. We also need to transform the <code>year</code> column, extracting just the year value.</p>
+<p>Let’s assign proper classes to the variables. We also need to transform the <code>year</code> column, extracting just the year value.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb153"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb153-1"><a></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -3481,6 +3493,10 @@
 <span id="cb154-11"><a></a><span class="co">#&gt; $ sex               &lt;chr&gt; "MALE", "FEMALE", "FEMALE", NA, "FEMALE", "MALE", "F…</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="mutate-2" class="slide level2 smaller"><h2><code>mutate()</code></h2>
+<div style="padding-bottom: 15px;">
+<p>For categorical variables, it is helpful to inspect their unique values.</p>
+<p>If the vector contains a limited number of unique values, it is likely a good candidate to be converted into a <code>factor</code> for better data handling and analysis.</p>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb155"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb155-1"><a></a>data <span class="sc">|&gt;</span> <span class="fu">pull</span>(species) <span class="sc">|&gt;</span> <span class="fu">unique</span>()</span>
 <span id="cb155-2"><a></a><span class="co">#&gt; [1] "Adelie Penguin (Pygoscelis adeliae)"      </span></span>
@@ -3643,7 +3659,8 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside></section><section id="relocate-1" class="slide level2 smaller"><h2><code>relocate()</code></h2>
-<p>Let’s organize our columns in a more logical order. The <code>year</code> column is best placed next to the <code>sex</code> column.</p>
+<p>Let’s organize our columns in a more logical order.</p>
+<p>The <code>year</code> column is best placed next to the <code>sex</code> column.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb165"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb165-1"><a></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -3704,7 +3721,7 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb169"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb169-1"><a></a><span class="fu">library</span>(palmerpenguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div><div class="column" style="width: 50%;">
+</div><div class="column" style="width: 50%; padding-bottom: 15px;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb170"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb170-1"><a></a><span class="fu">identical</span>(data, penguins)</span>
 <span id="cb170-2"><a></a><span class="co">#&gt; [1] TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3756,9 +3773,7 @@
 <span id="cb173-2"><a></a><span class="fu">library</span>(readr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb174"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb174-1"><a></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">dir.exists</span>(<span class="fu">here</span>(<span class="st">"data"</span>))) {</span>
-<span id="cb174-2"><a></a>  <span class="fu">dir.create</span>(<span class="fu">here</span>(<span class="st">"data"</span>))</span>
-<span id="cb174-3"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb174"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb174-1"><a></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">dir.exists</span>(<span class="fu">here</span>(<span class="st">"data"</span>))) <span class="fu">dir.create</span>(<span class="fu">here</span>(<span class="st">"data"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb175"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb175-1"><a></a>data <span class="sc">|&gt;</span> <span class="fu">write_csv</span>(<span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"palmerpenguins-valid.csv"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3810,7 +3825,7 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside></section><section id="simple-statistics" class="slide level2 smaller"><h2>Simple Statistics</h2>
-<p>The <code>stats</code> package, that comes with a typical R installation, provides a set of basic statistical functions.</p>
+<p>The R packages that come with a typical R installation provide a set of basic statistical functions.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb177"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb177-1"><a></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb177-2"><a></a><span class="fu">library</span>(palmerpenguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3818,6 +3833,7 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb178"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb178-1"><a></a>bill_length_mm <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> <span class="fu">pull</span>(bill_length_mm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div style="padding-top: 15px;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb179"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb179-1"><a></a>bill_length_mm <span class="sc">|&gt;</span> <span class="fu">mean</span>(<span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb179-2"><a></a><span class="co">#&gt; [1] 43.92193</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3838,6 +3854,7 @@
 <div class="sourceCode cell-code" id="cb183"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb183-1"><a></a>bill_length_mm <span class="sc">|&gt;</span> <span class="fu">max</span>(<span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb183-2"><a></a><span class="co">#&gt; [1] 59.6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 </section><section id="simple-statistics-1" class="slide level2 smaller"><h2>Simple Statistics</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb184"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb184-1"><a></a><span class="fu">library</span>(dplyr)</span>
@@ -3847,6 +3864,7 @@
 <div class="sourceCode cell-code" id="cb185"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb185-1"><a></a>bill_length_mm <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> <span class="fu">pull</span>(bill_length_mm)</span>
 <span id="cb185-2"><a></a>bill_depth_mm <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> <span class="fu">pull</span>(bill_depth_mm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div style="padding-top: 15px;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb186"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb186-1"><a></a>bill_length_mm <span class="sc">|&gt;</span> <span class="fu">quantile</span>(<span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb186-2"><a></a><span class="co">#&gt;     0%    25%    50%    75%   100% </span></span>
@@ -3873,6 +3891,7 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb191"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb191-1"><a></a><span class="fu">cor</span>(bill_length_mm, bill_depth_mm, <span class="at">use =</span> <span class="st">"complete.obs"</span>)</span>
 <span id="cb191-2"><a></a><span class="co">#&gt; [1] -0.2350529</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
@@ -4173,7 +4192,7 @@
       }</style></aside></section><section id="the-gt-package" class="slide level2 smaller"><h2>The <code>gt</code> Package</h2>
 <div class="columns">
 <div class="column" style="width: 30%; font-size: 0.9em;">
-<p><a href="https://sfirke.github.io/janitor/"><img data-src="images/gt-hex-logo.svg" style="width: 120px; padding-top: 0px;"></a></p>
+<p><a href="https://gt.rstudio.com/"><img data-src="images/gt-hex-logo.svg" style="width: 120px; padding-top: 0px;"></a></p>
 <p>The most powerful package for creating and customizing tables in R.</p>
 <p>It provides a flexible <strong>grammar</strong> for table creation and styling.</p>
 </div><div class="column" style="width: 70%;">
@@ -4204,7 +4223,7 @@
 </div>
 </div></div>
 <div class="footer">
-<p>(Book cover image from <span class="citation" data-cites="wilkinson2005">L. Wilkinson (<a href="#/references" role="doc-biblioref" onclick="">2005</a>)</span>)</p>
+<p>(Book cover image from <span class="citation" data-cites="wilkinson2005">Wilkinson (<a href="#/references" role="doc-biblioref" onclick="">2005</a>)</span>)</p>
 </div>
 <aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
@@ -4324,7 +4343,7 @@
 <span id="cb209-13"><a></a>      <span class="at">shape =</span> species</span>
 <span id="cb209-14"><a></a>    )</span>
 <span id="cb209-15"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb209-16"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb209-16"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
 <span id="cb209-17"><a></a>  <span class="fu">scale_color_brand_d</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
 <span id="cb209-18"><a></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>), <span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
@@ -4351,7 +4370,7 @@
 <span id="cb210-13"><a></a>      <span class="at">shape =</span> species</span>
 <span id="cb210-14"><a></a>    )</span>
 <span id="cb210-15"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb210-16"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb210-16"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
 <span id="cb210-17"><a></a>  <span class="fu">geom_smooth</span>(</span>
 <span id="cb210-18"><a></a>    <span class="at">method =</span> <span class="st">"lm"</span>,</span>
 <span id="cb210-19"><a></a>    <span class="at">formula =</span> y <span class="sc">~</span> x,</span>
@@ -4724,8 +4743,8 @@
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section><section id="main-tidymodels-packages" class="slide level2 smaller"><h2>Main Tidymodels Packages</h2>
-<p>Like Tidyverse, Tidymodels also has a meta-package (bundle) that installs or load the most important packages from the collection.</p>
+      }</style></aside></section><section id="tidymodels-packages" class="slide level2 smaller"><h2>Tidymodels Packages</h2>
+<p>Like Tidyverse, Tidymodels also has a meta-package that installs or load the most important packages from the collection.</p>
 <div class="columns">
 <div class="column" style="width: 50%; padding-top: 10px; padding-bottom: 10px;">
 <div class="sourceCode" id="cb220"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb220-1"><a></a><span class="fu">install.packages</span>(<span class="st">"tidymodels"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -6069,7 +6088,7 @@ Effect Size Classes
       }</style></aside></section><section id="the-p-value-problem-example" class="slide level2 smaller"><h2>The <em>p</em>-value Problem: Example</h2>
 <div class="columns">
 <div class="column" style="width: 45%; font-size: 0.9em;">
-<p>Cohen’s <span class="math inline">\(f^{2}\)</span> of 0.004143174<br>(<span class="math inline">\(\Delta\text{R}^{2} \approx\)</span> 0,0041260789)</p>
+<p><span class="math inline">\(\Delta\text{R}^{2}\)</span> = 0.00388<br>Cohen’s <span class="math inline">\(f^{2}\)</span> of 0.004143174</p>
 <p>Latitudinal cline of chronotype <span class="citation" data-cites="leocadio-miguel2017">(<a href="#/references" role="doc-biblioref" onclick="">Leocadio-Miguel et al., 2017</a>)</span>.</p>
 <p><a href="https://danielvartan.github.io/mastersthesis/web/qmd/supplementary-material-9.html">Critique</a> of Leocadio-Miguel et al.&nbsp;latitude article <span class="citation" data-cites="vartanian2025a">(<a href="#/references" role="doc-biblioref" onclick="">Vartanian, 2025</a>)</span>.</p>
 <p>The ASA statement on p-values <span class="citation" data-cites="wasserstein2016">(<a href="#/references" role="doc-biblioref" onclick="">Wasserstein &amp; Lazar, 2016</a>)</span>.</p>
@@ -6495,6 +6514,8 @@ Effect Size Classes
 <span id="cb243-15"><a></a><span class="co">#&gt; </span></span>
 <span id="cb243-16"><a></a><span class="co">#&gt; - Estimated using pooled SD.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div></div>
+<div style="padding-top: 15px;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb244"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb244-1"><a></a>effect_size <span class="sc">|&gt;</span> <span class="fu">interpret_hedges_g</span>(<span class="at">rules =</span> <span class="st">"cohen1988"</span>)</span>
 <span id="cb244-2"><a></a><span class="co">#&gt; Hedges' g |       95% CI | Interpretation</span></span>
@@ -6504,7 +6525,7 @@ Effect Size Classes
 <span id="cb244-6"><a></a><span class="co">#&gt; - Estimated using pooled SD.</span></span>
 <span id="cb244-7"><a></a><span class="co">#&gt; - Interpretation rule: cohen1988</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div></div>
+</div>
 <aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -6526,8 +6547,8 @@ Effect Size Classes
 <span id="cb246-4"><a></a>  <span class="at">sd1 =</span> gentoo <span class="sc">|&gt;</span> <span class="fu">sd</span>(<span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
 <span id="cb246-5"><a></a>  <span class="at">sd2 =</span> adelie <span class="sc">|&gt;</span> <span class="fu">sd</span>(<span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
 <span id="cb246-6"><a></a>  <span class="at">paired =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb246-7"><a></a>  <span class="at">n2 =</span> <span class="fu">min</span>(<span class="fu">length</span>(gentoo), <span class="fu">length</span>(adelie)),</span>
-<span id="cb246-8"><a></a>  <span class="at">kappa =</span> <span class="fu">length</span>(adelie) <span class="sc">/</span> <span class="fu">length</span>(gentoo),</span>
+<span id="cb246-7"><a></a>  <span class="at">n2 =</span> <span class="fu">length</span>(adelie),</span>
+<span id="cb246-8"><a></a>  <span class="at">kappa =</span> <span class="fu">length</span>(gentoo) <span class="sc">/</span> <span class="fu">length</span>(adelie),</span>
 <span id="cb246-9"><a></a>  <span class="at">power =</span> <span class="cn">NULL</span>,</span>
 <span id="cb246-10"><a></a>  <span class="at">alpha =</span> <span class="fl">0.05</span>,</span>
 <span id="cb246-11"><a></a>  <span class="at">welch.df =</span> <span class="cn">TRUE</span>,</span>
@@ -6539,12 +6560,12 @@ Effect Size Classes
 <span id="cb246-17"><a></a><span class="co">#&gt;  HA: mu1 != mu2 </span></span>
 <span id="cb246-18"><a></a><span class="co">#&gt;  ------------------------------ </span></span>
 <span id="cb246-19"><a></a><span class="co">#&gt;   Statistical power = 1 </span></span>
-<span id="cb246-20"><a></a><span class="co">#&gt;   n1 = 146 </span></span>
-<span id="cb246-21"><a></a><span class="co">#&gt;   n2 = 119 </span></span>
+<span id="cb246-20"><a></a><span class="co">#&gt;   n1 = 119 </span></span>
+<span id="cb246-21"><a></a><span class="co">#&gt;   n2 = 146 </span></span>
 <span id="cb246-22"><a></a><span class="co">#&gt;  ------------------------------ </span></span>
 <span id="cb246-23"><a></a><span class="co">#&gt;  Alternative = "not equal" </span></span>
-<span id="cb246-24"><a></a><span class="co">#&gt;  Degrees of freedom = 253.27 </span></span>
-<span id="cb246-25"><a></a><span class="co">#&gt;  Non-centrality parameter = 33.539 </span></span>
+<span id="cb246-24"><a></a><span class="co">#&gt;  Degrees of freedom = 251.35 </span></span>
+<span id="cb246-25"><a></a><span class="co">#&gt;  Non-centrality parameter = 33.506 </span></span>
 <span id="cb246-26"><a></a><span class="co">#&gt;  Type I error rate = 0.05 </span></span>
 <span id="cb246-27"><a></a><span class="co">#&gt;  Type II error rate = 0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -7054,8 +7075,8 @@ Effect Size Classes
 <div style="padding-top: 15px;">
 <p><span class="math display">\[
 \begin{cases}
-\text{H}_{0}: \text{Adjusted} \ \text{R}^{2} &lt; \text{MES} \quad \text{or} \quad \text{F-test is not significant} \ (\alpha \geq 0.05) \\
-\text{H}_{a}: \text{Adjusted} \ \text{R}^{2} \geq \text{MES} \quad \text{and} \quad \text{F-test is significant} \ (\alpha &lt; 0.05)
+\text{H}_{0}: \Delta \text{Adjusted} \ \text{R}^{2} &lt; \text{MES} \quad \text{or} \quad \text{F-test is not significant} \ (\alpha \geq 0.05) \\
+\text{H}_{a}: \Delta \text{Adjusted} \ \text{R}^{2} \geq \text{MES} \quad \text{and} \quad \text{F-test is significant} \ (\alpha &lt; 0.05)
 \end{cases}
 \]</span></p>
 </div>
@@ -7244,7 +7265,7 @@ Effect Size Classes
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section><section id="linear-reg.-prediciton" class="slide level2 smaller"><h2>Linear Reg.: Prediciton</h2>
+      }</style></aside></section><section id="linear-reg.-prediction" class="slide level2 smaller"><h2>Linear Reg.: Prediction</h2>
 <div class="cell" data-layout-align="center">
 <details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb278"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb278-1"><a></a><span class="fu">library</span>(brandr)</span>
 <span id="cb278-2"><a></a><span class="fu">library</span>(broom)</span>
@@ -7342,7 +7363,7 @@ Effect Size Classes
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section><section id="linear-reg.-fit-rest." class="slide level2 smaller"><h2>Linear Reg.: Fit (Rest.)</h2>
+      }</style></aside></section><section id="linear-reg.-fit-restricted" class="slide level2 smaller"><h2>Linear Reg.: Fit (Restricted)</h2>
 <div class="columns">
 <div class="column" style="width: 50%;">
 <div class="cell">
@@ -7723,7 +7744,7 @@ Effect Size Classes
 </section><section id="your-mission" class="slide level2 smaller"><h2>Your Mission</h2>
 <p>Answer the following question using the data provided:</p>
 <div style="text-align: center; font-size: 1.1em; font-weight: bold; color: #ED6B4D; padding-top: 100px;">
-<p>Was there a <strong>meaningful</strong> difference in ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 across the clusters of the Revised Multidimensional Index for Sustainable Food Systems (<a href="https://doi.org/10.1002/sd.2376">MISFS-R</a>)?</p>
+<p>Was there a <strong>meaningful</strong> difference in ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 across the clusters B and D of the Revised Multidimensional Index for Sustainable Food Systems (<a href="https://doi.org/10.1002/sd.2376">MISFS-R</a>)?</p>
 </div>
 <aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
@@ -7757,7 +7778,7 @@ Effect Size Classes
 <p>For more details, see <span class="citation" data-cites="carvalho2021a">Carvalho et al. (<a href="#/references" role="doc-biblioref" onclick="">2021</a>)</span> and <span class="citation" data-cites="norde2023">Norde et al. (<a href="#/references" role="doc-biblioref" onclick="">2023</a>)</span>.</p>
 </div><div class="column" style="width: 50%; padding-top: 0px;">
 <div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="images/norde-2023-figure-6-adapted.png" class="quarto-figure quarto-figure-center" style="width: 90%; padding-top: 30px;"></p>
+<figure><p><img data-src="images/norde-2023-figure-6-adapted.png" class="quarto-figure quarto-figure-center" style="width: 90%; padding-top: 40px;"></p>
 </figure>
 </div>
 </div></div>
@@ -7872,13 +7893,40 @@ Effect Size Classes
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section><section id="how-to-learn-more-6" class="slide level2 smaller"><h2>How to Learn More?</h2>
-<p>Here are other great and free resources to learn more about R.</p>
+      }</style></aside></section><section id="now-that-youre-an-r-rock-star" class="slide level2 smaller"><h2>Now That You’re an R Rock Star</h2>
+<p>We hope you feel more confident in your R programming skills and are ready to tackle new challenges. Remember, learning is a continuous journey, and the R community is here to support you.</p>
 <div style="padding-top: 15px;">
+<p>🇧🇷 For Brazilian graduate students, consider exploring the <strong><a href="https://github.com/danielvartan/abnt"><code>abnt</code></a> Quarto format</strong>. It helps you write your thesis or dissertation in compliance with the Brazilian Association of Technical Standards (<a href="https://abnt.org.br/">ABNT</a>) standards while ensuring full reproducibility. Check out an example <a href="https://danielvartan.github.io/mastersthesis/">here</a>.</p>
+<p>🙋‍♂️ If you have any questions or need assistance, don’t hesitate to reach out to us!</p>
+</div>
+<aside class="notes"><style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="post-course-survey" class="slide level2 smaller"><h2>Post-Course Survey</h2>
+<aside class="notes"><style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="how-to-learn-more-6" class="slide level2 smaller"><h2>How to Learn More?</h2>
+<p>Here are other great resources to learn more about R and programming in general.</p>
+<div style="font-size: 0.85em; padding-top: 15px;">
 <p>🎓 <strong>Online Courses</strong></p>
-<p><a href="https://www.coursera.org/learn/ciencia-computacao-python-conceitos">Introdução à ciência da computação com python - Parte 1</a> (USP-IME)</p>
-<p><a href="https://www.coursera.org/learn/ciencia-computacao-python-conceitos-2s">Introdução à ciência da computação com python - Parte 2</a> (USP-IME)</p>
-<p><a href="https://www.coursera.org/specializations/jhu-data-science">Data science specialization</a> (Johns Hopkins)</p>
+<p>Kon, F. (n.d.). <strong><em>Introdução à ciência da computação com python – Parte 1</em></strong> [Introduction to computer science with python – Part 1] [Online course]. Coursera. <a href="https://www.coursera.org/learn/ciencia-computacao-python-conceitos" class="uri">https://www.coursera.org/learn/ciencia-computacao-python-conceitos</a> (University of São Paulo, Brazil) (pt-BR)</p>
+<p>Kon, F. (n.d.). <strong><em>Introdução à ciência da computação com python – Parte 2</em></strong> [Introduction to computer science with python – Part 2] [Online course]. Coursera. <a href="https://www.coursera.org/learn/ciencia-computacao-python-conceitos-2s" class="uri">https://www.coursera.org/learn/ciencia-computacao-python-conceitos-2s</a> (University of São Paulo, Brazil) (pt-BR)</p>
+<p>Peng, R. D., Leek, J., &amp; Caffo, B. (n.d.). <strong><em>Data science specialization</em></strong>. [Online course]. Coursera. <a href="https://www.coursera.org/specializations/jhu-data-science" class="uri">https://www.coursera.org/specializations/jhu-data-science</a> (Johns Hopkins University, United States) (en-US)</p>
 </div>
 <aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
@@ -7985,9 +8033,6 @@ Effect Size Classes
 <div id="ref-ackoff1989" class="csl-entry" role="listitem">
 Ackoff, R. (1989). From data to wisdom. <em>Journal of Applied Systems Analysis</em>, <em>16</em>, 3–9.
 </div>
-<div id="ref-bernardes2009a" class="csl-entry" role="listitem">
-Bernardes, M. E. M. (2009). Ensino e aprendizagem como unidade dialética na atividade pedagógica. <em>Psicologia Escolar e Educacional</em>, <em>13</em>(2), 235–242. <a href="https://doi.org/10.1590/S1413-85572009000200005">https://doi.org/10.1590/S1413-85572009000200005</a>
-</div>
 <div id="ref-broman2013" class="csl-entry" role="listitem">
 Broman, K. (2013, April 5). <em>Data science is statistics</em>. The stupidest thing... <a href="https://kbroman.wordpress.com/2013/04/05/data-science-is-statistics/">https://kbroman.wordpress.com/2013/04/05/data-science-is-statistics/</a>
 </div>
@@ -8027,20 +8072,8 @@ Ellis, P. D. (Ed.). (2010). <em>The essential guide to effect sizes: Statistical
 <div id="ref-ellis2018" class="csl-entry" role="listitem">
 Ellis, S. E., &amp; Leek, J. T. (2018). How to share data for collaboration. <em>The American Statistician</em>, <em>72</em>(1), 53–57. <a href="https://doi.org/10.1080/00031305.2017.1375987">https://doi.org/10.1080/00031305.2017.1375987</a>
 </div>
-<div id="ref-engels2020a" class="csl-entry" role="listitem">
-Engels, F. (2020). <em>Dialética da natureza</em> (Traduzido do original em alemão Dialektik der natur (1873-1882).) (N. Schneider, Trans.). Boitempo.
-</div>
-<div id="ref-freire2011" class="csl-entry" role="listitem">
-Freire, P. (2011). <em>Pedagogia da autonomia: saberes necessários à prática educativa</em> (OCLC: 1229931361). Paz e Terra.
-</div>
-<div id="ref-gavin2020" class="csl-entry" role="listitem">
-Gavin, L. (2020, October 20). <em>Big data will be dead in 5 years</em>. Towards Data Science. <a href="https://towardsdatascience.com/big-data-will-be-dead-in-5-years-ef4344269aef">https://towardsdatascience.com/big-data-will-be-dead-in-5-years-ef4344269aef</a>
-</div>
 <div id="ref-gigerenzer2004" class="csl-entry" role="listitem">
 Gigerenzer, G. (2004). Mindless statistics. <em>The Journal of Socio-Economics</em>, <em>33</em>(5), 587–606. <a href="https://doi.org/10.1016/j.socec.2004.09.033">https://doi.org/10.1016/j.socec.2004.09.033</a>
-</div>
-<div id="ref-gofairinitiative" class="csl-entry" role="listitem">
-GO FAIR initiative. (n.d.). <em><span>GO FAIR</span> initiative: Make your data &amp; services <span>FAIR</span></em>. GO FAIR. Retrieved June 10, 2024, from <a href="https://www.go-fair.org/">https://www.go-fair.org/</a>
 </div>
 <div id="ref-mariscal2021" class="csl-entry" role="listitem">
 Gómez-de-Mariscal, E., Guerrero, V., Sneider, A., Jayatilaka, H., Phillip, J. M., Wirtz, D., &amp; Muñoz-Barrutia, A. (2021). Use of the p-values as a size-dependent function to address practical differences when analyzing large datasets. <em>Scientific Reports</em>, <em>11</em>(1, 1), 20942. <a href="https://doi.org/10.1038/s41598-021-00199-5">https://doi.org/10.1038/s41598-021-00199-5</a>
@@ -8066,9 +8099,6 @@ Kozak, M., &amp; Piepho, H.-P. (2018). What’s normal anyway? <span>Residual</s
 <div id="ref-kuhn2022" class="csl-entry" role="listitem">
 Kuhn, M., &amp; Silge, J. (2022). <em>Tidy modeling with <span>R</span>: A framework for modeling in the tidyverse</em> (OCLC: on1338675673). O’Reilly Media. <a href="https://www.tmwr.org/">https://www.tmwr.org/</a>
 </div>
-<div id="ref-landau" class="csl-entry" role="listitem">
-Landau, W. (n.d.). <em>The {targets} <span>R</span> package user manual</em>.
-</div>
 <div id="ref-leocadio-miguel2017" class="csl-entry" role="listitem">
 Leocadio-Miguel, M. A., Louzada, F. M., Duarte, L. L., Areas, R. P., Alam, M., Freire, M. V., Fontenele-Araujo, J., Menna-Barreto, L., &amp; Pedrazzoli, M. (2017). Latitudinal cline of chronotype. <em>Scientific Reports</em>, <em>7</em>(1), 5437. <a href="https://doi.org/10.1038/s41598-017-05797-w">https://doi.org/10.1038/s41598-017-05797-w</a>
 </div>
@@ -8078,20 +8108,14 @@ Lohr, S. (2014, August 18). For big-data scientists, <span>“<span>Janitor</spa
 <div id="ref-marwick2018" class="csl-entry" role="listitem">
 Marwick, B., Boettiger, C., &amp; Mullen, L. (2018). Packaging data analytical work reproducibly using <span>R</span> (and friends). <em>The American Statistician</em>, <em>72</em>(1), 80–88. <a href="https://doi.org/10.1080/00031305.2017.1375986">https://doi.org/10.1080/00031305.2017.1375986</a>
 </div>
-<div id="ref-meyer2018" class="csl-entry" role="listitem">
-Meyer, M. N. (2018). Practical tips for ethical data sharing. <em>Advances in Methods and Practices in Psychological Science</em>, <em>1</em>(1), 131–144. <a href="https://doi.org/10.1177/2515245917747656">https://doi.org/10.1177/2515245917747656</a>
-</div>
-<div id="ref-najmi2021" class="csl-entry" role="listitem">
-Najmi, A., Sadasivam, B., &amp; Ray, A. (2021). How to choose and interpret a statistical test? <span>An</span> update for budding researchers. <em>Journal of Family Medicine and Primary Care</em>, <em>10</em>(8), 2763. <a href="https://doi.org/10.4103/jfmpc.jfmpc_433_21">https://doi.org/10.4103/jfmpc.jfmpc_433_21</a>
+<div id="ref-mcilroy1978" class="csl-entry" role="listitem">
+McIlroy, M. D., Pinson, E. N., &amp; Tague, B. A. (1978). <span>UNIX Time-Sharing System</span>: <span>Forward</span>. <em>Bell System Technical Journal</em>, <em>57</em>(6), 1899–1904. <a href="https://archive.org/details/bstj57-6-1899/mode/2up">https://archive.org/details/bstj57-6-1899/mode/2up</a>
 </div>
 <div id="ref-norde2023" class="csl-entry" role="listitem">
 Norde, M. M., Porciuncula, L., Garrido, G., Nunes-Galbes, N. M., Sarti, F. M., Marchioni, D. M. L., &amp; de Carvalho, A. M. (2023). Measuring food systems sustainability in heterogenous countries: <span>The Brazilian</span> multidimensional index updated version applicability. <em>Sustainable Development</em>, <em>31</em>(1), 91–107. <a href="https://doi.org/10.1002/sd.2376">https://doi.org/10.1002/sd.2376</a>
 </div>
 <div id="ref-peng2022" class="csl-entry" role="listitem">
 Peng, R. D. (2022). <em>R programming for data science</em>. <a href="https://bookdown.org/rdpeng/rprogdatascience/">https://bookdown.org/rdpeng/rprogdatascience/</a>
-</div>
-<div id="ref-reis2022" class="csl-entry" role="listitem">
-Reis, J., &amp; Housley, M. (2022). <em>Fundamentals of data engineering: Plan and build robust data systems</em>. O’Reilly.
 </div>
 <div id="ref-rowley2007" class="csl-entry" role="listitem">
 Rowley, J. (2007). The wisdom hierarchy: Representations of the <span>DIKW</span> hierarchy. <em>Journal of Information Science</em>, <em>33</em>(2), 163–180. <a href="https://doi.org/10.1177/0165551506070706">https://doi.org/10.1177/0165551506070706</a>
@@ -8105,9 +8129,6 @@ Shatz, I. (2024). Assumption-checking rather than (just) testing: <span>The</spa
 <div id="ref-student1908" class="csl-entry" role="listitem">
 Student. (1908). The probable error of a mean. <em>Biometrika</em>, <em>6</em>(1), 1–25. <a href="https://doi.org/10.2307/2331554">https://doi.org/10.2307/2331554</a>
 </div>
-<div id="ref-turing1937" class="csl-entry" role="listitem">
-Turing, A. M. (1937). On computable numbers, with an application to the entscheidungsproblem. <em>Proceedings of the London Mathematical Society</em>, <em>s2-42</em>(1), 230–265. <a href="https://doi.org/10.1112/plms/s2-42.1.230">https://doi.org/10.1112/plms/s2-42.1.230</a>
-</div>
 <div id="ref-vanderloo2018" class="csl-entry" role="listitem">
 van der Loo, M., &amp; Jonge, E. de. (2018). <em>Statistical data cleaning with applications in <span>R</span></em>. John Wiley &amp; Sons.
 </div>
@@ -8117,17 +8138,11 @@ Vartanian, D. (2025). <em>Is latitude associated with chronotype?</em> [Correcte
 <div id="ref-vonneumann1993a" class="csl-entry" role="listitem">
 von Neumann, J. (1993). First draft of a report on the <span>EDVAC</span>. <em>IEEE Annals of the History of Computing</em>, <em>15</em>(4), 27–75. <span>IEEE Annals</span> of the <span>History</span> of <span>Computing</span>. <a href="https://doi.org/10.1109/85.238389">https://doi.org/10.1109/85.238389</a>
 </div>
-<div id="ref-vygotsky2012" class="csl-entry" role="listitem">
-Vygotsky, L. S. (2012). <em>Thought and language</em> (Publicado originalmente em 1934.) (E. Hanfmann, G. Vakar, &amp; A. Kozulin, Trans.; Rev. exp. ed.). The MIT Press.
-</div>
 <div id="ref-wasserstein2016" class="csl-entry" role="listitem">
 Wasserstein, R. L., &amp; Lazar, N. A. (2016). The <span>ASA</span> statement on p-values: <span>Context</span>, process, and purpose. <em>The American Statistician</em>, <em>70</em>(2). <a href="https://doi.org/10.1080/00031305.2016.1154108">https://doi.org/10.1080/00031305.2016.1154108</a>
 </div>
 <div id="ref-wickhamb" class="csl-entry" role="listitem">
 Wickham, H. (n.d.). <em>The tidyverse style guide</em>. Retrieved July 17, 2023, from <a href="https://style.tidyverse.org">https://style.tidyverse.org</a>
-</div>
-<div id="ref-wickham2014" class="csl-entry" role="listitem">
-Wickham, H. (2014). Tidy data. <em>Journal of Statistical Software</em>, <em>59</em>(10). <a href="https://doi.org/10.18637/jss.v059.i10">https://doi.org/10.18637/jss.v059.i10</a>
 </div>
 <div id="ref-wickham2016a" class="csl-entry" role="listitem">
 Wickham, H. (2016). <em>ggplot2: <span>Elegant</span> graphics for data analysis</em> (2nd ed.). Springer. <a href="https://doi.org/10.1007/978-3-319-24277-4">https://doi.org/10.1007/978-3-319-24277-4</a>
@@ -8143,9 +8158,6 @@ Wickham, H., Çetinkaya-Rundel, M., &amp; Grolemund, G. (2023). <em>R for data s
 </div>
 <div id="ref-wilkinson2005" class="csl-entry" role="listitem">
 Wilkinson, L. (2005). <em>The grammar of graphics</em> (J. Chambers, D. Hand, &amp; W. Härdle, Eds.; 2nd ed.). Springer.
-</div>
-<div id="ref-wilkinson2016" class="csl-entry" role="listitem">
-Wilkinson, M. D., Dumontier, M., Aalbersberg, Ij. J., Appleton, G., Axton, M., Baak, A., Blomberg, N., Boiten, J.-W., Da Silva Santos, L. B., Bourne, P. E., Bouwman, J., Brookes, A. J., Clark, T., Crosas, M., Dillo, I., Dumon, O., Edmunds, S., Evelo, C. T., Finkers, R., … Mons, B. (2016). The <span>FAIR</span> guiding principles for scientific data management and stewardship. <em>Scientific Data</em>, <em>3</em>(1), 160018. <a href="https://doi.org/10.1038/sdata.2016.18">https://doi.org/10.1038/sdata.2016.18</a>
 </div>
 </div>
 <aside class="notes"><style type="text/css">
@@ -8166,1567 +8178,6 @@ Wilkinson, M. D., Dumontier, M., Aalbersberg, Ij. J., Appleton, G., Axton, M., B
 <div class="footer">
 <p>(Artwork by <a href="https://twitter.com/allison_horst">Allison Horst</a>)</p>
 </div>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section></section><section><section id="appendices" class="title-slide slide level1 center" data-visibility="uncounted"><h1>Appendices</h1>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="ap-a-bit-of-history" class="slide level2 smaller" data-visibility="uncounted"><h2>(AP) A Bit of History</h2>
-<div class="columns">
-<div class="column" style="width: 50%;">
-<p><a href="https://en.wikipedia.org/wiki/Abacus"><strong>Abacus</strong></a> (~between 2700 and 2300 BCE) (Sumerians) <span class="citation" data-cites="ifrah2001">(<a href="#/references" role="doc-biblioref" onclick="">Ifrah, 1994/2001</a>)</span></p>
-<p><a href="https://en.wikipedia.org/wiki/Pascaline"><strong>Pascalina</strong></a> (1642) (Blaise Pascal (1623–1662)) <span class="citation" data-cites="ifrah2001">(<a href="#/references" role="doc-biblioref" onclick="">Ifrah, 1994/2001</a>)</span></p>
-<p><a href="https://en.wikipedia.org/wiki/Difference_engine"><strong>Babbage’s Difference Engine</strong></a> (Charles Babbage (1792–1871))</p>
-</div><div class="column" style="width: 50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="images/richards-1950-chinese-abacus.jpg" class="quarto-figure quarto-figure-center" style="width: 80%; padding-top: 100px;"></p>
-</figure>
-</div>
-</div></div>
-<div class="footer">
-<p>(Photo by <a href="https://www.computerhistory.org/revolution/calculators/1/1/134?position=0">Mark Richards</a>)</p>
-</div>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="ap-a-bit-of-history-1" class="slide level2 smaller" data-visibility="uncounted"><h2>(AP) A Bit of History</h2>
-<div class="columns">
-<div class="column" style="width: 50%;">
-<p><strong>Keep in mind</strong></p>
-<ul>
-<li>1st World War (1914–1918)</li>
-<li>2nd World War (1939–1945)</li>
-</ul>
-<p><a href="https://en.wikipedia.org/wiki/Universal_Turing_machine"><strong>Universal Turing machine</strong></a> (Alan Turing) <span class="citation" data-cites="turing1937">(<a href="#/references" role="doc-biblioref" onclick="">Turing, 1937</a>)</span></p>
-<p><a href="https://en.wikipedia.org/wiki/Von_Neumann_architecture"><strong>“von Neumann Architecture”</strong></a> (1945) <span class="citation" data-cites="vonneumann1993a">(<a href="#/references" role="doc-biblioref" onclick="">von Neumann, 1993</a>)</span></p>
-<p><a href="https://en.wikipedia.org/wiki/ENIAC"><strong>ENIAC</strong></a> (1945)</p>
-</div><div class="column" style="width: 50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="images/science-history-images-eniac-figure-1.jpg" class="quarto-figure quarto-figure-center" style="width: 80%; padding-top: 50px;"></p>
-</figure>
-</div>
-</div></div>
-<div class="footer">
-<p>(Photo by <a href="https://www.alamy.com/technicians-connecting-wires-of-eniac-image386295734.html">Science History Images/Alamy Stock Photo</a>)</p>
-</div>
-<aside class="notes"><ul>
-<li><a href="https://en.wikipedia.org/wiki/Enigma_machine">Enigma machine</a></li>
-</ul><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="ap-low-and-high-level-prog.-lang." class="slide level2 smaller" data-visibility="uncounted"><h2>(AP) Low and High-Level Prog. Lang.</h2>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="ap-programming-paradigms" class="slide level2 smaller" data-visibility="uncounted"><h2>(AP) Programming Paradigms</h2>
-<p>A <a href="https://en.m.wikipedia.org/wiki/Programming_paradigm">programming paradigm</a> is a specific approach to the programming process <span class="citation" data-cites="brookshear2020">(<a href="#/references" role="doc-biblioref" onclick="">Brookshear &amp; Brylow, 2020</a>)</span>.</p>
-<p>R is a multi-paradigm programming language, but is mainly <strong>functional</strong>.</p>
-<div class="columns" style="padding-top: 10px;">
-<div class="column" style="width: 33%;">
-<p><a href="https://en.m.wikipedia.org/wiki/Procedural_programming">Procedural</a> (Imperative)</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb304"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb304-1"><a></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>)</span>
-<span id="cb304-2"><a></a>y <span class="ot">&lt;-</span> <span class="fu">numeric</span>()</span>
-<span id="cb304-3"><a></a>z <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb304-4"><a></a></span>
-<span id="cb304-5"><a></a><span class="cf">for</span> (i <span class="cf">in</span> x) {</span>
-<span id="cb304-6"><a></a>  y <span class="ot">&lt;-</span> <span class="fu">c</span>(y, i <span class="sc">+</span> <span class="dv">1</span>)</span>
-<span id="cb304-7"><a></a>}</span>
-<span id="cb304-8"><a></a></span>
-<span id="cb304-9"><a></a><span class="cf">for</span> (i <span class="cf">in</span> y) {</span>
-<span id="cb304-10"><a></a>  z <span class="ot">&lt;-</span> z <span class="sc">+</span> i</span>
-<span id="cb304-11"><a></a>}</span>
-<span id="cb304-12"><a></a></span>
-<span id="cb304-13"><a></a>z <span class="sc">/</span> <span class="fu">length</span>(x)</span>
-<span id="cb304-14"><a></a><span class="co">#&gt; [1] 6.5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div><div class="column" style="width: 33%;">
-<p><a href="https://en.m.wikipedia.org/wiki/Functional_programming">Functional</a> (Declarative)</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb305"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb305-1"><a></a><span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>) <span class="sc">|&gt;</span></span>
-<span id="cb305-2"><a></a>  <span class="fu">vapply</span>(\(x) x <span class="sc">+</span> <span class="dv">1</span>, <span class="fu">numeric</span>(<span class="dv">1</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb305-3"><a></a>  <span class="fu">mean</span>()</span>
-<span id="cb305-4"><a></a><span class="co">#&gt; [1] 6.5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div><div class="column" style="width: 34%;">
-<ul>
-<li>
-<a href="https://en.m.wikipedia.org/wiki/Object-oriented_programming">Object-Oriented</a> (Imperative)</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb306"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb306-1"><a></a><span class="fu">library</span>(S7)</span>
-<span id="cb306-2"><a></a></span>
-<span id="cb306-3"><a></a>dog <span class="ot">&lt;-</span> <span class="fu">new_class</span>(<span class="st">"dog"</span>, <span class="at">properties =</span> <span class="fu">list</span>(</span>
-<span id="cb306-4"><a></a>  <span class="at">name =</span> class_character,</span>
-<span id="cb306-5"><a></a>  <span class="at">age =</span> class_numeric</span>
-<span id="cb306-6"><a></a>))</span>
-<span id="cb306-7"><a></a></span>
-<span id="cb306-8"><a></a>lola <span class="ot">&lt;-</span> <span class="fu">dog</span>(<span class="at">name =</span> <span class="st">"Lola"</span>, <span class="at">age =</span> <span class="dv">11</span>)</span>
-<span id="cb306-9"><a></a>speak <span class="ot">&lt;-</span> <span class="fu">new_generic</span>(<span class="st">"speak"</span>, <span class="st">"x"</span>)</span>
-<span id="cb306-10"><a></a><span class="fu">method</span>(speak, dog) <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="st">"Woof"</span></span>
-<span id="cb306-11"><a></a><span class="fu">speak</span>(lola)</span>
-<span id="cb306-12"><a></a><span class="co">#&gt; [1] "Woof"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div></div>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="ap-warning-for-your-future-self" class="slide level2 smaller" data-visibility="uncounted"><h2>(AP) Warning For Your Future Self</h2>
-<div class="columns">
-<div class="column" style="width: 50%;">
-<p>🚨 <strong>Never use <code><a href="https://rdrr.io/r/base/getwd.html">setwd()</a></code>!</strong> 🚨</p>
-<p>(How to detect a beginner R user)</p>
-<p>Always work inside a project directory. Your Working Directory (WD) should always be the root of your project.</p>
-<p>If you need a better way to manage your WD, see the <a href="https://here.r-lib.org/"><code>here</code></a> package.</p>
-<p>Click <a href="https://www.tidyverse.org/blog/2017/12/workflow-vs-script/#:~:text=such%20as%20these.-,What%E2%80%99s%20wrong%20with,setwd(),-%3F">here</a> to learn why.</p>
-</div><div class="column" style="width: 50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="images/allison-horst-figure-26.png" class="quarto-figure quarto-figure-center" style="width: 100%; padding-top: 125px;"></p>
-</figure>
-</div>
-</div></div>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="ap-debugging" class="slide level2 smaller" data-visibility="uncounted"><h2>(AP) Debugging</h2>
-
-<img data-src="images/allison-horst-figure-35.png" class="quarto-figure quarto-figure-center r-stretch" style="width: 90%; padding-top: 0px;"><div class="footer">
-<p>(Artwork by <a href="https://twitter.com/allison_horst">Allison Horst</a>)</p>
-</div>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="ap-data-engineering" class="slide level2 smaller nostretch" data-visibility="uncounted"><h2>(AP) Data Engineering</h2>
-<div style="font-size: 0.75em">
-<blockquote>
-<p>Data engineering is the development, implementation, and maintenance of systems and processes that take in raw data and produce high-quality, consistent information that supports downstream use cases, such as analysis and machine learning <span class="citation" data-cites="reis2022">(<a href="#/references" role="doc-biblioref" onclick="">Reis &amp; Housley, 2022</a>)</span>.</p>
-</blockquote>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="images/reis-2022-figure-1-1.png" class="quarto-figure quarto-figure-center" style="width: 65%; padding-top: 0px;"></p>
-</figure>
-</div>
-<div class="footer">
-<p>(Reproduced from <span class="citation" data-cites="reis2022">Reis &amp; Housley (<a href="#/references" role="doc-biblioref" onclick="">2022</a>)</span>)</p>
-</div>
-<aside class="notes"><ul>
-<li>Two main activities related to R.</li>
-<li>You can think of data engineering as the <strong>plumbing</strong> of data science.</li>
-</ul><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="ap-data-eng.-versus-data-science" class="slide level2 smaller nostretch" data-visibility="uncounted"><h2>(AP) Data Eng. <em>versus</em> Data Science</h2>
-<div style="padding-top: 25px;">
-<blockquote>
-<p>Data scientists, according to interviews and expert estimates, spend <strong>from 50 percent to 80 percent of their time mired in this more mundane labor of collecting and preparing unruly digital data</strong>, before it can be explored for useful nuggets <span class="citation" data-cites="lohr2014">(<a href="#/references" role="doc-biblioref" onclick="">Lohr, 2014</a>)</span>.</p>
-</blockquote>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="images/reis-2022-figure-1-6.png" class="quarto-figure quarto-figure-center" style="width: 90%; padding-top:50px;"></p>
-</figure>
-</div>
-<div class="footer">
-<p>(Figure reproduced from <span class="citation" data-cites="reis2022">Reis &amp; Housley (<a href="#/references" role="doc-biblioref" onclick="">2022</a>)</span>)</p>
-</div>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="ap-the-tidy-data-manifesto" class="slide level2 smaller" data-visibility="uncounted"><h2>(AP) The Tidy Data Manifesto</h2>
-<div class="footer">
-<p><span class="citation" data-cites="wickham2014">(<a href="#/references" role="doc-biblioref" onclick="">Wickham, 2014</a>)</span></p>
-</div>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="ap-tidy-data" class="slide level2 smaller nostretch" data-visibility="uncounted"><h2>(AP) Tidy Data</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="images/allison-horst-figure-14.jpg" class="quarto-figure quarto-figure-center" style="width: 100%;"></p>
-</figure>
-</div>
-<div class="footer">
-<p>(Artwork by <a href="https://allisonhorst.com/horst-hill-collaborations">Allison Horst</a>)</p>
-</div>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="ap-tidy-data-1" class="slide level2 smaller nostretch" data-visibility="uncounted"><h2>(AP) Tidy Data</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="images/allison-horst-figure-19.jpg" class="quarto-figure quarto-figure-center" style="width: 80%; padding-top: 50px;"></p>
-</figure>
-</div>
-<div class="footer">
-<p>(Artwork by <a href="https://allisonhorst.com/horst-hill-collaborations">Allison Horst</a>)</p>
-</div>
-</section><section id="ap-big-data" class="slide level2 smaller" data-visibility="uncounted"><h2>(AP) Big Data</h2>
-<div class="columns">
-<div class="column" style="width: 40%;">
-<blockquote>
-<p><strong>Big data will be dead in 5 Years</strong>: Everything will be big data, so it won’t need a special name. <span class="citation" data-cites="gavin2020">(<a href="#/references" role="doc-biblioref" onclick="">Gavin, 2020</a>)</span></p>
-</blockquote>
-</div><div class="column" style="width: 60%;">
-<div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="images/david-fletcher-big-data.jpeg" class="quarto-figure quarto-figure-center" style="width: 100%;"></p>
-</figure>
-</div>
-</div></div>
-<div class="footer">
-<p>(Artwork by <a href="https://en.wikipedia.org/wiki/David_Fletcher_(cartoonist)">David Fletcher</a>)</p>
-</div>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="ap-big-data-wrangling" class="slide level2 smaller" data-visibility="uncounted"><h2>(AP) Big Data Wrangling</h2>
-<p><strong>Working with big data using Excel or GUI-based (Graphical User Interface) statistical software is extremely challenging, if not impossible</strong>.</p>
-<p>Excel, for example, can struggle with performance issues and has a maximum row limit (1,048,576 rows), which is often insufficient for big data projects.</p>
-<p>The best tools for handling big data are <a href="https://www.r-project.org/">R</a> and <a href="https://www.python.org/">Python</a>.</p>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="ap-fair-principles" class="slide level2 smaller nostretch" data-visibility="uncounted"><h2>(AP) Fair Principles</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="images/fair-data-principles.png" class="quarto-figure quarto-figure-center" style="width: 75%; padding-top: 75px;"></p>
-</figure>
-</div>
-<div class="footer">
-<p>(To learn more see: <span class="citation" data-cites="wilkinson2016">M. D. Wilkinson et al. (<a href="#/references" role="doc-biblioref" onclick="">2016</a>)</span> and <span class="citation" data-cites="gofairinitiative">GO FAIR initiative (<a href="#/references" role="doc-biblioref" onclick="">n.d.</a>)</span>)</p>
-</div>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="ap-data-management-plans" class="slide level2 smaller" data-visibility="uncounted"><h2>(AP) Data Management Plans</h2>
-<p>A data management plan (DMP) is a formal document that outlines how data will be managed throughout the research process.</p>
-<ul>
-<li><a href="https://fapesp.br/gestaodedados">FAPESP</a></li>
-<li><a href="https://dmptool.org/">DMPTool</a></li>
-<li><a href="https://dmponline.dcc.ac.uk/">DMPonline</a></li>
-</ul>
-<div>
-<p><strong>Example</strong>: <a href="https://doi.org/10.48321/D1PS4M">Associations between the duration and quality of sleep of pregnant women in the third trimester with the duration of labor</a></p>
-</div>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="ap-strings" class="slide level2 smaller" data-visibility="uncounted"><h2>(AP) Strings</h2>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="ap-regular-expressions" class="slide level2 smaller" data-visibility="uncounted"><h2>(AP) Regular Expressions</h2>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="ap-lookup-tables" class="slide level2 smaller" data-visibility="uncounted"><h2>(AP) Lookup Tables</h2>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="ap-joins" class="slide level2 smaller" data-visibility="uncounted"><h2>(AP) Joins</h2>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="ap-the-visdat-package" class="slide level2 smaller" data-visibility="uncounted"><h2>(AP) The <code>visdat</code> Package</h2>
-<div class="columns">
-<div class="column" style="width: 15%;">
-<p><a href="https://docs.ropensci.org/visdat/"><img data-src="images/visdat-hex-logo.svg" style="width: 120px;"></a></p>
-</div><div class="column" style="width: 85%; padding-top: 15px;">
-<p><code>visdat</code> helps you diagnose missing values and other potential problems in your data.</p>
-<div class="sourceCode" id="cb307"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb307-1"><a></a><span class="fu">install.packages</span>(<span class="st">"visdat"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div></div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb308"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb308-1"><a></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb308-2"><a></a><span class="fu">library</span>(visdat)</span>
-<span id="cb308-3"><a></a></span>
-<span id="cb308-4"><a></a>penguins <span class="sc">|&gt;</span> <span class="fu">vis_dat</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="ap-what-test-should-i-use" class="slide level2 smaller" data-visibility="uncounted"><h2>(AP) What Test Should I Use?</h2>
-<div style="padding-top: 50px;">
-<div class="cell">
-<div class="cell-output-display">
-<div id="ncdwougsmo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ncdwougsmo table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#ncdwougsmo thead, #ncdwougsmo tbody, #ncdwougsmo tfoot, #ncdwougsmo tr, #ncdwougsmo td, #ncdwougsmo th {
-  border-style: none;
-}
-
-#ncdwougsmo p {
-  margin: 0;
-  padding: 0;
-}
-
-#ncdwougsmo .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#ncdwougsmo .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#ncdwougsmo .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#ncdwougsmo .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#ncdwougsmo .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#ncdwougsmo .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#ncdwougsmo .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#ncdwougsmo .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#ncdwougsmo .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#ncdwougsmo .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#ncdwougsmo .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#ncdwougsmo .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#ncdwougsmo .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#ncdwougsmo .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#ncdwougsmo .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#ncdwougsmo .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#ncdwougsmo .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#ncdwougsmo .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#ncdwougsmo .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#ncdwougsmo .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#ncdwougsmo .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#ncdwougsmo .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#ncdwougsmo .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#ncdwougsmo .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#ncdwougsmo .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#ncdwougsmo .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#ncdwougsmo .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#ncdwougsmo .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#ncdwougsmo .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#ncdwougsmo .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#ncdwougsmo .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#ncdwougsmo .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#ncdwougsmo .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#ncdwougsmo .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#ncdwougsmo .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#ncdwougsmo .gt_left {
-  text-align: left;
-}
-
-#ncdwougsmo .gt_center {
-  text-align: center;
-}
-
-#ncdwougsmo .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#ncdwougsmo .gt_font_normal {
-  font-weight: normal;
-}
-
-#ncdwougsmo .gt_font_bold {
-  font-weight: bold;
-}
-
-#ncdwougsmo .gt_font_italic {
-  font-style: italic;
-}
-
-#ncdwougsmo .gt_super {
-  font-size: 65%;
-}
-
-#ncdwougsmo .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#ncdwougsmo .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#ncdwougsmo .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#ncdwougsmo .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#ncdwougsmo .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#ncdwougsmo .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#ncdwougsmo .gt_indent_5 {
-  text-indent: 25px;
-}
-
-#ncdwougsmo .katex-display {
-  display: inline-flex !important;
-  margin-bottom: 0.75em !important;
-}
-
-#ncdwougsmo div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
-  height: 0px !important;
-}
-</style>
-<table class="gt_table caption-top" style="width:100%;" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<colgroup>
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-</colgroup>
-<thead>
-<tr class="gt_col_headings gt_spanner_row header">
-<th rowspan="2" id="type_of_data" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">Type of Data</th>
-<th colspan="4" id="Comparison Analysis" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><div class="gt_column_spanner">
-Comparison Analysis
-</div></th>
-<th colspan="2" id="Other Analysis" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><div class="gt_column_spanner">
-Other Analysis
-</div></th>
-</tr>
-<tr class="gt_col_headings even">
-<th id="two_data_sets_paired" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">2 Data Sets - Paired</th>
-<th id="two_data_sets_unpaired" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">2 Data Sets - Unpaired</th>
-<th id="more_than_two_data_sets_paired" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">More than 2 Data Sets - Paired</th>
-<th id="more_than_two_data_sets_unpaired" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">More than 2 Data Sets - Unpaired</th>
-<th id="correlation_analysis" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">Correlation Analysis</th>
-<th id="regression_analysis" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">Regression Analysis</th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="type_of_data">Normally distributed continuous data<br>(summarized as mean)</td>
-<td class="gt_row gt_left" headers="two_data_sets_paired">Paired t-test</td>
-<td class="gt_row gt_left" headers="two_data_sets_unpaired">Unpaired t-test</td>
-<td class="gt_row gt_left" headers="more_than_two_data_sets_paired">Repeated measures ANOVA</td>
-<td class="gt_row gt_left" headers="more_than_two_data_sets_unpaired">One-way ANOVA</td>
-<td class="gt_row gt_left" headers="correlation_analysis">Pearson's correlation</td>
-<td class="gt_row gt_left" headers="regression_analysis">Linear regression</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="type_of_data">Ranks, scores, and non-normally<br>distributed continuous data<br>(Summarized as median)</td>
-<td class="gt_row gt_left" headers="two_data_sets_paired">Wilcoxon signed-rank test</td>
-<td class="gt_row gt_left" headers="two_data_sets_unpaired">Mann-Whitney U test</td>
-<td class="gt_row gt_left" headers="more_than_two_data_sets_paired">Friedman's test</td>
-<td class="gt_row gt_left" headers="more_than_two_data_sets_unpaired">Kruskal-Wallis test</td>
-<td class="gt_row gt_left" headers="correlation_analysis">Spearman's rank correlation</td>
-<td class="gt_row gt_left" headers="regression_analysis">Nonparametric regression</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="type_of_data">Dichotomous data<br>(Summarized as proportion)</td>
-<td class="gt_row gt_left" headers="two_data_sets_paired">Mc Nemar's test</td>
-<td class="gt_row gt_left" headers="two_data_sets_unpaired">Fishers test or Chi-square test</td>
-<td class="gt_row gt_left" headers="more_than_two_data_sets_paired">Cochrane Q test</td>
-<td class="gt_row gt_left" headers="more_than_two_data_sets_unpaired">Chi-square test</td>
-<td class="gt_row gt_left" headers="correlation_analysis">Contingency coefficient</td>
-<td class="gt_row gt_left" headers="regression_analysis">Logistic regression</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-<div class="footer">
-<p>(Adapted from <span class="citation" data-cites="najmi2021">Najmi et al. (<a href="#/references" role="doc-biblioref" onclick="">2021</a>)</span>)</p>
-</div>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="ap-anova-power-analysis" class="slide level2 smaller" data-visibility="uncounted"><h2>(AP) ANOVA: Power Analysis</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb309"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb309-1"><a></a><span class="fu">library</span>(pwrss)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb310"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb310-1"><a></a><span class="fu">pwrss.f.ancova</span>(</span>
-<span id="cb310-2"><a></a>  <span class="at">eta2 =</span> <span class="fl">0.01</span>,</span>
-<span id="cb310-3"><a></a>  <span class="at">n.way =</span> <span class="dv">1</span>,</span>
-<span id="cb310-4"><a></a>  <span class="at">n.levels =</span> <span class="dv">3</span>,</span>
-<span id="cb310-5"><a></a>  <span class="at">n.covariates =</span> <span class="dv">0</span>,</span>
-<span id="cb310-6"><a></a>  <span class="at">alpha =</span> <span class="fl">0.05</span>,</span>
-<span id="cb310-7"><a></a>  <span class="at">n =</span> <span class="cn">NULL</span>,</span>
-<span id="cb310-8"><a></a>  <span class="at">power =</span> <span class="fl">0.8</span></span>
-<span id="cb310-9"><a></a>)</span>
-<span id="cb310-10"><a></a><span class="co">#&gt;  One-way Analysis of Variance (ANOVA) </span></span>
-<span id="cb310-11"><a></a><span class="co">#&gt;   H0: 'eta2' or 'f2' = 0 </span></span>
-<span id="cb310-12"><a></a><span class="co">#&gt;   HA: 'eta2' or 'f2' &gt; 0 </span></span>
-<span id="cb310-13"><a></a><span class="co">#&gt;  --------------------------------------</span></span>
-<span id="cb310-14"><a></a><span class="co">#&gt;  Factor A: 3 levels </span></span>
-<span id="cb310-15"><a></a><span class="co">#&gt;  --------------------------------------</span></span>
-<span id="cb310-16"><a></a><span class="co">#&gt;  effect power n.total   ncp df1     df2</span></span>
-<span id="cb310-17"><a></a><span class="co">#&gt;       A   0.8     957 9.665   2 953.836</span></span>
-<span id="cb310-18"><a></a><span class="co">#&gt;  --------------------------------------</span></span>
-<span id="cb310-19"><a></a><span class="co">#&gt;  Type I error rate: 0.05</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="ap-anova-power-analysis-1" class="slide level2 smaller" data-visibility="uncounted"><h2>(AP) ANOVA: Power Analysis</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb311"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb311-1"><a></a><span class="fu">library</span>(pwrss)</span>
-<span id="cb311-2"><a></a></span>
-<span id="cb311-3"><a></a><span class="fu">power.f.test</span>(</span>
-<span id="cb311-4"><a></a>  <span class="at">ncp =</span> pwr_analysis<span class="sc">$</span>ncp,</span>
-<span id="cb311-5"><a></a>  <span class="at">df1 =</span> pwr_analysis<span class="sc">$</span>df1,</span>
-<span id="cb311-6"><a></a>  <span class="at">df2 =</span> pwr_analysis<span class="sc">$</span>df2,</span>
-<span id="cb311-7"><a></a>  <span class="at">alpha =</span> <span class="fl">0.05</span>,</span>
-<span id="cb311-8"><a></a>  <span class="at">plot =</span> <span class="cn">TRUE</span></span>
-<span id="cb311-9"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="ap-dig.-objects-ver.-control" class="slide level2 smaller" data-visibility="uncounted"><h2>(AP) Dig. Objects &amp; Ver. Control</h2>
-<div class="columns">
-<div class="column" style="width: 47%;">
-<div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="images/doi-foundation-logo.svg" class="quarto-figure quarto-figure-center" style="width: 100%; padding-top: 75px;"></p>
-</figure>
-</div>
-</div><div class="column" style="width: 6%;">
-
-</div><div class="column" style="width: 47%;">
-<div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="images/version-control.png" class="quarto-figure quarto-figure-center" style="width: 60%; padding-top: 60px;"></p>
-</figure>
-</div>
-</div></div>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="ap-open-licenses" class="slide level2 smaller" data-visibility="uncounted"><h2>(AP) Open Licenses</h2>
-<p>A unlicensed work is an “all rights reserved” work. This means that you can’t use it without the author’s permission.</p>
-<div class="columns">
-<div class="column" style="width: 50%; font-size: 0.85em;">
-<ul>
-<li>Licences for data
-<ul>
-<li><a href="https://okfn.org/">Open Knowledge Foundation</a></li>
-</ul>
-</li>
-<li>Licences for software/code
-<ul>
-<li><a href="https://opensource.org/licenses">OSI Approved Licenses</a></li>
-<li><a href="https://opensource.org/license/mit">The MIT licence</a></li>
-<li><a href="https://opensource.org/license/gpl-3-0">GNU General Public License version 3</a></li>
-</ul>
-</li>
-<li>Licences for <em>everything else</em> (e.g., documents, figures)
-<ul>
-<li><a href="https://creativecommons.org/">Creative Commons</a></li>
-<li><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></li>
-</ul>
-</li>
-</ul>
-</div><div class="column" style="width: 50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="images/mit-license-logo.png" class="quarto-figure quarto-figure-center" style="width: 50%;"></p>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="images/cc-license-logo.png" class="quarto-figure quarto-figure-center" style="width: 50%;"></p>
-</figure>
-</div>
-</div></div>
-</section><section id="ap-dynamic-documents" class="slide level2 smaller" data-visibility="uncounted"><h2>(AP) Dynamic Documents</h2>
-<p>Dynamic documents seamlessly integrate text with output from a programming language, automatically updating the output whenever the code is executed.</p>
-<div class="columns">
-<div class="column" style="width: 50%; font-size: 0.9em; padding-top: 0px;">
-<ul>
-<li>
-<a href="https://quarto.org/">Quarto</a> (R, Python, Julia) (+Pandoc)</li>
-<li>
-<a href="https://jupyter.org/">Jupyter</a> (Python, R, Julia, +37 languages)</li>
-<li>
-<a href="https://rmarkdown.rstudio.com/">Rmarkdown</a> (R) (+Pandoc)</li>
-</ul>
-<div style="padding-top: 10px;">
-<p><strong>Examples</strong></p>
-<ul>
-<li>External-link: <a href="https://danielvartan.github.io/central-limit-theorem/">Central limit theorem</a>
-</li>
-<li>External-link: <a href="https://danielvartan.github.io/sample-size/">Sample size</a>
-</li>
-<li>External-link: <a href="https://danielvartan.github.io/fisher-hypothesis/">Fisher’s hypothesis</a>
-</li>
-</ul>
-</div>
-</div><div class="column" style="width: 50%; padding-top: 25px;">
-<div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="images/quarto-logo.png" class="quarto-figure quarto-figure-center" style="width: 75%;"></p>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="images/jupyter-logo.png" class="quarto-figure quarto-figure-center" style="width: 40%;"></p>
-</figure>
-</div>
-</div></div>
-<aside class="notes"><ul>
-<li>You can write articles with dynamic documents.</li>
-<li>Difference from LaTeX.</li>
-<li>Quarto as an evolution from Rmarkdown.</li>
-<li>Jupyter can be used with Quarto.</li>
-</ul><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="ap-pipelines" class="slide level2 smaller nostretch" data-visibility="uncounted"><h2>(AP) Pipelines</h2>
-<p>Pipeline tools coordinate the pieces of computationally demanding analysis projects. They can be used to automate the execution of a series of tasks.</p>
-<div class="columns">
-<div class="column" style="width: 25%;">
-<div class="quarto-figure quarto-figure-center">
-<figure><p><a href="https://github.com/ropensci/targets"><img data-src="images/targets-logo.png" class="quarto-figure quarto-figure-center" style="width: 75%; padding-top: 70px;"></a></p>
-</figure>
-</div>
-</div><div class="column" style="width: 75%;">
-<div class="quarto-figure quarto-figure-center">
-<figure><p><a href="https://books.ropensci.org/targets/walkthrough.html#inspect-the-pipeline"><img data-src="images/targets-pipeline.png" class="quarto-figure quarto-figure-center" style="width: 70%; padding-top: 0px;"></a></p>
-</figure>
-</div>
-</div></div>
-<div class="footer">
-<p>(Reproduced from <span class="citation" data-cites="landau">Landau (<a href="#/references" role="doc-biblioref" onclick="">n.d.</a>)</span>)</p>
-</div>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="ap-reproducible-env." class="slide level2 smaller" data-visibility="uncounted"><h2>(AP) Reproducible Env.</h2>
-<p>Reproducible environments ensure that your code will run the same way on different machines and regardless of the time.</p>
-<div class="columns">
-<div class="column" style="width: 50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure><p><a href="https://rstudio.github.io/renv/"><img data-src="images/renv-hex-logo.png" class="quarto-figure quarto-figure-center" style="width: 75%; padding-top: 25px;"></a></p>
-</figure>
-</div>
-</div><div class="column" style="width: 50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure><p><a href="https://www.docker.com/"><img data-src="images/docker-logo.png" class="quarto-figure quarto-figure-center" style="width: 75%; padding-top: 25px;"></a></p>
-</figure>
-</div>
-</div></div>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="ap-app.-prog.-interf.-apis" class="slide level2 smaller" data-visibility="uncounted"><h2>(AP) App. Prog. Interf. (APIs)</h2>
-<div style="font-size: 0.8em;">
-<p>APIs are a set of rules that allow different software applications to communicate with each other.</p>
-</div>
-<div class="columns">
-<div class="column" style="width: 33%; font-size: 0.7em;">
-<ul>
-<li><a href="https://developer.osf.io/">OSF API</a></li>
-<li><a href="https://dadosabertos.bcb.gov.br/dataset?res_format=API">Brazil’s Central Bank APIs</a></li>
-<li><a href="https://api.nasa.gov/">NASA’s APIs</a></li>
-</ul>
-</div><div class="column" style="width: 34%; font-size: 0.7em;">
-<ul>
-<li><a href="https://platform.openai.com/docs/api-reference/introduction">OpenAI API</a></li>
-<li><a href="https://api.sidra.ibge.gov.br/">SIDRA API (IBGE)</a></li>
-<li><a href="https://opendatasus.saude.gov.br/dataset/sisvan-estado-nutricional/resource/3ead4331-6424-471f-a811-4edf22f58e00">SISVAN API</a></li>
-</ul>
-</div><div class="column" style="width: 33%; font-size: 0.7em;">
-<div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="images/api-symbol.png" class="quarto-figure quarto-figure-center" style="width: 40%;"></p>
-</figure>
-</div>
-</div></div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb312"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb312-1"><a></a><span class="fu">library</span>(magrittr)</span>
-<span id="cb312-2"><a></a><span class="fu">library</span>(sidrar)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb313"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb313-1"><a></a><span class="co"># Brazil's population in 2022 (Census data)</span></span>
-<span id="cb313-2"><a></a><span class="fu">get_sidra</span>(</span>
-<span id="cb313-3"><a></a>  <span class="at">api =</span> <span class="st">"/t/7358/n1/all/v/all/p/all/c2/6794/c287/100362/c1933/49039"</span></span>
-<span id="cb313-4"><a></a>) <span class="sc">|&gt;</span></span>
-<span id="cb313-5"><a></a>  <span class="fu">suppressMessages</span>() <span class="sc">|&gt;</span></span>
-<span id="cb313-6"><a></a>  <span class="fu">extract2</span>(<span class="st">"Valor"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb313-7"><a></a>  <span class="fu">prettyNum</span>(<span class="at">big.mark =</span> <span class="st">","</span>)</span>
-<span id="cb313-8"><a></a><span class="co">#&gt; [1] "216,284,269"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section><section id="ap-kiss-principle" class="slide level2 nostretch" data-visibility="uncounted"><h2>(AP) KISS Principle</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="images/kiss-principle.png" class="quarto-figure quarto-figure-center" style="width: 75%; padding-top: 50px;"></p>
-</figure>
-</div>
-</section><section id="ap-some-other-things" class="slide level2 smaller" data-visibility="uncounted"><h2>(AP) Some Other Things …</h2>
-<p>We’ve only touched upon the vast landscape of open science. There are many other tools and concepts that we didn’t cover, such as:</p>
-<div class="columns" style="padding-top: 10px;">
-<div class="column" style="width: 50%; font-size: 0.75em;">
-<ul>
-<li>Markup languages (e.g., <a href="https://daringfireball.net/projects/markdown/">Markdown</a>, <a href="https://www.latex-project.org/">LaTeX</a>)</li>
-<li>Open source softwares (e.g., <a href="https://ropensci.org/">rOpenSci</a>, <a href="https://cran.r-project.org/">CRAN</a>, <a href="https://www.bioconductor.org/">Bioconductor</a>, <a href="https://pypi">PyPI</a>)</li>
-<li>Version control systems (e.g.&nbsp;<a href="https://www.git-scm.com/">Git</a>, <a href="https://subversion.apache.org/">SVN</a>, <a href="https://semver.org/">Semantic versioning</a>)</li>
-<li>Database systems (e.g., <a href="https://en.wikipedia.org/wiki/Relational_database">Relational databases</a>, <a href="https://en.wikipedia.org/wiki/NoSQL">NoSQL</a>)</li>
-<li>Open source data management systems (e.g., <a href="https://www.ckan.org/">CKAN</a> <a href="https://dataverse.org/">Dataverse</a>; <a href="https://dspace.lyrasis.org/">DSpace</a>)</li>
-</ul>
-</div><div class="column" style="width: 50%; font-size: 0.75em;">
-<ul>
-<li>Git-based repositories (e.g., <a href="https://github.com">GitHub</a>, <a href="https://gitlab.com">GitLab</a>)</li>
-<li>Open data formats (e.g., <a href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV</a>, <a href="https://www.json.org/json-en.html">JSON</a>, <a href="https://en.wikipedia.org/wiki/Apache_Parquet">Apache Parquet</a>)</li>
-<li>Cloud computing (e.g., <a href="https://aws.amazon.com/">AWS</a>, <a href="https://cloud.google.com/">Google Cloud</a>, <a href="https://azure.microsoft.com/">Azure</a>)</li>
-<li>Open science policies (e.g., <a href="https://fapesp.br/openscience/">FAPESP</a>, <a href="https://research-and-innovation.ec.europa.eu/strategy/strategy-2020-2024/our-digital-future/open-science_en">European Commission</a>)</li>
-<li>Ethical data sharing practices (See <span class="citation" data-cites="meyer2018">Meyer (<a href="#/references" role="doc-biblioref" onclick="">2018</a>)</span> to learn more)</li>
-</ul>
-</div></div>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="ap-some-other-things-1" class="slide level2 smaller nostretch" data-visibility="uncounted"><h2>(AP) Some Other Things …</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="images/allison-horst-figure-9.png" class="quarto-figure quarto-figure-center" style="width: 90%; padding-top: 10px;"></p>
-</figure>
-</div>
-<div class="footer">
-<p>(Artwork by <a href="https://allisonhorst.com/horst-hill-collaborations">Allison Horst</a>)</p>
-</div>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section></section><section><section id="teaching-plan" class="title-slide slide level1 center" data-visibility="uncounted"><h1>Teaching Plan</h1>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="general-information" class="slide level2 smaller" data-visibility="uncounted"><h2>General Information</h2>
-<ul>
-<li>
-<strong>Course</strong>: An Introduction to the R Language</li>
-<li>
-<strong>Instructors</strong>: Daniel Vartanian and Jaqueline Lopes Pereira</li>
-<li>
-<strong>Place</strong>: Public Health School (<a href="(https://www.fsp.usp.br/)">FSP</a>) of the University of São Paulo (<a href="https://www5.usp.br/">USP</a>).</li>
-<li>
-<strong>Dates</strong>: 24/03 to 28/03</li>
-<li>
-<strong>Time</strong>: 13:00 to 14:00 (except on Wednesday, 26/03, from 13:00 to 18:00)</li>
-<li>
-<strong>Duration</strong>: 9 hours</li>
-</ul>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="learning-objectives" class="slide level2 smaller" data-visibility="uncounted"><h2>Learning Objectives</h2>
-<p>Understand fundamental principles and concepts of computer science.</p>
-<p>Comprehend the structure and core elements of the R programming language.</p>
-<p>Learn essential concepts of data munging.</p>
-<p>Understand the basics of data visualization.</p>
-<p>Explore fundamental techniques of exploratory data analysis.</p>
-<p>Learn basic modeling concepts.</p>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="theoretical-basis" class="slide level2 smaller" data-visibility="uncounted"><h2>Theoretical Basis</h2>
-<ol type="1">
-<li>Dialectical materialism <span class="citation" data-cites="engels2020a">(<a href="#/references" role="doc-biblioref" onclick="">Engels, 2020</a>)</span>.</li>
-<li>Cultural-historical theory <span class="citation" data-cites="vygotsky2012">(<a href="#/references" role="doc-biblioref" onclick="">Vygotsky, 2012</a>)</span>.</li>
-<li>Pedagogy of autonomy/Dialectal pedagogy <span class="citation" data-cites="freire2011">(<a href="#/references" role="doc-biblioref" onclick="">Freire, 2011</a>)</span>.</li>
-<li>Dialectical unity in pedagogical activity <span class="citation" data-cites="bernardes2009a">(<a href="#/references" role="doc-biblioref" onclick="">Bernardes, 2009</a>)</span>.</li>
-</ol>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="the-unit-of-pedagogical-activity" class="slide level2 smaller" data-visibility="uncounted"><h2>The Unit of Pedagogical Activity</h2>
-<div style="font-size: 0.7em; padding-top: 30px;">
-<table class="caption-top">
-<colgroup>
-<col style="width: 35%">
-<col style="width: 32%">
-<col style="width: 32%">
-</colgroup>
-<thead><tr class="header">
-<th></th>
-<th>Teaching Activity (Teacher)</th>
-<th>Learning Activity (Student)</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td><strong>Motive/Need</strong></td>
-<td>Enable the transformation of students’ constitution through access to culture — humanizing them.</td>
-<td>Become an heir to culture — humanizing oneself.</td>
-</tr>
-<tr class="even">
-<td><strong>Objective</strong></td>
-<td>Teach socio-historical knowledge.</td>
-<td>Appropriate socio-historical knowledge.</td>
-</tr>
-<tr class="odd">
-<td><strong>Actions and Operations</strong></td>
-<td>
-<strong>Organizing teaching:</strong><br>- Defining the knowledge to be taught (<em>What</em>).<br>- Defining the conditions (modes of action) in which the knowledge will be taught (<em>How</em>).</td>
-<td>- Execute study tasks.<br>- Perform study activities.<br>- Participate in control and evaluation actions.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="footer">
-<p><span class="citation" data-cites="bernardes2009a">(<a href="#/references" role="doc-biblioref" onclick="">Bernardes, 2009</a>, Translated from Portuguese to English by the author)</span></p>
-</div>
-</section><section id="strategy" class="slide level2 smaller" data-visibility="uncounted"><h2>Strategy</h2>
-<ul>
-<li>Theory followed by practice.</li>
-<li>In-class activities.</li>
-<li>Data science exercise at the end of the course.</li>
-<li>No formal evaluation.</li>
-<li>Pre-course survey.</li>
-<li>Post-course survey.</li>
-</ul></section><section id="resources" class="slide level2 smaller" data-visibility="uncounted"><h2>Resources</h2>
-<ul>
-<li>Whiteboard</li>
-<li>Data projector</li>
-<li>Slides</li>
-<li>Computers</li>
-</ul></section><section id="main-references-1" class="slide level2 smaller" data-visibility="uncounted"><h2>Main References</h2>
-<div class="columns">
-<div class="column" style="width: 47.5%;">
-<div class="quarto-figure quarto-figure-center">
-<figure><p><a href="https://r4ds.hadley.nz//"><img data-src="images/wickham-2023-book-cover.png" class="quarto-figure quarto-figure-center" style="width: 85%; padding-top: 0px;"></a></p>
-</figure>
-</div>
-</div><div class="column" style="width: 5%;">
-
-</div><div class="column" style="width: 47.5%;">
-<div class="quarto-figure quarto-figure-center">
-<figure><p><a href="https://adv-r.hadley.nz/"><img data-src="images/wickham-2019-book-cover.png" class="quarto-figure quarto-figure-center" style="width: 75%;"></a></p>
-</figure>
-</div>
-</div></div>
-<div class="footer">
-<p>(Book cover image from <span class="citation" data-cites="wickham2023e">Wickham et al. (<a href="#/references" role="doc-biblioref" onclick="">2023</a>)</span> and <span class="citation" data-cites="wickham2019">Wickham (<a href="#/references" role="doc-biblioref" onclick="">2019</a>)</span>)</p>
-</div>
-<aside class="notes"><ul>
-<li>See also: <a href="https://advanced-r-solutions.rbind.io/">Advanced R Solutions</a> <span class="citation" data-cites="grosser2021">(<a href="#/references" role="doc-biblioref" onclick="">Grosser et al., 2021</a>)</span>.</li>
-</ul><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="monday-2403" class="slide level2 smaller" data-visibility="uncounted"><h2>Monday (24/03)</h2>
-<div class="columns">
-<div class="column" style="width: 47.5%;">
-<p><strong>Part 1</strong> (13:00-13:30)</p>
-<ul>
-<li>Introduction to the course.</li>
-<li>Introduction to computer science.</li>
-<li>Introduction to data science.</li>
-<li>Introduction to the R language and the other tools.</li>
-</ul>
-</div><div class="column" style="width: 5%;">
-
-</div><div class="column" style="width: 47.5%;">
-<p><strong>Part 2</strong> (13:30-14:00)</p>
-<ul>
-<li>Installing R and RStudio.</li>
-<li>Introduction to the RStudio IDE.</li>
-<li>Introduction to the project oriented workflow.</li>
-<li>Introduction to Markdown and the Quarto notebook.</li>
-</ul>
-</div></div>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="tuesday-2503" class="slide level2 smaller" data-visibility="uncounted"><h2>Tuesday (25/03)</h2>
-<div class="columns">
-<div class="column" style="width: 47.5%;">
-<p><strong>Part 1</strong> (13:00-13:30)</p>
-<ul>
-<li>R objects.</li>
-<li>Operations.</li>
-<li>Subsetting.</li>
-<li>Pipes.</li>
-<li>Control flow (Choice &amp; Loop).</li>
-</ul>
-</div><div class="column" style="width: 5%;">
-
-</div><div class="column" style="width: 47.5%;">
-<p><strong>Part 2</strong> (13:30-14:00)</p>
-<ul>
-<li>Functions and Functionals.</li>
-<li>Missing values and commenting.</li>
-<li>Environments.</li>
-<li>Packages.</li>
-<li>Documentation.</li>
-<li>The tidyverse and rOpenSci suite.</li>
-</ul>
-</div></div>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="wednesday-2503" class="slide level2 smaller" data-visibility="uncounted"><h2>Wednesday (25/03)</h2>
-<div class="columns">
-<div class="column" style="width: 47.5%;">
-<p><strong>Part 1</strong> (13:00-14:00)</p>
-<ul>
-<li>Data munging (Introduction)</li>
-</ul>
-</div><div class="column" style="width: 5%;">
-
-</div><div class="column" style="width: 47.5%;">
-<p><strong>Part 2</strong> (14:15-15:15)</p>
-<ul>
-<li>Data munging (Importing and manipulating data)</li>
-</ul>
-</div></div>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="wednesday-2503-1" class="slide level2 smaller" data-visibility="uncounted"><h2>Wednesday (25/03)</h2>
-<div class="columns">
-<div class="column" style="width: 47.5%;">
-<p><strong>Part 3</strong> (15:30-16:30)</p>
-<ul>
-<li>Data visualization and Exploratory Data Analysis</li>
-</ul>
-</div><div class="column" style="width: 5%;">
-
-</div><div class="column" style="width: 47.5%;">
-<p><strong>Part 4</strong> (16:45-18:00)</p>
-<ul>
-<li>Modeling (One-Sample t-Test)</li>
-</ul>
-</div></div>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="thursday-2503" class="slide level2 smaller" data-visibility="uncounted"><h2>Thursday (25/03)</h2>
-<div class="columns">
-<div class="column" style="width: 47.5%;">
-<p><strong>Part 1</strong> (13:00-13:30)</p>
-<ul>
-<li>Modeling (ANOVA).</li>
-</ul>
-</div><div class="column" style="width: 5%;">
-
-</div><div class="column" style="width: 47.5%;">
-<p><strong>Part 2</strong> (13:30-14:00)</p>
-<ul>
-<li>Modeling (Linear regression).</li>
-</ul>
-</div></div>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="friday-2503" class="slide level2 smaller" data-visibility="uncounted"><h2>Friday (25/03)</h2>
-<div class="columns">
-<div class="column" style="width: 47.5%;">
-<p><strong>Part 1</strong> (13:00-13:30)</p>
-<ul>
-<li>Exercise (Data report—SISVAN).</li>
-</ul>
-</div><div class="column" style="width: 5%;">
-
-</div><div class="column" style="width: 47.5%;">
-<p><strong>Part 2</strong> (13:30-14:00)</p>
-<ul>
-<li>Conclusion.</li>
-</ul>
-</div></div>
 <aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

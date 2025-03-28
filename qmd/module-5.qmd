@@ -16,9 +16,9 @@ Although it is a relative newcomer to the R ecosystem (2018), it has quickly gai
 ::: {.notes}
 :::
 
-## Main Tidymodels Packages {.smaller}
+## Tidymodels Packages {.smaller}
 
-Like Tidyverse, Tidymodels also has a meta-package (bundle) that installs or load the most important packages from the collection.
+Like Tidyverse, Tidymodels also has a meta-package that installs or load the most important packages from the collection.
 
 :::: {.columns}
 ::: {.column style="width: 50%; padding-top: 10px; padding-bottom: 10px;"}
@@ -349,7 +349,7 @@ dplyr::tibble(
 
 ::::: {.columns}
 :::: {.column style="width: 45%; font-size: 0.9em;"}
-Cohen’s $f^{2}$ of 0.004143174`<br>`{=html}($\Delta\text{R}^{2} \approx$ 0,0041260789)
+$\Delta\text{R}^{2}$ = 0.00388`<br>`{=html}Cohen’s $f^{2}$ of 0.004143174
 
 Latitudinal cline of chronotype [@leocadio-miguel2017].
 
@@ -691,12 +691,14 @@ effect_size <-
 
 effect_size
 ```
+:::
+::::
 
+::: {style="padding-top: 15px;"}
 ```{r}
 effect_size |> interpret_hedges_g(rules = "cohen1988")
 ```
 :::
-::::
 
 ::: {.notes}
 :::
@@ -716,8 +718,8 @@ pwr_analysis <- pwrss.t.2means(
   sd1 = gentoo |> sd(na.rm = TRUE),
   sd2 = adelie |> sd(na.rm = TRUE),
   paired = FALSE,
-  n2 = min(length(gentoo), length(adelie)),
-  kappa = length(adelie) / length(gentoo),
+  n2 = length(adelie),
+  kappa = length(gentoo) / length(adelie),
   power = NULL,
   alpha = 0.05,
   welch.df = TRUE,
@@ -1151,8 +1153,8 @@ We will use Cohen's benchmark for a small effect size as our Minimum Effect Size
 ::: {style="padding-top: 15px;"}
 $$
 \begin{cases}
-\text{H}_{0}: \text{Adjusted} \ \text{R}^{2} < \text{MES} \quad \text{or} \quad \text{F-test is not significant} \ (\alpha \geq 0.05) \\
-\text{H}_{a}: \text{Adjusted} \ \text{R}^{2} \geq \text{MES} \quad \text{and} \quad \text{F-test is significant} \ (\alpha < 0.05)
+\text{H}_{0}: \Delta \text{Adjusted} \ \text{R}^{2} < \text{MES} \quad \text{or} \quad \text{F-test is not significant} \ (\alpha \geq 0.05) \\
+\text{H}_{a}: \Delta \text{Adjusted} \ \text{R}^{2} \geq \text{MES} \quad \text{and} \quad \text{F-test is significant} \ (\alpha < 0.05)
 \end{cases}
 $$
 :::
@@ -1295,7 +1297,7 @@ penguins |>
 ::: {.notes}
 :::
 
-## Linear Reg.: Prediciton {.smaller}
+## Linear Reg.: Prediction {.smaller}
 
 ```{r}
 #| code-fold: true
@@ -1411,7 +1413,7 @@ rglwidget(elementId = "1st") |>
 In a multiple linear regression with two predictors, the model is fit by adjusting a **plane** to the data points (**Use the mouse to explore**).
 :::
 
-## Linear Reg.: Fit (Rest.) {.smaller}
+## Linear Reg.: Fit (Restricted) {.smaller}
 
 :::: {.columns}
 ::: {.column style="width: 50%;"}

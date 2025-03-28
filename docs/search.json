@@ -18,7 +18,7 @@
     "href": "index.html#course-objectives",
     "title": "An Introduction to the R Programming Language",
     "section": "Course Objectives",
-    "text": "Course Objectives\nUnderstand fundamental principles and concepts of computer science.\nComprehend the structure and core elements of the R programming language.\nLearn essential concepts of data munging.\nUnderstand the basics of data visualization.\nExplore fundamental techniques of exploratory data analysis.\nLearn basic modeling techniques.\n\n(Future course? An Introduction to Git)"
+    "text": "Course Objectives\n\nGrasp the foundational principles and key concepts of computer science.\nUnderstand the structure and essential components of the R programming language.\nMaster fundamental techniques for data munging.\nDevelop skills in creating insightful data visualizations.\nLearn techniques for conducting exploratory data analysis.\nGain an introduction to basic modeling approaches.\n\n\n(Future course? An Introduction to Git)"
   },
   {
     "objectID": "index.html#course-content",
@@ -49,11 +49,11 @@
     "text": "Main References\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(Book cover image from Wickham et al. (2023) and Wickham (2019))\n\n\nSee also: Advanced R Solutions (Grosser et al., 2021)."
   },
   {
-    "objectID": "index.html#lets-get-this-over-with",
-    "href": "index.html#lets-get-this-over-with",
+    "objectID": "index.html#learn-from-mistakes",
+    "href": "index.html#learn-from-mistakes",
     "title": "An Introduction to the R Programming Language",
-    "section": "Let’s Get This Over With",
-    "text": "Let’s Get This Over With\nMistakes will happen. Don’t let them discourage you!\n\n\n(Artwork by Allison Horst)"
+    "section": "Learn from Mistakes",
+    "text": "Learn from Mistakes\nMistakes will happen. Don’t let them discourage you!\n\n\n\n\n\n(Artwork by Allison Horst)"
   },
   {
     "objectID": "index.html#getting-help",
@@ -151,7 +151,7 @@
     "href": "index.html#python-is-fine-too-i-guess",
     "title": "An Introduction to the R Programming Language",
     "section": "Python is Fine Too, I Guess…",
-    "text": "Python is Fine Too, I Guess…\nIn a general sense, Python is also good for learning how to program, but it is much easier to learn how to work with data in R. In academia, both programming languages are very important.\n\n\n\n\n\n(Image by Unknown Author)"
+    "text": "Python is Fine Too, I Guess…\nIn a general sense, Python is also good for learning how to program, but it is much easier to learn how to work with data in R. In academia, both programming languages are very important."
   },
   {
     "objectID": "index.html#its-not-what-you-think",
@@ -263,14 +263,14 @@
     "href": "index.html#vectorized-operations",
     "title": "An Introduction to the R Programming Language",
     "section": "Vectorized Operations",
-    "text": "Vectorized Operations\n\n\nThe most important feature of R is that it is a vectorized language. This means that most operations are performed element-wise.\nThis is achieved using the C programming language behind the scenes.\n\nc(1, 2, 3) + 1\n#&gt; [1] 2 3 4\n\n\nc(1, 2, 3) * c(1, 2, 3)\n#&gt; [1] 1 4 9\n\n\n\n\n\n\n\n\n(Artwork by Kanishk Srivastava)"
+    "text": "Vectorized Operations\n\n\nIn R, most operations are vectorized, meaning they operate on all elements of a vector at once, without needing explicit loops.\nThis makes code more concise, readable, and less error-prone, while improving efficiency compared to non-vectorized languages.\n\n\nc(1, 2, 3) + 1\n#&gt; [1] 2 3 4\n\n\nc(1, 2, 3) * c(1, 2, 3)\n#&gt; [1] 1 4 9\n\n\n\n\n\n\n\n\n\n(Artwork by Kanishk Srivastava)"
   },
   {
     "objectID": "index.html#primary-data-types",
     "href": "index.html#primary-data-types",
     "title": "An Introduction to the R Programming Language",
     "section": "Primary Data Types",
-    "text": "Primary Data Types\n\n\nThese are part of the atomic data types in R.\n\n\nlogical: TRUE/FALSE.\n\ninteger: 1, 2, 3.\n\ndouble: 1.0, 2.0, 3.0.\n\ncharacter: “Hello, World!”.\n\n\ntypeof(as.Date(\"2025-01-01\"))\n#&gt; [1] \"double\"\n\n\n\n\n\n\n\nSee: https://youtu.be/e1zJS31tr88?si=7-TamPi2tmwprCUL&t=900"
+    "text": "Primary Data Types\n\n\nThese are part of the atomic data types in R.\n\n\nlogical: TRUE/FALSE.\n\ninteger: 1, 2, 3.\n\ndouble: 1.0, 2.0, 3.0.\n\ncharacter: “Hello, World!”.\n\n\n\ntypeof(as.Date(\"2025-01-01\"))\n#&gt; [1] \"double\"\n\n\n\n\n\n\n\n\nSee: https://youtu.be/e1zJS31tr88?si=7-TamPi2tmwprCUL&t=900"
   },
   {
     "objectID": "index.html#data-classes",
@@ -291,21 +291,21 @@
     "href": "index.html#operations",
     "title": "An Introduction to the R Programming Language",
     "section": "Operations",
-    "text": "Operations\n\nLeft Hand Side = Right Hand Side"
+    "text": "Operations\n\nLeft Hand Side Operator Right Hand Side"
   },
   {
     "objectID": "index.html#arithmetic-operators",
     "href": "index.html#arithmetic-operators",
     "title": "An Introduction to the R Programming Language",
     "section": "Arithmetic Operators",
-    "text": "Arithmetic Operators\n\n\n\n\n`+`() Addition\n\n`-`() Subtraction\n\n`*`() Multiplication\n\n`/`() Division\n\n`^`() Exponentiation\n\n`%/%`() Integer division\n\n`%%`() Modulus (Remainder from Division)\n\n\n\n1 + 1\n#&gt; [1] 2\n\n\n1 - 1\n#&gt; [1] 0\n\n\n1 * 2\n#&gt; [1] 2\n\n\n1 / 2\n#&gt; [1] 0.5\n\n\n2^2\n#&gt; [1] 4\n\n\n5 %/% 2\n#&gt; [1] 2\n\n\n5 %% 2\n#&gt; [1] 1"
+    "text": "Arithmetic Operators\n\n\n\n\n`+`() Addition\n\n`-`() Subtraction\n\n`*`() Multiplication\n\n`/`() Division\n\n`^`() Exponentiation\n\n`%/%`() Integer division\n\n`%%`() Modulusbr(Remainder from Division)\n\n\n\n1 + 1\n#&gt; [1] 2\n\n\n1 - 1\n#&gt; [1] 0\n\n\n1 * 2\n#&gt; [1] 2\n\n\n1 / 2\n#&gt; [1] 0.5\n\n\n2^2\n#&gt; [1] 4\n\n\n5 %/% 2\n#&gt; [1] 2\n\n\n5 %% 2\n#&gt; [1] 1"
   },
   {
     "objectID": "index.html#assignment-operators",
     "href": "index.html#assignment-operators",
     "title": "An Introduction to the R Programming Language",
     "section": "Assignment Operators",
-    "text": "Assignment Operators\n\n\n\n\n`&lt;-`() Leftwards assignment (Use this!)\n\n`&lt;&lt;-`() Leftwards assignment (Global Environment)\n\n`-&gt;`() Rightwards assignment\n\n`-&gt;&gt;`() Rightwards assignment (Global Environment)\n\n`=`() Equals sign assignment\n\n\n\nx &lt;- 1; x\n#&gt; [1] 1\n\n\nx &lt;&lt;- 1; x\n#&gt; [1] 1\n\n\n1 -&gt; x; x\n#&gt; [1] 1\n\n\n1 -&gt;&gt; x; x\n#&gt; [1] 1\n\n\nx = 1; x\n#&gt; [1] 1\n\n1 = x; x # Error!"
+    "text": "Assignment Operators\n\n\n\n\n`&lt;-`() Leftwards assignment(Use this!)\n\n`&lt;&lt;-`() Leftwards assignment (Global Environment)\n\n`-&gt;`() Rightwards assignment\n\n`-&gt;&gt;`() Rightwards assignment (Global Environment)\n\n`=`() Equals sign assignment\n\n\n\nx &lt;- 1; x\n#&gt; [1] 1\n\n\nx &lt;&lt;- 1; x\n#&gt; [1] 1\n\n\n1 -&gt; x; x\n#&gt; [1] 1\n\n\n1 -&gt;&gt; x; x\n#&gt; [1] 1\n\n\nx = 1; x\n#&gt; [1] 1\n\n1 = x; x # Error!"
   },
   {
     "objectID": "index.html#names",
@@ -364,11 +364,11 @@
     "text": "Subsetting\n\n\nData Frames\n\n\nx[i, ] Extract line i\n\n\nx[, j] Extract column/variable j\n\n\nx[i, j] Extract line i from column/variable j\n\n\n\n\n\n\ndata &lt;- data.frame(a = c(1, 2), b = c(4, 5))\n\ndata\n#&gt;   a b\n#&gt; 1 1 4\n#&gt; 2 2 5\n\n\ndata[\"a\"]\n#&gt;   a\n#&gt; 1 1\n#&gt; 2 2\n\n\ndata[[\"a\"]] # == data$a\n#&gt; [1] 1 2\n\n\ndata[1, ]\n#&gt;   a b\n#&gt; 1 1 4\n\n\ndata[, 1]\n#&gt; [1] 1 2\n\n\ndata[1, 1]\n#&gt; [1] 1"
   },
   {
-    "objectID": "index.html#missing-values",
-    "href": "index.html#missing-values",
+    "objectID": "index.html#special-values",
+    "href": "index.html#special-values",
     "title": "An Introduction to the R Programming Language",
-    "section": "Missing Values",
-    "text": "Missing Values\n\n\nMissing values must me explicitly declared in R. For that R uses the NA value (Not Available).\nNA comes in different flavors, for example: NA_integer_, NA_real_, NA_character_, NA_complex_.\nIf you use just NA, R will use the most appropriate type.\n\nc(1, NA, 3)\n#&gt; [1]  1 NA  3\n\n\nis.na(c(1, NA, 3))\n#&gt; [1] FALSE  TRUE FALSE\n\n\n\n\nNaN (Not a Number)\n\n0 / 0\n#&gt; [1] NaN\n\n\nis.nan(0 / 0)\n#&gt; [1] TRUE\n\n\nInf (Infinite)\n\n1 / 0\n#&gt; [1] Inf\n\n\n-1 / 0\n#&gt; [1] -Inf\n\n\nis.infinite(1 / 0)\n#&gt; [1] TRUE\n\n\n\nTip: See the naniar package."
+    "section": "Special Values",
+    "text": "Special Values\n\n\nNA (Not Available)\nMissing values must be explicitly declared in R. For that R uses the NA value.\nNA comes in different flavors, for example: NA_integer_, NA_real_, NA_character_, NA_complex_.\nIf you use just NA, R will use the most appropriate type.\n\nc(1, NA, 3)\n#&gt; [1]  1 NA  3\n\n\nis.na(c(1, NA, 3))\n#&gt; [1] FALSE  TRUE FALSE\n\n\n\n\nNaN (Not a Number)\n\n0 / 0\n#&gt; [1] NaN\n\n\nis.nan(0 / 0)\n#&gt; [1] TRUE\n\n\nInf (Infinite)\n\n1 / 0\n#&gt; [1] Inf\n\n\n-1 / 0\n#&gt; [1] -Inf\n\n\nis.infinite(1 / 0)\n#&gt; [1] TRUE\n\n\n\nTip: See the naniar package."
   },
   {
     "objectID": "index.html#pipes",
@@ -403,7 +403,7 @@
     "href": "index.html#functionals",
     "title": "An Introduction to the R Programming Language",
     "section": "Functionals",
-    "text": "Functionals\n\n\nA functional is a function that takes a function as an input and returns a vector as output (Wickham, 2019).\nIt makes the work of the programmer easier, because it allows to apply a function to a vector without the need of a loop. Because these functions are written in C, they are very fast.\nR have native functionals (e.g., lapply()), but prefer solutions from the purrr package.\n\n\n\n\ntriple &lt;- function(x) x * 3\n\n\nwith_for_loop &lt;- function(x) {\n  out &lt;- numeric()\n  for (i in x) out &lt;- c(out, triple(i))\n  out\n}\n\n\nlibrary(purrr)\n\nwith_map &lt;- function(x) map_dbl(x, triple)\n\n\nlibrary(microbenchmark)\n\nmicrobenchmark(\n  with_for_loop(1:1000),\n  with_map(1:1000),\n  times = 100,\n  check = \"equal\"\n)\n#&gt; Unit: microseconds\n#&gt;                   expr     min       lq      mean   median       uq      max\n#&gt;  with_for_loop(1:1000) 686.169 726.2415 1686.1347 749.8285 801.8420 67380.04\n#&gt;       with_map(1:1000) 290.830 303.3560  323.8058 312.7305 328.1855   973.27\n#&gt;  neval cld\n#&gt;    100  a \n#&gt;    100   b"
+    "text": "Functionals\n\n\nA functional is a function that takes a function as an input and returns a vector as output (Wickham, 2019).\nIt makes the work of the programmer easier, because it allows to apply a function to a vector without the need of a loop. Because these functions are usually written in C (a low-level programminng language), they are very fast.\nR have native functionals (e.g., lapply()), but prefer solutions from the purrr package.\n\n\n\n\ntriple &lt;- function(x) x * 3\n\n\nwith_for_loop &lt;- function(x) {\n  out &lt;- numeric()\n  for (i in x) out &lt;- c(out, triple(i))\n  out\n}\n\n\nlibrary(purrr)\n\nwith_map &lt;- function(x) map_dbl(x, triple)\n\n\nlibrary(microbenchmark)\n\nmicrobenchmark(\n  with_for_loop(1:1000),\n  with_map(1:1000),\n  times = 100,\n  check = \"equal\"\n)\n#&gt; Unit: microseconds\n#&gt;                   expr     min      lq      mean   median       uq       max\n#&gt;  with_for_loop(1:1000) 700.382 723.905 1677.3751 751.8105 775.2860 68878.780\n#&gt;       with_map(1:1000) 300.393 314.428  335.4093 322.1340 340.7045  1007.185\n#&gt;  neval cld\n#&gt;    100   a\n#&gt;    100   a"
   },
   {
     "objectID": "index.html#enviroments",
@@ -417,7 +417,7 @@
     "href": "index.html#packages",
     "title": "An Introduction to the R Programming Language",
     "section": "Packages",
-    "text": "Packages\n\n\nThe Unix philosophy\nIn R, the fundamental unit of shareable code is the package.\nA package bundles together code, data, documentation, and tests, and is easy to share with others (Wickham & Bryan, 2023).\nDocumentation example: The mctq R package.\n\n\n\ninstall.packages(\"package_name\")\n\nlibrary(\"package_name\")\n\nlibrary(hms)\nlibrary(lubridate)\nlibrary(mctq)\n\n\nso(parse_hm(\"23:00\"), dhours(2))\n#&gt; 01:00:00\n\n\n\npackage_name::function_name()\n\nparse_hm(\"23:00\")\n#&gt; 23:00:00\n\n\n\n\nNote: Other programming languages refer to packages as libraries."
+    "text": "Packages\n\n\nThe Unix philosophy\nEach program must do one thing well (McIlroy et al., 1978).\nIn R, the fundamental unit of shareable code is the package.\nA package bundles together code, data, documentation, and tests, and is easy to share with others (Wickham & Bryan, 2023).\nDocumentation example:The mctq R package.\n\n\n\ninstall.packages(\"package_name\")\n\nlibrary(\"package_name\")\n\nlibrary(hms)\nlibrary(lubridate)\nlibrary(mctq)\n\n\nso(parse_hm(\"23:00\"), dhours(2))\n#&gt; 01:00:00\n\n\n\npackage_name::function_name()\n\nhms::parse_hm(\"23:00\")\n#&gt; 23:00:00\n\n\n\n\nNote: Other programming languages refer to packages as libraries."
   },
   {
     "objectID": "index.html#packages-1",
@@ -431,14 +431,14 @@
     "href": "index.html#other-kind-of-objects",
     "title": "An Introduction to the R Programming Language",
     "section": "Other Kind of Objects",
-    "text": "Other Kind of Objects\n\n\nBased on the atomic types, we can create other types of objects. Using the right kind of object in R is very important, because these objects also include methods to deal with particular types of data.\nFor example, time can be expressed in diffent ways, like linear time (e.g., durations, periods, data-time, intervals) and circular time (e.g., time of day). We can also have time series, which are a sequence of data points taken at successive equally spaced points in time.\n\n\n\nDate(Days since 1970-01-01 (UNIX epoch))\n\nas.Date(\"1970-01-01\") |&gt; as.numeric()\n#&gt; [1] 0\n\n\nas.Date(\"1970-01-01\") + 1\n#&gt; [1] \"1970-01-02\"\n\n\nPOSIXct(Seconds since 1970-01-01)\n\nas.POSIXct(\"1970-01-01 00:00:00\", tz = \"UTC\") |&gt;\n  as.numeric()\n#&gt; [1] 0\n\n\nas.POSIXct(\"1970-01-01 00:00:00\", tz = \"UTC\") + 1\n#&gt; [1] \"1970-01-01 00:00:01 UTC\""
+    "text": "Other Kind of Objects\n\n\nBased on the atomic types, we can create other types of objects.\nUsing the right kind of object in R is very important, because these objects also include methods to deal with particular types of data.\nFor example, time can be expressed in diffent ways, like linear time (e.g., durations, periods, data-time, intervals) and circular time (e.g., time of day). We can also have time series, which are a sequence of data points taken at successive points in time.\n\n\n\nDate(Days since 1970-01-01 (UNIX epoch))\n\nas.Date(\"1970-01-01\") |&gt; as.numeric()\n#&gt; [1] 0\n\n\nas.Date(\"1970-01-01\") + 1\n#&gt; [1] \"1970-01-02\"\n\n\nPOSIXct(Seconds since 1970-01-01 (UNIX epoch))\n\nas.POSIXct(\"1970-01-01 00:00:00\", tz = \"UTC\") |&gt;\n  as.numeric()\n#&gt; [1] 0\n\n\nas.POSIXct(\"1970-01-01 00:00:00\", tz = \"UTC\") + 1\n#&gt; [1] \"1970-01-01 00:00:01 UTC\""
   },
   {
     "objectID": "index.html#commenting",
     "href": "index.html#commenting",
     "title": "An Introduction to the R Programming Language",
     "section": "Commenting",
-    "text": "Commenting\n🚨 Only if Necessary 🚨\nYour code must speak for itself.\nIn data analysis code, only use comments to record important things. If you need comments to explain what your code is doing, consider rewriting your code to be clearer (Wickham, n.d.).\n\n# This is a comment\n\n1 + 1 # This is also a comment\n\n# 1 + 1 # You can also comment code that you don't want to run"
+    "text": "Commenting\n🚨 Only if necessary 🚨\nYour code must speak for itself.\nIn data analysis code, only use comments to record important things. If you need comments to explain what your code is doing, consider rewriting your code to be clearer (Wickham, n.d.).\n\n# This is a comment.\n\n1 + 1 # This is also a comment.\n\n# 1 + 1 # You can also comment code that you don't want to run."
   },
   {
     "objectID": "index.html#documentation",
@@ -452,21 +452,21 @@
     "href": "index.html#the-tidyverse",
     "title": "An Introduction to the R Programming Language",
     "section": "The Tidyverse",
-    "text": "The Tidyverse\n\nTidyverse is a framework and a collection of R packages designed for data science. All packages share an underlying design philosophy (The Tidy Manifesto), grammar, and data structures.\nIt was created by Hadley Wickham, a prominent figure in the R community and author of several key references for this course. Hadley Wickham’s contributions have significantly shaped modern R programming."
+    "text": "The Tidyverse\n\nTidyverse is a collection of R packages designed for data science. All packages share an underlying design philosophy (The Tidy Manifesto), grammar, and data structures.\nIt was created by Hadley Wickham, a prominent figure in the R community and author of several key references for this course. Hadley Wickham’s contributions have significantly shaped modern R programming."
   },
   {
     "objectID": "index.html#main-tidyverse-packages",
     "href": "index.html#main-tidyverse-packages",
     "title": "An Introduction to the R Programming Language",
     "section": "Main Tidyverse Packages",
-    "text": "Main Tidyverse Packages\nThe Tidyverse also has a meta-package (bundle) that installs or load the most important packages from the collection.\n\n\ninstall.packages(\"tidyverse\")\n\nlibrary(\"tidyverse\")\n\n\n\nreadr: Read flat files (csv, tsv, fwf) into R\n\nstringr: A fresh approach to string manipulation in R\n\nlubridate: Make working with dates in R just that little bit easier\n\ndplyr: A grammar of data manipulation\n\npurrr: A functional programming toolkit for R\n\nforcats: Tools for working with categorical variables (factors)\n\nggplot2: An implementation of the Grammar of Graphics in R"
+    "text": "Main Tidyverse Packages\nThe Tidyverse also has a meta-package that installs or load the most important packages from the collection.\n\n\ninstall.packages(\"tidyverse\")\n\nlibrary(\"tidyverse\")\n\n\n\nreadr: Read flat files (csv, tsv, fwf) into R.\n\nstringr: A fresh approach to string manipulation in R.\n\nlubridate: Make working with dates in R just that little bit easier.\n\ndplyr: A grammar of data manipulation.\n\npurrr: A functional programming toolkit for R.\n\nforcats: Tools for working with categorical variables (factors).\n\nggplot2: An implementation of the Grammar of Graphics in R."
   },
   {
     "objectID": "index.html#the-ropensci",
     "href": "index.html#the-ropensci",
     "title": "An Introduction to the R Programming Language",
     "section": "The rOpenSci",
-    "text": "The rOpenSci\n\nThe importance of relying on good packages is crucial.\nrOpenSci project is a community of researchers and developers working on open science and open data. They develop R packages that allow access to data and tools from a wide range of sources.\nAll packages go through a peer-review process, which ensures that they are well written and reliable.\nExample: mctq R package peer-review."
+    "text": "The rOpenSci\n\nrOpenSci is a non-profit initiative founded in 2011 that brings together a community of researchers and developers committed to open science. They create and maintain high-quality R packages that provide access to data and tools from diverse sources, ensuring reliability and reproducibility in scientific research.\nAll packages go through a peer-review process, which ensures that they are well written and reliable.\nExample: mctq R package peer-review."
   },
   {
     "objectID": "index.html#base-r-solutions",
@@ -501,14 +501,14 @@
     "href": "index.html#first-things-first",
     "title": "An Introduction to the R Programming Language",
     "section": "First Things First",
-    "text": "First Things First\nYou only analyze or visualize data when you already have clean, tidy, and validated data.\nThe processing for getting data ready for analysis is called data munging. You cans also see it as data wrangling (usually when dealing with models) or, simply, data cleaning.\n\n\nData scientists, according to interviews and expert estimates, spend from 50 percent to 80 percent of their time mired in this more mundane labor of collecting and preparing unruly digital data, before it can be explored for useful nuggets (Lohr, 2014)."
+    "text": "First Things First\nYou only analyze or visualize data when you already have clean, tidy, and validated data.\nThe processing for getting data ready for analysis is called data munging. You can also see it as data wrangling (usually when dealing with machine learning) or, simply, data cleaning.\n\n\nData scientists, according to interviews and expert estimates, spend from 50 percent to 80 percent of their time mired in this more mundane labor of collecting and preparing unruly digital data, before it can be explored for useful nuggets (Lohr, 2014)."
   },
   {
     "objectID": "index.html#what-is-data-after-all",
     "href": "index.html#what-is-data-after-all",
     "title": "An Introduction to the R Programming Language",
     "section": "What Is Data After All?",
-    "text": "What Is Data After All?\nAckoff’s DIKW pyramid\nData &lt; Information &lt; Knowledge &lt; Wisdom\nData versus the interpretation of the data\n\n\n(To learn more see: Ackoff (1989) and Rowley (2007))"
+    "text": "What Is Data After All?\nAckoff’s DIKW pyramid (Ackoff, 1989)\nData &lt; Information &lt; Knowledge &lt; Wisdom\nData versus the interpretation of the data.\n\n\n(To learn more see: Ackoff (1989) and Rowley (2007))"
   },
   {
     "objectID": "index.html#what-is-data-after-all-1",
@@ -557,7 +557,7 @@
     "href": "index.html#valid-data",
     "title": "An Introduction to the R Programming Language",
     "section": "Valid Data",
-    "text": "Valid Data\nData validation techniques are used to ensure that data is accurate, consistent, and reliable.\n\nExamples\n\nImpossible values (e.g., negative age);\nInconsistent values (e.g., a person with a height of 2 meters and a weight of 20 kg);\nImprobable values (e.g., a person 200 years old);\nDuplicated values (e.g., the same person with two different ages).\n\n\nTip: Check out Mark van der Loo’s validate R package for data validation techniques."
+    "text": "Valid Data\nData validation techniques are used to ensure that data is accurate, consistent, and reliable.\n\nExamples of invalid data:\n\nImpossible values (e.g., negative age).\nInconsistent values (e.g., a person with a height of 2 meters and a weight of 20 kg).\nImprobable values (e.g., a person 200 years old).\nDuplicated values (e.g., the same person with two different ages).\n\n\nTip: Check out Mark van der Loo’s validate R package for data validation techniques."
   },
   {
     "objectID": "index.html#tabular-data",
@@ -578,7 +578,7 @@
     "href": "index.html#spatial-data",
     "title": "An Introduction to the R Programming Language",
     "section": "Spatial Data",
-    "text": "Spatial Data\n\n\n\nNot all data is tabular; spatial data can be very large and complex.\nExcel cannot handle spatial data, and GUI-based statistical softwares, when capable of handling spatial data, are often limited and struggles with performance issues.\n\nProjected monthly average maximum temperatures (°C) for June 2021–2040, based on the global climate model (GCM) ACCESS-CM2.\n\n\n\n\n\n\n\n\n(WorldClim 2.1 data. June mean temperature (°C) in South America (1970-2000))"
+    "text": "Spatial Data\n\n\nNot all data is tabular; spatial data can be very large and complex.\nExcel cannot handle spatial data, and GUI-based statistical softwares, when capable of handling spatial data, are often limited and struggles with performance issues.\n\nProjected monthly average maximum temperatures (°C) for June 2021–2040, based on the global climate model (GCM) ACCESS-CM2.\n\n\n\n\n\n\n\n\n(WorldClim 2.1 data. June mean temperature (°C) in South America (1970-2000))"
   },
   {
     "objectID": "index.html#spreadsheet-syndrome",
@@ -620,14 +620,14 @@
     "href": "index.html#the-tibble-package",
     "title": "An Introduction to the R Programming Language",
     "section": "The tibble Package",
-    "text": "The tibble Package\n\n\n\n\ntibble is a modern reimagining of the data frame, keeping what time has proven to be effective, and throwing out what is not.\ninstall.packages(\"tibble\")\n\n\n\nUsing R native data.frame class\n\nmtcars\n#&gt;                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb\n#&gt; Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4\n#&gt; Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4\n#&gt; Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1\n#&gt; Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1\n#&gt; Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2\n#&gt; Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1\n#&gt; Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4\n#&gt; Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2\n#&gt; Merc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2\n#&gt; Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4\n#&gt; Merc 280C           17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4\n#&gt; Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3\n#&gt; Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3\n#&gt; Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3\n#&gt; Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4\n#&gt; Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4\n#&gt; Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4\n#&gt; Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1\n#&gt; Honda Civic         30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2\n#&gt; Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1\n#&gt; Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1\n#&gt; Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2\n#&gt; AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2\n#&gt; Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4\n#&gt; Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2\n#&gt; Fiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1\n#&gt; Porsche 914-2       26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2\n#&gt; Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2\n#&gt; Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4\n#&gt; Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6\n#&gt; Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8\n#&gt; Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2\n\n\nUsing tibble (Tidyverse way)\n\nlibrary(dplyr) # or library(tibble)\n\nmtcars |&gt; as_tibble()\n#&gt; # A tibble: 32 × 11\n#&gt;      mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb\n#&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n#&gt;  1  21       6  160    110  3.9   2.62  16.5     0     1     4     4\n#&gt;  2  21       6  160    110  3.9   2.88  17.0     0     1     4     4\n#&gt;  3  22.8     4  108     93  3.85  2.32  18.6     1     1     4     1\n#&gt;  4  21.4     6  258    110  3.08  3.22  19.4     1     0     3     1\n#&gt;  5  18.7     8  360    175  3.15  3.44  17.0     0     0     3     2\n#&gt;  6  18.1     6  225    105  2.76  3.46  20.2     1     0     3     1\n#&gt;  7  14.3     8  360    245  3.21  3.57  15.8     0     0     3     4\n#&gt;  8  24.4     4  147.    62  3.69  3.19  20       1     0     4     2\n#&gt;  9  22.8     4  141.    95  3.92  3.15  22.9     1     0     4     2\n#&gt; 10  19.2     6  168.   123  3.92  3.44  18.3     1     0     4     4\n#&gt; # ℹ 22 more rows"
+    "text": "The tibble Package\n\n\n\n\ntibble is a modern take on data frames in R, offering improved usability and integration with the Tidyverse. It enhances readability while retaining essential data frame features.\ninstall.packages(\"tibble\")\n\n\n\nUsing R native data.frame class.\n\nmtcars\n#&gt;                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb\n#&gt; Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4\n#&gt; Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4\n#&gt; Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1\n#&gt; Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1\n#&gt; Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2\n#&gt; Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1\n#&gt; Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4\n#&gt; Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2\n#&gt; Merc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2\n#&gt; Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4\n#&gt; Merc 280C           17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4\n#&gt; Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3\n#&gt; Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3\n#&gt; Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3\n#&gt; Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4\n#&gt; Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4\n#&gt; Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4\n#&gt; Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1\n#&gt; Honda Civic         30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2\n#&gt; Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1\n#&gt; Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1\n#&gt; Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2\n#&gt; AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2\n#&gt; Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4\n#&gt; Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2\n#&gt; Fiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1\n#&gt; Porsche 914-2       26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2\n#&gt; Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2\n#&gt; Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4\n#&gt; Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6\n#&gt; Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8\n#&gt; Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2\n\n\nUsing tibble (Tidyverse way).\n\nlibrary(dplyr) # or library(tibble)\n\nmtcars |&gt; as_tibble()\n#&gt; # A tibble: 32 × 11\n#&gt;      mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb\n#&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n#&gt;  1  21       6  160    110  3.9   2.62  16.5     0     1     4     4\n#&gt;  2  21       6  160    110  3.9   2.88  17.0     0     1     4     4\n#&gt;  3  22.8     4  108     93  3.85  2.32  18.6     1     1     4     1\n#&gt;  4  21.4     6  258    110  3.08  3.22  19.4     1     0     3     1\n#&gt;  5  18.7     8  360    175  3.15  3.44  17.0     0     0     3     2\n#&gt;  6  18.1     6  225    105  2.76  3.46  20.2     1     0     3     1\n#&gt;  7  14.3     8  360    245  3.21  3.57  15.8     0     0     3     4\n#&gt;  8  24.4     4  147.    62  3.69  3.19  20       1     0     4     2\n#&gt;  9  22.8     4  141.    95  3.92  3.15  22.9     1     0     4     2\n#&gt; 10  19.2     6  168.   123  3.92  3.44  18.3     1     0     4     4\n#&gt; # ℹ 22 more rows"
   },
   {
     "objectID": "index.html#how-to-read-data-in-r",
     "href": "index.html#how-to-read-data-in-r",
     "title": "An Introduction to the R Programming Language",
     "section": "How to Read Data in R",
-    "text": "How to Read Data in R\nIt will depend on what king of data you are working with.\nDifferent from Excel or GUI-based statistical software, R can deal with any kind of data.\n\nTabular data: utils::read.csv(), readr::read_csv()\n\nGeographical data: terra::vect(), st::st_read()\n\nProprietary formats: readxl::read_excel(), haven::read_dta() (Stata), haven::read_sav() (SPSS), haven::read_sas() (SAS)"
+    "text": "How to Read Data in R\nIt will depend on what king of data you are working with.\nDifferent from Excel or GUI-based statistical software, R can deal with any kind of data.\nExamples of R functions to read data:\n\nTabular data: utils::read.csv(), readr::read_csv()\n\nGeographical data: terra::vect(), st::st_read()\n\nProprietary formats: readxl::read_excel(), haven::read_dta() (Stata), haven::read_sav() (SPSS), haven::read_sas() (SAS)"
   },
   {
     "objectID": "index.html#meet-the-penguins",
@@ -662,28 +662,28 @@
     "href": "index.html#the-working-directory",
     "title": "An Introduction to the R Programming Language",
     "section": "The Working Directory",
-    "text": "The Working Directory\nPointing to files inside your project.\ngetwd()\n#&gt; E:\\r-course\nlist.files()\n#&gt; [1] \"data\" \"README.md\" \"LICENSE.md\" \"r-course.Rproj\"\nlist.files(\"data\")\n#&gt; [1] \"palmerpenguins-raw.csv\"\nlist.files(\"./data\")\n#&gt; [1] \"palmerpenguins-raw.csv\"\nfile &lt;- \"./data/palmerpenguins-raw.csv\""
+    "text": "The Working Directory\nPointing to files inside your project.\ngetwd()\n#&gt; E:\\r-course\nlist.files()\n#&gt; [1] \"data\" \"README.md\" \"LICENSE.md\" \"r-course.Rproj\"\nlist.files(\"data\")\n#&gt; [1] \"palmerpenguins-raw.csv\"\nlist.files(\"./data\")\n#&gt; [1] \"palmerpenguins-raw.csv\"\nfile &lt;- \"./data/palmerpenguins-raw.csv\"\n\n🚨 Never use setwd()! 🚨\n(How to detect a beginner R user)\nClick here to learn why."
   },
   {
     "objectID": "index.html#the-here-package",
     "href": "index.html#the-here-package",
     "title": "An Introduction to the R Programming Language",
     "section": "The here Package",
-    "text": "The here Package\n\n\nhere is a package that helps you use relative paths in your R projects.\nIt turns file management much easier.\ninstall.packages(\"here\")\nlibrary(here)\nhere()\n#&gt; E:\\r-course\nhere(\"data\", \"palmerpenguins-raw.csv\")\n#&gt; E:\\r-course\\data\\palmerpenguins-raw.csv\n\n\n\n\n\n\n\n(Artwork by Allison Horst)"
+    "text": "The here Package\n\n\nhere is a package that helps you use relative paths in your R projects.\nIt turns file management much easier and OS independent.\ninstall.packages(\"here\")\nlibrary(here)\nhere()\n#&gt; E:\\r-course\nhere(\"data\", \"palmerpenguins-raw.csv\")\n#&gt; E:\\r-course\\data\\palmerpenguins-raw.csv\n\n\n\n\n\n\n\n(Artwork by Allison Horst)"
   },
   {
     "objectID": "index.html#the-readr-package",
     "href": "index.html#the-readr-package",
     "title": "An Introduction to the R Programming Language",
     "section": "The readr Package",
-    "text": "The readr Package\n\n\n\n\nreadr provides a fast and friendly way to read rectangular data from delimited files, such as comma-separated values (CSV) and tab-separated values (TSV).\ninstall.packages(\"readr\")\n\n\nlibrary(readr)\n?read_csv\n?read_csv2\n?read_delim"
+    "text": "The readr Package\n\n\n\n\nreadr provides a fast and easy way to read rectangular data from delimited files, such as Comma-Separated Values (CSV) and Tab-Separated Values (TSV).\ninstall.packages(\"readr\")\n\n\nlibrary(readr)\n?read_csv\n?read_csv2\n?read_delim"
   },
   {
-    "objectID": "index.html#the-readr-package-1",
-    "href": "index.html#the-readr-package-1",
+    "objectID": "index.html#importing-the-raw-data",
+    "href": "index.html#importing-the-raw-data",
     "title": "An Introduction to the R Programming Language",
-    "section": "The readr Package",
-    "text": "The readr Package\n\nlibrary(dplyr)\nlibrary(here)\nlibrary(readr)\n\n\ndata &lt;-\n  here(\"data\", \"palmerpenguins-raw.csv\") |&gt;\n  read_csv(col_types = cols(.default = \"c\"))\n\n\ndata |&gt; glimpse()\n#&gt; Rows: 344\n#&gt; Columns: 17\n#&gt; $ studyName             &lt;chr&gt; \"PAL0708\", \"PAL0708\", \"PAL0708\", \"PAL0708\", \"PAL…\n#&gt; $ `Sample Number`       &lt;chr&gt; \"1\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"9\", \"10…\n#&gt; $ Species               &lt;chr&gt; \"Adelie Penguin (Pygoscelis adeliae)\", \"Adelie P…\n#&gt; $ Region                &lt;chr&gt; \"Anvers\", \"Anvers\", \"Anvers\", \"Anvers\", \"Anvers\"…\n#&gt; $ Island                &lt;chr&gt; \"Torgersen\", \"Torgersen\", \"Torgersen\", \"Torgerse…\n#&gt; $ Stage                 &lt;chr&gt; \"Adult, 1 Egg Stage\", \"Adult, 1 Egg Stage\", \"Adu…\n#&gt; $ `Individual ID`       &lt;chr&gt; \"N1A1\", \"N1A2\", \"N2A1\", \"N2A2\", \"N3A1\", \"N3A2\", …\n#&gt; $ `Clutch Completion`   &lt;chr&gt; \"Yes\", \"Yes\", \"Yes\", \"Yes\", \"Yes\", \"Yes\", \"No\", …\n#&gt; $ `Date Egg`            &lt;chr&gt; \"2007-11-11\", \"2007-11-11\", \"2007-11-16\", \"2007-…\n#&gt; $ `Culmen Length (mm)`  &lt;chr&gt; \"39.1\", \"39.5\", \"40.3\", NA, \"36.7\", \"39.3\", \"38.…\n#&gt; $ `Culmen Depth (mm)`   &lt;chr&gt; \"18.7\", \"17.4\", \"18\", NA, \"19.3\", \"20.6\", \"17.8\"…\n#&gt; $ `Flipper Length (mm)` &lt;chr&gt; \"181\", \"186\", \"195\", NA, \"193\", \"190\", \"181\", \"1…\n#&gt; $ `Body Mass (g)`       &lt;chr&gt; \"3750\", \"3800\", \"3250\", NA, \"3450\", \"3650\", \"362…\n#&gt; $ Sex                   &lt;chr&gt; \"MALE\", \"FEMALE\", \"FEMALE\", NA, \"FEMALE\", \"MALE\"…\n#&gt; $ `Delta 15 N (o/oo)`   &lt;chr&gt; NA, \"8.94956\", \"8.36821\", NA, \"8.76651\", \"8.6649…\n#&gt; $ `Delta 13 C (o/oo)`   &lt;chr&gt; NA, \"-24.69454\", \"-25.33302\", NA, \"-25.32426\", \"…\n#&gt; $ Comments              &lt;chr&gt; \"Not enough blood for isotopes.\", NA, NA, \"Adult…"
+    "section": "Importing the Raw Data",
+    "text": "Importing the Raw Data\n\nlibrary(dplyr)\nlibrary(here)\nlibrary(readr)\n\n\ndata &lt;-\n  here(\"data\", \"palmerpenguins-raw.csv\") |&gt;\n  read_csv(col_types = cols(.default = \"c\"))\n\n\ndata |&gt; glimpse()\n#&gt; Rows: 344\n#&gt; Columns: 17\n#&gt; $ studyName             &lt;chr&gt; \"PAL0708\", \"PAL0708\", \"PAL0708\", \"PAL0708\", \"PAL…\n#&gt; $ `Sample Number`       &lt;chr&gt; \"1\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"9\", \"10…\n#&gt; $ Species               &lt;chr&gt; \"Adelie Penguin (Pygoscelis adeliae)\", \"Adelie P…\n#&gt; $ Region                &lt;chr&gt; \"Anvers\", \"Anvers\", \"Anvers\", \"Anvers\", \"Anvers\"…\n#&gt; $ Island                &lt;chr&gt; \"Torgersen\", \"Torgersen\", \"Torgersen\", \"Torgerse…\n#&gt; $ Stage                 &lt;chr&gt; \"Adult, 1 Egg Stage\", \"Adult, 1 Egg Stage\", \"Adu…\n#&gt; $ `Individual ID`       &lt;chr&gt; \"N1A1\", \"N1A2\", \"N2A1\", \"N2A2\", \"N3A1\", \"N3A2\", …\n#&gt; $ `Clutch Completion`   &lt;chr&gt; \"Yes\", \"Yes\", \"Yes\", \"Yes\", \"Yes\", \"Yes\", \"No\", …\n#&gt; $ `Date Egg`            &lt;chr&gt; \"2007-11-11\", \"2007-11-11\", \"2007-11-16\", \"2007-…\n#&gt; $ `Culmen Length (mm)`  &lt;chr&gt; \"39.1\", \"39.5\", \"40.3\", NA, \"36.7\", \"39.3\", \"38.…\n#&gt; $ `Culmen Depth (mm)`   &lt;chr&gt; \"18.7\", \"17.4\", \"18\", NA, \"19.3\", \"20.6\", \"17.8\"…\n#&gt; $ `Flipper Length (mm)` &lt;chr&gt; \"181\", \"186\", \"195\", NA, \"193\", \"190\", \"181\", \"1…\n#&gt; $ `Body Mass (g)`       &lt;chr&gt; \"3750\", \"3800\", \"3250\", NA, \"3450\", \"3650\", \"362…\n#&gt; $ Sex                   &lt;chr&gt; \"MALE\", \"FEMALE\", \"FEMALE\", NA, \"FEMALE\", \"MALE\"…\n#&gt; $ `Delta 15 N (o/oo)`   &lt;chr&gt; NA, \"8.94956\", \"8.36821\", NA, \"8.76651\", \"8.6649…\n#&gt; $ `Delta 13 C (o/oo)`   &lt;chr&gt; NA, \"-24.69454\", \"-25.33302\", NA, \"-25.32426\", \"…\n#&gt; $ Comments              &lt;chr&gt; \"Not enough blood for isotopes.\", NA, NA, \"Adult…"
   },
   {
     "objectID": "index.html#inspecting-the-raw-data",
@@ -704,7 +704,7 @@
     "href": "index.html#clean_names",
     "title": "An Introduction to the R Programming Language",
     "section": "clean_names()",
-    "text": "clean_names()\nThe clean_names() function returns machine-readable names.\nThis makes it easier to work with the data.\n\ndata |&gt; names()\n#&gt;  [1] \"studyName\"           \"Sample Number\"       \"Species\"            \n#&gt;  [4] \"Region\"              \"Island\"              \"Stage\"              \n#&gt;  [7] \"Individual ID\"       \"Clutch Completion\"   \"Date Egg\"           \n#&gt; [10] \"Culmen Length (mm)\"  \"Culmen Depth (mm)\"   \"Flipper Length (mm)\"\n#&gt; [13] \"Body Mass (g)\"       \"Sex\"                 \"Delta 15 N (o/oo)\"  \n#&gt; [16] \"Delta 13 C (o/oo)\"   \"Comments\"\n\n\nlibrary(janitor)\n\ndata &lt;- data |&gt; clean_names()\n\n\ndata |&gt; names()\n#&gt;  [1] \"study_name\"        \"sample_number\"     \"species\"          \n#&gt;  [4] \"region\"            \"island\"            \"stage\"            \n#&gt;  [7] \"individual_id\"     \"clutch_completion\" \"date_egg\"         \n#&gt; [10] \"culmen_length_mm\"  \"culmen_depth_mm\"   \"flipper_length_mm\"\n#&gt; [13] \"body_mass_g\"       \"sex\"               \"delta_15_n_o_oo\"  \n#&gt; [16] \"delta_13_c_o_oo\"   \"comments\""
+    "text": "clean_names()\nThe clean_names() function transforms data frame column names into machine-readable formats.\nThis makes it easier to work with the data.\n\ndata |&gt; names()\n#&gt;  [1] \"studyName\"           \"Sample Number\"       \"Species\"            \n#&gt;  [4] \"Region\"              \"Island\"              \"Stage\"              \n#&gt;  [7] \"Individual ID\"       \"Clutch Completion\"   \"Date Egg\"           \n#&gt; [10] \"Culmen Length (mm)\"  \"Culmen Depth (mm)\"   \"Flipper Length (mm)\"\n#&gt; [13] \"Body Mass (g)\"       \"Sex\"                 \"Delta 15 N (o/oo)\"  \n#&gt; [16] \"Delta 13 C (o/oo)\"   \"Comments\"\n\n\nlibrary(janitor)\n\ndata &lt;- data |&gt; clean_names()\n\n\ndata |&gt; names()\n#&gt;  [1] \"study_name\"        \"sample_number\"     \"species\"          \n#&gt;  [4] \"region\"            \"island\"            \"stage\"            \n#&gt;  [7] \"individual_id\"     \"clutch_completion\" \"date_egg\"         \n#&gt; [10] \"culmen_length_mm\"  \"culmen_depth_mm\"   \"flipper_length_mm\"\n#&gt; [13] \"body_mass_g\"       \"sex\"               \"delta_15_n_o_oo\"  \n#&gt; [16] \"delta_13_c_o_oo\"   \"comments\""
   },
   {
     "objectID": "index.html#data-masking",
@@ -760,14 +760,14 @@
     "href": "index.html#mutate-1",
     "title": "An Introduction to the R Programming Language",
     "section": "mutate()",
-    "text": "mutate()\nThe mutate() function is used to create new columns or modify existing columns in a data frame.\nWe need assign proper classes to the variables. We also need to transform the year column, extracting just the year value.\n\nlibrary(dplyr)\n\n\ndata |&gt; glimpse()\n#&gt; Rows: 344\n#&gt; Columns: 8\n#&gt; $ year              &lt;chr&gt; \"2007-11-11\", \"2007-11-11\", \"2007-11-16\", \"2007-11-1…\n#&gt; $ species           &lt;chr&gt; \"Adelie Penguin (Pygoscelis adeliae)\", \"Adelie Pengu…\n#&gt; $ island            &lt;chr&gt; \"Torgersen\", \"Torgersen\", \"Torgersen\", \"Torgersen\", …\n#&gt; $ bill_length_mm    &lt;chr&gt; \"39.1\", \"39.5\", \"40.3\", NA, \"36.7\", \"39.3\", \"38.9\", …\n#&gt; $ bill_depth_mm     &lt;chr&gt; \"18.7\", \"17.4\", \"18\", NA, \"19.3\", \"20.6\", \"17.8\", \"1…\n#&gt; $ flipper_length_mm &lt;chr&gt; \"181\", \"186\", \"195\", NA, \"193\", \"190\", \"181\", \"195\",…\n#&gt; $ body_mass_g       &lt;chr&gt; \"3750\", \"3800\", \"3250\", NA, \"3450\", \"3650\", \"3625\", …\n#&gt; $ sex               &lt;chr&gt; \"MALE\", \"FEMALE\", \"FEMALE\", NA, \"FEMALE\", \"MALE\", \"F…"
+    "text": "mutate()\nThe mutate() function is used to create new columns or modify existing columns in a data frame.\nLet’s assign proper classes to the variables. We also need to transform the year column, extracting just the year value.\n\nlibrary(dplyr)\n\n\ndata |&gt; glimpse()\n#&gt; Rows: 344\n#&gt; Columns: 8\n#&gt; $ year              &lt;chr&gt; \"2007-11-11\", \"2007-11-11\", \"2007-11-16\", \"2007-11-1…\n#&gt; $ species           &lt;chr&gt; \"Adelie Penguin (Pygoscelis adeliae)\", \"Adelie Pengu…\n#&gt; $ island            &lt;chr&gt; \"Torgersen\", \"Torgersen\", \"Torgersen\", \"Torgersen\", …\n#&gt; $ bill_length_mm    &lt;chr&gt; \"39.1\", \"39.5\", \"40.3\", NA, \"36.7\", \"39.3\", \"38.9\", …\n#&gt; $ bill_depth_mm     &lt;chr&gt; \"18.7\", \"17.4\", \"18\", NA, \"19.3\", \"20.6\", \"17.8\", \"1…\n#&gt; $ flipper_length_mm &lt;chr&gt; \"181\", \"186\", \"195\", NA, \"193\", \"190\", \"181\", \"195\",…\n#&gt; $ body_mass_g       &lt;chr&gt; \"3750\", \"3800\", \"3250\", NA, \"3450\", \"3650\", \"3625\", …\n#&gt; $ sex               &lt;chr&gt; \"MALE\", \"FEMALE\", \"FEMALE\", NA, \"FEMALE\", \"MALE\", \"F…"
   },
   {
     "objectID": "index.html#mutate-2",
     "href": "index.html#mutate-2",
     "title": "An Introduction to the R Programming Language",
     "section": "mutate()",
-    "text": "mutate()\n\ndata |&gt; pull(species) |&gt; unique()\n#&gt; [1] \"Adelie Penguin (Pygoscelis adeliae)\"      \n#&gt; [2] \"Gentoo penguin (Pygoscelis papua)\"        \n#&gt; [3] \"Chinstrap penguin (Pygoscelis antarctica)\"\n\n\ndata |&gt; pull(island) |&gt; unique()\n#&gt; [1] \"Torgersen\" \"Biscoe\"    \"Dream\"\n\n\ndata |&gt; pull(sex) |&gt; unique()\n#&gt; [1] \"MALE\"   \"FEMALE\" NA"
+    "text": "mutate()\n\nFor categorical variables, it is helpful to inspect their unique values.\nIf the vector contains a limited number of unique values, it is likely a good candidate to be converted into a factor for better data handling and analysis.\n\n\ndata |&gt; pull(species) |&gt; unique()\n#&gt; [1] \"Adelie Penguin (Pygoscelis adeliae)\"      \n#&gt; [2] \"Gentoo penguin (Pygoscelis papua)\"        \n#&gt; [3] \"Chinstrap penguin (Pygoscelis antarctica)\"\n\n\ndata |&gt; pull(island) |&gt; unique()\n#&gt; [1] \"Torgersen\" \"Biscoe\"    \"Dream\"\n\n\ndata |&gt; pull(sex) |&gt; unique()\n#&gt; [1] \"MALE\"   \"FEMALE\" NA"
   },
   {
     "objectID": "index.html#mutate-3",
@@ -809,7 +809,7 @@
     "href": "index.html#relocate-1",
     "title": "An Introduction to the R Programming Language",
     "section": "relocate()",
-    "text": "relocate()\nLet’s organize our columns in a more logical order. The year column is best placed next to the sex column.\n\nlibrary(dplyr)\n\n\ndata &lt;-\n  data |&gt;\n  relocate(year, .after = sex)\n\n\ndata |&gt; glimpse()\n#&gt; Rows: 344\n#&gt; Columns: 8\n#&gt; $ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adel…\n#&gt; $ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgerse…\n#&gt; $ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, …\n#&gt; $ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, …\n#&gt; $ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186…\n#&gt; $ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, …\n#&gt; $ sex               &lt;fct&gt; male, female, female, NA, female, male, female, male…\n#&gt; $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…"
+    "text": "relocate()\nLet’s organize our columns in a more logical order.\nThe year column is best placed next to the sex column.\n\nlibrary(dplyr)\n\n\ndata &lt;-\n  data |&gt;\n  relocate(year, .after = sex)\n\n\ndata |&gt; glimpse()\n#&gt; Rows: 344\n#&gt; Columns: 8\n#&gt; $ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adel…\n#&gt; $ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgerse…\n#&gt; $ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, …\n#&gt; $ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, …\n#&gt; $ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186…\n#&gt; $ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, …\n#&gt; $ sex               &lt;fct&gt; male, female, female, NA, female, male, female, male…\n#&gt; $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…"
   },
   {
     "objectID": "index.html#inspecting-the-valid-data",
@@ -830,7 +830,7 @@
     "href": "index.html#exporting-the-data",
     "title": "An Introduction to the R Programming Language",
     "section": "Exporting the Data",
-    "text": "Exporting the Data\n\nAlways save your data in non-binary formats like csv to ensure that it can be read by other software.\nrds stands for R Data Serialization. It is a binary data format that allows you to load an object into R preserving all its attributes.\n\n\nlibrary(here)\nlibrary(readr)\n\n\nif (!dir.exists(here(\"data\"))) {\n  dir.create(here(\"data\"))\n}\n\n\ndata |&gt; write_csv(here(\"data\", \"palmerpenguins-valid.csv\"))\n\n\ndata |&gt; write_rds(here(\"data\", \"palmerpenguins-valid.rds\"))\n\n\nTip: Store your data in research repositories like The Open Science Framework (See the osfr package). If you are working with sensitive or human data, ensure it is encrypted before storing it in the cloud (See the lockr package)."
+    "text": "Exporting the Data\n\nAlways save your data in non-binary formats like csv to ensure that it can be read by other software.\nrds stands for R Data Serialization. It is a binary data format that allows you to load an object into R preserving all its attributes.\n\n\nlibrary(here)\nlibrary(readr)\n\n\nif (!dir.exists(here(\"data\"))) dir.create(here(\"data\"))\n\n\ndata |&gt; write_csv(here(\"data\", \"palmerpenguins-valid.csv\"))\n\n\ndata |&gt; write_rds(here(\"data\", \"palmerpenguins-valid.rds\"))\n\n\nTip: Store your data in research repositories like The Open Science Framework (See the osfr package). If you are working with sensitive or human data, ensure it is encrypted before storing it in the cloud (See the lockr package)."
   },
   {
     "objectID": "index.html#how-to-learn-more-2",
@@ -844,14 +844,14 @@
     "href": "index.html#simple-statistics",
     "title": "An Introduction to the R Programming Language",
     "section": "Simple Statistics",
-    "text": "Simple Statistics\nThe stats package, that comes with a typical R installation, provides a set of basic statistical functions.\n\nlibrary(dplyr)\nlibrary(palmerpenguins)\n\n\nbill_length_mm &lt;- penguins |&gt; pull(bill_length_mm)\n\n\nbill_length_mm |&gt; mean(na.rm = TRUE)\n#&gt; [1] 43.92193\n\n\nbill_length_mm |&gt; sd(na.rm = TRUE)\n#&gt; [1] 5.459584\n\n\nbill_length_mm |&gt; min(na.rm = TRUE)\n#&gt; [1] 32.1\n\n\nbill_length_mm |&gt; median(na.rm = TRUE)\n#&gt; [1] 44.45\n\n\nbill_length_mm |&gt; max(na.rm = TRUE)\n#&gt; [1] 59.6"
+    "text": "Simple Statistics\nThe R packages that come with a typical R installation provide a set of basic statistical functions.\n\nlibrary(dplyr)\nlibrary(palmerpenguins)\n\n\nbill_length_mm &lt;- penguins |&gt; pull(bill_length_mm)\n\n\n\nbill_length_mm |&gt; mean(na.rm = TRUE)\n#&gt; [1] 43.92193\n\n\nbill_length_mm |&gt; sd(na.rm = TRUE)\n#&gt; [1] 5.459584\n\n\nbill_length_mm |&gt; min(na.rm = TRUE)\n#&gt; [1] 32.1\n\n\nbill_length_mm |&gt; median(na.rm = TRUE)\n#&gt; [1] 44.45\n\n\nbill_length_mm |&gt; max(na.rm = TRUE)\n#&gt; [1] 59.6"
   },
   {
     "objectID": "index.html#simple-statistics-1",
     "href": "index.html#simple-statistics-1",
     "title": "An Introduction to the R Programming Language",
     "section": "Simple Statistics",
-    "text": "Simple Statistics\n\nlibrary(dplyr)\nlibrary(palmerpenguins)\n\n\nbill_length_mm &lt;- penguins |&gt; pull(bill_length_mm)\nbill_depth_mm &lt;- penguins |&gt; pull(bill_depth_mm)\n\n\nbill_length_mm |&gt; quantile(na.rm = TRUE)\n#&gt;     0%    25%    50%    75%   100% \n#&gt; 32.100 39.225 44.450 48.500 59.600\n\n\nbill_length_mm |&gt; quantile(prob = 0.25, na.rm = TRUE)\n#&gt;    25% \n#&gt; 39.225\n\n\nbill_length_mm |&gt; quantile(prob = 0.75, na.rm = TRUE)\n#&gt;  75% \n#&gt; 48.5\n\n\nbill_length_mm |&gt; sum(na.rm = TRUE)\n#&gt; [1] 15021.3\n\n\nbill_length_mm |&gt; prod(na.rm = TRUE)\n#&gt; [1] Inf\n\n\ncor(bill_length_mm, bill_depth_mm, use = \"complete.obs\")\n#&gt; [1] -0.2350529"
+    "text": "Simple Statistics\n\nlibrary(dplyr)\nlibrary(palmerpenguins)\n\n\nbill_length_mm &lt;- penguins |&gt; pull(bill_length_mm)\nbill_depth_mm &lt;- penguins |&gt; pull(bill_depth_mm)\n\n\n\nbill_length_mm |&gt; quantile(na.rm = TRUE)\n#&gt;     0%    25%    50%    75%   100% \n#&gt; 32.100 39.225 44.450 48.500 59.600\n\n\nbill_length_mm |&gt; quantile(prob = 0.25, na.rm = TRUE)\n#&gt;    25% \n#&gt; 39.225\n\n\nbill_length_mm |&gt; quantile(prob = 0.75, na.rm = TRUE)\n#&gt;  75% \n#&gt; 48.5\n\n\nbill_length_mm |&gt; sum(na.rm = TRUE)\n#&gt; [1] 15021.3\n\n\nbill_length_mm |&gt; prod(na.rm = TRUE)\n#&gt; [1] Inf\n\n\ncor(bill_length_mm, bill_depth_mm, use = \"complete.obs\")\n#&gt; [1] -0.2350529"
   },
   {
     "objectID": "index.html#head-tail",
@@ -914,7 +914,7 @@
     "href": "index.html#the-grammar-of-graphics",
     "title": "An Introduction to the R Programming Language",
     "section": "The Grammar of Graphics",
-    "text": "The Grammar of Graphics\n\n\nThe Grammar of Graphics, by Leland Wilkinson, set the foundation thinking about data visualization.\nWe will based this part of the course on the principles found in this book.\n\n\n\n\n\n\n\n(Book cover image from L. Wilkinson (2005))"
+    "text": "The Grammar of Graphics\n\n\nThe Grammar of Graphics, by Leland Wilkinson, set the foundation thinking about data visualization.\nWe will based this part of the course on the principles found in this book.\n\n\n\n\n\n\n\n(Book cover image from Wilkinson (2005))"
   },
   {
     "objectID": "index.html#the-ggplot2-package",
@@ -942,7 +942,7 @@
     "href": "index.html#its-all-about-layers-1",
     "title": "An Introduction to the R Programming Language",
     "section": "It’s All About Layers",
-    "text": "It’s All About Layers\n\n\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(body_mass_g, flipper_length_mm, species) |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      y = flipper_length_mm,\n      color = species,\n      shape = species\n    )\n  ) +\n  geom_point(size = 3) +\n  scale_color_brand_d(alpha = 0.7) +\n  theme(text = element_text(size = 20), legend.position = \"none\")\n\n\n\n\n\n\n\n\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(body_mass_g, flipper_length_mm, species) |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      y = flipper_length_mm,\n      color = species,\n      shape = species\n    )\n  ) +\n  geom_point(size = 3) +\n  geom_smooth(\n    method = \"lm\",\n    formula = y ~ x,\n    se = FALSE,\n    linewidth = 1.5\n  ) +\n  labs(\n    x = \"Body Mass (g)\",\n    y = \"Flipper Length (mm)\",\n    color = \"Species\",\n    shape = \"Species\"\n  ) +\n  scale_color_brand_d(alpha = 0.7) +\n  theme(text = element_text(size = 20), legend.position = \"none\")"
+    "text": "It’s All About Layers\n\n\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(body_mass_g, flipper_length_mm, species) |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      y = flipper_length_mm,\n      color = species,\n      shape = species\n    )\n  ) +\n  geom_point(size = 4) +\n  scale_color_brand_d(alpha = 0.7) +\n  theme(text = element_text(size = 20), legend.position = \"none\")\n\n\n\n\n\n\n\n\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(body_mass_g, flipper_length_mm, species) |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      y = flipper_length_mm,\n      color = species,\n      shape = species\n    )\n  ) +\n  geom_point(size = 4) +\n  geom_smooth(\n    method = \"lm\",\n    formula = y ~ x,\n    se = FALSE,\n    linewidth = 1.5\n  ) +\n  labs(\n    x = \"Body Mass (g)\",\n    y = \"Flipper Length (mm)\",\n    color = \"Species\",\n    shape = \"Species\"\n  ) +\n  scale_color_brand_d(alpha = 0.7) +\n  theme(text = element_text(size = 20), legend.position = \"none\")"
   },
   {
     "objectID": "index.html#bar-plots",
@@ -1029,11 +1029,11 @@
     "text": "The Tidymodels Framework\n\nThe Tidymodels framework is a collection of packages for modeling and machine learning using Tidyverse principles.\nIt is created by the same team that developed the tidyverse and is designed to work seamlessly with it.\nAlthough it is a relative newcomer to the R ecosystem (2018), it has quickly gained popularity due to its simplicity and consistency."
   },
   {
-    "objectID": "index.html#main-tidymodels-packages",
-    "href": "index.html#main-tidymodels-packages",
+    "objectID": "index.html#tidymodels-packages",
+    "href": "index.html#tidymodels-packages",
     "title": "An Introduction to the R Programming Language",
-    "section": "Main Tidymodels Packages",
-    "text": "Main Tidymodels Packages\nLike Tidyverse, Tidymodels also has a meta-package (bundle) that installs or load the most important packages from the collection.\n\n\ninstall.packages(\"tidymodels\")\n\nlibrary(\"tidymodels\")\n\n\n\n\nrsample: Provides infrastructure for efficient data splitting and resampling.\n\nparsnip: A tidy, unified interface to models.\n\nrecipes: A tidy interface to data pre-processing tools for feature engineering.\n\nworkflows: A package to bundle the pre-processing, modeling, and post-processing together.\n\ninfer: A statistical grammar for inferential statistics."
+    "section": "Tidymodels Packages",
+    "text": "Tidymodels Packages\nLike Tidyverse, Tidymodels also has a meta-package that installs or load the most important packages from the collection.\n\n\ninstall.packages(\"tidymodels\")\n\nlibrary(\"tidymodels\")\n\n\n\n\nrsample: Provides infrastructure for efficient data splitting and resampling.\n\nparsnip: A tidy, unified interface to models.\n\nrecipes: A tidy interface to data pre-processing tools for feature engineering.\n\nworkflows: A package to bundle the pre-processing, modeling, and post-processing together.\n\ninfer: A statistical grammar for inferential statistics."
   },
   {
     "objectID": "index.html#power-analysis",
@@ -1103,7 +1103,7 @@
     "href": "index.html#the-p-value-problem-example",
     "title": "An Introduction to the R Programming Language",
     "section": "The p-value Problem: Example",
-    "text": "The p-value Problem: Example\n\n\nCohen’s \\(f^{2}\\) of 0.004143174(\\(\\Delta\\text{R}^{2} \\approx\\) 0,0041260789)\nLatitudinal cline of chronotype (Leocadio-Miguel et al., 2017).\nCritique of Leocadio-Miguel et al. latitude article (Vartanian, 2025).\nThe ASA statement on p-values (Wasserstein & Lazar, 2016).\nAuthors who rely solely on the p-value demonstrate a preference for statistical rituals over statistical reasoning (Gigerenzer, 2004).\n\n\n\n\n\n\nNote: The HO score (Horne & Östberg, 1976) goes from 16 to 86, with higher scores indicating a preference for morningness.\n\n\n\n(Reproduced from Leocadio-Miguel et al. (2017, Figure 2))"
+    "text": "The p-value Problem: Example\n\n\n\\(\\Delta\\text{R}^{2}\\) = 0.00388Cohen’s \\(f^{2}\\) of 0.004143174\nLatitudinal cline of chronotype (Leocadio-Miguel et al., 2017).\nCritique of Leocadio-Miguel et al. latitude article (Vartanian, 2025).\nThe ASA statement on p-values (Wasserstein & Lazar, 2016).\nAuthors who rely solely on the p-value demonstrate a preference for statistical rituals over statistical reasoning (Gigerenzer, 2004).\n\n\n\n\n\n\nNote: The HO score (Horne & Östberg, 1976) goes from 16 to 86, with higher scores indicating a preference for morningness.\n\n\n\n(Reproduced from Leocadio-Miguel et al. (2017, Figure 2))"
   },
   {
     "objectID": "index.html#what-test-should-i-use",
@@ -1201,14 +1201,14 @@
     "href": "index.html#t-test-effect-size",
     "title": "An Introduction to the R Programming Language",
     "section": "t-Test: Effect Size",
-    "text": "t-Test: Effect Size\n\n\n\nlibrary(dplyr)\nlibrary(effectsize)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\n\nadelie &lt;-\n  penguins |&gt;\n  filter(species == \"Adelie\") |&gt;\n  drop_na() |&gt;\n  pull(flipper_length_mm)\n\ngentoo &lt;-\n  penguins |&gt;\n  filter(species == \"Gentoo\") |&gt;\n  drop_na() |&gt;\n  pull(flipper_length_mm)\n\n\n\neffect_size &lt;-\n  cohens_d(\n    x = gentoo,\n    y = adelie,\n    mu = 0,\n    adjust = TRUE, # Hedge's g\n    ci = 0.95,\n    alternative = \"two.sided\"\n  )\n\neffect_size\n#&gt; Hedges' g |       95% CI\n#&gt; ------------------------\n#&gt; 4.13      | [3.70, 4.56]\n#&gt; \n#&gt; - Estimated using pooled SD.\n\n\neffect_size |&gt; interpret_hedges_g(rules = \"cohen1988\")\n#&gt; Hedges' g |       95% CI | Interpretation\n#&gt; -----------------------------------------\n#&gt; 4.13      | [3.70, 4.56] |          large\n#&gt; \n#&gt; - Estimated using pooled SD.\n#&gt; - Interpretation rule: cohen1988"
+    "text": "t-Test: Effect Size\n\n\n\nlibrary(dplyr)\nlibrary(effectsize)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\n\nadelie &lt;-\n  penguins |&gt;\n  filter(species == \"Adelie\") |&gt;\n  drop_na() |&gt;\n  pull(flipper_length_mm)\n\ngentoo &lt;-\n  penguins |&gt;\n  filter(species == \"Gentoo\") |&gt;\n  drop_na() |&gt;\n  pull(flipper_length_mm)\n\n\n\neffect_size &lt;-\n  cohens_d(\n    x = gentoo,\n    y = adelie,\n    mu = 0,\n    adjust = TRUE, # Hedge's g\n    ci = 0.95,\n    alternative = \"two.sided\"\n  )\n\neffect_size\n#&gt; Hedges' g |       95% CI\n#&gt; ------------------------\n#&gt; 4.13      | [3.70, 4.56]\n#&gt; \n#&gt; - Estimated using pooled SD.\n\n\n\n\neffect_size |&gt; interpret_hedges_g(rules = \"cohen1988\")\n#&gt; Hedges' g |       95% CI | Interpretation\n#&gt; -----------------------------------------\n#&gt; 4.13      | [3.70, 4.56] |          large\n#&gt; \n#&gt; - Estimated using pooled SD.\n#&gt; - Interpretation rule: cohen1988"
   },
   {
     "objectID": "index.html#t-test-power-analysis-4",
     "href": "index.html#t-test-power-analysis-4",
     "title": "An Introduction to the R Programming Language",
     "section": "t-Test: Power Analysis",
-    "text": "t-Test: Power Analysis\n\nlibrary(pwrss)\n\n\npwr_analysis &lt;- pwrss.t.2means(\n  mu1 = gentoo |&gt; mean(na.rm = TRUE),\n  mu2 = adelie |&gt; mean(na.rm = TRUE),\n  sd1 = gentoo |&gt; sd(na.rm = TRUE),\n  sd2 = adelie |&gt; sd(na.rm = TRUE),\n  paired = FALSE,\n  n2 = min(length(gentoo), length(adelie)),\n  kappa = length(adelie) / length(gentoo),\n  power = NULL,\n  alpha = 0.05,\n  welch.df = TRUE,\n  alternative = \"not equal\"\n)\n#&gt;  Difference between Two means \n#&gt;  (Independent Samples t Test) \n#&gt;  H0: mu1 = mu2 \n#&gt;  HA: mu1 != mu2 \n#&gt;  ------------------------------ \n#&gt;   Statistical power = 1 \n#&gt;   n1 = 146 \n#&gt;   n2 = 119 \n#&gt;  ------------------------------ \n#&gt;  Alternative = \"not equal\" \n#&gt;  Degrees of freedom = 253.27 \n#&gt;  Non-centrality parameter = 33.539 \n#&gt;  Type I error rate = 0.05 \n#&gt;  Type II error rate = 0"
+    "text": "t-Test: Power Analysis\n\nlibrary(pwrss)\n\n\npwr_analysis &lt;- pwrss.t.2means(\n  mu1 = gentoo |&gt; mean(na.rm = TRUE),\n  mu2 = adelie |&gt; mean(na.rm = TRUE),\n  sd1 = gentoo |&gt; sd(na.rm = TRUE),\n  sd2 = adelie |&gt; sd(na.rm = TRUE),\n  paired = FALSE,\n  n2 = length(adelie),\n  kappa = length(gentoo) / length(adelie),\n  power = NULL,\n  alpha = 0.05,\n  welch.df = TRUE,\n  alternative = \"not equal\"\n)\n#&gt;  Difference between Two means \n#&gt;  (Independent Samples t Test) \n#&gt;  H0: mu1 = mu2 \n#&gt;  HA: mu1 != mu2 \n#&gt;  ------------------------------ \n#&gt;   Statistical power = 1 \n#&gt;   n1 = 119 \n#&gt;   n2 = 146 \n#&gt;  ------------------------------ \n#&gt;  Alternative = \"not equal\" \n#&gt;  Degrees of freedom = 251.35 \n#&gt;  Non-centrality parameter = 33.506 \n#&gt;  Type I error rate = 0.05 \n#&gt;  Type II error rate = 0"
   },
   {
     "objectID": "index.html#t-test-power-analysis-5",
@@ -1327,7 +1327,7 @@
     "href": "index.html#linear-reg.-hypothesis",
     "title": "An Introduction to the R Programming Language",
     "section": "Linear Reg.: Hypothesis",
-    "text": "Linear Reg.: Hypothesis\nAdding bill_depth_mm as a predictor improve the prediction of flipper_length_mm?\nTo test this, we will use Nested Linear Models.\nTo ensure practical significance, we will analyze the delta of the adjusted \\(\\text{R}^2\\) of the models considering a 95% confidence interval.\nWe will use Cohen’s benchmark for a small effect size as our Minimum Effect Size (MES) (Cohen, 1988).\n\n\\[\n\\begin{cases}\n\\text{H}_{0}: \\text{Adjusted} \\ \\text{R}^{2} &lt; \\text{MES} \\quad \\text{or} \\quad \\text{F-test is not significant} \\ (\\alpha \\geq 0.05) \\\\\n\\text{H}_{a}: \\text{Adjusted} \\ \\text{R}^{2} \\geq \\text{MES} \\quad \\text{and} \\quad \\text{F-test is significant} \\ (\\alpha &lt; 0.05)\n\\end{cases}\n\\]"
+    "text": "Linear Reg.: Hypothesis\nAdding bill_depth_mm as a predictor improve the prediction of flipper_length_mm?\nTo test this, we will use Nested Linear Models.\nTo ensure practical significance, we will analyze the delta of the adjusted \\(\\text{R}^2\\) of the models considering a 95% confidence interval.\nWe will use Cohen’s benchmark for a small effect size as our Minimum Effect Size (MES) (Cohen, 1988).\n\n\\[\n\\begin{cases}\n\\text{H}_{0}: \\Delta \\text{Adjusted} \\ \\text{R}^{2} &lt; \\text{MES} \\quad \\text{or} \\quad \\text{F-test is not significant} \\ (\\alpha \\geq 0.05) \\\\\n\\text{H}_{a}: \\Delta \\text{Adjusted} \\ \\text{R}^{2} \\geq \\text{MES} \\quad \\text{and} \\quad \\text{F-test is significant} \\ (\\alpha &lt; 0.05)\n\\end{cases}\n\\]"
   },
   {
     "objectID": "index.html#linear-reg.-power-analysis",
@@ -1358,11 +1358,11 @@
     "text": "Linear Reg.: Scatterplot 2\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(bill_depth_mm, flipper_length_mm, species) |&gt;\n  ggplot(\n    aes(\n      x = bill_depth_mm,\n      y = flipper_length_mm,\n      color = species,\n      shape = species\n    )\n  ) +\n  geom_point(size = 2) +\n  geom_smooth(method = \"lm\", formula = y ~ x, se = FALSE) +\n  geom_smooth(\n    inherit.aes = FALSE,\n    mapping = aes(x = bill_depth_mm, y = flipper_length_mm),\n    method = \"lm\",\n    formula = y ~ x,\n    se = FALSE,\n    color = get_brand_color(\"black\")\n  ) +\n  labs(\n    x = \"Bill Depth (mm)\",\n    y = \"Flipper Length (mm)\",\n    color = \"Species\",\n    shape = \"Species\"\n  ) +\n  scale_color_brand_d(alpha = 0.7)"
   },
   {
-    "objectID": "index.html#linear-reg.-prediciton",
-    "href": "index.html#linear-reg.-prediciton",
+    "objectID": "index.html#linear-reg.-prediction",
+    "href": "index.html#linear-reg.-prediction",
     "title": "An Introduction to the R Programming Language",
-    "section": "Linear Reg.: Prediciton",
-    "text": "Linear Reg.: Prediciton\n\nCodelibrary(brandr)\nlibrary(broom)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\n# library(rutils) # github.com/danielvartan/rutils\nlibrary(tidyr)\n\ndata &lt;- penguins |&gt; drop_na(flipper_length_mm, bill_length_mm, bill_depth_mm)\n\nfit &lt;-\n  formula(flipper_length_mm ~ bill_length_mm + bill_depth_mm) |&gt;\n  lm(data)\n\nfit |&gt;\n  augment(data) |&gt;\n  ggplot(aes(x = bill_length_mm, y = flipper_length_mm)) +\n  geom_point() +\n  geom_line(\n    aes(y = .fitted, color = \"Prediction\"),\n    linewidth = 0.5,\n    alpha = 0.5,\n  ) +\n  geom_function(\n    aes(color = \"Adjusted prediction\"),\n    fun = rutils:::lm_fun(fit, fix_all_but = 1, data = data),\n    linewidth = 1\n  ) +\n  labs(\n    x = \"Bill depth (mm)\",\n    y = \"Flipper length (mm)\",\n    subtitle = rutils:::lm_str_fun(fit, fix_all_but = 1),\n    color = NULL\n  ) +\n  ggplot2::scale_color_manual(\n    values = c(\n      \"Prediction\" = get_brand_color(\"green\"),\n      \"Adjusted prediction\" = get_brand_color(\"red\")\n    )\n  )"
+    "section": "Linear Reg.: Prediction",
+    "text": "Linear Reg.: Prediction\n\nCodelibrary(brandr)\nlibrary(broom)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\n# library(rutils) # github.com/danielvartan/rutils\nlibrary(tidyr)\n\ndata &lt;- penguins |&gt; drop_na(flipper_length_mm, bill_length_mm, bill_depth_mm)\n\nfit &lt;-\n  formula(flipper_length_mm ~ bill_length_mm + bill_depth_mm) |&gt;\n  lm(data)\n\nfit |&gt;\n  augment(data) |&gt;\n  ggplot(aes(x = bill_length_mm, y = flipper_length_mm)) +\n  geom_point() +\n  geom_line(\n    aes(y = .fitted, color = \"Prediction\"),\n    linewidth = 0.5,\n    alpha = 0.5,\n  ) +\n  geom_function(\n    aes(color = \"Adjusted prediction\"),\n    fun = rutils:::lm_fun(fit, fix_all_but = 1, data = data),\n    linewidth = 1\n  ) +\n  labs(\n    x = \"Bill depth (mm)\",\n    y = \"Flipper length (mm)\",\n    subtitle = rutils:::lm_str_fun(fit, fix_all_but = 1),\n    color = NULL\n  ) +\n  ggplot2::scale_color_manual(\n    values = c(\n      \"Prediction\" = get_brand_color(\"green\"),\n      \"Adjusted prediction\" = get_brand_color(\"red\")\n    )\n  )"
   },
   {
     "objectID": "index.html#linear-reg.-plane",
@@ -1372,11 +1372,11 @@
     "text": "Linear Reg.: Plane\n\nCodelibrary(dplyr)\nlibrary(palmerpenguins)\nlibrary(predict3d)\nlibrary(rgl)\nlibrary(tidyr)\n\nuser_matrix &lt;-\n  dplyr::tribble(\n    ~a,         ~b,         ~c,          ~d,\n    0.6233152,  -0.7817951, -0.01657271, 0,\n    0.1739255,  0.1179437,  0.97767037,  0,\n    -0.7623830, -0.6122792, 0.20949011,  0,\n    0,          0,          0,           1\n  ) |&gt;\n  as.matrix() |&gt;\n  `colnames&lt;-`(NULL)\n\ndata &lt;- penguins |&gt; drop_na(flipper_length_mm, bill_length_mm, bill_depth_mm)\n\nformula(flipper_length_mm ~ bill_length_mm + bill_depth_mm) |&gt;\n  lm(data) |&gt;\n  predict3d(\n    xlab = \"Bill length (mm)\",\n    ylab = \"Bill depth (mm)\",\n    zlab = \"Flipper length (mm)\",\n    radius = 0.75,\n    type = \"s\",\n    color = \"red\",\n    show.subtitle = FALSE,\n    show.error = FALSE\n  )\n\nview3d(userMatrix = user_matrix, zoom = 0.9)\n\nrglwidget(elementId = \"1st\") |&gt;\n  suppressMessages() |&gt;\n  suppressWarnings()\n\n\n\n\n\nIn a multiple linear regression with two predictors, the model is fit by adjusting a plane to the data points (Use the mouse to explore)."
   },
   {
-    "objectID": "index.html#linear-reg.-fit-rest.",
-    "href": "index.html#linear-reg.-fit-rest.",
+    "objectID": "index.html#linear-reg.-fit-restricted",
+    "href": "index.html#linear-reg.-fit-restricted",
     "title": "An Introduction to the R Programming Language",
-    "section": "Linear Reg.: Fit (Rest.)",
-    "text": "Linear Reg.: Fit (Rest.)\n\n\n\nlibrary(broom)\nlibrary(palmerpenguins)\nlibrary(parsnip)\n\n\nmodel &lt;-\n  linear_reg() |&gt;\n  set_engine(\"lm\")\n\n\nfit_restricted &lt;-\n  model |&gt;\n  fit(flipper_length_mm ~ bill_length_mm, data = penguins)\n\n\nfit_restricted |&gt; tidy() |&gt; adorn_rounding(5)\n#&gt; # A tibble: 2 × 5\n#&gt;   term           estimate std.error statistic p.value\n#&gt;   &lt;chr&gt;             &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;\n#&gt; 1 (Intercept)      127.       4.67       27.2       0\n#&gt; 2 bill_length_mm     1.69     0.105      16.0       0\n\n\n\nfit_restricted_stats &lt;- fit_restricted |&gt; glance()\n\n\nfit_restricted_stats |&gt;\n  tidyr::pivot_longer(cols = dplyr::everything()) |&gt;\n  adorn_rounding(5)\n#&gt; # A tibble: 12 × 2\n#&gt;    name              value\n#&gt;    &lt;chr&gt;             &lt;dbl&gt;\n#&gt;  1 r.squared         0.431\n#&gt;  2 adj.r.squared     0.429\n#&gt;  3 sigma            10.6  \n#&gt;  4 statistic       257.   \n#&gt;  5 p.value           0    \n#&gt;  6 df                1    \n#&gt;  7 logLik        -1293.   \n#&gt;  8 AIC            2591.   \n#&gt;  9 BIC            2603.   \n#&gt; 10 deviance      38394.   \n#&gt; 11 df.residual     340    \n#&gt; 12 nobs            342"
+    "section": "Linear Reg.: Fit (Restricted)",
+    "text": "Linear Reg.: Fit (Restricted)\n\n\n\nlibrary(broom)\nlibrary(palmerpenguins)\nlibrary(parsnip)\n\n\nmodel &lt;-\n  linear_reg() |&gt;\n  set_engine(\"lm\")\n\n\nfit_restricted &lt;-\n  model |&gt;\n  fit(flipper_length_mm ~ bill_length_mm, data = penguins)\n\n\nfit_restricted |&gt; tidy() |&gt; adorn_rounding(5)\n#&gt; # A tibble: 2 × 5\n#&gt;   term           estimate std.error statistic p.value\n#&gt;   &lt;chr&gt;             &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;\n#&gt; 1 (Intercept)      127.       4.67       27.2       0\n#&gt; 2 bill_length_mm     1.69     0.105      16.0       0\n\n\n\nfit_restricted_stats &lt;- fit_restricted |&gt; glance()\n\n\nfit_restricted_stats |&gt;\n  tidyr::pivot_longer(cols = dplyr::everything()) |&gt;\n  adorn_rounding(5)\n#&gt; # A tibble: 12 × 2\n#&gt;    name              value\n#&gt;    &lt;chr&gt;             &lt;dbl&gt;\n#&gt;  1 r.squared         0.431\n#&gt;  2 adj.r.squared     0.429\n#&gt;  3 sigma            10.6  \n#&gt;  4 statistic       257.   \n#&gt;  5 p.value           0    \n#&gt;  6 df                1    \n#&gt;  7 logLik        -1293.   \n#&gt;  8 AIC            2591.   \n#&gt;  9 BIC            2603.   \n#&gt; 10 deviance      38394.   \n#&gt; 11 df.residual     340    \n#&gt; 12 nobs            342"
   },
   {
     "objectID": "index.html#linear-reg.-fit-full",
@@ -1453,7 +1453,7 @@
     "href": "index.html#your-mission",
     "title": "An Introduction to the R Programming Language",
     "section": "Your Mission",
-    "text": "Your Mission\nAnswer the following question using the data provided:\n\nWas there a meaningful difference in ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 across the clusters of the Revised Multidimensional Index for Sustainable Food Systems (MISFS-R)?"
+    "text": "Your Mission\nAnswer the following question using the data provided:\n\nWas there a meaningful difference in ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 across the clusters B and D of the Revised Multidimensional Index for Sustainable Food Systems (MISFS-R)?"
   },
   {
     "objectID": "index.html#the-data",
@@ -1505,11 +1505,25 @@
     "text": "We Hope You Enjoyed the Course!\nWe sure enjoyed teaching you!\n\n\n\n\n\n(Artwork by Allison Horst)"
   },
   {
+    "objectID": "index.html#now-that-youre-an-r-rock-star",
+    "href": "index.html#now-that-youre-an-r-rock-star",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Now That You’re an R Rock Star",
+    "text": "Now That You’re an R Rock Star\nWe hope you feel more confident in your R programming skills and are ready to tackle new challenges. Remember, learning is a continuous journey, and the R community is here to support you.\n\n🇧🇷 For Brazilian graduate students, consider exploring the abnt Quarto format. It helps you write your thesis or dissertation in compliance with the Brazilian Association of Technical Standards (ABNT) standards while ensuring full reproducibility. Check out an example here.\n🙋‍♂️ If you have any questions or need assistance, don’t hesitate to reach out to us!"
+  },
+  {
+    "objectID": "index.html#post-course-survey",
+    "href": "index.html#post-course-survey",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Post-Course Survey",
+    "text": "Post-Course Survey"
+  },
+  {
     "objectID": "index.html#how-to-learn-more-6",
     "href": "index.html#how-to-learn-more-6",
     "title": "An Introduction to the R Programming Language",
     "section": "How to Learn More?",
-    "text": "How to Learn More?\nHere are other great and free resources to learn more about R.\n\n🎓 Online Courses\nIntrodução à ciência da computação com python - Parte 1 (USP-IME)\nIntrodução à ciência da computação com python - Parte 2 (USP-IME)\nData science specialization (Johns Hopkins)"
+    "text": "How to Learn More?\nHere are other great resources to learn more about R and programming in general.\n\n🎓 Online Courses\nKon, F. (n.d.). Introdução à ciência da computação com python – Parte 1 [Introduction to computer science with python – Part 1] [Online course]. Coursera. https://www.coursera.org/learn/ciencia-computacao-python-conceitos (University of São Paulo, Brazil) (pt-BR)\nKon, F. (n.d.). Introdução à ciência da computação com python – Parte 2 [Introduction to computer science with python – Part 2] [Online course]. Coursera. https://www.coursera.org/learn/ciencia-computacao-python-conceitos-2s (University of São Paulo, Brazil) (pt-BR)\nPeng, R. D., Leek, J., & Caffo, B. (n.d.). Data science specialization. [Online course]. Coursera. https://www.coursera.org/specializations/jhu-data-science (Johns Hopkins University, United States) (en-US)"
   },
   {
     "objectID": "index.html#how-to-learn-more-7",
@@ -1544,7 +1558,7 @@
     "href": "index.html#references",
     "title": "An Introduction to the R Programming Language",
     "section": "References",
-    "text": "References\n\nIn accordance with the American Psychological Association (APA) Style, 7th edition.\n\n\n\nAckoff, R. (1989). From data to wisdom. Journal of Applied Systems Analysis, 16, 3–9.\n\n\nBernardes, M. E. M. (2009). Ensino e aprendizagem como unidade dialética na atividade pedagógica. Psicologia Escolar e Educacional, 13(2), 235–242. https://doi.org/10.1590/S1413-85572009000200005\n\n\nBroman, K. (2013, April 5). Data science is statistics. The stupidest thing... https://kbroman.wordpress.com/2013/04/05/data-science-is-statistics/\n\n\nBrookshear, J. G., & Brylow, D. (2020). Computer science: An overview (13 ed., Global edition). Pearson.\n\n\nCao, L. (2017). Data science: A comprehensive overview. ACM Computing Surveys, 50(3), 43. https://doi.org/10.1145/3076253\n\n\nCarvalho, A. M. de, Verly Jr, E., Marchioni, D. M., & Jones, A. D. (2021). Measuring sustainable food systems in Brazil: A framework and multidimensional index to evaluate socioeconomic, nutritional, and environmental aspects. World Development, 143, 105470. https://doi.org/10.1016/j.worlddev.2021.105470\n\n\nCasella, G., & Berger, R. L. (2002). Statistical inference (2nd ed.). Duxbury.\n\n\nChang, W. (2018). R graphics cookbook: Practical recipes for visualizing data (2nd ed.). O’Reilly Media. https://r-graphics.org\n\n\nCohen, J. (1988). Statistical power analysis for the behavioral sciences (2nd ed.). Lawrence Erlbaum Associates.\n\n\nCoronel, C., & Morris, S. A. (2019). Database systems: Design, implementation, and management (13th ed.). Cengage.\n\n\nDeGroot, M. H., & Schervish, M. J. (2012). Probability and statistics (OCLC: ocn502674206) (4th ed.). Addison-Wesley.\n\n\nDenning, P. J. (2005). Is computer science science? Communications of the ACM, 48(4), 27–31. https://doi.org/10.1145/1053291.1053309\n\n\nDhar, V. (2023). Data science and prediction. Communications of the ACM, 56(12), 64–73. https://doi.org/10.1145/2500499\n\n\nEllis, P. D. (Ed.). (2010). The essential guide to effect sizes: Statistical power, meta-analysis, and the interpretation of research results (a). Cambridge University Press.\n\n\nEllis, S. E., & Leek, J. T. (2018). How to share data for collaboration. The American Statistician, 72(1), 53–57. https://doi.org/10.1080/00031305.2017.1375987\n\n\nEngels, F. (2020). Dialética da natureza (Traduzido do original em alemão Dialektik der natur (1873-1882).) (N. Schneider, Trans.). Boitempo.\n\n\nFreire, P. (2011). Pedagogia da autonomia: saberes necessários à prática educativa (OCLC: 1229931361). Paz e Terra.\n\n\nGavin, L. (2020, October 20). Big data will be dead in 5 years. Towards Data Science. https://towardsdatascience.com/big-data-will-be-dead-in-5-years-ef4344269aef\n\n\nGigerenzer, G. (2004). Mindless statistics. The Journal of Socio-Economics, 33(5), 587–606. https://doi.org/10.1016/j.socec.2004.09.033\n\n\nGO FAIR initiative. (n.d.). GO FAIR initiative: Make your data & services FAIR. GO FAIR. Retrieved June 10, 2024, from https://www.go-fair.org/\n\n\nGómez-de-Mariscal, E., Guerrero, V., Sneider, A., Jayatilaka, H., Phillip, J. M., Wirtz, D., & Muñoz-Barrutia, A. (2021). Use of the p-values as a size-dependent function to address practical differences when analyzing large datasets. Scientific Reports, 11(1, 1), 20942. https://doi.org/10.1038/s41598-021-00199-5\n\n\nGreener, R. (2020, August 4). Stop testing for normality. Medium. https://towardsdatascience.com/stop-testing-for-normality-dba96bb73f90\n\n\nGrosser, M., Bumann, H., & Wickham, H. (2021). Advanced R solutions. CRC Press.\n\n\nHorne, J. A., & Östberg, O. (1976). A self-assessment questionnaire to determine morningness-eveningness in human circadian rhythms. International Journal of Chronobiology, 4(2), 97–110. https://www.ncbi.nlm.nih.gov/pubmed/1027738\n\n\nIfrah, G. (2001). The universal history of computing: From the abacus to the quantum computer (E. F. Harding, Trans.). John Wiley & Sons. (Original work published 1994)\n\n\nIhaka, R., & Gentleman, R. (1996). R: A language for data analysis and graphics. Journal of Computational and Graphical Statistics, 5(3), 299–314. https://doi.org/10.1080/10618600.1996.10474713\n\n\nKozak, M., & Piepho, H.-P. (2018). What’s normal anyway? Residual plots are more telling than significance tests when checking ANOVA assumptions. Journal of Agronomy and Crop Science, 204(1), 86–98. https://doi.org/10.1111/jac.12220\n\n\nKuhn, M., & Silge, J. (2022). Tidy modeling with R: A framework for modeling in the tidyverse (OCLC: on1338675673). O’Reilly Media. https://www.tmwr.org/\n\n\nLandau, W. (n.d.). The {targets} R package user manual.\n\n\nLeocadio-Miguel, M. A., Louzada, F. M., Duarte, L. L., Areas, R. P., Alam, M., Freire, M. V., Fontenele-Araujo, J., Menna-Barreto, L., & Pedrazzoli, M. (2017). Latitudinal cline of chronotype. Scientific Reports, 7(1), 5437. https://doi.org/10.1038/s41598-017-05797-w\n\n\nLohr, S. (2014, August 18). For big-data scientists, “Janitor work” is key hurdle to insights. The New York Times: Technology. https://www.nytimes.com/2014/08/18/technology/for-big-data-scientists-hurdle-to-insights-is-janitor-work.html\n\n\nMarwick, B., Boettiger, C., & Mullen, L. (2018). Packaging data analytical work reproducibly using R (and friends). The American Statistician, 72(1), 80–88. https://doi.org/10.1080/00031305.2017.1375986\n\n\nMeyer, M. N. (2018). Practical tips for ethical data sharing. Advances in Methods and Practices in Psychological Science, 1(1), 131–144. https://doi.org/10.1177/2515245917747656\n\n\nNajmi, A., Sadasivam, B., & Ray, A. (2021). How to choose and interpret a statistical test? An update for budding researchers. Journal of Family Medicine and Primary Care, 10(8), 2763. https://doi.org/10.4103/jfmpc.jfmpc_433_21\n\n\nNorde, M. M., Porciuncula, L., Garrido, G., Nunes-Galbes, N. M., Sarti, F. M., Marchioni, D. M. L., & de Carvalho, A. M. (2023). Measuring food systems sustainability in heterogenous countries: The Brazilian multidimensional index updated version applicability. Sustainable Development, 31(1), 91–107. https://doi.org/10.1002/sd.2376\n\n\nPeng, R. D. (2022). R programming for data science. https://bookdown.org/rdpeng/rprogdatascience/\n\n\nReis, J., & Housley, M. (2022). Fundamentals of data engineering: Plan and build robust data systems. O’Reilly.\n\n\nRowley, J. (2007). The wisdom hierarchy: Representations of the DIKW hierarchy. Journal of Information Science, 33(2), 163–180. https://doi.org/10.1177/0165551506070706\n\n\nSchucany, W. R., & Ng, H. K. T. (2006). Preliminary goodness-of-fit tests for normality do not validate the one-sample Student t. Communications in Statistics - Theory and Methods, 35(12), 2275–2286. https://doi.org/10.1080/03610920600853308\n\n\nShatz, I. (2024). Assumption-checking rather than (just) testing: The importance of visualization and effect size in statistical diagnostics. Behavior Research Methods, 56(2), 826–845. https://doi.org/10.3758/s13428-023-02072-x\n\n\nStudent. (1908). The probable error of a mean. Biometrika, 6(1), 1–25. https://doi.org/10.2307/2331554\n\n\nTuring, A. M. (1937). On computable numbers, with an application to the entscheidungsproblem. Proceedings of the London Mathematical Society, s2-42(1), 230–265. https://doi.org/10.1112/plms/s2-42.1.230\n\n\nvan der Loo, M., & Jonge, E. de. (2018). Statistical data cleaning with applications in R. John Wiley & Sons.\n\n\nVartanian, D. (2025). Is latitude associated with chronotype? [Corrected version (Pre-Release), University of São Paulo]. https://doi.org/10.17605/OSF.IO/YGKTS\n\n\nvon Neumann, J. (1993). First draft of a report on the EDVAC. IEEE Annals of the History of Computing, 15(4), 27–75. IEEE Annals of the History of Computing. https://doi.org/10.1109/85.238389\n\n\nVygotsky, L. S. (2012). Thought and language (Publicado originalmente em 1934.) (E. Hanfmann, G. Vakar, & A. Kozulin, Trans.; Rev. exp. ed.). The MIT Press.\n\n\nWasserstein, R. L., & Lazar, N. A. (2016). The ASA statement on p-values: Context, process, and purpose. The American Statistician, 70(2). https://doi.org/10.1080/00031305.2016.1154108\n\n\nWickham, H. (n.d.). The tidyverse style guide. Retrieved July 17, 2023, from https://style.tidyverse.org\n\n\nWickham, H. (2014). Tidy data. Journal of Statistical Software, 59(10). https://doi.org/10.18637/jss.v059.i10\n\n\nWickham, H. (2016). ggplot2: Elegant graphics for data analysis (2nd ed.). Springer. https://doi.org/10.1007/978-3-319-24277-4\n\n\nWickham, H. (2019). Advanced R (2nd ed.). CRC Press. https://adv-r.hadley.nz\n\n\nWickham, H., & Bryan, J. (2023). R packages (2nd ed.). O’Reilly Media. https://r-pkgs.org\n\n\nWickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2023). R for data science: Import, tidy, transform, visualize, and model data (2nd ed.). O’Reilly Media. https://r4ds.hadley.nz\n\n\nWilkinson, L. (2005). The grammar of graphics (J. Chambers, D. Hand, & W. Härdle, Eds.; 2nd ed.). Springer.\n\n\nWilkinson, M. D., Dumontier, M., Aalbersberg, Ij. J., Appleton, G., Axton, M., Baak, A., Blomberg, N., Boiten, J.-W., Da Silva Santos, L. B., Bourne, P. E., Bouwman, J., Brookes, A. J., Clark, T., Crosas, M., Dillo, I., Dumon, O., Edmunds, S., Evelo, C. T., Finkers, R., … Mons, B. (2016). The FAIR guiding principles for scientific data management and stewardship. Scientific Data, 3(1), 160018. https://doi.org/10.1038/sdata.2016.18"
+    "text": "References\n\nIn accordance with the American Psychological Association (APA) Style, 7th edition.\n\n\n\nAckoff, R. (1989). From data to wisdom. Journal of Applied Systems Analysis, 16, 3–9.\n\n\nBroman, K. (2013, April 5). Data science is statistics. The stupidest thing... https://kbroman.wordpress.com/2013/04/05/data-science-is-statistics/\n\n\nBrookshear, J. G., & Brylow, D. (2020). Computer science: An overview (13 ed., Global edition). Pearson.\n\n\nCao, L. (2017). Data science: A comprehensive overview. ACM Computing Surveys, 50(3), 43. https://doi.org/10.1145/3076253\n\n\nCarvalho, A. M. de, Verly Jr, E., Marchioni, D. M., & Jones, A. D. (2021). Measuring sustainable food systems in Brazil: A framework and multidimensional index to evaluate socioeconomic, nutritional, and environmental aspects. World Development, 143, 105470. https://doi.org/10.1016/j.worlddev.2021.105470\n\n\nCasella, G., & Berger, R. L. (2002). Statistical inference (2nd ed.). Duxbury.\n\n\nChang, W. (2018). R graphics cookbook: Practical recipes for visualizing data (2nd ed.). O’Reilly Media. https://r-graphics.org\n\n\nCohen, J. (1988). Statistical power analysis for the behavioral sciences (2nd ed.). Lawrence Erlbaum Associates.\n\n\nCoronel, C., & Morris, S. A. (2019). Database systems: Design, implementation, and management (13th ed.). Cengage.\n\n\nDeGroot, M. H., & Schervish, M. J. (2012). Probability and statistics (OCLC: ocn502674206) (4th ed.). Addison-Wesley.\n\n\nDenning, P. J. (2005). Is computer science science? Communications of the ACM, 48(4), 27–31. https://doi.org/10.1145/1053291.1053309\n\n\nDhar, V. (2023). Data science and prediction. Communications of the ACM, 56(12), 64–73. https://doi.org/10.1145/2500499\n\n\nEllis, P. D. (Ed.). (2010). The essential guide to effect sizes: Statistical power, meta-analysis, and the interpretation of research results (a). Cambridge University Press.\n\n\nEllis, S. E., & Leek, J. T. (2018). How to share data for collaboration. The American Statistician, 72(1), 53–57. https://doi.org/10.1080/00031305.2017.1375987\n\n\nGigerenzer, G. (2004). Mindless statistics. The Journal of Socio-Economics, 33(5), 587–606. https://doi.org/10.1016/j.socec.2004.09.033\n\n\nGómez-de-Mariscal, E., Guerrero, V., Sneider, A., Jayatilaka, H., Phillip, J. M., Wirtz, D., & Muñoz-Barrutia, A. (2021). Use of the p-values as a size-dependent function to address practical differences when analyzing large datasets. Scientific Reports, 11(1, 1), 20942. https://doi.org/10.1038/s41598-021-00199-5\n\n\nGreener, R. (2020, August 4). Stop testing for normality. Medium. https://towardsdatascience.com/stop-testing-for-normality-dba96bb73f90\n\n\nGrosser, M., Bumann, H., & Wickham, H. (2021). Advanced R solutions. CRC Press.\n\n\nHorne, J. A., & Östberg, O. (1976). A self-assessment questionnaire to determine morningness-eveningness in human circadian rhythms. International Journal of Chronobiology, 4(2), 97–110. https://www.ncbi.nlm.nih.gov/pubmed/1027738\n\n\nIfrah, G. (2001). The universal history of computing: From the abacus to the quantum computer (E. F. Harding, Trans.). John Wiley & Sons. (Original work published 1994)\n\n\nIhaka, R., & Gentleman, R. (1996). R: A language for data analysis and graphics. Journal of Computational and Graphical Statistics, 5(3), 299–314. https://doi.org/10.1080/10618600.1996.10474713\n\n\nKozak, M., & Piepho, H.-P. (2018). What’s normal anyway? Residual plots are more telling than significance tests when checking ANOVA assumptions. Journal of Agronomy and Crop Science, 204(1), 86–98. https://doi.org/10.1111/jac.12220\n\n\nKuhn, M., & Silge, J. (2022). Tidy modeling with R: A framework for modeling in the tidyverse (OCLC: on1338675673). O’Reilly Media. https://www.tmwr.org/\n\n\nLeocadio-Miguel, M. A., Louzada, F. M., Duarte, L. L., Areas, R. P., Alam, M., Freire, M. V., Fontenele-Araujo, J., Menna-Barreto, L., & Pedrazzoli, M. (2017). Latitudinal cline of chronotype. Scientific Reports, 7(1), 5437. https://doi.org/10.1038/s41598-017-05797-w\n\n\nLohr, S. (2014, August 18). For big-data scientists, “Janitor work” is key hurdle to insights. The New York Times: Technology. https://www.nytimes.com/2014/08/18/technology/for-big-data-scientists-hurdle-to-insights-is-janitor-work.html\n\n\nMarwick, B., Boettiger, C., & Mullen, L. (2018). Packaging data analytical work reproducibly using R (and friends). The American Statistician, 72(1), 80–88. https://doi.org/10.1080/00031305.2017.1375986\n\n\nMcIlroy, M. D., Pinson, E. N., & Tague, B. A. (1978). UNIX Time-Sharing System: Forward. Bell System Technical Journal, 57(6), 1899–1904. https://archive.org/details/bstj57-6-1899/mode/2up\n\n\nNorde, M. M., Porciuncula, L., Garrido, G., Nunes-Galbes, N. M., Sarti, F. M., Marchioni, D. M. L., & de Carvalho, A. M. (2023). Measuring food systems sustainability in heterogenous countries: The Brazilian multidimensional index updated version applicability. Sustainable Development, 31(1), 91–107. https://doi.org/10.1002/sd.2376\n\n\nPeng, R. D. (2022). R programming for data science. https://bookdown.org/rdpeng/rprogdatascience/\n\n\nRowley, J. (2007). The wisdom hierarchy: Representations of the DIKW hierarchy. Journal of Information Science, 33(2), 163–180. https://doi.org/10.1177/0165551506070706\n\n\nSchucany, W. R., & Ng, H. K. T. (2006). Preliminary goodness-of-fit tests for normality do not validate the one-sample Student t. Communications in Statistics - Theory and Methods, 35(12), 2275–2286. https://doi.org/10.1080/03610920600853308\n\n\nShatz, I. (2024). Assumption-checking rather than (just) testing: The importance of visualization and effect size in statistical diagnostics. Behavior Research Methods, 56(2), 826–845. https://doi.org/10.3758/s13428-023-02072-x\n\n\nStudent. (1908). The probable error of a mean. Biometrika, 6(1), 1–25. https://doi.org/10.2307/2331554\n\n\nvan der Loo, M., & Jonge, E. de. (2018). Statistical data cleaning with applications in R. John Wiley & Sons.\n\n\nVartanian, D. (2025). Is latitude associated with chronotype? [Corrected version (Pre-Release), University of São Paulo]. https://doi.org/10.17605/OSF.IO/YGKTS\n\n\nvon Neumann, J. (1993). First draft of a report on the EDVAC. IEEE Annals of the History of Computing, 15(4), 27–75. IEEE Annals of the History of Computing. https://doi.org/10.1109/85.238389\n\n\nWasserstein, R. L., & Lazar, N. A. (2016). The ASA statement on p-values: Context, process, and purpose. The American Statistician, 70(2). https://doi.org/10.1080/00031305.2016.1154108\n\n\nWickham, H. (n.d.). The tidyverse style guide. Retrieved July 17, 2023, from https://style.tidyverse.org\n\n\nWickham, H. (2016). ggplot2: Elegant graphics for data analysis (2nd ed.). Springer. https://doi.org/10.1007/978-3-319-24277-4\n\n\nWickham, H. (2019). Advanced R (2nd ed.). CRC Press. https://adv-r.hadley.nz\n\n\nWickham, H., & Bryan, J. (2023). R packages (2nd ed.). O’Reilly Media. https://r-pkgs.org\n\n\nWickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2023). R for data science: Import, tidy, transform, visualize, and model data (2nd ed.). O’Reilly Media. https://r4ds.hadley.nz\n\n\nWilkinson, L. (2005). The grammar of graphics (J. Chambers, D. Hand, & W. Härdle, Eds.; 2nd ed.). Springer."
   },
   {
     "objectID": "index.html#thank-you",
@@ -1552,320 +1566,5 @@
     "title": "An Introduction to the R Programming Language",
     "section": "Thank you!",
     "text": "Thank you!\n\n\n\n\n\n(Artwork by Allison Horst)"
-  },
-  {
-    "objectID": "index.html#ap-a-bit-of-history",
-    "href": "index.html#ap-a-bit-of-history",
-    "title": "An Introduction to the R Programming Language",
-    "section": "(AP) A Bit of History",
-    "text": "(AP) A Bit of History\n\n\nAbacus (~between 2700 and 2300 BCE) (Sumerians) (Ifrah, 1994/2001)\nPascalina (1642) (Blaise Pascal (1623–1662)) (Ifrah, 1994/2001)\nBabbage’s Difference Engine (Charles Babbage (1792–1871))\n\n\n\n\n\n\n\n(Photo by Mark Richards)"
-  },
-  {
-    "objectID": "index.html#ap-a-bit-of-history-1",
-    "href": "index.html#ap-a-bit-of-history-1",
-    "title": "An Introduction to the R Programming Language",
-    "section": "(AP) A Bit of History",
-    "text": "(AP) A Bit of History\n\n\nKeep in mind\n\n1st World War (1914–1918)\n2nd World War (1939–1945)\n\nUniversal Turing machine (Alan Turing) (Turing, 1937)\n“von Neumann Architecture” (1945) (von Neumann, 1993)\nENIAC (1945)\n\n\n\n\n\n\n\n(Photo by Science History Images/Alamy Stock Photo)\n\n\nEnigma machine"
-  },
-  {
-    "objectID": "index.html#ap-low-and-high-level-prog.-lang.",
-    "href": "index.html#ap-low-and-high-level-prog.-lang.",
-    "title": "An Introduction to the R Programming Language",
-    "section": "(AP) Low and High-Level Prog. Lang.",
-    "text": "(AP) Low and High-Level Prog. Lang."
-  },
-  {
-    "objectID": "index.html#ap-programming-paradigms",
-    "href": "index.html#ap-programming-paradigms",
-    "title": "An Introduction to the R Programming Language",
-    "section": "(AP) Programming Paradigms",
-    "text": "(AP) Programming Paradigms\nA programming paradigm is a specific approach to the programming process (Brookshear & Brylow, 2020).\nR is a multi-paradigm programming language, but is mainly functional.\n\n\nProcedural (Imperative)\n\nx &lt;- seq(1, 10)\ny &lt;- numeric()\nz &lt;- 0\n\nfor (i in x) {\n  y &lt;- c(y, i + 1)\n}\n\nfor (i in y) {\n  z &lt;- z + i\n}\n\nz / length(x)\n#&gt; [1] 6.5\n\n\nFunctional (Declarative)\n\nseq(1, 10) |&gt;\n  vapply(\\(x) x + 1, numeric(1)) |&gt;\n  mean()\n#&gt; [1] 6.5\n\n\n\n\nObject-Oriented (Imperative)\n\n\nlibrary(S7)\n\ndog &lt;- new_class(\"dog\", properties = list(\n  name = class_character,\n  age = class_numeric\n))\n\nlola &lt;- dog(name = \"Lola\", age = 11)\nspeak &lt;- new_generic(\"speak\", \"x\")\nmethod(speak, dog) &lt;- function(x) \"Woof\"\nspeak(lola)\n#&gt; [1] \"Woof\""
-  },
-  {
-    "objectID": "index.html#ap-warning-for-your-future-self",
-    "href": "index.html#ap-warning-for-your-future-self",
-    "title": "An Introduction to the R Programming Language",
-    "section": "(AP) Warning For Your Future Self",
-    "text": "(AP) Warning For Your Future Self\n\n\n🚨 Never use setwd()! 🚨\n(How to detect a beginner R user)\nAlways work inside a project directory. Your Working Directory (WD) should always be the root of your project.\nIf you need a better way to manage your WD, see the here package.\nClick here to learn why."
-  },
-  {
-    "objectID": "index.html#ap-debugging",
-    "href": "index.html#ap-debugging",
-    "title": "An Introduction to the R Programming Language",
-    "section": "(AP) Debugging",
-    "text": "(AP) Debugging\n\n\n(Artwork by Allison Horst)"
-  },
-  {
-    "objectID": "index.html#ap-data-engineering",
-    "href": "index.html#ap-data-engineering",
-    "title": "An Introduction to the R Programming Language",
-    "section": "(AP) Data Engineering",
-    "text": "(AP) Data Engineering\n\n\nData engineering is the development, implementation, and maintenance of systems and processes that take in raw data and produce high-quality, consistent information that supports downstream use cases, such as analysis and machine learning (Reis & Housley, 2022).\n\n\n\n\n\n\n\n(Reproduced from Reis & Housley (2022))\n\n\nTwo main activities related to R.\nYou can think of data engineering as the plumbing of data science."
-  },
-  {
-    "objectID": "index.html#ap-data-eng.-versus-data-science",
-    "href": "index.html#ap-data-eng.-versus-data-science",
-    "title": "An Introduction to the R Programming Language",
-    "section": "(AP) Data Eng. versus Data Science",
-    "text": "(AP) Data Eng. versus Data Science\n\n\nData scientists, according to interviews and expert estimates, spend from 50 percent to 80 percent of their time mired in this more mundane labor of collecting and preparing unruly digital data, before it can be explored for useful nuggets (Lohr, 2014).\n\n\n\n\n\n\n\n(Figure reproduced from Reis & Housley (2022))"
-  },
-  {
-    "objectID": "index.html#ap-the-tidy-data-manifesto",
-    "href": "index.html#ap-the-tidy-data-manifesto",
-    "title": "An Introduction to the R Programming Language",
-    "section": "(AP) The Tidy Data Manifesto",
-    "text": "(AP) The Tidy Data Manifesto\n\n(Wickham, 2014)"
-  },
-  {
-    "objectID": "index.html#ap-tidy-data",
-    "href": "index.html#ap-tidy-data",
-    "title": "An Introduction to the R Programming Language",
-    "section": "(AP) Tidy Data",
-    "text": "(AP) Tidy Data\n\n\n\n\n\n(Artwork by Allison Horst)"
-  },
-  {
-    "objectID": "index.html#ap-tidy-data-1",
-    "href": "index.html#ap-tidy-data-1",
-    "title": "An Introduction to the R Programming Language",
-    "section": "(AP) Tidy Data",
-    "text": "(AP) Tidy Data\n\n\n\n\n\n(Artwork by Allison Horst)"
-  },
-  {
-    "objectID": "index.html#ap-big-data",
-    "href": "index.html#ap-big-data",
-    "title": "An Introduction to the R Programming Language",
-    "section": "(AP) Big Data",
-    "text": "(AP) Big Data\n\n\n\nBig data will be dead in 5 Years: Everything will be big data, so it won’t need a special name. (Gavin, 2020)\n\n\n\n\n\n\n\n\n(Artwork by David Fletcher)"
-  },
-  {
-    "objectID": "index.html#ap-big-data-wrangling",
-    "href": "index.html#ap-big-data-wrangling",
-    "title": "An Introduction to the R Programming Language",
-    "section": "(AP) Big Data Wrangling",
-    "text": "(AP) Big Data Wrangling\nWorking with big data using Excel or GUI-based (Graphical User Interface) statistical software is extremely challenging, if not impossible.\nExcel, for example, can struggle with performance issues and has a maximum row limit (1,048,576 rows), which is often insufficient for big data projects.\nThe best tools for handling big data are R and Python."
-  },
-  {
-    "objectID": "index.html#ap-fair-principles",
-    "href": "index.html#ap-fair-principles",
-    "title": "An Introduction to the R Programming Language",
-    "section": "(AP) Fair Principles",
-    "text": "(AP) Fair Principles\n\n\n\n\n\n(To learn more see: M. D. Wilkinson et al. (2016) and GO FAIR initiative (n.d.))"
-  },
-  {
-    "objectID": "index.html#ap-data-management-plans",
-    "href": "index.html#ap-data-management-plans",
-    "title": "An Introduction to the R Programming Language",
-    "section": "(AP) Data Management Plans",
-    "text": "(AP) Data Management Plans\nA data management plan (DMP) is a formal document that outlines how data will be managed throughout the research process.\n\nFAPESP\nDMPTool\nDMPonline\n\n\nExample: Associations between the duration and quality of sleep of pregnant women in the third trimester with the duration of labor"
-  },
-  {
-    "objectID": "index.html#ap-strings",
-    "href": "index.html#ap-strings",
-    "title": "An Introduction to the R Programming Language",
-    "section": "(AP) Strings",
-    "text": "(AP) Strings"
-  },
-  {
-    "objectID": "index.html#ap-regular-expressions",
-    "href": "index.html#ap-regular-expressions",
-    "title": "An Introduction to the R Programming Language",
-    "section": "(AP) Regular Expressions",
-    "text": "(AP) Regular Expressions"
-  },
-  {
-    "objectID": "index.html#ap-lookup-tables",
-    "href": "index.html#ap-lookup-tables",
-    "title": "An Introduction to the R Programming Language",
-    "section": "(AP) Lookup Tables",
-    "text": "(AP) Lookup Tables"
-  },
-  {
-    "objectID": "index.html#ap-joins",
-    "href": "index.html#ap-joins",
-    "title": "An Introduction to the R Programming Language",
-    "section": "(AP) Joins",
-    "text": "(AP) Joins"
-  },
-  {
-    "objectID": "index.html#ap-the-visdat-package",
-    "href": "index.html#ap-the-visdat-package",
-    "title": "An Introduction to the R Programming Language",
-    "section": "(AP) The visdat Package",
-    "text": "(AP) The visdat Package\n\n\n\n\nvisdat helps you diagnose missing values and other potential problems in your data.\ninstall.packages(\"visdat\")\n\n\nlibrary(palmerpenguins)\nlibrary(visdat)\n\npenguins |&gt; vis_dat()"
-  },
-  {
-    "objectID": "index.html#ap-what-test-should-i-use",
-    "href": "index.html#ap-what-test-should-i-use",
-    "title": "An Introduction to the R Programming Language",
-    "section": "(AP) What Test Should I Use?",
-    "text": "(AP) What Test Should I Use?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nType of Data\n\nComparison Analysis\n\n\nOther Analysis\n\n\n\n2 Data Sets - Paired\n2 Data Sets - Unpaired\nMore than 2 Data Sets - Paired\nMore than 2 Data Sets - Unpaired\nCorrelation Analysis\nRegression Analysis\n\n\n\n\nNormally distributed continuous data(summarized as mean)\nPaired t-test\nUnpaired t-test\nRepeated measures ANOVA\nOne-way ANOVA\nPearson's correlation\nLinear regression\n\n\nRanks, scores, and non-normallydistributed continuous data(Summarized as median)\nWilcoxon signed-rank test\nMann-Whitney U test\nFriedman's test\nKruskal-Wallis test\nSpearman's rank correlation\nNonparametric regression\n\n\nDichotomous data(Summarized as proportion)\nMc Nemar's test\nFishers test or Chi-square test\nCochrane Q test\nChi-square test\nContingency coefficient\nLogistic regression\n\n\n\n\n\n\n\n\n(Adapted from Najmi et al. (2021))"
-  },
-  {
-    "objectID": "index.html#ap-anova-power-analysis",
-    "href": "index.html#ap-anova-power-analysis",
-    "title": "An Introduction to the R Programming Language",
-    "section": "(AP) ANOVA: Power Analysis",
-    "text": "(AP) ANOVA: Power Analysis\n\nlibrary(pwrss)\n\n\npwrss.f.ancova(\n  eta2 = 0.01,\n  n.way = 1,\n  n.levels = 3,\n  n.covariates = 0,\n  alpha = 0.05,\n  n = NULL,\n  power = 0.8\n)\n#&gt;  One-way Analysis of Variance (ANOVA) \n#&gt;   H0: 'eta2' or 'f2' = 0 \n#&gt;   HA: 'eta2' or 'f2' &gt; 0 \n#&gt;  --------------------------------------\n#&gt;  Factor A: 3 levels \n#&gt;  --------------------------------------\n#&gt;  effect power n.total   ncp df1     df2\n#&gt;       A   0.8     957 9.665   2 953.836\n#&gt;  --------------------------------------\n#&gt;  Type I error rate: 0.05"
-  },
-  {
-    "objectID": "index.html#ap-anova-power-analysis-1",
-    "href": "index.html#ap-anova-power-analysis-1",
-    "title": "An Introduction to the R Programming Language",
-    "section": "(AP) ANOVA: Power Analysis",
-    "text": "(AP) ANOVA: Power Analysis\n\nlibrary(pwrss)\n\npower.f.test(\n  ncp = pwr_analysis$ncp,\n  df1 = pwr_analysis$df1,\n  df2 = pwr_analysis$df2,\n  alpha = 0.05,\n  plot = TRUE\n)"
-  },
-  {
-    "objectID": "index.html#ap-dig.-objects-ver.-control",
-    "href": "index.html#ap-dig.-objects-ver.-control",
-    "title": "An Introduction to the R Programming Language",
-    "section": "(AP) Dig. Objects & Ver. Control",
-    "text": "(AP) Dig. Objects & Ver. Control"
-  },
-  {
-    "objectID": "index.html#ap-open-licenses",
-    "href": "index.html#ap-open-licenses",
-    "title": "An Introduction to the R Programming Language",
-    "section": "(AP) Open Licenses",
-    "text": "(AP) Open Licenses\nA unlicensed work is an “all rights reserved” work. This means that you can’t use it without the author’s permission.\n\n\n\nLicences for data\n\nOpen Knowledge Foundation\n\n\nLicences for software/code\n\nOSI Approved Licenses\nThe MIT licence\nGNU General Public License version 3\n\n\nLicences for everything else (e.g., documents, figures)\n\nCreative Commons\nCC BY 4.0"
-  },
-  {
-    "objectID": "index.html#ap-dynamic-documents",
-    "href": "index.html#ap-dynamic-documents",
-    "title": "An Introduction to the R Programming Language",
-    "section": "(AP) Dynamic Documents",
-    "text": "(AP) Dynamic Documents\nDynamic documents seamlessly integrate text with output from a programming language, automatically updating the output whenever the code is executed.\n\n\n\n\nQuarto (R, Python, Julia) (+Pandoc)\n\nJupyter (Python, R, Julia, +37 languages)\n\nRmarkdown (R) (+Pandoc)\n\n\nExamples\n\nExternal-link: Central limit theorem\n\nExternal-link: Sample size\n\nExternal-link: Fisher’s hypothesis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou can write articles with dynamic documents.\nDifference from LaTeX.\nQuarto as an evolution from Rmarkdown.\nJupyter can be used with Quarto."
-  },
-  {
-    "objectID": "index.html#ap-pipelines",
-    "href": "index.html#ap-pipelines",
-    "title": "An Introduction to the R Programming Language",
-    "section": "(AP) Pipelines",
-    "text": "(AP) Pipelines\nPipeline tools coordinate the pieces of computationally demanding analysis projects. They can be used to automate the execution of a series of tasks.\n\n\n\n\n\n\n\n\n\n\n\n\n\n(Reproduced from Landau (n.d.))"
-  },
-  {
-    "objectID": "index.html#ap-reproducible-env.",
-    "href": "index.html#ap-reproducible-env.",
-    "title": "An Introduction to the R Programming Language",
-    "section": "(AP) Reproducible Env.",
-    "text": "(AP) Reproducible Env.\nReproducible environments ensure that your code will run the same way on different machines and regardless of the time."
-  },
-  {
-    "objectID": "index.html#ap-app.-prog.-interf.-apis",
-    "href": "index.html#ap-app.-prog.-interf.-apis",
-    "title": "An Introduction to the R Programming Language",
-    "section": "(AP) App. Prog. Interf. (APIs)",
-    "text": "(AP) App. Prog. Interf. (APIs)\n\nAPIs are a set of rules that allow different software applications to communicate with each other.\n\n\n\n\nOSF API\nBrazil’s Central Bank APIs\nNASA’s APIs\n\n\n\nOpenAI API\nSIDRA API (IBGE)\nSISVAN API\n\n\n\n\n\n\n\n\nlibrary(magrittr)\nlibrary(sidrar)\n\n\n# Brazil's population in 2022 (Census data)\nget_sidra(\n  api = \"/t/7358/n1/all/v/all/p/all/c2/6794/c287/100362/c1933/49039\"\n) |&gt;\n  suppressMessages() |&gt;\n  extract2(\"Valor\") |&gt;\n  prettyNum(big.mark = \",\")\n#&gt; [1] \"216,284,269\""
-  },
-  {
-    "objectID": "index.html#ap-kiss-principle",
-    "href": "index.html#ap-kiss-principle",
-    "title": "An Introduction to the R Programming Language",
-    "section": "(AP) KISS Principle",
-    "text": "(AP) KISS Principle"
-  },
-  {
-    "objectID": "index.html#ap-some-other-things",
-    "href": "index.html#ap-some-other-things",
-    "title": "An Introduction to the R Programming Language",
-    "section": "(AP) Some Other Things …",
-    "text": "(AP) Some Other Things …\nWe’ve only touched upon the vast landscape of open science. There are many other tools and concepts that we didn’t cover, such as:\n\n\n\nMarkup languages (e.g., Markdown, LaTeX)\nOpen source softwares (e.g., rOpenSci, CRAN, Bioconductor, PyPI)\nVersion control systems (e.g. Git, SVN, Semantic versioning)\nDatabase systems (e.g., Relational databases, NoSQL)\nOpen source data management systems (e.g., CKAN Dataverse; DSpace)\n\n\n\nGit-based repositories (e.g., GitHub, GitLab)\nOpen data formats (e.g., CSV, JSON, Apache Parquet)\nCloud computing (e.g., AWS, Google Cloud, Azure)\nOpen science policies (e.g., FAPESP, European Commission)\nEthical data sharing practices (See Meyer (2018) to learn more)"
-  },
-  {
-    "objectID": "index.html#ap-some-other-things-1",
-    "href": "index.html#ap-some-other-things-1",
-    "title": "An Introduction to the R Programming Language",
-    "section": "(AP) Some Other Things …",
-    "text": "(AP) Some Other Things …\n\n\n\n\n\n(Artwork by Allison Horst)"
-  },
-  {
-    "objectID": "index.html#general-information",
-    "href": "index.html#general-information",
-    "title": "An Introduction to the R Programming Language",
-    "section": "General Information",
-    "text": "General Information\n\n\nCourse: An Introduction to the R Language\n\nInstructors: Daniel Vartanian and Jaqueline Lopes Pereira\n\nPlace: Public Health School (FSP) of the University of São Paulo (USP).\n\nDates: 24/03 to 28/03\n\nTime: 13:00 to 14:00 (except on Wednesday, 26/03, from 13:00 to 18:00)\n\nDuration: 9 hours"
-  },
-  {
-    "objectID": "index.html#learning-objectives",
-    "href": "index.html#learning-objectives",
-    "title": "An Introduction to the R Programming Language",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\nUnderstand fundamental principles and concepts of computer science.\nComprehend the structure and core elements of the R programming language.\nLearn essential concepts of data munging.\nUnderstand the basics of data visualization.\nExplore fundamental techniques of exploratory data analysis.\nLearn basic modeling concepts."
-  },
-  {
-    "objectID": "index.html#theoretical-basis",
-    "href": "index.html#theoretical-basis",
-    "title": "An Introduction to the R Programming Language",
-    "section": "Theoretical Basis",
-    "text": "Theoretical Basis\n\nDialectical materialism (Engels, 2020).\nCultural-historical theory (Vygotsky, 2012).\nPedagogy of autonomy/Dialectal pedagogy (Freire, 2011).\nDialectical unity in pedagogical activity (Bernardes, 2009)."
-  },
-  {
-    "objectID": "index.html#the-unit-of-pedagogical-activity",
-    "href": "index.html#the-unit-of-pedagogical-activity",
-    "title": "An Introduction to the R Programming Language",
-    "section": "The Unit of Pedagogical Activity",
-    "text": "The Unit of Pedagogical Activity\n\n\n\n\n\n\n\n\n\nTeaching Activity (Teacher)\nLearning Activity (Student)\n\n\n\nMotive/Need\nEnable the transformation of students’ constitution through access to culture — humanizing them.\nBecome an heir to culture — humanizing oneself.\n\n\nObjective\nTeach socio-historical knowledge.\nAppropriate socio-historical knowledge.\n\n\nActions and Operations\n\nOrganizing teaching:- Defining the knowledge to be taught (What).- Defining the conditions (modes of action) in which the knowledge will be taught (How).\n- Execute study tasks.- Perform study activities.- Participate in control and evaluation actions.\n\n\n\n\n\n(Bernardes, 2009, Translated from Portuguese to English by the author)"
-  },
-  {
-    "objectID": "index.html#strategy",
-    "href": "index.html#strategy",
-    "title": "An Introduction to the R Programming Language",
-    "section": "Strategy",
-    "text": "Strategy\n\nTheory followed by practice.\nIn-class activities.\nData science exercise at the end of the course.\nNo formal evaluation.\nPre-course survey.\nPost-course survey."
-  },
-  {
-    "objectID": "index.html#resources",
-    "href": "index.html#resources",
-    "title": "An Introduction to the R Programming Language",
-    "section": "Resources",
-    "text": "Resources\n\nWhiteboard\nData projector\nSlides\nComputers"
-  },
-  {
-    "objectID": "index.html#main-references-1",
-    "href": "index.html#main-references-1",
-    "title": "An Introduction to the R Programming Language",
-    "section": "Main References",
-    "text": "Main References\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(Book cover image from Wickham et al. (2023) and Wickham (2019))\n\n\nSee also: Advanced R Solutions (Grosser et al., 2021)."
-  },
-  {
-    "objectID": "index.html#monday-2403",
-    "href": "index.html#monday-2403",
-    "title": "An Introduction to the R Programming Language",
-    "section": "Monday (24/03)",
-    "text": "Monday (24/03)\n\n\nPart 1 (13:00-13:30)\n\nIntroduction to the course.\nIntroduction to computer science.\nIntroduction to data science.\nIntroduction to the R language and the other tools.\n\n\n\n\nPart 2 (13:30-14:00)\n\nInstalling R and RStudio.\nIntroduction to the RStudio IDE.\nIntroduction to the project oriented workflow.\nIntroduction to Markdown and the Quarto notebook."
-  },
-  {
-    "objectID": "index.html#tuesday-2503",
-    "href": "index.html#tuesday-2503",
-    "title": "An Introduction to the R Programming Language",
-    "section": "Tuesday (25/03)",
-    "text": "Tuesday (25/03)\n\n\nPart 1 (13:00-13:30)\n\nR objects.\nOperations.\nSubsetting.\nPipes.\nControl flow (Choice & Loop).\n\n\n\n\nPart 2 (13:30-14:00)\n\nFunctions and Functionals.\nMissing values and commenting.\nEnvironments.\nPackages.\nDocumentation.\nThe tidyverse and rOpenSci suite."
-  },
-  {
-    "objectID": "index.html#wednesday-2503",
-    "href": "index.html#wednesday-2503",
-    "title": "An Introduction to the R Programming Language",
-    "section": "Wednesday (25/03)",
-    "text": "Wednesday (25/03)\n\n\nPart 1 (13:00-14:00)\n\nData munging (Introduction)\n\n\n\n\nPart 2 (14:15-15:15)\n\nData munging (Importing and manipulating data)"
-  },
-  {
-    "objectID": "index.html#wednesday-2503-1",
-    "href": "index.html#wednesday-2503-1",
-    "title": "An Introduction to the R Programming Language",
-    "section": "Wednesday (25/03)",
-    "text": "Wednesday (25/03)\n\n\nPart 3 (15:30-16:30)\n\nData visualization and Exploratory Data Analysis\n\n\n\n\nPart 4 (16:45-18:00)\n\nModeling (One-Sample t-Test)"
-  },
-  {
-    "objectID": "index.html#thursday-2503",
-    "href": "index.html#thursday-2503",
-    "title": "An Introduction to the R Programming Language",
-    "section": "Thursday (25/03)",
-    "text": "Thursday (25/03)\n\n\nPart 1 (13:00-13:30)\n\nModeling (ANOVA).\n\n\n\n\nPart 2 (13:30-14:00)\n\nModeling (Linear regression)."
-  },
-  {
-    "objectID": "index.html#friday-2503",
-    "href": "index.html#friday-2503",
-    "title": "An Introduction to the R Programming Language",
-    "section": "Friday (25/03)",
-    "text": "Friday (25/03)\n\n\nPart 1 (13:00-13:30)\n\nExercise (Data report—SISVAN).\n\n\n\n\nPart 2 (13:30-14:00)\n\nConclusion."
   }
 ]

@@ -5,7 +5,7 @@
 
 ## Simple Statistics {.smaller}
 
-The `stats` package, that comes with a typical R installation, provides a set of basic statistical functions.
+The R packages that come with a typical R installation provide a set of basic statistical functions.
 
 ```{r}
 library(dplyr)
@@ -16,6 +16,7 @@ library(palmerpenguins)
 bill_length_mm <- penguins |> pull(bill_length_mm)
 ```
 
+::: {style="padding-top: 15px;"}
 ```{r}
 bill_length_mm |> mean(na.rm = TRUE)
 ```
@@ -35,6 +36,7 @@ bill_length_mm |> median(na.rm = TRUE)
 ```{r}
 bill_length_mm |> max(na.rm = TRUE)
 ```
+:::
 
 ## Simple Statistics {.smaller}
 
@@ -48,6 +50,7 @@ bill_length_mm <- penguins |> pull(bill_length_mm)
 bill_depth_mm <- penguins |> pull(bill_depth_mm)
 ```
 
+::: {style="padding-top: 15px;"}
 ```{r}
 bill_length_mm |> quantile(na.rm = TRUE)
 ```
@@ -71,6 +74,7 @@ bill_length_mm |> prod(na.rm = TRUE)
 ```{r}
 cor(bill_length_mm, bill_depth_mm, use = "complete.obs")
 ```
+:::
 
 ::: {.notes}
 :::
@@ -221,7 +225,7 @@ penguins |>
 
 :::: {.columns}
 ::: {.column style="width: 30%; font-size: 0.9em;"}
-[![](images/gt-hex-logo.svg){style="width: 120px; padding-top: 0px;"}](https://sfirke.github.io/janitor/)
+[![](images/gt-hex-logo.svg){style="width: 120px; padding-top: 0px;"}](https://gt.rstudio.com/)
 
 The most powerful package for creating and customizing tables in R.
 
@@ -357,7 +361,7 @@ penguins |>
       shape = species
     )
   ) +
-  geom_point(size = 3) +
+  geom_point(size = 4) +
   scale_color_brand_d(alpha = 0.7) +
   theme(text = element_text(size = 20), legend.position = "none")
 ```
@@ -383,7 +387,7 @@ penguins |>
       shape = species
     )
   ) +
-  geom_point(size = 3) +
+  geom_point(size = 4) +
   geom_smooth(
     method = "lm",
     formula = y ~ x,

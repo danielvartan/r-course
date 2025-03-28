@@ -196,10 +196,6 @@ In a general sense, Python is also good for learning how to program, but it is m
 
 ![](images/meme-python-r.png){fig-align="center" style="width: 50%;"}
 
-::: footer
-(Image by Unknown Author)
-:::
-
 ::: {.notes}
 :::
 

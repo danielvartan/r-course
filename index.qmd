@@ -52,17 +52,12 @@ Here are the main topics:
 
 ## Course Objectives {.smaller}
 
-Understand fundamental principles and concepts of computer science.
-
-Comprehend the structure and core elements of the R programming language.
-
-Learn essential concepts of data munging.
-
-Understand the basics of data visualization.
-
-Explore fundamental techniques of exploratory data analysis.
-
-Learn basic modeling techniques.
+1. Grasp the foundational principles and key concepts of computer science.
+1. Understand the structure and essential components of the R programming language.
+1. Master fundamental techniques for data munging.
+1. Develop skills in creating insightful data visualizations.
+1. Learn techniques for conducting exploratory data analysis.
+1. Gain an introduction to basic modeling approaches.
 
 ::: {style="padding-top: 30px;"}
 ([**Future course?**]{.brand-red} An Introduction to [Git](https://en.wikipedia.org/wiki/Git))
@@ -144,11 +139,11 @@ Theory ➡️ Practice.
 - See also: [Advanced R Solutions](https://advanced-r-solutions.rbind.io/) [@grosser2021].
 :::
 
-## Let’s Get This Over With {.smaller}
+## Learn from Mistakes {.smaller .nostretch}
 
 Mistakes will happen. Don't let them discourage you!
 
-![](images/allison-horst-figure-48.jpg){fig-align="center" style="width: 100%; padding-top: 0px;"}
+![](images/allison-horst-figure-47.png){fig-align="center" style="width: 70%; padding-top: 30px;"}
 
 ::: footer
 (Artwork by [Allison Horst](https://allisonhorst.com/horst-hill-collaborations))
@@ -295,18 +290,36 @@ We sure enjoyed teaching you!
 ::: {.notes}
 :::
 
-## How to Learn More? {.smaller}
+## Now That You're an R Rock Star {.smaller}
 
-Here are other great and free resources to learn more about R.
+We hope you feel more confident in your R programming skills and are ready to tackle new challenges. Remember, learning is a continuous journey, and the R community is here to support you.
 
 ::: {style="padding-top: 15px;"}
+🇧🇷 For Brazilian graduate students, consider exploring the **[`abnt`](https://github.com/danielvartan/abnt) Quarto format**. It helps you write your thesis or dissertation in compliance with the Brazilian Association of Technical Standards ([ABNT](https://abnt.org.br/)) standards while ensuring full reproducibility. Check out an example [here](https://danielvartan.github.io/mastersthesis/).
+
+🙋‍♂️ If you have any questions or need assistance, don't hesitate to reach out to us!
+:::
+
+::: {.notes}
+:::
+
+## Post-Course Survey {.smaller}
+
+::: {.notes}
+:::
+
+## How to Learn More? {.smaller}
+
+Here are other great resources to learn more about R and programming in general.
+
+::: {style="font-size: 0.85em; padding-top: 15px;"}
 🎓 **Online Courses**
 
-[Introdução à ciência da computação com python - Parte 1](https://www.coursera.org/learn/ciencia-computacao-python-conceitos) (USP-IME)
+Kon, F. (n.d.). **_Introdução à ciência da computação com python – Parte 1_** [Introduction to computer science with python – Part 1] [Online course]. Coursera. <https://www.coursera.org/learn/ciencia-computacao-python-conceitos> (University of São Paulo, Brazil) (pt-BR)
 
-[Introdução à ciência da computação com python - Parte 2](https://www.coursera.org/learn/ciencia-computacao-python-conceitos-2s) (USP-IME)
+Kon, F. (n.d.). **_Introdução à ciência da computação com python – Parte 2_** [Introduction to computer science with python – Part 2] [Online course]. Coursera. <https://www.coursera.org/learn/ciencia-computacao-python-conceitos-2s> (University of São Paulo, Brazil) (pt-BR)
 
-[Data science specialization](https://www.coursera.org/specializations/jhu-data-science) (Johns Hopkins)
+Peng, R. D., Leek, J., & Caffo, B. (n.d.). **_Data science specialization_**. [Online course]. Coursera. <https://www.coursera.org/specializations/jhu-data-science> (Johns Hopkins University, United States) (en-US)
 :::
 
 ::: {.notes}
@@ -417,17 +430,3 @@ In accordance with the [American Psychological Association (APA) Style](https://
 
 ::: {.notes}
 :::
-
-# Appendices {visibility="uncounted"}
-
-::: {.notes}
-:::
-
-{{< include ./qmd/appendices.qmd >}}
-
-# Teaching Plan {visibility="uncounted"}
-
-::: {.notes}
-:::
-
-{{< include ./qmd/teaching-plan.qmd >}}

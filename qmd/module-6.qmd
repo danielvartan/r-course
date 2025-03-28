@@ -8,7 +8,7 @@
 Answer the following question using the data provided:
 
 ::: {style="text-align: center; font-size: 1.1em; font-weight: bold; color: #ED6B4D; padding-top: 100px;"}
-Was there a **meaningful** difference in ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 across the clusters of the Revised Multidimensional Index for Sustainable Food Systems ([MISFS-R](https://doi.org/10.1002/sd.2376))?
+Was there a **meaningful** difference in ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 across the clusters B and D of the Revised Multidimensional Index for Sustainable Food Systems ([MISFS-R](https://doi.org/10.1002/sd.2376))?
 :::
 
 ::: {.notes}
@@ -40,7 +40,7 @@ The **MISFS-R** is a revised version that introduces new indicators and a refine
 For more details, see @carvalho2021a and @norde2023.
 :::
 ::: {.column style="width: 50%; padding-top: 0px;"}
-![](images/norde-2023-figure-6-adapted.png){fig-align="center" style="width: 90%; padding-top: 30px;"}
+![](images/norde-2023-figure-6-adapted.png){fig-align="center" style="width: 90%; padding-top: 40px;"}
 :::
 ::::
 

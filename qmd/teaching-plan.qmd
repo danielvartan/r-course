@@ -12,17 +12,12 @@
 
 ## Learning Objectives {.smaller visibility="uncounted"}
 
-Understand fundamental principles and concepts of computer science.
-
-Comprehend the structure and core elements of the R programming language.
-
-Learn essential concepts of data munging.
-
-Understand the basics of data visualization.
-
-Explore fundamental techniques of exploratory data analysis.
-
-Learn basic modeling concepts.
+1. Grasp the foundational principles and key concepts of computer science.
+1. Understand the structure and essential components of the R programming language.
+1. Master fundamental techniques for data munging.
+1. Develop skills in creating insightful data visualizations.
+1. Learn techniques for conducting exploratory data analysis.
+1. Gain an introduction to basic modeling approaches.
 
 ::: {.notes}
 :::
@@ -95,19 +90,14 @@ Learn basic modeling concepts.
 **Part 1** (13:00-13:30)
 
 - Introduction to the course.
-- Introduction to computer science.
-- Introduction to data science.
-- Introduction to the R language and the other tools.
+- Module 1: Computer science (Full).
 :::
 ::: {.column style="width: 5%;"}
 :::
 ::: {.column style="width: 47.5%;"}
 **Part 2** (13:30-14:00)
 
-- Installing R and RStudio.
-- Introduction to the RStudio IDE.
-- Introduction to the project oriented workflow.
-- Introduction to Markdown and the Quarto notebook.
+- Module 2: Installing R -> Markdown basics
 :::
 ::::
 
@@ -120,23 +110,14 @@ Learn basic modeling concepts.
 ::: {.column style="width: 47.5%;"}
 **Part 1** (13:00-13:30)
 
-- R objects.
-- Operations.
-- Subsetting.
-- Pipes.
-- Control flow (Choice & Loop).
+- Module 2: R objects -> Control flow.
 :::
 ::: {.column style="width: 5%;"}
 :::
 ::: {.column style="width: 47.5%;"}
 **Part 2** (13:30-14:00)
 
-- Functions and Functionals.
-- Missing values and commenting.
-- Environments.
-- Packages.
-- Documentation.
-- The tidyverse and rOpenSci suite.
+- Module 2: Functions -> The tidyverse and rOpenSci suite.
 :::
 ::::
 
@@ -149,14 +130,14 @@ Learn basic modeling concepts.
 ::: {.column style="width: 47.5%;"}
 **Part 1** (13:00-14:00)
 
-- Data munging (Introduction)
+- Module 3: Introduction.
 :::
 ::: {.column style="width: 5%;"}
 :::
 ::: {.column style="width: 47.5%;"}
 **Part 2** (14:15-15:15)
 
-- Data munging (Importing and manipulating data)
+- Module 3: Importing and manipulating data.
 :::
 ::::
 
@@ -169,14 +150,14 @@ Learn basic modeling concepts.
 ::: {.column style="width: 47.5%;"}
 **Part 3** (15:30-16:30)
 
-- Data visualization and Exploratory Data Analysis
+- Module 4: Introduction -> Tables.
 :::
 ::: {.column style="width: 5%;"}
 :::
 ::: {.column style="width: 47.5%;"}
 **Part 4** (16:45-18:00)
 
-- Modeling (One-Sample t-Test)
+- Module 4: `ggplot2`.
 :::
 ::::
 
@@ -189,7 +170,7 @@ Learn basic modeling concepts.
 ::: {.column style="width: 47.5%;"}
 **Part 1** (13:00-13:30)
 
-- Modeling (ANOVA).
+- Module 5: Introduction -> Power Analysis & Effect Size.
 
 :::
 ::: {.column style="width: 5%;"}
@@ -197,7 +178,7 @@ Learn basic modeling concepts.
 ::: {.column style="width: 47.5%;"}
 **Part 2** (13:30-14:00)
 
-- Modeling (Linear regression).
+- Module 5: One-Sample t-Test.
 :::
 ::::
 
@@ -210,13 +191,15 @@ Learn basic modeling concepts.
 ::: {.column style="width: 47.5%;"}
 **Part 1** (13:00-13:30)
 
-- Exercise (Data report---SISVAN).
+- Module 6: Introduction -> The MISFS-R.
+- Module 6: Project.
 :::
 ::: {.column style="width: 5%;"}
 :::
 ::: {.column style="width: 47.5%;"}
 **Part 2** (13:30-14:00)
 
+- Module 6: Project.
 - Conclusion.
 :::
 ::::
