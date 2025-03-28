@@ -50,13 +50,15 @@ For more details, see @carvalho2021a and @norde2023.
 
 ## ⚠️ Warning ⚠️ {.smaller}
 
-This exercise is for **educational purposes only**.
+**This exercise is for educational purposes only**.
 
-We will not verify the assumptions underlying the statistical test. For simplicity, we will assume that the data satisfies all necessary assumptions.
+The data used in this exercise requires further cleaning and validation to ensure its suitability for real-world applications. For the purposes of this analysis, we will assume the data is valid and reliable, though this assumption may not hold in practice.
 
-Since we are not verifying the assumptions, **the results of the statistical test may not be valid**.
+Additionally, we will not verify the assumptions underlying the statistical test. To simplify the exercise, we will proceed as though all necessary assumptions are satisfied.
 
-In practice, always ensure that the assumptions of the statistical tests you use are thoroughly checked and validated.
+Please note that **the results of the statistical test may not be valid** due to these simplifications.
+
+In real-world scenarios, always ensure that the assumptions of statistical tests are rigorously checked and validated before interpreting the results.
 
 ::: {.notes}
 :::
