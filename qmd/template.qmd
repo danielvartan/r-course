@@ -19,9 +19,11 @@ This report presents a data analysis exercise for the course [An Introduction to
 The analysis explores potential differences in ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022, focusing on clusters B and D of the Revised Multidimensional Index for Sustainable Food Systems ([MISFS-R](https://doi.org/10.1002/sd.2376)).
 
 ::: {.callout-warning}
-This exercise is for **educational purposes only**.
+**This exercise is for educational purposes only**.
 
-The assumptions underlying the statistical test were not verified. For simplicity, we assumed that the data meets all necessary assumptions. As a result, the statistical test results may not be valid.
+The data requires additional cleaning and validation to ensure its suitability for real-world applications. This analysis assumes the data is valid and reliable, which may not necessarily hold true.
+
+Furthermore, the assumptions underlying the statistical tests were not explicitly verified. For simplicity, it was presumed that the data satisfies all necessary assumptions. Consequently, the validity of the statistical test results may be compromised.
 :::
 
 ## Question
@@ -74,16 +76,16 @@ To ensure practical significance, we applied a Minimum Effect Size (MES) criteri
 
 The test was structured as follows:
 
-- **Null Hypothesis** ($\text{H}_{0}$): Ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 does not differ meaningfully across MISFS-R clusters B and D, indicated by Cohen's $d$ effect-size statistic being smaller than $0.2$ (negligible) **or** by a non-significant t-test (with a Type I error probability ($\alpha$) of $0.05$).
+- **Null Hypothesis** ($\text{H}_{0}$): Ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 does not differ meaningfully across MISFS-R clusters B and D, indicated by Cohen's $d$ effect-size statistic being smaller than $0.2$ (negligible) **or** by a non-significant t-statistic (with a Type I error probability ($\alpha$) of $0.05$).
 
-- **Alternative Hypothesis** ($\text{H}_{a}$): Ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 differs meaningfully across MISFS-R clusters B and D, indicated by Cohen's $d$ effect-size statistic being greater or equal than $0.2$ (non-negligible) **and** by a significant t-test (with a Type I error probability ($\alpha$) of $0.05$).
+- **Alternative Hypothesis** ($\text{H}_{a}$): Ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 differs meaningfully across MISFS-R clusters B and D, indicated by Cohen's $d$ effect-size statistic being greater or equal than $0.2$ (non-negligible) **and** by a significant t-statistic (with a Type I error probability ($\alpha$) of $0.05$).
 
 Formally:
 
 $$
 \begin{cases}
-\text{H}_{0}: \text{Cohen's} \ d < \text{MES} \quad \text{or} \quad \text{t-test is not significant} \ (\alpha \geq 0.05) \\
-\text{H}_{a}: \text{Cohen's} \ d \geq \text{MES} \quad \text{and} \quad \text{t-test is significant} \ (\alpha < 0.05)
+\text{H}_{0}: \text{Cohen's} \ d < \text{MES} \quad \text{or} \quad \text{t-statistic is not significant} \ (\alpha \geq 0.05) \\
+\text{H}_{a}: \text{Cohen's} \ d \geq \text{MES} \quad \text{and} \quad \text{t-statistic is significant} \ (\alpha < 0.05)
 \end{cases}
 $$
 
