@@ -13,8 +13,8 @@ project:
 title: "An Introduction to the R Programming Language"
 author: "Daniel Vartanian & Jaqueline Lopes Pereira"
 keyword: >
-  R. RStats. Course. Programming. Data Science. Data Engineering.
-  Data Analysis. Statistics. Data Visualization.
+  r programming, rstats, introductory course, data science, data engineering,
+  data munging, data visualization, data analysis
 institute: "University of São Paulo"
 date: 2025-03-24
 date-format: "YYYY-MM-DD"

@@ -7,27 +7,13 @@
 
 Answer the following question using the data provided:
 
-::: {style="text-align: center; font-size: 1.1em; font-weight: bold; color: #ED6B4D; padding-top: 100px;"}
-Was there a **meaningful** difference in ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 across the clusters B and D of the Revised Multidimensional Index for Sustainable Food Systems ([MISFS-R](https://doi.org/10.1002/sd.2376))?
+::: {style="text-align: center; font-size: 1.1em; padding-top: 100px;"}
+Was there a [**meaningful**]{.brand-red} difference in [**ultra-processed food consumption**]{.brand-red} among Brazilian children aged [**2 to 4**]{.brand-red} in [**2022**]{.brand-red} across the [**clusters B and D**]{.brand-red} of the Revised Multidimensional Index for Sustainable Food Systems ([MISFS-R](https://doi.org/10.1002/sd.2376))?
 :::
 
 ::: {.notes}
 :::
 
-## The Data {.smaller}
-
-```{=html}
-<video width="100%" style="display: block; margin: 0 auto;" muted controls>
-  <source src="images/downloading-sisvan-data.webm" type="video/webm">
-</video>
-```
-
-::: footer
-(If you could not download the data, click [here](https://github.com/danielvartan/r-course/blob/f3d8a2e8e249ee7ff3eb69a94a77e483104c7cc4/data/sisvan-raw.xlsx))
-:::
-
-::: {.notes}
-:::
 
 ## MISFS-R Clusters {.smaller}
 
@@ -62,10 +48,41 @@ For more details, see @carvalho2021a and @norde2023.
 ::: {.notes}
 :::
 
-## The Report {.smaller}
+## ⚠️ Warning ⚠️ {.smaller}
+
+This exercise is for **educational purposes only**.
+
+We will not verify the assumptions underlying the statistical test. For simplicity, we will assume that the data satisfies all necessary assumptions.
+
+Since we are not verifying the assumptions, **the results of the statistical test may not be valid**.
+
+In practice, always ensure that the assumptions of the statistical tests you use are thoroughly checked and validated.
 
 ::: {.notes}
 :::
+
+## The Data {.smaller}
+
+```{=html}
+<video width="100%" style="display: block; margin: 0 auto;" muted controls>
+  <source src="images/downloading-sisvan-data.webm" type="video/webm">
+</video>
+```
+
+::: footer
+(If you were unable to download the data, you can access it [here](https://github.com/danielvartan/r-course/blob/f3d8a2e8e249ee7ff3eb69a94a77e483104c7cc4/data/sisvan-raw.xlsx))
+:::
+
+::: {.notes}
+:::
+
+## The Template {.smaller}
+
+To assist you with this task, we have prepared a comprehensive template. You can download it [here](https://github.com/danielvartan/r-course/blob/main/qmd/template.qmd).
+
+This template outlines all the essential steps required to complete the exercise.
+
+We have provided a head start on the analysis, so your task is to complete the remaining sections and ensure all steps are thoroughly addressed.
 
 ## Data Science Workflow {.smaller}
 
@@ -80,13 +97,47 @@ Remember the data science workflow:
 ::: {.notes}
 :::
 
+## Steps {.smaller}
+
+👣 Here are the steps you should follow:
+
+:::: {.columns}
+::: {.column style="width: 50%;"}
+1\. Open a new Quarto project.
+
+2\. Copy the content of the template into the project's Quarto file.
+
+3\. Download the data.
+
+4\. Inspect the data file.
+
+5\. Import the data into R.
+
+6\. Clean, tidy, and validate the data.
+
+7\. Save the validated data.
+:::
+::: {.column style="width: 50%;"}
+8\. Conduct a **brief** exploratory data analysis.
+
+9\. Conduct a t-test to compare the groups.
+
+10\. Calculate the effect size.
+
+11\. Perform a *a posteriori* power analysis.
+
+12\. Write your conclusions.
+:::
+::::
+
+::: {.notes}
+:::
+
 ## Notes {.smaller}
 
 🧮 Recalculate the relative frequency.
 
 ❌ Remove municipalities with less than 10 monitored children.
-
-⌛ You have 45 minutes.
 
 🙋‍♂️ If you're stuck, ask for help.
 

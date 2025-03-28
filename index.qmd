@@ -25,7 +25,7 @@ Here are the main topics:
 1. [**Data Munging**]{.brand-brown}
 1. [**Exploratory Data Analysis**]{.brand-brown}
 1. [**Modeling**]{.brand-brown}
-1. [**Project**]{.brand-brown}
+1. [**Exercise**]{.brand-brown}
 1. [**Conclusion**]{.brand-brown}
 :::
 ::::
@@ -265,7 +265,7 @@ danielvartan.github.io/r-course
 
 {{< include ./qmd/module-5.qmd >}}
 
-# Module 6<br>[Project]{.brand-brown-750} {.smaller data-menu-title="Module 6: Exercise"}
+# Module 6<br>[Exercise]{.brand-brown-750} {.smaller data-menu-title="Module 6: Exercise"}
 
 {{< include ./qmd/module-6.qmd >}}
 

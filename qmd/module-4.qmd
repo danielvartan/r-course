@@ -392,7 +392,7 @@ penguins |>
     method = "lm",
     formula = y ~ x,
     se = FALSE,
-    linewidth = 1.5
+    linewidth = 2
   ) +
   labs(
     x = "Body Mass (g)",
@@ -651,7 +651,7 @@ penguins |>
   ggplot(aes(x = flipper_length_mm, fill = species)) +
   geom_density(alpha = 0.5, position = "identity") +
   scale_fill_viridis(discrete = TRUE) +
-  labs(x = "Flipper Length (mm)", y = "Frequency", fill = "Species") +
+  labs(x = "Flipper Length (mm)", y = "Density", fill = "Species") +
   theme(text = element_text(size = 20), legend.position = "none")
 ```
 :::
@@ -672,7 +672,7 @@ penguins |>
   ggplot(aes(x = flipper_length_mm, fill = species)) +
   geom_density(alpha = 0.5, position = "identity") +
   scale_fill_brewer(palette = "Set1") +
-  labs(x = "Flipper Length (mm)", y = "Frequency", fill = "Species") +
+  labs(x = "Flipper Length (mm)", y = "Density", fill = "Species") +
   theme(text = element_text(size = 20), legend.position = "none")
 ```
 :::

@@ -10,9 +10,9 @@ MIT](https://img.shields.io/badge/license-MIT-green)](https://choosealicense.com
 
 ## Overview
 
-🚀👩‍💻👨‍💻🎲🔬🔎📦📊📈📉✨🧙‍♂️🦄
+🚀👩‍💻👨‍💻🎲🔬🔎📦✨🧙‍♂️🦄
 
-This repository contains the slides and materials of the R course designed for the [Sustentarea](https://www.fsp.usp.br/sustentarea/) Research and Extension Center at the University of São Paulo ([USP](https://www5.usp.br/)). You can access the slides [here](https://danielvartan.github.io/r-course/).
+This repository hosts the slides and materials for an introductory R programming course developed for the [Sustentarea](https://www.fsp.usp.br/sustentarea/) Research and Extension Center at the University of São Paulo ([USP](https://www5.usp.br/)). You can access the slides [here](https://danielvartan.github.io/r-course/).
 
 ## License
 
@@ -24,7 +24,7 @@ License](https://creativecommons.org/licenses/by/4.0/).
 
 To cite this work, please use the following format:
 
-Vartanian, D., & Pereira, J. L. (2025). *An introduction to the R programming language* \[Presentation\]. Sustentarea Research and Extension Group at the University of São Paulo.
+Vartanian, D., & Pereira, J. L. (2025). *An introduction to the R programming language*. Sustentarea Research and Extension Group at the University of São Paulo. <https://danielvartan.github.io/r-course/>
 
 A BibTeX entry for LaTeX users is
 
@@ -35,6 +35,7 @@ A BibTeX entry for LaTeX users is
   year = {2025},
   address = {São Paulo},
   institution = {Sustentarea Research and Extension Group at the University of São Paulo},
-  langid = {en}
+  langid = {en},
+  url = {https://danielvartan.github.io/r-course/}
 }
 ```

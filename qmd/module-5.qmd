@@ -267,7 +267,7 @@ Comparison of a 95% of confidence level ($\alpha = 0.05$) and an *n*-dependent *
 
 :::: {.columns}
 ::: {.column style="width: 50%;"}
-> [...] in many circumstances, all that is intended by "proving" the null hypothesis is that the ES [Effect Size] is not necessarily zero but **small enough to be negligible** [...] (@cohen1988a[p. 461]).
+> [...] in many circumstances, all that is intended by "proving" the null hypothesis is that the ES [Effect Size] is not necessarily zero but **small enough to be negligible**`<br>`{=html}[@cohen1988a, p. 461].
 :::
 ::: {.column style="width: 50%;"}
 ![](images/jacob-cohen-figure-1.jpg){fig-align="center" style="width: 80%; padding-top: 25px;"}
@@ -349,7 +349,7 @@ dplyr::tibble(
 
 ::::: {.columns}
 :::: {.column style="width: 45%; font-size: 0.9em;"}
-$\Delta\text{R}^{2}$ = 0.00388`<br>`{=html}Cohen’s $f^{2}$ of 0.004143174
+$\Delta\text{R}^{2}$ = 0.00388`<br>`{=html}Cohen’s $f^{2}$ = 0.00414
 
 Latitudinal cline of chronotype [@leocadio-miguel2017].
 
@@ -395,6 +395,22 @@ Check Antoine Soetewey's [flowchart](https://statsandr.com/blog/what-statistical
 `infer` is a [Tidymodels](https://www.tidymodels.org/) package that provides a statistical **grammar** for inferential statistics.
 
 It also offers [pipeline examples](https://infer.tidymodels.org/articles/observed_stat_examples.html) for various hypothesis tests. These pipelines can serve as a helpful starting point for implementing other types of models.
+
+::: {.notes}
+:::
+
+## ⚠️ Warning ⚠️ {.smaller}
+
+The examples provided here are for **educational purposes only**.
+
+In these examples, we are not verifying the assumptions underlying the statistical tests. For simplicity, we assume that the data satisfies all necessary assumptions, and the resulting models are valid.
+
+Since we are not verifying the assumptions, **the results of the statistical tests may not be valid**.
+
+In practice, always ensure that the assumptions of the statistical tests you use are thoroughly checked and validated.
+
+::: {.notes}
+:::
 
 ## t-Test: Hypothesis {.smaller}
 

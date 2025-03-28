@@ -252,7 +252,7 @@
 <li><span class="brand-brown"><strong>Data Munging</strong></span></li>
 <li><span class="brand-brown"><strong>Exploratory Data Analysis</strong></span></li>
 <li><span class="brand-brown"><strong>Modeling</strong></span></li>
-<li><span class="brand-brown"><strong>Project</strong></span></li>
+<li><span class="brand-brown"><strong>Exercise</strong></span></li>
 <li><span class="brand-brown"><strong>Conclusion</strong></span></li>
 </ol>
 </div>
@@ -2081,12 +2081,12 @@
 <span id="cb80-7"><a></a>  <span class="at">check =</span> <span class="st">"equal"</span></span>
 <span id="cb80-8"><a></a>)</span>
 <span id="cb80-9"><a></a><span class="co">#&gt; Unit: microseconds</span></span>
-<span id="cb80-10"><a></a><span class="co">#&gt;                   expr     min      lq      mean   median       uq       max</span></span>
-<span id="cb80-11"><a></a><span class="co">#&gt;  with_for_loop(1:1000) 700.382 723.905 1677.3751 751.8105 775.2860 68878.780</span></span>
-<span id="cb80-12"><a></a><span class="co">#&gt;       with_map(1:1000) 300.393 314.428  335.4093 322.1340 340.7045  1007.185</span></span>
+<span id="cb80-10"><a></a><span class="co">#&gt;                   expr     min       lq      mean   median       uq       max</span></span>
+<span id="cb80-11"><a></a><span class="co">#&gt;  with_for_loop(1:1000) 699.041 776.8875 1814.4835 814.5890 859.4740 72061.490</span></span>
+<span id="cb80-12"><a></a><span class="co">#&gt;       with_map(1:1000) 304.018 326.6350  355.9178 349.6375 363.6055  1004.152</span></span>
 <span id="cb80-13"><a></a><span class="co">#&gt;  neval cld</span></span>
-<span id="cb80-14"><a></a><span class="co">#&gt;    100   a</span></span>
-<span id="cb80-15"><a></a><span class="co">#&gt;    100   a</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb80-14"><a></a><span class="co">#&gt;    100  a </span></span>
+<span id="cb80-15"><a></a><span class="co">#&gt;    100   b</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div></div>
 </section><section id="enviroments" class="slide level2 smaller"><h2>Enviroments</h2>
@@ -4375,7 +4375,7 @@
 <span id="cb210-18"><a></a>    <span class="at">method =</span> <span class="st">"lm"</span>,</span>
 <span id="cb210-19"><a></a>    <span class="at">formula =</span> y <span class="sc">~</span> x,</span>
 <span id="cb210-20"><a></a>    <span class="at">se =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb210-21"><a></a>    <span class="at">linewidth =</span> <span class="fl">1.5</span></span>
+<span id="cb210-21"><a></a>    <span class="at">linewidth =</span> <span class="dv">2</span></span>
 <span id="cb210-22"><a></a>  ) <span class="sc">+</span></span>
 <span id="cb210-23"><a></a>  <span class="fu">labs</span>(</span>
 <span id="cb210-24"><a></a>    <span class="at">x =</span> <span class="st">"Body Mass (g)"</span>,</span>
@@ -4615,7 +4615,7 @@
 <span id="cb218-8"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
 <span id="cb218-9"><a></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">position =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
 <span id="cb218-10"><a></a>  <span class="fu">scale_fill_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
-<span id="cb218-11"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Flipper Length (mm)"</span>, <span class="at">y =</span> <span class="st">"Frequency"</span>, <span class="at">fill =</span> <span class="st">"Species"</span>) <span class="sc">+</span></span>
+<span id="cb218-11"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Flipper Length (mm)"</span>, <span class="at">y =</span> <span class="st">"Density"</span>, <span class="at">fill =</span> <span class="st">"Species"</span>) <span class="sc">+</span></span>
 <span id="cb218-12"><a></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>), <span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -4636,7 +4636,7 @@
 <span id="cb219-7"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
 <span id="cb219-8"><a></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">position =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
 <span id="cb219-9"><a></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Set1"</span>) <span class="sc">+</span></span>
-<span id="cb219-10"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Flipper Length (mm)"</span>, <span class="at">y =</span> <span class="st">"Frequency"</span>, <span class="at">fill =</span> <span class="st">"Species"</span>) <span class="sc">+</span></span>
+<span id="cb219-10"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Flipper Length (mm)"</span>, <span class="at">y =</span> <span class="st">"Density"</span>, <span class="at">fill =</span> <span class="st">"Species"</span>) <span class="sc">+</span></span>
 <span id="cb219-11"><a></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>), <span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -5493,7 +5493,7 @@
 <div class="columns">
 <div class="column" style="width: 50%;">
 <blockquote>
-<p>[…] in many circumstances, all that is intended by “proving” the null hypothesis is that the ES [Effect Size] is not necessarily zero but <strong>small enough to be negligible</strong> […] (<span class="citation" data-cites="cohen1988a">Cohen (<a href="#/references" role="doc-biblioref" onclick="">1988, p. 461</a>)</span>).</p>
+<p>[…] in many circumstances, all that is intended by “proving” the null hypothesis is that the ES [Effect Size] is not necessarily zero but <strong>small enough to be negligible</strong><br><span class="citation" data-cites="cohen1988a">(<a href="#/references" role="doc-biblioref" onclick="">Cohen, 1988, p. 461</a>)</span>.</p>
 </blockquote>
 </div><div class="column" style="width: 50%;">
 <div class="quarto-figure quarto-figure-center">
@@ -6088,7 +6088,7 @@ Effect Size Classes
       }</style></aside></section><section id="the-p-value-problem-example" class="slide level2 smaller"><h2>The <em>p</em>-value Problem: Example</h2>
 <div class="columns">
 <div class="column" style="width: 45%; font-size: 0.9em;">
-<p><span class="math inline">\(\Delta\text{R}^{2}\)</span> = 0.00388<br>Cohen’s <span class="math inline">\(f^{2}\)</span> of 0.004143174</p>
+<p><span class="math inline">\(\Delta\text{R}^{2}\)</span> = 0.00388<br>Cohen’s <span class="math inline">\(f^{2}\)</span> = 0.00414</p>
 <p>Latitudinal cline of chronotype <span class="citation" data-cites="leocadio-miguel2017">(<a href="#/references" role="doc-biblioref" onclick="">Leocadio-Miguel et al., 2017</a>)</span>.</p>
 <p><a href="https://danielvartan.github.io/mastersthesis/web/qmd/supplementary-material-9.html">Critique</a> of Leocadio-Miguel et al.&nbsp;latitude article <span class="citation" data-cites="vartanian2025a">(<a href="#/references" role="doc-biblioref" onclick="">Vartanian, 2025</a>)</span>.</p>
 <p>The ASA statement on p-values <span class="citation" data-cites="wasserstein2016">(<a href="#/references" role="doc-biblioref" onclick="">Wasserstein &amp; Lazar, 2016</a>)</span>.</p>
@@ -6139,7 +6139,32 @@ Effect Size Classes
 <p><a href="https://readr.tidyverse.org/"><img data-src="images/infer-hex-logo.png" style="width: 120px;"></a></p>
 <p><code>infer</code> is a <a href="https://www.tidymodels.org/">Tidymodels</a> package that provides a statistical <strong>grammar</strong> for inferential statistics.</p>
 <p>It also offers <a href="https://infer.tidymodels.org/articles/observed_stat_examples.html">pipeline examples</a> for various hypothesis tests. These pipelines can serve as a helpful starting point for implementing other types of models.</p>
-</section><section id="t-test-hypothesis" class="slide level2 smaller"><h2>t-Test: Hypothesis</h2>
+<aside class="notes"><style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="warning" class="slide level2 smaller"><h2>⚠️ Warning ⚠️</h2>
+<p>The examples provided here are for <strong>educational purposes only</strong>.</p>
+<p>In these examples, we are not verifying the assumptions underlying the statistical tests. For simplicity, we assume that the data satisfies all necessary assumptions, and the resulting models are valid.</p>
+<p>Since we are not verifying the assumptions, <strong>the results of the statistical tests may not be valid</strong>.</p>
+<p>In practice, always ensure that the assumptions of the statistical tests you use are thoroughly checked and validated.</p>
+<aside class="notes"><style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="t-test-hypothesis" class="slide level2 smaller"><h2>t-Test: Hypothesis</h2>
 <div class="columns">
 <div class="column" style="width: 50%; font-size: 0.85em;">
 <p><span style="font-size: 1.1em; font-weight: bold; color: #ED6B4D;">Is there a meaningful difference in flipper length between Adelie and Gentoo penguins?</span></p>
@@ -7738,27 +7763,13 @@ Effect Size Classes
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section></section><section><section id="module-6-project" class="title-slide slide level1 smaller center" data-menu-title="Module 6: Exercise"><h1>Module 6<br><span class="brand-brown-750">Project</span>
+      }</style></aside></section></section><section><section id="module-6-exercise" class="title-slide slide level1 smaller center" data-menu-title="Module 6: Exercise"><h1>Module 6<br><span class="brand-brown-750">Exercise</span>
 </h1>
 
 </section><section id="your-mission" class="slide level2 smaller"><h2>Your Mission</h2>
 <p>Answer the following question using the data provided:</p>
-<div style="text-align: center; font-size: 1.1em; font-weight: bold; color: #ED6B4D; padding-top: 100px;">
-<p>Was there a <strong>meaningful</strong> difference in ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 across the clusters B and D of the Revised Multidimensional Index for Sustainable Food Systems (<a href="https://doi.org/10.1002/sd.2376">MISFS-R</a>)?</p>
-</div>
-<aside class="notes"><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="the-data" class="slide level2 smaller"><h2>The Data</h2>
-<video width="100%" style="display: block; margin: 0 auto;" muted="" controls=""><source src="images/downloading-sisvan-data.webm" type="video/webm"></video><div class="footer">
-<p>(If you could not download the data, click <a href="https://github.com/danielvartan/r-course/blob/f3d8a2e8e249ee7ff3eb69a94a77e483104c7cc4/data/sisvan-raw.xlsx">here</a>)</p>
+<div style="text-align: center; font-size: 1.1em; padding-top: 100px;">
+<p>Was there a <span class="brand-red"><strong>meaningful</strong></span> difference in <span class="brand-red"><strong>ultra-processed food consumption</strong></span> among Brazilian children aged <span class="brand-red"><strong>2 to 4</strong></span> in <span class="brand-red"><strong>2022</strong></span> across the <span class="brand-red"><strong>clusters B and D</strong></span> of the Revised Multidimensional Index for Sustainable Food Systems (<a href="https://doi.org/10.1002/sd.2376">MISFS-R</a>)?</p>
 </div>
 <aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
@@ -7810,7 +7821,11 @@ Effect Size Classes
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section><section id="the-report" class="slide level2 smaller"><h2>The Report</h2>
+      }</style></aside></section><section id="warning-1" class="slide level2 smaller"><h2>⚠️ Warning ⚠️</h2>
+<p>This exercise is for <strong>educational purposes only</strong>.</p>
+<p>We will not verify the assumptions underlying the statistical test. For simplicity, we will assume that the data satisfies all necessary assumptions.</p>
+<p>Since we are not verifying the assumptions, <strong>the results of the statistical test may not be valid</strong>.</p>
+<p>In practice, always ensure that the assumptions of the statistical tests you use are thoroughly checked and validated.</p>
 <aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -7821,7 +7836,25 @@ Effect Size Classes
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section><section id="data-science-workflow" class="slide level2 smaller"><h2>Data Science Workflow</h2>
+      }</style></aside></section><section id="the-data" class="slide level2 smaller"><h2>The Data</h2>
+<video width="100%" style="display: block; margin: 0 auto;" muted="" controls=""><source src="images/downloading-sisvan-data.webm" type="video/webm"></video><div class="footer">
+<p>(If you were unable to download the data, you can access it <a href="https://github.com/danielvartan/r-course/blob/f3d8a2e8e249ee7ff3eb69a94a77e483104c7cc4/data/sisvan-raw.xlsx">here</a>)</p>
+</div>
+<aside class="notes"><style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="the-template" class="slide level2 smaller"><h2>The Template</h2>
+<p>To assist you with this task, we have prepared a comprehensive template. You can download it <a href="https://github.com/danielvartan/r-course/blob/main/qmd/template.qmd">here</a>.</p>
+<p>This template outlines all the essential steps required to complete the exercise.</p>
+<p>We have provided a head start on the analysis, so your task is to complete the remaining sections and ensure all steps are thoroughly addressed.</p>
+</section><section id="data-science-workflow" class="slide level2 smaller"><h2>Data Science Workflow</h2>
 <p>Remember the data science workflow:</p>
 
 <img data-src="images/wickham-2023-figure-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width: 85%; padding-top: 50px;"><div class="footer">
@@ -7837,10 +7870,37 @@ Effect Size Classes
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
+      }</style></aside></section><section id="steps" class="slide level2 smaller"><h2>Steps</h2>
+<p>👣 Here are the steps you should follow:</p>
+<div class="columns">
+<div class="column" style="width: 50%;">
+<p>1. Open a new Quarto project.</p>
+<p>2. Copy the content of the template into the project’s Quarto file.</p>
+<p>3. Download the data.</p>
+<p>4. Inspect the data file.</p>
+<p>5. Import the data into R.</p>
+<p>6. Clean, tidy, and validate the data.</p>
+<p>7. Save the validated data.</p>
+</div><div class="column" style="width: 50%;">
+<p>8. Conduct a <strong>brief</strong> exploratory data analysis.</p>
+<p>9. Conduct a t-test to compare the groups.</p>
+<p>10. Calculate the effect size.</p>
+<p>11. Perform a <em>a posteriori</em> power analysis.</p>
+<p>12. Write your conclusions.</p>
+</div></div>
+<aside class="notes"><style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
       }</style></aside></section><section id="notes-1" class="slide level2 smaller"><h2>Notes</h2>
 <p>🧮 Recalculate the relative frequency.</p>
 <p>❌ Remove municipalities with less than 10 monitored children.</p>
-<p>⌛ You have 45 minutes.</p>
 <p>🙋‍♂️ If you’re stuck, ask for help.</p>
 <p>🎉 Have fun!</p>
 <aside class="notes"><style type="text/css">

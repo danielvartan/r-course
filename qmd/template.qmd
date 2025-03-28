@@ -1,0 +1,250 @@
+---
+title: >
+  Exploring potential differences in ultra-processed food consumption among
+  Brazilian children aged 2 to 4 in 2022 among B and D MISFS-R clusters
+format: html
+author: "[YOUR NAME HERE]"
+date: today
+---
+
+<!-- badges: start -->
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+<!-- badges: end -->
+
+## Overview
+
+This report presents a data analysis exercise for the course [An Introduction to the R Programming Language](https://github.com/danielvartan/r-course).
+
+The analysis explores potential differences in ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022, focusing on clusters B and D of the Revised Multidimensional Index for Sustainable Food Systems ([MISFS-R](https://doi.org/10.1002/sd.2376)).
+
+::: {.callout-warning}
+This exercise is for **educational purposes only**.
+
+The assumptions underlying the statistical test were not verified. For simplicity, we assumed that the data meets all necessary assumptions. As a result, the statistical test results may not be valid.
+:::
+
+## Question
+
+This analysis seeks to address the following question:
+
+::: {style="text-align: center; font-size: 1.1em; padding-top: 30px;"}
+Was there a [**meaningful**]{.brand-red} difference in [**ultra-processed food consumption**]{.brand-red} among Brazilian children aged [**2 to 4**]{.brand-red} in [**2022**]{.brand-red} across the [**clusters B and D**]{.brand-red} of the Revised Multidimensional Index for Sustainable Food Systems ([MISFS-R](https://doi.org/10.1002/sd.2376))?
+:::
+
+## Methods
+
+### Approach and Procedure Method
+
+This study employed the hypothetical-deductive method, also known as the method of conjecture and refutation [@popper1979a, p. 164], as its problem-solving approach. Procedurally, it applied an enhanced version of Null Hypothesis Significance Testing (NHST), grounded on the original ideas of Neyman-Pearson framework for data testing [@neyman1928; @neyman1928a; @perezgonzalez2015].
+
+The analysis was conducted using a [t-test for independent samples](https://en.wikipedia.org/wiki/Student%27s_t-test) alongside visual inspections of the data.
+
+Additionally, a power analysis and effect-size estimation were performed to ensure the robustness and practical significance of the results.
+
+### Source of Data/Information
+
+The data used in this analysis were sourced from Brazil's Food and Nutrition Surveillance System ([SISVAN](https://sisaps.saude.gov.br/sisvan/)), regarding the dataset on ultra-processed food consumption [@sisvanb].
+
+Only data from municipalities with 10 or more monitored children were considered in the analysis.
+
+### Data Wrangling
+
+Data munging and analysis followed the data science workflow outlined by @wickham2023e, as illustrated in [@fig-wickham-at-al-2024-figure-1]. All processes were made using the R programming language [@rcoreteama], RStudio IDE [@positteama], and several R packages.
+
+The [tidyverse](https://www.tidyverse.org/) and [rOpenSci](https://ropensci.org/) peer-reviewed package ecosystem and other R packages adherents of the tidy tools manifesto [@wickham2023c] were prioritized. All processes were made in order to provide result transparency and reproducibility.
+
+::: {#fig-wickham-at-al-2024-figure-1}
+![](images/wickham-at-al-2024-figure-1.png){width=75%}
+
+[Source: Reproduced from @wickham2023e.]{.legend}
+
+Data science workflow created by Wickham, Çetinkaya-Runde, and Grolemund.
+:::
+
+The Tidyverse [code style guide](https://style.tidyverse.org/) and [design principles](https://design.tidyverse.org/) were followed to ensure consistency and enhance readability.
+
+All the analyses are 100% reproducible and can be run again at any time.
+
+### Hypothesis Testing
+
+We tested whether the means of ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 differed meaningfully across the clusters B and D of the Revised Multidimensional Index for Sustainable Food Systems (MISFS-R).
+
+To ensure practical significance, we applied a Minimum Effect Size (MES) criterion, following the original Neyman-Pearson framework for hypothesis testing [@neyman1928; @neyman1928a; @perezgonzalez2015]. The MES was set at Cohen's threshold for small effects (Cohen's $d$ = 0.2) [@cohen1988a]. Thus, a difference was considered meaningfully only if its effect-size was greater or equal to the MES; otherwise, it was considered negligible.
+
+The test was structured as follows:
+
+- **Null Hypothesis** ($\text{H}_{0}$): Ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 does not differ meaningfully across MISFS-R clusters B and D, indicated by Cohen's $d$ effect-size statistic being smaller than $0.2$ (negligible) **or** by a non-significant t-test (with a Type I error probability ($\alpha$) of $0.05$).
+
+- **Alternative Hypothesis** ($\text{H}_{a}$): Ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 differs meaningfully across MISFS-R clusters B and D, indicated by Cohen's $d$ effect-size statistic being greater or equal than $0.2$ (non-negligible) **and** by a significant t-test (with a Type I error probability ($\alpha$) of $0.05$).
+
+Formally:
+
+$$
+\begin{cases}
+\text{H}_{0}: \text{Cohen's} \ d < \text{MES} \quad \text{or} \quad \text{t-test is not significant} \ (\alpha \geq 0.05) \\
+\text{H}_{a}: \text{Cohen's} \ d \geq \text{MES} \quad \text{and} \quad \text{t-test is significant} \ (\alpha < 0.05)
+\end{cases}
+$$
+
+### Interpretation of Results
+
+#### Revised Multidimensional Index for Sustainable Food Systems (MISFS-R)
+
+MISFS is a multidimensional index designed to assess the sustainability of food systems at a subnational level in Brazil, incorporating local behaviors and practices. The MISFS-R is a revised version that introduces new indicators and a refined methodology ([@fig-norde-2023-figure-6]). For more details, see @carvalho2021a and @norde2023.
+
+::: {#fig-norde-2023-figure-6}
+![](images/norde-2023-figure-6.jpg){width=90%}
+
+[Source: Reproduced from @norde2023.]{.legend}
+
+Dendrogram for cluster analysis between Brazilian states considering all the Revised Multidimensional Index for Sustainable Food Systems (MISFS-R) indicators and geographical location of each cluster.
+:::
+
+#### Pratical Significance
+
+To ensure practical significance, we used Cohen's $d$ statistic small size benchmark as a reference. This statistic was analyzed considering a confidence interval of $95\%$.
+
+We emphasize the need for the use of a MES while conducting hypothesis tests, since a p-value does not measure effect size; rather, it represents the conditional probability of observing the test statistic (or a more extreme value) given that the null hypothesis is true [@cohen1994; @wasserstein2016].
+
+## Setting the Enviroment
+
+```{r}
+#| output: false
+
+library(brandr)
+library(curl)
+library(dplyr)
+library(effectsize)
+library(ggplot2)
+library(here)
+library(infer)
+library(janitor)
+library(patchwork)
+library(pwr)
+library(pwrss)
+library(readr)
+library(readxl)
+library(stringr)
+library(summarytools)
+library(tidyr)
+```
+
+## Importing and Tidying the Data
+
+Source: SISVAN [Food Consumption](https://opendatasus.saude.gov.br/dataset/sisvan-estado-nutricional) dataset for ultra-processed food consumption of children between 2 to 4 years old (Sistema de Vigilância Alimentar e Nutricional, n.d.).
+
+### Reading the Data
+
+```{r}
+#| output: false
+
+data <-
+  here("data", "sisvan-raw.xlsx") |>
+  read_xlsx(
+    sheet = "2022",
+    skip = 1,
+    col_types = "text"
+  )
+```
+
+### Tidying the Data
+
+```{r}
+
+```
+
+### Validating the Data
+
+```{r}
+
+```
+
+### Transforming the Data
+
+```{r}
+
+```
+
+## Saving the Valid Data
+
+```{r}
+
+```
+
+## Data Dictionary
+
+- `year`: Year of the data collection (type: `integer`).
+- `misfs`: Revised Multidimensional Index for Sustainable Food Systems (MISFS-R) cluster (type: `factor`).
+- `state_abbrev`: State abbreviation (Federal Unit) (type: `character`).
+- `municipality_code`: Municipality code (type: `integer`).
+- `municipality_name`: Municipality name (type: `character`).
+- `n_upf`: Number of children that consumed ultra-processed foods (UPF) (type: `integer`).
+- `n_upf_rel`: Percentage of children that consumed ultra-processed foods (UPF) (type: `double`).
+- `n_monitored`: Number of monitored children (type: `integer`).
+
+## Checking Distributions
+
+```{r}
+
+```
+
+## Checking Combined Distributions
+
+```{r}
+
+```
+
+## Modeling the Data
+
+```{r}
+
+```
+
+## Assessing the Effect Size
+
+```{r}
+
+```
+
+## Assessing Power
+
+```{r}
+
+```
+
+## Conclusion
+
+## License
+
+[![License:
+MIT](https://img.shields.io/badge/license-MIT-green.png)](https://opensource.org/license/mit)
+[![License: CC BY
+4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+
+The code in this report is licensed under the [MIT
+License](https://opensource.org/license/mit/), while the document are available under the [Creative Commons Attribution 4.0 International
+License](https://creativecommons.org/licenses/by/4.0/).
+
+## How to Cite
+
+To cite this work, please use the following format:
+
+[YOUR SURNAME HERE], [YOUR INITIALS HERE], Pereira, J. L., & Vartanian, D. (2025). (2025). *An introduction to the R programming language: Class exercise* \[Report\]. Sustentarea Research and Extension Group at the University of São Paulo.
+
+A BibTeX entry for LaTeX users is
+
+```
+@techreport{[your-surname-in-lower-case-here]2025,
+  title = {An introduction to the R programming language: Class exercise},
+  author = {{YOUR FULL NAME HERE} {Daniel Vartanian} and {Jaqueline Lopes Pereira}},
+  year = {2025},
+  address = {São Paulo},
+  institution = {Sustentarea Research and Extension Group at the University of São Paulo},
+  langid = {en}
+```
+
+## References {.unnumbered}
+
+::: {#refs}
+:::

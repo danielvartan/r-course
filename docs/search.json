@@ -4,7 +4,7 @@
     "href": "index.html#hi-there",
     "title": "An Introduction to the R Programming Language",
     "section": "Hi there! 👋",
-    "text": "Hi there! 👋\n\n\nThis course will introuce you to the R programming language.\n\n\n\n\n\n\n\nHere are the main topics:\n\n\nIntroduction\nComputer Science\nR Basics\nData Munging\nExploratory Data Analysis\nModeling\nProject\nConclusion\n\n\n\n\n(Artwork by Allison Horst)"
+    "text": "Hi there! 👋\n\n\nThis course will introuce you to the R programming language.\n\n\n\n\n\n\n\nHere are the main topics:\n\n\nIntroduction\nComputer Science\nR Basics\nData Munging\nExploratory Data Analysis\nModeling\nExercise\nConclusion\n\n\n\n\n(Artwork by Allison Horst)"
   },
   {
     "objectID": "index.html#pre-course-survey",
@@ -403,7 +403,7 @@
     "href": "index.html#functionals",
     "title": "An Introduction to the R Programming Language",
     "section": "Functionals",
-    "text": "Functionals\n\n\nA functional is a function that takes a function as an input and returns a vector as output (Wickham, 2019).\nIt makes the work of the programmer easier, because it allows to apply a function to a vector without the need of a loop. Because these functions are usually written in C (a low-level programminng language), they are very fast.\nR have native functionals (e.g., lapply()), but prefer solutions from the purrr package.\n\n\n\n\ntriple &lt;- function(x) x * 3\n\n\nwith_for_loop &lt;- function(x) {\n  out &lt;- numeric()\n  for (i in x) out &lt;- c(out, triple(i))\n  out\n}\n\n\nlibrary(purrr)\n\nwith_map &lt;- function(x) map_dbl(x, triple)\n\n\nlibrary(microbenchmark)\n\nmicrobenchmark(\n  with_for_loop(1:1000),\n  with_map(1:1000),\n  times = 100,\n  check = \"equal\"\n)\n#&gt; Unit: microseconds\n#&gt;                   expr     min      lq      mean   median       uq       max\n#&gt;  with_for_loop(1:1000) 700.382 723.905 1677.3751 751.8105 775.2860 68878.780\n#&gt;       with_map(1:1000) 300.393 314.428  335.4093 322.1340 340.7045  1007.185\n#&gt;  neval cld\n#&gt;    100   a\n#&gt;    100   a"
+    "text": "Functionals\n\n\nA functional is a function that takes a function as an input and returns a vector as output (Wickham, 2019).\nIt makes the work of the programmer easier, because it allows to apply a function to a vector without the need of a loop. Because these functions are usually written in C (a low-level programminng language), they are very fast.\nR have native functionals (e.g., lapply()), but prefer solutions from the purrr package.\n\n\n\n\ntriple &lt;- function(x) x * 3\n\n\nwith_for_loop &lt;- function(x) {\n  out &lt;- numeric()\n  for (i in x) out &lt;- c(out, triple(i))\n  out\n}\n\n\nlibrary(purrr)\n\nwith_map &lt;- function(x) map_dbl(x, triple)\n\n\nlibrary(microbenchmark)\n\nmicrobenchmark(\n  with_for_loop(1:1000),\n  with_map(1:1000),\n  times = 100,\n  check = \"equal\"\n)\n#&gt; Unit: microseconds\n#&gt;                   expr     min       lq      mean   median       uq       max\n#&gt;  with_for_loop(1:1000) 699.041 776.8875 1814.4835 814.5890 859.4740 72061.490\n#&gt;       with_map(1:1000) 304.018 326.6350  355.9178 349.6375 363.6055  1004.152\n#&gt;  neval cld\n#&gt;    100  a \n#&gt;    100   b"
   },
   {
     "objectID": "index.html#enviroments",
@@ -942,7 +942,7 @@
     "href": "index.html#its-all-about-layers-1",
     "title": "An Introduction to the R Programming Language",
     "section": "It’s All About Layers",
-    "text": "It’s All About Layers\n\n\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(body_mass_g, flipper_length_mm, species) |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      y = flipper_length_mm,\n      color = species,\n      shape = species\n    )\n  ) +\n  geom_point(size = 4) +\n  scale_color_brand_d(alpha = 0.7) +\n  theme(text = element_text(size = 20), legend.position = \"none\")\n\n\n\n\n\n\n\n\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(body_mass_g, flipper_length_mm, species) |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      y = flipper_length_mm,\n      color = species,\n      shape = species\n    )\n  ) +\n  geom_point(size = 4) +\n  geom_smooth(\n    method = \"lm\",\n    formula = y ~ x,\n    se = FALSE,\n    linewidth = 1.5\n  ) +\n  labs(\n    x = \"Body Mass (g)\",\n    y = \"Flipper Length (mm)\",\n    color = \"Species\",\n    shape = \"Species\"\n  ) +\n  scale_color_brand_d(alpha = 0.7) +\n  theme(text = element_text(size = 20), legend.position = \"none\")"
+    "text": "It’s All About Layers\n\n\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(body_mass_g, flipper_length_mm, species) |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      y = flipper_length_mm,\n      color = species,\n      shape = species\n    )\n  ) +\n  geom_point(size = 4) +\n  scale_color_brand_d(alpha = 0.7) +\n  theme(text = element_text(size = 20), legend.position = \"none\")\n\n\n\n\n\n\n\n\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(body_mass_g, flipper_length_mm, species) |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      y = flipper_length_mm,\n      color = species,\n      shape = species\n    )\n  ) +\n  geom_point(size = 4) +\n  geom_smooth(\n    method = \"lm\",\n    formula = y ~ x,\n    se = FALSE,\n    linewidth = 2\n  ) +\n  labs(\n    x = \"Body Mass (g)\",\n    y = \"Flipper Length (mm)\",\n    color = \"Species\",\n    shape = \"Species\"\n  ) +\n  scale_color_brand_d(alpha = 0.7) +\n  theme(text = element_text(size = 20), legend.position = \"none\")"
   },
   {
     "objectID": "index.html#bar-plots",
@@ -998,7 +998,7 @@
     "href": "index.html#color-palettes",
     "title": "An Introduction to the R Programming Language",
     "section": "Color Palettes",
-    "text": "Color Palettes\nColor palettes can be sequential, diverging, or qualitative (discrete). Here are some examples of two popular packages for color palettes in R.\n\n\nviridis: Colorblind-Friendly Color Maps\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\nlibrary(viridis)\n\npenguins |&gt;\n  drop_na(flipper_length_mm, species) |&gt;\n  ggplot(aes(x = flipper_length_mm, fill = species)) +\n  geom_density(alpha = 0.5, position = \"identity\") +\n  scale_fill_viridis(discrete = TRUE) +\n  labs(x = \"Flipper Length (mm)\", y = \"Frequency\", fill = \"Species\") +\n  theme(text = element_text(size = 20), legend.position = \"none\")\n\n\n\n\n\n\n\n\nRColorBrewer: Common Color Palettes\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(flipper_length_mm, species) |&gt;\n  ggplot(aes(x = flipper_length_mm, fill = species)) +\n  geom_density(alpha = 0.5, position = \"identity\") +\n  scale_fill_brewer(palette = \"Set1\") +\n  labs(x = \"Flipper Length (mm)\", y = \"Frequency\", fill = \"Species\") +\n  theme(text = element_text(size = 20), legend.position = \"none\")"
+    "text": "Color Palettes\nColor palettes can be sequential, diverging, or qualitative (discrete). Here are some examples of two popular packages for color palettes in R.\n\n\nviridis: Colorblind-Friendly Color Maps\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\nlibrary(viridis)\n\npenguins |&gt;\n  drop_na(flipper_length_mm, species) |&gt;\n  ggplot(aes(x = flipper_length_mm, fill = species)) +\n  geom_density(alpha = 0.5, position = \"identity\") +\n  scale_fill_viridis(discrete = TRUE) +\n  labs(x = \"Flipper Length (mm)\", y = \"Density\", fill = \"Species\") +\n  theme(text = element_text(size = 20), legend.position = \"none\")\n\n\n\n\n\n\n\n\nRColorBrewer: Common Color Palettes\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(flipper_length_mm, species) |&gt;\n  ggplot(aes(x = flipper_length_mm, fill = species)) +\n  geom_density(alpha = 0.5, position = \"identity\") +\n  scale_fill_brewer(palette = \"Set1\") +\n  labs(x = \"Flipper Length (mm)\", y = \"Density\", fill = \"Species\") +\n  theme(text = element_text(size = 20), legend.position = \"none\")"
   },
   {
     "objectID": "index.html#how-to-choose-the-right-vis.",
@@ -1089,7 +1089,7 @@
     "href": "index.html#cohens-benchmark",
     "title": "An Introduction to the R Programming Language",
     "section": "Cohen’s Benchmark",
-    "text": "Cohen’s Benchmark\n\n\n\n[…] in many circumstances, all that is intended by “proving” the null hypothesis is that the ES [Effect Size] is not necessarily zero but small enough to be negligible […] (Cohen (1988, p. 461)).\n\n\n\n\n\n\n\n\n(Photo by an unknown author.)"
+    "text": "Cohen’s Benchmark\n\n\n\n[…] in many circumstances, all that is intended by “proving” the null hypothesis is that the ES [Effect Size] is not necessarily zero but small enough to be negligible(Cohen, 1988, p. 461).\n\n\n\n\n\n\n\n\n(Photo by an unknown author.)"
   },
   {
     "objectID": "index.html#cohens-benchmark-1",
@@ -1103,7 +1103,7 @@
     "href": "index.html#the-p-value-problem-example",
     "title": "An Introduction to the R Programming Language",
     "section": "The p-value Problem: Example",
-    "text": "The p-value Problem: Example\n\n\n\\(\\Delta\\text{R}^{2}\\) = 0.00388Cohen’s \\(f^{2}\\) of 0.004143174\nLatitudinal cline of chronotype (Leocadio-Miguel et al., 2017).\nCritique of Leocadio-Miguel et al. latitude article (Vartanian, 2025).\nThe ASA statement on p-values (Wasserstein & Lazar, 2016).\nAuthors who rely solely on the p-value demonstrate a preference for statistical rituals over statistical reasoning (Gigerenzer, 2004).\n\n\n\n\n\n\nNote: The HO score (Horne & Östberg, 1976) goes from 16 to 86, with higher scores indicating a preference for morningness.\n\n\n\n(Reproduced from Leocadio-Miguel et al. (2017, Figure 2))"
+    "text": "The p-value Problem: Example\n\n\n\\(\\Delta\\text{R}^{2}\\) = 0.00388Cohen’s \\(f^{2}\\) = 0.00414\nLatitudinal cline of chronotype (Leocadio-Miguel et al., 2017).\nCritique of Leocadio-Miguel et al. latitude article (Vartanian, 2025).\nThe ASA statement on p-values (Wasserstein & Lazar, 2016).\nAuthors who rely solely on the p-value demonstrate a preference for statistical rituals over statistical reasoning (Gigerenzer, 2004).\n\n\n\n\n\n\nNote: The HO score (Horne & Östberg, 1976) goes from 16 to 86, with higher scores indicating a preference for morningness.\n\n\n\n(Reproduced from Leocadio-Miguel et al. (2017, Figure 2))"
   },
   {
     "objectID": "index.html#what-test-should-i-use",
@@ -1118,6 +1118,13 @@
     "title": "An Introduction to the R Programming Language",
     "section": "\ninfer Pipeline Examples",
     "text": "infer Pipeline Examples\n\ninfer is a Tidymodels package that provides a statistical grammar for inferential statistics.\nIt also offers pipeline examples for various hypothesis tests. These pipelines can serve as a helpful starting point for implementing other types of models."
+  },
+  {
+    "objectID": "index.html#warning",
+    "href": "index.html#warning",
+    "title": "An Introduction to the R Programming Language",
+    "section": "⚠️ Warning ⚠️",
+    "text": "⚠️ Warning ⚠️\nThe examples provided here are for educational purposes only.\nIn these examples, we are not verifying the assumptions underlying the statistical tests. For simplicity, we assume that the data satisfies all necessary assumptions, and the resulting models are valid.\nSince we are not verifying the assumptions, the results of the statistical tests may not be valid.\nIn practice, always ensure that the assumptions of the statistical tests you use are thoroughly checked and validated."
   },
   {
     "objectID": "index.html#t-test-hypothesis",
@@ -1456,13 +1463,6 @@
     "text": "Your Mission\nAnswer the following question using the data provided:\n\nWas there a meaningful difference in ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 across the clusters B and D of the Revised Multidimensional Index for Sustainable Food Systems (MISFS-R)?"
   },
   {
-    "objectID": "index.html#the-data",
-    "href": "index.html#the-data",
-    "title": "An Introduction to the R Programming Language",
-    "section": "The Data",
-    "text": "The Data\n\n(If you could not download the data, click here)"
-  },
-  {
     "objectID": "index.html#misfs-r-clusters",
     "href": "index.html#misfs-r-clusters",
     "title": "An Introduction to the R Programming Language",
@@ -1477,11 +1477,25 @@
     "text": "MISFS-R Clusters\n\n\n(Reproduced from Norde et al. (2023, Figure 6))"
   },
   {
-    "objectID": "index.html#the-report",
-    "href": "index.html#the-report",
+    "objectID": "index.html#warning-1",
+    "href": "index.html#warning-1",
     "title": "An Introduction to the R Programming Language",
-    "section": "The Report",
-    "text": "The Report"
+    "section": "⚠️ Warning ⚠️",
+    "text": "⚠️ Warning ⚠️\nThis exercise is for educational purposes only.\nWe will not verify the assumptions underlying the statistical test. For simplicity, we will assume that the data satisfies all necessary assumptions.\nSince we are not verifying the assumptions, the results of the statistical test may not be valid.\nIn practice, always ensure that the assumptions of the statistical tests you use are thoroughly checked and validated."
+  },
+  {
+    "objectID": "index.html#the-data",
+    "href": "index.html#the-data",
+    "title": "An Introduction to the R Programming Language",
+    "section": "The Data",
+    "text": "The Data\n\n(If you were unable to download the data, you can access it here)"
+  },
+  {
+    "objectID": "index.html#the-template",
+    "href": "index.html#the-template",
+    "title": "An Introduction to the R Programming Language",
+    "section": "The Template",
+    "text": "The Template\nTo assist you with this task, we have prepared a comprehensive template. You can download it here.\nThis template outlines all the essential steps required to complete the exercise.\nWe have provided a head start on the analysis, so your task is to complete the remaining sections and ensure all steps are thoroughly addressed."
   },
   {
     "objectID": "index.html#data-science-workflow",
@@ -1491,11 +1505,18 @@
     "text": "Data Science Workflow\nRemember the data science workflow:\n\n\n(Reproduced from Wickham et al. (2023))"
   },
   {
+    "objectID": "index.html#steps",
+    "href": "index.html#steps",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Steps",
+    "text": "Steps\n👣 Here are the steps you should follow:\n\n\n1. Open a new Quarto project.\n2. Copy the content of the template into the project’s Quarto file.\n3. Download the data.\n4. Inspect the data file.\n5. Import the data into R.\n6. Clean, tidy, and validate the data.\n7. Save the validated data.\n\n8. Conduct a brief exploratory data analysis.\n9. Conduct a t-test to compare the groups.\n10. Calculate the effect size.\n11. Perform a a posteriori power analysis.\n12. Write your conclusions."
+  },
+  {
     "objectID": "index.html#notes-1",
     "href": "index.html#notes-1",
     "title": "An Introduction to the R Programming Language",
     "section": "Notes",
-    "text": "Notes\n🧮 Recalculate the relative frequency.\n❌ Remove municipalities with less than 10 monitored children.\n⌛ You have 45 minutes.\n🙋‍♂️ If you’re stuck, ask for help.\n🎉 Have fun!"
+    "text": "Notes\n🧮 Recalculate the relative frequency.\n❌ Remove municipalities with less than 10 monitored children.\n🙋‍♂️ If you’re stuck, ask for help.\n🎉 Have fun!"
   },
   {
     "objectID": "index.html#we-hope-you-enjoyed-the-course",

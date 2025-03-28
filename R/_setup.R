@@ -20,13 +20,13 @@ library(xml2)
 
 source(here::here("R", "utils.R"))
 
-# Set variables -----
-
-set.seed(2025)
-
 # Set general options -----
 
 options(scipen = 999)
+
+# Set variables -----
+
+set.seed(2025)
 
 # Set knitr -----
 
