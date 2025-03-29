@@ -30,8 +30,18 @@ Furthermore, the assumptions underlying the statistical tests were not explicitl
 
 This analysis seeks to address the following question:
 
-::: {style="text-align: center; font-size: 1.1em; padding-top: 30px;"}
+::: {style="text-align: center; font-size: 1.1em; padding-top: 30px; padding-bottom: 30px;"}
 Was there a [**meaningful**]{.brand-red} difference in [**ultra-processed food consumption**]{.brand-red} among Brazilian children aged [**2 to 4**]{.brand-red} in [**2022**]{.brand-red} across the [**clusters B and D**]{.brand-red} of the Revised Multidimensional Index for Sustainable Food Systems ([MISFS-R](https://doi.org/10.1002/sd.2376))?
+:::
+
+MISFS is a multidimensional index designed to assess the sustainability of food systems at a subnational level in Brazil, incorporating local behaviors and practices. The MISFS-R is a revised version that introduces new indicators and a refined methodology ([@fig-norde-2023-figure-6]). For more details, see @carvalho2021a and @norde2023.
+
+::: {#fig-norde-2023-figure-6}
+![](images/norde-2023-figure-6.jpg){width=90%}
+
+[Source: Reproduced from @norde2023.]{.legend}
+
+Dendrogram for cluster analysis between Brazilian states considering all the Revised Multidimensional Index for Sustainable Food Systems (MISFS-R) indicators and geographical location of each cluster.
 :::
 
 ## Methods
@@ -39,10 +49,6 @@ Was there a [**meaningful**]{.brand-red} difference in [**ultra-processed food c
 ### Approach and Procedure Method
 
 This study employed the hypothetical-deductive method, also known as the method of conjecture and refutation [@popper1979a, p. 164], as its problem-solving approach. Procedurally, it applied an enhanced version of Null Hypothesis Significance Testing (NHST), grounded on the original ideas of Neyman-Pearson framework for data testing [@neyman1928; @neyman1928a; @perezgonzalez2015].
-
-The analysis was conducted using a [t-test for independent samples](https://en.wikipedia.org/wiki/Student%27s_t-test) alongside visual inspections of the data.
-
-Additionally, a power analysis and effect-size estimation were performed to ensure the robustness and practical significance of the results.
 
 ### Source of Data/Information
 
@@ -66,7 +72,11 @@ Data science workflow created by Wickham, Çetinkaya-Runde, and Grolemund.
 
 The Tidyverse [code style guide](https://style.tidyverse.org/) and [design principles](https://design.tidyverse.org/) were followed to ensure consistency and enhance readability.
 
-All the analyses are 100% reproducible and can be run again at any time.
+All the analyses are 100% reproducible and can be run again at any time. See the [README](hhttps://github.com/danielvartan/r-course-exercise/blob/main/README.md) file in the code repository to learn how to run them.
+
+### Data Analysis
+
+The analysis employed a bilateral [t-test for independent groups](https://en.wikipedia.org/wiki/Student%27s_t-test) using a randomization-based empirical null distribution. Visual inspections of the data were also conducted to explore and assess patterns. Furthermore, a power analysis and effect-size estimation were performed to evaluate the statistical robustness and practical significance of the findings.
 
 ### Hypothesis Testing
 
@@ -76,38 +86,20 @@ To ensure practical significance, we applied a Minimum Effect Size (MES) criteri
 
 The test was structured as follows:
 
-- **Null Hypothesis** ($\text{H}_{0}$): Ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 does not differ meaningfully across MISFS-R clusters B and D, indicated by Cohen's $d$ effect-size statistic being smaller than $0.2$ (negligible) **or** by a non-significant t-statistic (with a Type I error probability ($\alpha$) of $0.05$).
+- **Null Hypothesis** ($\text{H}_{0}$): Ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 does not differ meaningfully across MISFS-R clusters B and D, indicated by Cohen's $d$ effect-size statistic being smaller than 0.2 (negligible).
 
-- **Alternative Hypothesis** ($\text{H}_{a}$): Ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 differs meaningfully across MISFS-R clusters B and D, indicated by Cohen's $d$ effect-size statistic being greater or equal than $0.2$ (non-negligible) **and** by a significant t-statistic (with a Type I error probability ($\alpha$) of $0.05$).
+- **Alternative Hypothesis** ($\text{H}_{a}$): Ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 differs meaningfully across MISFS-R clusters B and D, indicated by Cohen's $d$ effect-size statistic being greater or equal than 0.2 (non-negligible).
 
 Formally:
 
 $$
 \begin{cases}
-\text{H}_{0}: \text{Cohen's} \ d < \text{MES} \quad \text{or} \quad \text{t-statistic is not significant} \ (\alpha \geq 0.05) \\
-\text{H}_{a}: \text{Cohen's} \ d \geq \text{MES} \quad \text{and} \quad \text{t-statistic is significant} \ (\alpha < 0.05)
+\text{H}_{0}: \text{Cohen's} \ d < \text{MES} \\
+\text{H}_{a}: \text{Cohen's} \ d \geq \text{MES}
 \end{cases}
 $$
 
-### Interpretation of Results
-
-#### Revised Multidimensional Index for Sustainable Food Systems (MISFS-R)
-
-MISFS is a multidimensional index designed to assess the sustainability of food systems at a subnational level in Brazil, incorporating local behaviors and practices. The MISFS-R is a revised version that introduces new indicators and a refined methodology ([@fig-norde-2023-figure-6]). For more details, see @carvalho2021a and @norde2023.
-
-::: {#fig-norde-2023-figure-6}
-![](images/norde-2023-figure-6.jpg){width=90%}
-
-[Source: Reproduced from @norde2023.]{.legend}
-
-Dendrogram for cluster analysis between Brazilian states considering all the Revised Multidimensional Index for Sustainable Food Systems (MISFS-R) indicators and geographical location of each cluster.
-:::
-
-#### Pratical Significance
-
-To ensure practical significance, we used Cohen's $d$ statistic small size benchmark as a reference. This statistic was analyzed considering a confidence interval of $95\%$.
-
-We emphasize the need for the use of a MES while conducting hypothesis tests, since a p-value does not measure effect size; rather, it represents the conditional probability of observing the test statistic (or a more extreme value) given that the null hypothesis is true [@cohen1994; @wasserstein2016].
+To ensure validity, this hypothesis test is conditioned on a Type I error ($\alpha$) of 0.05 and a minimum statistical power (1 - $\beta$) of 0.8. This means the test should have at least an 80% probability of correctly rejecting the null hypothesis when it is false, thereby minimizing the risk of a Type II error ($\beta$).
 
 ## Setting the Enviroment
 

@@ -2081,12 +2081,12 @@
 <span id="cb80-7"><a></a>  <span class="at">check =</span> <span class="st">"equal"</span></span>
 <span id="cb80-8"><a></a>)</span>
 <span id="cb80-9"><a></a><span class="co">#&gt; Unit: microseconds</span></span>
-<span id="cb80-10"><a></a><span class="co">#&gt;                   expr     min       lq      mean   median       uq       max</span></span>
-<span id="cb80-11"><a></a><span class="co">#&gt;  with_for_loop(1:1000) 664.852 693.9845 1604.1210 726.2215 755.1780 64669.961</span></span>
-<span id="cb80-12"><a></a><span class="co">#&gt;       with_map(1:1000) 289.026 302.1425  326.2362 312.3690 335.4485   971.069</span></span>
+<span id="cb80-10"><a></a><span class="co">#&gt;                   expr     min       lq      mean   median      uq       max</span></span>
+<span id="cb80-11"><a></a><span class="co">#&gt;  with_for_loop(1:1000) 674.547 718.7515 1684.5166 736.1685 793.755 69360.583</span></span>
+<span id="cb80-12"><a></a><span class="co">#&gt;       with_map(1:1000) 293.903 307.3690  336.0909 318.2670 346.059   980.786</span></span>
 <span id="cb80-13"><a></a><span class="co">#&gt;  neval cld</span></span>
-<span id="cb80-14"><a></a><span class="co">#&gt;    100  a </span></span>
-<span id="cb80-15"><a></a><span class="co">#&gt;    100   b</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb80-14"><a></a><span class="co">#&gt;    100   a</span></span>
+<span id="cb80-15"><a></a><span class="co">#&gt;    100   a</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div></div>
 </section><section id="enviroments" class="slide level2 smaller"><h2>Enviroments</h2>
@@ -5245,13 +5245,13 @@
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_center" headers="decision" style="text-align: center; font-weight: bold;">Accept</td>
-<td class="gt_row gt_center" headers="h0_true" style="text-align: center; color: #000000; background-color: #CCE1CD;">Correct inference<br>(True negative)<br>(<span class="math inline">\(\text{prob} = 1 - \alpha\)</span>)</td>
-<td class="gt_row gt_center" headers="h0_false" style="text-align: center; color: #000000; background-color: #FBE1DB;">Type II error<br>(False negative)<br>(<span class="math inline">\(\text{prob} = \beta\)</span>)</td>
+<td class="gt_row gt_center" headers="h0_true" style="text-align: center; color: #000000; background-color: #CCE1CD;">Correct inference<br>(True negative)<br>(<span class="math inline">\(1 - \alpha\)</span>)</td>
+<td class="gt_row gt_center" headers="h0_false" style="text-align: center; color: #000000; background-color: #FBE1DB;">Type II error<br>(False negative)<br>(<span class="math inline">\(\beta\)</span>)</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_center" headers="decision" style="text-align: center; font-weight: bold;">Reject</td>
-<td class="gt_row gt_center" headers="h0_true" style="text-align: center; color: #000000; background-color: #FBE1DB;">Type I error<br>(False positive)<br>(<span class="math inline">\(\text{prob} = \alpha\)</span>)</td>
-<td class="gt_row gt_center" headers="h0_false" style="text-align: center; color: #000000; background-color: #CCE1CD;">Correct inference<br>(True positive)<br>(<span class="math inline">\(\text{prob} = 1 - \beta\)</span>)</td>
+<td class="gt_row gt_center" headers="h0_true" style="text-align: center; color: #000000; background-color: #FBE1DB;">Type I error<br>(False positive)<br>(<span class="math inline">\(\alpha\)</span>)</td>
+<td class="gt_row gt_center" headers="h0_false" style="text-align: center; color: #000000; background-color: #CCE1CD;">Correct inference<br>(True positive)<br>(<span class="math inline">\(1 - \beta\)</span>)</td>
 </tr>
 </tbody>
 </table>
@@ -6150,9 +6150,9 @@ Effect Size Classes
           overflow: hidden!important;
           display:block!important;
       }</style></aside></section><section id="warning" class="slide level2 smaller"><h2>⚠️ Warning ⚠️</h2>
-<p>The examples provided here are for <strong>educational purposes only</strong>.</p>
+<p><strong>The examples provided here are for educational purposes only</strong>.</p>
 <p>In these examples, we are not verifying the assumptions underlying the statistical tests. For simplicity, we assume that the data satisfies all necessary assumptions, and the resulting models are valid.</p>
-<p>Since we are not verifying the assumptions, <strong>the results of the statistical tests may not be valid</strong>.</p>
+<p>Please note that <strong>the results of the statistical tests might not be valid</strong> due to these simplifications.</p>
 <p>In practice, always ensure that the assumptions of the statistical tests you use are thoroughly checked and validated.</p>
 <aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
@@ -6527,25 +6527,24 @@ Effect Size Classes
 <span id="cb243-3"><a></a>    <span class="at">x =</span> gentoo,</span>
 <span id="cb243-4"><a></a>    <span class="at">y =</span> adelie,</span>
 <span id="cb243-5"><a></a>    <span class="at">mu =</span> <span class="dv">0</span>,</span>
-<span id="cb243-6"><a></a>    <span class="at">adjust =</span> <span class="cn">TRUE</span>, <span class="co"># Hedge's g</span></span>
-<span id="cb243-7"><a></a>    <span class="at">ci =</span> <span class="fl">0.95</span>,</span>
-<span id="cb243-8"><a></a>    <span class="at">alternative =</span> <span class="st">"two.sided"</span></span>
-<span id="cb243-9"><a></a>  )</span>
-<span id="cb243-10"><a></a></span>
-<span id="cb243-11"><a></a>effect_size</span>
-<span id="cb243-12"><a></a><span class="co">#&gt; Hedges' g |       95% CI</span></span>
-<span id="cb243-13"><a></a><span class="co">#&gt; ------------------------</span></span>
-<span id="cb243-14"><a></a><span class="co">#&gt; 4.13      | [3.70, 4.56]</span></span>
-<span id="cb243-15"><a></a><span class="co">#&gt; </span></span>
-<span id="cb243-16"><a></a><span class="co">#&gt; - Estimated using pooled SD.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb243-6"><a></a>    <span class="at">ci =</span> <span class="fl">0.95</span>,</span>
+<span id="cb243-7"><a></a>    <span class="at">alternative =</span> <span class="st">"two.sided"</span></span>
+<span id="cb243-8"><a></a>  )</span>
+<span id="cb243-9"><a></a></span>
+<span id="cb243-10"><a></a>effect_size</span>
+<span id="cb243-11"><a></a><span class="co">#&gt; Cohen's d |       95% CI</span></span>
+<span id="cb243-12"><a></a><span class="co">#&gt; ------------------------</span></span>
+<span id="cb243-13"><a></a><span class="co">#&gt; 4.14      | [3.71, 4.57]</span></span>
+<span id="cb243-14"><a></a><span class="co">#&gt; </span></span>
+<span id="cb243-15"><a></a><span class="co">#&gt; - Estimated using pooled SD.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div></div>
 <div style="padding-top: 15px;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb244"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb244-1"><a></a>effect_size <span class="sc">|&gt;</span> <span class="fu">interpret_hedges_g</span>(<span class="at">rules =</span> <span class="st">"cohen1988"</span>)</span>
-<span id="cb244-2"><a></a><span class="co">#&gt; Hedges' g |       95% CI | Interpretation</span></span>
+<span id="cb244-2"><a></a><span class="co">#&gt; Cohen's d |       95% CI | Interpretation</span></span>
 <span id="cb244-3"><a></a><span class="co">#&gt; -----------------------------------------</span></span>
-<span id="cb244-4"><a></a><span class="co">#&gt; 4.13      | [3.70, 4.56] |          large</span></span>
+<span id="cb244-4"><a></a><span class="co">#&gt; 4.14      | [3.71, 4.57] |          large</span></span>
 <span id="cb244-5"><a></a><span class="co">#&gt; </span></span>
 <span id="cb244-6"><a></a><span class="co">#&gt; - Estimated using pooled SD.</span></span>
 <span id="cb244-7"><a></a><span class="co">#&gt; - Interpretation rule: cohen1988</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -6632,7 +6631,7 @@ Effect Size Classes
 <div class="columns">
 <div class="column" style="width: 60%; font-size: 0.85em;">
 <p><span style="font-size: 1.1em; font-weight: bold; color: #ED6B4D;">Is there a meaningful difference in flipper length between Adelie and Gentoo penguins?</span></p>
-<p>Our analysis indicates that the difference in means is statistically significant (<span class="math inline">\(t\)</span> = 34.4, <span class="math inline">\(p &lt;\)</span> 0.001). Additionally, the effect size is very large and exceeds the Minimal Effect Size (MES) threshold (<span class="math inline">\(d\)</span> = 4.13 [3.70, 4.56]).</p>
+<p>Our analysis found a statistically significant difference in means (<span class="math inline">\(t\)</span> = 34.4, <span class="math inline">\(p\)</span>-value &lt; 0.001). The observed effect size was very large and exceed the Minimal Effect Size (MES) threshold (<span class="math inline">\(d\)</span> = 4.13, 95% CI [3.70, 4.56]).</p>
 <p>The power (1 - <span class="math inline">\(\beta\)</span>) of the test is 1, indicating that the probability of a false negative is zero.</p>
 <p>Based on these results, we conclude that <strong>there is a meaningful difference in flipper length between Adelie and Gentoo penguins</strong>, with Gentoo penguins having significantly longer flippers. Consequently, we reject the null hypothesis in favor of the alternative hypothesis.</p>
 </div><div class="column" style="width: 40%; padding-top: 130px;">
@@ -7065,7 +7064,7 @@ Effect Size Classes
 <div class="columns">
 <div class="column" style="width: 60%; font-size: 0.8em;">
 <p><span style="font-size: 1.1em; font-weight: bold; color: #ED6B4D;">Is there a meaningful difference in flipper length between Adelie, Chinstrap, and Gentoo penguins?</span></p>
-<p>Our analysis indicates that the difference in means is statistically significant (<span class="math inline">\(\text{F}\)</span> = 595, <span class="math inline">\(p &lt;\)</span> 0.001). Additionally, the effect size is very large and exceeds the Minimal Effect Size (MES) threshold (<span class="math inline">\(f\)</span> = 1.873 [1.72, Inf]).</p>
+<p>Our analysis found a statistically significant difference in means (<span class="math inline">\(\text{F}\)</span> = 595, <span class="math inline">\(p\)</span>-value &lt; 0.001). The observed effect size was very large and exceed the Minimal Effect Size (MES) threshold (<span class="math inline">\(f\)</span> = 1.873, 95% CI [1.72, Inf]).</p>
 <p>The power (1 - <span class="math inline">\(\beta\)</span>) of the test is 1, indicating that the probability of a false negative is zero.</p>
 <p>Based on these results, we conclude that <strong>there is a meaningful difference in flipper length between Adelie, Chinstrap, and Gentoo penguins</strong>, with Gentoo penguins having significantly longer flippers, followed by Chinstrap penguins. Consequently, we reject the null hypothesis in favor of the alternative hypothesis.</p>
 </div><div class="column" style="width: 40%; padding-top: 130px;">
@@ -7093,18 +7092,26 @@ Effect Size Classes
           overflow: hidden!important;
           display:block!important;
       }</style></aside></section><section id="linear-reg.-hypothesis" class="slide level2 smaller"><h2>Linear Reg.: Hypothesis</h2>
+<div class="columns">
+<div class="column" style="width: 50%; font-size: 0.85em;">
 <p><span style="font-size: 1.1em; font-weight: bold; color: #ED6B4D;">Adding <code>bill_depth_mm</code> as a predictor improve the prediction of <code>flipper_length_mm</code>?</span></p>
 <p>To test this, we will use <strong>Nested Linear Models</strong>.</p>
 <p>To ensure <span style="text-decoration: underline;">practical significance</span>, we will analyze the delta of the adjusted <span class="math inline">\(\text{R}^2\)</span> of the models considering a 95% confidence interval.</p>
 <p>We will use Cohen’s benchmark for a small effect size as our Minimum Effect Size (MES) <span class="citation" data-cites="cohen1988a">(<a href="#/references" role="doc-biblioref" onclick="">Cohen, 1988</a>)</span>.</p>
-<div style="padding-top: 15px;">
+</div><div class="column" style="width: 50%; padding-top: 125px;">
 <p><span class="math display">\[
 \begin{cases}
-\text{H}_{0}: \Delta \text{Adjusted} \ \text{R}^{2} &lt; \text{MES} \quad \text{or} \quad \text{F-test is not significant} \ (\alpha \geq 0.05) \\
-\text{H}_{a}: \Delta \text{Adjusted} \ \text{R}^{2} \geq \text{MES} \quad \text{and} \quad \text{F-test is significant} \ (\alpha &lt; 0.05)
+\text{H}_{0}: \Delta \text{Adjusted} \ \text{R}^{2} = 0 \\
+\text{H}_{a}: \Delta \text{Adjusted} \ \text{R}^{2} &gt; 0
 \end{cases}
 \]</span></p>
-</div>
+<p><span class="math display">\[
+\begin{cases}
+\text{H}_{0}: \Delta \text{Adjusted} \ \text{R}^{2} &lt; \text{MES} \\
+\text{H}_{a}: \Delta \text{Adjusted} \ \text{R}^{2} \geq \text{MES}
+\end{cases}
+\]</span></p>
+</div></div>
 <aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -7643,20 +7650,26 @@ Effect Size Classes
           overflow: hidden!important;
           display:block!important;
       }</style></aside></section><section id="linear-reg.-conclusion" class="slide level2 smaller"><h2>Linear Reg.: Conclusion</h2>
-<div style="font-size: 0.9em;">
+<div class="columns">
+<div class="column" style="width: 60%; font-size: 0.8em;">
 <p><span style="font-size: 1.1em; font-weight: bold; color: #ED6B4D;">Adding <code>bill_depth_mm</code> as a predictor meaningful improve the prediction of <code>flipper_length_mm</code>?</span></p>
-<p>Our analysis indicates that adding <code>bill_depth_mm</code> as a predictor improves the model adjusted <span class="math inline">\(\text{R}^{2}\)</span> in 0.19483 [0.12069, 0.26897] (<span class="math inline">\(\text{F}\)</span>(2, 339) = 284, <span class="math inline">\(p &lt;\)</span> 0.001).</p>
+<p>Our analysis indicates that adding <code>bill_depth_mm</code> as a predictor improves the model adjusted <span class="math inline">\(\text{R}^{2}\)</span> in 0.19483 (95% CI [0.12069, 0.26897]) (<span class="math inline">\(\text{F}\)</span>(2, 339) = 284, <span class="math inline">\(p\)</span>-value &lt; 0.001), exceeding the Minimal Effect Size (MES) threshold.</p>
 <p>The power (1 - <span class="math inline">\(\beta\)</span>) of the test is 1, indicating that the probability of a false negative is zero.</p>
 <p>Based on these results, we conclude that <strong><code>bill_depth_mm</code> meaningful improve the prediction of <code>flipper_length_mm</code></strong>. Consequently, we reject the null hypothesis in favor of the alternative hypothesis.</p>
-</div>
-<div style="padding-top: 15px;">
+</div><div class="column" style="width: 40%; padding-top: 130px;">
 <p><span class="math display">\[
 \begin{cases}
-\text{H}_{0}: \text{Adjusted} \ \text{R}^{2} &lt; \text{MES} \quad \text{or} \quad \text{F-test is not significant} \ (\alpha \geq 0.05) \\
-\text{H}_{a}: \text{Adjusted} \ \text{R}^{2} \geq \text{MES} \quad \text{and} \quad \text{F-test is significant} \ (\alpha &lt; 0.05)
+\text{H}_{0}: \Delta \text{Adjusted} \ \text{R}^{2} = 0 \\
+\text{H}_{a}: \Delta \text{Adjusted} \ \text{R}^{2} &gt; 0
 \end{cases}
 \]</span></p>
-</div>
+<p><span class="math display">\[
+\begin{cases}
+\text{H}_{0}: \Delta \text{Adjusted} \ \text{R}^{2} &lt; \text{MES} \\
+\text{H}_{a}: \Delta \text{Adjusted} \ \text{R}^{2} \geq \text{MES}
+\end{cases}
+\]</span></p>
+</div></div>
 <aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

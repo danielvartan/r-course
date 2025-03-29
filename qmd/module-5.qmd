@@ -53,12 +53,12 @@ library("tidymodels")
 dplyr::tibble(
   decision = c("Accept", "Reject"),
   h0_true = c(
-    "Correct inference<br>(True negative)<br>($\\text{prob} = 1 - \\alpha$)",
-    "Type I error<br>(False positive)<br>($\\text{prob} = \\alpha$)"
+    "Correct inference<br>(True negative)<br>($1 - \\alpha$)",
+    "Type I error<br>(False positive)<br>($\\alpha$)"
   ),
   h0_false = c(
-    "Type II error<br>(False negative)<br>($\\text{prob} = \\beta$)",
-    "Correct inference<br>(True positive)<br>($\\text{prob} = 1 - \\beta$)"
+    "Type II error<br>(False negative)<br>($\\beta$)",
+    "Correct inference<br>(True positive)<br>($1 - \\beta$)"
   )
 ) |>
   gt::gt() |>
@@ -401,11 +401,11 @@ It also offers [pipeline examples](https://infer.tidymodels.org/articles/observe
 
 ## ⚠️ Warning ⚠️ {.smaller}
 
-The examples provided here are for **educational purposes only**.
+**The examples provided here are for educational purposes only**.
 
 In these examples, we are not verifying the assumptions underlying the statistical tests. For simplicity, we assume that the data satisfies all necessary assumptions, and the resulting models are valid.
 
-Since we are not verifying the assumptions, **the results of the statistical tests may not be valid**.
+Please note that **the results of the statistical tests might not be valid** due to these simplifications.
 
 In practice, always ensure that the assumptions of the statistical tests you use are thoroughly checked and validated.
 
@@ -431,7 +431,6 @@ $$
 \text{H}_{a}: \mu_{A} \neq \mu_{B} \\
 \end{cases}
 $$
-
 
 $$
 \begin{cases}
@@ -700,7 +699,6 @@ effect_size <-
     x = gentoo,
     y = adelie,
     mu = 0,
-    adjust = TRUE, # Hedge's g
     ci = 0.95,
     alternative = "two.sided"
   )
@@ -774,7 +772,7 @@ power.t.test(
 ::: {.column style="width: 60%; font-size: 0.85em;"}
 [Is there a meaningful difference in flipper length between Adelie and Gentoo penguins?]{style="font-size: 1.1em; font-weight: bold; color: #ED6B4D;"}
 
-Our analysis indicates that the difference in means is statistically significant ($t$ = 34.4, $p <$ 0.001). Additionally, the effect size is very large and exceeds the Minimal Effect Size (MES) threshold ($d$ = 4.13 [3.70, 4.56]).
+Our analysis found a statistically significant difference in means ($t$ = 34.4, $p$-value < 0.001). The observed effect size was very large and exceed the Minimal Effect Size (MES) threshold ($d$ = 4.13, 95% CI [3.70, 4.56]).
 
 The power (1 - $\beta$) of the test is 1, indicating that the probability of a false negative is zero.
 
@@ -787,7 +785,6 @@ $$
 \text{H}_{a}: \mu_{A} \neq \mu_{B} \\
 \end{cases}
 $$
-
 
 $$
 \begin{cases}
@@ -820,7 +817,6 @@ $$
 \text{H}_{a}: \mu_{i} \neq \mu_{j}, \ \text{for some} \ i, j
 \end{cases}
 $$
-
 
 $$
 \begin{cases}
@@ -1129,7 +1125,7 @@ pwr.anova.test(
 ::: {.column style="width: 60%; font-size: 0.8em;"}
 [Is there a meaningful difference in flipper length between Adelie, Chinstrap, and Gentoo penguins?]{style="font-size: 1.1em; font-weight: bold; color: #ED6B4D;"}
 
-Our analysis indicates that the difference in means is statistically significant ($\text{F}$ = 595, $p <$ 0.001). Additionally, the effect size is very large and exceeds the Minimal Effect Size (MES) threshold ($f$ = 1.873 [1.72, Inf]).
+Our analysis found a statistically significant difference in means ($\text{F}$ = 595, $p$-value < 0.001). The observed effect size was very large and exceed the Minimal Effect Size (MES) threshold ($f$ = 1.873, 95% CI [1.72, Inf]).
 
 The power (1 - $\beta$) of the test is 1, indicating that the probability of a false negative is zero.
 
@@ -1142,7 +1138,6 @@ $$
 \text{H}_{a}: \mu_{i} \neq \mu_{j}, \ \text{for some} \ i, j
 \end{cases}
 $$
-
 
 $$
 \begin{cases}
@@ -1158,6 +1153,8 @@ $$
 
 ## Linear Reg.: Hypothesis {.smaller}
 
+:::: {.columns}
+::: {.column style="width: 50%; font-size: 0.85em;"}
 [Adding `bill_depth_mm` as a predictor improve the prediction of `flipper_length_mm`?]{style="font-size: 1.1em; font-weight: bold; color: #ED6B4D;"}
 
 To test this, we will use **Nested Linear Models**.
@@ -1165,15 +1162,23 @@ To test this, we will use **Nested Linear Models**.
 To ensure [practical significance]{style="text-decoration: underline;"}, we will analyze the delta of the adjusted $\text{R}^2$ of the models considering a 95% confidence interval.
 
 We will use Cohen's benchmark for a small effect size as our Minimum Effect Size (MES) [@cohen1988a].
-
-::: {style="padding-top: 15px;"}
+:::
+::: {.column style="width: 50%; padding-top: 125px;"}
 $$
 \begin{cases}
-\text{H}_{0}: \Delta \text{Adjusted} \ \text{R}^{2} < \text{MES} \quad \text{or} \quad \text{F-test is not significant} \ (\alpha \geq 0.05) \\
-\text{H}_{a}: \Delta \text{Adjusted} \ \text{R}^{2} \geq \text{MES} \quad \text{and} \quad \text{F-test is significant} \ (\alpha < 0.05)
+\text{H}_{0}: \Delta \text{Adjusted} \ \text{R}^{2} = 0 \\
+\text{H}_{a}: \Delta \text{Adjusted} \ \text{R}^{2} > 0
+\end{cases}
+$$
+
+$$
+\begin{cases}
+\text{H}_{0}: \Delta \text{Adjusted} \ \text{R}^{2} < \text{MES} \\
+\text{H}_{a}: \Delta \text{Adjusted} \ \text{R}^{2} \geq \text{MES}
 \end{cases}
 $$
 :::
+::::
 
 ::: {.notes}
 :::
@@ -1612,24 +1617,32 @@ pwrss.f.reg(
 
 ## Linear Reg.: Conclusion {.smaller}
 
-::: {style="font-size: 0.9em;"}
+:::: {.columns}
+::: {.column style="width: 60%; font-size: 0.8em;"}
 [Adding `bill_depth_mm` as a predictor meaningful improve the prediction of `flipper_length_mm`?]{style="font-size: 1.1em; font-weight: bold; color: #ED6B4D;"}
 
-Our analysis indicates that adding `bill_depth_mm` as a predictor improves the model adjusted $\text{R}^{2}$ in 0.19483 \[0.12069, 0.26897\] ($\text{F}$(2, 339) = 284, $p <$ 0.001).
+Our analysis indicates that adding `bill_depth_mm` as a predictor improves the model adjusted $\text{R}^{2}$ in 0.19483 (95% CI \[0.12069, 0.26897\]) ($\text{F}$(2, 339) = 284, $p$-value < 0.001), exceeding the Minimal Effect Size (MES) threshold.
 
 The power (1 - $\beta$) of the test is 1, indicating that the probability of a false negative is zero.
 
 Based on these results, we conclude that **`bill_depth_mm` meaningful improve the prediction of `flipper_length_mm`**. Consequently, we reject the null hypothesis in favor of the alternative hypothesis.
 :::
-
-::: {style="padding-top: 15px;"}
+::: {.column style="width: 40%; padding-top: 130px;"}
 $$
 \begin{cases}
-\text{H}_{0}: \text{Adjusted} \ \text{R}^{2} < \text{MES} \quad \text{or} \quad \text{F-test is not significant} \ (\alpha \geq 0.05) \\
-\text{H}_{a}: \text{Adjusted} \ \text{R}^{2} \geq \text{MES} \quad \text{and} \quad \text{F-test is significant} \ (\alpha < 0.05)
+\text{H}_{0}: \Delta \text{Adjusted} \ \text{R}^{2} = 0 \\
+\text{H}_{a}: \Delta \text{Adjusted} \ \text{R}^{2} > 0
+\end{cases}
+$$
+
+$$
+\begin{cases}
+\text{H}_{0}: \Delta \text{Adjusted} \ \text{R}^{2} < \text{MES} \\
+\text{H}_{a}: \Delta \text{Adjusted} \ \text{R}^{2} \geq \text{MES}
 \end{cases}
 $$
 :::
+::::
 
 ::: {.notes}
 :::
