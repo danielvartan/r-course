@@ -126,7 +126,7 @@ Remember the data science workflow:
 
 10\. Calculate the effect size.
 
-11\. Perform a *a posteriori* power analysis.
+11\. Perform a power analysis.
 
 12\. Write your conclusions.
 :::

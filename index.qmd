@@ -296,7 +296,9 @@ We hope you feel more confident in your R programming skills and are ready to ta
 
 ::: {style="padding-top: 15px;"}
 🇧🇷 For Brazilian graduate students, consider exploring the **[`abnt`](https://github.com/danielvartan/abnt) Quarto format**. It helps you write your thesis or dissertation in compliance with the Brazilian Association of Technical Standards ([ABNT](https://abnt.org.br/)) standards while ensuring full reproducibility. Check out an example [here](https://danielvartan.github.io/mastersthesis/).
+:::
 
+::: {style="padding-top: 15px;"}
 🙋‍♂️ If you have any questions or need assistance, don't hesitate to reach out to us!
 :::
 
