@@ -66,3 +66,4 @@ format:
 
 google-scholar: false
 bibliography: references.bib
+nocite: "@*"
