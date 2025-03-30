@@ -305,7 +305,9 @@ We hope you feel more confident in your R programming skills and are ready to ta
 ::: {.notes}
 :::
 
-## Post-Course Survey {.smaller}
+## Post-Course Survey {.smaller .nostretch .scrollable}
+
+![](images/post-course-survey.png){fig-align="center" style="width: 100%; padding-top: 0px;"}
 
 ::: {.notes}
 :::
