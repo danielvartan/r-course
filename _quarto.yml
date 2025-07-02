@@ -33,7 +33,6 @@ website:
 
 format:
   revealjs:
-    open-graph: true
     locale: en
     lang: en
     echo: true

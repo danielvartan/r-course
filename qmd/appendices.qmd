@@ -178,7 +178,7 @@ Click [here](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/#:~:text=
 ## (AP) The Tidy Data Manifesto {.smaller visibility="uncounted"}
 
 ::: footer
-[@wickham2014]
+[@wickham2014a]
 :::
 
 ::: {.notes}

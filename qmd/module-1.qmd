@@ -222,7 +222,7 @@ Programming in movies **versus** programming in real life:
 
 :::: {.columns}
 ::: {.column style="width: 47.5%;"}
-R is a **free** and **open-source** programming language designed for data analysis graphics [@ihaka1996].
+R is a **free** and **open-source** programming language designed for data analysis and graphics [@ihaka1996].
 
 It was developed by **Ross Ihaka** and **Robert Gentleman** in the statistics department at the [University of Auckland](https://www.auckland.ac.nz/) (New Zealand) in 1991 and introduced to the scientific community in **1993** [@peng2022].
 :::

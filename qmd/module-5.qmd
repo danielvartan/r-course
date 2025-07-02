@@ -282,6 +282,7 @@ Comparison of a 95% of confidence level ($\alpha = 0.05$) and an *n*-dependent *
 :::
 
 ## Cohen's Benchmark {.smaller}
+
 ```{r}
 #| echo: false
 

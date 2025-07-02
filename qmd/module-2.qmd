@@ -310,7 +310,7 @@ list(
 - ``` `/`() ``` Division
 - ``` `^`() ``` Exponentiation
 - ``` `%/%`() ``` Integer division
-- ``` `%%`() ``` Modulus`br`{=html}(Remainder from Division)
+- ``` `%%`() ``` Modulus`<br>`{=html}(Remainder from Division)
 :::
 ::: {.column style="width: 50%;"}
 ```{r}
@@ -1194,7 +1194,7 @@ library("tidyverse")
 :::
 ::::
 
-- `readr`: Read flat files (csv, tsv, fwf) into R.
+- `readr`: Read flat files (`csv`, `tsv`, `fwf`) into R.
 - `stringr`: A fresh approach to string manipulation in R.
 - `lubridate`: Make working with dates in R just that little bit easier.
 - `dplyr`: A grammar of data manipulation.
