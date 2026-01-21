@@ -400,8 +400,8 @@ Wickham, H. (2019). **_Advanced R_** (2nd ed.). CRC Press. <https://adv-r.hadley
 
 ## Closing Remarks {.smaller}
 
-[![License: MIT](images/mit-license-badge.svg){style="width: 10.5%; padding-top: 0px;"}](https://choosealicense.com/licenses/mit/)
-[![License: CC BY 4.0](images/cc-licence-badge.svg){style="width: 15%; padding-top: 0px;"}](https://creativecommons.org/licenses/by/4.0/)
+[![License: GPLv3](images/gplv3-license-badge.svg){style="width: 12%; padding-top: 0px;"}](https://www.gnu.org/licenses/gpl-3.0)
+[![License: CC BY-NC-SA 4.0](images/cc-by-nc-sa-4-0-license-badge.svg){style="width: 19%; padding-bottom: 1px;"}](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 This presentation was created with the [Quarto](https://quarto.org/) Publishing System. The code and materials are available on [GitHub](https://github.com/danielvartan/r-course).
 

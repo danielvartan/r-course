@@ -110,15 +110,15 @@ Add a README file using:
 use_readme_md()
 ```
 
-Add a MIT License file using:
+Add a [GNU General Public License version 3](https://www.gnu.org/licenses/gpl-3.0) file using:
 
 ```r
-use_mit_license()
+use_gpl3_license()
 ```
 :::
 ::::
 :::: {.column style="width: 50%;"}
-[![](images/mit-license-logo.png){fig-align="center" style="width: 75%; padding-top: 150px;"}](https://choosealicense.com/licenses/mit/)
+[![](images/gplv3-license-logo.svg){fig-align="center" style="width: 75%; padding-top: 150px;"}](https://www.gnu.org/licenses/gpl-3.0)
 ::::
 :::::
 
@@ -197,7 +197,8 @@ c(1, 2, 3) + 1
 
 ```{r}
 c(1, 2, 3) * c(1, 2, 3)
-```
+``
+`
 :::
 ::::
 :::: {.column style="width: 50%;"}
@@ -226,7 +227,8 @@ These are part of the [**atomic**](https://adv-r.hadley.nz/vectors-chap.html?q=a
 ::: {style="padding-top: 15px;"}
 ```{r}
 typeof(as.Date("2025-01-01"))
-```
+`
+``
 :::
 ::::
 :::: {.column style="width: 50%;"}
@@ -284,7 +286,8 @@ list(
   list(list("a"), list("b")),
   list(TRUE)
 )
-```
+``
+`
 ::::
 :::::
 
@@ -339,7 +342,8 @@ list(
 
 ```{r}
 5 %% 2
-```
+`
+``
 :::
 ::::
 
@@ -358,23 +362,28 @@ list(
 :::
 ::: {.column style="width: 50%;"}
 ```{r}
-x <- 1; x
+x <- 1
+x
 ```
 
 ```{r}
-x <<- 1; x
+x <<- 1
+x
 ```
 
 ```{r}
-1 -> x; x
+1 -> x
+x
 ```
 
 ```{r}
-1 ->> x; x
+1 ->> x
+x
 ```
 
 ```{r}
-x = 1; x
+x = 1
+x
 ```
 
 ```r
@@ -461,7 +470,8 @@ R has strict rules regarding the names of objects.
 
 ```{r}
 1 <= 1
-```
+``
+`
 :::
 ::::
 
@@ -505,7 +515,8 @@ c(TRUE, FALSE) || c(TRUE, TRUE) # Error!
 
 ```{r}
 !TRUE
-```
+`
+``
 :::
 ::::
 
@@ -531,7 +542,8 @@ c(TRUE, FALSE) || c(TRUE, TRUE) # Error!
 
 ```{r}
 matrix(1:4, nrow = 2) %*% matrix(1:4, nrow = 2)
-```
+``
+`
 :::
 ::::
 
@@ -565,14 +577,16 @@ matrix(1:4, nrow = 2) %*% matrix(1:4, nrow = 2)
 ::: {.column style="width: 47.5%; font-size: 0.9em;"}
 ```{r}
 2^2 + 1 * 2
-```
+`
+``
 :::
 ::: {.column style="width: 5%;"}
 :::
 ::: {.column style="width: 47.5%; font-size: 0.9em;"}
 ```{r}
 !FALSE && TRUE
-```
+``
+`
 :::
 ::::
 
@@ -606,7 +620,8 @@ c("a", "b", "c")[2]
 
 ```{r}
 c("a", "b", "c")[0]
-```
+`
+``
 :::
 ::::
 :::: {.column style="width: 5%;"}
@@ -636,7 +651,8 @@ data$a
 
 ```{r}
 data[["a"]] # == data$a
-```
+``
+`
 ::::
 :::::
 
@@ -680,7 +696,8 @@ data[, 1]
 
 ```{r}
 data[1, 1]
-```
+`
+``
 :::
 ::::
 
@@ -705,7 +722,8 @@ c(1, NA, 3)
 
 ```{r}
 is.na(c(1, NA, 3))
-```
+``
+`
 ::::
 :::: {.column style="width: 5%;"}
 ::::
@@ -733,7 +751,8 @@ is.nan(0 / 0)
 
 ```{r}
 is.infinite(1 / 0)
-```
+`
+``
 :::
 
 ::: {style="padding-top: 30px;"}
@@ -760,7 +779,8 @@ object |> function(1, par = _)
 pi |>
   round() |>
   rep("pi", times = _)
-```
+``
+`
 ::::
 :::: {.column style="width: 5%;"}
 ::::
@@ -783,7 +803,8 @@ library(magrittr)
 pi %>%
   round() %>%
   rep("pi", times = .)
-```
+`
+``
 ::::
 :::::
 
@@ -804,17 +825,18 @@ if (condition) true_action else false_action
 x <- 60
 
 if (x > 90) {
-    "A"
-  } else if (x > 80) {
-    "B"
-  } else if (x > 50 && x < 100) {
-    "C"
-  } else if (x > 1) {
-    "D"
-  } else {
-    "E"
-  }
-```
+  "A"
+} else if (x > 80) {
+  "B"
+} else if (x > 50 && x < 100) {
+  "C"
+} else if (x > 1) {
+  "D"
+} else {
+  "E"
+}
+``
+`
 :::
 ::: {.column style="width: 5%;"}
 :::
@@ -834,7 +856,8 @@ if (is.numeric(x)) {
   } else {
     "B"
   }
-```
+`
+``
 :::
 ::::
 
@@ -860,7 +883,8 @@ while (x < 5) {
   x <- x + 1
   print(x)
 }
-```
+``
+`
 :::
 ::: {.column style="width: 5%;"}
 :::
@@ -873,7 +897,8 @@ for (item in vector) perform_action
 for (i in 1:5) {
   print(i)
 }
-```
+`
+``
 :::
 ::::
 
@@ -899,7 +924,8 @@ foo <- function(x) {
 }
 
 foo(9)
-```
+``
+`
 ::::
 :::: {.column style="width: 5%; padding-top: 0px;"}
 ::::
@@ -922,7 +948,8 @@ foo(9)
 foo <- function(x) x(9)
 
 foo(\(x) x + 1)
-```
+`
+``
 :::
 ::::
 :::::
@@ -950,7 +977,9 @@ triple <- function(x) x * 3
 ```{r}
 with_for_loop <- function(x) {
   out <- numeric()
-  for (i in x) out <- c(out, triple(i))
+  for (i in x) {
+    out <- c(out, triple(i))
+  }
   out
 }
 ```
@@ -970,7 +999,8 @@ microbenchmark(
   times = 100,
   check = "equal"
 )
-```
+``
+`
 :::
 ::::
 
@@ -990,7 +1020,8 @@ foo <- function() {
 }
 
 foo()
-```
+`
+``
 :::
 ::: {.column style="width: 5%;"}
 :::
@@ -1004,7 +1035,8 @@ foo <- function() {
 
 foo()
 x
-```
+``
+`
 :::
 ::::
 
@@ -1045,7 +1077,8 @@ library(mctq)
 
 ```{r}
 so(parse_hm("23:00"), dhours(2))
-```
+`
+``
 :::
 
 ::: {style="padding-top: 15px;"}
@@ -1055,7 +1088,8 @@ package_name::function_name()
 
 ```{r}
 hms::parse_hm("23:00")
-```
+``
+`
 :::
 ::::
 :::::
@@ -1114,7 +1148,8 @@ as.POSIXct("1970-01-01 00:00:00", tz = "UTC") |>
 
 ```{r}
 as.POSIXct("1970-01-01 00:00:00", tz = "UTC") + 1
-```
+`
+``
 :::
 ::::
 :::::

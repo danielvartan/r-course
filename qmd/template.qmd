@@ -8,8 +8,8 @@ date: today
 ---
 
 <!-- badges: start -->
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![License: GPLv3](https://img.shields.io/badge/license-GPLv3-bd0000.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/license-CC_BY--NC--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 <!-- badges: end -->
 
 ## Overview
@@ -211,16 +211,28 @@ data <-
 
 ## License
 
-[![License:
-MIT](https://img.shields.io/badge/license-MIT-green.png)](https://opensource.org/license/mit)
-[![License: CC BY
-4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![License: GPLv3](https://img.shields.io/badge/license-GPLv3-bd0000.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/license-CC_BY--NC--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-The code in this report is licensed under the [MIT
-License](https://opensource.org/license/mit/), while the document are available under the [Creative Commons Attribution 4.0 International
-License](https://creativecommons.org/licenses/by/4.0/).
+The code in this repository is licensed under the [GNU General Public License Version 3](https://www.gnu.org/licenses/gpl-3.0), while the report is available under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-## How to Cite
+```
+Copyright (C) Daniel Vartanian
+
+The code in this report is free software: you can redistribute it and/or
+modify it under the terms of the GNU General Public License as published by the
+Free Software Foundation, either version 3 of the License, or (at your option)
+any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+this program. If not, see <https://www.gnu.org/licenses/>.
+```
+
+## Citation
 
 To cite this work, please use the following format:
 
