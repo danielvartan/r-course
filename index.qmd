@@ -4,12 +4,14 @@
 #| label: setup
 #| include: false
 
-source(here::here("R/_setup.R"))
+library(here)
+
+here("R", "_setup.R") |> source()
 ```
 
 ::::: {.columns}
 :::: {.column style="width: 47.5%;"}
-This course will introuce you to the **R** programming language.
+This course will introduce you to the **R** programming language.
 
 ![](images/allison-horst-figure-8.png){fig-align="center" style="width: 100%; padding-top: 80px;"}
 ::::
@@ -292,7 +294,7 @@ We sure enjoyed teaching you!
 
 ## Now That You're an R Rock Star {.smaller}
 
-We hope you feel more confident in your R programming skills and are ready to tackle new challenges. Remember, learning is a continuous journey, and the R community is here to support you.
+We hope you feel more confident in your R programming skills and are ready to tackle new challenges. Remember, learning is a continuous journey, and the R community is there to support you.
 
 ::: {style="padding-top: 15px;"}
 🇧🇷 For Brazilian graduate students, consider exploring the **[`abnt`](https://github.com/danielvartan/abnt) Quarto format**. It helps you write your thesis or dissertation in compliance with the Brazilian Association of Technical Standards ([ABNT](https://abnt.org.br/)) standards while ensuring full reproducibility. Check out an example [here](https://danielvartan.github.io/mastersthesis/).

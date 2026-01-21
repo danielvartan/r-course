@@ -18,5 +18,19 @@
     "titleBar.inactiveBackground": "#00690999",
     "titleBar.inactiveForeground": "#e7e7e799"
   },
-  "peacock.color": "#006909"
+  "peacock.color": "#006909",
+  "cSpell.words": [
+    "abnt",
+    "bryana",
+    "Caffo",
+    "Çetinkaya",
+    "ciência",
+    "computação",
+    "danielvartan",
+    "Grolemund",
+    "Introdução",
+    "Sustentarea",
+    "tidyverse",
+    "vartanian"
+  ]
 }
