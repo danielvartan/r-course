@@ -7,7 +7,7 @@
    viewBox="0 0 1000 1000"
    version="1.1"
    id="svg1"
-   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
    sodipodi:docname="primary-objects.svg"
    inkscape:export-filename="primary-objects-rgb-96-dpi.png"
    inkscape:export-xdpi="96"
@@ -29,13 +29,13 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="px"
      showguides="true"
-     inkscape:zoom="0.35856832"
-     inkscape:cx="620.5233"
-     inkscape:cy="812.95525"
+     inkscape:zoom="0.50709218"
+     inkscape:cx="307.63637"
+     inkscape:cy="578.79023"
      inkscape:window-width="1920"
-     inkscape:window-height="1020"
+     inkscape:window-height="1011"
      inkscape:window-x="0"
-     inkscape:window-y="28"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1">
     <sodipodi:guide
@@ -132,7 +132,7 @@
      sodipodi:insensitive="true">
     <path
        sodipodi:type="star"
-       style="fill:#006909;stroke-width:2.5;stroke-linecap:round;stroke-miterlimit:10"
+       style="fill:#01488f;stroke-width:2.5;stroke-linecap:round;stroke-miterlimit:10"
        id="path6"
        inkscape:flatsided="false"
        sodipodi:sides="3"
@@ -149,21 +149,21 @@
        transform="matrix(0.66529012,0,0,0.66529012,433.68529,212.79588)"
        inkscape:transform-center-x="-1.8401936e-06" />
     <rect
-       style="fill:#ed6b4d;stroke-width:1.90159;stroke-linecap:round;stroke-miterlimit:10"
+       style="fill:#8f0170;stroke-width:1.90159;stroke-linecap:round;stroke-miterlimit:10"
        id="rect9"
        width="300"
        height="300"
        x="600"
        y="100" />
     <rect
-       style="fill:#9ecd7a;stroke-width:2.00445;stroke-linecap:round;stroke-miterlimit:10"
+       style="fill:#8f5a01;stroke-width:2.00445;stroke-linecap:round;stroke-miterlimit:10"
        id="rect9-6"
        width="250"
        height="400"
        x="625"
        y="550" />
     <circle
-       style="fill:#513024;stroke-width:2.37699;stroke-linecap:round;stroke-miterlimit:10"
+       style="fill:#1d8f01;stroke-width:2.37699;stroke-linecap:round;stroke-miterlimit:10"
        id="path9"
        cx="250"
        cy="750"

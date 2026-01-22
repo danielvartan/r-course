@@ -90,7 +90,7 @@ Every data project must be accompanied, at least, by a **README** file, explaini
 ::: {.notes}
 :::
 
-## Adding a README & LICENSE File {.smaller}
+## Add. a README & LICENSE File {.smaller}
 
 ::::: {.columns}
 :::: {.column style="width: 50%;"}
@@ -186,7 +186,7 @@ Everything that happens in R is the result of a function call.
 
 ::::: {.columns}
 :::: {.column style="width: 50%;"}
-In R, most operations are *vectorized*, meaning they operate on all elements of a vector at once, without needing explicit loops.
+In R, most operations are **vectorized**, meaning they operate on all elements of a vector at once, without needing explicit loops.
 
 This makes code more concise, readable, and less error-prone, while improving efficiency compared to non-vectorized languages.
 
@@ -197,8 +197,7 @@ c(1, 2, 3) + 1
 
 ```{r}
 c(1, 2, 3) * c(1, 2, 3)
-``
-`
+```
 :::
 ::::
 :::: {.column style="width: 50%;"}
@@ -227,8 +226,7 @@ These are part of the [**atomic**](https://adv-r.hadley.nz/vectors-chap.html?q=a
 ::: {style="padding-top: 15px;"}
 ```{r}
 typeof(as.Date("2025-01-01"))
-`
-``
+```
 :::
 ::::
 :::: {.column style="width: 50%;"}
@@ -286,8 +284,7 @@ list(
   list(list("a"), list("b")),
   list(TRUE)
 )
-``
-`
+```
 ::::
 :::::
 
@@ -297,7 +294,7 @@ list(
 ## Operations {.smaller}
 
 ::: {style="font-size: 1.5em; text-align: center; padding-top: 175px;"}
-[**Left Hand Side**]{.brand-red} `Operator` [**Right Hand Side**]{.brand-red}
+[**Left Hand Side**]{.brand-blue} `Operator` [**Right Hand Side**]{.brand-blue}
 :::
 
 ::: {.notes}
@@ -342,8 +339,7 @@ list(
 
 ```{r}
 5 %% 2
-`
-``
+```
 :::
 ::::
 
@@ -362,28 +358,23 @@ list(
 :::
 ::: {.column style="width: 50%;"}
 ```{r}
-x <- 1
-x
+x <- 1; x
 ```
 
 ```{r}
-x <<- 1
-x
+x <<- 1; x
 ```
 
 ```{r}
-1 -> x
-x
+1 -> x; x
 ```
 
 ```{r}
-1 ->> x
-x
+1 ->> x; x
 ```
 
 ```{r}
-x = 1
-x
+x = 1; x
 ```
 
 ```r
@@ -417,19 +408,19 @@ R has strict rules regarding the names of objects.
 ::: {.column style="width: 5%;"}
 :::
 ::: {.column style="width: 47.5%;"}
-`variable-name` **Bad**
+`variable-name` [Bad]{.bold-black}
 
-`variable.name` **Good**, but not advisable
+`variable.name` [Good]{.bold-black}, but not advisable
 
-`variable_name` **Good** (snake_case) --- Most used in R
+`variable_name` [Good]{.bold-black} (snake_case) --- Most used in R
 
-`1variable_name` **Bad**
+`1variable_name` [Bad]{.bold-black}
 
-`.variable_name` **Bad**
+`.variable_name` [Bad]{.bold-black}
 
-`variableName` **Good** (camelCase)
+`variableName` [Good]{.bold-black} (camelCase)
 
-`VariableName` **Good** (PascalCase)
+`VariableName` [Good]{.bold-black} (PascalCase)
 :::
 ::::
 
@@ -470,8 +461,7 @@ R has strict rules regarding the names of objects.
 
 ```{r}
 1 <= 1
-``
-`
+```
 :::
 ::::
 
@@ -515,8 +505,7 @@ c(TRUE, FALSE) || c(TRUE, TRUE) # Error!
 
 ```{r}
 !TRUE
-`
-``
+```
 :::
 ::::
 
@@ -542,8 +531,7 @@ c(TRUE, FALSE) || c(TRUE, TRUE) # Error!
 
 ```{r}
 matrix(1:4, nrow = 2) %*% matrix(1:4, nrow = 2)
-``
-`
+```
 :::
 ::::
 
@@ -577,16 +565,14 @@ matrix(1:4, nrow = 2) %*% matrix(1:4, nrow = 2)
 ::: {.column style="width: 47.5%; font-size: 0.9em;"}
 ```{r}
 2^2 + 1 * 2
-`
-``
+```
 :::
 ::: {.column style="width: 5%;"}
 :::
 ::: {.column style="width: 47.5%; font-size: 0.9em;"}
 ```{r}
 !FALSE && TRUE
-``
-`
+```
 :::
 ::::
 
@@ -620,8 +606,7 @@ c("a", "b", "c")[2]
 
 ```{r}
 c("a", "b", "c")[0]
-`
-``
+```
 :::
 ::::
 :::: {.column style="width: 5%;"}
@@ -651,8 +636,7 @@ data$a
 
 ```{r}
 data[["a"]] # == data$a
-``
-`
+```
 ::::
 :::::
 
@@ -696,8 +680,7 @@ data[, 1]
 
 ```{r}
 data[1, 1]
-`
-``
+```
 :::
 ::::
 
@@ -722,8 +705,7 @@ c(1, NA, 3)
 
 ```{r}
 is.na(c(1, NA, 3))
-``
-`
+```
 ::::
 :::: {.column style="width: 5%;"}
 ::::
@@ -751,8 +733,7 @@ is.nan(0 / 0)
 
 ```{r}
 is.infinite(1 / 0)
-`
-``
+```
 :::
 
 ::: {style="padding-top: 30px;"}
@@ -779,8 +760,7 @@ object |> function(1, par = _)
 pi |>
   round() |>
   rep("pi", times = _)
-``
-`
+```
 ::::
 :::: {.column style="width: 5%;"}
 ::::
@@ -803,8 +783,7 @@ library(magrittr)
 pi %>%
   round() %>%
   rep("pi", times = .)
-`
-``
+```
 ::::
 :::::
 
@@ -825,18 +804,17 @@ if (condition) true_action else false_action
 x <- 60
 
 if (x > 90) {
-  "A"
-} else if (x > 80) {
-  "B"
-} else if (x > 50 && x < 100) {
-  "C"
-} else if (x > 1) {
-  "D"
-} else {
-  "E"
-}
-``
-`
+    "A"
+  } else if (x > 80) {
+    "B"
+  } else if (x > 50 && x < 100) {
+    "C"
+  } else if (x > 1) {
+    "D"
+  } else {
+    "E"
+  }
+```
 :::
 ::: {.column style="width: 5%;"}
 :::
@@ -856,8 +834,7 @@ if (is.numeric(x)) {
   } else {
     "B"
   }
-`
-``
+```
 :::
 ::::
 
@@ -883,8 +860,7 @@ while (x < 5) {
   x <- x + 1
   print(x)
 }
-``
-`
+```
 :::
 ::: {.column style="width: 5%;"}
 :::
@@ -897,8 +873,7 @@ for (item in vector) perform_action
 for (i in 1:5) {
   print(i)
 }
-`
-``
+```
 :::
 ::::
 
@@ -924,8 +899,7 @@ foo <- function(x) {
 }
 
 foo(9)
-``
-`
+```
 ::::
 :::: {.column style="width: 5%; padding-top: 0px;"}
 ::::
@@ -948,8 +922,7 @@ foo(9)
 foo <- function(x) x(9)
 
 foo(\(x) x + 1)
-`
-``
+```
 :::
 ::::
 :::::
@@ -963,7 +936,7 @@ foo(\(x) x + 1)
 ::: {.column style="width: 47.5%; font-size: 0.95em;"}
 A **functional** is a function that takes a function as an input and returns a vector as output [@wickham2019].
 
-It makes the work of the programmer easier, because it allows to apply a function to a vector without the need of a loop. Because these functions are usually written in C (a low-level programminng language), they are very fast.
+It makes the work of the programmer easier, because it allows to apply a function to a vector without the need of a loop. Because these functions are usually written in C (a low-level programming language), they are very fast.
 
 R have native functionals (e.g., `lapply()`), but prefer solutions from the [`purrr`](https://purrr.tidyverse.org/) package.
 :::
@@ -977,9 +950,7 @@ triple <- function(x) x * 3
 ```{r}
 with_for_loop <- function(x) {
   out <- numeric()
-  for (i in x) {
-    out <- c(out, triple(i))
-  }
+  for (i in x) out <- c(out, triple(i))
   out
 }
 ```
@@ -999,12 +970,11 @@ microbenchmark(
   times = 100,
   check = "equal"
 )
-``
-`
+```
 :::
 ::::
 
-## Enviroments {.smaller}
+## Environments {.smaller}
 
 [Scoping](https://adv-r.hadley.nz/functions.html?q=scoping#lexical-scoping):  The act of finding the value associated with a name.
 
@@ -1020,8 +990,7 @@ foo <- function() {
 }
 
 foo()
-`
-``
+```
 :::
 ::: {.column style="width: 5%;"}
 :::
@@ -1035,8 +1004,7 @@ foo <- function() {
 
 foo()
 x
-``
-`
+```
 :::
 ::::
 
@@ -1054,8 +1022,6 @@ Each program must do one thing well [@mcilroy1978].
 In R, the fundamental unit of shareable code is the package.
 
 A package bundles together code, data, documentation, and tests, and is easy to share with others [@wickham2023d].
-
-Documentation example:`<br>`{=html}The [`mctq`](https://github.com/ropensci/mctq) R package.
 ::::
 :::: {.column style="width: 5%;"}
 ::::
@@ -1077,8 +1043,7 @@ library(mctq)
 
 ```{r}
 so(parse_hm("23:00"), dhours(2))
-`
-``
+```
 :::
 
 ::: {style="padding-top: 15px;"}
@@ -1088,8 +1053,7 @@ package_name::function_name()
 
 ```{r}
 hms::parse_hm("23:00")
-``
-`
+```
 :::
 ::::
 :::::
@@ -1148,8 +1112,7 @@ as.POSIXct("1970-01-01 00:00:00", tz = "UTC") |>
 
 ```{r}
 as.POSIXct("1970-01-01 00:00:00", tz = "UTC") + 1
-`
-``
+```
 :::
 ::::
 :::::
@@ -1195,7 +1158,7 @@ help(mean)
 :::
 
 ::: {style="padding-top: 15px;"}
-**Documentation Websites**: The `mctq` R package [documentation](https://docs.ropensci.org/mctq/).
+**Documentation Websites**: The `logolink` R package [documentation](https://danielvartan.github.io/logolink/).
 :::
 
 ::: {.notes}

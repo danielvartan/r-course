@@ -1,13 +1,15 @@
-# Typefaces
+# CEM
 
-## DM Mono
+## Typefaces
 
-- License: Open Font License (v1.1) <https://openfontlicense.org/>.
-- Source: Google Fonts.
-- Downloaded on: 2024-12-29.
+### Montserrat
 
-## Poppins
+- Source: Google Fonts
+- License: Open Font License (v1.1) <https://openfontlicense.org/>
+- Downloaded on: 2025-10-07
 
-- License: Open Font License (v1.1) <https://openfontlicense.org/>.
-- Source: Google Fonts.
-- Downloaded on: 2024-12-29.
+### Roboto
+
+- Source: Google Fonts
+- License: Apache License (v2.0) <http://www.apache.org/licenses/>
+- Downloaded on: 2024-12-29

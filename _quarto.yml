@@ -1,26 +1,27 @@
 editor: source
 
 execute:
-  cache: false
-  freeze: false
+  cache: false # "Danger, Will Robinson!"
+  freeze: false # If you plan to use it, remember to disable it afterward!
 
 project:
   type: website
   output-dir: docs
   render: [index.qmd]
-  post-render: "R/_post-render.R"
+  post-render: "R/.post-render.R"
 
 title: "An Introduction to the R Programming Language"
-author: "Daniel Vartanian & Jaqueline Lopes Pereira"
+author: "Daniel Vartanian"
 keyword: >
-  r programming, rstats, introductory course, data science, data engineering,
-  data munging, data visualization, data analysis
-institute: "University of São Paulo"
-date: 2025-03-24
-date-format: "YYYY-MM-DD"
+  Data Engineering, Data Science, Data Visualization, Education,
+  Open Science, Open Source, Presentations, Quarto, R Programming,
+  Reproducible Research, rstats, Slides, Statistical Modeling, Tidyverse
+institute: "Center for Metropolitan Studies, University of São Paulo"
+date: 2026-02-02
+date-format: long
 
 website:
-  favicon: images/sustentarea-icon.svg
+  favicon: images/favicon.svg
   site-url: https://danielvartan.github.io/r-course/
   repo-url: https://github.com/danielvartan/r-course/
   issue-url: https://github.com/danielvartan/r-course/issues/
@@ -28,7 +29,7 @@ website:
     image: images/og-image.png
     image-width: 2400
     image-height: 1600
-    image-alt: Sustentarea Research and Extension Group
+    image-alt: "Center for Metropolitan Studies (CEM)"
   repo-branch: main
 
 format:
@@ -63,6 +64,6 @@ format:
         <meta property="og:image:height" content="2400">
         <meta property="og:image:width" content="1600">
 
-google-scholar: false
+google-scholar: true
 bibliography: references.bib
 nocite: "@*"

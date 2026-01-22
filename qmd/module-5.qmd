@@ -50,7 +50,11 @@ library("tidymodels")
 ```{r}
 #| echo: false
 
-dplyr::tibble(
+library(dplyr)
+library(gt)
+library(katex)
+
+tibble(
   decision = c("Accept", "Reject"),
   h0_true = c(
     "Correct inference<br>(True negative)<br>($1 - \\alpha$)",
@@ -61,56 +65,56 @@ dplyr::tibble(
     "Correct inference<br>(True positive)<br>($1 - \\beta$)"
   )
 ) |>
-  gt::gt() |>
-  gt::tab_options(
-    table.width = gt::pct(70),
-    table.font.size = gt::pct(80)
+  gt() |>
+  tab_options(
+    table.width = pct(70),
+    table.font.size = pct(80)
   ) |>
-  gt::cols_label(
-    decision = gt::md("Decision about $\\text{H}_{0}$"),
-    h0_true = gt::md("$\\text{H}_{0}$ True"),
-    h0_false = gt::md("$\\text{H}_{0}$ False")
+  cols_label(
+    decision = md("Decision about $\\text{H}_{0}$"),
+    h0_true = md("$\\text{H}_{0}$ True"),
+    h0_false = md("$\\text{H}_{0}$ False")
   ) |>
-  gt::cols_align(
+  cols_align(
     align = "center",
     columns = c(decision, h0_true, h0_false)
   ) |>
-  # gt::cols_width(
-  #   gt::starts_with("decision") ~ gt::px(200),
-  #   gt::everything() ~ gt::px(300)
+  # cols_width(
+  #   starts_with("decision") ~ px(200),
+  #   everything() ~ px(300)
   # ) |>
-  gt::tab_options(column_labels.font.weight = "bold") |>
-  gt::fmt_markdown(columns = gt::everything()) |>
-  gt::tab_style(
-    style = gt::cell_text(weight = "bold"),
-    locations = gt::cells_body(
+  tab_options(column_labels.font.weight = "bold") |>
+  fmt_markdown(columns = everything()) |>
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_body(
       columns = decision,
-      rows = gt::everything()
+      rows = everything()
     )
   ) |>
-  gt::tab_style(
-    style = gt::cell_text(align = "center"),
-    locations = gt::cells_body(columns = c(decision, h0_true, h0_false))
+  tab_style(
+    style = cell_text(align = "center"),
+    locations = cells_body(columns = c(decision, h0_true, h0_false))
   ) |>
-  gt::data_color(
+  data_color(
     columns = "h0_true",
     rows = 1,
-    palette = brandr::get_brand_color_tint(900, "green")
+    palette = brandr::get_brand_color_tint(900, "square-blue-green")
   )  |>
-  gt::data_color(
+  data_color(
     columns = "h0_true",
     rows = 2,
-    palette = brandr::get_brand_color_tint(900, "red")
+    palette = brandr::get_brand_color_tint(900, "triad-blue-red")
   )  |>
-  gt::data_color(
+  data_color(
     columns = "h0_false",
     rows = 1,
-    palette = brandr::get_brand_color_tint(900, "red")
+    palette = brandr::get_brand_color_tint(900, "triad-blue-red")
   )  |>
-  gt::data_color(
+  data_color(
     columns = "h0_false",
     rows = 2,
-    palette = brandr::get_brand_color_tint(900, "green")
+    palette = brandr::get_brand_color_tint(900, "square-blue-green")
   )
 ```
 :::
@@ -144,7 +148,7 @@ power.t.test(
   ncp = pwr_analysis$ncp,
   df = pwr_analysis$df,
   alpha = pwr_analysis$parms$alpha,
-  alternative = "greater",
+  alternative = "one.sided",
   plot = TRUE,
   verbose = FALSE
 )
@@ -175,7 +179,7 @@ power.t.test(
   ncp = pwr_analysis$ncp,
   df = pwr_analysis$df,
   alpha = pwr_analysis$parms$alpha,
-  alternative = "greater",
+  alternative = "one.sided",
   plot = TRUE,
   verbose = FALSE
 )
@@ -206,7 +210,7 @@ power.t.test(
   ncp = pwr_analysis$ncp,
   df = pwr_analysis$df,
   alpha = pwr_analysis$parms$alpha,
-  alternative = "greater",
+  alternative = "one.sided",
   plot = TRUE,
   verbose = FALSE
 )
@@ -286,7 +290,10 @@ Comparison of a 95% of confidence level ($\alpha = 0.05$) and an *n*-dependent *
 ```{r}
 #| echo: false
 
-dplyr::tibble(
+library(dplyr)
+library(gt)
+
+tibble(
   test = c(
     "Comparison of independent means", "Comparison of two correlations",
     "Difference between proportions", "Correlation", "", "Crosstabulation",
@@ -300,22 +307,22 @@ dplyr::tibble(
   medium = c(.50, .30, .15, .30, .09, .30, .25, .06, .13, .15),
   large = c(.80, .50, .25, .50, .25, .50, .40, .14, .26, .35)
 ) |>
-  gt::gt() |>
-  gt::tab_options(table.font.size = gt::pct(50)) |>
-  gt::cols_label(
+  gt() |>
+  tab_options(table.font.size = pct(50)) |>
+  cols_label(
     test = "Test",
     relevant_effect_size = "Relevant Effect Size",
     small = "Small",
     medium = "Medium",
     large = "Large"
   ) |>
-  gt::fmt_markdown(columns = relevant_effect_size) |>
-  gt::tab_spanner(
+  fmt_markdown(columns = relevant_effect_size) |>
+  tab_spanner(
     label = "Effect Size Classes",
     columns = c(small, medium, large)
   ) |>
-  gt::tab_source_note(
-    source_note = gt::md(
+  tab_source_note(
+    source_note = md(
       paste0(
         "Notes: The rationale for most of these benchmarks can be found ",
         "in Cohen (1988) at the following pages: Cohen’s $d$ (p. 40), ",
@@ -325,17 +332,17 @@ dplyr::tibble(
       )
     )
   ) |>
-  gt::cols_align(
+  cols_align(
     align = "center",
     columns = c(small, medium, large)
   ) |>
-  gt::tab_style(
-    style = gt::cell_text(weight = "bold"),
-    locations = gt::cells_column_spanners()
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_column_spanners()
   ) |>
-  gt::tab_style(
-    style = gt::cell_text(weight = "bold"),
-    locations = gt::cells_column_labels(gt::everything())
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_column_labels(everything())
   )
 ```
 
@@ -417,7 +424,7 @@ In practice, always ensure that the assumptions of the statistical tests you use
 
 :::: {.columns}
 ::: {.column style="width: 50%; font-size: 0.85em;"}
-[Is there a meaningful difference in flipper length between Adelie and Gentoo penguins?]{style="font-size: 1.1em; font-weight: bold; color: #ED6B4D;"}
+[Is there a meaningful difference in flipper length between Adelie and Gentoo penguins?]{.brand-triad-blue-red .bold-black style="font-size: 1.1em;"}
 
 To test this, we will perform a **t-Test for Independent Samples** using a randomization-based empirical null distribution approach.
 
@@ -462,7 +469,7 @@ penguins |>
   filter(species %in% c("Adelie", "Gentoo")) |>
   drop_na(flipper_length_mm, species) |>
   ggplot(aes(x = species, y = flipper_length_mm, fill = species)) +
-  geom_boxplot(outlier.color = get_brand_color("dark-red")) +
+  geom_boxplot(outlier.color = "red") +
   geom_jitter(width = 0.2, alpha = 0.1) +
   scale_fill_brand_d(alpha = 0.7) +
   labs(x = "Species", y = "Flipper Length (mm)", fill = "Species")
@@ -534,7 +541,9 @@ pwr_analysis <- pwr.t.test(
   type = "two.sample",
   alternative = "two.sided"
 )
+```
 
+```{r}
 pwr_analysis
 ```
 
@@ -555,7 +564,9 @@ pwr_analysis <- pwr.t.test(
   type = "two.sample",
   alternative = "two.sided"
 )
+```
 
+```{r}
 pwr_analysis
 ```
 
@@ -758,7 +769,7 @@ power.t.test(
   ncp = pwr_analysis$ncp,
   df = pwr_analysis$df,
   alpha = 0.05,
-  alternative = "not equal",
+  alternative = "two.sided",
   plot = TRUE,
   verbose = FALSE
 )
@@ -771,7 +782,7 @@ power.t.test(
 
 :::: {.columns}
 ::: {.column style="width: 60%; font-size: 0.85em;"}
-[Is there a meaningful difference in flipper length between Adelie and Gentoo penguins?]{style="font-size: 1.1em; font-weight: bold; color: #ED6B4D;"}
+[Is there a meaningful difference in flipper length between Adelie and Gentoo penguins?]{.brand-triad-blue-red .bold-black style="font-size: 1.1em;"}
 
 Our analysis found a statistically significant difference in means ($t$ = 34.4, $p$-value < 0.001). The observed effect size was very large and exceed the Minimal Effect Size (MES) threshold ($d$ = 4.13, 95% CI [3.70, 4.56]).
 
@@ -803,7 +814,7 @@ $$
 
 :::: {.columns}
 ::: {.column style="width: 50%; font-size: 0.85em;"}
-[Is there a meaningful difference in flipper length between Adelie, Chinstrap, and Gentoo penguins?]{style="font-size: 1.1em; font-weight: bold; color: #ED6B4D;"}
+[Is there a meaningful difference in flipper length between Adelie, Chinstrap, and Gentoo penguins?]{.brand-triad-blue-red .bold-black style="font-size: 1.1em;"}
 
 To test this, we will perform a **One-Way ANOVA** using a randomization-based empirical null distribution approach.
 
@@ -846,7 +857,7 @@ library(tidyr)
 penguins |>
   drop_na(flipper_length_mm, species) |>
   ggplot(aes(x = species, y = flipper_length_mm, fill = species)) +
-  geom_boxplot(outlier.color = get_brand_color("dark-red")) +
+  geom_boxplot(outlier.color = "red") +
   geom_jitter(width = 0.2, alpha = 0.1) +
   scale_fill_brand_d(alpha = 0.7) +
   labs(x = "Species", y = "Flipper Length (mm)", fill = "Species")
@@ -1124,7 +1135,7 @@ pwr.anova.test(
 
 :::: {.columns}
 ::: {.column style="width: 60%; font-size: 0.8em;"}
-[Is there a meaningful difference in flipper length between Adelie, Chinstrap, and Gentoo penguins?]{style="font-size: 1.1em; font-weight: bold; color: #ED6B4D;"}
+[Is there a meaningful difference in flipper length between Adelie, Chinstrap, and Gentoo penguins?]{.brand-triad-blue-red .bold-black style="font-size: 1.1em;"}
 
 Our analysis found a statistically significant difference in means ($\text{F}$ = 595, $p$-value < 0.001). The observed effect size was very large and exceed the Minimal Effect Size (MES) threshold ($f$ = 1.873, 95% CI [1.72, Inf]).
 
@@ -1156,7 +1167,7 @@ $$
 
 :::: {.columns}
 ::: {.column style="width: 50%; font-size: 0.85em;"}
-[Adding `bill_depth_mm` as a predictor improve the prediction of `flipper_length_mm`?]{style="font-size: 1.1em; font-weight: bold; color: #ED6B4D;"}
+[Adding `bill_depth_mm` as a predictor improve the prediction of `flipper_length_mm`?]{.brand-triad-blue-red .bold-black style="font-size: 1.1em;"}
 
 To test this, we will use **Nested Linear Models**.
 
@@ -1234,7 +1245,7 @@ pwrss.f.reg(
 ::: {.notes}
 :::
 
-## Linear Reg.: Scatterplot 1 {.smaller}
+## Linear Reg.: Scatter Plot 1 {.smaller}
 
 ```{r}
 #| fig-align: center
@@ -1276,7 +1287,7 @@ penguins |>
 ::: {.notes}
 :::
 
-## Linear Reg.: Scatterplot 2 {.smaller}
+## Linear Reg.: Scatter Plot 2 {.smaller}
 
 ```{r}
 #| fig-align: center
@@ -1360,8 +1371,8 @@ fit |>
   ) +
   ggplot2::scale_color_manual(
     values = c(
-      "Prediction" = get_brand_color("green"),
-      "Adjusted prediction" = get_brand_color("red")
+      "Prediction" = get_brand_color("square-blue-green"),
+      "Adjusted prediction" = get_brand_color("triad-blue-red")
     )
   )
 ```
@@ -1441,6 +1452,7 @@ In a multiple linear regression with two predictors, the model is fit by adjusti
 ::: {.column style="width: 50%;"}
 ```{r}
 library(broom)
+library(janitor)
 library(palmerpenguins)
 library(parsnip)
 ```
@@ -1620,7 +1632,7 @@ pwrss.f.reg(
 
 :::: {.columns}
 ::: {.column style="width: 60%; font-size: 0.8em;"}
-[Adding `bill_depth_mm` as a predictor meaningful improve the prediction of `flipper_length_mm`?]{style="font-size: 1.1em; font-weight: bold; color: #ED6B4D;"}
+[Adding `bill_depth_mm` as a predictor meaningful improve the prediction of `flipper_length_mm`?]{.brand-triad-blue-red .bold-black style="font-size: 1.1em;"}
 
 Our analysis indicates that adding `bill_depth_mm` as a predictor improves the model adjusted $\text{R}^{2}$ in 0.19483 (95% CI \[0.12069, 0.26897\]) ($\text{F}$(2, 339) = 284, $p$-value < 0.001), exceeding the Minimal Effect Size (MES) threshold.
 

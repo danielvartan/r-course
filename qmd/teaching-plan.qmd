@@ -1,23 +1,23 @@
 ## General Information {.smaller visibility="uncounted"}
 
 - **Course**: An Introduction to the R Language
-- **Instructors**: Daniel Vartanian and Jaqueline Lopes Pereira
-- **Place**: Public Health School ([FSP]((https://www.fsp.usp.br/))) of the University of São Paulo ([USP](https://www5.usp.br/)).
-- **Dates**: 24/03 to 28/03
-- **Time**: 13:00 to 14:00 (except on Wednesday, 26/03, from 13:00 to 18:00)
-- **Duration**: 9 hours
+- **Instructors**: Daniel Vartanian
+- **Place**: Laboratory 122, School of Philosophy, Letters and Human Sciences ([FFLCH](https://www.fflch.usp.br/)), University of São Paulo ([USP](https://www5.usp.br/)).
+- **Dates**: 02/02 to 06/02/2026
+- **Time**: 10:00 to 17:00
+- **Duration**: 30 hours
 
 ::: {.notes}
 :::
 
 ## Learning Objectives {.smaller visibility="uncounted"}
 
-1. Grasp the foundational principles and key concepts of computer science.
-1. Understand the structure and essential components of the R programming language.
-1. Master fundamental techniques for data munging.
-1. Develop skills in creating insightful data visualizations.
-1. Learn techniques for conducting exploratory data analysis.
-1. Gain an introduction to basic modeling approaches.
+1. Understand foundational principles and key concepts of programming
+1. Learn the structure and essential components of the R programming language
+1. Master fundamental techniques for data cleaning and transformation
+1. Develop skills in creating effective data visualizations
+1. Apply techniques for conducting exploratory data analysis
+1. Build introductory statistical and predictive models
 
 ::: {.notes}
 :::
@@ -48,12 +48,12 @@
 
 ## Strategy {.smaller visibility="uncounted"}
 
-- Theory followed by practice.
-- In-class activities.
-- Data science exercise at the end of the course.
-- No formal evaluation.
-- Pre-course survey.
-- Post-course survey.
+- Theory followed by practice
+- In-class activities
+- Data science exercise at the end of the course
+- No formal evaluation
+- Pre-course survey
+- Post-course survey
 
 ## Resources {.smaller visibility="uncounted"}
 
@@ -83,7 +83,7 @@
 - See also: [Advanced R Solutions](https://advanced-r-solutions.rbind.io/) [@grosser2021].
 :::
 
-## Monday (24/03) {.smaller visibility="uncounted"}
+## Monday (02/02) {.smaller visibility="uncounted"}
 
 :::: {.columns}
 ::: {.column style="width: 47.5%;"}
@@ -104,7 +104,7 @@
 ::: {.notes}
 :::
 
-## Tuesday (25/03) {.smaller visibility="uncounted"}
+## Tuesday (03/02) {.smaller visibility="uncounted"}
 
 :::: {.columns}
 ::: {.column style="width: 47.5%;"}
@@ -124,7 +124,7 @@
 ::: {.notes}
 :::
 
-## Wednesday (25/03) {.smaller visibility="uncounted"}
+## Wednesday (04/02) {.smaller visibility="uncounted"}
 
 :::: {.columns}
 ::: {.column style="width: 47.5%;"}
@@ -140,11 +140,6 @@
 - Module 3: Importing and manipulating data.
 :::
 ::::
-
-::: {.notes}
-:::
-
-## Wednesday (25/03) {.smaller visibility="uncounted"}
 
 :::: {.columns}
 ::: {.column style="width: 47.5%;"}
@@ -164,7 +159,7 @@
 ::: {.notes}
 :::
 
-## Thursday (25/03) {.smaller visibility="uncounted"}
+## Thursday (05/02) {.smaller visibility="uncounted"}
 
 :::: {.columns}
 ::: {.column style="width: 47.5%;"}
@@ -185,7 +180,7 @@
 ::: {.notes}
 :::
 
-## Friday (25/03) {.smaller visibility="uncounted"}
+## Friday (06/02) {.smaller visibility="uncounted"}
 
 :::: {.columns}
 ::: {.column style="width: 47.5%;"}

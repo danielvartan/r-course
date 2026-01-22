@@ -475,7 +475,7 @@ penguins |>
   labs(x = "Species", y = "Bill Length (mm)", fill = "Species")
 ```
 
-## Scatterplots {.smaller}
+## Scatter Plots {.smaller}
 
 ```{r}
 #| code-fold: true

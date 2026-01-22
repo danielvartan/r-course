@@ -259,7 +259,7 @@ Although R is a specialized language, you can stretch it to do almost anything (
 (Artworks by [Allison Horst](https://allisonhorst.com/horst-hill-collaborations))
 :::
 
-## Important R Comm. and Events {.smaller}
+## Important R Com. and Events {.smaller}
 
 :::: {.columns}
 ::: {.column style="width: 50%;"}

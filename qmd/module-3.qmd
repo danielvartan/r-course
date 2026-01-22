@@ -294,8 +294,8 @@ Check @ellis2018 for a detailed guide on data documentation.
 
 There are many open data formats available for researchers to use. *Open* can mean different things, but in this context, it means that the format is not proprietary and can be used by anyone. Here are some examples:
 
-::: {style="text-align: center; font-weight: bold; color: #ED6B4D; padding-top: 10px; padding-bottom: 20px;"}
-⚠️ **Excel files are not a open data format!** ⚠️
+::: {style="text-align: center; padding-top: 10px; padding-bottom: 20px;"}
+⚠️ [Excel Files Are Not an Open Data Format!]{.brand-triad-blue-red .bold-black} ⚠️
 :::
 
 :::: {.columns}

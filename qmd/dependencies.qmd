@@ -25,9 +25,11 @@ Os instrutores do curso estão disponíveis para ajudar a qualquer momento via e
 
 O curso se baseia em três ferramentas: A linguagem de programação [R](https://cran.r-project.org/); o ambiente de desenvolvimento integrado (IDE) [RStudio](https://posit.co/download/rstudio-desktop/); e o sistema de notebooks computacionais [Quarto](https://quarto.org/docs/get-started/). Abaixo estão as versões mínimas necessárias para cada uma dessas ferramentas.
 
-- R >= 4.4 (Última versão: 4.4.3)
-- RStudio >= 2024.12 (Última versão: 2024.12.1)
-- Quarto >= 1.6.39 (Última versão: 1.6.42)
+- Git >= 2.52.0
+- R >= 4.5.2
+- RStudio Desktop >= 2026.01
+- Positron >= 2026.01 (!important!)
+- Quarto >= 1.8.27
 
 ## Pacotes/Importações
 
@@ -36,9 +38,22 @@ O curso se baseia em três ferramentas: A linguagem de programação [R](https:/
 ```{r}
 install.packages(
   c(
-    "dplyr", "forcats", "fs", "ggplot2", "googledrive", "googlesheets4",
-    "haven", "hms", "lubridate", "magrittr", "purrr", "stringr", "tibble",
-    "tidyr", "readr", "readxl"
+    "dplyr",
+    "forcats",
+    "fs",
+    "ggplot2",
+    "googledrive",
+    "googlesheets4",
+    "haven",
+    "hms",
+    "lubridate",
+    "magrittr",
+    "purrr",
+    "stringr",
+    "tibble",
+    "tidyr",
+    "readr",
+    "readxl"
   ),
   dependencies = TRUE
 )
@@ -55,8 +70,16 @@ install.packages("tidyverse", dependencies = TRUE)
 ```{r}
 install.packages(
   c(
-    "broom", "corrr", "infer", "parsnip", "recipes", "rsample", "textrecipes",
-    "tidyposterior", "workflows", "yardstick"
+    "broom",
+    "corrr",
+    "infer",
+    "parsnip",
+    "recipes",
+    "rsample",
+    "textrecipes",
+    "tidyposterior",
+    "workflows",
+    "yardstick"
   ),
   dependencies = TRUE
 )
@@ -72,7 +95,16 @@ install.packages("tidymodels", dependencies = TRUE)
 
 ```{r}
 install.packages(
-  c("cli", "here", "httr", "ragg", "remotes", "rlang", "usethis"),
+  c(
+    "cli",
+    "here",
+    "httr",
+    "nanoparquet",
+    "ragg",
+    "remotes",
+    "rlang",
+    "usethis"
+  ),
   dependencies = TRUE
 )
 ```
@@ -80,15 +112,59 @@ install.packages(
 ### Outros
 
 ```{r}
+Sys.setenv(LIBARROW_MINIMAL = "false")
+```
+
+```{r}
 install.packages(
   c(
-    "car", "checkmate", "clipr", "curl", "DT", "effectsize", "fBasics",
-    "geobr", "GGally", "ggplotify", "gt", "janitor", "jsonlite", "knitr",
-    "latex2exp", "mctq", "microbenchmark", "moments", "multcomp", "nortest",
-    "olsrr", "osfr", "palmerpenguins", "pander", "patchwork", "performance",
-    "psychometric", "pwr", "pwrss", "raster", "RColorBrewer", "report",
-    "rmarkdown", "rstudioapi", "sf", "sidrar", "skedastic", "summarytools",
-    "summarytools", "terra", "tictoc", "viridis", "xml2", "yaml"
+    "arrow",
+    "car",
+    "checkmate",
+    "clipr",
+    "curl",
+    "DT",
+    "effectsize",
+    "fBasics",
+    "geobr",
+    "geodata",
+    "GGally",
+    "ggplotify",
+    "gt",
+    "janitor",
+    "jsonlite",
+    "knitr",
+    "latex2exp",
+    "mctq",
+    "microbenchmark",
+    "moments",
+    "multcomp",
+    "nortest",
+    "olsrr",
+    "osfr",
+    "palmerpenguins",
+    "pander",
+    "patchwork",
+    "performance",
+    "psychometric",
+    "pwr",
+    "pwrss",
+    "raster",
+    "RColorBrewer",
+    "report",
+    "renv",
+    "rmarkdown",
+    "sf",
+    "sidrar",
+    "skedastic",
+    "stars",
+    "summarytools",
+    "summarytools",
+    "terra",
+    "tictoc",
+    "viridis",
+    "xml2",
+    "yaml"
   ),
   dependencies = TRUE
 )
@@ -105,9 +181,13 @@ install.packages("remotes", dependencies = TRUE)
 ```{r}
 remotes::install_github(
   c(
-    "danielvartan/brandr", "danielvartan/groomr", "danielvartan/iramuteqlike",
-    "danielvartan/lockr", "danielvartan/orbis", "danielvartan/plotr",
-    "danielvartan/prettycheck", "danielvartan/quartor", "danielvartan/rutils"
+    "danielvartan/brandr",
+    "danielvartan/groomr",
+    "danielvartan/lockr",
+    "danielvartan/orbis",
+    "danielvartan/prettycheck",
+    "danielvartan/quartor",
+    "danielvartan/rutils"
   ),
   dependencies = TRUE,
   upgrade = "always"
@@ -284,7 +364,7 @@ library(ggplot2)
 library(palmerpenguins)
 
 penguins |>
-  select(species, body_mass_g, ends_with("_mm")) |>
+  dplyr::select(species, body_mass_g, ends_with("_mm")) |>
   ggpairs(aes(color = species)) +
   scale_color_brand_d(alpha = 0.7) +
   scale_fill_brand_d(alpha = 0.7)
@@ -416,7 +496,7 @@ fit |> summary()
 ```
 
 ```{r}
- fit |> TukeyHSD()
+fit |> TukeyHSD()
 ```
 
 ```{r}
@@ -443,7 +523,7 @@ fit
 ```
 
 ```{r}
- fit |> Anova(type = "III")
+fit |> Anova(type = "III")
 ```
 
 ```{r}
@@ -468,9 +548,9 @@ library(tidyr)
 file <- tempfile()
 
 paste0(
-    "https://sisaps.saude.gov.br/sisvan/public/file/relatorios/",
-    "consumo/2oumais/entre2a4anos/CONS_ULTRA.xlsx"
-  ) |>
+  "https://sisaps.saude.gov.br/sisvan/public/file/relatorios/",
+  "consumo/2oumais/entre2a4anos/CONS_ULTRA.xlsx"
+) |>
   curl_download(file)
 ```
 
@@ -481,16 +561,18 @@ data <- NULL
 
 for (i in 2015:2022) {
   data_i <-
-      file |>
-      read_xlsx(
-        sheet = as.character(i),
-        skip = 1,
-        col_types = "text",
-        col_names = FALSE
-      ) |>
-      slice(-1)
+    file |>
+    read_xlsx(
+      sheet = as.character(i),
+      skip = 1,
+      col_types = "text",
+      col_names = FALSE
+    ) |>
+    slice(-1)
 
-  if (!i == 2022) data_i <- data_i |> select(-1, -2)
+  if (!i == 2022) {
+    data_i <- data_i |> select(-1, -2)
+  }
 
   data_i <-
     data_i |>
@@ -538,18 +620,44 @@ data <-
   data |>
   mutate(
     misfs = case_when(
-      state_abbrev %in% c(
-        "AC", "GO", "MS", "MT", "RO", "TO"
-      ) ~ "A",
-      state_abbrev %in% c(
-        "ES", "MG", "PR", "RJ", "RS", "SC", "SP"
-      ) ~ "B",
-      state_abbrev %in% c(
-        "AL", "BA", "CE", "MA", "PB", "PE", "PI", "RN", "SE"
-      ) ~ "C",
-      state_abbrev %in% c(
-        "AM", "AP", "PA", "RR"
-      ) ~ "D",
+      state_abbrev %in%
+        c(
+          "AC",
+          "GO",
+          "MS",
+          "MT",
+          "RO",
+          "TO"
+        ) ~ "A",
+      state_abbrev %in%
+        c(
+          "ES",
+          "MG",
+          "PR",
+          "RJ",
+          "RS",
+          "SC",
+          "SP"
+        ) ~ "B",
+      state_abbrev %in%
+        c(
+          "AL",
+          "BA",
+          "CE",
+          "MA",
+          "PB",
+          "PE",
+          "PI",
+          "RN",
+          "SE"
+        ) ~ "C",
+      state_abbrev %in%
+        c(
+          "AM",
+          "AP",
+          "PA",
+          "RR"
+        ) ~ "D",
     ),
     misfs = factor(misfs, levels = c("A", "B", "C", "D"))
   ) |>

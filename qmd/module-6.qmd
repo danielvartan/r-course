@@ -8,7 +8,7 @@
 Answer the following question using the data provided:
 
 ::: {style="text-align: center; font-size: 1.1em; padding-top: 100px;"}
-Was there a [**meaningful**]{.brand-red} difference in [**ultra-processed food consumption**]{.brand-red} among Brazilian children aged [**2 to 4**]{.brand-red} in [**2022**]{.brand-red} across the [**clusters B and D**]{.brand-red} of the Revised Multidimensional Index for Sustainable Food Systems ([MISFS-R](https://doi.org/10.1002/sd.2376))?
+Was there a [**meaningful**]{.brand-triad-blue-red} difference in [**ultra-processed food consumption**]{.brand-triad-blue-red} among Brazilian children aged [**2 to 4**]{.brand-triad-blue-red} in [**2022**]{.brand-triad-blue-red} across the [**clusters B and D**]{.brand-triad-blue-red} of the Revised Multidimensional Index for Sustainable Food Systems ([MISFS-R](https://doi.org/10.1002/sd.2376))?
 :::
 
 ::: {.notes}
@@ -137,11 +137,11 @@ Remember the data science workflow:
 
 ## Notes {.smaller}
 
-🧮 Recalculate the relative frequency.
+🧮 Recalculate the relative frequency
 
-❌ Remove municipalities with less than 10 monitored children.
+❌ Remove municipalities with less than 10 monitored children
 
-🙋‍♂️ If you're stuck, ask for help.
+🙋‍♂️ If you're stuck, ask for help
 
 🎉 Have fun!
 

@@ -2,99 +2,91 @@
 
 $presentation-title-slide-text-align: left;
 
-$callout-color-note: #006909;
-$callout-color-tip: #006909;
-$callout-color-caution: #006909;
-$callout-color-warning: #006909;
-$callout-color-important: #006909;
+$callout-color-note: #014691;
+$callout-color-tip: #1d8f01;
+$callout-color-caution: #8f0170;
+$callout-color-warning: #8f5a01;
+$callout-color-important: #910c01;
 
 /*-- scss:rules --*/
+
+/* Additional Google Fonts ----- */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* Body ----- */
 
 body {
-  color: $brand-grey;
+  color: $brand-black;
 }
 
 /* Root ----- */
 
 :root {
   --r-heading-margin: 0 0 25px 0;
-  --r-selection-background-color: #006909;
+  --r-selection-background-color: #014691;
   --r-selection-color: #FFFFFF;
 }
 
 /* Headings ----- */
 
-h2 {
-  margin-bottom: 2rem;
-}
+// h2 {
+//   margin-bottom: 0.5rem !important;
+// }
 
 /* Colors ----- */
 
-.red {
-  color: red;
+.brand-blue {
+  color: $brand-blue;
 }
 
-.brand-green {
-  color: $brand-green;
+.brand-gray {
+  color: $brand-gray;
 }
 
-.brand-red {
-  color: $brand-red;
+.brand-black {
+  color: $brand-black;
 }
 
-.brand-brown {
-  color: $brand-brown;
+.brand-comp-blue-1 {
+  color: $brand-comp-blue-1;
 }
 
-.brand-brown-750 {
-  color: $brand-brown-750;
+.brand-triad-blue-red {
+  color: $brand-triad-blue-red;
 }
 
-.brand-grey {
-  color: $brand-grey;
+.brand-blue-l25 {
+  color: $brand-blue-l25;
 }
 
 /* Controls ----- */
 
 .reveal .controls button {
-  color: $brand-brown;
+  color: $brand-blue;
 }
 
-/* Captions ----- */
-
-.legend {
-  font-size: .9rem;
-  color: $brand-black;
-}
-
-/* rmarkdown::paged_table ----- */
+/* Paged Table ----- */
 
 .pagedtable-footer {
-  font-size: 1rem;
+  font-size: large;
 }
 
 /* Others ----- */
 
-.center-x {
-  display: inline-block;
-  text-align: center;
-}
-
-.center-y {
-  display: flex;
-  justify-content: center;
-  height: 90%;
-}
-
-.center-xy {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 90%;
+.semi-bold {
+  font-weight: 600;
 }
 
 .bold {
   font-weight: bold;
+}
+
+.bold-extra {
+  font-weight: 800;
+}
+
+.bold-black {
+  font-weight: 900;
 }

@@ -1,12 +1,12 @@
 ## Hi there! 👋 {.smaller}
 
 ```{r}
-#| label: setup
+#| label: Setup
 #| include: false
 
 library(here)
 
-here("R", "_setup.R") |> source()
+here("R", ".setup.R") |> source()
 ```
 
 ::::: {.columns}
@@ -21,14 +21,14 @@ This course will introduce you to the **R** programming language.
 Here are the main topics:
 
 ::: {style="font-size: 0.85em; padding-top: 15px;"}
-1. [**Introduction**]{.brand-brown}
-1. [**Computer Science**]{.brand-brown}
-1. [**R Basics**]{.brand-brown}
-1. [**Data Munging**]{.brand-brown}
-1. [**Exploratory Data Analysis**]{.brand-brown}
-1. [**Modeling**]{.brand-brown}
-1. [**Exercise**]{.brand-brown}
-1. [**Conclusion**]{.brand-brown}
+1. [Introduction]{.brand-blue .bold-black}
+1. [Computer Science]{.brand-blue .bold-black}
+1. [R Basics]{.brand-blue .bold-black}
+1. [Data Munging]{.brand-blue .bold-black}
+1. [Exploratory Data Analysis]{.brand-blue .bold-black}
+1. [Modeling]{.brand-blue .bold-black}
+1. [Exercise]{.brand-blue .bold-black}
+1. [Conclusion]{.brand-blue .bold-black}
 :::
 ::::
 :::::
@@ -54,15 +54,21 @@ Here are the main topics:
 
 ## Course Objectives {.smaller}
 
-1. Grasp the foundational principles and key concepts of computer science.
-1. Understand the structure and essential components of the R programming language.
-1. Master fundamental techniques for data munging.
-1. Develop skills in creating insightful data visualizations.
-1. Learn techniques for conducting exploratory data analysis.
-1. Gain an introduction to basic modeling approaches.
+1. Understand foundational principles and key concepts of programming
+1. Learn the structure and essential components of the R programming language
+1. Master fundamental techniques for data cleaning and transformation
+1. Develop skills in creating effective data visualizations
+1. Apply techniques for conducting exploratory data analysis
+1. Build introductory statistical and predictive models
 
-::: {style="padding-top: 30px;"}
-([**Future course?**]{.brand-red} An Introduction to [Git](https://en.wikipedia.org/wiki/Git))
+::: {style="padding-top: 15px;"}
+[**Future courses?**]{.brand-triad-blue-red}
+
+An Introduction to [Git](https://en.wikipedia.org/wiki/Git)
+
+An introduction to [Quarto](https://quarto.org/)
+
+An introduction to [r-spatial](https://r-spatial.org/)
 :::
 
 ::: {.notes}
@@ -83,24 +89,24 @@ Here are the main topics:
 
 :::: {.columns}
 ::: {.column style="width: 47.5%;"}
-[![](images/usp-fsp-logo-bw-72-dpi.png){style="width: 35%; padding-top: 0px;"}](https://www.fsp.usp.br/)
+[![](images/usp-fflch-logo-simplified.svg){style="width: 50%; padding-top: 0px;"}](https://www.fflch.usp.br/)
 
-The course will take place in one of the laboratories of the Public Health School ([FSP]((https://www.fsp.usp.br/))) of the University of São Paulo ([USP](https://www5.usp.br/)).
+The course will take place in the laboratory 122 of the School of Philosophy, Letters and Human Sciences ([FFLCH](https://www.fflch.usp.br/)) at the University of São Paulo ([USP](https://www5.usp.br/)).
 
-The classes are distributed over **5 days**, with a total of **9 hours**.
+The classes are distributed over **5 days**, with a total of **30 hours**.
 :::
 ::: {.column style="width: 5%;"}
 :::
 ::: {.column style="width: 47.5%; padding-top: 100px;"}
-Monday (24/03) 13:00-14:00
+Monday (02/02) 10:00-17:00
 
-Tuesday (25/03) 13:00-14:00
+Tuesday (03/02) 10:00-17:00
 
-Wednesday (26/03) [**13:00-18:00**]{.brand-red}
+Wednesday (04/02) 10:00-17:00
 
-Thursday (27/03) 13:00-14:00
+Thursday (05/02) 10:00-17:00
 
-Friday (28/03) 13:00-14:00
+Friday (06/02) 10:00-17:00
 :::
 ::::
 
@@ -109,13 +115,13 @@ Friday (28/03) 13:00-14:00
 
 ## Class Dynamic
 
-Theory ➡️ Practice.
+Theory ➡️ Practice
 
-🏋 In-class activities.
+🏋 In-class activities
 
-📓 Final project.
+📓 Final project
 
-😌 No formal evaluation.
+😌 No formal evaluation
 
 ::: {.notes}
 :::
@@ -160,12 +166,14 @@ Mistakes will happen. Don't let them discourage you!
 ::: {.column style="width: 50%;"}
 Don't be afraid to ask questions, even if they seem simple. Everyone has to start somewhere!
 
-The programming community is very active and there are many resources available to help you learn and solve problems.
+An old but good way to get help is to search or ask questions on forums like [Stack Overflow](https://stackoverflow.com/).
 
-One of the best ways to get help is to search or ask questions on forums like [Stack Overflow](https://stackoverflow.com/).
+Today, you can also use AI-powered tools like [Claude](https://claude.ai/) to get instant help with your coding questions.
 :::
 ::: {.column style="width: 50%;"}
-![](images/stackoverflow-logo.svg){fig-align="center" style="width: 80%; padding-top: 175px;"}
+![](images/stackoverflow-logo.svg){fig-align="center" style="width: 80%; padding-top: 75px;"}
+
+![](images/claude-logo.svg){fig-align="center" style="width: 80%; padding-top: 100px;"}
 :::
 ::::
 
@@ -174,17 +182,19 @@ One of the best ways to get help is to search or ask questions on forums like [S
 
 ## Notes
 
-💾 Bring a flash drive/pen drive.
+💾 Bring a flash drive/pen drive
 
-👩‍💻 Try to use the same computer for all classes.
+👩‍💻 Try to use the same computer for all classes
 
-💬 Always open this presentation in the browser.
+💬 Always open this presentation in the browser
 
-❌ Don't miss a class.
+❌ Don't miss a class
 
-🙋‍♂️ Ask questions.
+🙋‍♂️ Ask questions
 
-🤝 Help each other.
+🤝 Help each other
+
+🙏 Be kind
 
 🎉 Have fun!
 
@@ -203,7 +213,7 @@ We will use it to navigate through the course content.
 Use it to access the course materials and exercises.
 :::
 
-::: {style="padding-top: 100px;"}
+::: {style="padding-top: 75px;"}
 **Tip**: Want to create QR Codes like this? Check the [`qrcode`](https://thierryo.github.io/qrcode/) R package.
 :::
 ::::
@@ -216,15 +226,15 @@ Use it to access the course materials and exercises.
 
 qrcode::qr_code("https://danielvartan.github.io/r-course/", ecl = "H") |>
   qrcode::add_logo(
-    here::here("images", "sustentarea-icon-w-margins-w-bg.png")
+    here::here("images", "cem-icon-w-margins-w-bg.png")
   ) |>
   qrcode::generate_svg(here::here("images", "qr-code.svg"), size = 500)
 ```
 
 [![](images/qr-code.svg){fig-align="center" style="width: 100%; padding-top: 0px;"}](https://danielvartan.github.io/r-course)
 
-::: {style="text-align: center; font-size: 0.85em; font-weight: bold; color: #ED6B4D; margin-top:-50px;"}
-danielvartan.github.io/r-course
+::: {style="text-align: center; font-size: 0.85em; margin-top:-50px;"}
+[danielvartan.github.io/r-course]{.brand-blue .bold-black}
 :::
 ::::
 :::::
@@ -232,42 +242,42 @@ danielvartan.github.io/r-course
 ::: {.notes}
 :::
 
-# Module 1<br>[Computer Science]{.brand-brown-750} {.smaller data-menu-title="Module 1: Computer Science"}
+# Module 1<br>[Computer Science]{.brand-blue-l25} {.smaller data-menu-title="Module 1: Computer Science"}
 
 ::: {.notes}
 :::
 
 {{< include ./qmd/module-1.qmd >}}
 
-# Module 2<br>[R Basics]{.brand-brown-750} {.smaller data-menu-title="Module 2: R Basics"}
+# Module 2<br>[R Basics]{.brand-blue-l25} {.smaller data-menu-title="Module 2: R Basics"}
 
 ::: {.notes}
 :::
 
 {{< include ./qmd/module-2.qmd >}}
 
-# Module 3<br>[Data Munging]{.brand-brown-750} {.smaller data-menu-title="Module 3: Data Munging"}
+# Module 3<br>[Data Munging]{.brand-blue-l25} {.smaller data-menu-title="Module 3: Data Munging"}
 
 ::: {.notes}
 :::
 
 {{< include ./qmd/module-3.qmd >}}
 
-# Module 4<br>[Exploratory Data Analysis]{.brand-brown-750} {.smaller data-menu-title="Module 4: Exploratory Data Analysis"}
+# Module 4<br>[Exploratory Data Analysis]{.brand-blue-l25} {.smaller data-menu-title="Module 4: Exploratory Data Analysis"}
 
 ::: {.notes}
 :::
 
 {{< include ./qmd/module-4.qmd >}}
 
-# Module 5<br>[Modeling]{.brand-brown-750} {.smaller data-menu-title="Module 5: Modeling"}
+# Module 5<br>[Modeling]{.brand-blue-l25} {.smaller data-menu-title="Module 5: Modeling"}
 
 ::: {.notes}
 :::
 
 {{< include ./qmd/module-5.qmd >}}
 
-# Module 6<br>[Exercise]{.brand-brown-750} {.smaller data-menu-title="Module 6: Exercise"}
+# Module 6<br>[Exercise]{.brand-blue-l25} {.smaller data-menu-title="Module 6: Exercise"}
 
 {{< include ./qmd/module-6.qmd >}}
 
@@ -301,7 +311,7 @@ We hope you feel more confident in your R programming skills and are ready to ta
 :::
 
 ::: {style="padding-top: 15px;"}
-🙋‍♂️ If you have any questions or need assistance, don't hesitate to reach out to us!
+🙋‍♂️ If you have any questions or need assistance, don't hesitate to reach out!
 :::
 
 ::: {.notes}
@@ -339,6 +349,10 @@ Peng, R. D., Leek, J., & Caffo, B. (n.d.). **_Data science specialization_**. [O
 
 Code.org. (2018, January 30). **_How computers work_** [YouTube video]. <https://youtube.com/playlist?list=PLzdnOPI1iJNcsRwJhvksEo1tJqjIqWbN-&si=WkuM8c-AKI-NZ3td>
 
+<!-- @lockerbie2025 -->
+
+Lockerbie, T. (2025, December 26). **_I made my phone’s chip 2,000,000× bigger and flew inside_** [YouTube video]. <https://youtu.be/QtW1lQITckE?si=4_wgsHUd96Dvmy-e>
+
 <!-- @zaidan2025 -->
 
 Zaidan, G., & Saini, S. (2025, February 25). **_How are microchips made?_** [YouTube video]. TED-Ed. <https://youtu.be/IkRXpFIRUl4?si=iQ7xQuFS6DZLuBY7>
@@ -362,15 +376,15 @@ Bryan, J., Hester, J., Pileggi, S., & Aja, E. D. (n.d.). **_What they forgot to 
 <!-- @bryan -->
 
 Bryan, J. (n.d.). **_Happy Git and GitHub for the useR_**. <https://happygitwithr.com/>
- ([**Strongly recommended**]{.brand-red})
+ ([**strongly recommended**]{.brand-triad-blue-red})
 
 <!-- @wickhamc -->
 
-Wickham, H. (n.d.). **_Tidy design principles_**. https://design.tidyverse.org
+Wickham, H. (n.d.). **_Tidy design principles_**. <https://design.tidyverse.org>
 
 <!-- @wickhamb -->
 
-Wickham, H. (n.d.). **_The tidyverse style guide_**. Retrieved July 17, 2023, from https://style.tidyverse.org
+Wickham, H. (n.d.). **_The tidyverse style guide_**. <https://style.tidyverse.org>
 
 <!-- @wickham2019 -->
 
@@ -384,14 +398,14 @@ Wickham, H. (2019). **_Advanced R_** (2nd ed.). CRC Press. <https://adv-r.hadley
 
 :::: {.columns}
 ::: {.column style="width: 50%; text-align: center;"}
-![](images/sustentarea-logo.svg){fig-align="center" style="width: 50%; padding-top: 75px;"}
+![](images/acessosan-logo.svg){fig-align="center" style="width: 60%; padding-top: 130px; padding-bottom: 60px;"}
 
-[Global Syndemic Project<br>Data Report 3](https://sustentarea.github.io/gs-data-analysis-report-3/)
+[Processing, Geocoding, and Classifying CNPJs from the Brazilian Federal Revenue Service (RFB)](https://cem-usp.github.io/locais-nova-rfb-geocoding/)
 :::
 ::: {.column style="width: 50%; text-align: center;"}
-![](images/allison-horst-figure-37.png){fig-align="center" style="width: 75%; padding-top: 50px;"}
+![](images/sustentarea-logo.svg){fig-align="center" style="width: 50%; padding-top: 75px;"}
 
-[A Demonstration of General Linear Models Using Penguins](https://github.com/danielvartan/linear-models)
+[Processing SISVAN Microdata on Nutritional Status Monitoring](https://sustentarea.github.io/nutritional-status/)
 :::
 ::::
 

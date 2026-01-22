@@ -52,7 +52,7 @@ This study employed the hypothetical-deductive method, also known as the method 
 
 ### Source of Data/Information
 
-The data used in this analysis were sourced from Brazil's Food and Nutrition Surveillance System ([SISVAN](https://sisaps.saude.gov.br/sisvan/)), regarding the dataset on ultra-processed food consumption [@sisvanb].
+The data used in this analysis were sourced from Brazil's Food and Nutrition Surveillance System ([SISVAN](https://sisaps.saude.gov.br/sisvan/)), regarding the dataset on ultra-processed food consumption [@sisvan].
 
 Only data from municipalities with 10 or more monitored children were considered in the analysis.
 
@@ -101,7 +101,7 @@ $$
 
 To ensure validity, this hypothesis test is conditioned on a Type I error ($\alpha$) of 0.05 and a minimum statistical power (1 - $\beta$) of 0.8. This means the test should have at least an 80% probability of correctly rejecting the null hypothesis when it is false, thereby minimizing the risk of a Type II error ($\beta$).
 
-## Setting the Enviroment
+## Setting the Environment
 
 ```{r}
 #| output: false
@@ -126,7 +126,7 @@ library(tidyr)
 
 ## Importing and Tidying the Data
 
-Source: SISVAN [Food Consumption](https://opendatasus.saude.gov.br/dataset/sisvan-estado-nutricional) dataset for ultra-processed food consumption of children between 2 to 4 years old (Sistema de Vigilância Alimentar e Nutricional, n.d.).
+Source: SISVAN [Food Consumption](https://dadosabertos.saude.gov.br/dataset/sisvan-estado-nutricional) dataset for ultra-processed food consumption of children between 2 to 4 years old (Sistema de Vigilância Alimentar e Nutricional, n.d.).
 
 ### Reading the Data
 

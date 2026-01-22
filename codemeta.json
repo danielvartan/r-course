@@ -1,0 +1,77 @@
+{
+  "@context": "https://w3id.org/codemeta/3.0",
+  "@type": "SoftwareSourceCode",
+  "identifier": "r-course",
+  "dateCreated": "2025-02-23",
+  "applicationCategory": "Education",
+  "applicationSubCategory": "Programming Language Course",
+  "name": "An introduction to the R programming language",
+  "author": [
+    {
+      "@type": "Person",
+      "familyName": "Vartanian",
+      "givenName": "Daniel",
+      "email": "danielvartan@proton.me",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "University of São Paulo",
+        "url": "https://www.usp.br"
+      },
+      "@id": "https://orcid.org/0000-0001-7782-759X"
+    }
+  ],
+  "copyrightHolder": {
+    "@type": "Person",
+    "familyName": "Vartanian",
+    "givenName": "Daniel",
+    "email": "danielvartan@proton.me",
+    "@id": "https://orcid.org/0000-0001-7782-759X"
+  },
+  "maintainer": {
+    "@type": "Person",
+    "familyName": "Vartanian",
+    "givenName": "Daniel",
+    "email": "danielvartan@proton.me",
+    "@id": "https://orcid.org/0000-0001-7782-759X"
+  },
+  "description": "",
+  "keywords": [
+    "Data Engineering",
+    "Data Science",
+    "Data Visualization",
+    "Education",
+    "Open Science",
+    "Open Source",
+    "Presentations",
+    "Quarto",
+    "R Programming",
+    "Reproducible Research",
+    "rstats",
+    "Slides",
+    "Statistical Modeling",
+    "Tidyverse"
+  ],
+  "license": "https://www.gnu.org/licenses/gpl-3.0",
+  "codeRepository": "https://github.com/danielvartan/r-course",
+  "issueTracker": "https://github.com/danielvartan/r-course/issues",
+  "runtimePlatform": "R",
+  "relatedLink": [
+    "https://doi.org/10.5281/zenodo.18332665",
+    "https://github.com/sponsors/danielvartan"
+  ],
+  "programmingLanguage": {
+    "@type": "ComputerLanguage",
+    "name": "R",
+    "version": "4.5.2",
+    "url": "https://www.r-project.org/"
+  },
+  "operatingSystem": [
+    "Linux",
+    "macOS",
+    "Windows"
+  ],
+  "developmentStatus": "active",
+  "readme": "https://github.com/danielvartan/r-course/blob/main/README.md",
+  "releaseNotes": "https://github.com/danielvartan/r-course/blob/main/NEWS.md",
+  "version": "2.0.0.9000"
+}
