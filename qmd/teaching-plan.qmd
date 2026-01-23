@@ -3,6 +3,8 @@
 - **Course**: An Introduction to the R Language
 - **Instructors**: Daniel Vartanian
 - **Place**: Laboratory 122, School of Philosophy, Letters and Human Sciences ([FFLCH](https://www.fflch.usp.br/)), University of São Paulo ([USP](https://www5.usp.br/)).
+- **Materials Language**: English
+- **Spoken Language**: Portuguese
 - **Dates**: 02/02 to 06/02/2026
 - **Time**: 10:00 to 17:00
 - **Duration**: 30 hours
@@ -10,24 +12,27 @@
 ::: {.notes}
 :::
 
+## Main Objective {.smaller visibility="uncounted"}
+
+Provide a solid introduction to R programming, focusing on tidyverse principles and ecosystem.
+
 ## Learning Objectives {.smaller visibility="uncounted"}
 
-1. Understand foundational principles and key concepts of programming
-1. Learn the structure and essential components of the R programming language
-1. Master fundamental techniques for data cleaning and transformation
-1. Develop skills in creating effective data visualizations
-1. Apply techniques for conducting exploratory data analysis
-1. Build introductory statistical and predictive models
+1. Learn key concepts of computer science and programming
+2. Learn the structure and essential components of R programming language
+3. Learn tidyverse grammar for data manipulation
+4. Learn grammar of graphics for data exploration and visualization
+5. Learn tidymodels grammar for building statistical and predictive models
 
 ::: {.notes}
 :::
 
 ## Theoretical Basis {.smaller visibility="uncounted"}
 
-1. Dialectical materialism [@engels2020a].
-1. Cultural-historical theory [@vygotsky2012a].
-1. Pedagogy of autonomy/Dialectal pedagogy [@freire2011].
-1. Dialectical unity in pedagogical activity [@bernardes2009a].
+1. Dialectical materialism [@engels2020a]
+1. Cultural-historical theory [@vygotsky2012a]
+1. Pedagogy of autonomy/Dialectal pedagogy [@freire2011]
+1. Dialectical unity in pedagogical activity [@bernardes2009a]
 
 ::: {.notes}
 :::
@@ -39,7 +44,7 @@
 |--------------------------------------|----------------------------------|----------------------------------|
 | **Motive/Need**                      | Enable the transformation of students' constitution through access to culture — humanizing them. | Become an heir to culture — humanizing oneself. |
 | **Objective**                        | Teach socio-historical knowledge. | Appropriate socio-historical knowledge. |
-| **Actions and Operations**           | **Organizing teaching:**<br>- Defining the knowledge to be taught (*What*).<br>- Defining the conditions (modes of action) in which the knowledge will be taught (*How*). | - Execute study tasks.<br>- Perform study activities.<br>- Participate in control and evaluation actions. |
+| **Actions and Operations**           | **Organizing teaching:**`{=html} <br>`- Defining the knowledge to be taught (*What*).`{=html} <br>`- Defining the conditions (modes of action) in which the knowledge will be taught (*How*). | - Execute study tasks.`{=html} <br>`- Perform study activities.`{=html} <br>`- Participate in control and evaluation actions. |
 :::
 
 ::: footer
@@ -48,12 +53,12 @@
 
 ## Strategy {.smaller visibility="uncounted"}
 
-- Theory followed by practice
-- In-class activities
-- Data science exercise at the end of the course
-- No formal evaluation
-- Pre-course survey
-- Post-course survey
+- 💬 Pre-course survey
+- Theory ➡️ Practice
+- 🏋 In-class activities
+- 📓 Final project
+- 😌 No formal evaluation
+- 💬 Post-course survey
 
 ## Resources {.smaller visibility="uncounted"}
 
@@ -87,17 +92,18 @@
 
 :::: {.columns}
 ::: {.column style="width: 47.5%;"}
-**Part 1** (13:00-13:30)
+**Part 1** (10:00-12:30)
 
-- Introduction to the course.
-- Module 1: Computer science (Full).
+- Introduction
+
+- Module 1 (Computer science)
 :::
 ::: {.column style="width: 5%;"}
 :::
 ::: {.column style="width: 47.5%;"}
-**Part 2** (13:30-14:00)
+**Part 2** (13:30-17:00)
 
-- Module 2: Installing R -> Markdown basics
+- Module 2 (R Basics)
 :::
 ::::
 
@@ -108,16 +114,16 @@
 
 :::: {.columns}
 ::: {.column style="width: 47.5%;"}
-**Part 1** (13:00-13:30)
+**Part 1** (10:00-12:30)
 
-- Module 2: R objects -> Control flow.
+- Module 3 (Data Munging): Start
 :::
 ::: {.column style="width: 5%;"}
 :::
 ::: {.column style="width: 47.5%;"}
-**Part 2** (13:30-14:00)
+**Part 2** (13:30-17:00)
 
-- Module 2: Functions -> The tidyverse and rOpenSci suite.
+- Module 3 (Data Munging): End
 :::
 ::::
 
@@ -128,31 +134,16 @@
 
 :::: {.columns}
 ::: {.column style="width: 47.5%;"}
-**Part 1** (13:00-14:00)
+**Part 1** (10:00-12:30)
 
-- Module 3: Introduction.
+- Module 4 (Exploratory Data Analysis): Start
 :::
 ::: {.column style="width: 5%;"}
 :::
 ::: {.column style="width: 47.5%;"}
-**Part 2** (14:15-15:15)
+**Part 2** (13:30-17:00)
 
-- Module 3: Importing and manipulating data.
-:::
-::::
-
-:::: {.columns}
-::: {.column style="width: 47.5%;"}
-**Part 3** (15:30-16:30)
-
-- Module 4: Introduction -> Tables.
-:::
-::: {.column style="width: 5%;"}
-:::
-::: {.column style="width: 47.5%;"}
-**Part 4** (16:45-18:00)
-
-- Module 4: `ggplot2`.
+- Module 4 (Exploratory Data Analysis): End
 :::
 ::::
 
@@ -163,17 +154,17 @@
 
 :::: {.columns}
 ::: {.column style="width: 47.5%;"}
-**Part 1** (13:00-13:30)
+**Part 1** (10:00-12:30)
 
-- Module 5: Introduction -> Power Analysis & Effect Size.
+- Module 5 (Modeling): Introduction -> Infer pipelines
 
 :::
 ::: {.column style="width: 5%;"}
 :::
 ::: {.column style="width: 47.5%;"}
-**Part 2** (13:30-14:00)
+**Part 2** (13:30-17:00)
 
-- Module 5: One-Sample t-Test.
+- Module 5 (Modeling): One-Sample t-Test -> ANOVA
 :::
 ::::
 
@@ -184,18 +175,18 @@
 
 :::: {.columns}
 ::: {.column style="width: 47.5%;"}
-**Part 1** (13:00-13:30)
+**Part 1** (10:00-12:30)
 
-- Module 6: Introduction -> The MISFS-R.
-- Module 6: Project.
+- Module 5 (Modeling): Linear Regression
 :::
 ::: {.column style="width: 5%;"}
 :::
 ::: {.column style="width: 47.5%;"}
-**Part 2** (13:30-14:00)
+**Part 2** (13:30-17:00)
 
-- Module 6: Project.
-- Conclusion.
+- Module 6 (Exercise)
+
+- Conclusion
 :::
 ::::
 

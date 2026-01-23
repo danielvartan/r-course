@@ -14,11 +14,18 @@
     "text": "Pre-Course Survey"
   },
   {
-    "objectID": "index.html#course-objectives",
-    "href": "index.html#course-objectives",
+    "objectID": "index.html#main-objective",
+    "href": "index.html#main-objective",
     "title": "An Introduction to the R Programming Language",
-    "section": "Course Objectives",
-    "text": "Course Objectives\n\nUnderstand foundational principles and key concepts of programming\nLearn the structure and essential components of the R programming language\nMaster fundamental techniques for data cleaning and transformation\nDevelop skills in creating effective data visualizations\nApply techniques for conducting exploratory data analysis\nBuild introductory statistical and predictive models\n\n\nFuture courses?\nAn Introduction to Git\nAn introduction to Quarto\nAn introduction to r-spatial"
+    "section": "Main Objective",
+    "text": "Main Objective\n\nProvide a solid introduction to R programming, focusing on Tidyverse principles and ecosystem."
+  },
+  {
+    "objectID": "index.html#learning-objectives",
+    "href": "index.html#learning-objectives",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\n\nUnderstand key concepts of computer science and programming\nLearn the structure and essential components of R programming language\nLearn tidyverse grammar for data manipulation\nLearn grammar of graphics for data exploration and visualization\nLearn tidymodels grammar for building statistical and predictive models\n\n\nFuture courses?\nAn Introduction to Git\nAn introduction to Quarto\nAn introduction to r-spatial"
   },
   {
     "objectID": "index.html#course-content",
@@ -203,18 +210,25 @@
     "text": "Installing R"
   },
   {
-    "objectID": "index.html#the-rstudio-ide",
-    "href": "index.html#the-rstudio-ide",
+    "objectID": "index.html#the-positron-ide",
+    "href": "index.html#the-positron-ide",
     "title": "An Introduction to the R Programming Language",
-    "section": "The RStudio IDE",
-    "text": "The RStudio IDE\nAn IDE (Integrated Development Environment) is a software that provides a set of tools to help the programmer to write code. It puts together things like a text editor, a console, a debugger, and a file manager.\nRStudio is the most popular IDE for R. Like R, it is also free and open-source.\n\n\n\n\n\nAlways use software in English."
+    "section": "The Positron IDE",
+    "text": "The Positron IDE\nAn IDE (Integrated Development Environment) is a software that provides a set of tools to help the programmer to write code. It puts together things like a text editor, a console, a debugger, and a file manager.\n\n\n\n\nPositron is flavour of Visual Studio Code, the most used IDE for programming in any language. It supersedes RStudio, the main IDE for R for many years, focusing in providing a better experience for programming in R and Python.\n\nNote: Always use technical softwares in English."
   },
   {
-    "objectID": "index.html#installing-rstudio",
-    "href": "index.html#installing-rstudio",
+    "objectID": "index.html#the-positron-ide-1",
+    "href": "index.html#the-positron-ide-1",
     "title": "An Introduction to the R Programming Language",
-    "section": "Installing RStudio",
-    "text": "Installing RStudio"
+    "section": "The Positron IDE",
+    "text": "The Positron IDE\n\n\n(Reproduced from Posit)"
+  },
+  {
+    "objectID": "index.html#installing-positron",
+    "href": "index.html#installing-positron",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Installing Positron",
+    "text": "Installing Positron"
   },
   {
     "objectID": "index.html#creating-a-project",
@@ -284,7 +298,7 @@
     "href": "index.html#non-atomic-objects",
     "title": "An Introduction to the R Programming Language",
     "section": "Non-Atomic Objects",
-    "text": "Non-Atomic Objects\n\n\nAtomic types are non-recursive objects, i.e., objects that can’t hold themselfs as an entry (e.g., logical, integer, double, character).\n\nNon-Atomic Objects\n\nMatrices (matrix()) (2D)\nArrays (array()) (nD)\nLists (list()) (nD)\nData Frames (data.frame()) (a special case of list) (2D)\n\n\n\n\nlist(\n  list(list(1), list(2)),\n  list(list(\"a\"), list(\"b\")),\n  list(TRUE)\n)\n#&gt; [[1]]\n#&gt; [[1]][[1]]\n#&gt; [[1]][[1]][[1]]\n#&gt; [1] 1\n#&gt; \n#&gt; \n#&gt; [[1]][[2]]\n#&gt; [[1]][[2]][[1]]\n#&gt; [1] 2\n#&gt; \n#&gt; \n#&gt; \n#&gt; [[2]]\n#&gt; [[2]][[1]]\n#&gt; [[2]][[1]][[1]]\n#&gt; [1] \"a\"\n#&gt; \n#&gt; \n#&gt; [[2]][[2]]\n#&gt; [[2]][[2]][[1]]\n#&gt; [1] \"b\"\n#&gt; \n#&gt; \n#&gt; \n#&gt; [[3]]\n#&gt; [[3]][[1]]\n#&gt; [1] TRUE"
+    "text": "Non-Atomic Objects\n\n\nAtomic types are non-recursive objects, i.e., objects that can’t hold themselves as an entry (e.g., logical, integer, double, character).\n\nNon-Atomic Objects\n\nMatrices (matrix()) (2D)\nArrays (array()) (nD)\nLists (list()) (nD)\nData Frames (data.frame()) (a special case of list) (2D)\n\n\n\n\nlist(\n  list(list(1), list(2)),\n  list(list(\"a\"), list(\"b\")),\n  list(TRUE)\n)\n#&gt; [[1]]\n#&gt; [[1]][[1]]\n#&gt; [[1]][[1]][[1]]\n#&gt; [1] 1\n#&gt; \n#&gt; \n#&gt; [[1]][[2]]\n#&gt; [[1]][[2]][[1]]\n#&gt; [1] 2\n#&gt; \n#&gt; \n#&gt; \n#&gt; [[2]]\n#&gt; [[2]][[1]]\n#&gt; [[2]][[1]][[1]]\n#&gt; [1] \"a\"\n#&gt; \n#&gt; \n#&gt; [[2]][[2]]\n#&gt; [[2]][[2]][[1]]\n#&gt; [1] \"b\"\n#&gt; \n#&gt; \n#&gt; \n#&gt; [[3]]\n#&gt; [[3]][[1]]\n#&gt; [1] TRUE"
   },
   {
     "objectID": "index.html#operations",
@@ -319,7 +333,7 @@
     "href": "index.html#names-1",
     "title": "An Introduction to the R Programming Language",
     "section": "Names",
-    "text": "Names\n\n\nR has strict rules regarding the names of objects.\n\nNames can only contain letters, numbers, dots, and underscores.\nNames can’t start with a number or a dot.\nNames can’t be reserved words (e.g., if, else, TRUE, FALSE).\nNames are case-sensitive.\n\n\n\n\nvariable-name Bad\nvariable.name Good, but not advisable\nvariable_name Good (snake_case) — Most used in R\n1variable_name Bad\n.variable_name Bad\nvariableName Good (camelCase)\nVariableName Good (PascalCase)"
+    "text": "Names\n\n\nR has strict rules regarding the names of objects.\n\nNames can only contain letters, numbers, dots, and underscores.\nNames can’t start with a number or a dot.\nNames can’t be reserved words (e.g., if, else, TRUE, FALSE).\nNames are case-sensitive.\n\n\n\n\nvariable-name Bad (kebab-case)\nvariable.name Good, but not advisable\nvariable_name Good (snake_case) — Most used in R\n1variable_name Bad\n.variable_name Bad\nvariableName Good (camelCase)\nVariableName Good (PascalCase)"
   },
   {
     "objectID": "index.html#comparison-operators",
@@ -403,7 +417,7 @@
     "href": "index.html#functionals",
     "title": "An Introduction to the R Programming Language",
     "section": "Functionals",
-    "text": "Functionals\n\n\nA functional is a function that takes a function as an input and returns a vector as output (Wickham, 2019).\nIt makes the work of the programmer easier, because it allows to apply a function to a vector without the need of a loop. Because these functions are usually written in C (a low-level programming language), they are very fast.\nR have native functionals (e.g., lapply()), but prefer solutions from the purrr package.\n\n\n\n\ntriple &lt;- function(x) x * 3\n\n\nwith_for_loop &lt;- function(x) {\n  out &lt;- numeric()\n  for (i in x) out &lt;- c(out, triple(i))\n  out\n}\n\n\nlibrary(purrr)\n\nwith_map &lt;- function(x) map_dbl(x, triple)\n\n\nlibrary(microbenchmark)\n\nmicrobenchmark(\n  with_for_loop(1:1000),\n  with_map(1:1000),\n  times = 100,\n  check = \"equal\"\n)\n#&gt; Unit: microseconds\n#&gt;                   expr      min        lq      mean    median       uq      max\n#&gt;  with_for_loop(1:1000) 1027.704 1077.3330 1542.5340 1155.5835 1253.011 9580.610\n#&gt;       with_map(1:1000)  286.171  306.8465  350.2731  337.9365  364.999 1141.218\n#&gt;  neval\n#&gt;    100\n#&gt;    100"
+    "text": "Functionals\n\n\nA functional is a function that takes a function as an input and returns a vector as output (Wickham, 2019).\nIt makes the work of the programmer easier, because it allows to apply a function to a vector without the need of a loop. Because these functions are usually written in C (a low-level programming language), they are very fast.\nR have native functionals (e.g., lapply()), but prefer solutions from the purrr package.\n\n\n\n\ntriple &lt;- function(x) x * 3\n\n\nwith_for_loop &lt;- function(x) {\n  out &lt;- numeric()\n  for (i in x) out &lt;- c(out, triple(i))\n  out\n}\n\n\nlibrary(purrr)\n\nwith_map &lt;- function(x) map_dbl(x, triple)\n\n\nlibrary(microbenchmark)\n\nmicrobenchmark(\n  with_for_loop(1:1000),\n  with_map(1:1000),\n  times = 100,\n  check = \"equal\"\n)\n#&gt; Unit: microseconds\n#&gt;                   expr     min       lq      mean   median       uq      max\n#&gt;  with_for_loop(1:1000) 991.509 1044.070 1469.0022 1089.731 1168.454 8161.406\n#&gt;       with_map(1:1000) 283.736  298.282  333.3006  316.787  344.443 1037.945\n#&gt;  neval cld\n#&gt;    100  a \n#&gt;    100   b"
   },
   {
     "objectID": "index.html#environments",
@@ -424,14 +438,14 @@
     "href": "index.html#packages-1",
     "title": "An Introduction to the R Programming Language",
     "section": "Packages",
-    "text": "Packages\nR is just the core. It needs packages to do anything useful.\nA tipycal installation of R comes with a set of packages, like:\n\n\nbase: Basic R functions (e.g., sum())\n\ndatasets: Some datasets for testing and teaching (e.g., mtcars)\n\ngraphics: The basic graphics functions (e.g., plot())\n\ngrDevices: The graphics devices (e.g., pdf())\n\nmethods: The built-in object-oriented programming system\n\nparallel: Support for parallel computation\n\nstats: Basic statistical functions (e.g., t.test())\n\nutils: Utility functions (e.g., install.packages())"
+    "text": "Packages\nR is just the core. It needs packages to do anything useful.\nA typical installation of R comes with a set of packages, like:\n\n\nbase: Basic R functions (e.g., sum())\n\ndatasets: Some datasets for testing and teaching (e.g., mtcars)\n\ngraphics: The basic graphics functions (e.g., plot())\n\ngrDevices: The graphics devices (e.g., pdf())\n\nmethods: The built-in object-oriented programming system\n\nparallel: Support for parallel computation\n\nstats: Basic statistical functions (e.g., t.test())\n\nutils: Utility functions (e.g., install.packages())"
   },
   {
     "objectID": "index.html#other-kind-of-objects",
     "href": "index.html#other-kind-of-objects",
     "title": "An Introduction to the R Programming Language",
     "section": "Other Kind of Objects",
-    "text": "Other Kind of Objects\n\n\nBased on the atomic types, we can create other types of objects.\nUsing the right kind of object in R is very important, because these objects also include methods to deal with particular types of data.\nFor example, time can be expressed in diffent ways, like linear time (e.g., durations, periods, data-time, intervals) and circular time (e.g., time of day). We can also have time series, which are a sequence of data points taken at successive points in time.\n\n\n\nDate(Days since 1970-01-01 (UNIX epoch))\n\nas.Date(\"1970-01-01\") |&gt; as.numeric()\n#&gt; [1] 0\n\n\nas.Date(\"1970-01-01\") + 1\n#&gt; [1] \"1970-01-02\"\n\n\nPOSIXct(Seconds since 1970-01-01 (UNIX epoch))\n\nas.POSIXct(\"1970-01-01 00:00:00\", tz = \"UTC\") |&gt;\n  as.numeric()\n#&gt; [1] 0\n\n\nas.POSIXct(\"1970-01-01 00:00:00\", tz = \"UTC\") + 1\n#&gt; [1] \"1970-01-01 00:00:01 UTC\""
+    "text": "Other Kind of Objects\n\n\nBased on the atomic types, we can create other types of objects.\nUsing the right kind of object in R is very important, because these objects also include methods to deal with particular types of data.\nFor example, time can be expressed in different ways, like linear time (e.g., durations, periods, data-time, intervals) and circular time (e.g., time of day). We can also have time series, which are a sequence of data points taken at successive points in time.\n\n\n\nDate(Days since 1970-01-01 (UNIX epoch))\n\nas.Date(\"1970-01-01\") |&gt; as.numeric()\n#&gt; [1] 0\n\n\nas.Date(\"1970-01-01\") + 1\n#&gt; [1] \"1970-01-02\"\n\n\nPOSIXct(Seconds since 1970-01-01 (UNIX epoch))\n\nas.POSIXct(\"1970-01-01 00:00:00\", tz = \"UTC\") |&gt;\n  as.numeric()\n#&gt; [1] 0\n\n\nas.POSIXct(\"1970-01-01 00:00:00\", tz = \"UTC\") + 1\n#&gt; [1] \"1970-01-01 00:00:01 UTC\""
   },
   {
     "objectID": "index.html#commenting",
@@ -473,7 +487,7 @@
     "href": "index.html#base-r-solutions",
     "title": "An Introduction to the R Programming Language",
     "section": "Base R Solutions",
-    "text": "Base R Solutions\nYou can do most of the things you need with the packages that come bundled with R. However, that is not the most efficient way to do things today.\nIn this course we are going to focus on the Tidyverse and rOpenSci packages, which are the most modern and efficient way to work with data in R.\nIf you want a depper understanding of the R language, we encourage you to explore the base R solutions."
+    "text": "Base R Solutions\nYou can do most of the things you need with the packages that come bundled with R. However, that is not the most efficient way to do things today.\nIn this course we are going to focus on the Tidyverse and rOpenSci packages, which are the most modern and efficient way to work with data in R.\nIf you want a deeper understanding of the R language, we encourage you to explore the base R solutions."
   },
   {
     "objectID": "index.html#best-practices",
@@ -627,7 +641,7 @@
     "href": "index.html#how-to-read-data-in-r",
     "title": "An Introduction to the R Programming Language",
     "section": "How to Read Data in R",
-    "text": "How to Read Data in R\nIt will depend on what king of data you are working with.\nDifferent from Excel or GUI-based statistical software, R can deal with any kind of data.\nExamples of R functions to read data:\n\nTabular data: utils::read.csv(), readr::read_csv()\n\nGeographical data: terra::vect(), st::st_read()\n\nProprietary formats: readxl::read_excel(), haven::read_dta() (Stata), haven::read_sav() (SPSS), haven::read_sas() (SAS)"
+    "text": "How to Read Data in R\nIt will depend on what king of data you are working with.\nDifferent from Excel or GUI-based statistical software, R can deal with any kind of data.\nExamples of R functions to read data:\n\nTabular data: utils::read.csv(), readr::read_csv()\n\nGeographical data: st::st_read(), stars::read_stars(), terra::vect()\n\nProprietary formats: readxl::read_excel(), haven::read_dta() (Stata), haven::read_sav() (SPSS), haven::read_sas() (SAS)"
   },
   {
     "objectID": "index.html#meet-the-penguins",
@@ -648,7 +662,7 @@
     "href": "index.html#inspecting-the-raw-data-file",
     "title": "An Introduction to the R Programming Language",
     "section": "Inspecting the Raw Data File",
-    "text": "Inspecting the Raw Data File\n🕵 Known your data.\n\nClick here to download the Palmer Penguis raw data file.\nSave it in a folder named data in the root of your project.\nUsing the file manager, open the file in RStudio.\n\nThe data documentation can be accessed by running:\nlibrary(palmerpenguins)\n?penguins_raw\nYou can also use the following code to open the file in RStudio:\nlibrary(rstudioapi)\npath_to_file(\"penguins_raw.csv\") |&gt; documentOpen()"
+    "text": "Inspecting the Raw Data File\n🕵 Known your data.\n\nClick here to download the Palmer Penguins raw data file.\nSave it in a folder named data in the root of your project.\nUsing the file manager, open the file in RStudio.\n\nThe data documentation can be accessed by running:\nlibrary(palmerpenguins)\n?penguins_raw\nYou can also use the following code to open the file in RStudio:\nlibrary(rstudioapi)\npath_to_file(\"penguins_raw.csv\") |&gt; documentOpen()"
   },
   {
     "objectID": "index.html#inspecting-the-raw-data-file-1",
@@ -732,7 +746,7 @@
     "href": "index.html#select",
     "title": "An Introduction to the R Programming Language",
     "section": "select()",
-    "text": "select()\nThe select() function is used to select columns from a data frame.\nIn our case, we are not interested in using alll the variables in the raw data. We will select only the variables we need.\n\nlibrary(dplyr)\n\n\ndata &lt;-\n  data |&gt;\n  select(\n    date_egg, species, island, culmen_length_mm, culmen_depth_mm,\n    flipper_length_mm, body_mass_g, sex\n  )\n\n\ndata |&gt; glimpse()\n#&gt; Rows: 344\n#&gt; Columns: 8\n#&gt; $ date_egg          &lt;chr&gt; \"2007-11-11\", \"2007-11-11\", \"2007-11-16\", \"2007-11-1…\n#&gt; $ species           &lt;chr&gt; \"Adelie Penguin (Pygoscelis adeliae)\", \"Adelie Pengu…\n#&gt; $ island            &lt;chr&gt; \"Torgersen\", \"Torgersen\", \"Torgersen\", \"Torgersen\", …\n#&gt; $ culmen_length_mm  &lt;chr&gt; \"39.1\", \"39.5\", \"40.3\", NA, \"36.7\", \"39.3\", \"38.9\", …\n#&gt; $ culmen_depth_mm   &lt;chr&gt; \"18.7\", \"17.4\", \"18\", NA, \"19.3\", \"20.6\", \"17.8\", \"1…\n#&gt; $ flipper_length_mm &lt;chr&gt; \"181\", \"186\", \"195\", NA, \"193\", \"190\", \"181\", \"195\",…\n#&gt; $ body_mass_g       &lt;chr&gt; \"3750\", \"3800\", \"3250\", NA, \"3450\", \"3650\", \"3625\", …\n#&gt; $ sex               &lt;chr&gt; \"MALE\", \"FEMALE\", \"FEMALE\", NA, \"FEMALE\", \"MALE\", \"F…"
+    "text": "select()\nThe select() function is used to select columns from a data frame.\nIn our case, we are not interested in using all the variables in the raw data. We will select only the variables we need.\n\nlibrary(dplyr)\n\n\ndata &lt;-\n  data |&gt;\n  select(\n    date_egg, species, island, culmen_length_mm, culmen_depth_mm,\n    flipper_length_mm, body_mass_g, sex\n  )\n\n\ndata |&gt; glimpse()\n#&gt; Rows: 344\n#&gt; Columns: 8\n#&gt; $ date_egg          &lt;chr&gt; \"2007-11-11\", \"2007-11-11\", \"2007-11-16\", \"2007-11-1…\n#&gt; $ species           &lt;chr&gt; \"Adelie Penguin (Pygoscelis adeliae)\", \"Adelie Pengu…\n#&gt; $ island            &lt;chr&gt; \"Torgersen\", \"Torgersen\", \"Torgersen\", \"Torgersen\", …\n#&gt; $ culmen_length_mm  &lt;chr&gt; \"39.1\", \"39.5\", \"40.3\", NA, \"36.7\", \"39.3\", \"38.9\", …\n#&gt; $ culmen_depth_mm   &lt;chr&gt; \"18.7\", \"17.4\", \"18\", NA, \"19.3\", \"20.6\", \"17.8\", \"1…\n#&gt; $ flipper_length_mm &lt;chr&gt; \"181\", \"186\", \"195\", NA, \"193\", \"190\", \"181\", \"195\",…\n#&gt; $ body_mass_g       &lt;chr&gt; \"3750\", \"3800\", \"3250\", NA, \"3450\", \"3650\", \"3625\", …\n#&gt; $ sex               &lt;chr&gt; \"MALE\", \"FEMALE\", \"FEMALE\", NA, \"FEMALE\", \"MALE\", \"F…"
   },
   {
     "objectID": "index.html#rename",
@@ -1229,7 +1243,7 @@
     "href": "index.html#t-test-conclusion",
     "title": "An Introduction to the R Programming Language",
     "section": "t-Test: Conclusion",
-    "text": "t-Test: Conclusion\n\n\nIs there a meaningful difference in flipper length between Adelie and Gentoo penguins?\nOur analysis found a statistically significant difference in means (\\(t\\) = 34.4, \\(p\\)-value &lt; 0.001). The observed effect size was very large and exceed the Minimal Effect Size (MES) threshold (\\(d\\) = 4.13, 95% CI [3.70, 4.56]).\nThe power (1 - \\(\\beta\\)) of the test is 1, indicating that the probability of a false negative is zero.\nBased on these results, we conclude that there is a meaningful difference in flipper length between Adelie and Gentoo penguins, with Gentoo penguins having significantly longer flippers. Consequently, we reject the null hypothesis in favor of the alternative hypothesis.\n\n\\[\n\\begin{cases}\n\\text{H}_{0}: \\mu_{A} = \\mu_{B} \\\\\n\\text{H}_{a}: \\mu_{A} \\neq \\mu_{B} \\\\\n\\end{cases}\n\\]\n\\[\n\\begin{cases}\n\\text{H}_{0}: d &lt; \\text{MES} \\\\\n\\text{H}_{a}: d \\geq \\text{MES} \\\\\n\\end{cases}\n\\]"
+    "text": "t-Test: Conclusion\n\n\nIs there a meaningful difference in flipper length between Adelie and Gentoo penguins?\nOur analysis found a statistically significant difference in means (\\(t\\) = 34.4, \\(p\\)-value &lt; 0.001). The observed effect size was very large and exceed the Minimal Effect Size (MES) threshold (\\(d\\) = 4.13, 95% CI [3.70, 4.56]).\nThe power (1 - \\(\\beta\\)) of the test is ~1, indicating that the probability of a false negative is very low.\nBased on these results, we conclude that there is a meaningful difference in flipper length between Adelie and Gentoo penguins, with Gentoo penguins having significantly longer flippers. Consequently, we reject the null hypothesis in favor of the alternative hypothesis.\n\n\\[\n\\begin{cases}\n\\text{H}_{0}: \\mu_{A} = \\mu_{B} \\\\\n\\text{H}_{a}: \\mu_{A} \\neq \\mu_{B} \\\\\n\\end{cases}\n\\]\n\\[\n\\begin{cases}\n\\text{H}_{0}: d &lt; \\text{MES} \\\\\n\\text{H}_{a}: d \\geq \\text{MES} \\\\\n\\end{cases}\n\\]"
   },
   {
     "objectID": "index.html#anova-hypothesis",
@@ -1327,7 +1341,7 @@
     "href": "index.html#anova-conclusion",
     "title": "An Introduction to the R Programming Language",
     "section": "ANOVA: Conclusion",
-    "text": "ANOVA: Conclusion\n\n\nIs there a meaningful difference in flipper length between Adelie, Chinstrap, and Gentoo penguins?\nOur analysis found a statistically significant difference in means (\\(\\text{F}\\) = 595, \\(p\\)-value &lt; 0.001). The observed effect size was very large and exceed the Minimal Effect Size (MES) threshold (\\(f\\) = 1.873, 95% CI [1.72, Inf]).\nThe power (1 - \\(\\beta\\)) of the test is 1, indicating that the probability of a false negative is zero.\nBased on these results, we conclude that there is a meaningful difference in flipper length between Adelie, Chinstrap, and Gentoo penguins, with Gentoo penguins having significantly longer flippers, followed by Chinstrap penguins. Consequently, we reject the null hypothesis in favor of the alternative hypothesis.\n\n\\[\n\\begin{cases}\n\\text{H}_{0}: \\mu_{A} = \\mu_{B} = \\mu_{C} \\\\\n\\text{H}_{a}: \\mu_{i} \\neq \\mu_{j}, \\ \\text{for some} \\ i, j\n\\end{cases}\n\\]\n\\[\n\\begin{cases}\n\\text{H}_{0}: f &lt; \\text{MES} \\\\\n\\text{H}_{a}: f \\geq \\text{MES} \\\\\n\\end{cases}\n\\]"
+    "text": "ANOVA: Conclusion\n\n\nIs there a meaningful difference in flipper length between Adelie, Chinstrap, and Gentoo penguins?\nOur analysis found a statistically significant difference in means (\\(\\text{F}\\) = 595, \\(p\\)-value &lt; 0.001). The observed effect size was very large and exceed the Minimal Effect Size (MES) threshold (\\(f\\) = 1.873, 95% CI [1.72, Inf]).\nThe power (1 - \\(\\beta\\)) of the test is ~1, indicating that the probability of a false negative is very low.\nBased on these results, we conclude that there is a meaningful difference in flipper length between Adelie, Chinstrap, and Gentoo penguins, with Gentoo penguins having significantly longer flippers, followed by Chinstrap penguins. Consequently, we reject the null hypothesis in favor of the alternative hypothesis.\n\n\\[\n\\begin{cases}\n\\text{H}_{0}: \\mu_{A} = \\mu_{B} = \\mu_{C} \\\\\n\\text{H}_{a}: \\mu_{i} \\neq \\mu_{j}, \\ \\text{for some} \\ i, j\n\\end{cases}\n\\]\n\\[\n\\begin{cases}\n\\text{H}_{0}: f &lt; \\text{MES} \\\\\n\\text{H}_{a}: f \\geq \\text{MES} \\\\\n\\end{cases}\n\\]"
   },
   {
     "objectID": "index.html#linear-reg.-hypothesis",
@@ -1425,7 +1439,7 @@
     "href": "index.html#linear-reg.-conclusion",
     "title": "An Introduction to the R Programming Language",
     "section": "Linear Reg.: Conclusion",
-    "text": "Linear Reg.: Conclusion\n\n\nAdding bill_depth_mm as a predictor meaningful improve the prediction of flipper_length_mm?\nOur analysis indicates that adding bill_depth_mm as a predictor improves the model adjusted \\(\\text{R}^{2}\\) in 0.19483 (95% CI [0.12069, 0.26897]) (\\(\\text{F}\\)(2, 339) = 284, \\(p\\)-value &lt; 0.001), exceeding the Minimal Effect Size (MES) threshold.\nThe power (1 - \\(\\beta\\)) of the test is 1, indicating that the probability of a false negative is zero.\nBased on these results, we conclude that bill_depth_mm meaningful improve the prediction of flipper_length_mm. Consequently, we reject the null hypothesis in favor of the alternative hypothesis.\n\n\\[\n\\begin{cases}\n\\text{H}_{0}: \\Delta \\text{Adjusted} \\ \\text{R}^{2} = 0 \\\\\n\\text{H}_{a}: \\Delta \\text{Adjusted} \\ \\text{R}^{2} &gt; 0\n\\end{cases}\n\\]\n\\[\n\\begin{cases}\n\\text{H}_{0}: \\Delta \\text{Adjusted} \\ \\text{R}^{2} &lt; \\text{MES} \\\\\n\\text{H}_{a}: \\Delta \\text{Adjusted} \\ \\text{R}^{2} \\geq \\text{MES}\n\\end{cases}\n\\]"
+    "text": "Linear Reg.: Conclusion\n\n\nAdding bill_depth_mm as a predictor meaningful improve the prediction of flipper_length_mm?\nOur analysis indicates that adding bill_depth_mm as a predictor improves the model adjusted \\(\\text{R}^{2}\\) in 0.19483 (95% CI [0.12069, 0.26897]) (\\(\\text{F}\\)(2, 339) = 284, \\(p\\)-value &lt; 0.001), exceeding the Minimal Effect Size (MES) threshold.\nThe power (1 - \\(\\beta\\)) of the test is ~1, indicating that the probability of a false negative is very low.\nBased on these results, we conclude that bill_depth_mm meaningful improve the prediction of flipper_length_mm. Consequently, we reject the null hypothesis in favor of the alternative hypothesis.\n\n\\[\n\\begin{cases}\n\\text{H}_{0}: \\Delta \\text{Adjusted} \\ \\text{R}^{2} = 0 \\\\\n\\text{H}_{a}: \\Delta \\text{Adjusted} \\ \\text{R}^{2} &gt; 0\n\\end{cases}\n\\]\n\\[\n\\begin{cases}\n\\text{H}_{0}: \\Delta \\text{Adjusted} \\ \\text{R}^{2} &lt; \\text{MES} \\\\\n\\text{H}_{a}: \\Delta \\text{Adjusted} \\ \\text{R}^{2} \\geq \\text{MES}\n\\end{cases}\n\\]"
   },
   {
     "objectID": "index.html#model-diagnostics",
@@ -1519,18 +1533,18 @@
     "text": "Notes\n🧮 Recalculate the relative frequency\n❌ Remove municipalities with less than 10 monitored children\n🙋‍♂️ If you’re stuck, ask for help\n🎉 Have fun!"
   },
   {
-    "objectID": "index.html#we-hope-you-enjoyed-the-course",
-    "href": "index.html#we-hope-you-enjoyed-the-course",
+    "objectID": "index.html#i-hope-you-enjoyed-the-course",
+    "href": "index.html#i-hope-you-enjoyed-the-course",
     "title": "An Introduction to the R Programming Language",
-    "section": "We Hope You Enjoyed the Course!",
-    "text": "We Hope You Enjoyed the Course!\nWe sure enjoyed teaching you!\n\n\n\n\n\n(Artwork by Allison Horst)"
+    "section": "I Hope You Enjoyed the Course!",
+    "text": "I Hope You Enjoyed the Course!\nI sure enjoyed teaching you!\n\n\n\n\n\n(Artwork by Allison Horst)"
   },
   {
     "objectID": "index.html#now-that-youre-an-r-rock-star",
     "href": "index.html#now-that-youre-an-r-rock-star",
     "title": "An Introduction to the R Programming Language",
     "section": "Now That You’re an R Rock Star",
-    "text": "Now That You’re an R Rock Star\nWe hope you feel more confident in your R programming skills and are ready to tackle new challenges. Remember, learning is a continuous journey, and the R community is there to support you.\n\n🇧🇷 For Brazilian graduate students, consider exploring the abnt Quarto format. It helps you write your thesis or dissertation in compliance with the Brazilian Association of Technical Standards (ABNT) standards while ensuring full reproducibility. Check out an example here.\n\n\n🙋‍♂️ If you have any questions or need assistance, don’t hesitate to reach out!"
+    "text": "Now That You’re an R Rock Star\nI hope you feel more confident in your R programming skills and are ready to tackle new challenges. Remember, learning is a continuous journey, and the R community is there to support you.\n\n🇧🇷 For Brazilian graduate students, consider exploring the abnt Quarto format. It helps you write your thesis or dissertation in compliance with the Brazilian Association of Technical Standards (ABNT) standards while ensuring full reproducibility. Check out an example here.\n\n\n🙋‍♂️ If you have any questions or need assistance, don’t hesitate to reach out!"
   },
   {
     "objectID": "index.html#post-course-survey",
@@ -1558,7 +1572,7 @@
     "href": "index.html#how-to-learn-more-8",
     "title": "An Introduction to the R Programming Language",
     "section": "How to Learn More?",
-    "text": "How to Learn More?\n\n📙 Books\n\nWickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2023). R for data science: Import, tidy, transform, visualize, and model data (2nd ed.). O’Reilly Media. https://r4ds.hadley.nz\n\nBryan, J., Hester, J., Pileggi, S., & Aja, E. D. (n.d.). What they forgot to teach you about R: The stuff you need to know about R, besides data analysis. https://rstats.wtf/\n\nBryan, J. (n.d.). Happy Git and GitHub for the useR. https://happygitwithr.com/ (strongly recommended)\n\nWickham, H. (n.d.). Tidy design principles. https://design.tidyverse.org\n\nWickham, H. (n.d.). The tidyverse style guide. https://style.tidyverse.org\n\nWickham, H. (2019). Advanced R (2nd ed.). CRC Press. https://adv-r.hadley.nz"
+    "text": "How to Learn More?\n\n📙 Books\n\nWickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2023). R for data science: Import, tidy, transform, visualize, and model data (2nd ed.). O’Reilly Media. https://r4ds.hadley.nz\n\nBryan, J., Hester, J., Pileggi, S., & Aja, E. D. (n.d.). What they forgot to teach you about R: The stuff you need to know about R, besides data analysis. https://rstats.wtf\n\nBryan, J. (n.d.). Happy Git and GitHub for the useR. https://happygitwithr.com (strongly recommended)\n\nWickham, H. (n.d.). Tidy design principles. https://design.tidyverse.org\n\nWickham, H. (n.d.). The tidyverse style guide. https://style.tidyverse.org\n\nWickham, H. (2019). Advanced R (2nd ed.). CRC Press. https://adv-r.hadley.nz"
   },
   {
     "objectID": "index.html#examples-of-data-reports",

@@ -786,7 +786,7 @@ power.t.test(
 
 Our analysis found a statistically significant difference in means ($t$ = 34.4, $p$-value < 0.001). The observed effect size was very large and exceed the Minimal Effect Size (MES) threshold ($d$ = 4.13, 95% CI [3.70, 4.56]).
 
-The power (1 - $\beta$) of the test is 1, indicating that the probability of a false negative is zero.
+The power (1 - $\beta$) of the test is ~1, indicating that the probability of a false negative is very low.
 
 Based on these results, we conclude that **there is a meaningful difference in flipper length between Adelie and Gentoo penguins**, with Gentoo penguins having significantly longer flippers. Consequently, we reject the null hypothesis in favor of the alternative hypothesis.
 :::
@@ -1139,7 +1139,7 @@ pwr.anova.test(
 
 Our analysis found a statistically significant difference in means ($\text{F}$ = 595, $p$-value < 0.001). The observed effect size was very large and exceed the Minimal Effect Size (MES) threshold ($f$ = 1.873, 95% CI [1.72, Inf]).
 
-The power (1 - $\beta$) of the test is 1, indicating that the probability of a false negative is zero.
+The power (1 - $\beta$) of the test is ~1, indicating that the probability of a false negative is very low.
 
 Based on these results, we conclude that **there is a meaningful difference in flipper length between Adelie, Chinstrap, and Gentoo penguins**, with Gentoo penguins having significantly longer flippers, followed by Chinstrap penguins. Consequently, we reject the null hypothesis in favor of the alternative hypothesis.
 :::
@@ -1636,7 +1636,7 @@ pwrss.f.reg(
 
 Our analysis indicates that adding `bill_depth_mm` as a predictor improves the model adjusted $\text{R}^{2}$ in 0.19483 (95% CI \[0.12069, 0.26897\]) ($\text{F}$(2, 339) = 284, $p$-value < 0.001), exceeding the Minimal Effect Size (MES) threshold.
 
-The power (1 - $\beta$) of the test is 1, indicating that the probability of a false negative is zero.
+The power (1 - $\beta$) of the test is ~1, indicating that the probability of a false negative is very low.
 
 Based on these results, we conclude that **`bill_depth_mm` meaningful improve the prediction of `flipper_length_mm`**. Consequently, we reject the null hypothesis in favor of the alternative hypothesis.
 :::

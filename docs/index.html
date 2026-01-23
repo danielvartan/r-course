@@ -378,14 +378,17 @@
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section><section id="course-objectives" class="slide level2 smaller"><h2>Course Objectives</h2>
+      }</style></aside></section><section id="main-objective" class="slide level2"><h2>Main Objective</h2>
+<div class="brand-triad-blue-red bold-black" style="text-align: center; padding-top: 150px;">
+<p>Provide a solid introduction to R programming, focusing on <a href="https://tidyverse.org/">Tidyverse</a> principles and ecosystem.</p>
+</div>
+</section><section id="learning-objectives" class="slide level2 smaller"><h2>Learning Objectives</h2>
 <ol type="1">
-<li>Understand foundational principles and key concepts of programming</li>
-<li>Learn the structure and essential components of the R programming language</li>
-<li>Master fundamental techniques for data cleaning and transformation</li>
-<li>Develop skills in creating effective data visualizations</li>
-<li>Apply techniques for conducting exploratory data analysis</li>
-<li>Build introductory statistical and predictive models</li>
+<li>Understand key concepts of computer science and programming</li>
+<li>Learn the structure and essential components of R programming language</li>
+<li>Learn tidyverse grammar for data manipulation</li>
+<li>Learn grammar of graphics for data exploration and visualization</li>
+<li>Learn tidymodels grammar for building statistical and predictive models</li>
 </ol>
 <div style="padding-top: 15px;">
 <p><span class="brand-triad-blue-red"><strong>Future courses?</strong></span></p>
@@ -429,7 +432,7 @@
 <p>The classes are distributed over <strong>5 days</strong>, with a total of <strong>30 hours</strong>.</p>
 </div><div class="column" style="width: 5%;">
 
-</div><div class="column" style="width: 47.5%; padding-top: 100px;">
+</div><div class="column" style="width: 47.5%; padding-top: 125px;">
 <p>Monday (02/02) 10:00-17:00</p>
 <p>Tuesday (03/02) 10:00-17:00</p>
 <p>Wednesday (04/02) 10:00-17:00</p>
@@ -1099,16 +1102,17 @@
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section><section id="the-rstudio-ide" class="slide level2 smaller nostretch"><h2>The RStudio IDE</h2>
+      }</style></aside></section><section id="the-positron-ide" class="slide level2 smaller nostretch"><h2>The Positron IDE</h2>
 <p>An IDE (Integrated Development Environment) is a software that provides a set of tools to help the programmer to write code. It puts together things like a text editor, a console, a debugger, and a file manager.</p>
-<p><a href="https://posit.co/download/rstudio-desktop/">RStudio</a> is the most popular IDE for R. Like R, it is also free and open-source.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure><p><a href="https://posit.co/download/rstudio-desktop/"><img data-src="images/rstudio-logo.png" class="quarto-figure quarto-figure-center" style="width: 60%; padding-top: 50px;"></a></p>
+<figure><p><a href="https://positron.posit.co/"><img data-src="images/positron-logo.png" class="quarto-figure quarto-figure-center" style="width: 60%; padding-top: 25px;"></a></p>
 </figure>
 </div>
-<aside class="notes"><ul>
-<li>Always use software in English.</li>
-</ul><style type="text/css">
+<p><a href="https://positron.posit.co/">Positron</a> is <em>flavour</em> of Visual Studio Code, the most used IDE for programming in any language. It supersedes RStudio, the main IDE for R for many years, focusing in providing a better experience for programming in R and Python.</p>
+<div style="padding-top: 15px;">
+<p><strong>Note</strong>: Always use technical softwares in English.</p>
+</div>
+<aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
           clip: rect(1px, 1px, 1px, 1px);
@@ -1118,8 +1122,13 @@
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section><section id="installing-rstudio" class="slide level2 smaller"><h2>Installing RStudio</h2>
-<video width="100%" style="display: block; margin: 0 auto;" muted="" controls=""><source src="images/installing-rstudio.webm" type="video/webm"></video><aside class="notes"><style type="text/css">
+      }</style></aside></section><section id="the-positron-ide-1" class="slide level2"><h2>The Positron IDE</h2>
+
+<img data-src="images/positron-interface.jpeg" class="r-stretch quarto-figure quarto-figure-center"><div class="footer">
+<p>(Reproduced from <a href="https://positron.posit.co/layout.html">Posit</a>)</p>
+</div>
+</section><section id="installing-positron" class="slide level2 smaller"><h2>Installing Positron</h2>
+<aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
           clip: rect(1px, 1px, 1px, 1px);
@@ -1155,7 +1164,7 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside></section><section id="creating-a-project-1" class="slide level2 smaller"><h2>Creating a Project</h2>
-<video width="100%" style="display: block; margin: 0 auto;" muted="" controls=""><source src="images/creating-a-project.webm" type="video/webm"></video><aside class="notes"><style type="text/css">
+<aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
           clip: rect(1px, 1px, 1px, 1px);
@@ -1370,7 +1379,7 @@
       }</style></aside></section><section id="non-atomic-objects" class="slide level2 smaller"><h2>Non-Atomic Objects</h2>
 <div class="columns">
 <div class="column" style="width: 50%;">
-<p>Atomic types are <strong>non-recursive objects</strong>, i.e., objects that can’t hold themselfs as an entry (e.g., <code>logical</code>, <code>integer</code>, <code>double</code>, <code>character</code>).</p>
+<p>Atomic types are <strong>non-recursive objects</strong>, i.e., objects that can’t hold themselves as an entry (e.g., <code>logical</code>, <code>integer</code>, <code>double</code>, <code>character</code>).</p>
 <div style="padding-top: 15px;">
 <p><strong>Non-Atomic Objects</strong></p>
 <ul>
@@ -1565,7 +1574,7 @@
 </div><div class="column" style="width: 5%;">
 
 </div><div class="column" style="width: 47.5%;">
-<p><code>variable-name</code> <span class="bold-black">Bad</span></p>
+<p><code>variable-name</code> <span class="bold-black">Bad</span> (kebab-case)</p>
 <p><code>variable.name</code> <span class="bold-black">Good</span>, but not advisable</p>
 <p><code>variable_name</code> <span class="bold-black">Good</span> (snake_case) — Most used in R</p>
 <p><code>1variable_name</code> <span class="bold-black">Bad</span></p>
@@ -2171,12 +2180,12 @@
 <span id="cb80-7"><a></a>  <span class="at">check =</span> <span class="st">"equal"</span></span>
 <span id="cb80-8"><a></a>)</span>
 <span id="cb80-9"><a></a><span class="co">#&gt; Unit: microseconds</span></span>
-<span id="cb80-10"><a></a><span class="co">#&gt;                   expr      min        lq      mean    median       uq      max</span></span>
-<span id="cb80-11"><a></a><span class="co">#&gt;  with_for_loop(1:1000) 1027.704 1077.3330 1542.5340 1155.5835 1253.011 9580.610</span></span>
-<span id="cb80-12"><a></a><span class="co">#&gt;       with_map(1:1000)  286.171  306.8465  350.2731  337.9365  364.999 1141.218</span></span>
-<span id="cb80-13"><a></a><span class="co">#&gt;  neval</span></span>
-<span id="cb80-14"><a></a><span class="co">#&gt;    100</span></span>
-<span id="cb80-15"><a></a><span class="co">#&gt;    100</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb80-10"><a></a><span class="co">#&gt;                   expr     min       lq      mean   median       uq      max</span></span>
+<span id="cb80-11"><a></a><span class="co">#&gt;  with_for_loop(1:1000) 991.509 1044.070 1469.0022 1089.731 1168.454 8161.406</span></span>
+<span id="cb80-12"><a></a><span class="co">#&gt;       with_map(1:1000) 283.736  298.282  333.3006  316.787  344.443 1037.945</span></span>
+<span id="cb80-13"><a></a><span class="co">#&gt;  neval cld</span></span>
+<span id="cb80-14"><a></a><span class="co">#&gt;    100  a </span></span>
+<span id="cb80-15"><a></a><span class="co">#&gt;    100   b</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
 </section><section id="environments" class="slide level2 smaller"><h2>Environments</h2>
@@ -2266,7 +2275,7 @@
           display:block!important;
       }</style></aside></section><section id="packages-1" class="slide level2 smaller"><h2>Packages</h2>
 <p><strong>R is just the core</strong>. It needs packages to do anything useful.</p>
-<p>A tipycal installation of R comes with a <a href="https://cran.r-project.org/manuals.html#:~:text=recommended%20packages">set</a> of packages, like:</p>
+<p>A typical installation of R comes with a <a href="https://cran.r-project.org/manuals.html#:~:text=recommended%20packages">set</a> of packages, like:</p>
 <ul>
 <li>
 <code>base</code>: Basic R functions (e.g., <code><a href="https://rdrr.io/r/base/sum.html">sum()</a></code>)</li>
@@ -2289,7 +2298,7 @@
 <div class="column" style="width: 47.5%; font-size: 0.85em;">
 <p>Based on the atomic types, we can create other types of objects.</p>
 <p><strong>Using the right kind of object in R is very important</strong>, because these objects also include methods to deal with particular types of data.</p>
-<p>For example, time can be expressed in diffent ways, like linear time (e.g., durations, periods, data-time, intervals) and circular time (e.g., time of day). We can also have time series, which are a sequence of data points taken at successive points in time.</p>
+<p>For example, time can be expressed in different ways, like linear time (e.g., durations, periods, data-time, intervals) and circular time (e.g., time of day). We can also have time series, which are a sequence of data points taken at successive points in time.</p>
 </div><div class="column" style="width: 5%;">
 
 </div><div class="column" style="width: 47.5%; font-size: 0.9em;">
@@ -2432,7 +2441,7 @@
       }</style></aside></section><section id="base-r-solutions" class="slide level2 smaller"><h2>Base R Solutions</h2>
 <p>You can do most of the things you need with the packages that come bundled with R. However, that is not the most efficient way to do things today.</p>
 <p>In this course <strong>we are going to focus on the Tidyverse and rOpenSci packages</strong>, which are the most modern and efficient way to work with data in R.</p>
-<p>If you want a depper understanding of the R language, we encourage you to explore the base R solutions.</p>
+<p>If you want a deeper understanding of the R language, we encourage you to explore the base R solutions.</p>
 <aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -2715,7 +2724,7 @@
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb99"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a></a>?airquality</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div style="font-size: 1em; padding-top: 30px;">
-<div class="cell">
+<div class="cell" data-df-print="paged">
 <div class="cell-output-display">
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
@@ -2914,7 +2923,7 @@
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb106"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a></a><span class="fu">View</span>(std_mctq)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></div>
 <div style="font-size: 1em; padding-top: 15px;">
-<div class="cell">
+<div class="cell" data-df-print="paged">
 <div class="cell-output-display">
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
@@ -3020,7 +3029,7 @@
 <ul>
 <li>Tabular data: <code><a href="https://rdrr.io/r/utils/read.table.html">utils::read.csv()</a></code>, <code><a href="https://readr.tidyverse.org/reference/read_delim.html">readr::read_csv()</a></code>
 </li>
-<li>Geographical data: <code><a href="https://rspatial.github.io/terra/reference/vect.html">terra::vect()</a></code>, <code>st::st_read()</code>
+<li>Geographical data: <code>st::st_read()</code>, <code><a href="https://r-spatial.github.io/stars/reference/read_stars.html">stars::read_stars()</a></code>, <code><a href="https://rspatial.github.io/terra/reference/vect.html">terra::vect()</a></code>
 </li>
 <li>Proprietary formats: <code><a href="https://readxl.tidyverse.org/reference/read_excel.html">readxl::read_excel()</a></code>, <code><a href="https://haven.tidyverse.org/reference/read_dta.html">haven::read_dta()</a></code> (Stata), <code><a href="https://haven.tidyverse.org/reference/read_spss.html">haven::read_sav()</a></code> (SPSS), <code><a href="https://haven.tidyverse.org/reference/read_sas.html">haven::read_sas()</a></code> (SAS)</li>
 </ul>
@@ -3078,7 +3087,7 @@
       }</style></aside></section><section id="inspecting-the-raw-data-file" class="slide level2 smaller"><h2>Inspecting the Raw Data File</h2>
 <p>🕵 <strong>Known your data</strong>.</p>
 <ol type="1">
-<li>Click <a href="https://github.com/danielvartan/r-course/blob/main/data/palmerpenguins-raw.csv">here</a> to download the Palmer Penguis raw data file.</li>
+<li>Click <a href="https://github.com/danielvartan/r-course/blob/main/data/palmerpenguins-raw.csv">here</a> to download the Palmer Penguins raw data file.</li>
 <li>Save it in a folder named <code>data</code> in the root of your project.</li>
 <li>Using the file manager, open the file in RStudio.</li>
 </ol>
@@ -3249,7 +3258,7 @@
       }</style></aside></section><section id="inspecting-the-raw-data" class="slide level2 smaller"><h2>Inspecting the Raw Data</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb133"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb133-1"><a></a>data <span class="sc">|&gt;</span> <span class="fu">View</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div style="font-size: 1em; padding-top: 30px;">
-<div class="cell">
+<div class="cell" data-df-print="paged">
 <div class="cell-output-display">
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
@@ -3460,7 +3469,7 @@
           display:block!important;
       }</style></aside></section><section id="select" class="slide level2 smaller"><h2><code>select()</code></h2>
 <p>The <code>select()</code> function is used to select columns from a data frame.</p>
-<p>In our case, we are not interested in using alll the variables in the raw data. We will select only the variables we need.</p>
+<p>In our case, we are not interested in using all the variables in the raw data. We will select only the variables we need.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb147"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb147-1"><a></a><span class="fu">library</span>(dplyr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -3784,7 +3793,7 @@
       }</style></aside></section><section id="inspecting-the-valid-data" class="slide level2 smaller"><h2>Inspecting the Valid Data</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb168"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb168-1"><a></a>data <span class="sc">|&gt;</span> <span class="fu">View</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div style="font-size: 1em; padding-top: 30px;">
-<div class="cell">
+<div class="cell" data-df-print="paged">
 <div class="cell-output-display">
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
@@ -6743,7 +6752,7 @@ Effect Size Classes
 <div class="column" style="width: 60%; font-size: 0.85em;">
 <p><span class="brand-triad-blue-red bold-black" style="font-size: 1.1em;">Is there a meaningful difference in flipper length between Adelie and Gentoo penguins?</span></p>
 <p>Our analysis found a statistically significant difference in means (<span class="math inline">\(t\)</span> = 34.4, <span class="math inline">\(p\)</span>-value &lt; 0.001). The observed effect size was very large and exceed the Minimal Effect Size (MES) threshold (<span class="math inline">\(d\)</span> = 4.13, 95% CI [3.70, 4.56]).</p>
-<p>The power (1 - <span class="math inline">\(\beta\)</span>) of the test is 1, indicating that the probability of a false negative is zero.</p>
+<p>The power (1 - <span class="math inline">\(\beta\)</span>) of the test is ~1, indicating that the probability of a false negative is very low.</p>
 <p>Based on these results, we conclude that <strong>there is a meaningful difference in flipper length between Adelie and Gentoo penguins</strong>, with Gentoo penguins having significantly longer flippers. Consequently, we reject the null hypothesis in favor of the alternative hypothesis.</p>
 </div><div class="column" style="width: 40%; padding-top: 130px;">
 <p><span class="math display">\[
@@ -7176,7 +7185,7 @@ Effect Size Classes
 <div class="column" style="width: 60%; font-size: 0.8em;">
 <p><span class="brand-triad-blue-red bold-black" style="font-size: 1.1em;">Is there a meaningful difference in flipper length between Adelie, Chinstrap, and Gentoo penguins?</span></p>
 <p>Our analysis found a statistically significant difference in means (<span class="math inline">\(\text{F}\)</span> = 595, <span class="math inline">\(p\)</span>-value &lt; 0.001). The observed effect size was very large and exceed the Minimal Effect Size (MES) threshold (<span class="math inline">\(f\)</span> = 1.873, 95% CI [1.72, Inf]).</p>
-<p>The power (1 - <span class="math inline">\(\beta\)</span>) of the test is 1, indicating that the probability of a false negative is zero.</p>
+<p>The power (1 - <span class="math inline">\(\beta\)</span>) of the test is ~1, indicating that the probability of a false negative is very low.</p>
 <p>Based on these results, we conclude that <strong>there is a meaningful difference in flipper length between Adelie, Chinstrap, and Gentoo penguins</strong>, with Gentoo penguins having significantly longer flippers, followed by Chinstrap penguins. Consequently, we reject the null hypothesis in favor of the alternative hypothesis.</p>
 </div><div class="column" style="width: 40%; padding-top: 130px;">
 <p><span class="math display">\[
@@ -7784,7 +7793,7 @@ Effect Size Classes
 <div class="column" style="width: 60%; font-size: 0.8em;">
 <p><span class="brand-triad-blue-red bold-black" style="font-size: 1.1em;">Adding <code>bill_depth_mm</code> as a predictor meaningful improve the prediction of <code>flipper_length_mm</code>?</span></p>
 <p>Our analysis indicates that adding <code>bill_depth_mm</code> as a predictor improves the model adjusted <span class="math inline">\(\text{R}^{2}\)</span> in 0.19483 (95% CI [0.12069, 0.26897]) (<span class="math inline">\(\text{F}\)</span>(2, 339) = 284, <span class="math inline">\(p\)</span>-value &lt; 0.001), exceeding the Minimal Effect Size (MES) threshold.</p>
-<p>The power (1 - <span class="math inline">\(\beta\)</span>) of the test is 1, indicating that the probability of a false negative is zero.</p>
+<p>The power (1 - <span class="math inline">\(\beta\)</span>) of the test is ~1, indicating that the probability of a false negative is very low.</p>
 <p>Based on these results, we conclude that <strong><code>bill_depth_mm</code> meaningful improve the prediction of <code>flipper_length_mm</code></strong>. Consequently, we reject the null hypothesis in favor of the alternative hypothesis.</p>
 </div><div class="column" style="width: 40%; padding-top: 130px;">
 <p><span class="math display">\[
@@ -8078,8 +8087,8 @@ Effect Size Classes
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section><section id="we-hope-you-enjoyed-the-course" class="slide level2 smaller nostretch"><h2>We Hope You Enjoyed the Course!</h2>
-<p>We sure enjoyed teaching you!</p>
+      }</style></aside></section><section id="i-hope-you-enjoyed-the-course" class="slide level2 smaller nostretch"><h2>I Hope You Enjoyed the Course!</h2>
+<p>I sure enjoyed teaching you!</p>
 <div class="quarto-figure quarto-figure-center">
 <figure><p><img data-src="images/allison-horst-figure-5.png" class="quarto-figure quarto-figure-center" style="width: 80%; padding-top: 10px;"></p>
 </figure>
@@ -8098,7 +8107,7 @@ Effect Size Classes
           overflow: hidden!important;
           display:block!important;
       }</style></aside></section><section id="now-that-youre-an-r-rock-star" class="slide level2 smaller"><h2>Now That You’re an R Rock Star</h2>
-<p>We hope you feel more confident in your R programming skills and are ready to tackle new challenges. Remember, learning is a continuous journey, and the R community is there to support you.</p>
+<p>I hope you feel more confident in your R programming skills and are ready to tackle new challenges. Remember, learning is a continuous journey, and the R community is there to support you.</p>
 <div style="padding-top: 15px;">
 <p>🇧🇷 For Brazilian graduate students, consider exploring the <strong><a href="https://github.com/danielvartan/abnt"><code>abnt</code></a> Quarto format</strong>. It helps you write your thesis or dissertation in compliance with the Brazilian Association of Technical Standards (<a href="https://abnt.org.br/">ABNT</a>) standards while ensuring full reproducibility. Check out an example <a href="https://danielvartan.github.io/mastersthesis/">here</a>.</p>
 </div>
@@ -8172,9 +8181,9 @@ Effect Size Classes
 <!-- @wickham2023e -->
 <p>Wickham, H., Çetinkaya-Rundel, M., &amp; Grolemund, G. (2023). <strong><em>R for data science</em></strong>: <em>Import, tidy, transform, visualize, and model data</em> (2nd ed.). O’Reilly Media. <a href="https://r4ds.hadley.nz" class="uri">https://r4ds.hadley.nz</a></p>
 <!-- @bryana -->
-<p>Bryan, J., Hester, J., Pileggi, S., &amp; Aja, E. D. (n.d.). <strong><em>What they forgot to teach you about R</em></strong>: <em>The stuff you need to know about R, besides data analysis</em>. <a href="https://rstats.wtf/" class="uri">https://rstats.wtf/</a></p>
+<p>Bryan, J., Hester, J., Pileggi, S., &amp; Aja, E. D. (n.d.). <strong><em>What they forgot to teach you about R</em></strong>: <em>The stuff you need to know about R, besides data analysis</em>. <a href="https://rstats.wtf" class="uri">https://rstats.wtf</a></p>
 <!-- @bryan -->
-<p>Bryan, J. (n.d.). <strong><em>Happy Git and GitHub for the useR</em></strong>. <a href="https://happygitwithr.com/" class="uri">https://happygitwithr.com/</a> (<span class="brand-triad-blue-red"><strong>strongly recommended</strong></span>)</p>
+<p>Bryan, J. (n.d.). <strong><em>Happy Git and GitHub for the useR</em></strong>. <a href="https://happygitwithr.com" class="uri">https://happygitwithr.com</a> (<span class="brand-triad-blue-red"><strong>strongly recommended</strong></span>)</p>
 <!-- @wickhamc -->
 <p>Wickham, H. (n.d.). <strong><em>Tidy design principles</em></strong>. <a href="https://design.tidyverse.org" class="uri">https://design.tidyverse.org</a></p>
 <!-- @wickhamb -->

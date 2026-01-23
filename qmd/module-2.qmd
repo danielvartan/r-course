@@ -34,25 +34,30 @@ Simply follow the instructions of the installer.
 ::: {.notes}
 :::
 
-## The RStudio IDE {.smaller .nostretch}
+## The Positron IDE {.smaller .nostretch}
 
 An IDE (Integrated Development Environment) is a software that provides a set of tools to help the programmer to write code. It puts together things like a text editor, a console, a debugger, and a file manager.
 
-[RStudio](https://posit.co/download/rstudio-desktop/) is the most popular IDE for R. Like R, it is also free and open-source.
+[![](images/positron-logo.png){fig-align="center" style="width: 60%; padding-top: 25px;"}](https://positron.posit.co/)
 
-[![](images/rstudio-logo.png){fig-align="center" style="width: 60%; padding-top: 50px;"}](https://posit.co/download/rstudio-desktop/)
+[Positron](https://positron.posit.co/) is *flavour* of Visual Studio Code, the most used IDE for programming in any language. It supersedes [RStudio](https://posit.co/download/rstudio-desktop/), the main IDE for R for many years, focusing in providing a better experience for programming in R and Python.
 
-::: {.notes}
-- Always use software in English.
+::: {style="padding-top: 15px;"}
+**Note**: Always use technical softwares in English.
 :::
 
-## Installing RStudio {.smaller}
+::: {.notes}
+:::
 
-```{=html}
-<video width="100%" style="display: block; margin: 0 auto;" muted controls>
-  <source src="images/installing-rstudio.webm" type="video/webm">
-</video>
-```
+## The Positron IDE
+
+![](images/positron-interface.jpeg){.r-stretch fig-align="center"}
+
+::: footer
+(Reproduced from [Posit](https://positron.posit.co/layout.html))
+:::
+
+## Installing Positron {.smaller}
 
 ::: {.notes}
 :::
@@ -80,12 +85,6 @@ Every data project must be accompanied, at least, by a **README** file, explaini
 :::
 
 ## Creating a Project {.smaller}
-
-```{=html}
-<video width="100%" style="display: block; margin: 0 auto;" muted controls>
-  <source src="images/creating-a-project.webm" type="video/webm">
-</video>
-```
 
 ::: {.notes}
 :::
@@ -266,7 +265,7 @@ See: https://youtu.be/e1zJS31tr88?si=7-TamPi2tmwprCUL&t=900
 
 ::::: {.columns}
 :::: {.column style="width: 50%;"}
-Atomic types are **non-recursive objects**, i.e., objects that can't hold themselfs as an entry (e.g., `logical`, `integer`, `double`, `character`).
+Atomic types are **non-recursive objects**, i.e., objects that can't hold themselves as an entry (e.g., `logical`, `integer`, `double`, `character`).
 
 ::: {style="padding-top: 15px;"}
 **Non-Atomic Objects**
@@ -408,7 +407,7 @@ R has strict rules regarding the names of objects.
 ::: {.column style="width: 5%;"}
 :::
 ::: {.column style="width: 47.5%;"}
-`variable-name` [Bad]{.bold-black}
+`variable-name` [Bad]{.bold-black} (kebab-case)
 
 `variable.name` [Good]{.bold-black}, but not advisable
 
@@ -1069,7 +1068,7 @@ hms::parse_hm("23:00")
 
 **R is just the core**. It needs packages to do anything useful.
 
-A tipycal installation of R comes with a [set](https://cran.r-project.org/manuals.html#:~:text=recommended%20packages) of packages, like:
+A typical installation of R comes with a [set](https://cran.r-project.org/manuals.html#:~:text=recommended%20packages) of packages, like:
 
 - `base`: Basic R functions (e.g., `sum()`)
 - `datasets`: Some datasets for testing and teaching (e.g., `mtcars`)
@@ -1088,7 +1087,7 @@ Based on the atomic types, we can create other types of objects.
 
 **Using the right kind of object in R is very important**, because these objects also include methods to deal with particular types of data.
 
-For example, time can be expressed in diffent ways, like linear time (e.g., durations, periods, data-time, intervals) and circular time (e.g., time of day). We can also have time series, which are a sequence of data points taken at successive points in time.
+For example, time can be expressed in different ways, like linear time (e.g., durations, periods, data-time, intervals) and circular time (e.g., time of day). We can also have time series, which are a sequence of data points taken at successive points in time.
 ::::
 :::: {.column style="width: 5%;"}
 ::::
@@ -1222,7 +1221,7 @@ You can do most of the things you need with the packages that come bundled with 
 
 In this course **we are going to focus on the Tidyverse and rOpenSci packages**, which are the most modern and efficient way to work with data in R.
 
-If you want a depper understanding of the R language, we encourage you to explore the base R solutions.
+If you want a deeper understanding of the R language, we encourage you to explore the base R solutions.
 
 ::: {.notes}
 :::

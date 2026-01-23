@@ -160,6 +160,7 @@ Daily air quality measurements in New York (May to September 1973).
 ::: {style="font-size: 1em; padding-top: 30px;"}
 ```{r}
 #| echo: false
+#| df-print: paged
 
 datasets::airquality |>
   rmarkdown::paged_table(options = list(rows.print = 11))
@@ -357,6 +358,7 @@ View(std_mctq)
 ::: {style="font-size: 1em; padding-top: 15px;"}
 ```{r}
 #| echo: false
+#| df-print: paged
 
 mctq::std_mctq |>
   rmarkdown::paged_table(options = list(rows.print = 7))
@@ -415,7 +417,7 @@ Different from Excel or GUI-based statistical software, R can deal with any kind
 **Examples of R functions to read data**:
 
 - Tabular data: `utils::read.csv()`, `readr::read_csv()`
-- Geographical data: `terra::vect()`, `st::st_read()`
+- Geographical data: `st::st_read()`, `stars::read_stars()`, `terra::vect()`
 - Proprietary formats: `readxl::read_excel()`, `haven::read_dta()` (Stata), `haven::read_sav()` (SPSS), `haven::read_sas()` (SAS)
 
 ::: {.notes}
@@ -480,7 +482,7 @@ palmerpenguins::penguins |>
 
 🕵 **Known your data**.
 
-1. Click [here](https://github.com/danielvartan/r-course/blob/main/data/palmerpenguins-raw.csv) to download the Palmer Penguis raw data file.
+1. Click [here](https://github.com/danielvartan/r-course/blob/main/data/palmerpenguins-raw.csv) to download the Palmer Penguins raw data file.
 2. Save it in a folder named `data` in the root of your project.
 3. Using the file manager, open the file in RStudio.
 
@@ -677,6 +679,7 @@ data |> View()
 ::: {style="font-size: 1em; padding-top: 30px;"}
 ```{r}
 #| echo: false
+#| df-print: paged
 
 data |> rmarkdown::paged_table(options = list(rows.print = 12))
 ```
@@ -848,7 +851,7 @@ install.packages("dplyr")
 
 The `select()` function is used to select columns from a data frame.
 
-In our case, we are not interested in using alll the variables in the raw data. We will select only the variables we need.
+In our case, we are not interested in using all the variables in the raw data. We will select only the variables we need.
 
 ```{r}
 library(dplyr)
@@ -1085,6 +1088,7 @@ data |> View()
 ::: {style="font-size: 1em; padding-top: 30px;"}
 ```{r}
 #| echo: false
+#| df-print: paged
 
 data |>
   rmarkdown::paged_table(options = list(rows.print = 12))
