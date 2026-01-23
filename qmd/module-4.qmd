@@ -259,9 +259,9 @@ We will based this part of the course on the principles found in this book.
 ::: {.notes}
 :::
 
-## The `ggplot2` Package {.smaller}
+## The `ggplot2` Package
 
-![](images/allison-horst-figure-34.png){fig-align="center" style="width: 90%; padding-top: 0px;"}
+![](images/allison-horst-figure-34.png){.nostretch fig-align="center" style="height: 550px;"}
 
 ::: footer
 (Artwork by [Allison Horst](https://twitter.com/allison_horst))
@@ -409,7 +409,7 @@ penguins |>
 ::: {.notes}
 :::
 
-## Bar Plots {.smaller}
+## Bar Plots {.smaller .nostretch}
 
 ```{r}
 #| code-fold: true
@@ -434,7 +434,7 @@ penguins |>
   theme(legend.position = "none")
 ```
 
-## Histograms {.smaller}
+## Histograms {.smaller .nostretch}
 
 ```{r}
 #| code-fold: true
@@ -454,7 +454,7 @@ penguins |>
   scale_fill_brand_d()
 ```
 
-## Boxplots {.smaller}
+## Boxplots {.smaller .nostretch}
 
 ```{r}
 #| code-fold: true
@@ -475,7 +475,7 @@ penguins |>
   labs(x = "Species", y = "Bill Length (mm)", fill = "Species")
 ```
 
-## Scatter Plots {.smaller}
+## Scatter Plots {.smaller .nostretch}
 
 ```{r}
 #| code-fold: true
@@ -508,7 +508,7 @@ penguins |>
   scale_color_brand_d(alpha = 0.7)
 ```
 
-## Facets {.smaller}
+## Facets {.smaller .nostretch}
 
 ```{r}
 #| code-fold: true
@@ -542,7 +542,7 @@ penguins |>
   facet_wrap(~species)
 ```
 
-## Combined Plots {.smaller}
+## Combined Plots {.smaller .nostretch}
 
 ```{r}
 #| code-fold: true
@@ -602,14 +602,14 @@ plot_scatter <-
 ::: {.notes}
 :::
 
-## Correlation Matrices {.smaller}
+## Correlation Matrices {.smaller .nostretch}
 
 ```{r}
 #| code-fold: true
 #| warning: false
 #| fig-align: center
 #| fig-width: 12
-#| fig-height: 7
+#| fig-height: 6
 
 library(brandr)
 library(dplyr)
@@ -685,7 +685,7 @@ penguins |>
 
 Check out the amazing work by [Yan Holtz](https://github.com/holtzy). Visit [From Data to Viz](https://www.data-to-viz.com/) too see the diagram below and many others.
 
-![](images/holtz-2018-from-data-to-viz-poster-adapted.png){fig-align="center" style="width: 100%; padding-top: 50px;"}
+![](images/holtz-2018-from-data-to-viz-poster-adapted.png){fig-align="center" style="width: 1000px; padding-top: 50px;"}
 
 ::: footer
 (Artwork by [Yan Holtz](https://github.com/holtzy))
@@ -698,7 +698,7 @@ Check out the amazing work by [Yan Holtz](https://github.com/holtzy). Visit [Fro
 
 Another amazing work by [Yan Holtz](https://github.com/holtzy) is the [R Graph Gallery](https://r-graph-gallery.com/), which provides numerous examples of R graphics and how to create them.
 
-![](images/holtz-connection-map.png){fig-align="center" style="width: 100%; padding-top: 15px;}"}
+![](images/holtz-connection-map.png){fig-align="center" style="width: 1000px; padding-top: 15px;}"}
 
 ::: footer
 (Artwork by [Yan Holtz](https://www.data-to-viz.com/story/MapConnection.html))

@@ -326,7 +326,7 @@
     "href": "index.html#names",
     "title": "An Introduction to the R Programming Language",
     "section": "Names",
-    "text": "Names\n\n\n(Artwork by Allison Horst)"
+    "text": "Names\n\n\n\n\n\n(Artwork by Allison Horst)"
   },
   {
     "objectID": "index.html#names-1",
@@ -417,7 +417,7 @@
     "href": "index.html#functionals",
     "title": "An Introduction to the R Programming Language",
     "section": "Functionals",
-    "text": "Functionals\n\n\nA functional is a function that takes a function as an input and returns a vector as output (Wickham, 2019).\nIt makes the work of the programmer easier, because it allows to apply a function to a vector without the need of a loop. Because these functions are usually written in C (a low-level programming language), they are very fast.\nR have native functionals (e.g., lapply()), but prefer solutions from the purrr package.\n\n\n\n\ntriple &lt;- function(x) x * 3\n\n\nwith_for_loop &lt;- function(x) {\n  out &lt;- numeric()\n  for (i in x) out &lt;- c(out, triple(i))\n  out\n}\n\n\nlibrary(purrr)\n\nwith_map &lt;- function(x) map_dbl(x, triple)\n\n\nlibrary(microbenchmark)\n\nmicrobenchmark(\n  with_for_loop(1:1000),\n  with_map(1:1000),\n  times = 100,\n  check = \"equal\"\n)\n#&gt; Unit: microseconds\n#&gt;                   expr     min        lq      mean    median        uq      max\n#&gt;  with_for_loop(1:1000) 975.470 1014.5550 1365.0691 1042.3010 1080.7440 7689.892\n#&gt;       with_map(1:1000) 281.973  289.3545  310.7238  298.5385  312.3075 1003.317\n#&gt;  neval cld\n#&gt;    100  a \n#&gt;    100   b"
+    "text": "Functionals\n\n\nA functional is a function that takes a function as an input and returns a vector as output (Wickham, 2019).\nIt makes the work of the programmer easier, because it allows to apply a function to a vector without the need of a loop. Because these functions are usually written in C (a low-level programming language), they are very fast.\nR have native functionals (e.g., lapply()), but prefer solutions from the purrr package.\n\n\n\n\ntriple &lt;- function(x) x * 3\n\n\nwith_for_loop &lt;- function(x) {\n  out &lt;- numeric()\n  for (i in x) out &lt;- c(out, triple(i))\n  out\n}\n\n\nlibrary(purrr)\n\nwith_map &lt;- function(x) map_dbl(x, triple)\n\n\nlibrary(microbenchmark)\n\nmicrobenchmark(\n  with_for_loop(1:1000),\n  with_map(1:1000),\n  times = 100,\n  check = \"equal\"\n)\n#&gt; Unit: microseconds\n#&gt;                   expr      min       lq      mean   median       uq      max\n#&gt;  with_for_loop(1:1000) 2693.781 2794.917 3394.1853 2859.868 2922.611 7799.238\n#&gt;       with_map(1:1000)  775.727  797.552  839.3203  813.635  845.012 2428.174\n#&gt;  neval cld\n#&gt;    100  a \n#&gt;    100   b"
   },
   {
     "objectID": "index.html#environments",
@@ -557,14 +557,14 @@
     "href": "index.html#tidy-data-1",
     "title": "An Introduction to the R Programming Language",
     "section": "Tidy Data",
-    "text": "Tidy Data\n\n\n(Artwork by Allison Horst)"
+    "text": "Tidy Data\n\n\n\n\n\n(Artwork by Allison Horst)"
   },
   {
     "objectID": "index.html#untidy-to-tidy",
     "href": "index.html#untidy-to-tidy",
     "title": "An Introduction to the R Programming Language",
     "section": "Untidy to Tidy",
-    "text": "Untidy to Tidy\n\n\n(Reproduced from Wickham et al. (2023))"
+    "text": "Untidy to Tidy\n\n\n\n\n\n(Reproduced from Wickham et al. (2023))"
   },
   {
     "objectID": "index.html#valid-data",
@@ -753,7 +753,7 @@
     "href": "index.html#rename",
     "title": "An Introduction to the R Programming Language",
     "section": "rename()",
-    "text": "rename()\n\n\n(Artwork by Allison Horst)"
+    "text": "rename()\n\n\n\n\n\n(Artwork by Allison Horst)"
   },
   {
     "objectID": "index.html#rename-1",
@@ -767,7 +767,7 @@
     "href": "index.html#mutate",
     "title": "An Introduction to the R Programming Language",
     "section": "mutate()",
-    "text": "mutate()\n\n\n(Artwork by Allison Horst)"
+    "text": "mutate()\n\n\n\n\n\n(Artwork by Allison Horst)"
   },
   {
     "objectID": "index.html#mutate-1",
@@ -802,7 +802,7 @@
     "href": "index.html#filter",
     "title": "An Introduction to the R Programming Language",
     "section": "filter()",
-    "text": "filter()\n\n\n(Artwork by Allison Horst)"
+    "text": "filter()\n\n\n\n\n\n(Artwork by Allison Horst)"
   },
   {
     "objectID": "index.html#filter-1",
@@ -816,7 +816,7 @@
     "href": "index.html#relocate",
     "title": "An Introduction to the R Programming Language",
     "section": "relocate()",
-    "text": "relocate()\n\n\n(Artwork by Allison Horst)"
+    "text": "relocate()\n\n\n\n\n\n(Artwork by Allison Horst)"
   },
   {
     "objectID": "index.html#relocate-1",
@@ -935,7 +935,7 @@
     "href": "index.html#the-ggplot2-package",
     "title": "An Introduction to the R Programming Language",
     "section": "The ggplot2 Package",
-    "text": "The ggplot2 Package\n\n\n(Artwork by Allison Horst)"
+    "text": "The ggplot2 Package\n\n\n\n\n\n(Artwork by Allison Horst)"
   },
   {
     "objectID": "index.html#the-ggplot2-package-1",
@@ -1005,7 +1005,7 @@
     "href": "index.html#correlation-matrices",
     "title": "An Introduction to the R Programming Language",
     "section": "Correlation Matrices",
-    "text": "Correlation Matrices\n\nCodelibrary(brandr)\nlibrary(dplyr)\nlibrary(GGally)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\n\npenguins |&gt;\n  select(species, body_mass_g, ends_with(\"_mm\")) |&gt;\n  ggpairs(aes(color = species)) +\n  scale_color_brand_d(alpha = 0.7) +\n  scale_fill_brand_d(alpha = 0.7)\n\n\nThe GGally package is an extension of ggplot2."
+    "text": "Correlation Matrices\n\nCodelibrary(brandr)\nlibrary(dplyr)\nlibrary(GGally)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\n\npenguins |&gt;\n  select(species, body_mass_g, ends_with(\"_mm\")) |&gt;\n  ggpairs(aes(color = species)) +\n  scale_color_brand_d(alpha = 0.7) +\n  scale_fill_brand_d(alpha = 0.7)\n\n\n\n\n\n\n\nThe GGally package is an extension of ggplot2."
   },
   {
     "objectID": "index.html#color-palettes",
@@ -1516,7 +1516,7 @@
     "href": "index.html#data-science-workflow",
     "title": "An Introduction to the R Programming Language",
     "section": "Data Science Workflow",
-    "text": "Data Science Workflow\nRemember the data science workflow:\n\n\n(Reproduced from Wickham et al. (2023))"
+    "text": "Data Science Workflow\nRemember the data science workflow:\n\n\n\n\n\n(Reproduced from Wickham et al. (2023))"
   },
   {
     "objectID": "index.html#steps",

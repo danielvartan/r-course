@@ -387,7 +387,7 @@ x = 1; x
 
 ## Names {.smaller}
 
-![](images/allison-horst-figure-46.png){fig-align="center" style="width: 100%;"}
+![](images/allison-horst-figure-46.png){.nostretch fig-align="center" style="height: 550px;"}
 
 ::: footer
 (Artwork by [Allison Horst](https://allisonhorst.com/horst-hill-collaborations))

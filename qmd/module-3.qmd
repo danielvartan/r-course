@@ -41,7 +41,7 @@ The processing for getting data ready for analysis is called **data munging**. Y
 
 Data *versus* the interpretation of the data.
 
-![](images/dikw-drawing.jpeg){fig-align="center" style="padding-top: 25px;"}
+![](images/dikw-drawing.jpeg){fig-align="center" style="padding-top: 25px; width: 1000px;"}
 
 ::: footer
 (To learn more see: @ackoff1989 and @rowley2007)
@@ -96,9 +96,9 @@ Data is an abstraction. It's a representation of the world around us. Without co
 ::: {.notes}
 :::
 
-## Tidy Data {.smaller}
+## Tidy Data
 
-![](images/allison-horst-figure-13.jpg){fig-align="center" style="width: 100%;"}
+![](images/allison-horst-figure-13.jpg){fig-align="center" style="width: 1000px;"}
 
 ::: footer
 (Artwork by [Allison Horst](https://allisonhorst.com/horst-hill-collaborations))
@@ -109,7 +109,7 @@ Data is an abstraction. It's a representation of the world around us. Without co
 
 ## Tidy Data
 
-![](images/allison-horst-figure-15.jpg){fig-align="center" style="width: 100%;"}
+![](images/allison-horst-figure-15.jpg){.nostretch fig-align="center" style="width: 1000px;"}
 
 ::: footer
 (Artwork by [Allison Horst](https://allisonhorst.com/horst-hill-collaborations))
@@ -118,9 +118,9 @@ Data is an abstraction. It's a representation of the world around us. Without co
 ::: {.notes}
 :::
 
-## Untidy to Tidy {.smaller}
+## Untidy to Tidy
 
-![](images/wickham-2023-figure-5-3.png){fig-align="center" style="width: 100%;  padding-top: 15px;"}
+![](images/wickham-2023-figure-5-3.png){.nostretch fig-align="center" style="padding-top: 30px; width: 1000px;"}
 
 ::: footer
 (Reproduced from @wickham2023e)
@@ -873,9 +873,9 @@ data |> glimpse()
 ::: {.notes}
 :::
 
-## `rename()` {.smaller}
+## `rename()` {.nostretch}
 
-![](images/allison-horst-figure-29.png){fig-align="center" style="width: 90%; padding-top: 15px;"}
+![](images/allison-horst-figure-29.png){.nostretch fig-align="center" style="width: 100%;"}
 
 ::: footer
 (Artwork by [Allison Horst](https://twitter.com/allison_horst))
@@ -909,9 +909,9 @@ data |> glimpse()
 ::: {.notes}
 :::
 
-## `mutate()` {.smaller}
+## `mutate()`
 
-![](images/allison-horst-figure-24.png){fig-align="center" style="width: 90%; padding-top: 0px;"}
+![](images/allison-horst-figure-24.png){.nostretch fig-align="center" style="height: 550px;"}
 
 ::: footer
 (Artwork by [Allison Horst](https://twitter.com/allison_horst))
@@ -1010,9 +1010,9 @@ data |> glimpse()
 ::: {.notes}
 :::
 
-## `filter()` {.smaller}
+## `filter()`
 
-![](images/allison-horst-figure-31.png){fig-align="center" style="width: 90%; padding-top: 0px;"}
+![](images/allison-horst-figure-31.png){.nostretch fig-align="center" style="height: 550px;"}
 
 ::: footer
 (Artwork by [Allison Horst](https://twitter.com/allison_horst))
@@ -1045,9 +1045,9 @@ data |> glimpse()
 ::: {.notes}
 :::
 
-## `relocate()` {.smaller}
+## `relocate()`
 
-![](images/allison-horst-figure-30.png){fig-align="center" style="width: 90%; padding-top: 0px;"}
+![](images/allison-horst-figure-30.png){.nostretch fig-align="center" style="height: 550px;"}
 
 ::: footer
 (Artwork by [Allison Horst](https://twitter.com/allison_horst))

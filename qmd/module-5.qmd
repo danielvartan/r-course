@@ -232,7 +232,7 @@ power.t.test(
 
 ## Type II Errors ($\beta$) {.smaller data-menu-title="Type II Errors"}
 
-![](images/allison-horst-figure-40.png){fig-align="center" style="width: 90%; padding-top: 30px;"}
+![](images/allison-horst-figure-40.png){fig-align="center" style="width: 1000px; padding-top: 30px;"}
 
 ::: footer
 (Artwork by [Allison Horst](https://twitter.com/allison_horst))
@@ -452,7 +452,7 @@ $$
 ::: {.notes}
 :::
 
-## t-Test: Boxplots {.smaller}
+## t-Test: Boxplots {.smaller .nostretch}
 
 ```{r}
 #| fig-align: center
@@ -478,7 +478,7 @@ penguins |>
 ::: {.notes}
 :::
 
-## t-Test: Density Plots {.smaller}
+## t-Test: Density Plots {.smaller .nostretch}
 
 ```{r}
 #| fig-align: center
@@ -573,7 +573,7 @@ pwr_analysis
 ::: {.notes}
 :::
 
-## t-Test: Power Analysis {.smaller}
+## t-Test: Power Analysis {.smaller .nostretch}
 
 ```{r}
 #| code-fold: true
@@ -642,7 +642,7 @@ null_dist
 ::: {.notes}
 :::
 
-## t-Test: Visualizing {.smaller}
+## t-Test: Visualizing {.smaller .nostretch}
 
 ```{r}
 #| code-fold: true
@@ -756,7 +756,7 @@ pwr_analysis <- pwrss.t.2means(
 ::: {.notes}
 :::
 
-## t-Test: Power Analysis {.smaller}
+## t-Test: Power Analysis {.smaller .nostretch}
 
 ```{r}
 #| code-fold: true
@@ -842,7 +842,7 @@ $$
 ::: {.notes}
 :::
 
-## ANOVA: Boxplots {.smaller}
+## ANOVA: Boxplots {.smaller .nostretch}
 
 ```{r}
 #| fig-align: center
@@ -866,7 +866,7 @@ penguins |>
 ::: {.notes}
 :::
 
-## ANOVA: Density Plots {.smaller}
+## ANOVA: Density Plots {.smaller .nostretch}
 
 ```{r}
 #| fig-align: center
@@ -951,7 +951,7 @@ pwr_analysis
 ::: {.notes}
 :::
 
-## ANOVA: Power Analysis {.smaller}
+## ANOVA: Power Analysis {.smaller .nostretch}
 
 ```{r}
 #| code-fold: true
@@ -1018,7 +1018,7 @@ null_dist
 ::: {.notes}
 :::
 
-## ANOVA: Visualizing {.smaller}
+## ANOVA: Visualizing {.smaller .nostretch}
 
 ```{r}
 #| code-fold: true
@@ -1245,7 +1245,7 @@ pwrss.f.reg(
 ::: {.notes}
 :::
 
-## Linear Reg.: Scatter Plot 1 {.smaller}
+## Linear Reg.: Scatter Plot 1 {.smaller .nostretch}
 
 ```{r}
 #| fig-align: center
@@ -1287,7 +1287,7 @@ penguins |>
 ::: {.notes}
 :::
 
-## Linear Reg.: Scatter Plot 2 {.smaller}
+## Linear Reg.: Scatter Plot 2 {.smaller .nostretch}
 
 ```{r}
 #| fig-align: center
@@ -1330,7 +1330,7 @@ penguins |>
 ::: {.notes}
 :::
 
-## Linear Reg.: Prediction {.smaller}
+## Linear Reg.: Prediction {.smaller .nostretch}
 
 ```{r}
 #| code-fold: true
