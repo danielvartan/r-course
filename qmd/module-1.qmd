@@ -51,7 +51,7 @@ for such topics as *computer design*, *computer programming*, *information proce
 
 ## Abstractions {.smaller}
 
-![](images/picasso-1946-the-bull.jpg){fig-align="center" style="padding-bottom: 10px;"}
+![](images/picasso-1946-the-bull.jpg){.nostretch fig-align="center" style="height: 550px;"}
 
 ::: footer
 (Artwork by Pablo Picasso – [*Le Taureau*](https://en.wikipedia.org/wiki/Le_Taureau) (1945-46))
@@ -163,7 +163,7 @@ A look inside a computer.
 
 ## Open-Source Prog. Lang.
 
-![](images/calltutors-figure-1.png){.r-stretch fig-align="center"}
+![](images/calltutors-figure-1.png){.nostretch fig-align="center" style="height: 550px;"}
 
 ::: footer
 (Artwork by [Calltutors](https://www.calltutors.com/))

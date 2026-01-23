@@ -102,7 +102,7 @@
     "href": "index.html#abstractions",
     "title": "An Introduction to the R Programming Language",
     "section": "Abstractions",
-    "text": "Abstractions\n\n\n(Artwork by Pablo Picasso – Le Taureau (1945-46))"
+    "text": "Abstractions\n\n\n\n\n\n(Artwork by Pablo Picasso – Le Taureau (1945-46))"
   },
   {
     "objectID": "index.html#computer-architecture",
@@ -144,7 +144,7 @@
     "href": "index.html#open-source-prog.-lang.",
     "title": "An Introduction to the R Programming Language",
     "section": "Open-Source Prog. Lang.",
-    "text": "Open-Source Prog. Lang.\n\n\n(Artwork by Calltutors)\n\n\nHigh-level programming languages.\nR was started by professors Ross Ihaka and Robert Gentleman as a programming language to teach introductory statistics at the University of Auckland. It was release in 1993.\nPython was created by Guido van Rossum and released in 1991.\nstatistical computing and data visualization versus general-purpose.\nScience-driven versus industry-driven."
+    "text": "Open-Source Prog. Lang.\n\n\n\n\n\n(Artwork by Calltutors)\n\n\nHigh-level programming languages.\nR was started by professors Ross Ihaka and Robert Gentleman as a programming language to teach introductory statistics at the University of Auckland. It was release in 1993.\nPython was created by Guido van Rossum and released in 1991.\nstatistical computing and data visualization versus general-purpose.\nScience-driven versus industry-driven."
   },
   {
     "objectID": "index.html#why-r",
@@ -417,7 +417,7 @@
     "href": "index.html#functionals",
     "title": "An Introduction to the R Programming Language",
     "section": "Functionals",
-    "text": "Functionals\n\n\nA functional is a function that takes a function as an input and returns a vector as output (Wickham, 2019).\nIt makes the work of the programmer easier, because it allows to apply a function to a vector without the need of a loop. Because these functions are usually written in C (a low-level programming language), they are very fast.\nR have native functionals (e.g., lapply()), but prefer solutions from the purrr package.\n\n\n\n\ntriple &lt;- function(x) x * 3\n\n\nwith_for_loop &lt;- function(x) {\n  out &lt;- numeric()\n  for (i in x) out &lt;- c(out, triple(i))\n  out\n}\n\n\nlibrary(purrr)\n\nwith_map &lt;- function(x) map_dbl(x, triple)\n\n\nlibrary(microbenchmark)\n\nmicrobenchmark(\n  with_for_loop(1:1000),\n  with_map(1:1000),\n  times = 100,\n  check = \"equal\"\n)\n#&gt; Unit: microseconds\n#&gt;                   expr     min       lq      mean   median       uq      max\n#&gt;  with_for_loop(1:1000) 991.509 1044.070 1469.0022 1089.731 1168.454 8161.406\n#&gt;       with_map(1:1000) 283.736  298.282  333.3006  316.787  344.443 1037.945\n#&gt;  neval cld\n#&gt;    100  a \n#&gt;    100   b"
+    "text": "Functionals\n\n\nA functional is a function that takes a function as an input and returns a vector as output (Wickham, 2019).\nIt makes the work of the programmer easier, because it allows to apply a function to a vector without the need of a loop. Because these functions are usually written in C (a low-level programming language), they are very fast.\nR have native functionals (e.g., lapply()), but prefer solutions from the purrr package.\n\n\n\n\ntriple &lt;- function(x) x * 3\n\n\nwith_for_loop &lt;- function(x) {\n  out &lt;- numeric()\n  for (i in x) out &lt;- c(out, triple(i))\n  out\n}\n\n\nlibrary(purrr)\n\nwith_map &lt;- function(x) map_dbl(x, triple)\n\n\nlibrary(microbenchmark)\n\nmicrobenchmark(\n  with_for_loop(1:1000),\n  with_map(1:1000),\n  times = 100,\n  check = \"equal\"\n)\n#&gt; Unit: microseconds\n#&gt;                   expr     min        lq      mean    median        uq      max\n#&gt;  with_for_loop(1:1000) 975.470 1014.5550 1365.0691 1042.3010 1080.7440 7689.892\n#&gt;       with_map(1:1000) 281.973  289.3545  310.7238  298.5385  312.3075 1003.317\n#&gt;  neval cld\n#&gt;    100  a \n#&gt;    100   b"
   },
   {
     "objectID": "index.html#environments",
