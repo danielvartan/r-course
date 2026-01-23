@@ -3,6 +3,8 @@
 <!-- badges: start -->
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![DOI Badge](https://img.shields.io/badge/doi-10.5281/zenodo.18332665-1284C5.svg)](https://doi.org/10.5281/zenodo.18332665)
+[![FAIR checklist badge](https://img.shields.io/badge/fairsoftwarechecklist.net--00a7d9.png)](https://fairsoftwarechecklist.net/v0.2?f=21&a=32113&i=02310&r=123)
+[![fair-software.eu](https://img.shields.io/badge/fair--software.eu-%E2%97%8F%20%E2%97%8F%20%E2%97%8F%20%E2%97%8F%20%E2%97%8B-yellow)](https://fair-software.eu)
 [![License: GPLv3](https://img.shields.io/badge/license-GPLv3-bd0000.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/license-CC_BY--NC--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 [![Contributor Covenant 3.0 code of conduct badge](https://img.shields.io/badge/Contributor%20Covenant-3.0-4baaaa.svg)](https://www.contributor-covenant.org/version/3/0/code_of_conduct/)
@@ -10,7 +12,7 @@
 
 ## Overview
 
-This repository hosts the slides and materials for an introductory R programming course developed for the Center for Metropolitan Studies ([CEM](https://centrodametropole.fflch.usp.br/)) at the University of São Paulo ([USP](https://www5.usp.br/)).
+This repository hosts the slides and materials for an introductory [R](https://www.r-project.org/) programming course developed for the Center for Metropolitan Studies ([CEM](https://centrodametropole.fflch.usp.br/)) at the University of São Paulo ([USP](https://www5.usp.br/)).
 
 The slides are available [here](https://danielvartan.github.io/r-course/).
 
@@ -94,10 +96,10 @@ A BibLaTeX entry for LaTeX users is:
 <table>
   <tr>
     <td width="30%" align="center" valign="center">
-        <a href="https://centrodametropole.fflch.usp.br"><img src="images/cem-icon.svg" width="190em"/></a>
+        <a href="https://centrodametropole.fflch.usp.br"><img src="images/cem-logo.svg" width="190em"/></a>
     </td>
     <td width="70%" valign="center">
-      This work was developed with support from the Center for Metropolitan Studies (<a href="https://centrodametropole.fflch.usp.br">CEM</a>) based at the School of Philosophy, Letters and Human Sciences (<a href="https://www.fflch.usp.br/">FFLCH</a>) of the University of São Paulo (<a href="https://usp.br">USP</a>) and at the Brazilian Center for Analysis and Planning (<a href="https://cebrap.org.br/">CEBRAP</a>).
+      This work was developed with support from the Center for Metropolitan Studies (<a href="https://centrodametropole.fflch.usp.br">CEM</a>) based at the School of Philosophy, Letters and Human Sciences (<a href="https://www.fflch.usp.br/">FFLCH</a>) at the University of São Paulo (<a href="https://usp.br">USP</a>) and at the Brazilian Center for Analysis and Planning (<a href="https://cebrap.org.br/">CEBRAP</a>).
     </td>
   </tr>
 </table>
