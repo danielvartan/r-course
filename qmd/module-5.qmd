@@ -1377,7 +1377,7 @@ fit |>
   )
 ```
 
-## Linear Reg.: Plane {.smaller}
+## Linear Reg.: Plane {.smaller .nostretch}
 
 ```{r}
 #| eval: false
@@ -1665,7 +1665,7 @@ $$
 
 :::: {.columns}
 ::: {.column style="width: 47.5%;"}
-**Model diagnostics are crucial!**
+[Model diagnostics are crucial!]{.brand-triad-blue-red .bold-black}
 
 It's essential to verify that all model assumptions hold. However, a discussion on this topic is beyond the scope of this course.
 

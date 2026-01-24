@@ -20,7 +20,7 @@
   <locale xml:lang="en">
     <terms>
       <!-- `abnt` change -->
-      <term name="dataset">data set</term>
+      <term name="dataset">dataset</term>
       <term name="editortranslator" form="short">
         <single>ed. &amp; trans.</single>
         <multiple>eds. &amp; trans.</multiple>

@@ -30,7 +30,7 @@ Provide a solid introduction to R programming, focusing on tidyverse principles 
 ## Theoretical Basis {.smaller visibility="uncounted"}
 
 1. Dialectical materialism [@engels2020a]
-1. Cultural-historical theory [@vygotsky2012a]
+1. Cultural-historical theory [@vygotsky2012]
 1. Pedagogy of autonomy/Dialectal pedagogy [@freire2011]
 1. Dialectical unity in pedagogical activity [@bernardes2009a]
 

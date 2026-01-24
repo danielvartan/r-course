@@ -1125,7 +1125,7 @@ as.POSIXct("1970-01-01 00:00:00", tz = "UTC") + 1
 
 Your code must speak for itself.
 
-In data analysis code, **only use comments to record important things**. If you need comments to explain what your code is doing, consider rewriting your code to be clearer [@wickhamb].
+In data analysis code, **only use comments to record important things**. If you need comments to explain what your code is doing, consider rewriting your code to be clearer [@wickhama].
 
 ::: {style="padding-top: 15px;"}
 ```r

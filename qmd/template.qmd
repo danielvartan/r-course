@@ -58,7 +58,7 @@ Only data from municipalities with 10 or more monitored children were considered
 
 ### Data Wrangling
 
-Data munging and analysis followed the data science workflow outlined by @wickham2023e, as illustrated in [@fig-wickham-at-al-2024-figure-1]. All processes were made using the R programming language [@rcoreteama], RStudio IDE [@positteama], and several R packages.
+Data munging and analysis followed the data science workflow outlined by @wickham2023e, as illustrated in [@fig-wickham-at-al-2024-figure-1]. All processes were made using the R programming language [@rcoreteam], Positron IDE [@positteam], and several R packages.
 
 The [tidyverse](https://www.tidyverse.org/) and [rOpenSci](https://ropensci.org/) peer-reviewed package ecosystem and other R packages adherents of the tidy tools manifesto [@wickham2023c] were prioritized. All processes were made in order to provide result transparency and reproducibility.
 

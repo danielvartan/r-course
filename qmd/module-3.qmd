@@ -67,7 +67,7 @@ Data is an abstraction. It's a representation of the world around us. Without co
 
 > A value chain, roughly, consists of a sequence of activities that increase the value of a product step by step. [...] One should realize that although the schema nicely organizes data analysis activities, in practice, the process is hardly linear [@vanderloo2018].
 
-![](images/statistical-value-chain.png){fig-align="center" style="width: 90%; padding-top: 25px;"}
+![](images/statistical-value-chain.png){.nostretch fig-align="center" style="width: 100%; padding-top: 25px;"}
 
 ::: footer
 (Reproduced from @vanderloo2018)

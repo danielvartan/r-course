@@ -251,7 +251,7 @@ A data management plan (DMP) is a formal document that outlines how data will be
 - [DMPTool](https://dmptool.org/)
 - [DMPonline](https://dmponline.dcc.ac.uk/)
 
-::: {}
+::: {style="padding-top: 25px;"}
 **Example**: [Associations between the duration and quality of sleep of pregnant women in the third trimester with the duration of labor](https://doi.org/10.48321/D1PS4M)
 :::
 
@@ -450,15 +450,15 @@ A unlicensed work is an "all rights reserved" work. This means that you can't us
 
 :::: {.columns}
 ::: {.column style="width: 50%; font-size: 0.85em;"}
-* Licences for data
+* Licenses for data
   * [Open Knowledge Foundation](https://okfn.org/)
 
-* Licences for software/code
+* Licenses for software/code
   * [OSI Approved Licenses](https://opensource.org/licenses)
-  * [The MIT licence](https://opensource.org/license/mit)
+  * [The MIT license](https://opensource.org/license/mit)
   * [GNU General Public License version 3](https://opensource.org/license/gpl-3-0)
 
-* Licences for _everything else_ (e.g., documents, figures)
+* Licenses for _everything else_ (e.g., documents, figures)
   * [Creative Commons](https://creativecommons.org/)
   * [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 :::
