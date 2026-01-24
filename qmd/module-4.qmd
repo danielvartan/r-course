@@ -685,7 +685,7 @@ penguins |>
 
 Check out the amazing work by [Yan Holtz](https://github.com/holtzy). Visit [From Data to Viz](https://www.data-to-viz.com/) too see the diagram below and many others.
 
-![](images/holtz-2018-from-data-to-viz-poster-adapted.png){fig-align="center" style="width: 1000px; padding-top: 50px;"}
+![](images/holtz-2018-from-data-to-viz-poster-adapted.png){.nostretch fig-align="center" style="width: 100%; padding-top: 50px;"}
 
 ::: footer
 (Artwork by [Yan Holtz](https://github.com/holtzy))
@@ -698,7 +698,7 @@ Check out the amazing work by [Yan Holtz](https://github.com/holtzy). Visit [Fro
 
 Another amazing work by [Yan Holtz](https://github.com/holtzy) is the [R Graph Gallery](https://r-graph-gallery.com/), which provides numerous examples of R graphics and how to create them.
 
-![](images/holtz-connection-map.png){fig-align="center" style="width: 1000px; padding-top: 15px;}"}
+![](images/holtz-connection-map.png){.nostretch fig-align="center" style="width: 100%; padding-top: 15px;"}
 
 ::: footer
 (Artwork by [Yan Holtz](https://www.data-to-viz.com/story/MapConnection.html))

@@ -219,9 +219,9 @@ power.t.test(
 ::: {.notes}
 :::
 
-## Type I Errors ($\alpha$) {.smaller .nostretch data-menu-title="Type I Errors"}
+## Type I Errors ($\alpha$) {.smaller data-menu-title="Type I Errors"}
 
-![](images/allison-horst-figure-39.png){fig-align="center" style="width: 90%; padding-top: 0px;"}
+![](images/allison-horst-figure-39.png){.nostretch fig-align="center" style="width: 90%; padding-top: 0px;"}
 
 ::: footer
 (Artwork by [Allison Horst](https://twitter.com/allison_horst))
@@ -232,7 +232,7 @@ power.t.test(
 
 ## Type II Errors ($\beta$) {.smaller data-menu-title="Type II Errors"}
 
-![](images/allison-horst-figure-40.png){fig-align="center" style="width: 1000px; padding-top: 30px;"}
+![](images/allison-horst-figure-40.png){.nostretch fig-align="center" style="width: 100%; padding-top: 30px;"}
 
 ::: footer
 (Artwork by [Allison Horst](https://twitter.com/allison_horst))
@@ -1402,6 +1402,7 @@ fit |>
 
 ```{r}
 #| code-fold: true
+#| fig-align: center
 
 library(dplyr)
 library(palmerpenguins)
