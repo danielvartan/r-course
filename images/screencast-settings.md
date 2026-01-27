@@ -24,6 +24,7 @@
 Before each recording session:
 
 - Disable any *Night Light* filters or similar features (on both the host computer and the VM)
+- Remove any icons from the desktop
 - Delete browser data
 - Empty the *Documents* folder
 - Empty the *Downloads* folder
