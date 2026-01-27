@@ -72,7 +72,7 @@ In real-world scenarios, always ensure that the assumptions of statistical tests
 ```
 
 ::: footer
-(If you were unable to download the data, you can access it [here](https://github.com/danielvartan/r-course/raw/refs/heads/main/data-raw/sisvan-raw.xlsx))
+(If you're unable to download the data, you can access it [here](https://github.com/danielvartan/r-course/raw/refs/heads/main/data-raw/CONS_ULTRA.xlsx))
 :::
 
 ::: {.notes}
