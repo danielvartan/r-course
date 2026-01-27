@@ -482,7 +482,7 @@ palmerpenguins::penguins |>
 
 🕵 **Known your data**.
 
-1. Click [here](https://github.com/danielvartan/r-course/blob/main/data/palmerpenguins-raw.csv) to download the Palmer Penguins raw data file.
+1. Click [here](https://github.com/danielvartan/r-course/raw/refs/heads/main/data-raw/palmerpenguins-raw.csv) to download the Palmer Penguins raw data file.
 2. Save it in a folder named `data` in the root of your project.
 3. Using the file manager, open the file in RStudio.
 

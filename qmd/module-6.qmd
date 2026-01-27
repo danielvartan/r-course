@@ -67,24 +67,16 @@ In real-world scenarios, always ensure that the assumptions of statistical tests
 
 ```{=html}
 <video width="100%" style="display: block; margin: 0 auto;" muted controls>
-  <source src="images/downloading-sisvan-data.webm" type="video/webm">
+  <source src="images/downloading-sisvan-data.mp4" type="video/mp4">
 </video>
 ```
 
 ::: footer
-(If you were unable to download the data, you can access it [here](https://github.com/danielvartan/r-course/blob/f3d8a2e8e249ee7ff3eb69a94a77e483104c7cc4/data/sisvan-raw.xlsx))
+(If you were unable to download the data, you can access it [here](https://github.com/danielvartan/r-course/raw/refs/heads/main/data-raw/sisvan-raw.xlsx))
 :::
 
 ::: {.notes}
 :::
-
-## The Template {.smaller}
-
-To assist you with this task, we have prepared a comprehensive template. You can download it [here](https://github.com/danielvartan/r-course/blob/main/qmd/template.qmd).
-
-This template outlines all the essential steps required to complete the exercise.
-
-We have provided a head start on the analysis, so your task is to complete the remaining sections and ensure all steps are thoroughly addressed.
 
 ## Data Science Workflow {.smaller}
 
@@ -105,30 +97,32 @@ Remember the data science workflow:
 
 :::: {.columns}
 ::: {.column style="width: 50%;"}
-1\. Open a new Quarto project.
+1\. Create a new Quarto project
 
-2\. Copy the content of the template into the project's Quarto file.
+2\. Formulate your hypothesis
 
-3\. Download the data.
+3\. Perform a **pre-hoc** power analysis
 
-4\. Inspect the data file.
+4\. Download the data
 
-5\. Import the data into R.
+5\. Inspect the data file
 
-6\. Clean, tidy, and validate the data.
+6\. Import the data into R
 
-7\. Save the validated data.
+7\. Clean, tidy, and validate the data
 :::
 ::: {.column style="width: 50%;"}
-8\. Conduct a **brief** exploratory data analysis.
+8\. Save the validated data
 
-9\. Conduct a t-test to compare the groups.
+9\. Conduct a **brief** exploratory data analysis
 
-10\. Calculate the effect size.
+10\. Conduct a t-test to compare the groups
 
-11\. Perform a power analysis.
+11\. Calculate the effect size
 
-12\. Write your conclusions.
+12\. Perform a **post-hoc** power analysis
+
+13\. Write your conclusions
 :::
 ::::
 
