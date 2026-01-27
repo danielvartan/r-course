@@ -14,8 +14,9 @@ Siga os passos abaixo para instalar e testar os softwares necessários para o cu
 
 1. Instale todas as dependências listadas abaixo.
 2. Abra este notebook no [Positron](https://positron.posit.co/).
-3. Execute, em ordem, os blocos de código da seção *Pacotes/Importações* para instalar os pacotes necessários.
-4. Execute, em ordem, os blocos de código da seção *Teste* para verificar se tudo está funcionando corretamente.
+3. Configure a chave PAT na variável de ambiente `GITHUB_PAT` (veja instruções abaixo).
+4. Execute, em ordem, os blocos de código da seção *Pacotes/Importações* para instalar os pacotes necessários.
+5. Execute, em ordem, os blocos de código da seção *Teste* para verificar se tudo está funcionando corretamente.
 
 No Positron, é possível executar, em ordem, todos os blocos de código de uma vez, pressionando `Ctrl`+`Shift`+`P` e buscando por `Quarto: Run All Cells`.
 
@@ -34,6 +35,16 @@ O curso se baseia em cinco ferramentas: O sistema de versionamento [Git](https:/
 - Quarto >= 1.8.27
 
 Todos os softwares devem ser instalados usando **inglês** como idioma da interface. Instale todas as dependências antes de seguir para as próximas etapas.
+
+## PAT
+
+Para evitar problemas com o [rate limit](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28) da API do GitHub, é necessário cadastrar um Personal Access Token ([PAT](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token)) na variável de ambiente `GITHUB_PAT`. Um PAT temporário será fornecido pelo instrutor, mas qualquer PAT com acesso a repositórios públicos irá funcionar.
+
+Insira o PAT fornecido na função abaixo e execute o bloco de código para registrar essa variável temporariamente na sessão do R.
+
+```{r}
+Sys.setenv(GITHUB_PAT = "COLOQUE_O_PAT_AQUI")
+```
 
 ## Pacotes/Importações
 
