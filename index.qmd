@@ -71,7 +71,7 @@ Provide a solid introduction to R programming, focusing on [Tidyverse](https://t
 
 An Introduction to [Git](https://en.wikipedia.org/wiki/Git)
 
-An introduction to [Quarto](https://quarto.org/)
+An introduction to [Quarto](https://quarto.org/) and [Reproducible](https://en.wikipedia.org/wiki/Reproducibility) Workflows
 
 An introduction to [r-spatial](https://r-spatial.org/)
 :::

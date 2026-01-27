@@ -11,7 +11,7 @@ Installing R is very simple.
 
 You just need to download the installer from the [**Comprehensive R Archive Network**](https://cran.r-project.org/) (CRAN).
 
-Go to *Download R for \[YOUR OS\]* and then click on the *base* link---The base version  of R.
+Go to *Download R for \[YOUR OS\]* and then click on the *base* link (the base version  of R).
 
 Simply follow the instructions of the installer.
 :::
@@ -27,7 +27,7 @@ Simply follow the instructions of the installer.
 
 ```{=html}
 <video width="100%" style="display: block; margin: 0 auto;" muted controls>
-  <source src="images/installing-r.webm" type="video/webm">
+  <source src="images/installing-r.mp4" type="video/mp4">
 </video>
 ```
 
@@ -40,7 +40,7 @@ An IDE (Integrated Development Environment) is a software that provides a set of
 
 [![](images/positron-logo.png){fig-align="center" style="width: 60%; padding-top: 25px;"}](https://positron.posit.co/)
 
-[Positron](https://positron.posit.co/) is *flavour* of Visual Studio Code, the most used IDE for programming in any language. It supersedes [RStudio](https://posit.co/download/rstudio-desktop/), the main IDE for R for many years, focusing in providing a better experience for programming in R and Python.
+[Positron](https://positron.posit.co/) is *flavour* of [Visual Studio Code](https://code.visualstudio.com/), the most used IDE for programming in any language. It supersedes [RStudio](https://posit.co/download/rstudio-desktop/), the main IDE for R for many years, focusing in providing a better experience for programming in R and Python.
 
 ::: {style="padding-top: 15px;"}
 **Note**: Always use technical softwares in English.
@@ -59,6 +59,12 @@ An IDE (Integrated Development Environment) is a software that provides a set of
 
 ## Installing Positron {.smaller}
 
+```{=html}
+<video width="100%" style="display: block; margin: 0 auto;" muted controls>
+  <source src="images/installing-positron.mp4" type="video/mp4">
+</video>
+```
+
 ::: {.notes}
 :::
 
@@ -66,7 +72,9 @@ An IDE (Integrated Development Environment) is a software that provides a set of
 
 :::: {.columns}
 ::: {.column style="width: 50%; font-size: 0.9em"}
-[Project-oriented workflow](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/): A project consolidates all related files and resources in one place, ensuring that your work is reproducible and well-organized.
+[Project-oriented workflow](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/)
+
+A project consolidates all related files and resources in one place, ensuring that your work is reproducible and well-organized.
 
 It is important to have a structured project directory. A best practice is to follow the structure made for **R Packages** [@marwick2018].
 
@@ -85,6 +93,12 @@ Every data project must be accompanied, at least, by a **README** file, explaini
 :::
 
 ## Creating a Project {.smaller}
+
+```{=html}
+<video width="100%" style="display: block; margin: 0 auto;" muted controls>
+  <source src="images/creating-a-project.mp4" type="video/mp4">
+</video>
+```
 
 ::: {.notes}
 :::
@@ -124,6 +138,17 @@ use_gpl3_license()
 ::: {.notes}
 :::
 
+## Add. a README & LICENSE File {.smaller}
+
+```{=html}
+<video width="100%" style="display: block; margin: 0 auto;" muted controls>
+  <source src="images/adding-a-readme.mp4" type="video/mp4">
+</video>
+```
+
+::: {.notes}
+:::
+
 ## Quarto Notebooks {.smaller}
 
 ![](images/allison-horst-figure-49.png){fig-align="center" style="width: 100%; padding-top: 75px;"}
@@ -146,6 +171,17 @@ Learn more about the Markdown syntax [here](https://www.markdownguide.org/basic-
 ![](images/markdown-logo.svg){fig-align="center" style="width: 70%; padding-top: 125px;"}
 :::
 ::::
+
+::: {.notes}
+:::
+
+## Creating a Quarto Notebook {.smaller}
+
+```{=html}
+<video width="100%" style="display: block; margin: 0 auto;" muted controls>
+  <source src="images/creating-a-quarto-notebook.mp4" type="video/mp4">
+</video>
+```
 
 ::: {.notes}
 :::

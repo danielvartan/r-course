@@ -448,7 +448,7 @@ We will use this package to get familiar with R.
 #| eval: false
 
 palmerpenguins::path_to_file("penguins_raw.csv") |>
-  fs::file_copy(here::here("data", "palmerpenguins-raw.csv"))
+  fs::file_copy(here::here("data-raw", "palmerpenguins-raw.csv"))
 
 palmerpenguins::path_to_file("penguins.csv") |>
   fs::file_copy(here::here("data", "palmerpenguins-valid.csv"))
@@ -484,7 +484,7 @@ palmerpenguins::penguins |>
 
 1. Click [here](https://github.com/danielvartan/r-course/raw/refs/heads/main/data-raw/palmerpenguins-raw.csv) to download the Palmer Penguins raw data file.
 2. Save it in a folder named `data` in the root of your project.
-3. Using the file manager, open the file in RStudio.
+3. Using the file manager, open the file in Positron.
 
 The data documentation can be accessed by running:
 
@@ -494,16 +494,6 @@ library(palmerpenguins)
 
 ```r
 ?penguins_raw
-```
-
-You can also use the following code to open the file in RStudio:
-
-```r
-library(rstudioapi)
-```
-
-```r
-path_to_file("penguins_raw.csv") |> documentOpen()
 ```
 
 ::: {.notes}
@@ -548,21 +538,21 @@ getwd()
 
 ```r
 list.files()
-#> [1] "data" "README.md" "LICENSE.md" "r-course.Rproj"
+#> [1] "data-raw" "README.md" "LICENSE.md" "r-course.Rproj"
 ```
 
 ```r
-list.files("data")
+list.files("data-raw")
 #> [1] "palmerpenguins-raw.csv"
 ```
 
 ```r
-list.files("./data")
+list.files("./data-raw")
 #> [1] "palmerpenguins-raw.csv"
 ```
 
 ```r
-file <- "./data/palmerpenguins-raw.csv"
+file <- "./data-raw/palmerpenguins-raw.csv"
 ```
 
 ::: {style="padding-top: 15px;"}
@@ -595,8 +585,8 @@ here()
 ```
 
 ```r
-here("data", "palmerpenguins-raw.csv")
-#> E:\r-course\data\palmerpenguins-raw.csv
+here("data-raw", "palmerpenguins-raw.csv")
+#> E:\r-course\data-raw\palmerpenguins-raw.csv
 ```
 :::
 ::: {.column style="width: 55%;"}
@@ -657,7 +647,7 @@ library(readr)
 
 ```{r}
 data <-
-  here("data", "palmerpenguins-raw.csv") |>
+  here("data-raw", "palmerpenguins-raw.csv") |>
   read_csv(col_types = cols(.default = "c"))
 ```
 

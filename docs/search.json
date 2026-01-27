@@ -25,7 +25,7 @@
     "href": "index.html#learning-objectives",
     "title": "An Introduction to the R Programming Language",
     "section": "Learning Objectives",
-    "text": "Learning Objectives\n\nUnderstand key concepts of computer science and programming\nLearn the structure and essential components of R programming language\nLearn tidyverse grammar for data manipulation\nLearn grammar of graphics for data exploration and visualization\nLearn tidymodels grammar for building statistical and predictive models\n\n\nFuture courses?\nAn Introduction to Git\nAn introduction to Quarto\nAn introduction to r-spatial"
+    "text": "Learning Objectives\n\nUnderstand key concepts of computer science and programming\nLearn the structure and essential components of R programming language\nLearn tidyverse grammar for data manipulation\nLearn grammar of graphics for data exploration and visualization\nLearn tidymodels grammar for building statistical and predictive models\n\n\nFuture courses?\nAn Introduction to Git\nAn introduction to Quarto and Reproducible Workflows\nAn introduction to r-spatial"
   },
   {
     "objectID": "index.html#course-content",
@@ -126,11 +126,11 @@
     "text": "Logic Gates\n\n\n\n\n\n(Adapted from Brookshear & Brylow (2020))"
   },
   {
-    "objectID": "index.html#what-we-are-really-doing-when-we-program",
-    "href": "index.html#what-we-are-really-doing-when-we-program",
+    "objectID": "index.html#what-are-we-actually-doing-when-we-program",
+    "href": "index.html#what-are-we-actually-doing-when-we-program",
     "title": "An Introduction to the R Programming Language",
-    "section": "What We Are Really Doing When We Program?",
-    "text": "What We Are Really Doing When We Program?\n\n(Video by George Zaidan and Sajan Saini, on TED-ED)\n\nA look inside a computer."
+    "section": "What Are We Actually Doing When We Program?",
+    "text": "What Are We Actually Doing When We Program?\n\n(Video by George Zaidan and Sajan Saini, on TED-ED)\n\nA look inside a computer."
   },
   {
     "objectID": "index.html#programming-languages",
@@ -200,7 +200,7 @@
     "href": "index.html#installing-r",
     "title": "An Introduction to the R Programming Language",
     "section": "Installing R",
-    "text": "Installing R\n\n\nInstalling R is very simple.\nYou just need to download the installer from the Comprehensive R Archive Network (CRAN).\nGo to Download R for [YOUR OS] and then click on the base link—The base version of R.\nSimply follow the instructions of the installer."
+    "text": "Installing R\n\n\nInstalling R is very simple.\nYou just need to download the installer from the Comprehensive R Archive Network (CRAN).\nGo to Download R for [YOUR OS] and then click on the base link (the base version of R).\nSimply follow the instructions of the installer."
   },
   {
     "objectID": "index.html#installing-r-1",
@@ -235,7 +235,7 @@
     "href": "index.html#creating-a-project",
     "title": "An Introduction to the R Programming Language",
     "section": "Creating a Project",
-    "text": "Creating a Project\n\n\nProject-oriented workflow: A project consolidates all related files and resources in one place, ensuring that your work is reproducible and well-organized.\nIt is important to have a structured project directory. A best practice is to follow the structure made for R Packages (Marwick et al., 2018).\nEvery data project must be accompanied, at least, by a README file, explaining the project, and a LICENSE file, defining the terms of use of the data (See Open Source Licenses here).\n\n\n\n\n\n\n\n(Reproduced from Marwick et al. (2018))"
+    "text": "Creating a Project\n\n\nProject-oriented workflow\nA project consolidates all related files and resources in one place, ensuring that your work is reproducible and well-organized.\nIt is important to have a structured project directory. A best practice is to follow the structure made for R Packages (Marwick et al., 2018).\nEvery data project must be accompanied, at least, by a README file, explaining the project, and a LICENSE file, defining the terms of use of the data (See Open Source Licenses here).\n\n\n\n\n\n\n\n(Reproduced from Marwick et al. (2018))"
   },
   {
     "objectID": "index.html#creating-a-project-1",
@@ -252,6 +252,13 @@
     "text": "Add. a README & LICENSE File\n\n\nYou can use the usethis R package to create these files.\n\nFirst, call the package using:\n# install.packages(\"usethis\")\nlibrary(usethis)\nAdd a README file using:\nuse_readme_md()\nAdd a GNU General Public License version 3 file using:\nuse_gpl3_license()"
   },
   {
+    "objectID": "index.html#add.-a-readme-license-file-1",
+    "href": "index.html#add.-a-readme-license-file-1",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Add. a README & LICENSE File",
+    "text": "Add. a README & LICENSE File"
+  },
+  {
     "objectID": "index.html#quarto-notebooks",
     "href": "index.html#quarto-notebooks",
     "title": "An Introduction to the R Programming Language",
@@ -264,6 +271,13 @@
     "title": "An Introduction to the R Programming Language",
     "section": "Markdown Basics",
     "text": "Markdown Basics\n\n\nMarkdown is a lightweight markup language with plain text formatting syntax. The great thing about Markdown is that you can forget about the formatting and focus on the content.\nQuarto Notebooks are a type of Markdown document that allows you to mix code, text, and output in a single document. These slides are all written in Markdown.\nLearn more about the Markdown syntax here."
+  },
+  {
+    "objectID": "index.html#creating-a-quarto-notebook",
+    "href": "index.html#creating-a-quarto-notebook",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Creating a Quarto Notebook",
+    "text": "Creating a Quarto Notebook"
   },
   {
     "objectID": "index.html#objects",
@@ -417,7 +431,7 @@
     "href": "index.html#functionals",
     "title": "An Introduction to the R Programming Language",
     "section": "Functionals",
-    "text": "Functionals\n\n\nA functional is a function that takes a function as an input and returns a vector as output (Wickham, 2019).\nIt makes the work of the programmer easier, because it allows to apply a function to a vector without the need of a loop. Because these functions are usually written in C (a low-level programming language), they are very fast.\nR have native functionals (e.g., lapply()), but prefer solutions from the purrr package.\n\n\n\n\ntriple &lt;- function(x) x * 3\n\n\nwith_for_loop &lt;- function(x) {\n  out &lt;- numeric()\n  for (i in x) out &lt;- c(out, triple(i))\n  out\n}\n\n\nlibrary(purrr)\n\nwith_map &lt;- function(x) map_dbl(x, triple)\n\n\nlibrary(microbenchmark)\n\nmicrobenchmark(\n  with_for_loop(1:1000),\n  with_map(1:1000),\n  times = 100,\n  check = \"equal\"\n)\n#&gt; Unit: microseconds\n#&gt;                   expr     min       lq      mean    median       uq      max\n#&gt;  with_for_loop(1:1000) 974.684 1095.935 1461.4468 1149.5730 1261.494 4652.838\n#&gt;       with_map(1:1000) 284.342  300.014  329.2835  317.2615  335.018 1002.355\n#&gt;  neval cld\n#&gt;    100  a \n#&gt;    100   b"
+    "text": "Functionals\n\n\nA functional is a function that takes a function as an input and returns a vector as output (Wickham, 2019).\nIt makes the work of the programmer easier, because it allows to apply a function to a vector without the need of a loop. Because these functions are usually written in C (a low-level programming language), they are very fast.\nR have native functionals (e.g., lapply()), but prefer solutions from the purrr package.\n\n\n\n\ntriple &lt;- function(x) x * 3\n\n\nwith_for_loop &lt;- function(x) {\n  out &lt;- numeric()\n  for (i in x) out &lt;- c(out, triple(i))\n  out\n}\n\n\nlibrary(purrr)\n\nwith_map &lt;- function(x) map_dbl(x, triple)\n\n\nlibrary(microbenchmark)\n\nmicrobenchmark(\n  with_for_loop(1:1000),\n  with_map(1:1000),\n  times = 100,\n  check = \"equal\"\n)\n#&gt; Unit: microseconds\n#&gt;                   expr      min       lq      mean    median        uq      max\n#&gt;  with_for_loop(1:1000) 1012.143 1104.948 1457.5200 1155.6290 1237.2190 4415.016\n#&gt;       with_map(1:1000)  288.245  311.811  342.4874  333.0085  356.6225 1172.902\n#&gt;  neval cld\n#&gt;    100  a \n#&gt;    100   b"
   },
   {
     "objectID": "index.html#environments",
@@ -662,7 +676,7 @@
     "href": "index.html#inspecting-the-raw-data-file",
     "title": "An Introduction to the R Programming Language",
     "section": "Inspecting the Raw Data File",
-    "text": "Inspecting the Raw Data File\n🕵 Known your data.\n\nClick here to download the Palmer Penguins raw data file.\nSave it in a folder named data in the root of your project.\nUsing the file manager, open the file in RStudio.\n\nThe data documentation can be accessed by running:\nlibrary(palmerpenguins)\n?penguins_raw\nYou can also use the following code to open the file in RStudio:\nlibrary(rstudioapi)\npath_to_file(\"penguins_raw.csv\") |&gt; documentOpen()"
+    "text": "Inspecting the Raw Data File\n🕵 Known your data.\n\nClick here to download the Palmer Penguins raw data file.\nSave it in a folder named data in the root of your project.\nUsing the file manager, open the file in Positron.\n\nThe data documentation can be accessed by running:\nlibrary(palmerpenguins)\n?penguins_raw"
   },
   {
     "objectID": "index.html#inspecting-the-raw-data-file-1",
@@ -676,14 +690,14 @@
     "href": "index.html#the-working-directory",
     "title": "An Introduction to the R Programming Language",
     "section": "The Working Directory",
-    "text": "The Working Directory\nPointing to files inside your project.\ngetwd()\n#&gt; E:\\r-course\nlist.files()\n#&gt; [1] \"data\" \"README.md\" \"LICENSE.md\" \"r-course.Rproj\"\nlist.files(\"data\")\n#&gt; [1] \"palmerpenguins-raw.csv\"\nlist.files(\"./data\")\n#&gt; [1] \"palmerpenguins-raw.csv\"\nfile &lt;- \"./data/palmerpenguins-raw.csv\"\n\n🚨 Never use setwd()! 🚨\n(How to detect a beginner R user)\nClick here to learn why."
+    "text": "The Working Directory\nPointing to files inside your project.\ngetwd()\n#&gt; E:\\r-course\nlist.files()\n#&gt; [1] \"data-raw\" \"README.md\" \"LICENSE.md\" \"r-course.Rproj\"\nlist.files(\"data-raw\")\n#&gt; [1] \"palmerpenguins-raw.csv\"\nlist.files(\"./data-raw\")\n#&gt; [1] \"palmerpenguins-raw.csv\"\nfile &lt;- \"./data-raw/palmerpenguins-raw.csv\"\n\n🚨 Never use setwd()! 🚨\n(How to detect a beginner R user)\nClick here to learn why."
   },
   {
     "objectID": "index.html#the-here-package",
     "href": "index.html#the-here-package",
     "title": "An Introduction to the R Programming Language",
     "section": "The here Package",
-    "text": "The here Package\n\n\nhere is a package that helps you use relative paths in your R projects.\nIt turns file management much easier and OS independent.\ninstall.packages(\"here\")\nlibrary(here)\nhere()\n#&gt; E:\\r-course\nhere(\"data\", \"palmerpenguins-raw.csv\")\n#&gt; E:\\r-course\\data\\palmerpenguins-raw.csv\n\n\n\n\n\n\n\n(Artwork by Allison Horst)"
+    "text": "The here Package\n\n\nhere is a package that helps you use relative paths in your R projects.\nIt turns file management much easier and OS independent.\ninstall.packages(\"here\")\nlibrary(here)\nhere()\n#&gt; E:\\r-course\nhere(\"data-raw\", \"palmerpenguins-raw.csv\")\n#&gt; E:\\r-course\\data-raw\\palmerpenguins-raw.csv\n\n\n\n\n\n\n\n(Artwork by Allison Horst)"
   },
   {
     "objectID": "index.html#the-readr-package",
@@ -697,7 +711,7 @@
     "href": "index.html#importing-the-raw-data",
     "title": "An Introduction to the R Programming Language",
     "section": "Importing the Raw Data",
-    "text": "Importing the Raw Data\n\nlibrary(dplyr)\nlibrary(here)\nlibrary(readr)\n\n\ndata &lt;-\n  here(\"data\", \"palmerpenguins-raw.csv\") |&gt;\n  read_csv(col_types = cols(.default = \"c\"))\n\n\ndata |&gt; glimpse()\n#&gt; Rows: 344\n#&gt; Columns: 17\n#&gt; $ studyName             &lt;chr&gt; \"PAL0708\", \"PAL0708\", \"PAL0708\", \"PAL0708\", \"PAL…\n#&gt; $ `Sample Number`       &lt;chr&gt; \"1\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"9\", \"10…\n#&gt; $ Species               &lt;chr&gt; \"Adelie Penguin (Pygoscelis adeliae)\", \"Adelie P…\n#&gt; $ Region                &lt;chr&gt; \"Anvers\", \"Anvers\", \"Anvers\", \"Anvers\", \"Anvers\"…\n#&gt; $ Island                &lt;chr&gt; \"Torgersen\", \"Torgersen\", \"Torgersen\", \"Torgerse…\n#&gt; $ Stage                 &lt;chr&gt; \"Adult, 1 Egg Stage\", \"Adult, 1 Egg Stage\", \"Adu…\n#&gt; $ `Individual ID`       &lt;chr&gt; \"N1A1\", \"N1A2\", \"N2A1\", \"N2A2\", \"N3A1\", \"N3A2\", …\n#&gt; $ `Clutch Completion`   &lt;chr&gt; \"Yes\", \"Yes\", \"Yes\", \"Yes\", \"Yes\", \"Yes\", \"No\", …\n#&gt; $ `Date Egg`            &lt;chr&gt; \"2007-11-11\", \"2007-11-11\", \"2007-11-16\", \"2007-…\n#&gt; $ `Culmen Length (mm)`  &lt;chr&gt; \"39.1\", \"39.5\", \"40.3\", NA, \"36.7\", \"39.3\", \"38.…\n#&gt; $ `Culmen Depth (mm)`   &lt;chr&gt; \"18.7\", \"17.4\", \"18\", NA, \"19.3\", \"20.6\", \"17.8\"…\n#&gt; $ `Flipper Length (mm)` &lt;chr&gt; \"181\", \"186\", \"195\", NA, \"193\", \"190\", \"181\", \"1…\n#&gt; $ `Body Mass (g)`       &lt;chr&gt; \"3750\", \"3800\", \"3250\", NA, \"3450\", \"3650\", \"362…\n#&gt; $ Sex                   &lt;chr&gt; \"MALE\", \"FEMALE\", \"FEMALE\", NA, \"FEMALE\", \"MALE\"…\n#&gt; $ `Delta 15 N (o/oo)`   &lt;chr&gt; NA, \"8.94956\", \"8.36821\", NA, \"8.76651\", \"8.6649…\n#&gt; $ `Delta 13 C (o/oo)`   &lt;chr&gt; NA, \"-24.69454\", \"-25.33302\", NA, \"-25.32426\", \"…\n#&gt; $ Comments              &lt;chr&gt; \"Not enough blood for isotopes.\", NA, NA, \"Adult…"
+    "text": "Importing the Raw Data\n\nlibrary(dplyr)\nlibrary(here)\nlibrary(readr)\n\n\ndata &lt;-\n  here(\"data-raw\", \"palmerpenguins-raw.csv\") |&gt;\n  read_csv(col_types = cols(.default = \"c\"))\n\n\ndata |&gt; glimpse()\n#&gt; Rows: 344\n#&gt; Columns: 17\n#&gt; $ studyName             &lt;chr&gt; \"PAL0708\", \"PAL0708\", \"PAL0708\", \"PAL0708\", \"PAL…\n#&gt; $ `Sample Number`       &lt;chr&gt; \"1\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"9\", \"10…\n#&gt; $ Species               &lt;chr&gt; \"Adelie Penguin (Pygoscelis adeliae)\", \"Adelie P…\n#&gt; $ Region                &lt;chr&gt; \"Anvers\", \"Anvers\", \"Anvers\", \"Anvers\", \"Anvers\"…\n#&gt; $ Island                &lt;chr&gt; \"Torgersen\", \"Torgersen\", \"Torgersen\", \"Torgerse…\n#&gt; $ Stage                 &lt;chr&gt; \"Adult, 1 Egg Stage\", \"Adult, 1 Egg Stage\", \"Adu…\n#&gt; $ `Individual ID`       &lt;chr&gt; \"N1A1\", \"N1A2\", \"N2A1\", \"N2A2\", \"N3A1\", \"N3A2\", …\n#&gt; $ `Clutch Completion`   &lt;chr&gt; \"Yes\", \"Yes\", \"Yes\", \"Yes\", \"Yes\", \"Yes\", \"No\", …\n#&gt; $ `Date Egg`            &lt;chr&gt; \"2007-11-11\", \"2007-11-11\", \"2007-11-16\", \"2007-…\n#&gt; $ `Culmen Length (mm)`  &lt;chr&gt; \"39.1\", \"39.5\", \"40.3\", NA, \"36.7\", \"39.3\", \"38.…\n#&gt; $ `Culmen Depth (mm)`   &lt;chr&gt; \"18.7\", \"17.4\", \"18\", NA, \"19.3\", \"20.6\", \"17.8\"…\n#&gt; $ `Flipper Length (mm)` &lt;chr&gt; \"181\", \"186\", \"195\", NA, \"193\", \"190\", \"181\", \"1…\n#&gt; $ `Body Mass (g)`       &lt;chr&gt; \"3750\", \"3800\", \"3250\", NA, \"3450\", \"3650\", \"362…\n#&gt; $ Sex                   &lt;chr&gt; \"MALE\", \"FEMALE\", \"FEMALE\", NA, \"FEMALE\", \"MALE\"…\n#&gt; $ `Delta 15 N (o/oo)`   &lt;chr&gt; NA, \"8.94956\", \"8.36821\", NA, \"8.76651\", \"8.6649…\n#&gt; $ `Delta 13 C (o/oo)`   &lt;chr&gt; NA, \"-24.69454\", \"-25.33302\", NA, \"-25.32426\", \"…\n#&gt; $ Comments              &lt;chr&gt; \"Not enough blood for isotopes.\", NA, NA, \"Adult…"
   },
   {
     "objectID": "index.html#inspecting-the-raw-data",
@@ -1505,13 +1519,6 @@
     "text": "The Data\n\n(If you were unable to download the data, you can access it here)"
   },
   {
-    "objectID": "index.html#the-template",
-    "href": "index.html#the-template",
-    "title": "An Introduction to the R Programming Language",
-    "section": "The Template",
-    "text": "The Template\nTo assist you with this task, we have prepared a comprehensive template. You can download it here.\nThis template outlines all the essential steps required to complete the exercise.\nWe have provided a head start on the analysis, so your task is to complete the remaining sections and ensure all steps are thoroughly addressed."
-  },
-  {
     "objectID": "index.html#data-science-workflow",
     "href": "index.html#data-science-workflow",
     "title": "An Introduction to the R Programming Language",
@@ -1523,7 +1530,7 @@
     "href": "index.html#steps",
     "title": "An Introduction to the R Programming Language",
     "section": "Steps",
-    "text": "Steps\n👣 Here are the steps you should follow:\n\n\n1. Open a new Quarto project.\n2. Copy the content of the template into the project’s Quarto file.\n3. Download the data.\n4. Inspect the data file.\n5. Import the data into R.\n6. Clean, tidy, and validate the data.\n7. Save the validated data.\n\n8. Conduct a brief exploratory data analysis.\n9. Conduct a t-test to compare the groups.\n10. Calculate the effect size.\n11. Perform a power analysis.\n12. Write your conclusions."
+    "text": "Steps\n👣 Here are the steps you should follow:\n\n\n1. Create a new Quarto project\n2. Formulate your hypothesis\n3. Perform a pre-hoc power analysis\n4. Download the data\n5. Inspect the data file\n6. Import the data into R\n7. Clean, tidy, and validate the data\n\n8. Save the validated data\n9. Conduct a brief exploratory data analysis\n10. Conduct a t-test to compare the groups\n11. Calculate the effect size\n12. Perform a post-hoc power analysis\n13. Write your conclusions"
   },
   {
     "objectID": "index.html#notes-1",

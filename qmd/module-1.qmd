@@ -127,11 +127,11 @@ First proposed by **J. P. Eckert** and his team (1944-1945).
 ::: {.notes}
 :::
 
-## What We Are Really Doing When We Program? {.smaller}
+## What Are We Actually Doing When We Program? {.smaller}
 
 ```{=html}
 <video width="82.5%" style="display: block; margin: 0 auto;" muted controls autoplay loop>
-  <source src="images/zaidan-2025-video-1.webm" type="video/webm">
+  <source src="images/zaidan-2025-video-1.mp4" type="video/mp4">
 </video>
 ```
 
