@@ -161,6 +161,17 @@ A look inside a computer.
 ::: {.notes}
 :::
 
+## Low and High-Level {.smaller visibility="uncounted"}
+
+![](images/kahanwal-2013-figure-1.png){.nostretch fig-align="center" style="width: 100%; padding-top: 30px;"}
+
+::: footer
+(Adapted from @kahanwal2013)
+:::
+
+::: {.notes}
+:::
+
 ## Open-Source Prog. Lang.
 
 ![](images/calltutors-figure-1.png){.nostretch fig-align="center" style="height: 550px;"}
