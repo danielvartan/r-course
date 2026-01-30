@@ -239,6 +239,12 @@ It provides a flexible **grammar** for table creation and styling.
 ::: {.notes}
 :::
 
+## Exercise {.smaller}
+
+::: {.notes}
+- **15-minute break** after this slide.
+:::
+
 ## The Grammar of Graphics {.smaller}
 
 :::: {.columns}
@@ -707,6 +713,11 @@ Another amazing work by [Yan Holtz](https://github.com/holtzy) is the [R Graph G
 ::: {.notes}
 :::
 
+## Exercise {.smaller}
+
+::: {.notes}
+:::
+
 ## How to Learn More {.smaller}
 
 :::: {.columns}
@@ -725,4 +736,5 @@ Another amazing work by [Yan Holtz](https://github.com/holtzy) is the [R Graph G
 :::
 
 ::: {.notes}
+- **15-minute break** or **day end** after this slide.
 :::

@@ -38,6 +38,10 @@ Here are the main topics:
 :::
 
 ::: {.notes}
+- Slow pace.
+- Be mindful of time. Use a timer!
+- Take 15-minute breaks between sessions.
+- Explain why we're using English as the course language.
 :::
 
 # Introduction
@@ -55,7 +59,11 @@ Here are the main topics:
 ## Main Objective
 
 ::: {.brand-triad-blue-red .bold-black style="text-align: center; padding-top: 150px;"}
-Provide a solid introduction to R programming, focusing on [Tidyverse](https://tidyverse.org/) principles and ecosystem.
+Provide a solid introduction to R programming with a focus on [Tidyverse](https://tidyverse.org/) principles and its ecosystem
+:::
+
+::: {.notes}
+- What to expect from the course.
 :::
 
 ## Learning Objectives {.smaller}
@@ -69,14 +77,17 @@ Provide a solid introduction to R programming, focusing on [Tidyverse](https://t
 ::: {style="padding-top: 15px;"}
 [**Future courses?**]{.brand-triad-blue-red}
 
-An Introduction to [Git](https://en.wikipedia.org/wiki/Git)
+An Introduction to [Git](https://git-scm.com) and [GitHub](https://github.com)
 
-An introduction to [Quarto](https://quarto.org/) and [Reproducible](https://en.wikipedia.org/wiki/Reproducibility) Workflows
+An introduction to [Quarto](https://quarto.org/) and [Reproducible Workflows](https://open-science-training-handbook.gitbook.io/book/02opensciencebasics/04reproducibleresearchanddataanalysis)
 
-An introduction to [r-spatial](https://r-spatial.org/)
+An introduction to [Geospatial Data Science](https://r-spatial.org/book/) and the [r-spatial](https://r-spatial.org) framework
+
+An introduction to [Shiny](https://shiny.posit.co) dashboards
 :::
 
 ::: {.notes}
+- Pre-course survey: discuss responses about future courses.
 :::
 
 ## Course Content {.smaller .nostretch}
@@ -96,7 +107,7 @@ An introduction to [r-spatial](https://r-spatial.org/)
 ::: {.column style="width: 47.5%;"}
 [![](images/usp-fflch-logo-simplified.svg){style="width: 50%; padding-top: 0px;"}](https://www.fflch.usp.br/)
 
-The course will take place in the laboratory 122 of the School of Philosophy, Letters and Human Sciences ([FFLCH](https://www.fflch.usp.br/)) at the University of São Paulo ([USP](https://www5.usp.br/)).
+The course will take place in [Laboratory 122](https://salas.fflch.usp.br/salas/25) of the School of Philosophy, Letters and Human Sciences ([FFLCH](https://www.fflch.usp.br/)) at the University of São Paulo ([USP](https://www5.usp.br/)).
 
 The classes are distributed over **5 days**, with a total of **30 hours**.
 :::
@@ -124,6 +135,8 @@ Theory ➡️ Practice
 
 🏋 In-class activities
 
+☕ 15-minute break between sessions
+
 📓 Final project
 
 😌 No formal evaluation
@@ -149,6 +162,8 @@ Theory ➡️ Practice
 :::
 
 ::: {.notes}
+- The main (and best) references are all free.
+- [Anna's Archive](https://annas-archive.li): "I've heard there's someone named Anna who has an archive of excellent books. She might lend them to you. (if you know, you know)".
 - See also: [Advanced R Solutions](https://advanced-r-solutions.rbind.io/) [@grosser2021].
 :::
 
@@ -199,11 +214,13 @@ Today, you can also use AI-powered tools like [Claude](https://claude.ai/) to ge
 
 🤝 Help each other
 
-🙏 Be kind
+🙏 [Be kind](https://www.youtube.com/shorts/SryH6_eWjGA)
 
 🎉 Have fun!
 
 ::: {.notes}
+- Talk about kindness.
+- Show the [Thumper](https://www.youtube.com/shorts/SryH6_eWjGA) video.
 :::
 
 ## Course Presentation {.smaller}
@@ -292,6 +309,7 @@ qrcode::qr_code("https://danielvartan.github.io/r-course/", ecl = "H") |>
 # Conclusion
 
 ::: {.notes}
+- Don´t  forget the **class photo**!
 :::
 
 ## I Hope You Enjoyed the Course! {.smaller .nostretch}
@@ -305,12 +323,12 @@ qrcode::qr_code("https://danielvartan.github.io/r-course/", ecl = "H") |>
 ::: {.notes}
 :::
 
-## Now That You're an R Rock Star {.smaller}
+## Now That You're an R Superstar {.smaller}
 
 I hope you feel more confident in your R programming skills and are ready to tackle new challenges. Remember, learning is a continuous journey, and the R community is there to support you.
 
 ::: {style="padding-top: 15px;"}
-🇧🇷 For Brazilian graduate students, consider exploring the **[`abnt`](https://github.com/danielvartan/abnt) Quarto format**. It helps you write your thesis or dissertation in compliance with the Brazilian Association of Technical Standards ([ABNT](https://abnt.org.br/)) standards while ensuring full reproducibility. Check out an example [here](https://danielvartan.github.io/mastersthesis/).
+🇧🇷 For Brazilian graduate students, consider exploring the **[`abnt`](https://github.com/danielvartan/abnt) Quarto format**. It helps you write your thesis or dissertation in compliance with the Brazilian Association of Technical Standards ([ABNT](https://abnt.org.br/)) standards while ensuring full reproducibility. Check out an example [here](https://danielvartan.github.io/mastersthesis/print/index.pdf).
 :::
 
 ::: {style="padding-top: 15px;"}
@@ -318,6 +336,7 @@ I hope you feel more confident in your R programming skills and are ready to tac
 :::
 
 ::: {.notes}
+- Show `abnt` Quarto format preview.
 :::
 
 ## Post-Course Survey {.smaller .nostretch .scrollable}
@@ -325,6 +344,7 @@ I hope you feel more confident in your R programming skills and are ready to tac
 ![](images/post-course-survey.png){fig-align="center" style="width: 100%; padding-top: 0px;"}
 
 ::: {.notes}
+- Ask participants to star the course code repository if they enjoyed the course.
 :::
 
 ## How to Learn More? {.smaller}
@@ -338,7 +358,7 @@ Kon, F. (n.d.). **_Introdução à ciência da computação com python – Parte
 
 Kon, F. (n.d.). **_Introdução à ciência da computação com python – Parte 2_** [Introduction to computer science with python – Part 2] [Online course]. Coursera. <https://www.coursera.org/learn/ciencia-computacao-python-conceitos-2s> (University of São Paulo, Brazil) (pt-BR)
 
-Peng, R. D., Leek, J., & Caffo, B. (n.d.). **_Data science specialization_**. [Online course]. Coursera. <https://www.coursera.org/specializations/jhu-data-science> (Johns Hopkins University, United States) (en-US)
+Peng, R. D., Leek, J., & Caffo, B. (n.d.). **_Data science specialization_**. [Online course]. Coursera. <https://www.coursera.org/specializations/jhu-data-science> (Johns Hopkins University, United States)
 :::
 
 ::: {.notes}
@@ -347,6 +367,10 @@ Peng, R. D., Leek, J., & Caffo, B. (n.d.). **_Data science specialization_**. [O
 ## How to Learn More? {.smaller}
 
 🎥 **Videos**
+
+<!-- @thenorio2022 -->
+
+Thenório, I. (2022, March 22). **_A saga dos computadores_** [The computer saga] [YouTube video]. <https://www.youtube.com/playlist?list=PLYjrJH3e_wDOA5mxhiMxE6yslcIzU5NkX>  (pt-BR)
 
 <!-- @code.org2018 -->
 
@@ -429,6 +453,7 @@ This presentation was created with the [Quarto](https://quarto.org/) Publishing 
 :::
 
 ::: {.notes}
+- Don´t  forget the **class photo**!
 :::
 
 ## References {.smaller}

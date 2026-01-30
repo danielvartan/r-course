@@ -72,7 +72,7 @@ An IDE (Integrated Development Environment) is a software that provides a set of
 
 :::: {.columns}
 ::: {.column style="width: 50%; font-size: 0.9em"}
-[Project-oriented workflow](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/)
+[Project-oriented workflow](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/).
 
 A project consolidates all related files and resources in one place, ensuring that your work is reproducible and well-organized.
 
@@ -90,6 +90,9 @@ Every data project must be accompanied, at least, by a **README** file, explaini
 :::
 
 ::: {.notes}
+- Ask for students to create a project folder names `r-course` in their pen drive or computer.
+- Open the `r-course` folder in Positron.
+- Use `library(usethis)` and `usethis::create_project(".")` to create projects in R.
 :::
 
 ## Creating a Project {.smaller}
@@ -101,6 +104,9 @@ Every data project must be accompanied, at least, by a **README** file, explaini
 ```
 
 ::: {.notes}
+- Ask for students to create a project folder names `r-course` in their pen drive or computer.
+- Open the `r-course` folder in Positron.
+- Use `library(usethis)` and `usethis::create_project(".")` to create projects in R.
 :::
 
 ## Add. a README & LICENSE File {.smaller}
@@ -136,6 +142,10 @@ use_gpl3_license()
 :::::
 
 ::: {.notes}
+- Use `use_readme_md()` to create a README file.
+- Add "My R Course files." in the README file.
+- Use `use_gpl3_license()` to create a LICENSE file.
+- Briefly explain about open licenses and the GNU GPLv3 license.
 :::
 
 ## Add. a README & LICENSE File {.smaller}
@@ -151,24 +161,29 @@ use_gpl3_license()
 
 ## Quarto Notebooks {.smaller}
 
-![](images/allison-horst-figure-49.png){fig-align="center" style="width: 100%; padding-top: 75px;"}
+[![](images/allison-horst-figure-49.png){fig-align="center" style="width: 100%; padding-top: 75px;"}](https://quarto.org/)
 
 ::: footer
 (Artwork by [Allison Horst](https://allisonhorst.com/horst-hill-collaborations))
+:::
+
+::: {.notes}
+- Mention that this presentation was made using Quarto.
+- There are more examples of Quarto renderings at the end of the course material.
 :::
 
 ## Markdown Basics {.smaller}
 
 :::: {.columns}
 ::: {.column style="width: 50%; font-size: 0.95em;"}
-[Markdown](https://en.wikipedia.org/wiki/Markdown) is a lightweight **markup language** with plain text formatting syntax. The great thing about Markdown is that you can forget about the formatting and focus on the content.
+[Markdown](https://www.markdownguide.org) is a lightweight **markup language** with plain text formatting syntax. The great thing about Markdown is that you can forget about the formatting and focus on the content.
 
 Quarto Notebooks are a type of Markdown document that allows you to mix code, text, and output in a single document. These slides are all written in Markdown.
 
 Learn more about the Markdown syntax [here](https://www.markdownguide.org/basic-syntax/).
 :::
 ::: {.column style="width: 50%;"}
-![](images/markdown-logo.svg){fig-align="center" style="width: 70%; padding-top: 125px;"}
+[![](images/markdown-logo.svg){fig-align="center" style="width: 70%; padding-top: 125px;"}](https://www.markdownguide.org)
 :::
 ::::
 
@@ -184,15 +199,17 @@ Learn more about the Markdown syntax [here](https://www.markdownguide.org/basic-
 ```
 
 ::: {.notes}
+- In Positron, go to *File* > *New File* > *Quarto Document...*.
+- Show how they can organize the code using headings.
 :::
 
 ## Objects {.smaller}
 
 ::::: {.columns}
 :::: {.column style="width: 50%;"}
-**Everything in R is an object**.
+**Everything in R is an [object](https://en.wikipedia.org/wiki/Object_(computer_science))**.
 
-Everything that happens in R is the result of a function call.
+Everything that happens in R is the result of a [function](https://en.wikipedia.org/wiki/Function_(computer_programming)) call.
 
 ::: {style="padding-top: 15px;"}
 **Scalars** (0D): `1`
@@ -214,7 +231,16 @@ Everything that happens in R is the result of a function call.
 :::
 
 ::: {.notes}
-- Data frames are a special case of 2D objects.
+- R characteristics.
+- Example: `Date`. Structure: number of days since the [Unix-Epoch](https://en.wikipedia.org/wiki/Unix_time) (1970-01-01)). Method examples: ``` `+`.Date() ``` (`hms` example),  `print.Date()`.
+- An object is a unit of data that has a specific **structure** and behavior (**methods**)
+- An function is a predefined program unit that performs a specific task, usually taking inputs (arguments) and returning an output (result).
+
+(TMI)
+
+- "Following this paradigm, a software system is viewed as a collection of units, called **objects**, each of which is capable of performing the actions that are immediately related to itself as well as requesting actions of other objects." [@brookshear2020, p. 329].
+- "Under this paradigm a program is constructed by connecting smaller predefined program units (predefined functions) so that each unit’s outputs are used as another unit’s inputs in such a way that the desired overall input-to-output relationship is obtained." [@brookshear2020, p. 327].
+- `lobstr::obj_addr()` shows the memory address of an object.
 :::
 
 ## Vectorized Operations {.smaller}
@@ -245,6 +271,8 @@ c(1, 2, 3) * c(1, 2, 3)
 :::
 
 ::: {.notes}
+- Another characteristic of R.
+- Explain what the `[1]` means in object printing in the console.
 :::
 
 ## Primary Data Types {.smaller}
@@ -253,14 +281,22 @@ c(1, 2, 3) * c(1, 2, 3)
 :::: {.column style="width: 50%;"}
 These are part of the [**atomic**](https://adv-r.hadley.nz/vectors-chap.html?q=atomic#atomic-vectors) data types in R.
 
-- `logical`: TRUE/FALSE.
-- `integer`: 1, 2, 3.
-- `double`: 1.0, 2.0, 3.0.
-- `character`: "Hello, World!".
+- `logical`: TRUE/FALSE
+- `integer`: 1, 2, 3
+- `double`: 1.0, 2.0, 3.0
+- `character`: "Hello, World!"
 
 ::: {style="padding-top: 15px;"}
 ```{r}
-typeof(as.Date("2025-01-01"))
+c(1, 2, 3) |> is.atomic()
+```
+
+```{r}
+as.Date("2025-01-01") |> class()
+```
+
+```{r}
+as.Date("2025-01-01") |> typeof()
 ```
 :::
 ::::
@@ -270,29 +306,39 @@ typeof(as.Date("2025-01-01"))
 :::::
 
 ::: {.notes}
-See: https://youtu.be/e1zJS31tr88?si=7-TamPi2tmwprCUL&t=900
+- Also called the ["classic" 4 data types](https://youtu.be/e1zJS31tr88?si=7-TamPi2tmwprCUL&t=900).
+- `logical` is also called `boolean` in other languages.
+- `double` is also called `float` in other languages.
+- `double` stands for "double-precision floating point" (`float64` ).
+- 64-bit double-precision ([IEEE 754](https://en.wikipedia.org/wiki/IEEE_754)). Approximately 15–17 significant decimal digits of precision. There are packages that provide higher precision in R (e.g., [`Rmpfr`](https://cran.r-project.org/web/packages/Rmpfr/index.html) for arbitrary-precision arithmetic).
+- `numeric` is synonymous with `double`.
+- An object can also hold attributes (e.g., `class`, `names`, `dim`, etc.).
 :::
 
 ## Data Classes {.smaller}
 
 :::: {.columns}
 ::: {.column style="width: 50%;"}
-- `character` (e.g., "Maria", "John")
-- `factor`<br>(e.g., 1 = "Male", 2 = "Female")
-- `integer` (e.g., 1, 2, 3)
-- `double` (e.g., 1.0, 2.0, 3.0)
-- `complex` (e.g., 1 + 2i, 3 + 4i)
-- `logical` (e.g., TRUE, FALSE)
+- `logical()` (e.g., TRUE, FALSE)
+- `integer()` (e.g., 1, 2, 3)
+- `double()` (e.g., 1.0, 2.0, 3.0)
+- `character()` (e.g., "Maria", "John")
+- `factor()` `<br>`{=html}(e.g., 1 = "Male", 2 = "Female")
+- `complex()` (e.g., 1+2i, 3+4i)
+- `raw()` (e.g., 01, 0f, 10)
+- `ts()` (e.g., time series data)
 :::
 ::: {.column style="width: 50%;"}
-* `Date` (e.g., 2023-01-01) ([Linear time](https://danielvartan.github.io/lubritime/reference/cycle_time.html#linear-versus-circular-time))
-* `POSIXct` (e.g., 2023-01-01 00:00:00) (linear time)
-* `Interval` (e.g., 2023-01-01 00:00:00--2023-12-15 15:40:00) (linear time)
-* `Duration` (e.g., 1 year, 2 months, 3 days) (linear time)
-* `Period` (e.g., 1 year, 2 months, 3 days) (linear(ish) time)
-* `hms` (e.g., 01:00:00) ([Circular time](https://danielvartan.github.io/lubritime/reference/cycle_time.html#linear-versus-circular-time))
+- `Date()` (e.g., 2023-01-01) ([linear time](https://danielvartan.github.io/lubritime/reference/cycle_time.html#linear-versus-circular-time))
+- `POSIXct()` (e.g., 2023-01-01 00:00:00) ([linear time](https://danielvartan.github.io/lubritime/reference/cycle_time.html#linear-versus-circular-time))
+- `Interval()` (e.g., 2023-01-01 00:00:00--2023-12-15 15:40:00) ([linear time](https://danielvartan.github.io/lubritime/reference/cycle_time.html#linear-versus-circular-time))
+- `Duration()` (e.g., 2 months, 3 days)`<br>`{=html}([linear time](https://danielvartan.github.io/lubritime/reference/cycle_time.html#linear-versus-circular-time))
+- `Period()` (e.g., 1 year, 2 months, 3 days) (linear([ish](https://lubridate.tidyverse.org/reference/period.html#details)) time)
+- `hms()` (e.g., 01:30:00) ([circular time](https://danielvartan.github.io/lubritime/reference/cycle_time.html#linear-versus-circular-time))
 :::
 ::::
+
+And much more...
 
 ::: {.notes}
 :::
@@ -301,29 +347,48 @@ See: https://youtu.be/e1zJS31tr88?si=7-TamPi2tmwprCUL&t=900
 
 ::::: {.columns}
 :::: {.column style="width: 50%;"}
-Atomic types are **non-recursive objects**, i.e., objects that can't hold themselves as an entry (e.g., `logical`, `integer`, `double`, `character`).
+Non-atomic types are objects that can be composed of different data types.
 
-::: {style="padding-top: 15px;"}
-**Non-Atomic Objects**
+They can also be *recursive objects*, meaning they can contain themselves as elements.
 
-- Matrices (`matrix()`) (2D)
-- Arrays (`array()`) (nD)
-- Lists (`list()`) (nD)
-- Data Frames (`data.frame()`) (a special case of `list`) (2D)
+::: {style="padding-top: 0px;"}
+- `list()`
+- `data.frame` (a special case of `list()`)
 :::
+
+```{r}
+is.atomic(list())
+```
+
+```{r}
+is.recursive(list())
+```
 ::::
 :::: {.column style="width: 50%;"}
 ```{r}
-list(
-  list(list(1), list(2)),
-  list(list("a"), list("b")),
-  list(TRUE)
-)
+c("a", "b", "c", c("d", "e"))
+```
+
+```{r}
+c(1L, 2L, 3L, c(4L, 5L))
+```
+
+```{r}
+c(1.123, 2.123, 3.123, c(4.123, 5.123))
+```
+
+```{r}
+c(TRUE, FALSE, TRUE, c(FALSE, TRUE))
+```
+
+```{r}
+list(list(TRUE, 1L, pi, "a"))
 ```
 ::::
 :::::
 
 ::: {.notes}
+- **15-minute break** after this slide.
 :::
 
 ## Operations {.smaller}
@@ -333,6 +398,7 @@ list(
 :::
 
 ::: {.notes}
+- In each slide, ask students to replicate the examples in their R console.
 :::
 
 ## Arithmetic Operators {.smaller}
@@ -344,8 +410,8 @@ list(
 - ``` `*`() ``` Multiplication
 - ``` `/`() ``` Division
 - ``` `^`() ``` Exponentiation
-- ``` `%/%`() ``` Integer division
-- ``` `%%`() ``` Modulus`<br>`{=html}(Remainder from Division)
+- ``` `%/%`() ``` Integer division`<br>`{=html}(only the integer part)
+- ``` `%%`() ``` Modulus`<br>`{=html}(remainder from division)
 :::
 ::: {.column style="width: 50%;"}
 ```{r}
@@ -385,7 +451,7 @@ list(
 
 :::: {.columns}
 ::: {.column style="width: 50%;"}
-- ``` `<-`() ``` Leftwards assignment`<br>`{=html}(**Use this!**)
+- ``` `<-`() ``` Leftwards assignment`<br>`{=html}(**use this!**)
 - ``` `<<-`() ``` Leftwards assignment (Global Environment)
 - ``` `->`() ``` Rightwards assignment
 - ``` `->>`() ``` Rightwards assignment (Global Environment)
@@ -393,27 +459,32 @@ list(
 :::
 ::: {.column style="width: 50%;"}
 ```{r}
-x <- 1; x
+x <- 1
+x
 ```
 
 ```{r}
-x <<- 1; x
+x <<- 1
+x
 ```
 
 ```{r}
-1 -> x; x
+1 -> x
+x
 ```
 
 ```{r}
-1 ->> x; x
+1 ->> x
+x
 ```
 
 ```{r}
-x = 1; x
+x = 1
+x
 ```
 
 ```r
-1 = x; x # Error!
+1 = x # Error!
 ```
 :::
 ::::
@@ -429,16 +500,22 @@ x = 1; x
 (Artwork by [Allison Horst](https://allisonhorst.com/horst-hill-collaborations))
 :::
 
+::: {notes}
+- Bryan, J. et al. [How to name files](https://rstats.wtf/naming-files).
+- Wickham, H. [File](https://style.tidyverse.org/files.html).
+:::
+
 ## Names {.smaller}
 
 :::: {.columns}
 ::: {.column style="width: 47.5%;"}
 R has strict rules regarding the names of objects.
 
-- Names can only contain letters, numbers, dots, and underscores.
-- Names can't start with a number or a dot.
-- Names can't be reserved words (e.g., `if`, `else`, `TRUE`, `FALSE`).
+- Names can only contain letters, numbers, periods (`.`), and underscores (`_`).
+- Names can't start with a number or an underscore.
+- Names can't start with a period and be followed by a number.
 - Names are case-sensitive.
+- Names can't be reserved words.
 :::
 ::: {.column style="width: 5%;"}
 :::
@@ -447,11 +524,13 @@ R has strict rules regarding the names of objects.
 
 `variable.name` [Good]{.bold-black}, but not advisable
 
-`variable_name` [Good]{.bold-black} (snake_case) --- Most used in R
+`variable_name` [Good]{.bold-black} (snake_case), most used in R
 
 `1variable_name` [Bad]{.bold-black}
 
-`.variable_name` [Bad]{.bold-black}
+`_variable_name` [Bad]{.bold-black}
+
+`.1variable_name` [Bad]{.bold-black}
 
 `variableName` [Good]{.bold-black} (camelCase)
 
@@ -460,6 +539,8 @@ R has strict rules regarding the names of objects.
 ::::
 
 ::: {.notes}
+- `variable` and `Variable` are different.
+- Reserved words examples: `if`, `else`, `TRUE`, `FALSE`.
 :::
 
 ## Comparison Operators {.smaller}
@@ -479,7 +560,7 @@ R has strict rules regarding the names of objects.
 ```
 
 ```{r}
-1 != 2
+1 != 1
 ```
 
 ```{r}
@@ -487,7 +568,7 @@ R has strict rules regarding the names of objects.
 ```
 
 ```{r}
-1 < 2
+2 < 1
 ```
 
 ```{r}
@@ -495,7 +576,7 @@ R has strict rules regarding the names of objects.
 ```
 
 ```{r}
-1 <= 1
+2 <= 1
 ```
 :::
 ::::
@@ -554,6 +635,8 @@ c(TRUE, FALSE) || c(TRUE, TRUE) # Error!
 - ``` `:`() ``` Sequence operator
 - ``` `%in%`() ``` Matching operator
 - ``` `%*%`() ``` Matrix multiplication
+
+![](images/hartnett-2021-figure-2.svg){fig-align="center" style="width: 80%; padding-top: 0px;"}
 :::
 ::: {.column style="width: 50%;"}
 ```{r}
@@ -561,14 +644,28 @@ c(TRUE, FALSE) || c(TRUE, TRUE) # Error!
 ```
 
 ```{r}
+x <- -5
+y <- 0
+
+x:y # Bad! Use `seq()` instead.
+```
+
+```{r}
 "a" %in% c("a", "b", "c")
 ```
 
 ```{r}
-matrix(1:4, nrow = 2) %*% matrix(1:4, nrow = 2)
+x <- matrix(1:4, nrow = 2, ncol = 2, byrow = TRUE)
+y <- matrix(5:8, nrow = 2, ncol = 2, byrow = TRUE)
+
+x %*% y
 ```
 :::
 ::::
+
+::: footer
+(Reproduced from @hartnett2021)
+:::
 
 ::: {.notes}
 :::
@@ -578,11 +675,11 @@ matrix(1:4, nrow = 2) %*% matrix(1:4, nrow = 2)
 :::: {.columns}
 ::: {.column style="width: 47.5%; font-size: 0.9em;"}
 (@) ``` `^`() ``` Exponent (Right to Left)
-(@) ``` -x ```, ``` +x ``` Unary minus, Unary plus (Left to Right)
+(@) ``` -x ```, ``` +x ``` Unary minus, Unary plus`<br>`{=html}(Left to Right)
 (@) ``` `%%`() ``` Modulus (Left to Right)
-(@) ``` `*`() ```, ``` `/`() ``` Multiplication, Division (Left to Right)
-(@) ``` `+`() ```, ``` `-`() ``` Addition, Subtraction (Left to Right)
-(@) ``` `==`() ```, ``` `!=`() ``` Comparisons (Left to Right)
+(@) ``` `*`() ```, ``` `/`() ``` Multiplication, Division`<br>`{=html}(Left to Right)
+(@) ``` `+`() ```, ``` `-`() ``` Addition, Subtraction`<br>`{=html}(Left to Right)
+(@) ``` `==`() ```, ``` `!=`() ``` Comparisons`<br>`{=html}(Left to Right)
 :::
 ::: {.column style="width: 5%;"}
 :::
@@ -590,9 +687,9 @@ matrix(1:4, nrow = 2) %*% matrix(1:4, nrow = 2)
 (@) ``` `!`() ``` Logical NOT (Left to Right)
 (@) ``` `&`() ```, ``` `&&`() ``` Logical AND (Left to Right)
 (@) ``` `|`() ```, ``` `||`() ``` Logical OR (Left to Right)
-(@) ``` `->`() ```, ``` `->>`() ``` Rightward assignment (Left to Right)
-(@) ``` `<-`() ```, ``` `<<-`() ``` Leftward assignment (Right to Left)
-(@) ``` `=`() ```: Leftward assignment (Right to Left)
+(@) ``` `->`() ```, ``` `->>`() ``` Rightward assignment`<br>`{=html}(Left to Right)
+(@) ``` `<-`() ```, ``` `<<-`() ``` Leftward assignment`<br>`{=html}(Right to Left)
+(@) ``` `=`() ```: Leftward assignment`<br>`{=html}(Right to Left)
 :::
 ::::
 
@@ -632,6 +729,10 @@ c("a", "b", "c")[1]
 Indexation starts at `1` in R!
 
 ```{r}
+c("a", "b", "c")[0]
+```
+
+```{r}
 c("a", "b", "c")[1]
 ```
 
@@ -640,7 +741,7 @@ c("a", "b", "c")[2]
 ```
 
 ```{r}
-c("a", "b", "c")[0]
+c("a", "b", "c")[3]
 ```
 :::
 ::::
@@ -654,7 +755,7 @@ c("a", "b", "c")[0]
 - ``` `$`() ``` 2 level extraction
 
 ```{r}
-data <- list(a = 1, b = 2)
+data <- list(a = 1, b = list(2, 3))
 ```
 
 ```{r}
@@ -666,11 +767,11 @@ data[[1]]
 ```
 
 ```{r}
-data$a
+data$a # == data[["a"]]
 ```
 
 ```{r}
-data[["a"]] # == data$a
+data[["b"]][[2]]
 ```
 ::::
 :::::
@@ -777,6 +878,10 @@ is.infinite(1 / 0)
 ::::
 :::::
 
+::: {.notes}
+- **15-minute break** after this slide.
+:::
+
 ## Pipes {.smaller}
 
 ::::: {.columns}
@@ -824,6 +929,9 @@ pi %>%
 
 ::: {style="padding-top: 15px;"}
 Click [here](https://www.tidyverse.org/blog/2023/04/base-vs-magrittr-pipe/) to learn the differences between the base R and `magrittr` pipes.
+:::
+
+::: {.notes}
 :::
 
 ## Control Flow: Choices {.smaller}
@@ -876,6 +984,11 @@ if (is.numeric(x)) {
 ::: {.notes}
 :::
 
+## Exercise {.smaller}
+
+::: {.notes}
+:::
+
 ## Control Flow: Loops {.smaller}
 
 🚨 **Avoid loops** 🚨 (if you can).
@@ -915,6 +1028,10 @@ for (i in 1:5) {
 ::: {.notes}
 :::
 
+## Exercise {.smaller}
+
+::: {.notes}
+:::
 
 ## Functions {.smaller}
 
@@ -965,6 +1082,12 @@ foo(\(x) x + 1)
 ::: {.notes}
 :::
 
+## Exercise {.smaller}
+
+::: {.notes}
+- **15-minute break** after this slide.
+:::
+
 ## Functionals {.smaller}
 
 :::: {.columns}
@@ -1008,6 +1131,16 @@ microbenchmark(
 ```
 :::
 ::::
+
+::: {.notes}
+- Exercise.
+- **15-minute break** after this slide.
+:::
+
+## Exercise {.smaller}
+
+::: {.notes}
+:::
 
 ## Environments {.smaller}
 
@@ -1212,7 +1345,7 @@ It was created by [Hadley Wickham](https://hadley.nz/), a prominent figure in th
 
 ## Main Tidyverse Packages {.smaller}
 
-The Tidyverse also has a meta-package that installs or load the most important packages from the collection.
+The [Tidyverse](https://tidyverse.org/) also has a meta-package that installs or load the most important packages from the collection.
 
 :::: {.columns}
 ::: {.column style="width: 50%; padding-top: 10px; padding-bottom: 10px;"}
@@ -1227,15 +1360,16 @@ library("tidyverse")
 :::
 ::::
 
-- `readr`: Read flat files (`csv`, `tsv`, `fwf`) into R.
-- `stringr`: A fresh approach to string manipulation in R.
-- `lubridate`: Make working with dates in R just that little bit easier.
-- `dplyr`: A grammar of data manipulation.
-- `purrr`: A functional programming toolkit for R.
-- `forcats`: Tools for working with categorical variables (factors).
-- `ggplot2`: An implementation of the Grammar of Graphics in R.
+- [`readr`](https://readr.tidyverse.org/): Read flat files (`csv`, `tsv`, `fwf`) into R.
+- [`stringr`](https://stringr.tidyverse.org/): A fresh approach to string manipulation in R.
+- [`lubridate`](https://lubridate.tidyverse.org/): Make working with dates in R just that little bit easier.
+- [`dplyr`](https://dplyr.tidyverse.org/): A grammar of data manipulation.
+- [`purrr`](https://purrr.tidyverse.org/): A functional programming toolkit for R.
+- [`forcats`](https://forcats.tidyverse.org/): Tools for working with categorical variables (factors).
+- [`ggplot2`](https://ggplot2.tidyverse.org/): An implementation of the Grammar of Graphics in R.
 
 ::: {.notes}
+- Present an overview of each package.
 :::
 
 ## The rOpenSci {.smaller}
@@ -1317,4 +1451,5 @@ The tidyverse has four guiding principles:
 :::
 
 ::: {.notes}
+- **15-minute break** or **day end** after this slide.
 :::

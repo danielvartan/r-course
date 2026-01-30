@@ -20,6 +20,23 @@ For some, data science is just statistics [@broman2013] (_hype statistics_). For
 ::: {.notes}
 :::
 
+## Data Engineering {.smaller .nostretch}
+
+::: {style="font-size: 0.75em"}
+> Data engineering is the development, implementation, and maintenance of systems and processes that take in raw data and produce high-quality, consistent information that supports downstream use cases, such as analysis and machine learning [@reis2022].
+:::
+
+![](images/reis-2022-figure-1-1.png){fig-align="center" style="width: 65%; padding-top: 0px;"}
+
+::: footer
+(Reproduced from @reis2022)
+:::
+
+::: {.notes}
+- Two main activities related to R.
+- Data engineering as the **plumbing** of data science.
+:::
+
 ## First Things First {.smaller}
 
 You only analyze or visualize data when you already have clean, tidy, and validated data.
@@ -320,6 +337,7 @@ There are many open data formats available for researchers to use. *Open* can me
 ::::
 
 ::: {.notes}
+- **15-minute break** after this slide.
 :::
 
 ## Data Frames {.smaller}
@@ -439,7 +457,7 @@ install.packages("palmerpenguins")
 
 The `palmerpenguins` data contains size measurements for **three penguin species** observed on three islands in the Palmer Archipelago, Antarctica.
 
-These data were collected from 2007--2009 by [Dr. Kristen Gorman](https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php) with the [Palmer Station Long Term Ecological Research Program](https://pal.lternet.edu/), part of th [US Long Term Ecological Research Network](https://lternet.edu/).
+These data were collected from 2007--2009 by [Dr. Kristen Gorman](https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php) with the [Palmer Station](https://pallter.marine.rutgers.edu), part of the US Long Term Ecological Research Network ([LTER](https://lternet.edu/)).
 
 We will use this package to get familiar with R.
 
@@ -456,6 +474,10 @@ palmerpenguins::path_to_file("penguins.csv") |>
 palmerpenguins::penguins |>
   readr::write_rds(here::here("data", "palmerpenguins-valid.rds"))
 ```
+
+::: {style="padding-top: 25px;"}
+**Tip**: See this [video](https://youtu.be/_1Ds6ySRTQU?si=iPpxW1BwhRha15NI) by Renan, Michele, and Mucuvinha [-@greinert2026] on the [*Mundo Sem Fim*](https://www.youtube.com/@MundoSemFim) YouTube channel to learn more about these penguins.
+:::
 
 ::: {.notes}
 :::
@@ -483,7 +505,7 @@ palmerpenguins::penguins |>
 🕵 **Known your data**.
 
 1. Click [here](https://github.com/danielvartan/r-course/raw/refs/heads/main/data-raw/palmerpenguins-raw.csv) to download the Palmer Penguins raw data file.
-2. Save it in a folder named `data` in the root of your project.
+2. Save it in a folder named `data-raw` in the root of your project.
 3. Using the file manager, open the file in Positron.
 
 The data documentation can be accessed by running:
@@ -558,9 +580,7 @@ file <- "./data-raw/palmerpenguins-raw.csv"
 ::: {style="padding-top: 15px;"}
 🚨 **Never use `setwd()`!** 🚨
 
-(How to detect a beginner R user)
-
-Click [here](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/#:~:text=such%20as%20these.-,What%E2%80%99s%20wrong%20with,setwd(),-%3F) to learn why.
+Click [here](https://tidyverse.org/blog/2017/12/workflow-vs-script/) to learn why.
 :::
 
 ## The `here` Package {.smaller}
@@ -569,7 +589,7 @@ Click [here](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/#:~:text=
 ::: {.column style="width: 45%;"}
 [`here`](https://here.r-lib.org/) is a package that helps you use relative paths in your R projects.
 
-It turns file management much easier and OS independent.
+It turns file management much easier and [OS](https://en.wikipedia.org/wiki/Operating_system) independent.
 
 ```r
 install.packages("here")
@@ -676,6 +696,9 @@ data |> rmarkdown::paged_table(options = list(rows.print = 12))
 :::
 
 ::: {.notes}
+- As for students to inspect the raw data in Positron viewer.
+- Show them the `glimpse()` output again (base R alternative `str()`).
+- **15-minute break** after this slide.
 :::
 
 ## The `janitor` Package {.smaller}
@@ -1147,6 +1170,11 @@ data |> write_rds(here("data", "palmerpenguins-valid.rds"))
 **Tip**: Store your data in research repositories like [The Open Science Framework](https://osf.io/) (See the [`osfr`](https://docs.ropensci.org/osfr/) package). If you are working with sensitive or human data, ensure it is encrypted before storing it in the cloud (See the [`lockr`](https://danielvartan.github.io/lockr/) package).
 :::
 
+## Exercise {.smaller}
+
+::: {.notes}
+:::
+
 ## How to Learn More {.smaller}
 
 :::: {.columns}
@@ -1165,4 +1193,5 @@ data |> write_rds(here("data", "palmerpenguins-valid.rds"))
 :::
 
 ::: {.notes}
+- **15-minute break** or **day end** after this slide.
 :::

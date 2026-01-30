@@ -14,7 +14,7 @@
 
 ## Main Objective {.smaller visibility="uncounted"}
 
-Provide a solid introduction to R programming, focusing on tidyverse principles and ecosystem.
+Provide a solid introduction to R programming with a focus on [Tidyverse](https://tidyverse.org/) principles and its ecosystem.
 
 ## Learning Objectives {.smaller visibility="uncounted"}
 

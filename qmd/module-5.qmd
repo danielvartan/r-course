@@ -7,7 +7,7 @@
 
 [![](images/tidymodels-hex-logo.png){style="width: 120px;"}](https://www.tidymodels.org/)
 
-The Tidymodels framework is a collection of packages for modeling and machine learning using [Tidyverse](https://www.tidyverse.org/) principles.
+The [Tidymodels](https://www.tidymodels.org/) framework is a collection of packages for modeling and machine learning using [Tidyverse](https://www.tidyverse.org/) principles.
 
 It is created by the same team that developed the `tidyverse` and is designed to work seamlessly with it.
 
@@ -381,6 +381,7 @@ Authors who rely solely on the p-value demonstrate a preference for statistical 
 :::
 
 ::: {.notes}
+- **15-minute break** after this slide.
 :::
 
 ## What Test Should I Use? {.smaller .nostretch}
@@ -808,6 +809,7 @@ $$
 ::::
 
 ::: {.notes}
+- **15-minute break** after this slide.
 :::
 
 ## ANOVA: Hypothesis {.smaller}
@@ -1161,6 +1163,7 @@ $$
 ::::
 
 ::: {.notes}
+- **15-minute break** after this slide.
 :::
 
 ## Linear Reg.: Hypothesis {.smaller}
@@ -1736,4 +1739,5 @@ See also: @kozak2018, @schucany2006, and @shatz2024.
 ::::
 
 ::: {.notes}
+- **15-minute break** or **day end** after this slide.
 :::

@@ -47,6 +47,10 @@ for such topics as *computer design*, *computer programming*, *information proce
 :::
 
 ::: {.notes}
+- Post-war sciences
+  - Chronobiology (materiality: space race)
+  - Marketing (materiality: consumerism, open markets)
+  - Computer science (materiality: decryption (Turing), ballistic calculations (Von Neumann))
 :::
 
 ## Abstractions {.smaller}
@@ -58,11 +62,15 @@ for such topics as *computer design*, *computer programming*, *information proce
 :::
 
 ::: {.notes}
+- Comment on reductionism.
+  - Every analysis reduces. The problem is when you don't realize or think you're reducing.
+  - When collect data from a population, you're reducing that population to that data.
+- George Box: "All models are wrong, but some are useful" [@box1979].
 :::
 
 ## Computer Architecture {.smaller .nostretch}
 
-[**Stored-Program Concept**](https://en.wikipedia.org/wiki/Stored-program_computer) (1945) (AKA ["von Neumann Architecture"](https://en.wikipedia.org/wiki/Von_Neumann_architecture))
+[**Stored-Program Concept**](https://en.wikipedia.org/wiki/Stored-program_computer) (1945) (AKA ["von Neumann Architecture"](https://en.wikipedia.org/wiki/Von_Neumann_architecture)).
 
 First proposed by **J. P. Eckert** and his team (1944-1945).
 
@@ -79,41 +87,42 @@ First proposed by **J. P. Eckert** and his team (1944-1945).
 
 ## Binary Arith. & Boolean Logic {.smaller}
 
-:::: {.columns}
-::: {.column style="width: 50%;"}
+::::: {.columns}
+:::: {.column style="width: 50%;"}
+| Decimal | Binary  | Trinary |
+|---------|---------|---------|
+| 0       | 0       | 0       |
+| 1       | 1       | 1       |
+| 2       | 10      | 2       |
+| 3       | 11      | 10      |
 
-| Decimal | Binary |
-|---------|--------|
-| 0       | 0     |
-| 1       | 1      |
-| 2       | 10     |
-| 3       | 11     |
-| 4       | 100    |
+| Decimal | Binary  | Trinary |
+|---------|---------|---------|
+| 01 +    | 01 +    | 01 +    |
+| 01 +    | 01 +    | 01 +    |
+| 01 =    | 01 =    | 01 =    |
+| 03      | 11      | 10      |
+::::
+:::: {.column style="width: 50%;"}
+| x       | y       | x ∧ y   | x ∨ y   | ¬x      | ¬y      |
+|---------|---------|---------|---------|---------|---------|
+| 0       | 0       | 0       | 0       | 1       | 1       |
+| 0       | 1       | 0       | 1       | 1       | 0       |
+| 1       | 0       | 0       | 1       | 0       | 1       |
+| 1       | 1       | 1       | 1       | 0       | 0       |
 
-| Addition |
-|----------|
-| 01 +     |
-| 01 +     |
-| 01 =     |
-| 11       |
+::: {style="font-size: 0.8em; padding-top: 75px;"}
+**Tip 1**: See this [video](https://youtu.be/YgSjnLXM2Ts?si=mC0PUM0rJgcbBm2a) by Iberê Thenório [-@thenorio2022], on the [*Manual do Mundo*](https://www.youtube.com/@manualdomundo) YouTube channel, to learn more (pt-BR).
 
-:::
-::: {.column style="width: 50%;"}
-| x  | y  | x ∧ y | x ∨ y |
-|----|----|-------|-------|
-| 0  | 0  |   0   |   0   |
-| 0  | 1  |   0   |   1   |
-| 1  | 0  |   0   |   1   |
-| 1  | 1  |   1   |   1   |
-
-| x  | ¬x |
-|----|----|
-| 0  |  1 |
-| 1  |  0 |
+**Tip 2**: Learn more about number bases and their history in @boyer2011.
 :::
 ::::
+:::::
 
 ::: {.notes}
+- The base is in the body.
+- Accumulators: What happens when you need to count past 10 on your fingers?
+- Ternary/trinary system: Mention Soviet computers.
 :::
 
 ## Logic Gates {.smaller .nostretch}
@@ -143,6 +152,8 @@ First proposed by **J. P. Eckert** and his team (1944-1945).
 A look inside a computer.
 :::
 
+## Hardware & Software {.smaller}
+
 ## Programming Languages {.smaller}
 
 :::: {.columns}
@@ -161,6 +172,74 @@ A look inside a computer.
 ::: {.notes}
 :::
 
+## Programming Paradigms {.smaller}
+
+A [programming paradigm](https://en.m.wikipedia.org/wiki/Programming_paradigm) is a specific approach to the programming process [@brookshear2020].
+
+:::: {.columns style="padding-top: 10px;"}
+::: {.column style="width: 29%;"}
+[Procedural](https://en.m.wikipedia.org/wiki/Procedural_programming) (Imperative)
+
+```{r}
+x <- seq(1, 10)
+y <- numeric()
+z <- 0
+
+for (i in x) {
+  y <- c(y, i + 1)
+}
+
+for (i in y) {
+  z <- z + i
+}
+
+z / length(x)
+```
+:::
+::: {.column style="width: 31%;"}
+[Functional](https://en.m.wikipedia.org/wiki/Functional_programming) (Declarative)
+
+```{r}
+seq(1, 10) |>
+  vapply(
+    \(x) x + 1,
+    numeric(1)
+  ) |>
+  mean()
+```
+:::
+::: {.column style="width: 40%;"}
+[Object-Oriented](https://en.m.wikipedia.org/wiki/Object-oriented_programming) (Imperative)
+
+```{r}
+library(S7)
+
+dog <- new_class(
+  name = "dog",
+  properties = list(
+    name = class_character,
+    age = class_numeric
+  )
+)
+
+lola <- dog(name = "Lola", age = 11)
+speak <- new_generic("speak", "x")
+
+method(speak, dog) <- function(x) "Woof"
+
+speak(lola)
+```
+:::
+::::
+
+::: {.notes}
+- "As the name suggests, the imperative paradigm defines the programming process to be the development of a sequence of commands that, when followed, manipulate data to produce the desired result." [@brookshear2020, p. 327]
+- "In contrast to the imperative paradigm is the declarative paradigm, which asks a programmer to describe the problem to be solved rather than an algorithm to be followed. More precisely, a declarative programming system applies a preestablished general-purpose problem-solving algorithm to solve problems presented to it." [@brookshear2020, p. 327]
+- "Another programming paradigm is the functional paradigm. Under this
+paradigm a program is viewed as an entity that accepts inputs and produces
+outputs." [@brookshear2020, p. 327]
+:::
+
 ## Low and High-Level {.smaller visibility="uncounted"}
 
 ![](images/kahanwal-2013-figure-1.png){.nostretch fig-align="center" style="width: 100%; padding-top: 30px;"}
@@ -170,6 +249,10 @@ A look inside a computer.
 :::
 
 ::: {.notes}
+- Levels of description.
+- Talk about Seymour Papert [@papert2020], Piaget, and the Lisp/Logo language.
+- Talk about Wilensky and NetLogo [@tisue2004].
+- Mention even higher-level languages, like Snap! (block-based programming language).
 :::
 
 ## Open-Source Prog. Lang.
@@ -208,6 +291,12 @@ In a general sense, Python is also good for learning how to program, but it is m
 ![](images/meme-python-r.png){fig-align="center" style="width: 50%;"}
 
 ::: {.notes}
+- Python *versus* R origins.
+- Industry-driven *versus* Science-driven.
+- R has to be more rigorous because it's science-driven.
+- Code quality and reliability.
+- Documentation.
+- rOpenSci.
 :::
 
 ## It's Not What You Think {.smaller}
@@ -264,6 +353,14 @@ Although R is a specialized language, you can stretch it to do almost anything (
 ::::
 
 ::: {.notes}
+- Every language is a "cult"!
+- "Excuse me, do you have a moment to talk about R?"
+- Why the R community is so special?
+  - Open-source ethos.
+  - Academic roots.
+  - Diversity.
+  - Collaboration over competition.
+  - Usually, a less toxic environment.
 :::
 
 ::: footer
@@ -306,4 +403,5 @@ Although R is a specialized language, you can stretch it to do almost anything (
 :::
 
 ::: {.notes}
+- **15-minute break** or **lunch break**.
 :::

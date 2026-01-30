@@ -48,90 +48,6 @@
 - [Enigma machine](https://en.wikipedia.org/wiki/Enigma_machine)
 :::
 
-## (AP) Low and High-Level Prog. Lang. {.smaller visibility="uncounted"}
-
-::: {.notes}
-:::
-
-## (AP) Programming Paradigms {.smaller visibility="uncounted"}
-
-A [programming paradigm](https://en.m.wikipedia.org/wiki/Programming_paradigm) is a specific approach to the programming process [@brookshear2020].
-
-R is a multi-paradigm programming language, but is mainly **functional**.
-
-:::: {.columns style="padding-top: 10px;"}
-::: {.column style="width: 33%;"}
-[Procedural](https://en.m.wikipedia.org/wiki/Procedural_programming) (Imperative)
-
-```{r}
-x <- seq(1, 10)
-y <- numeric()
-z <- 0
-
-for (i in x) {
-  y <- c(y, i + 1)
-}
-
-for (i in y) {
-  z <- z + i
-}
-
-z / length(x)
-```
-:::
-::: {.column style="width: 33%;"}
-[Functional](https://en.m.wikipedia.org/wiki/Functional_programming) (Declarative)
-
-```{r}
-seq(1, 10) |>
-  vapply(\(x) x + 1, numeric(1)) |>
-  mean()
-```
-:::
-::: {.column style="width: 34%;"}
-- [Object-Oriented](https://en.m.wikipedia.org/wiki/Object-oriented_programming) (Imperative)
-
-```{r}
-library(S7)
-
-dog <- new_class("dog", properties = list(
-  name = class_character,
-  age = class_numeric
-))
-
-lola <- dog(name = "Lola", age = 11)
-speak <- new_generic("speak", "x")
-method(speak, dog) <- function(x) "Woof"
-speak(lola)
-```
-:::
-::::
-
-::: {.notes}
-:::
-
-## (AP) Warning For Your Future Self {.smaller visibility="uncounted"}
-
-:::: {.columns}
-::: {.column style="width: 50%;"}
-🚨 **Never use `setwd()`!** 🚨
-
-(How to detect a beginner R user)
-
-Always work inside a project directory. Your Working Directory (WD) should always be the root of your project.
-
-If you need a better way to manage your WD, see the [`here`](https://here.r-lib.org/) package.
-
-Click [here](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/#:~:text=such%20as%20these.-,What%E2%80%99s%20wrong%20with,setwd(),-%3F) to learn why.
-:::
-::: {.column style="width: 50%;"}
-![](images/allison-horst-figure-26.png){fig-align="center" style="width: 100%; padding-top: 125px;"}
-:::
-::::
-
-::: {.notes}
-:::
-
 ## (AP) Debugging {.smaller visibility="uncounted"}
 
 ![](images/allison-horst-figure-35.png){fig-align="center" style="width: 90%; padding-top: 0px;"}
@@ -141,23 +57,6 @@ Click [here](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/#:~:text=
 :::
 
 ::: {.notes}
-:::
-
-## (AP) Data Engineering {.smaller .nostretch visibility="uncounted"}
-
-::: {style="font-size: 0.75em"}
-> Data engineering is the development, implementation, and maintenance of systems and processes that take in raw data and produce high-quality, consistent information that supports downstream use cases, such as analysis and machine learning [@reis2022].
-:::
-
-![](images/reis-2022-figure-1-1.png){fig-align="center" style="width: 65%; padding-top: 0px;"}
-
-::: footer
-(Reproduced from @reis2022)
-:::
-
-::: {.notes}
-- Two main activities related to R.
-- You can think of data engineering as the **plumbing** of data science.
 :::
 
 ## (AP) Data Eng. *versus* Data Science {.smaller .nostretch visibility="uncounted"}

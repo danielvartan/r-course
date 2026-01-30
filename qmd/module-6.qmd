@@ -14,7 +14,6 @@ Was there a [**meaningful**]{.brand-triad-blue-red} difference in [**ultra-proce
 ::: {.notes}
 :::
 
-
 ## MISFS-R Clusters {.smaller}
 
 :::: {.columns}
@@ -140,4 +139,6 @@ Remember the data science workflow:
 🎉 Have fun!
 
 ::: {.notes}
+- Set a time limit of 2 hours to complete the exercise.
+- Reserve a time for the course **conclusion** and **class photo**.
 :::

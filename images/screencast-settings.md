@@ -32,6 +32,8 @@ Before each recording session:
 
 ## Recording the Video
 
+> **Note**: Use a larger resolution for better readability. The 1280x720 resolution may be too small for detailed content.
+
 1. Open Oracle VirtualBox
 2. Start the Virtual Machine (VM)
 3. Set the display resolution to 1280x720
