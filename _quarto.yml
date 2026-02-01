@@ -49,6 +49,7 @@ format:
     chalkboard: true
     auto-stretch: true
     fig-align: center
+    multiplex: true
     theme: [default, brand, scss/styles.scss]
     pdf-max-pages-per-slide: 1
     template-partials:

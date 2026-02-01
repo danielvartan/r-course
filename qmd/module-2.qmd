@@ -1094,7 +1094,7 @@ foo(\(x) x + 1)
 ::: {.column style="width: 47.5%; font-size: 0.95em;"}
 A **functional** is a function that takes a function as an input and returns a vector as output [@wickham2019].
 
-It makes the work of the programmer easier, because it allows to apply a function to a vector without the need of a loop. Because these functions are usually written in C (a low-level programming language), they are very fast.
+It makes the work of the programmer easier, because it allows to apply a function to a vector without the need of a loop. Because these functions are usually written in C (a lower-level programming language), they are very fast.
 
 R have native functionals (e.g., `lapply()`), but prefer solutions from the [`purrr`](https://purrr.tidyverse.org/) package.
 :::

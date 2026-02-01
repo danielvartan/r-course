@@ -11,7 +11,7 @@
     "href": "index.html#pre-course-survey",
     "title": "An Introduction to the R Programming Language",
     "section": "Pre-Course Survey",
-    "text": "Pre-Course Survey"
+    "text": "Pre-Course Survey\n\n\n\n\n\nGo, briefly, through the survey responses."
   },
   {
     "objectID": "index.html#main-objective",
@@ -46,7 +46,7 @@
     "href": "index.html#class-dynamic",
     "title": "An Introduction to the R Programming Language",
     "section": "Class Dynamic",
-    "text": "Class Dynamic\nTheory ➡️ Practice\n🏋 In-class activities\n☕ 15-minute break between sessions\n📓 Final project\n😌 No formal evaluation"
+    "text": "Class Dynamic\nTheory ➡️ Practice\n🏋 In-class activities\n☕ 15-minute break between sessions\n🍝 1-hour for lunch\n📓 Final project\n😌 No formal evaluation"
   },
   {
     "objectID": "index.html#main-references",
@@ -74,7 +74,7 @@
     "href": "index.html#notes",
     "title": "An Introduction to the R Programming Language",
     "section": "Notes",
-    "text": "Notes\n💾 Bring a flash drive/pen drive\n👩‍💻 Try to use the same computer for all classes\n💬 Always open this presentation in the browser\n❌ Don’t miss a class\n🙋‍♂️ Ask questions\n🤝 Help each other\n🙏 Be kind\n🎉 Have fun!\n\nTalk about kindness.\nShow the Thumper video."
+    "text": "Notes\n💾 Bring a flash drive/pen drive\n👩‍💻 Try to use the same computer for all classes\n💬 Always open this presentation in the browser\n❌ Don’t miss a class\n🙋‍♂️ Ask questions\n🤝 Help each other\n🙏 Be kind\n🎉 Have fun!\n\nTalk about kindness.\nShow the Thumper video.\nAsk for more experienced participants to help others.\nMention that the modules have a scale of importance, from more to less important. If time is short, some topics may be skipped."
   },
   {
     "objectID": "index.html#course-presentation",
@@ -473,7 +473,7 @@
     "href": "index.html#functionals",
     "title": "An Introduction to the R Programming Language",
     "section": "Functionals",
-    "text": "Functionals\n\n\nA functional is a function that takes a function as an input and returns a vector as output (Wickham, 2019).\nIt makes the work of the programmer easier, because it allows to apply a function to a vector without the need of a loop. Because these functions are usually written in C (a low-level programming language), they are very fast.\nR have native functionals (e.g., lapply()), but prefer solutions from the purrr package.\n\n\n\n\ntriple &lt;- function(x) x * 3\n\n\nwith_for_loop &lt;- function(x) {\n  out &lt;- numeric()\n  for (i in x) out &lt;- c(out, triple(i))\n  out\n}\n\n\nlibrary(purrr)\n\nwith_map &lt;- function(x) map_dbl(x, triple)\n\n\nlibrary(microbenchmark)\n\nmicrobenchmark(\n  with_for_loop(1:1000),\n  with_map(1:1000),\n  times = 100,\n  check = \"equal\"\n)\n#&gt; Unit: microseconds\n#&gt;                   expr      min        lq      mean    median        uq\n#&gt;  with_for_loop(1:1000) 1051.200 1153.9955 1623.0212 1339.5360 1453.4275\n#&gt;       with_map(1:1000)  286.218  330.6305  382.9081  363.1015  412.3085\n#&gt;       max neval cld\n#&gt;  5079.782   100  a \n#&gt;  1339.694   100   b\n\n\n\nExercise.\n\n15-minute break after this slide."
+    "text": "Functionals\n\n\nA functional is a function that takes a function as an input and returns a vector as output (Wickham, 2019).\nIt makes the work of the programmer easier, because it allows to apply a function to a vector without the need of a loop. Because these functions are usually written in C (a lower-level programming language), they are very fast.\nR have native functionals (e.g., lapply()), but prefer solutions from the purrr package.\n\n\n\n\ntriple &lt;- function(x) x * 3\n\n\nwith_for_loop &lt;- function(x) {\n  out &lt;- numeric()\n  for (i in x) out &lt;- c(out, triple(i))\n  out\n}\n\n\nlibrary(purrr)\n\nwith_map &lt;- function(x) map_dbl(x, triple)\n\n\nlibrary(microbenchmark)\n\nmicrobenchmark(\n  with_for_loop(1:1000),\n  with_map(1:1000),\n  times = 100,\n  check = \"equal\"\n)\n#&gt; Unit: microseconds\n#&gt;                   expr      min       lq      mean    median       uq      max\n#&gt;  with_for_loop(1:1000) 1018.693 1074.164 1583.3373 1127.7625 1607.015 4457.605\n#&gt;       with_map(1:1000)  283.356  300.426  368.1895  329.9735  376.429 1806.829\n#&gt;  neval cld\n#&gt;    100  a \n#&gt;    100   b\n\n\n\nExercise.\n\n15-minute break after this slide."
   },
   {
     "objectID": "index.html#exercise-3",
@@ -1131,7 +1131,7 @@
     "href": "index.html#the-tidymodels-framework",
     "title": "An Introduction to the R Programming Language",
     "section": "The Tidymodels Framework",
-    "text": "The Tidymodels Framework\n\nThe Tidymodels framework is a collection of packages for modeling and machine learning using Tidyverse principles.\nIt is created by the same team that developed the tidyverse and is designed to work seamlessly with it.\nAlthough it is a relative newcomer to the R ecosystem (2018), it has quickly gained popularity due to its simplicity and consistency."
+    "text": "The Tidymodels Framework\n\nThe Tidymodels framework is a collection of packages for modeling and machine learning using Tidyverse principles.\nIt is created by the same team that developed the tidyverse and is designed to work seamlessly with it.\nAlthough it is a relative newcomer to the R ecosystem (2018), it has quickly gained popularity due to its simplicity and consistency.\n\nTalk about the purpose of this module. It is not intend to teach statistics. Students with no statistical background may find it difficult to follow."
   },
   {
     "objectID": "index.html#tidymodels-packages",
@@ -1635,7 +1635,7 @@
     "href": "index.html#post-course-survey",
     "title": "An Introduction to the R Programming Language",
     "section": "Post-Course Survey",
-    "text": "Post-Course Survey\n\n\n\n\n\nAsk participants to star the course code repository if they enjoyed the course."
+    "text": "Post-Course Survey\n\n\n\n\n\nEmphasize the importance of feedback and that all responses are anonymous.\nAsk participants to star the course code repository if they enjoyed the course."
   },
   {
     "objectID": "index.html#how-to-learn-more-6",

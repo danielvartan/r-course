@@ -51,9 +51,10 @@ Here are the main topics:
 
 ## Pre-Course Survey {.smaller .nostretch .scrollable}
 
-![](images/pre-course-survey.png){fig-align="center" style="width: 100%; padding-top: 0px;"}
+[![](images/pre-course-survey.png){fig-align="center" style="width: 100%; padding-top: 0px;"}](https://docs.google.com/forms/d/e/1FAIpQLScIqixP2_XPvDmGULZK7ryMZwNd1DxgHleTWfkA4XsC3tnEAQ/viewform?usp=dialog)
 
 ::: {.notes}
+- Go, briefly, through the survey responses.
 :::
 
 ## Main Objective
@@ -136,6 +137,8 @@ Theory ➡️ Practice
 🏋 In-class activities
 
 ☕ 15-minute break between sessions
+
+🍝 1-hour for lunch
 
 📓 Final project
 
@@ -221,6 +224,8 @@ Today, you can also use AI-powered tools like [Claude](https://claude.ai/) to ge
 ::: {.notes}
 - Talk about kindness.
 - Show the [Thumper](https://www.youtube.com/shorts/SryH6_eWjGA) video.
+- Ask for more experienced participants to help others.
+- Mention that the modules have a scale of importance, from more to less important. If time is short, some topics may be skipped.
 :::
 
 ## Course Presentation {.smaller}
@@ -341,9 +346,10 @@ I hope you feel more confident in your R programming skills and are ready to tac
 
 ## Post-Course Survey {.smaller .nostretch .scrollable}
 
-![](images/post-course-survey.png){fig-align="center" style="width: 100%; padding-top: 0px;"}
+[![](images/post-course-survey.png){fig-align="center" style="width: 100%; padding-top: 0px;"}](https://docs.google.com/forms/d/e/1FAIpQLSdFNzZBm2Md3gSibBQbo_L0zhJhmGqVf90F4R-gOkcREZlSrg/viewform?usp=dialog)
 
 ::: {.notes}
+- Emphasize the importance of feedback and that all responses are anonymous.
 - Ask participants to star the course code repository if they enjoyed the course.
 :::
 

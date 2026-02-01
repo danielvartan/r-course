@@ -14,6 +14,7 @@ It is created by the same team that developed the `tidyverse` and is designed to
 Although it is a relative newcomer to the R ecosystem (2018), it has quickly gained popularity due to its simplicity and consistency.
 
 ::: {.notes}
+- Talk about the purpose of this module. It is not intend to teach statistics. Students with no statistical background may find it difficult to follow.
 :::
 
 ## Tidymodels Packages {.smaller}
