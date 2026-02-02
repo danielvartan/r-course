@@ -7,3 +7,4 @@
 **/*.quarto_ipynb
 /_freeze/
 /.quarto/
+index.rmarkdown
