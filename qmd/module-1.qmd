@@ -25,6 +25,8 @@ If you understand R at its core, you can navigate any challenge you encounter.
 :::
 
 ::: {.notes}
+- Why learn programming from scratch?
+- Ariadne and the thread to navigate the labyrinth.
 - If you just want to learn how to push buttons, stick to Excel or Stata.
 :::
 
@@ -152,7 +154,29 @@ First proposed by **J. P. Eckert** and his team (1944-1945).
 A look inside a computer.
 :::
 
-## Hardware & Software {.smaller}
+## Basic Terms {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%;"}
+An [**algorithm**](https://en.wikipedia.org/wiki/Algorithm) is a set of steps that defines how a task is performed.
+
+A representation of an algorithm is called a [**program**](https://en.wikipedia.org/wiki/Computer_program).
+
+The process of developing a program, encoding it in machine-compatible form, and inserting it into a machine is called [**programming**](https://en.wikipedia.org/wiki/Computer_programming), or sometimes [**coding**](https://en.wikipedia.org/wiki/Computer_programming).
+
+Programs, and the algorithms they represent, are collectively referred to as [**software**](https://en.wikipedia.org/wiki/Software), in contrast to the machinery itself, which is known as [**hardware**](https://en.wikipedia.org/wiki/Computer_hardware).
+:::
+::: {.column style="width: 50%;"}
+![](images/winwin-artlab-2025-figure-1-adapted-2.png){fig-align="center" style="width: 60%; padding-top: 0px;"}
+:::
+::::
+
+::: footer
+(@brookshear2020 [p. 18] | Artwork by [WinWin artlab](https://www.shutterstock.com/image-vector/how-cook-instant-noodles-dried-noodle-2599699133))
+:::
+
+::: {.notes}
+:::
 
 ## Programming Languages {.smaller}
 

@@ -128,7 +128,7 @@ Remember the data science workflow:
 ::: {.notes}
 :::
 
-## Notes {.smaller}
+## Notes
 
 🧮 Recalculate the relative frequency
 

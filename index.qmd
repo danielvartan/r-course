@@ -267,6 +267,7 @@ qrcode::qr_code("https://danielvartan.github.io/r-course/", ecl = "H") |>
 :::::
 
 ::: {.notes}
+- **15-minute break** after this slide (optionally)
 :::
 
 # Module 1<br>[Computer Science]{.brand-blue-l25} {.smaller data-menu-title="Module 1: Computer Science"}
@@ -372,6 +373,7 @@ Peng, R. D., Leek, J., & Caffo, B. (n.d.). **_Data science specialization_**. [O
 
 ## How to Learn More? {.smaller}
 
+::: {style="font-size: 0.85em;"}
 🎥 **Videos**
 
 <!-- @thenorio2022 -->
@@ -382,6 +384,10 @@ Thenório, I. (2022, March 22). **_A saga dos computadores_** [The computer saga
 
 Code.org. (2018, January 30). **_How computers work_** [YouTube video]. <https://youtube.com/playlist?list=PLzdnOPI1iJNcsRwJhvksEo1tJqjIqWbN-&si=WkuM8c-AKI-NZ3td>
 
+<!-- @jago2014 -->
+
+Jago, M. (Director). (2014, August 29). **_Turing machines explained_** [YouTube video]. Computerphile. <https://youtu.be/QtW1lQITckE?si=4_wgsHUd96Dvmy-e>
+
 <!-- @lockerbie2025 -->
 
 Lockerbie, T. (2025, December 26). **_I made my phone’s chip 2,000,000× bigger and flew inside_** [YouTube video]. <https://youtu.be/QtW1lQITckE?si=4_wgsHUd96Dvmy-e>
@@ -389,13 +395,14 @@ Lockerbie, T. (2025, December 26). **_I made my phone’s chip 2,000,000× bigge
 <!-- @zaidan2025 -->
 
 Zaidan, G., & Saini, S. (2025, February 25). **_How are microchips made?_** [YouTube video]. TED-Ed. <https://youtu.be/IkRXpFIRUl4?si=iQ7xQuFS6DZLuBY7>
+:::
 
 ::: {.notes}
 :::
 
 ## How to Learn More? {.smaller}
 
-::: {style="font-size: 0.9em;"}
+::: {style="font-size: 0.85em;"}
 📙 **Books**
 
 <!-- @wickham2023e -->

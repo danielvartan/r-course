@@ -249,7 +249,7 @@ It provides a flexible **grammar** for table creation and styling.
 
 :::: {.columns}
 ::: {.column style="width: 50%;"}
-The Grammar of Graphics, by **Leland Wilkinson**, set the foundation thinking about data visualization.
+The Grammar of Graphics, by [**Leland Wilkinson**](https://en.wikipedia.org/wiki/Leland_Wilkinson), set the foundation thinking about data visualization.
 
 We will based this part of the course on the principles found in this book.
 :::

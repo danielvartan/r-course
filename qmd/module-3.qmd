@@ -203,17 +203,22 @@ Interest rate representing the adjusted average rate of overnight repurchase agr
 ```{r}
 #| eval: false
 
-library(jsonlite)
+library(httr2)
 
-paste0(
-  "https://api.bcb.gov.br/dados/serie/",
-  "bcdata.sgs.11", "/",
-  "dados", "?",
-  "formato=json", "&",
-  "dataInicial=01/12/2024", "&",
-  "dataFinal=03/12/2024"
-) |>
-  read_json()
+request("https://api.bcb.gov.br/") |>
+  req_url_path_append("dados") |>
+  req_url_path_append("serie") |>
+  req_url_path_append("bcdata.sgs.11") |>
+  req_url_path_append("dados") |>
+  req_url_query(
+    formato = "json",
+    dataInicial = "01/12/2024",
+    dataFinal = "03/12/2024"
+  ) |>
+  req_user_agent("github.com/danielvartan/r-course") |>
+  req_perform() |>
+  resp_body_json()
+
 #> [[1]]
 #> [[1]]$data
 # [1] "02/12/2024"
@@ -240,7 +245,7 @@ Not all data is tabular; spatial data can be very large and complex.
 
 Excel cannot handle spatial data, and GUI-based statistical softwares, when capable of handling spatial data, are often limited and struggles with performance issues.
 
-::: {style="font-size: 0.8em; font-style: italic; padding-top: 50px;"}
+::: {style="font-size: 0.8em; font-style: italic; padding-top: 100px;"}
 Projected monthly average maximum temperatures (°C) for June 2021–2040, based on the global climate model (GCM) ACCESS-CM2.
 :::
 ::::
@@ -260,7 +265,7 @@ Projected monthly average maximum temperatures (°C) for June 2021–2040, based
 
 :::: {.columns}
 ::: {.column style="width: 50%;"}
-Spreadsheet syndrome is a term used to describe the problems that arise from using spreadsheets to manage data.
+Spreadsheet syndrome is a term used to describe the problems that arise from using spreadsheets to manage data. [@klein1992]
 :::
 ::: {.column style="width: 50%;"}
 ![](images/spreadsheet-syndrome.png){fig-align="center" style="width: 100%; padding-top: 60px;"}
@@ -342,7 +347,7 @@ There are many open data formats available for researchers to use. *Open* can me
 
 ## Data Frames {.smaller}
 
-Data frames are a special type of `list` used for storing data tables. They are the most common way of storing data in R.
+[Data frames](https://rdrr.io/r/base/data.frame.html) are a special type of [`list`](https://rdrr.io/r/base/list.html) used for storing data tables. They are the most common way of storing data in R.
 
 :::: {.columns}
 ::: {.column style="width: 50%; padding-top: 10px; padding-bottom: 15px;"}
@@ -402,7 +407,7 @@ install.packages("tibble")
 
 :::: {.columns"}
 ::: {.column style="width: 50%; padding-top: 30px;"}
-Using R native `data.frame` class.
+Using R native [`data.frame`](https://rdrr.io/r/base/data.frame.html) class:
 
 ```{r}
 #| attr-source: "style='height: 250px;'"
@@ -411,7 +416,7 @@ mtcars
 ```
 :::
 ::: {.column style="width: 50%; padding-top: 30px;"}
-Using `tibble` (Tidyverse way).
+Using [`tibble`](https://tibble.tidyverse.org/reference/tibble.html) (Tidyverse way):
 
 ```{r}
 #| attr-source: "style='height: 250px;'"
@@ -434,9 +439,9 @@ Different from Excel or GUI-based statistical software, R can deal with any kind
 
 **Examples of R functions to read data**:
 
-- Tabular data: `utils::read.csv()`, `readr::read_csv()`
-- Geographical data: `st::st_read()`, `stars::read_stars()`, `terra::vect()`
-- Proprietary formats: `readxl::read_excel()`, `haven::read_dta()` (Stata), `haven::read_sav()` (SPSS), `haven::read_sas()` (SAS)
+- Tabular data: `utils::read.csv()`, [`readr::read_csv()`](https://readr.tidyverse.org/reference/read_delim.html)
+- Geographical data: [`sf::st_read()`](https://r-spatial.github.io/sf/reference/st_read.html), [`stars::read_stars()`](https://r-spatial.github.io/stars/reference/read_stars.html), [`terra::vect()`](https://rspatial.github.io/terra/reference/vect.html), [`terra::rast()`](https://rspatial.github.io/terra/reference/rast.html)
+- Proprietary formats: [`readxl::read_excel()`](https://readxl.tidyverse.org/reference/read_excel.html), [`haven::read_dta()`](https://haven.tidyverse.org/reference/read_dta.html) ([Stata](https://www.stata.com/)), [`haven::read_sav()`](https://haven.tidyverse.org/reference/read_spss.html) ([SPSS](https://www.ibm.com/br-pt/products/spss)), [`haven::read_sas()`](https://haven.tidyverse.org/reference/read_sas.html) ([SAS](https://www.sas.com/en_us/software/stat.html))
 
 ::: {.notes}
 :::
@@ -455,7 +460,7 @@ install.packages("palmerpenguins")
 :::
 ::::
 
-The `palmerpenguins` data contains size measurements for **three penguin species** observed on three islands in the Palmer Archipelago, Antarctica.
+The [`palmerpenguins`](https://allisonhorst.github.io/palmerpenguins/) data contains size measurements for **three penguin species** observed on three islands in the Palmer Archipelago, Antarctica.
 
 These data were collected from 2007--2009 by [Dr. Kristen Gorman](https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php) with the [Palmer Station](https://pallter.marine.rutgers.edu), part of the US Long Term Ecological Research Network ([LTER](https://lternet.edu/)).
 

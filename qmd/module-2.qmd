@@ -201,6 +201,7 @@ Learn more about the Markdown syntax [here](https://www.markdownguide.org/basic-
 ::: {.notes}
 - In Positron, go to *File* > *New File* > *Quarto Document...*.
 - Show how they can organize the code using headings.
+- Ask for them to add a code chunk and run each command shown along the presentation.
 :::
 
 ## Objects {.smaller}
@@ -281,10 +282,10 @@ c(1, 2, 3) * c(1, 2, 3)
 :::: {.column style="width: 50%;"}
 These are part of the [**atomic**](https://adv-r.hadley.nz/vectors-chap.html?q=atomic#atomic-vectors) data types in R.
 
-- `logical`: TRUE/FALSE
-- `integer`: 1, 2, 3
-- `double`: 1.0, 2.0, 3.0
-- `character`: "Hello, World!"
+- [`logical`](https://rdrr.io/r/base/logical.html): TRUE, FALSE
+- [`integer`](https://rdrr.io/r/base/integer.html): 1, 2, 3
+- [`double`](https://rdrr.io/r/base/double.html): 1.0, 2.0, 3.0
+- [`character`](https://rdrr.io/r/base/character.html): "Hello, World!"
 
 ::: {style="padding-top: 15px;"}
 ```{r}
@@ -307,7 +308,9 @@ as.Date("2025-01-01") |> typeof()
 
 ::: {.notes}
 - Also called the ["classic" 4 data types](https://youtu.be/e1zJS31tr88?si=7-TamPi2tmwprCUL&t=900).
-- `logical` is also called `boolean` in other languages.
+- `character` is also called `string` in other languages. You represent strings using either double quotes (`"`) or single quotes (`'`).
+- `logical` is also called `boolean` in other languages. You represent boolean values using `TRUE` and `FALSE` (or `T` and `F`, but avoid using these short forms to prevent confusion with variable names).
+- Ask students to try creating a `character` or `logical` vector on Quarto. Teach them to use `c()`.
 - `double` is also called `float` in other languages.
 - `double` stands for "double-precision floating point" (`float64` ).
 - 64-bit double-precision ([IEEE 754](https://en.wikipedia.org/wiki/IEEE_754)). Approximately 15–17 significant decimal digits of precision. There are packages that provide higher precision in R (e.g., [`Rmpfr`](https://cran.r-project.org/web/packages/Rmpfr/index.html) for arbitrary-precision arithmetic).
@@ -319,22 +322,23 @@ as.Date("2025-01-01") |> typeof()
 
 :::: {.columns}
 ::: {.column style="width: 50%;"}
-- `logical()` (e.g., TRUE, FALSE)
-- `integer()` (e.g., 1, 2, 3)
-- `double()` (e.g., 1.0, 2.0, 3.0)
-- `character()` (e.g., "Maria", "John")
-- `factor()` `<br>`{=html}(e.g., 1 = "Male", 2 = "Female")
-- `complex()` (e.g., 1+2i, 3+4i)
-- `raw()` (e.g., 01, 0f, 10)
-- `ts()` (e.g., time series data)
+- [`logical`](https://rdrr.io/r/base/logical.html) (e.g., TRUE, FALSE)
+- [`integer`](https://rdrr.io/r/base/integer.html) (e.g., 1, 2, 3)
+- [`double`](https://rdrr.io/r/base/double.html) (e.g., 1.0, 2.0, 3.0)
+- [`character`](https://rdrr.io/r/base/character.html) (e.g., "Maria", "John")
+- [`factor`](https://rdrr.io/r/base/factor.html) (e.g., 1 = "Male", 2 = "Female")
+- [`complex`](https://rdrr.io/r/base/complex.html) (e.g., 1+2i, 3+4i)
+- [`raw`](https://rdrr.io/r/base/raw.html) (e.g., 01, 0f, 10)
+- [`ts`](https://rdrr.io/r/stats/ts.html) (e.g., time series data)
+- [`function`](https://rdrr.io/r/base/function.html) (e.g., function objects)
 :::
 ::: {.column style="width: 50%;"}
-- `Date()` (e.g., 2023-01-01) ([linear time](https://danielvartan.github.io/lubritime/reference/cycle_time.html#linear-versus-circular-time))
-- `POSIXct()` (e.g., 2023-01-01 00:00:00) ([linear time](https://danielvartan.github.io/lubritime/reference/cycle_time.html#linear-versus-circular-time))
-- `Interval()` (e.g., 2023-01-01 00:00:00--2023-12-15 15:40:00) ([linear time](https://danielvartan.github.io/lubritime/reference/cycle_time.html#linear-versus-circular-time))
-- `Duration()` (e.g., 2 months, 3 days)`<br>`{=html}([linear time](https://danielvartan.github.io/lubritime/reference/cycle_time.html#linear-versus-circular-time))
-- `Period()` (e.g., 1 year, 2 months, 3 days) (linear([ish](https://lubridate.tidyverse.org/reference/period.html#details)) time)
-- `hms()` (e.g., 01:30:00) ([circular time](https://danielvartan.github.io/lubritime/reference/cycle_time.html#linear-versus-circular-time))
+- [`Date`](https://rdrr.io/r/base/as.Date.html) (e.g., 2023-01-01) ([linear time](https://danielvartan.github.io/lubritime/reference/cycle_time.html#linear-versus-circular-time))
+- [`POSIXct`](https://rdrr.io/r/base/as.POSIXlt.html) (e.g., 2023-01-01 00:00:00) ([linear time](https://danielvartan.github.io/lubritime/reference/cycle_time.html#linear-versus-circular-time))
+- [`Interval`](https://lubridate.tidyverse.org/reference/interval.html) (e.g., 2023-01-01 00:00:00--2023-12-15 15:40:00) ([linear time](https://danielvartan.github.io/lubritime/reference/cycle_time.html#linear-versus-circular-time))
+- [`Duration`](https://lubridate.tidyverse.org/reference/duration.html) (e.g., 2 months, 3 days) ([linear time](https://danielvartan.github.io/lubritime/reference/cycle_time.html#linear-versus-circular-time))
+- [`Period`](https://lubridate.tidyverse.org/reference/period.html) (e.g., 1 year, 2 months, 3 days) (linear([ish](https://lubridate.tidyverse.org/reference/period.html#details)) time)
+- [`hms`](https://hms.tidyverse.org/reference/hms.html) (e.g., 01:30:00) ([circular time](https://danielvartan.github.io/lubritime/reference/cycle_time.html#linear-versus-circular-time))
 :::
 ::::
 
@@ -346,14 +350,14 @@ And much more...
 ## Non-Atomic Objects {.smaller}
 
 ::::: {.columns}
-:::: {.column style="width: 50%;"}
-Non-atomic types are objects that can be composed of different data types.
+:::: {.column style="width: 47.5%;"}
+Non-[atomic](https://rdrr.io/r/base/is.recursive.html) types are objects that can be composed of different data types.
 
-They can also be *recursive objects*, meaning they can contain themselves as elements.
+They can also be [*recursive objects*](https://rdrr.io/r/base/is.recursive.html), meaning they can contain themselves as elements.
 
 ::: {style="padding-top: 0px;"}
-- `list()`
-- `data.frame` (a special case of `list()`)
+- [`list`](https://rdrr.io/r/base/list.html)
+- [`data.frame`](https://rdrr.io/r/base/data.frame.html) (a special case of `list`)
 :::
 
 ```{r}
@@ -364,7 +368,9 @@ is.atomic(list())
 is.recursive(list())
 ```
 ::::
-:::: {.column style="width: 50%;"}
+:::: {.column style="width: 5%;"}
+::::
+:::: {.column style="width: 47.5%;"}
 ```{r}
 c("a", "b", "c", c("d", "e"))
 ```
@@ -535,6 +541,8 @@ R has strict rules regarding the names of objects.
 `variableName` [Good]{.bold-black} (camelCase)
 
 `VariableName` [Good]{.bold-black} (PascalCase)
+
+`TRUE` [Bad]{.bold-black} (reserved word)
 :::
 ::::
 
@@ -726,7 +734,7 @@ c("a", "b", "c")[1]
 ::: {style="padding-top: 15px;"}
 **Indexation**
 
-Indexation starts at `1` in R!
+Indexation in R starts at `1`!
 
 ```{r}
 c("a", "b", "c")[0]
@@ -879,7 +887,7 @@ is.infinite(1 / 0)
 :::::
 
 ::: {.notes}
-- **15-minute break** after this slide.
+Other `NaN` cases: `Inf - Inf`, `0 * Inf`, `log(-1)`, `sqrt(-1)` (use `complex` numbers for this case).
 :::
 
 ## Pipes {.smaller}
@@ -927,22 +935,69 @@ pi %>%
 ::::
 :::::
 
-::: {style="padding-top: 15px;"}
+::: {style="padding-top: 30px;"}
 Click [here](https://www.tidyverse.org/blog/2023/04/base-vs-magrittr-pipe/) to learn the differences between the base R and `magrittr` pipes.
 :::
 
 ::: {.notes}
 :::
 
+## Commenting {.smaller}
+
+🚨 **Only if necessary** 🚨
+
+Your code must speak for itself.
+
+In data analysis code, **only use comments to record important things**. If you need comments to explain what your code is doing, consider rewriting your code to be clearer [@wickhama].
+
+::: {style="padding-top: 15px;"}
+```r
+# This is a comment.
+
+1 + 1 # This is also a comment.
+
+# 1 + 1 # You can also comment code that you don't want to run.
+```
+:::
+
+::: {.notes}
+:::
+
+## Documentation {.smaller}
+
+One the most important things in programming is to know how to find help. In R, you can use the `help()` function to get help on a function or package.
+
+Since R has more an academic focus, documentation is usually plentiful and very well written.
+
+::: {style="padding-top: 10px;"}
+```r
+help(sum)
+```
+
+```r
+?sum
+```
+:::
+
+::: {style="padding-top: 30px;"}
+**Documentation Websites**: The [`logolink`](https://danielvartan.github.io/logolink/) R package [documentation](https://danielvartan.github.io/logolink/).
+:::
+
+::: {.notes}
+- **15-minute break** after this slide.
+:::
+
 ## Control Flow: Choices {.smaller}
 
+::::: {.columns}
+:::: {.column style="width: 47.5%; padding-top: 15px;"}
+::: {style="padding-bottom: 15px;"}
 ```r
 if (condition) true_action
 if (condition) true_action else false_action
 ```
+:::
 
-:::: {.columns}
-::: {.column style="width: 47.5%; padding-top: 15px;"}
 ```{r}
 x <- 60
 
@@ -958,10 +1013,14 @@ if (x > 90) {
     "E"
   }
 ```
-:::
-::: {.column style="width: 5%;"}
-:::
-::: {.column style="width: 47.5%;"}
+
+[`else if`](https://rdrr.io/r/base/Control.html) statements are optional and can be repeated as needed.
+
+[`else`](https://rdrr.io/r/base/Control.html) is also optional.
+::::
+:::: {.column style="width: 5%;"}
+::::
+:::: {.column style="width: 47.5%;"}
 **is.\* Functions**
 
 - `is.logical()`
@@ -978,25 +1037,110 @@ if (is.numeric(x)) {
     "B"
   }
 ```
+::::
+:::::
+
+::: {.notes}
+:::
+
+## Exercise (Choices) {.smaller}
+
+::::: {.columns}
+:::: {.column style="width: 47.5%; padding-top: 0px;"}
+Write an R script that asks the user to select a traffic light color (red, yellow, or green). Based on the user's selection, the script should print the appropriate action:
+
+- If the user selects [**red**]{.brand-triad-blue-red}, print **_Stop!_**
+- If the user selects [**yellow**]{.brand-comp-blue-1}, print **_Slow down!_**
+- If the user selects [**green**]{.brand-square-blue-green}, print **_Go!_**
+::::
+:::: {.column style="width: 5%;"}
+::::
+:::: {.column style="width: 47.5%;"}
+Use `menu()` to ask for the color selection. Note that the function returns the index of the selected choice (1, 2, or 3).
+
+```r
+color <- menu(
+  choices = c("red", "yellow", "green"),
+  title = "Select a traffic light color:"
+)
+```
+
+::: {style="padding-top: 15px;"}
+Use `print()` to display the action.
+
+```{r}
+print("Your action here")
+```
+:::
+::::
+:::::
+
+::: {.notes}
+:::
+
+## Exercise (Choices) {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 47.5%; padding-top: 0px;"}
+**Expected output**:
+
+```r
+color <- menu(
+  choices = c("red", "yellow", "green"),
+  title = "Select a traffic light color:"
+)
+#> Select a traffic light color:
+#>
+#> 1: red
+#> 2: yellow
+#> 3: green
+
+#> Selection: 2
+
+#>
+#> [Your code goes here!]
+#>
+
+#> [1] "Slow down!"
+```
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+**Answer**:
+
+```{r}
+#| code-fold: true
+
+# color <- menu(
+#   choices = c("red", "yellow", "green"),
+#   title = "Select a traffic light color:"
+# )
+
+color <- 2  # For demonstration purposes
+
+if (color == 1) {
+  print("Stop!")
+} else if (color == 2) {
+  print("Slow down!")
+} else if (color == 3) {
+  print("Go!")
+} else {
+  print("Invalid selection")
+}
+```
 :::
 ::::
 
 ::: {.notes}
 :::
 
-## Exercise {.smaller}
-
-::: {.notes}
-:::
-
 ## Control Flow: Loops {.smaller}
 
-🚨 **Avoid loops** 🚨 (if you can).
+🚨 **Avoid** [**loops**](https://rdrr.io/r/base/Control.html) 🚨 (if you can).  Use  **functionals** instead.
 
-Especially when dealing with large datasets. Use  **functionals** instead.
-
-:::: {.columns}
-::: {.column style="width: 47.5%; padding-top: 15px;"}
+::::: {.columns}
+:::: {.column style="width: 47.5%; padding-top: 15px;"}
 ```r
 while (condition) perform_action
 ```
@@ -1004,22 +1148,164 @@ while (condition) perform_action
 ```{r}
 x <- 0
 
-while (x < 5) {
+while (x < 2) {
   x <- x + 1
+
   print(x)
 }
 ```
+
+::: {style="padding-top: 15px;"}
+```r
+repeat perform_action
+```
+
+Use `break` to exit a loop early.
+
+```{r}
+x <- 0
+
+repeat {
+  if (x == 0)  break
+}
+```
 :::
-::: {.column style="width: 5%;"}
-:::
-::: {.column style="width: 47.5%; padding-top: 15px;"}
+::::
+:::: {.column style="width: 5%;"}
+::::
+:::: {.column style="width: 47.5%; padding-top: 15px;"}
 ```r
 for (item in vector) perform_action
 ```
 
 ```{r}
-for (i in 1:5) {
+for (i in 1:3) {
   print(i)
+}
+```
+
+::: {style="padding-top: 15px;"}
+Use `next` to skip to the next iteration.
+
+```{r}
+for (i in 1:3) {
+  if (i == 2) {
+    next
+  }
+
+  print(i)
+}
+```
+:::
+::::
+:::::
+
+::: {.notes}
+:::
+
+## Exercise (`for` Loops) {.smaller}
+
+Write an R script that goes through temperatures for **7 days** and gives weather advice for each day.
+
+::::: {.columns}
+:::: {.column style="width: 47.5%; padding-top: 0px;"}
+1. You have temperature data for a week:
+
+```{r}
+temperatures <- c(18, 22, 14, 27, 7, 21, 31)
+```
+
+2. Use a for loop to go through each temperature.
+
+3. For each day, use if/else to give advice.
+::::
+:::: {.column style="width: 5%;"}
+::::
+:::: {.column style="width: 47.5%;"}
+- If temperature is [**below 18°C**]{.brand-blue}, print **_Day `x`: Cold - Wear a coat!_**
+- If temperature is [**between 18 and 23°C**]{.brand-comp-blue-1}, print **_Day `x`: Nice - Perfect weather!_**
+- If temperature is [**above 23°C**]{.brand-triad-blue-red}, print **_Day `x`: Hot - Stay hydrated!_**
+
+4. Replace `x` with the day number (1-7).
+::::
+:::::
+
+::: {.notes}
+:::
+
+## Exercise (`for` Loops) {.smaller}
+
+Use `seq_along()` to iterate over the indices of the `temperatures` vector.
+
+```{r}
+temperatures |> seq_along()
+```
+
+::: {style="padding-top: 15px;"}
+Use `paste()` or `paste0()` to paste values.
+
+```{r}
+i <- 1
+```
+
+`paste()` uses `" "` as the default separator.
+
+```{r}
+paste("Day", i, ": Cold - Wear a coat!")
+```
+
+`paste0()` uses `""` (empty string) as the default separator.
+
+```{r}
+paste0("Day ", i, ": Cold - Wear a coat!")
+```
+:::
+
+::: {.notes}
+:::
+
+## Exercise (`for` Loops) {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 47.5%; padding-top: 0px;"}
+**Expected output**:
+
+```r
+temperatures <- c(18, 22, 14, 27, 7, 21, 31)
+
+#>
+#> [Your code goes here!]
+#>
+
+#> [1] "Day 1: Nice - Perfect weather!"
+#> [1] "Day 2: Nice - Perfect weather!"
+#> [1] "Day 3: Cold - Wear a coat!"
+#> [1] "Day 4: Hot - Stay hydrated!"
+#> [1] "Day 5: Cold - Wear a coat!"
+#> [1] "Day 6: Nice - Perfect weather!"
+#> [1] "Day 7: Hot - Stay hydrated!"
+```
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+**Answer**:
+
+```{r}
+#| code-fold: true
+
+temperatures <- c(18, 22, 14, 27, 7, 21, 31)
+
+for (i in seq_along(temperatures)) {
+  i_temperature <- temperatures[i]
+
+  if (i_temperature < 18) {
+    paste0("Day ", i, ": Cold - Wear a coat!") |> print()
+  } else if (i_temperature <= 23) {
+    paste0("Day ", i, ": Nice - Perfect weather!") |> print()
+  } else {
+    paste0("Day ", i, ": Hot - Stay hydrated!") |> print()
+  }
 }
 ```
 :::
@@ -1028,9 +1314,142 @@ for (i in 1:5) {
 ::: {.notes}
 :::
 
-## Exercise {.smaller}
+## Exercise (`while` Loops) {.smaller}
+
+Write an R script that keeps asking the user to guess a secret number until they get it right or run out of attempts.
+
+:::: {.columns}
+::: {.column style="width: 47.5%; padding-top: 0px;"}
+1. Set a secret number.
+
+2. Give the user **5** attempts to guess.
+
+3. Use a `while` loop that continues as long as the user hasn't guessed the number and still has attempts left.
+
+4. Inside the loop:
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+- Ask for a guess.
+- Check if the guess is correct. If yes, exit the loop.
+- If wrong, check if the guess is too high OR too low and give a hint.
+- Decrease the number of attempts.
+
+5. After the loop, print whether they won or lost.
+:::
+::::
 
 ::: {.notes}
+:::
+
+## Exercise (`while` Loops) {.smaller}
+
+Use `sample()` to set a secret number between 1 and 100.
+
+```{r}
+secret <- sample(1:100, 1)
+```
+
+```{r}
+secret
+```
+
+::: {style="padding-top: 15px;"}
+Set `attempts` and `correct` variables to control the loop.
+
+```{r}
+attempts <- 5
+correct <- FALSE
+```
+:::
+
+::: {style="padding-top: 15px;"}
+Use `readline()` to ask for a guess and `as.numeric()` to convert it to a number.
+
+```r
+guess <-
+  readline(prompt = "Enter your guess: ") |>
+  as.numeric()
+```
+:::
+
+::: {.notes}
+:::
+
+## Exercise (`while` Loops) {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 47.5%; padding-top: 0px;"}
+**Expected behavior**:
+
+```r
+secret <- sample(1:100, 1)
+attempts <- 5
+correct <- FALSE
+
+#>
+#> [Your code goes here!]
+#>
+
+#> [1] "You have 5 attempts left."
+#> [Enter your guess: 50
+#> [[1] "Too high! Try again."
+#> [[1] "You have 4 attempts left."
+#> [Enter your guess: 30
+#> [[1] "Too high! Try again."
+#> [[1] "You have 3 attempts left."
+#> [Enter your guess: 20
+#> [[1] "Too high! Try again."
+#> [[1] "You have 2 attempts left."
+#> [Enter your guess: 10
+#> [[1] "Correct! You won!"
+```
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+**Answer**:
+
+```{r}
+#| eval: false
+#| code-fold: true
+
+secret <- sample(1:100, 1)
+attempts <- 5
+correct <- FALSE
+
+while (attempts > 0 && !correct) {
+  paste("You have", attempts, "attempts left.") |> print()
+
+  guess <-
+    readline(prompt = "Enter your guess: ") |>
+    as.numeric()
+
+  if (guess == secret) {
+    correct <- TRUE
+
+    break
+  } else if (guess < secret) {
+    print("Too low! Try again.")
+  } else {
+    print("Too high! Try again.")
+  }
+
+  attempts <- attempts - 1
+}
+
+if (correct) {
+  print("Correct! You won!")
+} else {
+  print(paste("Game over! The secret number was", secret))
+}
+```
+:::
+::::
+
+::: {.notes}
+- **15-minute break** after this slide.
 :::
 
 ## Functions {.smaller}
@@ -1043,8 +1462,6 @@ name <- function(parameter_1, parameter_2, ...) expression
 :::: {.column style="width: 47.5%; padding-top: 10px;"}
 The last evaluated expression is the return value of the function.
 
-You can use `return()` to return a value before the end of the function, but this is a bad practice.
-
 ```{r}
 foo <- function(x) {
   x + 1
@@ -1052,22 +1469,9 @@ foo <- function(x) {
 
 foo(9)
 ```
-::::
-:::: {.column style="width: 5%; padding-top: 0px;"}
-::::
-:::: {.column style="width: 47.5%; padding-top: 30px;"}
-```{r}
-foo <- function(x) {
-  return(x + 1)
-
-  "a"
-}
-
-foo(9)
-```
 
 ::: {style="padding-top: 15px;"}
-**Shorthand Notation**<br>
+**Shorthand Not./Anonymous Fun.** `<br>`{=html}
 [(Introduced in [R 4.1.0](https://cran.r-project.org/bin/windows/base/old/4.1.0/NEWS.R-4.1.0.html))]{style="font-size: 0.7em"}
 
 ```{r}
@@ -1077,15 +1481,132 @@ foo(\(x) x + 1)
 ```
 :::
 ::::
+:::: {.column style="width: 5%; padding-top: 0px;"}
+::::
+:::: {.column style="width: 47.5%; padding-top: 30px;"}
+You can use `return()` to return a value before the end of the function, but this is a [bad practice]{.underline}.
+
+```{r}
+foo <- function(x) {
+  return(x + 1)
+
+  "a"
+}
+
+foo(9)
+```
+::::
 :::::
 
 ::: {.notes}
 :::
 
-## Exercise {.smaller}
+## Exercise (Functions) {.smaller}
+
+Write a function that checks if a password meets basic security requirements.
+
+:::: {.columns}
+::: {.column style="width: 47.5%; padding-top: 0px;"}
+1. Create a function called `validate_password` that takes one parameter: `password`.
+
+2. Check if the password is a [`character`](https://rdrr.io/r/base/character.html) string and has at least **8** characters.
+
+3. The function should return:
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+- [**Password must be text**]{.brand-triad-blue-red}  if it's not a character.
+- [**Password too short**]{.brand-triad-blue-red} if it's less than **8** characters.
+- [**Valid password**]{.brand-blue} if all conditions are met.
+:::
+::::
+
+Test your function with different inputs to ensure it works correctly.
 
 ::: {.notes}
-- **15-minute break** after this slide.
+:::
+
+## Exercise (Functions) {.smaller}
+
+Use `is.character()` to check if the password is a [`character`](https://rdrr.io/r/base/character.html) string.
+
+```{r}
+password <- "mypassword"
+```
+
+```{r}
+password |> is.character()
+```
+
+::: {style="padding-top: 15px;"}
+Use `nchar()` to get the number of characters in the password.
+
+```{r}
+password |> nchar()
+```
+:::
+
+::: {style="padding-top: 30px;"}
+**Tip**: Similar to `nchar()`, you can use `length()` to get the length of a vector.
+
+```{r}
+c("a", "b", "c") |> length()
+```
+:::
+
+::: {.notes}
+:::
+
+## Exercise (Functions) {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 47.5%; padding-top: 0px;"}
+**Expected behavior**:
+
+```r
+#>
+#> [Your code goes here!]
+#>
+
+validate_password(12345678)
+#> [1] "Password must be text"
+
+validate_password("hello")
+#> [1] "Password too short"
+
+validate_password("hello123")
+#> [1] "Valid password"
+```
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+**Answer**:
+
+```{r}
+#| code-fold: true
+
+validate_password <- function(password) {
+  char_count <- nchar(password)
+
+  if (!is.character(password)) {
+    "Password must be text"
+  } else if (char_count < 8) {
+    "Password too short"
+  } else {
+    "Valid password"
+  }
+}
+
+validate_password(12345678)
+validate_password("hello")
+validate_password("hello123")
+```
+:::
+::::
+
+::: {.notes}
 :::
 
 ## Functionals {.smaller}
@@ -1094,9 +1615,9 @@ foo(\(x) x + 1)
 ::: {.column style="width: 47.5%; font-size: 0.95em;"}
 A **functional** is a function that takes a function as an input and returns a vector as output [@wickham2019].
 
-It makes the work of the programmer easier, because it allows to apply a function to a vector without the need of a loop. Because these functions are usually written in C (a lower-level programming language), they are very fast.
+It makes the programmer's work easier by applying a function to a vector without needing a loop. These functions are typically written in [C](https://www.c-language.org) (a lower-level programming language), making them very fast.
 
-R have native functionals (e.g., `lapply()`), but prefer solutions from the [`purrr`](https://purrr.tidyverse.org/) package.
+R has native functionals (e.g., `lapply()`), but prefer solutions from the [`purrr`](https://purrr.tidyverse.org/) package from Tidyverse.
 :::
 ::: {.column style="width: 5%;"}
 :::
@@ -1133,45 +1654,152 @@ microbenchmark(
 ::::
 
 ::: {.notes}
-- Exercise.
-- **15-minute break** after this slide.
 :::
 
-## Exercise {.smaller}
+## Exercise (Functionals) {.smaller}
+
+Use the [`map()`](https://purrr.tidyverse.org/reference/map.html) function, from the [`purrr`](https://purrr.tidyverse.org/) package, to adjust student grades.
+
+:::: {.columns}
+::: {.column style="width: 47.5%; padding-top: 0px;"}
+1. Load the [`purrr`](https://purrr.tidyverse.org) library using `library(purrr)`.
+
+2. Use the following test scores from three different classes.
+
+```{r}
+test_scores <- list(
+  class_a = c(72, 85, 68, 90, 77),
+  class_b = c(65, 70, 62, 75, 68),
+  class_c = c(88, 92, 85, 95, 90)
+)
+```
+
+3. Use [`map()`](https://purrr.tidyverse.org/reference/map.html) to add **5** points to every score.
+
+4. Finally, use [`map()`](https://purrr.tidyverse.org/reference/map.html) again to multiply each score by **1.1** (10% increase).
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+**Hints**:
+
+- Don't forget to load the [`purrr`](https://purrr.tidyverse.org) package!
+- Always use the pipe operator (`|>`) to improve code readability.
+- Use anonymous functions with [`map()`](https://purrr.tidyverse.org/reference/map.html).
+- If needed, see [`map()`](https://purrr.tidyverse.org/reference/map.html) documentation with [`?map`](https://purrr.tidyverse.org/reference/map.html).
+:::
+::::
 
 ::: {.notes}
 :::
 
+## Exercise (Functions) {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 47.5%; padding-top: 0px;"}
+**Expected output**:
+
+```r
+library(purrr)
+
+test_scores <- list(
+  class_a = c(72, 85, 68, 90, 77),
+  class_b = c(65, 70, 62, 75, 68),
+  class_c = c(88, 92, 85, 95, 90)
+)
+
+#>
+#> [Your code goes here!]
+#>
+
+#> $class_a
+#> [1]  84.7  99.0  80.3 104.5  90.2
+#>
+#> $class_b
+#> [1] 77.0 82.5 73.7 88.0 80.3
+#>
+#> $class_c
+#> [1] 102.3 106.7  99.0 110.0 104.5
+```
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+**Answer**:
+
+```{r}
+#| code-fold: true
+
+library(purrr)
+
+test_scores <- list(
+  class_a = c(72, 85, 68, 90, 77),
+  class_b = c(65, 70, 62, 75, 68),
+  class_c = c(88, 92, 85, 95, 90)
+)
+
+test_scores |>
+  map(\(x) x + 5) |>
+  map(\(x) x * 1.1)
+```
+:::
+::::
+
+::: {.notes}
+- **15-minute break** after this slide.
+:::
+
 ## Environments {.smaller}
+
+Environments are data structures that powers scoping [@wickham2019].
 
 [Scoping](https://adv-r.hadley.nz/functions.html?q=scoping#lexical-scoping):  The act of finding the value associated with a name.
 
 :::: {.columns}
 ::: {.column style="width: 47.5%; padding-top: 15px;"}
 ```{r}
-x <- 10
-
 foo <- function() {
   x <- 20
 
   x
 }
 
+x <- 10
+
 foo()
+```
+
+```{r}
+y <- 45
+
+bar <- function() {
+  y <- 20
+
+  y
+}
+
+y
 ```
 :::
 ::: {.column style="width: 5%;"}
 :::
 ::: {.column style="width: 47.5%; padding-top: 15px;"}
 ```{r}
+z <- 100
+
 foo <- function() {
-  x <<- 50
+  z <<- 50
 
   invisible()
 }
 
+z
 foo()
-x
+z
+```
+
+```{r}
+.GlobalEnv$foo
 ```
 :::
 ::::
@@ -1288,50 +1916,6 @@ as.POSIXct("1970-01-01 00:00:00", tz = "UTC") + 1
 ::: {.notes}
 :::
 
-## Commenting {.smaller}
-
-🚨 **Only if necessary** 🚨
-
-Your code must speak for itself.
-
-In data analysis code, **only use comments to record important things**. If you need comments to explain what your code is doing, consider rewriting your code to be clearer [@wickhama].
-
-::: {style="padding-top: 15px;"}
-```r
-# This is a comment.
-
-1 + 1 # This is also a comment.
-
-# 1 + 1 # You can also comment code that you don't want to run.
-```
-:::
-
-::: {.notes}
-:::
-
-## Documentation {.smaller}
-
-One the most important things in programming is to know how to find help. In R, you can use the `help()` function to get help on a function or package.
-
-Since R has more an academic focus, documentation is usually plentiful and very well written.
-
-::: {style="padding-top: 10px;"}
-```r
-help(mean)
-```
-
-```r
-?mean
-```
-:::
-
-::: {style="padding-top: 15px;"}
-**Documentation Websites**: The `logolink` R package [documentation](https://danielvartan.github.io/logolink/).
-:::
-
-::: {.notes}
-:::
-
 ## The Tidyverse {.smaller}
 
 [![](images/tidyverse-hex-logo.png){style="width: 120px;"}](https://www.tidyverse.org/)
@@ -1360,7 +1944,7 @@ library("tidyverse")
 :::
 ::::
 
-- [`readr`](https://readr.tidyverse.org/): Read flat files (`csv`, `tsv`, `fwf`) into R.
+- [`readr`](https://readr.tidyverse.org/): Read flat files (e.g., [`txt`](https://en.wikipedia.org/wiki/Text_file), [`csv`](https://en.wikipedia.org/wiki/Comma-separated_values), [`tsv`](https://en.wikipedia.org/wiki/Tab-separated_values)) into R.
 - [`stringr`](https://stringr.tidyverse.org/): A fresh approach to string manipulation in R.
 - [`lubridate`](https://lubridate.tidyverse.org/): Make working with dates in R just that little bit easier.
 - [`dplyr`](https://dplyr.tidyverse.org/): A grammar of data manipulation.
@@ -1391,7 +1975,7 @@ You can do most of the things you need with the packages that come bundled with 
 
 In this course **we are going to focus on the Tidyverse and rOpenSci packages**, which are the most modern and efficient way to work with data in R.
 
-If you want a deeper understanding of the R language, we encourage you to explore the base R solutions.
+If you want a deeper understanding of the R language, I encourage you to explore the base R solutions.
 
 ::: {.notes}
 :::

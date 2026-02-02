@@ -362,7 +362,7 @@ $\Delta\text{R}^{2}$ = 0.00388`<br>`{=html}Cohen’s $f^{2}$ = 0.00414
 
 Latitudinal cline of chronotype [@leocadio-miguel2017].
 
-[Critique](https://danielvartan.github.io/mastersthesis/web/qmd/supplementary-material-9.html) of Leocadio-Miguel et al. latitude article [@vartanian2025a].
+[Critique](https://danielvartan.github.io/mastersthesis/web/qmd/supplementary-material-9.html) of Leocadio-Miguel et al. latitude article [@vartanian2024a].
 
 The ASA statement on p-values [@wasserstein2016].
 
