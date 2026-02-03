@@ -1002,16 +1002,16 @@ if (condition) true_action else false_action
 x <- 60
 
 if (x > 90) {
-    "A"
-  } else if (x > 80) {
-    "B"
-  } else if (x > 50 && x < 100) {
-    "C"
-  } else if (x > 1) {
-    "D"
-  } else {
-    "E"
-  }
+  "A"
+} else if (x > 80) {
+  "B"
+} else if (x > 50 && x < 100) {
+  "C"
+} else if (x > 1) {
+  "D"
+} else {
+  "E"
+}
 ```
 
 [`else if`](https://rdrr.io/r/base/Control.html) statements are optional and can be repeated as needed.
@@ -1032,10 +1032,10 @@ if (x > 90) {
 x <- "a"
 
 if (is.numeric(x)) {
-    "A"
-  } else {
-    "B"
-  }
+  "A"
+} else {
+  "B"
+}
 ```
 ::::
 :::::

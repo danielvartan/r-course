@@ -445,7 +445,7 @@
     "href": "index.html#control-flow-choices",
     "title": "An Introduction to the R Programming Language",
     "section": "Control Flow: Choices",
-    "text": "Control Flow: Choices\n\n\n\nif (condition) true_action\nif (condition) true_action else false_action\n\n\nx &lt;- 60\n\nif (x &gt; 90) {\n    \"A\"\n  } else if (x &gt; 80) {\n    \"B\"\n  } else if (x &gt; 50 && x &lt; 100) {\n    \"C\"\n  } else if (x &gt; 1) {\n    \"D\"\n  } else {\n    \"E\"\n  }\n#&gt; [1] \"C\"\n\nelse if statements are optional and can be repeated as needed.\nelse is also optional.\n\n\n\nis.* Functions\n\nis.logical()\nis.integer()\nis.numeric()\nis.character()\n\n\nx &lt;- \"a\"\n\nif (is.numeric(x)) {\n    \"A\"\n  } else {\n    \"B\"\n  }\n#&gt; [1] \"B\""
+    "text": "Control Flow: Choices\n\n\n\nif (condition) true_action\nif (condition) true_action else false_action\n\n\nx &lt;- 60\n\nif (x &gt; 90) {\n  \"A\"\n} else if (x &gt; 80) {\n  \"B\"\n} else if (x &gt; 50 && x &lt; 100) {\n  \"C\"\n} else if (x &gt; 1) {\n  \"D\"\n} else {\n  \"E\"\n}\n#&gt; [1] \"C\"\n\nelse if statements are optional and can be repeated as needed.\nelse is also optional.\n\n\n\nis.* Functions\n\nis.logical()\nis.integer()\nis.numeric()\nis.character()\n\n\nx &lt;- \"a\"\n\nif (is.numeric(x)) {\n  \"A\"\n} else {\n  \"B\"\n}\n#&gt; [1] \"B\""
   },
   {
     "objectID": "index.html#exercise-choices",
@@ -543,7 +543,7 @@
     "href": "index.html#functionals",
     "title": "An Introduction to the R Programming Language",
     "section": "Functionals",
-    "text": "Functionals\n\n\nA functional is a function that takes a function as an input and returns a vector as output (Wickham, 2019).\nIt makes the programmer’s work easier by applying a function to a vector without needing a loop. These functions are typically written in C (a lower-level programming language), making them very fast.\nR has native functionals (e.g., lapply()), but prefer solutions from the purrr package from Tidyverse.\n\n\n\n\ntriple &lt;- function(x) x * 3\n\n\nwith_for_loop &lt;- function(x) {\n  out &lt;- numeric()\n  for (i in x) out &lt;- c(out, triple(i))\n  out\n}\n\n\nlibrary(purrr)\n\nwith_map &lt;- function(x) map_dbl(x, triple)\n\n\nlibrary(microbenchmark)\n\nmicrobenchmark(\n  with_for_loop(1:1000),\n  with_map(1:1000),\n  times = 100,\n  check = \"equal\"\n)\n#&gt; Unit: microseconds\n#&gt;                   expr      min        lq      mean   median        uq      max\n#&gt;  with_for_loop(1:1000) 1105.285 1158.7620 1476.7699 1180.280 1229.1125 4218.020\n#&gt;       with_map(1:1000)  309.543  324.2875  342.6669  332.551  343.0645 1101.352\n#&gt;  neval cld\n#&gt;    100  a \n#&gt;    100   b"
+    "text": "Functionals\n\n\nA functional is a function that takes a function as an input and returns a vector as output (Wickham, 2019).\nIt makes the programmer’s work easier by applying a function to a vector without needing a loop. These functions are typically written in C (a lower-level programming language), making them very fast.\nR has native functionals (e.g., lapply()), but prefer solutions from the purrr package from Tidyverse.\n\n\n\n\ntriple &lt;- function(x) x * 3\n\n\nwith_for_loop &lt;- function(x) {\n  out &lt;- numeric()\n  for (i in x) out &lt;- c(out, triple(i))\n  out\n}\n\n\nlibrary(purrr)\n\nwith_map &lt;- function(x) map_dbl(x, triple)\n\n\nlibrary(microbenchmark)\n\nmicrobenchmark(\n  with_for_loop(1:1000),\n  with_map(1:1000),\n  times = 100,\n  check = \"equal\"\n)\n#&gt; Unit: microseconds\n#&gt;                   expr      min       lq      mean    median       uq      max\n#&gt;  with_for_loop(1:1000) 1025.271 1192.077 1744.5702 1372.4465 1774.434 6181.526\n#&gt;       with_map(1:1000)  294.428  332.438  408.1934  377.8995  480.336 1083.355\n#&gt;  neval cld\n#&gt;    100  a \n#&gt;    100   b"
   },
   {
     "objectID": "index.html#exercise-functionals",
@@ -767,7 +767,7 @@
     "href": "index.html#the-tibble-package",
     "title": "An Introduction to the R Programming Language",
     "section": "The tibble Package",
-    "text": "The tibble Package\n\n\n\n\ntibble is a modern take on data frames in R, offering improved usability and integration with the Tidyverse. It enhances readability while retaining essential data frame features.\ninstall.packages(\"tibble\")\n\n\n\nUsing R native data.frame class:\n\nmtcars\n#&gt;                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb\n#&gt; Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4\n#&gt; Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4\n#&gt; Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1\n#&gt; Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1\n#&gt; Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2\n#&gt; Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1\n#&gt; Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4\n#&gt; Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2\n#&gt; Merc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2\n#&gt; Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4\n#&gt; Merc 280C           17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4\n#&gt; Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3\n#&gt; Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3\n#&gt; Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3\n#&gt; Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4\n#&gt; Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4\n#&gt; Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4\n#&gt; Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1\n#&gt; Honda Civic         30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2\n#&gt; Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1\n#&gt; Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1\n#&gt; Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2\n#&gt; AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2\n#&gt; Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4\n#&gt; Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2\n#&gt; Fiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1\n#&gt; Porsche 914-2       26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2\n#&gt; Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2\n#&gt; Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4\n#&gt; Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6\n#&gt; Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8\n#&gt; Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2\n\n\nUsing tibble (Tidyverse way):\n\nlibrary(dplyr) # or library(tibble)\n\nmtcars |&gt; as_tibble()\n#&gt; # A tibble: 32 × 11\n#&gt;      mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb\n#&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n#&gt;  1  21       6  160    110  3.9   2.62  16.5     0     1     4     4\n#&gt;  2  21       6  160    110  3.9   2.88  17.0     0     1     4     4\n#&gt;  3  22.8     4  108     93  3.85  2.32  18.6     1     1     4     1\n#&gt;  4  21.4     6  258    110  3.08  3.22  19.4     1     0     3     1\n#&gt;  5  18.7     8  360    175  3.15  3.44  17.0     0     0     3     2\n#&gt;  6  18.1     6  225    105  2.76  3.46  20.2     1     0     3     1\n#&gt;  7  14.3     8  360    245  3.21  3.57  15.8     0     0     3     4\n#&gt;  8  24.4     4  147.    62  3.69  3.19  20       1     0     4     2\n#&gt;  9  22.8     4  141.    95  3.92  3.15  22.9     1     0     4     2\n#&gt; 10  19.2     6  168.   123  3.92  3.44  18.3     1     0     4     4\n#&gt; # ℹ 22 more rows"
+    "text": "The tibble Package\n\n\n\n\ntibble is a modern take on data frames in R, offering improved usability and integration with the Tidyverse. It enhances readability while retaining essential data frame features.\ninstall.packages(\"tibble\")\n\n\n\nUsing R native data.frame class:\n\nmtcars\n#&gt;                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb\n#&gt; Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4\n#&gt; Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4\n#&gt; Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1\n#&gt; Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1\n#&gt; Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2\n#&gt; Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1\n#&gt; Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4\n#&gt; Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2\n#&gt; Merc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2\n#&gt; Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4\n#&gt; Merc 280C           17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4\n#&gt; Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3\n#&gt; Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3\n#&gt; Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3\n#&gt; Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4\n#&gt; Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4\n#&gt; Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4\n#&gt; Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1\n#&gt; Honda Civic         30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2\n#&gt; Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1\n#&gt; Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1\n#&gt; Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2\n#&gt; AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2\n#&gt; Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4\n#&gt; Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2\n#&gt; Fiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1\n#&gt; Porsche 914-2       26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2\n#&gt; Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2\n#&gt; Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4\n#&gt; Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6\n#&gt; Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8\n#&gt; Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2\n\n\n\n\nUsing tibble (Tidyverse way):\n\nlibrary(dplyr) # or library(tibble)\n\nmtcars |&gt; as_tibble()\n#&gt; # A tibble: 32 × 11\n#&gt;      mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb\n#&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n#&gt;  1  21       6  160    110  3.9   2.62  16.5     0     1     4     4\n#&gt;  2  21       6  160    110  3.9   2.88  17.0     0     1     4     4\n#&gt;  3  22.8     4  108     93  3.85  2.32  18.6     1     1     4     1\n#&gt;  4  21.4     6  258    110  3.08  3.22  19.4     1     0     3     1\n#&gt;  5  18.7     8  360    175  3.15  3.44  17.0     0     0     3     2\n#&gt;  6  18.1     6  225    105  2.76  3.46  20.2     1     0     3     1\n#&gt;  7  14.3     8  360    245  3.21  3.57  15.8     0     0     3     4\n#&gt;  8  24.4     4  147.    62  3.69  3.19  20       1     0     4     2\n#&gt;  9  22.8     4  141.    95  3.92  3.15  22.9     1     0     4     2\n#&gt; 10  19.2     6  168.   123  3.92  3.44  18.3     1     0     4     4\n#&gt; # ℹ 22 more rows"
   },
   {
     "objectID": "index.html#how-to-read-data-in-r",
@@ -977,21 +977,70 @@
     "href": "index.html#exporting-the-data",
     "title": "An Introduction to the R Programming Language",
     "section": "Exporting the Data",
-    "text": "Exporting the Data\n\nAlways save your data in non-binary formats like csv to ensure that it can be read by other software.\nrds stands for R Data Serialization. It is a binary data format that allows you to load an object into R preserving all its attributes.\n\n\nlibrary(here)\nlibrary(readr)\n\n\nif (!dir.exists(here(\"data\"))) dir.create(here(\"data\"))\n\n\ndata |&gt; write_csv(here(\"data\", \"palmerpenguins-valid.csv\"))\n\n\ndata |&gt; write_rds(here(\"data\", \"palmerpenguins-valid.rds\"))\n\n\nTip: Store your data in research repositories like The Open Science Framework (See the osfr package). If you are working with sensitive or human data, ensure it is encrypted before storing it in the cloud (See the lockr package)."
+    "text": "Exporting the Data\n\nAlways save your data in non-binary formats like csv to ensure that it can be read by other software.\nrds stands for R Data Serialization. It is a binary data format that allows you to load an object into R preserving all its attributes.\n\n\nlibrary(here)\nlibrary(readr)\n\n\nif (!dir.exists(here(\"data\"))) dir.create(here(\"data\"))\n\n\ndata |&gt; write_csv(here(\"data\", \"palmerpenguins-valid.csv\"))\n\n\ndata |&gt; write_rds(here(\"data\", \"palmerpenguins-valid.rds\"))\n\n\ntest &lt;- here(\"data\", \"palmerpenguins-valid.rds\") |&gt; read_rds()\n\n\nTip: Store your data in research repositories like The Open Science Framework (See the osfr package). If you are working with sensitive or human data, ensure it is encrypted before storing it in the cloud (See the lockr package)."
   },
   {
-    "objectID": "index.html#exercise",
-    "href": "index.html#exercise",
+    "objectID": "index.html#exercise-joins",
+    "href": "index.html#exercise-joins",
     "title": "An Introduction to the R Programming Language",
-    "section": "Exercise",
-    "text": "Exercise"
+    "section": "Exercise (Joins)",
+    "text": "Exercise (Joins)\nData analysis typically requires working with multiple data frames that need to be combined to answer your research questions.\n\n\n\n\n\n(Reproduced from Wickham et al. (2023))"
+  },
+  {
+    "objectID": "index.html#exercise-joins-1",
+    "href": "index.html#exercise-joins-1",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Exercise (Joins)",
+    "text": "Exercise (Joins)\nThese combinations are called joins. There are different types of joins depending on how you want to combine the data frames.\n\n\n\n\n\n(Reproduced from Wickham et al. (2023))"
+  },
+  {
+    "objectID": "index.html#exercise-joins-2",
+    "href": "index.html#exercise-joins-2",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Exercise (Joins)",
+    "text": "Exercise (Joins)\nA left join retains all rows from x. Each row in x appears in the output, matching with y where possible or with NA values when no match exists.\n\n\n\n\n\n(Reproduced from Wickham et al. (2023))"
+  },
+  {
+    "objectID": "index.html#exercise-joins-3",
+    "href": "index.html#exercise-joins-3",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Exercise (Joins)",
+    "text": "Exercise (Joins)\nPerform a join to combine band_members with band_instruments2. These two datasets can be found in the dplyr package.\nUse left_join() and join_by() for this exercise.\n\n\nlibrary(dplyr)\n\n\n\n\n\nband_members\n#&gt; # A tibble: 3 × 2\n#&gt;   name  band   \n#&gt;   &lt;chr&gt; &lt;chr&gt;  \n#&gt; 1 Mick  Stones \n#&gt; 2 John  Beatles\n#&gt; 3 Paul  Beatles\n\n\n\n\n\nband_instruments2\n#&gt; # A tibble: 3 × 2\n#&gt;   artist plays \n#&gt;   &lt;chr&gt;  &lt;chr&gt; \n#&gt; 1 John   guitar\n#&gt; 2 Paul   bass  \n#&gt; 3 Keith  guitar"
+  },
+  {
+    "objectID": "index.html#exercise-joins-4",
+    "href": "index.html#exercise-joins-4",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Exercise (Joins)",
+    "text": "Exercise (Joins)\nAnswer:\n\nCodelibrary(dplyr)\n\nband_members |&gt;\n  left_join(\n    band_instruments2,\n    join_by(name == artist)\n  )\n#&gt; # A tibble: 3 × 3\n#&gt;   name  band    plays \n#&gt;   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; \n#&gt; 1 Mick  Stones  &lt;NA&gt;  \n#&gt; 2 John  Beatles guitar\n#&gt; 3 Paul  Beatles bass"
+  },
+  {
+    "objectID": "index.html#exercise-pivot",
+    "href": "index.html#exercise-pivot",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Exercise (Pivot)",
+    "text": "Exercise (Pivot)\n\n\nOne of the most common issues is data stored in wide format where column names actually represent values of a variable.\n\nlibrary(tidyr)\n\n\ntable4b\n#&gt; # A tibble: 3 × 3\n#&gt;   country         `1999`     `2000`\n#&gt;   &lt;chr&gt;            &lt;dbl&gt;      &lt;dbl&gt;\n#&gt; 1 Afghanistan   19987071   20595360\n#&gt; 2 Brazil       172006362  174504898\n#&gt; 3 China       1272915272 1280428583\n\n\n\n\n\n\n\n\n\n\n(Artwork by Allison Horst)"
+  },
+  {
+    "objectID": "index.html#exercise-pivot-1",
+    "href": "index.html#exercise-pivot-1",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Exercise (Pivot)",
+    "text": "Exercise (Pivot)\nPerform a pivot to transform the table4a dataset from wide to long format using the pivot_longer() function from the tidyr package.\n\nThe table4a dataset displays the number of tuberculosis cases documented by the World Health Organization (WHO) in Afghanistan, Brazil, and China between 1999 and 2000.\n\nlibrary(tidyr)\n\n\ntable4a\n#&gt; # A tibble: 3 × 3\n#&gt;   country     `1999` `2000`\n#&gt;   &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;\n#&gt; 1 Afghanistan    745   2666\n#&gt; 2 Brazil       37737  80488\n#&gt; 3 China       212258 213766"
+  },
+  {
+    "objectID": "index.html#exercise-pivot-2",
+    "href": "index.html#exercise-pivot-2",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Exercise (Pivot)",
+    "text": "Exercise (Pivot)\nAnswer:\n\nCodelibrary(tidyr)\n\ntable4a |&gt;\n  pivot_longer(\n    cols = c(`1999`, `2000`),\n    names_to = \"year\",\n    values_to = \"cases\"\n  )\n#&gt; # A tibble: 6 × 3\n#&gt;   country     year   cases\n#&gt;   &lt;chr&gt;       &lt;chr&gt;  &lt;dbl&gt;\n#&gt; 1 Afghanistan 1999     745\n#&gt; 2 Afghanistan 2000    2666\n#&gt; 3 Brazil      1999   37737\n#&gt; 4 Brazil      2000   80488\n#&gt; 5 China       1999  212258\n#&gt; 6 China       2000  213766"
   },
   {
     "objectID": "index.html#how-to-learn-more-2",
     "href": "index.html#how-to-learn-more-2",
     "title": "An Introduction to the R Programming Language",
     "section": "How to Learn More",
-    "text": "How to Learn More\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(Book cover image from Wickham et al. (2023) and van der Loo & Jonge (2018))\n\n\n\n15-minute break or day end after this slide."
+    "text": "How to Learn More\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(Book cover image from Wickham et al. (2023) and van der Loo & Jonge (2018))\n\n\nComment about other important techniques that were not covered in this lesson (e.g., regular expressions, grouping, summarizing).\n\n15-minute break or day end after this slide."
   },
   {
     "objectID": "index.html#simple-statistics",
@@ -1064,8 +1113,8 @@
     "text": "The gt Package\n\n\n\nThe most powerful package for creating and customizing tables in R.\nIt provides a flexible grammar for table creation and styling."
   },
   {
-    "objectID": "index.html#exercise-1",
-    "href": "index.html#exercise-1",
+    "objectID": "index.html#exercise",
+    "href": "index.html#exercise",
     "title": "An Introduction to the R Programming Language",
     "section": "Exercise",
     "text": "Exercise\n\n\n15-minute break after this slide."
@@ -1176,8 +1225,8 @@
     "text": "The R Graph Gallery\nAnother amazing work by Yan Holtz is the R Graph Gallery, which provides numerous examples of R graphics and how to create them.\n\n\n\n\n\n(Artwork by Yan Holtz)"
   },
   {
-    "objectID": "index.html#exercise-2",
-    "href": "index.html#exercise-2",
+    "objectID": "index.html#exercise-1",
+    "href": "index.html#exercise-1",
     "title": "An Introduction to the R Programming Language",
     "section": "Exercise",
     "text": "Exercise"
