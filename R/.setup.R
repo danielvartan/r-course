@@ -55,7 +55,10 @@ brandr_options <- list(
       "square-blue-blue",
       "square-blue-purple",
       "gray",
-      "black"
+      "black",
+      # "triad-blue-olive",
+      "triad-blue-red",
+      "triad-blue-blue"
     )
   )
 )

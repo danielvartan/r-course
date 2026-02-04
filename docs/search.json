@@ -487,7 +487,7 @@
     "href": "index.html#exercise-for-loops-2",
     "title": "An Introduction to the R Programming Language",
     "section": "Exercise (for Loops)",
-    "text": "Exercise (for Loops)\n\n\nExpected output:\ntemperatures &lt;- c(18, 22, 14, 27, 7, 21, 31)\n\n#&gt;\n#&gt; [Your code goes here!]\n#&gt;\n\n#&gt; [1] \"Day 1: Nice - Perfect weather!\"\n#&gt; [1] \"Day 2: Nice - Perfect weather!\"\n#&gt; [1] \"Day 3: Cold - Wear a coat!\"\n#&gt; [1] \"Day 4: Hot - Stay hydrated!\"\n#&gt; [1] \"Day 5: Cold - Wear a coat!\"\n#&gt; [1] \"Day 6: Nice - Perfect weather!\"\n#&gt; [1] \"Day 7: Hot - Stay hydrated!\"\n\n\n\nAnswer:\n\nCodetemperatures &lt;- c(18, 22, 14, 27, 7, 21, 31)\n\nfor (i in seq_along(temperatures)) {\n  i_temperature &lt;- temperatures[i]\n\n  if (i_temperature &lt; 18) {\n    paste0(\"Day \", i, \": Cold - Wear a coat!\") |&gt; print()\n  } else if (i_temperature &lt;= 23) {\n    paste0(\"Day \", i, \": Nice - Perfect weather!\") |&gt; print()\n  } else {\n    paste0(\"Day \", i, \": Hot - Stay hydrated!\") |&gt; print()\n  }\n}\n#&gt; [1] \"Day 1: Nice - Perfect weather!\"\n#&gt; [1] \"Day 2: Nice - Perfect weather!\"\n#&gt; [1] \"Day 3: Cold - Wear a coat!\"\n#&gt; [1] \"Day 4: Hot - Stay hydrated!\"\n#&gt; [1] \"Day 5: Cold - Wear a coat!\"\n#&gt; [1] \"Day 6: Nice - Perfect weather!\"\n#&gt; [1] \"Day 7: Hot - Stay hydrated!\""
+    "text": "Exercise (for Loops)\n\n\nExpected output:\ntemperatures &lt;- c(18, 22, 14, 27, 7, 21, 31)\n\n#&gt;\n#&gt; [Your code goes here!]\n#&gt;\n\n#&gt; [1] \"Day 1: Nice - Perfect weather!\"\n#&gt; [1] \"Day 2: Nice - Perfect weather!\"\n#&gt; [1] \"Day 3: Cold - Wear a coat!\"\n#&gt; [1] \"Day 4: Hot - Stay hydrated!\"\n#&gt; [1] \"Day 5: Cold - Wear a coat!\"\n#&gt; [1] \"Day 6: Nice - Perfect weather!\"\n#&gt; [1] \"Day 7: Hot - Stay hydrated!\"\n\n\n\nSolution:\n\nCodetemperatures &lt;- c(18, 22, 14, 27, 7, 21, 31)\n\nfor (i in seq_along(temperatures)) {\n  i_temperature &lt;- temperatures[i]\n\n  if (i_temperature &lt; 18) {\n    paste0(\"Day \", i, \": Cold - Wear a coat!\") |&gt; print()\n  } else if (i_temperature &lt;= 23) {\n    paste0(\"Day \", i, \": Nice - Perfect weather!\") |&gt; print()\n  } else {\n    paste0(\"Day \", i, \": Hot - Stay hydrated!\") |&gt; print()\n  }\n}\n#&gt; [1] \"Day 1: Nice - Perfect weather!\"\n#&gt; [1] \"Day 2: Nice - Perfect weather!\"\n#&gt; [1] \"Day 3: Cold - Wear a coat!\"\n#&gt; [1] \"Day 4: Hot - Stay hydrated!\"\n#&gt; [1] \"Day 5: Cold - Wear a coat!\"\n#&gt; [1] \"Day 6: Nice - Perfect weather!\"\n#&gt; [1] \"Day 7: Hot - Stay hydrated!\""
   },
   {
     "objectID": "index.html#exercise-while-loops",
@@ -508,14 +508,14 @@
     "href": "index.html#exercise-while-loops-2",
     "title": "An Introduction to the R Programming Language",
     "section": "Exercise (while Loops)",
-    "text": "Exercise (while Loops)\n\n\nExpected behavior:\nsecret &lt;- sample(1:100, 1)\nattempts &lt;- 5\ncorrect &lt;- FALSE\n\n#&gt;\n#&gt; [Your code goes here!]\n#&gt;\n\n#&gt; [1] \"You have 5 attempts left.\"\n#&gt; [Enter your guess: 50\n#&gt; [[1] \"Too high! Try again.\"\n#&gt; [[1] \"You have 4 attempts left.\"\n#&gt; [Enter your guess: 30\n#&gt; [[1] \"Too high! Try again.\"\n#&gt; [[1] \"You have 3 attempts left.\"\n#&gt; [Enter your guess: 20\n#&gt; [[1] \"Too high! Try again.\"\n#&gt; [[1] \"You have 2 attempts left.\"\n#&gt; [Enter your guess: 10\n#&gt; [[1] \"Correct! You won!\"\n\n\n\nAnswer:\n\nCodesecret &lt;- sample(1:100, 1)\nattempts &lt;- 5\ncorrect &lt;- FALSE\n\nwhile (attempts &gt; 0 && !correct) {\n  paste(\"You have\", attempts, \"attempts left.\") |&gt; print()\n\n  guess &lt;-\n    readline(prompt = \"Enter your guess: \") |&gt;\n    as.numeric()\n\n  if (guess == secret) {\n    correct &lt;- TRUE\n\n    break\n  } else if (guess &lt; secret) {\n    print(\"Too low! Try again.\")\n  } else {\n    print(\"Too high! Try again.\")\n  }\n\n  attempts &lt;- attempts - 1\n}\n\nif (correct) {\n  print(\"Correct! You won!\")\n} else {\n  print(paste(\"Game over! The secret number was\", secret))\n}\n\n\n\n\n\n15-minute break after this slide."
+    "text": "Exercise (while Loops)\n\n\nExpected behavior:\nsecret &lt;- sample(1:100, 1)\nattempts &lt;- 5\ncorrect &lt;- FALSE\n\n#&gt;\n#&gt; [Your code goes here!]\n#&gt;\n\n#&gt; [1] \"You have 5 attempts left.\"\n#&gt; [Enter your guess: 50\n#&gt; [[1] \"Too high! Try again.\"\n#&gt; [[1] \"You have 4 attempts left.\"\n#&gt; [Enter your guess: 30\n#&gt; [[1] \"Too high! Try again.\"\n#&gt; [[1] \"You have 3 attempts left.\"\n#&gt; [Enter your guess: 20\n#&gt; [[1] \"Too high! Try again.\"\n#&gt; [[1] \"You have 2 attempts left.\"\n#&gt; [Enter your guess: 10\n#&gt; [[1] \"Correct! You won!\"\n\n\n\nSolution:\n\nCodesecret &lt;- sample(1:100, 1)\nattempts &lt;- 5\ncorrect &lt;- FALSE\n\nwhile (attempts &gt; 0 && !correct) {\n  paste(\"You have\", attempts, \"attempts left.\") |&gt; print()\n\n  guess &lt;-\n    readline(prompt = \"Enter your guess: \") |&gt;\n    as.numeric()\n\n  if (guess == secret) {\n    correct &lt;- TRUE\n  } else if (guess &lt; secret) {\n    print(\"Too low! Try again.\")\n  } else {\n    print(\"Too high! Try again.\")\n  }\n\n  attempts &lt;- attempts - 1\n}\n\nif (correct) {\n  print(\"Correct! You won!\")\n} else {\n  print(paste(\"Game over! The secret number was\", secret))\n}\n\n\n\n\n\n15-minute break after this slide."
   },
   {
     "objectID": "index.html#functions",
     "href": "index.html#functions",
     "title": "An Introduction to the R Programming Language",
     "section": "Functions",
-    "text": "Functions\nname &lt;- function(parameter_1, parameter_2, ...) expression\n\n\nThe last evaluated expression is the return value of the function.\n\nfoo &lt;- function(x) {\n  x + 1\n}\n\nfoo(9)\n#&gt; [1] 10\n\n\nShorthand Not./Anonymous Fun. (Introduced in R 4.1.0)\n\nfoo &lt;- function(x) x(9)\n\nfoo(\\(x) x + 1)\n#&gt; [1] 10\n\n\n\n\n\nYou can use return() to return a value before the end of the function, but this is a bad practice.\n\nfoo &lt;- function(x) {\n  return(x + 1)\n\n  \"a\"\n}\n\nfoo(9)\n#&gt; [1] 10"
+    "text": "Functions\nname &lt;- function(parameter_1, parameter_2, ...) expression\n\n\nThe last evaluated expression is the return value of the function.\n\nfoo &lt;- function(x, y = 1) {\n  x + y\n}\n\nfoo(9)\n#&gt; [1] 10\n\n\nShorthand Not./Anonymous Fun. (Introduced in R 4.1.0)\n\nfoo &lt;- function(x) x(9)\n\nfoo(\\(x) x + 1)\n#&gt; [1] 10\n\n\n\n\n\nYou can use return() to return a value before the end of the function, but this is a bad practice.\n\nfoo &lt;- function(x) {\n  return(x + 1)\n\n  \"a\"\n}\n\nfoo(9)\n#&gt; [1] 10"
   },
   {
     "objectID": "index.html#exercise-functions",
@@ -529,21 +529,21 @@
     "href": "index.html#exercise-functions-1",
     "title": "An Introduction to the R Programming Language",
     "section": "Exercise (Functions)",
-    "text": "Exercise (Functions)\nUse is.character() to check if the password is a character string.\n\npassword &lt;- \"mypassword\"\n\n\npassword |&gt; is.character()\n#&gt; [1] TRUE\n\n\nUse nchar() to get the number of characters in the password.\n\npassword |&gt; nchar()\n#&gt; [1] 10\n\n\n\nTip: Similar to nchar(), you can use length() to get the length of a vector.\n\nc(\"a\", \"b\", \"c\") |&gt; length()\n#&gt; [1] 3"
+    "text": "Exercise (Functions)\nUse is.character() to check if the password is a character string.\n\npassword &lt;- \"mypassword\"\n\n\npassword |&gt; is.character()\n#&gt; [1] TRUE\n\n\nUse nchar() to get the number of characters in the password.\n\npassword |&gt; nchar()\n#&gt; [1] 10\n\n\n\nUse stop() to throw an error if the password is invalid.\n\nstop(\"Password must be text\")\n#&gt; Error:\n#&gt;! Password must be text."
   },
   {
     "objectID": "index.html#exercise-functions-2",
     "href": "index.html#exercise-functions-2",
     "title": "An Introduction to the R Programming Language",
     "section": "Exercise (Functions)",
-    "text": "Exercise (Functions)\n\n\nExpected behavior:\n#&gt;\n#&gt; [Your code goes here!]\n#&gt;\n\nvalidate_password(12345678)\n#&gt; [1] \"Password must be text\"\n\nvalidate_password(\"hello\")\n#&gt; [1] \"Password too short\"\n\nvalidate_password(\"hello123\")\n#&gt; [1] \"Valid password\"\n\n\n\nAnswer:\n\nCodevalidate_password &lt;- function(password) {\n  char_count &lt;- nchar(password)\n\n  if (!is.character(password)) {\n    \"Password must be text\"\n  } else if (char_count &lt; 8) {\n    \"Password too short\"\n  } else {\n    \"Valid password\"\n  }\n}\n\nvalidate_password(12345678)\n#&gt; [1] \"Password must be text\"\nvalidate_password(\"hello\")\n#&gt; [1] \"Password too short\"\nvalidate_password(\"hello123\")\n#&gt; [1] \"Valid password\""
+    "text": "Exercise (Functions)\n\n\nExpected behavior:\n#&gt;\n#&gt; [Your code goes here!]\n#&gt;\n\nvalidate_password(12345678)\n#&gt; Error:\n#&gt; ! Password must be text\n\nvalidate_password(\"hello\")\n#&gt; Error:\n#&gt; ! Password too short\n\nvalidate_password(\"hello123\")\n#&gt; [1] \"Valid password\"\n\n\n\nSolution:\n\nCodevalidate_password &lt;- function(password) {\n  if (!is.character(password)) {\n    stop(\"Password must be text\")\n  } else if (nchar(password) &lt; 8) {\n    stop(\"Password too short\")\n  } else {\n    message(\"Valid password\")\n  }\n}\n\nvalidate_password(12345678)\n#&gt; Error:\n#&gt; ! Password must be text\nvalidate_password(\"hello\")\n#&gt; Error:\n#&gt; ! Password too short\nvalidate_password(\"hello123\")\n#&gt; Valid password"
   },
   {
     "objectID": "index.html#functionals",
     "href": "index.html#functionals",
     "title": "An Introduction to the R Programming Language",
     "section": "Functionals",
-    "text": "Functionals\n\n\nA functional is a function that takes a function as an input and returns a vector as output (Wickham, 2019).\nIt makes the programmer’s work easier by applying a function to a vector without needing a loop. These functions are typically written in C (a lower-level programming language), making them very fast.\nR has native functionals (e.g., lapply()), but prefer solutions from the purrr package from Tidyverse.\n\n\n\n\ntriple &lt;- function(x) x * 3\n\n\nwith_for_loop &lt;- function(x) {\n  out &lt;- numeric()\n  for (i in x) out &lt;- c(out, triple(i))\n  out\n}\n\n\nlibrary(purrr)\n\nwith_map &lt;- function(x) map_dbl(x, triple)\n\n\nlibrary(microbenchmark)\n\nmicrobenchmark(\n  with_for_loop(1:1000),\n  with_map(1:1000),\n  times = 100,\n  check = \"equal\"\n)\n#&gt; Unit: microseconds\n#&gt;                   expr      min       lq      mean    median       uq      max\n#&gt;  with_for_loop(1:1000) 1025.271 1192.077 1744.5702 1372.4465 1774.434 6181.526\n#&gt;       with_map(1:1000)  294.428  332.438  408.1934  377.8995  480.336 1083.355\n#&gt;  neval cld\n#&gt;    100  a \n#&gt;    100   b"
+    "text": "Functionals\n\n\nA functional is a function that takes a function as an input and returns a vector as output (Wickham, 2019).\nIt makes the programmer’s work easier by applying a function to a vector without needing a loop. These functions are typically written in C (a lower-level programming language), making them very fast.\nR has native functionals (e.g., lapply()), but prefer solutions from the purrr package from Tidyverse.\n\n\n\n\ntriple &lt;- function(x) x * 3\n\n\nwith_for_loop &lt;- function(x) {\n  out &lt;- numeric()\n  for (i in x) out &lt;- c(out, triple(i))\n  out\n}\n\n\nlibrary(purrr)\n\nwith_map &lt;- function(x) map_dbl(x, triple)\n\n\nlibrary(microbenchmark)\n\nmicrobenchmark(\n  with_for_loop(1:1000),\n  with_map(1:1000),\n  times = 100,\n  check = \"equal\"\n)\n#&gt; Unit: microseconds\n#&gt;                   expr      min        lq      mean   median       uq      max\n#&gt;  with_for_loop(1:1000) 1060.268 1154.4375 1504.8569 1183.226 1213.550 4785.681\n#&gt;       with_map(1:1000)  291.844  326.6315  347.7094  335.973  350.045 1041.476\n#&gt;  neval cld\n#&gt;    100  a \n#&gt;    100   b"
   },
   {
     "objectID": "index.html#exercise-functionals",
@@ -557,7 +557,7 @@
     "href": "index.html#exercise-functions-3",
     "title": "An Introduction to the R Programming Language",
     "section": "Exercise (Functions)",
-    "text": "Exercise (Functions)\n\n\nExpected output:\nlibrary(purrr)\n\ntest_scores &lt;- list(\n  class_a = c(72, 85, 68, 90, 77),\n  class_b = c(65, 70, 62, 75, 68),\n  class_c = c(88, 92, 85, 95, 90)\n)\n\n#&gt;\n#&gt; [Your code goes here!]\n#&gt;\n\n#&gt; $class_a\n#&gt; [1]  84.7  99.0  80.3 104.5  90.2\n#&gt;\n#&gt; $class_b\n#&gt; [1] 77.0 82.5 73.7 88.0 80.3\n#&gt;\n#&gt; $class_c\n#&gt; [1] 102.3 106.7  99.0 110.0 104.5\n\n\n\nAnswer:\n\nCodelibrary(purrr)\n\ntest_scores &lt;- list(\n  class_a = c(72, 85, 68, 90, 77),\n  class_b = c(65, 70, 62, 75, 68),\n  class_c = c(88, 92, 85, 95, 90)\n)\n\ntest_scores |&gt;\n  map(\\(x) x + 5) |&gt;\n  map(\\(x) x * 1.1)\n#&gt; $class_a\n#&gt; [1]  84.7  99.0  80.3 104.5  90.2\n#&gt; \n#&gt; $class_b\n#&gt; [1] 77.0 82.5 73.7 88.0 80.3\n#&gt; \n#&gt; $class_c\n#&gt; [1] 102.3 106.7  99.0 110.0 104.5\n\n\n\n\n\n15-minute break after this slide."
+    "text": "Exercise (Functions)\n\n\nExpected output:\nlibrary(purrr)\n\ntest_scores &lt;- list(\n  class_a = c(72, 85, 68, 90, 77),\n  class_b = c(65, 70, 62, 75, 68),\n  class_c = c(88, 92, 85, 95, 90)\n)\n\n#&gt;\n#&gt; [Your code goes here!]\n#&gt;\n\n#&gt; $class_a\n#&gt; [1]  84.7  99.0  80.3 104.5  90.2\n#&gt;\n#&gt; $class_b\n#&gt; [1] 77.0 82.5 73.7 88.0 80.3\n#&gt;\n#&gt; $class_c\n#&gt; [1] 102.3 106.7  99.0 110.0 104.5\n\n\n\nSolution:\n\nCodelibrary(purrr)\n\ntest_scores &lt;- list(\n  class_a = c(72, 85, 68, 90, 77),\n  class_b = c(65, 70, 62, 75, 68),\n  class_c = c(88, 92, 85, 95, 90)\n)\n\ntest_scores |&gt;\n  map(\\(x) x + 5) |&gt;\n  map(\\(x) x * 1.1)\n#&gt; $class_a\n#&gt; [1]  84.7  99.0  80.3 104.5  90.2\n#&gt; \n#&gt; $class_b\n#&gt; [1] 77.0 82.5 73.7 88.0 80.3\n#&gt; \n#&gt; $class_c\n#&gt; [1] 102.3 106.7  99.0 110.0 104.5\n\n\n\n\n\n15-minute break after this slide."
   },
   {
     "objectID": "index.html#environments",
@@ -620,7 +620,7 @@
     "href": "index.html#best-practices",
     "title": "An Introduction to the R Programming Language",
     "section": "Best Practices",
-    "text": "Best Practices\nYou can learn a lot about a person just by looking at their code 👀.\n\n\nTidyverse Style Guide\n\nVariable and function names should use only lowercase letters, numbers, and _. Use underscores (_) (so called snake case) to separate words within a name.\n\n# Good\nday_one\nday_1\n\n# Bad\nDayOne\ndayone\n\n\n\nTidy Design Principles\nThe tidyverse has four guiding principles:\n\nIt is human centered.\nIt is consistent.\nIt is composable.\nIt is inclusive."
+    "text": "Best Practices\nAlways follow the Tidyverse style guide to write clean and efficient R code:\n\n\nTidyverse Style Guide\n\nVariable and function names should use only lowercase letters, numbers, and _. Use underscores (_) (so called snake case) to separate words within a name.\n\n# Good\nday_one\nday_1\n\n# Bad\nDayOne\ndayone\n\n\n\nTidy Design Principles\nThe tidyverse has four guiding principles:\n\nIt is human centered.\nIt is consistent.\nIt is composable.\nIt is inclusive.\n\n\n\nRed flags for not following best practices.\nYou can learn a lot about a programmer by looking at their code."
   },
   {
     "objectID": "index.html#how-to-learn-more-1",
@@ -931,20 +931,6 @@
     "text": "mutate()\n\nlibrary(dplyr)\n\n\ndata |&gt; glimpse()\n#&gt; Rows: 344\n#&gt; Columns: 8\n#&gt; $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…\n#&gt; $ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adel…\n#&gt; $ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgerse…\n#&gt; $ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, …\n#&gt; $ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, …\n#&gt; $ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186…\n#&gt; $ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, …\n#&gt; $ sex               &lt;fct&gt; male, female, female, NA, female, male, female, male…"
   },
   {
-    "objectID": "index.html#filter",
-    "href": "index.html#filter",
-    "title": "An Introduction to the R Programming Language",
-    "section": "filter()",
-    "text": "filter()\n\n\n\n\n\n(Artwork by Allison Horst)"
-  },
-  {
-    "objectID": "index.html#filter-1",
-    "href": "index.html#filter-1",
-    "title": "An Introduction to the R Programming Language",
-    "section": "filter()",
-    "text": "filter()\nLet’s filter the data to keep only penguins with a body mass greater than 2000 grams and a bill length less than 50 mm.\n\nlibrary(dplyr)\n\n\ndata &lt;-\n  data |&gt;\n  filter(\n    body_mass_g &gt; 2000 | is.na(body_mass_g),\n    bill_length_mm &lt; 60 | is.na(bill_length_mm)\n  )\n\n\ndata |&gt; glimpse()\n#&gt; Rows: 344\n#&gt; Columns: 8\n#&gt; $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…\n#&gt; $ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adel…\n#&gt; $ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgerse…\n#&gt; $ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, …\n#&gt; $ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, …\n#&gt; $ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186…\n#&gt; $ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, …\n#&gt; $ sex               &lt;fct&gt; male, female, female, NA, female, male, female, male…"
-  },
-  {
     "objectID": "index.html#relocate",
     "href": "index.html#relocate",
     "title": "An Introduction to the R Programming Language",
@@ -980,60 +966,116 @@
     "text": "Exporting the Data\n\nAlways save your data in non-binary formats like csv to ensure that it can be read by other software.\nrds stands for R Data Serialization. It is a binary data format that allows you to load an object into R preserving all its attributes.\n\n\nlibrary(here)\nlibrary(readr)\n\n\nif (!dir.exists(here(\"data\"))) dir.create(here(\"data\"))\n\n\ndata |&gt; write_csv(here(\"data\", \"palmerpenguins-valid.csv\"))\n\n\ndata |&gt; write_rds(here(\"data\", \"palmerpenguins-valid.rds\"))\n\n\ntest &lt;- here(\"data\", \"palmerpenguins-valid.rds\") |&gt; read_rds()\n\n\nTip: Store your data in research repositories like The Open Science Framework (See the osfr package). If you are working with sensitive or human data, ensure it is encrypted before storing it in the cloud (See the lockr package)."
   },
   {
+    "objectID": "index.html#other-tools",
+    "href": "index.html#other-tools",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Other Tools",
+    "text": "Other Tools\nYou’ve learned the basic grammar for data manipulation using Tidyverse, but many important tools remain to be covered. The following slides introduce some of them.\nI strongly encourage you to take the time to explore the documentation website of each Tidyverse package to discover more functions that can help you in your data analysis workflow. I guarantee your future self will thank you!\n\nNow that we’ve reconstructed the penguins dataset from the palmerpenguins package, we’ll load the package and use the built-in dataset for the following examples. There’s no need to import the valid data into R."
+  },
+  {
+    "objectID": "index.html#filter",
+    "href": "index.html#filter",
+    "title": "An Introduction to the R Programming Language",
+    "section": "filter()",
+    "text": "filter()\n\n\n\n\n\n(Artwork by Allison Horst)"
+  },
+  {
+    "objectID": "index.html#filter-1",
+    "href": "index.html#filter-1",
+    "title": "An Introduction to the R Programming Language",
+    "section": "filter()",
+    "text": "filter()\nThe filter() function is used to filter rows from a data frame based on specified conditions.\n\nlibrary(dplyr)\nlibrary(palmerpenguins)\n\n\npenguins |&gt;\n  filter(\n    species == \"Adelie\",\n    island %in% c(\"Dream\", \"Torgersen\"),\n    body_mass_g &gt; 4000 | !is.na(body_mass_g),\n    bill_length_mm &lt; 40 | !is.na(bill_length_mm)\n  )\n#&gt; # A tibble: 107 × 8\n#&gt;    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n#&gt;    &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n#&gt;  1 Adelie  Torgersen           39.1          18.7               181        3750\n#&gt;  2 Adelie  Torgersen           39.5          17.4               186        3800\n#&gt;  3 Adelie  Torgersen           40.3          18                 195        3250\n#&gt;  4 Adelie  Torgersen           36.7          19.3               193        3450\n#&gt;  5 Adelie  Torgersen           39.3          20.6               190        3650\n#&gt;  6 Adelie  Torgersen           38.9          17.8               181        3625\n#&gt;  7 Adelie  Torgersen           39.2          19.6               195        4675\n#&gt;  8 Adelie  Torgersen           34.1          18.1               193        3475\n#&gt;  9 Adelie  Torgersen           42            20.2               190        4250\n#&gt; 10 Adelie  Torgersen           37.8          17.1               186        3300\n#&gt; # ℹ 97 more rows\n#&gt; # ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;"
+  },
+  {
+    "objectID": "index.html#exercise-filter",
+    "href": "index.html#exercise-filter",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Exercise (filter)",
+    "text": "Exercise (filter)\nThe dplyr packages provides a dataset called starwars that contains information about characters from the Star Wars universe. Filter the starwars dataset to include only characters who meet the following criteria:\n\nBelong to the species Droid.\nHave a height greater than 100 cm.\nHave a mass less than 150 kg."
+  },
+  {
+    "objectID": "index.html#exercise-filter-1",
+    "href": "index.html#exercise-filter-1",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Exercise (filter)",
+    "text": "Exercise (filter)\n\nlibrary(dplyr)\n\n\nstarwars |&gt; glimpse()\n#&gt; Rows: 87\n#&gt; Columns: 14\n#&gt; $ name       &lt;chr&gt; \"Luke Skywalker\", \"C-3PO\", \"R2-D2\", \"Darth Vader\", \"Leia Or…\n#&gt; $ height     &lt;int&gt; 172, 167, 96, 202, 150, 178, 165, 97, 183, 182, 188, 180, 2…\n#&gt; $ mass       &lt;dbl&gt; 77.0, 75.0, 32.0, 136.0, 49.0, 120.0, 75.0, 32.0, 84.0, 77.…\n#&gt; $ hair_color &lt;chr&gt; \"blond\", NA, NA, \"none\", \"brown\", \"brown, grey\", \"brown\", N…\n#&gt; $ skin_color &lt;chr&gt; \"fair\", \"gold\", \"white, blue\", \"white\", \"light\", \"light\", \"…\n#&gt; $ eye_color  &lt;chr&gt; \"blue\", \"yellow\", \"red\", \"yellow\", \"brown\", \"blue\", \"blue\",…\n#&gt; $ birth_year &lt;dbl&gt; 19.0, 112.0, 33.0, 41.9, 19.0, 52.0, 47.0, NA, 24.0, 57.0, …\n#&gt; $ sex        &lt;chr&gt; \"male\", \"none\", \"none\", \"male\", \"female\", \"male\", \"female\",…\n#&gt; $ gender     &lt;chr&gt; \"masculine\", \"masculine\", \"masculine\", \"masculine\", \"femini…\n#&gt; $ homeworld  &lt;chr&gt; \"Tatooine\", \"Tatooine\", \"Naboo\", \"Tatooine\", \"Alderaan\", \"T…\n#&gt; $ species    &lt;chr&gt; \"Human\", \"Droid\", \"Droid\", \"Human\", \"Human\", \"Human\", \"Huma…\n#&gt; $ films      &lt;list&gt; &lt;\"A New Hope\", \"The Empire Strikes Back\", \"Return of the J…\n#&gt; $ vehicles   &lt;list&gt; &lt;\"Snowspeeder\", \"Imperial Speeder Bike\"&gt;, &lt;&gt;, &lt;&gt;, &lt;&gt;, \"Imp…\n#&gt; $ starships  &lt;list&gt; &lt;\"X-wing\", \"Imperial shuttle\"&gt;, &lt;&gt;, &lt;&gt;, \"TIE Advanced x1\",…"
+  },
+  {
+    "objectID": "index.html#exercise-filter-2",
+    "href": "index.html#exercise-filter-2",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Exercise (filter)",
+    "text": "Exercise (filter)\nSolution:\n\nCodelibrary(dplyr)\n\nstarwars |&gt;\n  filter(\n    species == \"Droid\",\n    height &gt; 100,\n    mass &lt; 150\n  )\n#&gt; # A tibble: 2 × 14\n#&gt;   name  height  mass hair_color skin_color eye_color birth_year sex   gender   \n#&gt;   &lt;chr&gt;  &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;    \n#&gt; 1 C-3PO    167    75 &lt;NA&gt;       gold       yellow           112 none  masculine\n#&gt; 2 IG-88    200   140 none       metal      red               15 none  masculine\n#&gt; # ℹ 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,\n#&gt; #   vehicles &lt;list&gt;, starships &lt;list&gt;"
+  },
+  {
+    "objectID": "index.html#joins",
+    "href": "index.html#joins",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Joins",
+    "text": "Joins\nData analysis typically requires working with multiple data frames that need to be combined to answer your research questions.\n\n\n\n\n\n(Reproduced from Wickham et al. (2023))"
+  },
+  {
+    "objectID": "index.html#joins-1",
+    "href": "index.html#joins-1",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Joins",
+    "text": "Joins\nThese combinations are called joins. There are different types of joins depending on how you want to combine the data frames.\n\n\n\n\n\n(Reproduced from Wickham et al. (2023))"
+  },
+  {
+    "objectID": "index.html#joins-2",
+    "href": "index.html#joins-2",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Joins",
+    "text": "Joins\nA left join retains all rows from x. Each row in x appears in the output, matching with y where possible or with NA values when no match exists.\n\n\n\n\n\n(Reproduced from Wickham et al. (2023))"
+  },
+  {
+    "objectID": "index.html#joins-3",
+    "href": "index.html#joins-3",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Joins",
+    "text": "Joins\n\nx &lt;- tibble(key = 1:3, val_x = c(\"x1\", \"x2\", \"x3\"))\ny &lt;- tibble(key = c(1, 2, 4), val_y = c(\"y1\", \"y2\", \"y3\"))\n\n\nx\n#&gt; # A tibble: 3 × 2\n#&gt;     key val_x\n#&gt;   &lt;int&gt; &lt;chr&gt;\n#&gt; 1     1 x1   \n#&gt; 2     2 x2   \n#&gt; 3     3 x3\n\n\ny\n#&gt; # A tibble: 3 × 2\n#&gt;     key val_y\n#&gt;   &lt;dbl&gt; &lt;chr&gt;\n#&gt; 1     1 y1   \n#&gt; 2     2 y2   \n#&gt; 3     4 y3\n\n\nx |&gt; left_join(y, by = join_by(key))\n#&gt; # A tibble: 3 × 3\n#&gt;     key val_x val_y\n#&gt;   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;\n#&gt; 1     1 x1    y1   \n#&gt; 2     2 x2    y2   \n#&gt; 3     3 x3    &lt;NA&gt;"
+  },
+  {
     "objectID": "index.html#exercise-joins",
     "href": "index.html#exercise-joins",
     "title": "An Introduction to the R Programming Language",
     "section": "Exercise (Joins)",
-    "text": "Exercise (Joins)\nData analysis typically requires working with multiple data frames that need to be combined to answer your research questions.\n\n\n\n\n\n(Reproduced from Wickham et al. (2023))"
+    "text": "Exercise (Joins)\nPerform a join to combine band_members with band_instruments2. These two datasets can be found in the dplyr package.\nUse left_join() and join_by() for this exercise.\n\n\nlibrary(dplyr)\n\n\n\n\n\nband_members\n#&gt; # A tibble: 3 × 2\n#&gt;   name  band   \n#&gt;   &lt;chr&gt; &lt;chr&gt;  \n#&gt; 1 Mick  Stones \n#&gt; 2 John  Beatles\n#&gt; 3 Paul  Beatles\n\n\n\n\n\nband_instruments2\n#&gt; # A tibble: 3 × 2\n#&gt;   artist plays \n#&gt;   &lt;chr&gt;  &lt;chr&gt; \n#&gt; 1 John   guitar\n#&gt; 2 Paul   bass  \n#&gt; 3 Keith  guitar"
   },
   {
     "objectID": "index.html#exercise-joins-1",
     "href": "index.html#exercise-joins-1",
     "title": "An Introduction to the R Programming Language",
     "section": "Exercise (Joins)",
-    "text": "Exercise (Joins)\nThese combinations are called joins. There are different types of joins depending on how you want to combine the data frames.\n\n\n\n\n\n(Reproduced from Wickham et al. (2023))"
+    "text": "Exercise (Joins)\nSolution:\n\nCodelibrary(dplyr)\n\nband_members |&gt;\n  left_join(\n    band_instruments2,\n    join_by(name == artist)\n  )\n#&gt; # A tibble: 3 × 3\n#&gt;   name  band    plays \n#&gt;   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; \n#&gt; 1 Mick  Stones  &lt;NA&gt;  \n#&gt; 2 John  Beatles guitar\n#&gt; 3 Paul  Beatles bass"
   },
   {
-    "objectID": "index.html#exercise-joins-2",
-    "href": "index.html#exercise-joins-2",
+    "objectID": "index.html#pivot",
+    "href": "index.html#pivot",
     "title": "An Introduction to the R Programming Language",
-    "section": "Exercise (Joins)",
-    "text": "Exercise (Joins)\nA left join retains all rows from x. Each row in x appears in the output, matching with y where possible or with NA values when no match exists.\n\n\n\n\n\n(Reproduced from Wickham et al. (2023))"
+    "section": "Pivot",
+    "text": "Pivot\n\n\nOne of the most common issues is data stored in wide format where column names actually represent values of a variable.\n\n\nlibrary(tidyr)\n\n\ntable4b\n#&gt; # A tibble: 3 × 3\n#&gt;   country         `1999`     `2000`\n#&gt;   &lt;chr&gt;            &lt;dbl&gt;      &lt;dbl&gt;\n#&gt; 1 Afghanistan   19987071   20595360\n#&gt; 2 Brazil       172006362  174504898\n#&gt; 3 China       1272915272 1280428583\n\n\n\n\n\n\n\n\n\n\n\n(Artwork by Allison Horst)"
   },
   {
-    "objectID": "index.html#exercise-joins-3",
-    "href": "index.html#exercise-joins-3",
+    "objectID": "index.html#pivot-1",
+    "href": "index.html#pivot-1",
     "title": "An Introduction to the R Programming Language",
-    "section": "Exercise (Joins)",
-    "text": "Exercise (Joins)\nPerform a join to combine band_members with band_instruments2. These two datasets can be found in the dplyr package.\nUse left_join() and join_by() for this exercise.\n\n\nlibrary(dplyr)\n\n\n\n\n\nband_members\n#&gt; # A tibble: 3 × 2\n#&gt;   name  band   \n#&gt;   &lt;chr&gt; &lt;chr&gt;  \n#&gt; 1 Mick  Stones \n#&gt; 2 John  Beatles\n#&gt; 3 Paul  Beatles\n\n\n\n\n\nband_instruments2\n#&gt; # A tibble: 3 × 2\n#&gt;   artist plays \n#&gt;   &lt;chr&gt;  &lt;chr&gt; \n#&gt; 1 John   guitar\n#&gt; 2 Paul   bass  \n#&gt; 3 Keith  guitar"
-  },
-  {
-    "objectID": "index.html#exercise-joins-4",
-    "href": "index.html#exercise-joins-4",
-    "title": "An Introduction to the R Programming Language",
-    "section": "Exercise (Joins)",
-    "text": "Exercise (Joins)\nAnswer:\n\nCodelibrary(dplyr)\n\nband_members |&gt;\n  left_join(\n    band_instruments2,\n    join_by(name == artist)\n  )\n#&gt; # A tibble: 3 × 3\n#&gt;   name  band    plays \n#&gt;   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; \n#&gt; 1 Mick  Stones  &lt;NA&gt;  \n#&gt; 2 John  Beatles guitar\n#&gt; 3 Paul  Beatles bass"
+    "section": "Pivot",
+    "text": "Pivot\ntidyr provides two functions to deal with this kind if issue: pivot_longer() and pivot_wider().\n\nlibrary(tidyr)\n\n\n\n\nrelig_income\n#&gt; # A tibble: 18 × 11\n#&gt;    religion `&lt;$10k` `$10-20k` `$20-30k` `$30-40k` `$40-50k` `$50-75k` `$75-100k`\n#&gt;    &lt;chr&gt;      &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;\n#&gt;  1 Agnostic      27        34        60        81        76       137        122\n#&gt;  2 Atheist       12        27        37        52        35        70         73\n#&gt;  3 Buddhist      27        21        30        34        33        58         62\n#&gt;  4 Catholic     418       617       732       670       638      1116        949\n#&gt;  5 Don’t k…      15        14        15        11        10        35         21\n#&gt;  6 Evangel…     575       869      1064       982       881      1486        949\n#&gt;  7 Hindu          1         9         7         9        11        34         47\n#&gt;  8 Histori…     228       244       236       238       197       223        131\n#&gt;  9 Jehovah…      20        27        24        24        21        30         15\n#&gt; 10 Jewish        19        19        25        25        30        95         69\n#&gt; 11 Mainlin…     289       495       619       655       651      1107        939\n#&gt; 12 Mormon        29        40        48        51        56       112         85\n#&gt; 13 Muslim         6         7         9        10         9        23         16\n#&gt; 14 Orthodox      13        17        23        32        32        47         38\n#&gt; 15 Other C…       9         7        11        13        13        14         18\n#&gt; 16 Other F…      20        33        40        46        49        63         46\n#&gt; 17 Other W…       5         2         3         4         2         7          3\n#&gt; 18 Unaffil…     217       299       374       365       341       528        407\n#&gt; # ℹ 3 more variables: `$100-150k` &lt;dbl&gt;, `&gt;150k` &lt;dbl&gt;,\n#&gt; #   `Don't know/refused` &lt;dbl&gt;\n\n\n\n\n\nrelig_income |&gt;\n  pivot_longer(\n    cols = !religion,\n    names_to = \"income\",\n    values_to = \"count\"\n  )\n#&gt; # A tibble: 180 × 3\n#&gt;    religion income             count\n#&gt;    &lt;chr&gt;    &lt;chr&gt;              &lt;dbl&gt;\n#&gt;  1 Agnostic &lt;$10k                 27\n#&gt;  2 Agnostic $10-20k               34\n#&gt;  3 Agnostic $20-30k               60\n#&gt;  4 Agnostic $30-40k               81\n#&gt;  5 Agnostic $40-50k               76\n#&gt;  6 Agnostic $50-75k              137\n#&gt;  7 Agnostic $75-100k             122\n#&gt;  8 Agnostic $100-150k            109\n#&gt;  9 Agnostic &gt;150k                 84\n#&gt; 10 Agnostic Don't know/refused    96\n#&gt; # ℹ 170 more rows\n\n\n\n(Artwork by Allison Horst)"
   },
   {
     "objectID": "index.html#exercise-pivot",
     "href": "index.html#exercise-pivot",
     "title": "An Introduction to the R Programming Language",
     "section": "Exercise (Pivot)",
-    "text": "Exercise (Pivot)\n\n\nOne of the most common issues is data stored in wide format where column names actually represent values of a variable.\n\nlibrary(tidyr)\n\n\ntable4b\n#&gt; # A tibble: 3 × 3\n#&gt;   country         `1999`     `2000`\n#&gt;   &lt;chr&gt;            &lt;dbl&gt;      &lt;dbl&gt;\n#&gt; 1 Afghanistan   19987071   20595360\n#&gt; 2 Brazil       172006362  174504898\n#&gt; 3 China       1272915272 1280428583\n\n\n\n\n\n\n\n\n\n\n(Artwork by Allison Horst)"
+    "text": "Exercise (Pivot)\nPerform a pivot to transform the table4a dataset, found in the tidyr package, from wide to long format using the pivot_longer() function.\n\nThe table4a dataset displays the number of tuberculosis cases documented by the World Health Organization (WHO) in Afghanistan, Brazil, and China between 1999 and 2000.\n\nlibrary(tidyr)\n\n\ntable4a\n#&gt; # A tibble: 3 × 3\n#&gt;   country     `1999` `2000`\n#&gt;   &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;\n#&gt; 1 Afghanistan    745   2666\n#&gt; 2 Brazil       37737  80488\n#&gt; 3 China       212258 213766"
   },
   {
     "objectID": "index.html#exercise-pivot-1",
     "href": "index.html#exercise-pivot-1",
     "title": "An Introduction to the R Programming Language",
     "section": "Exercise (Pivot)",
-    "text": "Exercise (Pivot)\nPerform a pivot to transform the table4a dataset from wide to long format using the pivot_longer() function from the tidyr package.\n\nThe table4a dataset displays the number of tuberculosis cases documented by the World Health Organization (WHO) in Afghanistan, Brazil, and China between 1999 and 2000.\n\nlibrary(tidyr)\n\n\ntable4a\n#&gt; # A tibble: 3 × 3\n#&gt;   country     `1999` `2000`\n#&gt;   &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;\n#&gt; 1 Afghanistan    745   2666\n#&gt; 2 Brazil       37737  80488\n#&gt; 3 China       212258 213766"
-  },
-  {
-    "objectID": "index.html#exercise-pivot-2",
-    "href": "index.html#exercise-pivot-2",
-    "title": "An Introduction to the R Programming Language",
-    "section": "Exercise (Pivot)",
-    "text": "Exercise (Pivot)\nAnswer:\n\nCodelibrary(tidyr)\n\ntable4a |&gt;\n  pivot_longer(\n    cols = c(`1999`, `2000`),\n    names_to = \"year\",\n    values_to = \"cases\"\n  )\n#&gt; # A tibble: 6 × 3\n#&gt;   country     year   cases\n#&gt;   &lt;chr&gt;       &lt;chr&gt;  &lt;dbl&gt;\n#&gt; 1 Afghanistan 1999     745\n#&gt; 2 Afghanistan 2000    2666\n#&gt; 3 Brazil      1999   37737\n#&gt; 4 Brazil      2000   80488\n#&gt; 5 China       1999  212258\n#&gt; 6 China       2000  213766"
+    "text": "Exercise (Pivot)\nSolution:\n\nCodelibrary(tidyr)\n\ntable4a |&gt;\n  pivot_longer(\n    cols = !country,\n    names_to = \"year\",\n    values_to = \"cases\"\n  )\n#&gt; # A tibble: 6 × 3\n#&gt;   country     year   cases\n#&gt;   &lt;chr&gt;       &lt;chr&gt;  &lt;dbl&gt;\n#&gt; 1 Afghanistan 1999     745\n#&gt; 2 Afghanistan 2000    2666\n#&gt; 3 Brazil      1999   37737\n#&gt; 4 Brazil      2000   80488\n#&gt; 5 China       1999  212258\n#&gt; 6 China       2000  213766"
   },
   {
     "objectID": "index.html#how-to-learn-more-2",
@@ -1043,18 +1085,11 @@
     "text": "How to Learn More\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(Book cover image from Wickham et al. (2023) and van der Loo & Jonge (2018))\n\n\nComment about other important techniques that were not covered in this lesson (e.g., regular expressions, grouping, summarizing).\n\n15-minute break or day end after this slide."
   },
   {
-    "objectID": "index.html#simple-statistics",
-    "href": "index.html#simple-statistics",
+    "objectID": "index.html#glimpse",
+    "href": "index.html#glimpse",
     "title": "An Introduction to the R Programming Language",
-    "section": "Simple Statistics",
-    "text": "Simple Statistics\nThe R packages that come with a typical R installation provide a set of basic statistical functions.\n\nlibrary(dplyr)\nlibrary(palmerpenguins)\n\n\nbill_length_mm &lt;- penguins |&gt; pull(bill_length_mm)\n\n\n\nbill_length_mm |&gt; mean(na.rm = TRUE)\n#&gt; [1] 43.92193\n\n\nbill_length_mm |&gt; sd(na.rm = TRUE)\n#&gt; [1] 5.459584\n\n\nbill_length_mm |&gt; min(na.rm = TRUE)\n#&gt; [1] 32.1\n\n\nbill_length_mm |&gt; median(na.rm = TRUE)\n#&gt; [1] 44.45\n\n\nbill_length_mm |&gt; max(na.rm = TRUE)\n#&gt; [1] 59.6"
-  },
-  {
-    "objectID": "index.html#simple-statistics-1",
-    "href": "index.html#simple-statistics-1",
-    "title": "An Introduction to the R Programming Language",
-    "section": "Simple Statistics",
-    "text": "Simple Statistics\n\nlibrary(dplyr)\nlibrary(palmerpenguins)\n\n\nbill_length_mm &lt;- penguins |&gt; pull(bill_length_mm)\nbill_depth_mm &lt;- penguins |&gt; pull(bill_depth_mm)\n\n\n\nbill_length_mm |&gt; quantile(na.rm = TRUE)\n#&gt;     0%    25%    50%    75%   100% \n#&gt; 32.100 39.225 44.450 48.500 59.600\n\n\nbill_length_mm |&gt; quantile(prob = 0.25, na.rm = TRUE)\n#&gt;    25% \n#&gt; 39.225\n\n\nbill_length_mm |&gt; quantile(prob = 0.75, na.rm = TRUE)\n#&gt;  75% \n#&gt; 48.5\n\n\nbill_length_mm |&gt; sum(na.rm = TRUE)\n#&gt; [1] 15021.3\n\n\nbill_length_mm |&gt; prod(na.rm = TRUE)\n#&gt; [1] Inf\n\n\ncor(bill_length_mm, bill_depth_mm, use = \"complete.obs\")\n#&gt; [1] -0.2350529"
+    "section": "glimpse()",
+    "text": "glimpse()\n\nlibrary(dplyr)\nlibrary(palmerpenguins)\n\n\npenguins |&gt; glimpse()\n#&gt; Rows: 344\n#&gt; Columns: 8\n#&gt; $ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adel…\n#&gt; $ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgerse…\n#&gt; $ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, …\n#&gt; $ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, …\n#&gt; $ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186…\n#&gt; $ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, …\n#&gt; $ sex               &lt;fct&gt; male, female, female, NA, female, male, female, male…\n#&gt; $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…"
   },
   {
     "objectID": "index.html#head-tail",
@@ -1071,53 +1106,172 @@
     "text": "slice_sample()\n\nlibrary(dplyr)\nlibrary(palmerpenguins)\n\n\npenguins |&gt; slice_sample(n = 15)\n#&gt; # A tibble: 15 × 8\n#&gt;    species   island   bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n#&gt;    &lt;fct&gt;     &lt;fct&gt;             &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n#&gt;  1 Gentoo    Biscoe             46.5          14.4               217        4900\n#&gt;  2 Adelie    Dream              40.8          18.4               195        3900\n#&gt;  3 Gentoo    Biscoe             50.5          15.9               225        5400\n#&gt;  4 Chinstrap Dream              50.8          19                 210        4100\n#&gt;  5 Chinstrap Dream              51.3          18.2               197        3750\n#&gt;  6 Chinstrap Dream              45.4          18.7               188        3525\n#&gt;  7 Gentoo    Biscoe             49.8          15.9               229        5950\n#&gt;  8 Adelie    Dream              40.7          17                 190        3725\n#&gt;  9 Chinstrap Dream              50.9          17.9               196        3675\n#&gt; 10 Gentoo    Biscoe             47.8          15                 215        5650\n#&gt; 11 Chinstrap Dream              43.5          18.1               202        3400\n#&gt; 12 Adelie    Biscoe             38.6          17.2               199        3750\n#&gt; 13 Adelie    Dream              37.3          17.8               191        3350\n#&gt; 14 Adelie    Torgers…           39            17.1               191        3050\n#&gt; 15 Adelie    Dream              42.3          21.2               191        4150\n#&gt; # ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;"
   },
   {
-    "objectID": "index.html#glimpse",
-    "href": "index.html#glimpse",
+    "objectID": "index.html#unique",
+    "href": "index.html#unique",
     "title": "An Introduction to the R Programming Language",
-    "section": "glimpse()",
-    "text": "glimpse()\n\nlibrary(dplyr)\nlibrary(palmerpenguins)\n\n\npenguins |&gt; glimpse()\n#&gt; Rows: 344\n#&gt; Columns: 8\n#&gt; $ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adel…\n#&gt; $ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgerse…\n#&gt; $ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, …\n#&gt; $ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, …\n#&gt; $ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186…\n#&gt; $ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, …\n#&gt; $ sex               &lt;fct&gt; male, female, female, NA, female, male, female, male…\n#&gt; $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…"
+    "section": "unique",
+    "text": "unique\n\nlibrary(dplyr)\nlibrary(palmerpenguins)\n\n\npenguins |&gt;\n  pull(species) |&gt;\n  unique()\n#&gt; [1] Adelie    Gentoo    Chinstrap\n#&gt; Levels: Adelie Chinstrap Gentoo\n\n\npenguins |&gt;\n  pull(island) |&gt;\n  unique()\n#&gt; [1] Torgersen Biscoe    Dream    \n#&gt; Levels: Biscoe Dream Torgersen\n\n\npenguins |&gt;\n  pull(sex) |&gt;\n  unique()\n#&gt; [1] male   female &lt;NA&gt;  \n#&gt; Levels: female male"
   },
   {
     "objectID": "index.html#count",
     "href": "index.html#count",
     "title": "An Introduction to the R Programming Language",
     "section": "count()",
-    "text": "count()\n\nlibrary(dplyr)\nlibrary(palmerpenguins)\n\n\npenguins |&gt; count(species, island, .drop = FALSE)\n#&gt; # A tibble: 9 × 3\n#&gt;   species   island        n\n#&gt;   &lt;fct&gt;     &lt;fct&gt;     &lt;int&gt;\n#&gt; 1 Adelie    Biscoe       44\n#&gt; 2 Adelie    Dream        56\n#&gt; 3 Adelie    Torgersen    52\n#&gt; 4 Chinstrap Biscoe        0\n#&gt; 5 Chinstrap Dream        68\n#&gt; 6 Chinstrap Torgersen     0\n#&gt; 7 Gentoo    Biscoe      124\n#&gt; 8 Gentoo    Dream         0\n#&gt; 9 Gentoo    Torgersen     0"
+    "text": "count()\n\nlibrary(dplyr)\nlibrary(palmerpenguins)\n\n\npenguins |&gt;\n  count(species, island, .drop = FALSE)\n#&gt; # A tibble: 9 × 3\n#&gt;   species   island        n\n#&gt;   &lt;fct&gt;     &lt;fct&gt;     &lt;int&gt;\n#&gt; 1 Adelie    Biscoe       44\n#&gt; 2 Adelie    Dream        56\n#&gt; 3 Adelie    Torgersen    52\n#&gt; 4 Chinstrap Biscoe        0\n#&gt; 5 Chinstrap Dream        68\n#&gt; 6 Chinstrap Torgersen     0\n#&gt; 7 Gentoo    Biscoe      124\n#&gt; 8 Gentoo    Dream         0\n#&gt; 9 Gentoo    Torgersen     0"
+  },
+  {
+    "objectID": "index.html#count-1",
+    "href": "index.html#count-1",
+    "title": "An Introduction to the R Programming Language",
+    "section": "count()",
+    "text": "count()\n\nlibrary(dplyr)\nlibrary(magrittr)\nlibrary(palmerpenguins)\n\n\npenguins |&gt;\n  count(species, island, .drop = FALSE) |&gt;\n  mutate(\n    n_cum = cumsum(n),\n    n_per = n |&gt;\n      divide_by(sum(n)) |&gt;\n      multiply_by(100) |&gt;\n      round(3),\n    n_per_cum = n_per |&gt; cumsum()\n  )\n#&gt; # A tibble: 9 × 6\n#&gt;   species   island        n n_cum n_per n_per_cum\n#&gt;   &lt;fct&gt;     &lt;fct&gt;     &lt;int&gt; &lt;int&gt; &lt;dbl&gt;     &lt;dbl&gt;\n#&gt; 1 Adelie    Biscoe       44    44  12.8      12.8\n#&gt; 2 Adelie    Dream        56   100  16.3      29.1\n#&gt; 3 Adelie    Torgersen    52   152  15.1      44.2\n#&gt; 4 Chinstrap Biscoe        0   152   0        44.2\n#&gt; 5 Chinstrap Dream        68   220  19.8      64.0\n#&gt; 6 Chinstrap Torgersen     0   220   0        64.0\n#&gt; 7 Gentoo    Biscoe      124   344  36.0     100  \n#&gt; 8 Gentoo    Dream         0   344   0       100  \n#&gt; 9 Gentoo    Torgersen     0   344   0       100"
+  },
+  {
+    "objectID": "index.html#statistics",
+    "href": "index.html#statistics",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Statistics",
+    "text": "Statistics\nThe R packages that come with a typical R installation provide a set of basic statistical functions.\n\nlibrary(dplyr)\nlibrary(palmerpenguins)\n\n\nbill_length_mm &lt;- penguins |&gt; pull(bill_length_mm)\n\n\n\nbill_length_mm |&gt; mean(na.rm = TRUE)\n#&gt; [1] 43.92193\n\n\nbill_length_mm |&gt; var(na.rm = TRUE)\n#&gt; [1] 29.80705\n\n\nbill_length_mm |&gt; sd(na.rm = TRUE)\n#&gt; [1] 5.459584\n\n\nbill_length_mm |&gt; min(na.rm = TRUE)\n#&gt; [1] 32.1\n\n\nbill_length_mm |&gt; max(na.rm = TRUE)\n#&gt; [1] 59.6\n\n\n\nbill_length_mm |&gt; range(na.rm = TRUE)\n#&gt; [1] 32.1 59.6"
+  },
+  {
+    "objectID": "index.html#statistics-1",
+    "href": "index.html#statistics-1",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Statistics",
+    "text": "Statistics\n\nlibrary(dplyr)\nlibrary(palmerpenguins)\n\n\nbill_length_mm &lt;- penguins |&gt; pull(bill_length_mm)\n\n\n\nbill_length_mm |&gt; quantile(na.rm = TRUE)\n#&gt;     0%    25%    50%    75%   100% \n#&gt; 32.100 39.225 44.450 48.500 59.600\n\n\nbill_length_mm |&gt; quantile(prob = 0.25, na.rm = TRUE)\n#&gt;    25% \n#&gt; 39.225\n\n\nbill_length_mm |&gt; median(na.rm = TRUE)\n#&gt; [1] 44.45\n\n\nbill_length_mm |&gt; quantile(prob = 0.75, na.rm = TRUE)\n#&gt;  75% \n#&gt; 48.5\n\n\nbill_length_mm |&gt; IQR(na.rm = TRUE)\n#&gt; [1] 9.275"
+  },
+  {
+    "objectID": "index.html#statistics-2",
+    "href": "index.html#statistics-2",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Statistics",
+    "text": "Statistics\nFor skewness and kurtosis, use the moments package.\n\nlibrary(dplyr)\nlibrary(moments)\nlibrary(palmerpenguins)\n\n\nbill_length_mm &lt;- penguins |&gt; pull(bill_length_mm)\nbill_depth_mm &lt;- penguins |&gt; pull(bill_depth_mm)\n\n\n\nbill_length_mm |&gt; skewness(na.rm = TRUE)\n#&gt; [1] 0.05288481\n\n\nbill_length_mm |&gt; kurtosis(na.rm = TRUE)\n#&gt; [1] 2.119235\n\n\nbill_length_mm |&gt; sum(na.rm = TRUE)\n#&gt; [1] 15021.3\n\n\nbill_length_mm |&gt; prod(na.rm = TRUE)\n#&gt; [1] Inf\n\n\ncor(bill_length_mm, bill_depth_mm, use = \"complete.obs\")\n#&gt; [1] -0.2350529"
   },
   {
     "objectID": "index.html#summarize",
     "href": "index.html#summarize",
     "title": "An Introduction to the R Programming Language",
     "section": "summarize()",
-    "text": "summarize()\n\nlibrary(dplyr)\nlibrary(palmerpenguins)\n\n\npenguins |&gt;\n  summarize(\n    mean = mean(flipper_length_mm, na.rm = TRUE),\n    sd = sd(flipper_length_mm, na.rm = TRUE),\n    .by = species\n  )\n#&gt; # A tibble: 3 × 3\n#&gt;   species    mean    sd\n#&gt;   &lt;fct&gt;     &lt;dbl&gt; &lt;dbl&gt;\n#&gt; 1 Adelie     190.  6.54\n#&gt; 2 Gentoo     217.  6.48\n#&gt; 3 Chinstrap  196.  7.13"
+    "text": "summarize()\n\nlibrary(dplyr)\nlibrary(palmerpenguins)\n\n\npenguins |&gt;\n  summarize(\n    n = n(),\n    mean_body_mass_g = mean(body_mass_g, na.rm = TRUE),\n    mean_bill_length_mm = mean(bill_length_mm, na.rm = TRUE),\n    mean_bill_depth_mm = mean(bill_depth_mm, na.rm = TRUE),\n    mean_flipper_length_mm = mean(flipper_length_mm, na.rm = TRUE),\n    .by = c(\"species\", \"sex\")\n  )\n#&gt; # A tibble: 8 × 7\n#&gt;   species   sex        n mean_body_mass_g mean_bill_length_mm mean_bill_depth_mm\n#&gt;   &lt;fct&gt;     &lt;fct&gt;  &lt;int&gt;            &lt;dbl&gt;               &lt;dbl&gt;              &lt;dbl&gt;\n#&gt; 1 Adelie    male      73            4043.                40.4               19.1\n#&gt; 2 Adelie    female    73            3369.                37.3               17.6\n#&gt; 3 Adelie    &lt;NA&gt;       6            3540                 37.8               18.3\n#&gt; 4 Gentoo    female    58            4680.                45.6               14.2\n#&gt; 5 Gentoo    male      61            5485.                49.5               15.7\n#&gt; 6 Gentoo    &lt;NA&gt;       5            4588.                45.6               14.6\n#&gt; 7 Chinstrap female    34            3527.                46.6               17.6\n#&gt; 8 Chinstrap male      34            3939.                51.1               19.3\n#&gt; # ℹ 1 more variable: mean_flipper_length_mm &lt;dbl&gt;"
+  },
+  {
+    "objectID": "index.html#exercise-summarize",
+    "href": "index.html#exercise-summarize",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Exercise (summarize)",
+    "text": "Exercise (summarize)\nCreate a comprehensive species profile for the Palmer Penguins dataset. For each penguin species, calculate:\n\n\n\nNumber of individuals observed.\nNumber of islands they inhabit.\nMean body mass (in grams).\nMean bill length (in mm).\nMean flipper length (in mm).\n\n\n\n\nAll of this information should be generated in a single, elegant operation.\n\npenguins |&gt;\n  summarize(\n    #&gt; [Your code goes here!]\n  )"
+  },
+  {
+    "objectID": "index.html#exercise-summarize-1",
+    "href": "index.html#exercise-summarize-1",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Exercise (summarize)",
+    "text": "Exercise (summarize)\nUse n() to count the number of observations.\n\nlibrary(dplyr)\n\n\nletters\n#&gt;  [1] \"a\" \"b\" \"c\" \"d\" \"e\" \"f\" \"g\" \"h\" \"i\" \"j\" \"k\" \"l\" \"m\" \"n\" \"o\" \"p\" \"q\" \"r\" \"s\"\n#&gt; [20] \"t\" \"u\" \"v\" \"w\" \"x\" \"y\" \"z\"\n\n\ntibble(a = letters) |&gt;\n  summarize(n = n())\n#&gt; # A tibble: 1 × 1\n#&gt;       n\n#&gt;   &lt;int&gt;\n#&gt; 1    26\n\n\nUse n_distinct() to count the number of unique values.\n\nlibrary(dplyr)\n\n\nc(\"a\", \"b\", \"b\", \"a\") |&gt; n_distinct()\n#&gt; [1] 2"
+  },
+  {
+    "objectID": "index.html#exercise-summarize-2",
+    "href": "index.html#exercise-summarize-2",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Exercise (summarize)",
+    "text": "Exercise (summarize)\nSolution:\n\nCodepenguins |&gt;\n  summarize(\n    n = n(),\n    n_islands = n_distinct(island),\n    mean_body_mass_g = mean(body_mass_g, na.rm = TRUE),\n    mean_bill_length_mm = mean(bill_length_mm, na.rm = TRUE),\n    mean_flipper_length_mm = mean(flipper_length_mm, na.rm = TRUE),\n    .by = \"species\"\n  )\n#&gt; # A tibble: 3 × 6\n#&gt;   species       n n_islands mean_body_mass_g mean_bill_length_mm\n#&gt;   &lt;fct&gt;     &lt;int&gt;     &lt;int&gt;            &lt;dbl&gt;               &lt;dbl&gt;\n#&gt; 1 Adelie      152         3            3701.                38.8\n#&gt; 2 Gentoo      124         1            5076.                47.5\n#&gt; 3 Chinstrap    68         1            3733.                48.8\n#&gt; # ℹ 1 more variable: mean_flipper_length_mm &lt;dbl&gt;"
   },
   {
     "objectID": "index.html#the-summarytools-package",
     "href": "index.html#the-summarytools-package",
     "title": "An Introduction to the R Programming Language",
     "section": "The summarytools Package",
-    "text": "The summarytools Package\n\n\n\nA simple package for descriptive statistics.\n\n\nlibrary(palmerpenguins)\nlibrary(summarytools)\n\n\npenguins |&gt; descr(bill_depth_mm)\n#&gt; Descriptive Statistics  \n#&gt; penguins  \n#&gt; N: 344  \n#&gt; \n#&gt;                     bill_depth_mm\n#&gt; ----------------- ---------------\n#&gt;              Mean           17.15\n#&gt;           Std.Dev            1.97\n#&gt;               Min           13.10\n#&gt;                Q1           15.60\n#&gt;            Median           17.30\n#&gt;                Q3           18.70\n#&gt;               Max           21.50\n#&gt;               MAD            2.22\n#&gt;               IQR            3.10\n#&gt;                CV            0.12\n#&gt;          Skewness           -0.14\n#&gt;       SE.Skewness            0.13\n#&gt;          Kurtosis           -0.92\n#&gt;           N.Valid          342.00\n#&gt;                 N          344.00\n#&gt;         Pct.Valid           99.42"
+    "text": "The summarytools Package\n\n\n\n\nThe summarytools package makes it easy to create frequency and descriptive statistics tables for single variables with minimal code.\ninstall.packages(\"gtsummary\")\n\n\nlibrary(palmerpenguins)\nlibrary(summarytools)\n\n\n\n\npenguins |&gt; freq(var = species, round.digits = 3)\n#&gt; Frequencies  \n#&gt; penguins$species  \n#&gt; Type: Factor  \n#&gt; \n#&gt;                   Freq   % Valid   % Valid Cum.   % Total   % Total Cum.\n#&gt; --------------- ------ --------- -------------- --------- --------------\n#&gt;          Adelie    152    44.186         44.186    44.186         44.186\n#&gt;       Chinstrap     68    19.767         63.953    19.767         63.953\n#&gt;          Gentoo    124    36.047        100.000    36.047        100.000\n#&gt;            &lt;NA&gt;      0                              0.000        100.000\n#&gt;           Total    344   100.000        100.000   100.000        100.000\n\n\n\n\n\npenguins |&gt; descr(var = bill_depth_mm, round.digits = 3)\n#&gt; Descriptive Statistics  \n#&gt; penguins  \n#&gt; N: 344  \n#&gt; \n#&gt;                     bill_depth_mm\n#&gt; ----------------- ---------------\n#&gt;              Mean          17.151\n#&gt;           Std.Dev           1.975\n#&gt;               Min          13.100\n#&gt;                Q1          15.600\n#&gt;            Median          17.300\n#&gt;                Q3          18.700\n#&gt;               Max          21.500\n#&gt;               MAD           2.224\n#&gt;               IQR           3.100\n#&gt;                CV           0.115\n#&gt;          Skewness          -0.142\n#&gt;       SE.Skewness           0.132\n#&gt;          Kurtosis          -0.923\n#&gt;           N.Valid         342.000\n#&gt;                 N         344.000\n#&gt;         Pct.Valid          99.419"
   },
   {
-    "objectID": "index.html#the-janitor-package-1",
-    "href": "index.html#the-janitor-package-1",
+    "objectID": "index.html#summarize-approach",
+    "href": "index.html#summarize-approach",
     "title": "An Introduction to the R Programming Language",
-    "section": "The janitor Package",
-    "text": "The janitor Package\n\n\n\n\nThe tabyl system from the janitor package provides more control over the output compared to the summarytools package.\n\n\n\nCodelibrary(janitor)\nlibrary(knitr)\nlibrary(palmerpenguins)\n\npenguins |&gt;\n  tabyl(island, species) |&gt;\n  adorn_totals(c(\"row\", \"col\")) |&gt;\n  adorn_percentages(\"row\") |&gt;\n  adorn_pct_formatting(rounding = \"half up\", digits = 0) |&gt;\n  adorn_ns() |&gt;\n  kable()\n\n\n\nisland\nAdelie\nChinstrap\nGentoo\nTotal\n\n\n\nBiscoe\n26% (44)\n0% (0)\n74% (124)\n100% (168)\n\n\nDream\n45% (56)\n55% (68)\n0% (0)\n100% (124)\n\n\nTorgersen\n100% (52)\n0% (0)\n0% (0)\n100% (52)\n\n\nTotal\n44% (152)\n20% (68)\n36% (124)\n100% (344)"
+    "section": "\nsummarize() Approach",
+    "text": "summarize() Approach\nIf you need more control over the descriptive statistics, then you will need to use summarize().\n\n\n\nstats_summary &lt;- function(x) {\n  penguins |&gt;\n  summarize(\n    n = n(),\n    n_valid = .data[[x]] |&gt;\n      magrittr::extract(!is.na(.data[[x]])) |&gt;\n      length(),\n    n_valid_per = n_valid |&gt; # == (n_valid / n) * 100\n      divide_by(n) |&gt;\n      multiply_by(100),\n    mean = .data[[x]] |&gt; mean(na.rm = TRUE),\n    var = .data[[x]] |&gt; var(na.rm = TRUE),\n    sd = .data[[x]] |&gt; sd(na.rm = TRUE),\n    min = .data[[x]] |&gt; min(na.rm = TRUE),\n    quartile_1 = .data[[x]] |&gt; quantile(prob = 0.25, na.rm = TRUE),\n    median = .data[[x]] |&gt; median(na.rm = TRUE),\n    quartile_3 = .data[[x]] |&gt; quantile(prob = 0.75, na.rm = TRUE),\n    max = .data[[x]] |&gt; max(na.rm = TRUE),\n    iqr = .data[[x]] |&gt; IQR(na.rm = TRUE),\n    range = .data[[x]] |&gt; range(na.rm = TRUE) |&gt; diff(),\n    skewness = .data[[x]] |&gt; skewness(na.rm = TRUE),\n    kurtosis = .data[[x]] |&gt; kurtosis(na.rm = TRUE),\n    .by = species\n  ) |&gt;\n  pivot_longer(\n    cols = -species,\n    names_to = \"statistic\",\n    values_to = \"value\"\n  ) |&gt;\n  pivot_wider(\n    names_from = species,\n    values_from = value\n  )\n}\n\n\n\n\n\nstats_summary(\"bill_length_mm\")\n#&gt; # A tibble: 15 × 4\n#&gt;    statistic    Adelie  Gentoo Chinstrap\n#&gt;    &lt;chr&gt;         &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;\n#&gt;  1 n           152     124       68     \n#&gt;  2 n_valid     151     123       68     \n#&gt;  3 n_valid_per  99.3    99.2    100     \n#&gt;  4 mean         38.8    47.5     48.8   \n#&gt;  5 var           7.09    9.50    11.2   \n#&gt;  6 sd            2.66    3.08     3.34  \n#&gt;  7 min          32.1    40.9     40.9   \n#&gt;  8 quartile_1   36.8    45.3     46.3   \n#&gt;  9 median       38.8    47.3     49.6   \n#&gt; 10 quartile_3   40.8    49.6     51.1   \n#&gt; 11 max          46      59.6     58     \n#&gt; 12 iqr           4       4.25     4.73  \n#&gt; 13 range        13.9    18.7     17.1   \n#&gt; 14 skewness      0.160   0.643   -0.0886\n#&gt; 15 kurtosis      2.81    4.20     2.95"
+  },
+  {
+    "objectID": "index.html#the-grammar-of-tables",
+    "href": "index.html#the-grammar-of-tables",
+    "title": "An Introduction to the R Programming Language",
+    "section": "The Grammar of Tables",
+    "text": "The Grammar of Tables\n\n\n\nThe gt package is the most powerful package for creating and customizing tables in R.\nIt provides a flexible grammar for table creation and styling."
   },
   {
     "objectID": "index.html#the-gt-package",
     "href": "index.html#the-gt-package",
     "title": "An Introduction to the R Programming Language",
     "section": "The gt Package",
-    "text": "The gt Package\n\n\n\nThe most powerful package for creating and customizing tables in R.\nIt provides a flexible grammar for table creation and styling."
+    "text": "The gt Package\n\nlibrary(dplyr)\nlibrary(gt)\nlibrary(palmerpenguins)\nlibrary(stringr)\n\n\npenguins_summary &lt;-\n  penguins |&gt;\n  filter(!is.na(sex)) |&gt;\n  summarize(\n    n = n(),\n    mean_body_mass_g = mean(body_mass_g, na.rm = TRUE),\n    mean_bill_length_mm = mean(bill_length_mm, na.rm = TRUE),\n    mean_flipper_length_mm = mean(flipper_length_mm, na.rm = TRUE),\n    .by = c(\"species\", \"sex\")\n  ) |&gt;\n  mutate(sex = sex |&gt; str_to_title()) |&gt;\n  arrange(species, sex)"
   },
   {
-    "objectID": "index.html#exercise",
-    "href": "index.html#exercise",
+    "objectID": "index.html#the-gt-package-1",
+    "href": "index.html#the-gt-package-1",
     "title": "An Introduction to the R Programming Language",
-    "section": "Exercise",
-    "text": "Exercise\n\n\n15-minute break after this slide."
+    "section": "The gt Package",
+    "text": "The gt Package\n\npenguins_summary\n#&gt; # A tibble: 6 × 6\n#&gt;   species   sex        n mean_body_mass_g mean_bill_length_mm\n#&gt;   &lt;fct&gt;     &lt;chr&gt;  &lt;int&gt;            &lt;dbl&gt;               &lt;dbl&gt;\n#&gt; 1 Adelie    Female    73            3369.                37.3\n#&gt; 2 Adelie    Male      73            4043.                40.4\n#&gt; 3 Chinstrap Female    34            3527.                46.6\n#&gt; 4 Chinstrap Male      34            3939.                51.1\n#&gt; 5 Gentoo    Female    58            4680.                45.6\n#&gt; 6 Gentoo    Male      61            5485.                49.5\n#&gt; # ℹ 1 more variable: mean_flipper_length_mm &lt;dbl&gt;"
+  },
+  {
+    "objectID": "index.html#its-all-about-layers",
+    "href": "index.html#its-all-about-layers",
+    "title": "An Introduction to the R Programming Language",
+    "section": "It’s All About Layers",
+    "text": "It’s All About Layers\n\nCodepenguin_table &lt;-\n  penguins_summary |&gt;\n  gt(groupname_col = \"species\") |&gt;\n  cols_label(\n    sex = \"Sex\",\n    n = \"N\",\n    mean_body_mass_g = \"Body Mass (g)\",\n    mean_bill_length_mm = \"Bill Length (mm)\",\n    mean_flipper_length_mm = \"Flipper Length (mm)\"\n  )\n\npenguin_table\n\n\n\n\n\nSex\nN\nBody Mass (g)\nBill Length (mm)\nFlipper Length (mm)\n\n\n\nAdelie\n\n\nFemale\n73\n3368.836\n37.25753\n187.7945\n\n\nMale\n73\n4043.493\n40.39041\n192.4110\n\n\nChinstrap\n\n\nFemale\n34\n3527.206\n46.57353\n191.7353\n\n\nMale\n34\n3938.971\n51.09412\n199.9118\n\n\nGentoo\n\n\nFemale\n58\n4679.741\n45.56379\n212.7069\n\n\nMale\n61\n5484.836\n49.47377\n221.5410"
+  },
+  {
+    "objectID": "index.html#its-all-about-layers-1",
+    "href": "index.html#its-all-about-layers-1",
+    "title": "An Introduction to the R Programming Language",
+    "section": "It’s All About Layers",
+    "text": "It’s All About Layers\n\nCodepenguin_table &lt;-\n  penguin_table |&gt;\n  tab_header(\n    title = md(\"**Antarctic Penguin Characteristics**\"),\n    subtitle = \"Comparison between species and sexes\"\n  )\n\npenguin_table\n\n\n\n\n\n\nAntarctic Penguin Characteristics\n\n\nComparison between species and sexes\n\n\nSex\nN\nBody Mass (g)\nBill Length (mm)\nFlipper Length (mm)\n\n\n\n\nAdelie\n\n\nFemale\n73\n3368.836\n37.25753\n187.7945\n\n\nMale\n73\n4043.493\n40.39041\n192.4110\n\n\nChinstrap\n\n\nFemale\n34\n3527.206\n46.57353\n191.7353\n\n\nMale\n34\n3938.971\n51.09412\n199.9118\n\n\nGentoo\n\n\nFemale\n58\n4679.741\n45.56379\n212.7069\n\n\nMale\n61\n5484.836\n49.47377\n221.5410"
+  },
+  {
+    "objectID": "index.html#its-all-about-layers-2",
+    "href": "index.html#its-all-about-layers-2",
+    "title": "An Introduction to the R Programming Language",
+    "section": "It’s All About Layers",
+    "text": "It’s All About Layers\n\nCodepenguin_table &lt;-\n  penguin_table |&gt;\n  fmt_number(\n    columns = starts_with(\"mean\"),\n    decimals = 2\n  )\n\npenguin_table\n\n\n\n\n\n\nAntarctic Penguin Characteristics\n\n\nComparison between species and sexes\n\n\nSex\nN\nBody Mass (g)\nBill Length (mm)\nFlipper Length (mm)\n\n\n\n\nAdelie\n\n\nFemale\n73\n3,368.84\n37.26\n187.79\n\n\nMale\n73\n4,043.49\n40.39\n192.41\n\n\nChinstrap\n\n\nFemale\n34\n3,527.21\n46.57\n191.74\n\n\nMale\n34\n3,938.97\n51.09\n199.91\n\n\nGentoo\n\n\nFemale\n58\n4,679.74\n45.56\n212.71\n\n\nMale\n61\n5,484.84\n49.47\n221.54"
+  },
+  {
+    "objectID": "index.html#its-all-about-layers-3",
+    "href": "index.html#its-all-about-layers-3",
+    "title": "An Introduction to the R Programming Language",
+    "section": "It’s All About Layers",
+    "text": "It’s All About Layers\n\nCodepenguin_table &lt;-\n  penguin_table |&gt;\n  data_color(\n    columns = mean_body_mass_g,\n    palette = \"Blues\"\n  )\n\npenguin_table\n\n\n\n\n\n\nAntarctic Penguin Characteristics\n\n\nComparison between species and sexes\n\n\nSex\nN\nBody Mass (g)\nBill Length (mm)\nFlipper Length (mm)\n\n\n\n\nAdelie\n\n\nFemale\n73\n3,368.84\n37.26\n187.79\n\n\nMale\n73\n4,043.49\n40.39\n192.41\n\n\nChinstrap\n\n\nFemale\n34\n3,527.21\n46.57\n191.74\n\n\nMale\n34\n3,938.97\n51.09\n199.91\n\n\nGentoo\n\n\nFemale\n58\n4,679.74\n45.56\n212.71\n\n\nMale\n61\n5,484.84\n49.47\n221.54"
+  },
+  {
+    "objectID": "index.html#its-all-about-layers-4",
+    "href": "index.html#its-all-about-layers-4",
+    "title": "An Introduction to the R Programming Language",
+    "section": "It’s All About Layers",
+    "text": "It’s All About Layers\n\nCodepenguin_table &lt;-\n  penguin_table |&gt;\n  tab_source_note(\n    source_note = \"Source: Palmer Station LTER / palmerpenguins package\"\n  ) |&gt;\n  tab_footnote(\n    footnote = \"Averages calculated after removing missing values\",\n    locations = cells_column_labels(columns = starts_with(\"mean\"))\n  )\n\npenguin_table\n\n\n\n\n\n\nAntarctic Penguin Characteristics\n\n\nComparison between species and sexes\n\n\nSex\nN\nBody Mass (g)1\n\nBill Length (mm)1\n\nFlipper Length (mm)1\n\n\n\n\n\nAdelie\n\n\nFemale\n73\n3,368.84\n37.26\n187.79\n\n\nMale\n73\n4,043.49\n40.39\n192.41\n\n\nChinstrap\n\n\nFemale\n34\n3,527.21\n46.57\n191.74\n\n\nMale\n34\n3,938.97\n51.09\n199.91\n\n\nGentoo\n\n\nFemale\n58\n4,679.74\n45.56\n212.71\n\n\nMale\n61\n5,484.84\n49.47\n221.54\n\n\n\n\n\n1 Averages calculated after removing missing values\n\n\nSource: Palmer Station LTER / palmerpenguins package"
+  },
+  {
+    "objectID": "index.html#its-all-about-layers-5",
+    "href": "index.html#its-all-about-layers-5",
+    "title": "An Introduction to the R Programming Language",
+    "section": "It’s All About Layers",
+    "text": "It’s All About Layers\n\nCodepenguin_table &lt;-\n  penguin_table |&gt;\n  tab_style(\n    style = cell_fill(color = \"#E8F4F8\"),\n    locations = cells_row_groups()\n  ) |&gt;\n  tab_style(\n    style = cell_text(weight = \"bold\", size = px(18)),\n    locations = cells_title(groups = \"title\")\n  ) |&gt;\n  tab_options(\n    table.border.top.style = \"solid\",\n    table.border.bottom.style = \"solid\",\n    heading.border.bottom.style = \"solid\",\n    column_labels.border.bottom.style = \"solid\",\n    row_group.border.top.style = \"solid\",\n    row_group.border.bottom.style = \"solid\"\n  )\n\npenguin_table\n\n\n\n\n\n\nAntarctic Penguin Characteristics\n\n\nComparison between species and sexes\n\n\nSex\nN\nBody Mass (g)1\n\nBill Length (mm)1\n\nFlipper Length (mm)1\n\n\n\n\n\nAdelie\n\n\nFemale\n73\n3,368.84\n37.26\n187.79\n\n\nMale\n73\n4,043.49\n40.39\n192.41\n\n\nChinstrap\n\n\nFemale\n34\n3,527.21\n46.57\n191.74\n\n\nMale\n34\n3,938.97\n51.09\n199.91\n\n\nGentoo\n\n\nFemale\n58\n4,679.74\n45.56\n212.71\n\n\nMale\n61\n5,484.84\n49.47\n221.54\n\n\n\n\n\n1 Averages calculated after removing missing values\n\n\nSource: Palmer Station LTER / palmerpenguins package"
+  },
+  {
+    "objectID": "index.html#exercise-gt",
+    "href": "index.html#exercise-gt",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Exercise (gt)",
+    "text": "Exercise (gt)\nUsing the starwars dataset from the dplyr package, create a summary table that displays the mean height and mass of characters grouped by their species.\nCustomize the table with appropriate titles, labels, and formatting to enhance its readability.\n\nlibrary(dplyr)\n\n\nstarwars |&gt; glimpse()\n#&gt; Rows: 87\n#&gt; Columns: 14\n#&gt; $ name       &lt;chr&gt; \"Luke Skywalker\", \"C-3PO\", \"R2-D2\", \"Darth Vader\", \"Leia Or…\n#&gt; $ height     &lt;int&gt; 172, 167, 96, 202, 150, 178, 165, 97, 183, 182, 188, 180, 2…\n#&gt; $ mass       &lt;dbl&gt; 77.0, 75.0, 32.0, 136.0, 49.0, 120.0, 75.0, 32.0, 84.0, 77.…\n#&gt; $ hair_color &lt;chr&gt; \"blond\", NA, NA, \"none\", \"brown\", \"brown, grey\", \"brown\", N…\n#&gt; $ skin_color &lt;chr&gt; \"fair\", \"gold\", \"white, blue\", \"white\", \"light\", \"light\", \"…\n#&gt; $ eye_color  &lt;chr&gt; \"blue\", \"yellow\", \"red\", \"yellow\", \"brown\", \"blue\", \"blue\",…\n#&gt; $ birth_year &lt;dbl&gt; 19.0, 112.0, 33.0, 41.9, 19.0, 52.0, 47.0, NA, 24.0, 57.0, …\n#&gt; $ sex        &lt;chr&gt; \"male\", \"none\", \"none\", \"male\", \"female\", \"male\", \"female\",…\n#&gt; $ gender     &lt;chr&gt; \"masculine\", \"masculine\", \"masculine\", \"masculine\", \"femini…\n#&gt; $ homeworld  &lt;chr&gt; \"Tatooine\", \"Tatooine\", \"Naboo\", \"Tatooine\", \"Alderaan\", \"T…\n#&gt; $ species    &lt;chr&gt; \"Human\", \"Droid\", \"Droid\", \"Human\", \"Human\", \"Human\", \"Huma…\n#&gt; $ films      &lt;list&gt; &lt;\"A New Hope\", \"The Empire Strikes Back\", \"Return of the J…\n#&gt; $ vehicles   &lt;list&gt; &lt;\"Snowspeeder\", \"Imperial Speeder Bike\"&gt;, &lt;&gt;, &lt;&gt;, &lt;&gt;, \"Imp…\n#&gt; $ starships  &lt;list&gt; &lt;\"X-wing\", \"Imperial shuttle\"&gt;, &lt;&gt;, &lt;&gt;, \"TIE Advanced x1\",…"
+  },
+  {
+    "objectID": "index.html#exercise-gt-1",
+    "href": "index.html#exercise-gt-1",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Exercise (gt)",
+    "text": "Exercise (gt)\nSolution:\n\nCodelibrary(dplyr)\nlibrary(gt)\nlibrary(tidyr)\n\nstarwars_summary &lt;-\n  starwars |&gt;\n  drop_na(species, height, mass) |&gt;\n  summarize(\n    mean_height = mean(height, na.rm = TRUE),\n    mean_mass = mean(mass, na.rm = TRUE),\n    .by = \"species\"\n  )\n\nstarwars_summary |&gt;\n  gt() |&gt;\n  cols_label(\n    species = \"Species\",\n    mean_height = \"Mean Height (cm)\",\n    mean_mass = \"Mean Mass (kg)\"\n  ) |&gt;\n  tab_header(\n    title = md(\"**Star Wars Character Characteristics**\"),\n    subtitle = \"Mean height and mass by species\"\n  ) |&gt;\n  fmt_number(\n    columns = starts_with(\"mean\"),\n    decimals = 2\n  ) |&gt;\n  tab_source_note(\n    source_note = \"Source: Star Wars API / dplyr package\"\n  )\n\n\n\n\n\n\nStar Wars Character Characteristics\n\n\nMean height and mass by species\n\n\nSpecies\nMean Height (cm)\nMean Mass (kg)\n\n\n\n\nHuman\n180.25\n81.31\n\n\nDroid\n140.00\n69.75\n\n\nWookiee\n231.00\n124.00\n\n\nRodian\n173.00\n74.00\n\n\nHutt\n175.00\n1,358.00\n\n\nYoda's species\n66.00\n17.00\n\n\nTrandoshan\n190.00\n113.00\n\n\nMon Calamari\n180.00\n83.00\n\n\nEwok\n88.00\n20.00\n\n\nSullustan\n160.00\n68.00\n\n\nNeimodian\n191.00\n90.00\n\n\nGungan\n210.00\n74.00\n\n\nDug\n112.00\n40.00\n\n\nZabrak\n175.00\n80.00\n\n\nTwi'lek\n178.00\n55.00\n\n\nAleena\n79.00\n15.00\n\n\nVulptereen\n94.00\n45.00\n\n\nToong\n163.00\n65.00\n\n\nCerean\n198.00\n82.00\n\n\nNautolan\n196.00\n87.00\n\n\nTholothian\n184.00\n50.00\n\n\nKel Dor\n188.00\n80.00\n\n\nGeonosian\n183.00\n80.00\n\n\nMirialan\n168.00\n53.10\n\n\nClawdite\n168.00\n55.00\n\n\nBesalisk\n198.00\n102.00\n\n\nKaminoan\n229.00\n88.00\n\n\nSkakoan\n193.00\n48.00\n\n\nTogruta\n178.00\n57.00\n\n\nKaleesh\n216.00\n159.00\n\n\nPau'an\n206.00\n80.00\n\n\n\nSource: Star Wars API / dplyr package\n\n\n\n\n\n\n\n15-minute break after this slide."
+  },
+  {
+    "objectID": "index.html#gt-extensions",
+    "href": "index.html#gt-extensions",
+    "title": "An Introduction to the R Programming Language",
+    "section": "\ngt Extensions",
+    "text": "gt Extensions\nThe gt package also has several extensions that provide additional functionality for specific use cases.\n\n\n\n\ngtsummary provides a simple way to create publication-ready summary tables for statistical models and data frames.\ninstall.packages(\"gtsummary\")\n\n\n\n\n\ngtextras provides additional themes, color scales, and utilities to enhance gt tables.\ninstall.packages(\"gtextras\")"
   },
   {
     "objectID": "index.html#the-grammar-of-graphics",
@@ -1141,74 +1295,74 @@
     "text": "The ggplot2 Package\n\n\n\nThe most powerful and flexible package for data visualization.\nA Tidyverse package based on the principles of The Grammar of Graphics.\n\n\n\n\n\n\n(Artwork by R Chart Gallery)"
   },
   {
-    "objectID": "index.html#its-all-about-layers",
-    "href": "index.html#its-all-about-layers",
+    "objectID": "index.html#its-all-about-layers-6",
+    "href": "index.html#its-all-about-layers-6",
     "title": "An Introduction to the R Programming Language",
     "section": "It’s All About Layers",
-    "text": "It’s All About Layers\n\n\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\n\npenguins |&gt; ggplot()\n\n\n\n\n\n\n\n\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(body_mass_g, flipper_length_mm, species) |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      y = flipper_length_mm,\n      color = species,\n      shape = species\n    )\n  ) +\n  theme(text = element_text(size = 20), legend.position = \"none\")"
+    "text": "It’s All About Layers\n\n\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\n\npenguins |&gt; ggplot()\n\n\n\n\n\n\n\n\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(\n    body_mass_g,\n    flipper_length_mm,\n    species\n  ) |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      y = flipper_length_mm,\n      color = species,\n      shape = species\n    )\n  ) +\n  theme(\n    text = element_text(size = 20),\n    legend.position = \"none\"\n  )"
   },
   {
-    "objectID": "index.html#its-all-about-layers-1",
-    "href": "index.html#its-all-about-layers-1",
+    "objectID": "index.html#its-all-about-layers-7",
+    "href": "index.html#its-all-about-layers-7",
     "title": "An Introduction to the R Programming Language",
     "section": "It’s All About Layers",
-    "text": "It’s All About Layers\n\n\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(body_mass_g, flipper_length_mm, species) |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      y = flipper_length_mm,\n      color = species,\n      shape = species\n    )\n  ) +\n  geom_point(size = 4) +\n  scale_color_brand_d(alpha = 0.7) +\n  theme(text = element_text(size = 20), legend.position = \"none\")\n\n\n\n\n\n\n\n\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(body_mass_g, flipper_length_mm, species) |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      y = flipper_length_mm,\n      color = species,\n      shape = species\n    )\n  ) +\n  geom_point(size = 4) +\n  geom_smooth(\n    method = \"lm\",\n    formula = y ~ x,\n    se = FALSE,\n    linewidth = 2\n  ) +\n  labs(\n    x = \"Body Mass (g)\",\n    y = \"Flipper Length (mm)\",\n    color = \"Species\",\n    shape = \"Species\"\n  ) +\n  scale_color_brand_d(alpha = 0.7) +\n  theme(text = element_text(size = 20), legend.position = \"none\")"
+    "text": "It’s All About Layers\n\n\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(\n    body_mass_g,\n    flipper_length_mm,\n    species\n  ) |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      y = flipper_length_mm,\n      color = species,\n      shape = species\n    )\n  ) +\n  geom_point(size = 4) +\n  theme(\n    text = element_text(size = 20),\n    legend.position = \"none\"\n  )\n\n\n\n\n\n\n\n\n\n\n\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(\n    body_mass_g,\n    flipper_length_mm,\n    species\n  ) |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      y = flipper_length_mm,\n      color = species,\n      shape = species\n    )\n  ) +\n  geom_point(size = 4) +\n  geom_smooth(\n    method = \"lm\",\n    formula = y ~ x,\n    se = FALSE,\n    linewidth = 2\n  ) +\n  labs(\n    x = \"Body Mass (g)\",\n    y = \"Flipper Length (mm)\",\n    color = \"Species\",\n    shape = \"Species\"\n  ) +\n  theme(\n    text = element_text(size = 20),\n    legend.position = \"none\"\n  )"
   },
   {
     "objectID": "index.html#bar-plots",
     "href": "index.html#bar-plots",
     "title": "An Introduction to the R Programming Language",
     "section": "Bar Plots",
-    "text": "Bar Plots\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\n\npenguins |&gt;\n  ggplot(aes(x = island, fill = species)) +\n  geom_bar(alpha = 0.8) +\n  theme_minimal() +\n  facet_wrap(~species, ncol = 1) +\n  coord_flip() +\n  labs(\n    x = \"Island\",\n    y = \"Count\"\n  ) +\n  scale_fill_brand_d() +\n  theme(legend.position = \"none\")"
+    "text": "Bar Plots\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\n\npenguins |&gt;\n  ggplot(\n    aes(\n      x = island,\n      fill = species\n    )\n  ) +\n  geom_bar(alpha = 0.8) +\n  facet_wrap(\n    facets = ~species,\n    ncol = 1\n  ) +\n  coord_flip() +\n  labs(\n    x = \"Island\",\n    y = \"Count\"\n  ) +\n  theme_minimal() +\n  theme(legend.position = \"none\")"
   },
   {
     "objectID": "index.html#histograms",
     "href": "index.html#histograms",
     "title": "An Introduction to the R Programming Language",
     "section": "Histograms",
-    "text": "Histograms\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(flipper_length_mm, species) |&gt;\n  ggplot(aes(x = flipper_length_mm, fill = species)) +\n  geom_histogram(bins = 30, alpha = 0.5, position = \"identity\") +\n  labs(x = \"Flipper Length (mm)\", y = \"Frequency\", fill = \"Species\") +\n  scale_fill_brand_d()"
+    "text": "Histograms\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(\n    flipper_length_mm,\n    species\n  ) |&gt;\n  ggplot(\n    aes(\n      x = flipper_length_mm,\n      fill = species\n    )\n  ) +\n  geom_histogram(\n    bins = 30,\n    alpha = 0.5,\n    position = \"identity\"\n  ) +\n  labs(\n    x = \"Flipper Length (mm)\",\n    y = \"Frequency\",\n    fill = \"Species\"\n  )"
   },
   {
     "objectID": "index.html#boxplots",
     "href": "index.html#boxplots",
     "title": "An Introduction to the R Programming Language",
     "section": "Boxplots",
-    "text": "Boxplots\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(bill_length_mm, species) |&gt;\n  ggplot(aes(x = species, y = bill_length_mm, fill = species)) +\n  geom_boxplot(outlier.color = get_brand_color(\"dark-red\")) +\n  geom_jitter(width = 0.2, alpha = 0.1) +\n  scale_fill_brand_d(alpha = 0.7) +\n  labs(x = \"Species\", y = \"Bill Length (mm)\", fill = \"Species\")"
+    "text": "Boxplots\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(\n    bill_length_mm,\n    species\n  ) |&gt;\n  ggplot(\n    aes(\n      x = species,\n      y = bill_length_mm,\n      fill = species\n    )\n  ) +\n  geom_boxplot(\n    outlier.color = \"red\"\n  ) +\n  geom_jitter(\n   width = 0.2,\n   alpha = 0.1\n  ) +\n  labs(\n    x = \"Species\",\n    y = \"Bill Length (mm)\",\n    fill = \"Species\"\n  )"
   },
   {
     "objectID": "index.html#scatter-plots",
     "href": "index.html#scatter-plots",
     "title": "An Introduction to the R Programming Language",
     "section": "Scatter Plots",
-    "text": "Scatter Plots\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(body_mass_g, flipper_length_mm, species) |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      y = flipper_length_mm,\n      color = species,\n      shape = species\n    )\n  ) +\n  geom_point(size = 2) +\n  geom_smooth(method = \"lm\", formula = y ~ x, se = FALSE) +\n  labs(\n    x = \"Body Mass (g)\",\n    y = \"Flipper Length (mm)\",\n    color = \"Species\",\n    shape = \"Species\"\n  ) +\n  scale_color_brand_d(alpha = 0.7)"
+    "text": "Scatter Plots\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(\n    body_mass_g,\n    flipper_length_mm,\n    species\n  ) |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      y = flipper_length_mm,\n      color = species,\n      shape = species\n    )\n  ) +\n  geom_point(size = 2) +\n  geom_smooth(\n    method = \"lm\",\n    formula = y ~ x,\n    se = FALSE\n  ) +\n  labs(\n    x = \"Body Mass (g)\",\n    y = \"Flipper Length (mm)\",\n    color = \"Species\",\n    shape = \"Species\"\n  )"
   },
   {
     "objectID": "index.html#facets",
     "href": "index.html#facets",
     "title": "An Introduction to the R Programming Language",
     "section": "Facets",
-    "text": "Facets\n\nCodelibrary(brandr)\nlibrary(dplyr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(stringr)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(body_mass_g, flipper_length_mm, sex) |&gt;\n  mutate(sex = `levels&lt;-`(sex, str_to_title(levels(sex)))) |&gt;\n  ggplot(aes(x = body_mass_g, y = flipper_length_mm, color = sex)) +\n  geom_point(size = 2) +\n  geom_smooth(\n    method = \"lm\",\n    formula = y ~ x,\n    se = FALSE,\n    color = get_brand_color(\"brown\")\n  ) +\n  labs(\n    x = \"Body Mass (g)\",\n    y = \"Flipper Length (mm)\",\n    color = \"Sex\"\n  ) +\n  scale_color_brand_d(alpha = 0.7) +\n  facet_wrap(~species)"
+    "text": "Facets\n\nCodelibrary(dplyr)\nlibrary(ggplot2)\nlibrary(magrittr)\nlibrary(palmerpenguins)\nlibrary(stringr)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(\n    body_mass_g,\n    flipper_length_mm,\n    sex\n  ) |&gt;\n  mutate(\n    sex = sex %&gt;%\n      `levels&lt;-`(\n        sex |&gt;\n          levels() |&gt;\n          str_to_title()\n      )\n  ) |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      y = flipper_length_mm,\n      color = sex\n    )\n  ) +\n  geom_point(size = 2) +\n  geom_smooth(\n    method = \"lm\",\n    formula = y ~ x,\n    se = FALSE,\n    color = \"black\"\n  ) +\n  facet_wrap(~species) +\n  labs(\n    x = \"Body Mass (g)\",\n    y = \"Flipper Length (mm)\",\n    color = \"Sex\"\n  )"
   },
   {
     "objectID": "index.html#combined-plots",
     "href": "index.html#combined-plots",
     "title": "An Introduction to the R Programming Language",
     "section": "Combined Plots",
-    "text": "Combined Plots\n\nCodelibrary(brandr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(patchwork)\nlibrary(tidyr)\n\nplot_hist &lt;-\n  penguins |&gt;\n  drop_na(flipper_length_mm, species) |&gt;\n  ggplot(aes(x = flipper_length_mm, fill = species)) +\n  geom_histogram(bins = 30, alpha = 0.5, position = \"identity\") +\n  labs(x = \"Flipper Length (mm)\", y = \"Frequency\") +\n  scale_fill_brand_d() +\n  theme(legend.position = \"none\")\n\nplot_boxplot &lt;-\n  penguins |&gt;\n  drop_na(bill_length_mm, species) |&gt;\n  ggplot(aes(x = species, y = bill_length_mm, fill = species)) +\n  geom_boxplot(outlier.color = get_brand_color(\"dark-red\")) +\n  geom_jitter(width = 0.2, alpha = 0.1) +\n  labs(x = \"Species\", y = \"Bill Length (mm)\", fill = \"Species\") +\n  scale_fill_brand_d(alpha = 0.7) +\n  theme(axis.title.x = element_blank(), legend.position = \"none\")\n\nplot_scatter &lt;-\n  penguins |&gt;\n  drop_na(body_mass_g, flipper_length_mm, species) |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      y = flipper_length_mm,\n      color = species,\n      shape = species\n    )\n  ) +\n  geom_point(size = 2) +\n  geom_smooth(method = \"lm\", formula = y ~ x, se = FALSE) +\n  labs(\n    x = \"Body Mass (g)\",\n    y = \"Flipper Length (mm)\",\n    color = \"Species\",\n    shape = \"Species\"\n  ) +\n  scale_color_brand_d(alpha = 0.7) +\n  theme(legend.position = \"none\")\n\n(plot_hist + plot_boxplot) / plot_scatter + plot_annotation(tag_levels = \"A\")"
+    "text": "Combined Plots\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(patchwork)\nlibrary(tidyr)\n\nplot_hist &lt;-\n  penguins |&gt;\n  drop_na(\n    flipper_length_mm,\n    species\n  ) |&gt;\n  ggplot(\n    aes(\n    x = flipper_length_mm,\n    fill = species\n    )\n  ) +\n  geom_histogram(\n    bins = 30,\n    alpha = 0.5,\n    position = \"identity\"\n  ) +\n  labs(\n    x = \"Flipper Length (mm)\",\n    y = \"Frequency\"\n  ) +\n  theme(legend.position = \"none\")\n\nplot_boxplot &lt;-\n  penguins |&gt;\n  drop_na(\n    bill_length_mm,\n    species\n  ) |&gt;\n  ggplot(\n    aes(\n      x = species,\n      y = bill_length_mm,\n      fill = species\n    )\n  ) +\n  geom_boxplot(outlier.color = \"red\") +\n  geom_jitter(width = 0.2, alpha = 0.1) +\n  labs(\n    x = \"Species\",\n    y = \"Bill Length (mm)\",\n    fill = \"Species\"\n  ) +\n  theme(\n    axis.title.x = element_blank(),\n    legend.position = \"none\"\n  )\n\nplot_scatter &lt;-\n  penguins |&gt;\n  drop_na(\n    body_mass_g,\n    flipper_length_mm,\n    species\n  ) |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      y = flipper_length_mm,\n      color = species,\n      shape = species\n    )\n  ) +\n  geom_point(size = 2) +\n  geom_smooth(\n    method = \"lm\",\n    formula = y ~ x,\n    se = FALSE\n  ) +\n  labs(\n    x = \"Body Mass (g)\",\n    y = \"Flipper Length (mm)\",\n    color = \"Species\",\n    shape = \"Species\"\n  ) +\n  theme(legend.position = \"none\")\n\n(plot_hist + plot_boxplot) / plot_scatter + plot_annotation(tag_levels = \"A\")"
   },
   {
     "objectID": "index.html#correlation-matrices",
     "href": "index.html#correlation-matrices",
     "title": "An Introduction to the R Programming Language",
     "section": "Correlation Matrices",
-    "text": "Correlation Matrices\n\nCodelibrary(brandr)\nlibrary(dplyr)\nlibrary(GGally)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\n\npenguins |&gt;\n  select(species, body_mass_g, ends_with(\"_mm\")) |&gt;\n  ggpairs(aes(color = species)) +\n  scale_color_brand_d(alpha = 0.7) +\n  scale_fill_brand_d(alpha = 0.7)\n\n\n\n\n\n\n\nThe GGally package is an extension of ggplot2."
+    "text": "Correlation Matrices\n\nCodelibrary(dplyr)\nlibrary(GGally)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\n\npenguins |&gt;\n  select(species, body_mass_g, ends_with(\"_mm\")) |&gt;\n  ggpairs(aes(color = species))\n\n\n\n\n\n\n\n\n\n\nThe GGally package is an extension of ggplot2."
   },
   {
     "objectID": "index.html#color-palettes",
     "href": "index.html#color-palettes",
     "title": "An Introduction to the R Programming Language",
     "section": "Color Palettes",
-    "text": "Color Palettes\nColor palettes can be sequential, diverging, or qualitative (discrete). Here are some examples of two popular packages for color palettes in R.\n\n\nviridis: Colorblind-Friendly Color Maps\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\nlibrary(viridis)\n\npenguins |&gt;\n  drop_na(flipper_length_mm, species) |&gt;\n  ggplot(aes(x = flipper_length_mm, fill = species)) +\n  geom_density(alpha = 0.5, position = \"identity\") +\n  scale_fill_viridis(discrete = TRUE) +\n  labs(x = \"Flipper Length (mm)\", y = \"Density\", fill = \"Species\") +\n  theme(text = element_text(size = 20), legend.position = \"none\")\n\n\n\n\n\n\n\n\nRColorBrewer: Common Color Palettes\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(flipper_length_mm, species) |&gt;\n  ggplot(aes(x = flipper_length_mm, fill = species)) +\n  geom_density(alpha = 0.5, position = \"identity\") +\n  scale_fill_brewer(palette = \"Set1\") +\n  labs(x = \"Flipper Length (mm)\", y = \"Density\", fill = \"Species\") +\n  theme(text = element_text(size = 20), legend.position = \"none\")"
+    "text": "Color Palettes\nColor palettes can be sequential, diverging, or qualitative (discrete). Here are some examples of two popular packages for color palettes in R.\n\n\nviridis: Colorblind-Friendly Color Maps\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\nlibrary(viridis)\n\npenguins |&gt;\n  drop_na(\n    flipper_length_mm,\n    species\n  ) |&gt;\n  ggplot(\n    aes(\n      x = flipper_length_mm,\n      fill = species\n    )\n  ) +\n  geom_density(\n    alpha = 0.5,\n    position = \"identity\"\n  ) +\n  scale_fill_viridis(discrete = TRUE) +\n  labs(\n    x = \"Flipper Length (mm)\",\n    y = \"Density\",\n    fill = \"Species\"\n  ) +\n  theme(\n    text = element_text(size = 20),\n    legend.position = \"none\"\n  )\n\n\n\n\n\n\n\n\nRColorBrewer: Common Color Palettes\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(\n    flipper_length_mm,\n    species\n  ) |&gt;\n  ggplot(\n    aes(\n      x = flipper_length_mm,\n      fill = species\n    )\n  ) +\n  geom_density(\n    alpha = 0.5,\n    position = \"identity\"\n  ) +\n  scale_fill_brewer(palette = \"Set1\") +\n  labs(\n    x = \"Flipper Length (mm)\",\n    y = \"Density\",\n    fill = \"Species\"\n  ) +\n  theme(\n    text = element_text(size = 20),\n    legend.position = \"none\"\n  )"
   },
   {
     "objectID": "index.html#how-to-choose-the-right-vis.",
@@ -1225,11 +1379,18 @@
     "text": "The R Graph Gallery\nAnother amazing work by Yan Holtz is the R Graph Gallery, which provides numerous examples of R graphics and how to create them.\n\n\n\n\n\n(Artwork by Yan Holtz)"
   },
   {
-    "objectID": "index.html#exercise-1",
-    "href": "index.html#exercise-1",
+    "objectID": "index.html#exercise-scatter-plot",
+    "href": "index.html#exercise-scatter-plot",
     "title": "An Introduction to the R Programming Language",
-    "section": "Exercise",
-    "text": "Exercise"
+    "section": "Exercise (Scatter Plot)",
+    "text": "Exercise (Scatter Plot)\nCreate a scatter plot using the mpg dataset (available in the ggplot2 package) that visualizes the relationship between displ (engine displacement) and hwy (highway miles per gallon).\nAdd a Color the points based on the class of the vehicle.\n\nlibrary(ggplot2)\n\n\nmpg |&gt; glimpse()\n#&gt; Rows: 234\n#&gt; Columns: 11\n#&gt; $ manufacturer &lt;chr&gt; \"audi\", \"audi\", \"audi\", \"audi\", \"audi\", \"audi\", \"audi\", \"…\n#&gt; $ model        &lt;chr&gt; \"a4\", \"a4\", \"a4\", \"a4\", \"a4\", \"a4\", \"a4\", \"a4 quattro\", \"…\n#&gt; $ displ        &lt;dbl&gt; 1.8, 1.8, 2.0, 2.0, 2.8, 2.8, 3.1, 1.8, 1.8, 2.0, 2.0, 2.…\n#&gt; $ year         &lt;int&gt; 1999, 1999, 2008, 2008, 1999, 1999, 2008, 1999, 1999, 200…\n#&gt; $ cyl          &lt;int&gt; 4, 4, 4, 4, 6, 6, 6, 4, 4, 4, 4, 6, 6, 6, 6, 6, 6, 8, 8, …\n#&gt; $ trans        &lt;chr&gt; \"auto(l5)\", \"manual(m5)\", \"manual(m6)\", \"auto(av)\", \"auto…\n#&gt; $ drv          &lt;chr&gt; \"f\", \"f\", \"f\", \"f\", \"f\", \"f\", \"f\", \"4\", \"4\", \"4\", \"4\", \"4…\n#&gt; $ cty          &lt;int&gt; 18, 21, 20, 21, 16, 18, 18, 18, 16, 20, 19, 15, 17, 17, 1…\n#&gt; $ hwy          &lt;int&gt; 29, 29, 31, 30, 26, 26, 27, 26, 25, 28, 27, 25, 25, 25, 2…\n#&gt; $ fl           &lt;chr&gt; \"p\", \"p\", \"p\", \"p\", \"p\", \"p\", \"p\", \"p\", \"p\", \"p\", \"p\", \"p…\n#&gt; $ class        &lt;chr&gt; \"compact\", \"compact\", \"compact\", \"compact\", \"compact\", \"c…"
+  },
+  {
+    "objectID": "index.html#exercise-scatter-plot-1",
+    "href": "index.html#exercise-scatter-plot-1",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Exercise (Scatter Plot)",
+    "text": "Exercise (Scatter Plot)\nSolution:\n\nCodelibrary(ggplot2)\n\nmpg |&gt;\n  ggplot(\n    aes(\n      x = displ,\n      y = hwy,\n      color = class\n    )\n  ) +\n  geom_point(size = 2) +\n  labs(\n    x = \"Engine Displacement (L)\",\n    y = \"Highway Miles per Gallon\",\n    color = \"Vehicle Class\"\n  ) +\n  theme(\n    text = element_text(size = 20),\n    legend.position = \"right\"\n  )\n\n\n\n\n\n15-minute break after this slide."
   },
   {
     "objectID": "index.html#how-to-learn-more-3",
@@ -1404,7 +1565,7 @@
     "href": "index.html#t-test-null-distribution",
     "title": "An Introduction to the R Programming Language",
     "section": "t-Test: Null Distribution",
-    "text": "t-Test: Null Distribution\n\nlibrary(dplyr)\nlibrary(infer)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\n\nnull_dist &lt;-\n  penguins |&gt;\n  filter(species %in% c(\"Gentoo\", \"Adelie\")) |&gt;\n  drop_na(flipper_length_mm, species) |&gt;\n  specify(flipper_length_mm ~ species) |&gt;\n  hypothesize(null = \"independence\") |&gt;\n  generate(reps = 1000, type = \"permute\") |&gt;\n  calculate(stat = \"t\", order = c(\"Gentoo\", \"Adelie\"))\n\nnull_dist\n#&gt; Response: flipper_length_mm (numeric)\n#&gt; Explanatory: species (factor)\n#&gt; Null Hypo...\n#&gt; # A tibble: 1,000 × 2\n#&gt;    replicate    stat\n#&gt;        &lt;int&gt;   &lt;dbl&gt;\n#&gt;  1         1  1.08  \n#&gt;  2         2 -2.00  \n#&gt;  3         3 -1.14  \n#&gt;  4         4 -1.00  \n#&gt;  5         5 -1.42  \n#&gt;  6         6  0.0964\n#&gt;  7         7  0.0724\n#&gt;  8         8  2.17  \n#&gt;  9         9  2.10  \n#&gt; 10        10 -0.347 \n#&gt; # ℹ 990 more rows"
+    "text": "t-Test: Null Distribution\n\nlibrary(dplyr)\nlibrary(infer)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\n\nnull_dist &lt;-\n  penguins |&gt;\n  filter(species %in% c(\"Gentoo\", \"Adelie\")) |&gt;\n  drop_na(flipper_length_mm, species) |&gt;\n  specify(flipper_length_mm ~ species) |&gt;\n  hypothesize(null = \"independence\") |&gt;\n  generate(reps = 1000, type = \"permute\") |&gt;\n  calculate(stat = \"t\", order = c(\"Gentoo\", \"Adelie\"))\n\nnull_dist\n#&gt; Response: flipper_length_mm (numeric)\n#&gt; Explanatory: species (factor)\n#&gt; Null Hypo...\n#&gt; # A tibble: 1,000 × 2\n#&gt;    replicate     stat\n#&gt;        &lt;int&gt;    &lt;dbl&gt;\n#&gt;  1         1  0.879  \n#&gt;  2         2  0.737  \n#&gt;  3         3  0.369  \n#&gt;  4         4 -0.820  \n#&gt;  5         5 -0.0886 \n#&gt;  6         6 -0.00805\n#&gt;  7         7 -0.453  \n#&gt;  8         8  0.194  \n#&gt;  9         9 -0.779  \n#&gt; 10        10 -0.525  \n#&gt; # ℹ 990 more rows"
   },
   {
     "objectID": "index.html#t-test-visualizing",
@@ -1502,7 +1663,7 @@
     "href": "index.html#anova-null-distribution",
     "title": "An Introduction to the R Programming Language",
     "section": "ANOVA: Null Distribution",
-    "text": "ANOVA: Null Distribution\n\nlibrary(dplyr)\nlibrary(infer)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\n\nnull_dist &lt;-\n  penguins |&gt;\n  drop_na(flipper_length_mm, species) |&gt;\n  specify(flipper_length_mm ~ species) |&gt;\n  hypothesize(null = \"independence\") |&gt;\n  generate(reps = 1000, type = \"permute\") |&gt;\n  calculate(stat = \"F\")\n\nnull_dist\n#&gt; Response: flipper_length_mm (numeric)\n#&gt; Explanatory: species (factor)\n#&gt; Null Hypo...\n#&gt; # A tibble: 1,000 × 2\n#&gt;    replicate    stat\n#&gt;        &lt;int&gt;   &lt;dbl&gt;\n#&gt;  1         1 0.00761\n#&gt;  2         2 1.92   \n#&gt;  3         3 1.60   \n#&gt;  4         4 1.30   \n#&gt;  5         5 0.160  \n#&gt;  6         6 0.916  \n#&gt;  7         7 0.0518 \n#&gt;  8         8 0.151  \n#&gt;  9         9 0.0603 \n#&gt; 10        10 3.05   \n#&gt; # ℹ 990 more rows"
+    "text": "ANOVA: Null Distribution\n\nlibrary(dplyr)\nlibrary(infer)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\n\nnull_dist &lt;-\n  penguins |&gt;\n  drop_na(flipper_length_mm, species) |&gt;\n  specify(flipper_length_mm ~ species) |&gt;\n  hypothesize(null = \"independence\") |&gt;\n  generate(reps = 1000, type = \"permute\") |&gt;\n  calculate(stat = \"F\")\n\nnull_dist\n#&gt; Response: flipper_length_mm (numeric)\n#&gt; Explanatory: species (factor)\n#&gt; Null Hypo...\n#&gt; # A tibble: 1,000 × 2\n#&gt;    replicate   stat\n#&gt;        &lt;int&gt;  &lt;dbl&gt;\n#&gt;  1         1 0.0694\n#&gt;  2         2 0.978 \n#&gt;  3         3 1.91  \n#&gt;  4         4 0.0702\n#&gt;  5         5 1.51  \n#&gt;  6         6 0.0275\n#&gt;  7         7 0.450 \n#&gt;  8         8 0.117 \n#&gt;  9         9 1.57  \n#&gt; 10        10 0.259 \n#&gt; # ℹ 990 more rows"
   },
   {
     "objectID": "index.html#anova-visualizing",

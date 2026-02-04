@@ -3,9 +3,7 @@
 #| label: module-4-first-chunk
 ```
 
-## Simple Statistics {.smaller}
-
-The R packages that come with a typical R installation provide a set of basic statistical functions.
+## `glimpse()` {.smaller}
 
 ```{r}
 library(dplyr)
@@ -13,68 +11,8 @@ library(palmerpenguins)
 ```
 
 ```{r}
-bill_length_mm <- penguins |> pull(bill_length_mm)
+penguins |> glimpse()
 ```
-
-::: {style="padding-top: 15px;"}
-```{r}
-bill_length_mm |> mean(na.rm = TRUE)
-```
-
-```{r}
-bill_length_mm |> sd(na.rm = TRUE)
-```
-
-```{r}
-bill_length_mm |> min(na.rm = TRUE)
-```
-
-```{r}
-bill_length_mm |> median(na.rm = TRUE)
-```
-
-```{r}
-bill_length_mm |> max(na.rm = TRUE)
-```
-:::
-
-## Simple Statistics {.smaller}
-
-```{r}
-library(dplyr)
-library(palmerpenguins)
-```
-
-```{r}
-bill_length_mm <- penguins |> pull(bill_length_mm)
-bill_depth_mm <- penguins |> pull(bill_depth_mm)
-```
-
-::: {style="padding-top: 15px;"}
-```{r}
-bill_length_mm |> quantile(na.rm = TRUE)
-```
-
-```{r}
-bill_length_mm |> quantile(prob = 0.25, na.rm = TRUE)
-```
-
-```{r}
-bill_length_mm |> quantile(prob = 0.75, na.rm = TRUE)
-```
-
-```{r}
-bill_length_mm |> sum(na.rm = TRUE)
-```
-
-```{r}
-bill_length_mm |> prod(na.rm = TRUE)
-```
-
-```{r}
-cor(bill_length_mm, bill_depth_mm, use = "complete.obs")
-```
-:::
 
 ::: {.notes}
 :::
@@ -117,7 +55,7 @@ penguins |> slice_sample(n = 15)
 ::: {.notes}
 :::
 
-## `glimpse()` {.smaller}
+## `unique` {.smaller}
 
 ```{r}
 library(dplyr)
@@ -125,7 +63,21 @@ library(palmerpenguins)
 ```
 
 ```{r}
-penguins |> glimpse()
+penguins |>
+  pull(species) |>
+  unique()
+```
+
+```{r}
+penguins |>
+  pull(island) |>
+  unique()
+```
+
+```{r}
+penguins |>
+  pull(sex) |>
+  unique()
 ```
 
 ::: {.notes}
@@ -139,10 +91,147 @@ library(palmerpenguins)
 ```
 
 ```{r}
-penguins |> count(species, island, .drop = FALSE)
+penguins |>
+  count(species, island, .drop = FALSE)
+```
+
+## `count()` {.smaller}
+
+```{r}
+library(dplyr)
+library(magrittr)
+library(palmerpenguins)
+```
+
+```{r}
+penguins |>
+  count(species, island, .drop = FALSE) |>
+  mutate(
+    n_cum = cumsum(n),
+    n_per = n |>
+      divide_by(sum(n)) |>
+      multiply_by(100) |>
+      round(3),
+    n_per_cum = n_per |> cumsum()
+  )
 ```
 
 ::: {.notes}
+:::
+
+## Statistics {.smaller}
+
+The R packages that come with a typical R installation provide a set of basic statistical functions.
+
+```{r}
+library(dplyr)
+library(palmerpenguins)
+```
+
+```{r}
+bill_length_mm <- penguins |> pull(bill_length_mm)
+```
+
+::: {style="padding-top: 15px;"}
+```{r}
+bill_length_mm |> mean(na.rm = TRUE)
+```
+
+```{r}
+bill_length_mm |> var(na.rm = TRUE)
+```
+
+```{r}
+bill_length_mm |> sd(na.rm = TRUE)
+```
+
+```{r}
+bill_length_mm |> min(na.rm = TRUE)
+```
+
+```{r}
+bill_length_mm |> max(na.rm = TRUE)
+```
+:::
+
+```{r}
+bill_length_mm |> range(na.rm = TRUE)
+```
+
+::: {.notes}
+:::
+
+## Statistics {.smaller}
+
+```{r}
+library(dplyr)
+library(palmerpenguins)
+```
+
+```{r}
+bill_length_mm <- penguins |> pull(bill_length_mm)
+```
+
+::: {style="padding-top: 15px;"}
+```{r}
+bill_length_mm |> quantile(na.rm = TRUE)
+```
+
+```{r}
+bill_length_mm |> quantile(prob = 0.25, na.rm = TRUE)
+```
+
+```{r}
+bill_length_mm |> median(na.rm = TRUE)
+```
+
+```{r}
+bill_length_mm |> quantile(prob = 0.75, na.rm = TRUE)
+```
+
+```{r}
+bill_length_mm |> IQR(na.rm = TRUE)
+```
+:::
+
+::: {.notes}
+:::
+
+## Statistics {.smaller}
+
+For skewness and kurtosis, use the [`moments`](https://CRAN.R-project.org/package=moments) package.
+
+```{r}
+library(dplyr)
+library(moments)
+library(palmerpenguins)
+```
+
+```{r}
+bill_length_mm <- penguins |> pull(bill_length_mm)
+bill_depth_mm <- penguins |> pull(bill_depth_mm)
+```
+
+::: {style="padding-top: 15px;"}
+```{r}
+bill_length_mm |> skewness(na.rm = TRUE)
+```
+
+```{r}
+bill_length_mm |> kurtosis(na.rm = TRUE)
+```
+
+```{r}
+bill_length_mm |> sum(na.rm = TRUE)
+```
+
+```{r}
+bill_length_mm |> prod(na.rm = TRUE)
+```
+
+```{r}
+cor(bill_length_mm, bill_depth_mm, use = "complete.obs")
+```
 :::
 
 ## `summarize()` {.smaller}
@@ -155,32 +244,131 @@ library(palmerpenguins)
 ```{r}
 penguins |>
   summarize(
-    mean = mean(flipper_length_mm, na.rm = TRUE),
-    sd = sd(flipper_length_mm, na.rm = TRUE),
-    .by = species
+    n = n(),
+    mean_body_mass_g = mean(body_mass_g, na.rm = TRUE),
+    mean_bill_length_mm = mean(bill_length_mm, na.rm = TRUE),
+    mean_bill_depth_mm = mean(bill_depth_mm, na.rm = TRUE),
+    mean_flipper_length_mm = mean(flipper_length_mm, na.rm = TRUE),
+    .by = c("species", "sex")
   )
 ```
 
 ::: {.notes}
 :::
 
+## Exercise (`summarize`) {.smaller}
+
+Create a comprehensive species profile for the Palmer Penguins dataset. For each penguin species, calculate:
+
+:::: {.columns}
+::: {.column style="width: 47.5%; padding-top: 0px;"}
+- Number of individuals observed.
+- Number of islands they inhabit.
+- Mean body mass (in grams).
+- Mean bill length (in mm).
+- Mean flipper length (in mm).
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+All of this information should be generated in a **single**, elegant operation.
+
+```{r}
+#| eval: false
+
+penguins |>
+  summarize(
+    #> [Your code goes here!]
+  )
+```
+:::
+::::
+
+## Exercise (`summarize`) {.smaller}
+
+Use [`n()`](https://dplyr.tidyverse.org/reference/context.html) to count the number of observations.
+
+```{r}
+library(dplyr)
+```
+
+```{r}
+letters
+```
+
+```{r}
+tibble(a = letters) |>
+  summarize(n = n())
+```
+
+::: {style="padding-top: 15px;"}
+Use [`n_distinct()`](https://dplyr.tidyverse.org/reference/n_distinct.html) to count the number of unique values.
+
+```{r}
+library(dplyr)
+```
+
+```{r}
+c("a", "b", "b", "a") |> n_distinct()
+```
+:::
+
+::: {.notes}
+:::
+
+## Exercise (`summarize`) {.smaller}
+
+**Solution**:
+
+```{r}
+#| code-fold: true
+
+penguins |>
+  summarize(
+    n = n(),
+    n_islands = n_distinct(island),
+    mean_body_mass_g = mean(body_mass_g, na.rm = TRUE),
+    mean_bill_length_mm = mean(bill_length_mm, na.rm = TRUE),
+    mean_flipper_length_mm = mean(flipper_length_mm, na.rm = TRUE),
+    .by = "species"
+  )
+```
+
 ## The `summarytools` Package {.smaller}
 
 :::: {.columns}
-::: {.column style="width: 33%;"}
+::: {.column style="width: 15%;"}
 [![](images/summarytools-hex-logo.png){style="width: 120px; padding-top: 0px;"}](https://cran.r-project.org/web/packages/summarytools/vignettes/introduction.html)
-
-A simple package for descriptive statistics.
 :::
-::: {.column style="width: 67%;"}
+::: {.column style="width: 85%; padding-top: 15px;"}
+The [`summarytools`](https://cran.r-project.org/web/packages/summarytools/vignettes/introduction.html) package makes it easy to create frequency and descriptive statistics tables for single variables with minimal code.
+
+```r
+install.packages("gtsummary")
+```
+:::
+::::
 
 ```{r}
 library(palmerpenguins)
 library(summarytools)
 ```
 
+:::: {.columns}
+::: {.column style="width: 47.5%; padding-top: 15px;"}
 ```{r}
-penguins |> descr(bill_depth_mm)
+#| attr-source: "style='height: 300px;'"
+
+penguins |> freq(var = species, round.digits = 3)
+```
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%; padding-top: 15px;"}
+```{r}
+#| attr-source: "style='height: 300px;'"
+
+penguins |> descr(var = bill_depth_mm, round.digits = 3)
 ```
 :::
 ::::
@@ -188,46 +376,80 @@ penguins |> descr(bill_depth_mm)
 ::: {.notes}
 :::
 
-## The `janitor` Package {.smaller}
+## `summarize()` Approach {.smaller}
+
+If you need more control over the descriptive statistics, then you will need to use `summarize()`.
+
+```{r}
+#| include: false
+
+library(dplyr)
+library(magrittr)
+library(moments)
+library(palmerpenguins)
+library(tidyr)
+```
 
 :::: {.columns}
-::: {.column style="width: 15%;"}
-[![](images/janitor-hex-logo.png){style="width: 120px; padding-top: 0px;"}](https://sfirke.github.io/janitor/)
-:::
-::: {.column style="width: 85%; padding-top: 15px;"}
-The `tabyl` system from the `janitor` package provides more control over the output compared to the `summarytools` package.
-:::
-::::
-
-::: {style="font-size: 1em;"}
-
+::: {.column style="width: 47.5%;"}
 ```{r}
-#| code-fold: true
+#| attr-source: "style='height: 450px;'"
 
-library(janitor)
-library(knitr)
-library(palmerpenguins)
-
-penguins |>
-  tabyl(island, species) |>
-  adorn_totals(c("row", "col")) |>
-  adorn_percentages("row") |>
-  adorn_pct_formatting(rounding = "half up", digits = 0) |>
-  adorn_ns() |>
-  kable()
+stats_summary <- function(x) {
+  penguins |>
+  summarize(
+    n = n(),
+    n_valid = .data[[x]] |>
+      magrittr::extract(!is.na(.data[[x]])) |>
+      length(),
+    n_valid_per = n_valid |> # == (n_valid / n) * 100
+      divide_by(n) |>
+      multiply_by(100),
+    mean = .data[[x]] |> mean(na.rm = TRUE),
+    var = .data[[x]] |> var(na.rm = TRUE),
+    sd = .data[[x]] |> sd(na.rm = TRUE),
+    min = .data[[x]] |> min(na.rm = TRUE),
+    quartile_1 = .data[[x]] |> quantile(prob = 0.25, na.rm = TRUE),
+    median = .data[[x]] |> median(na.rm = TRUE),
+    quartile_3 = .data[[x]] |> quantile(prob = 0.75, na.rm = TRUE),
+    max = .data[[x]] |> max(na.rm = TRUE),
+    iqr = .data[[x]] |> IQR(na.rm = TRUE),
+    range = .data[[x]] |> range(na.rm = TRUE) |> diff(),
+    skewness = .data[[x]] |> skewness(na.rm = TRUE),
+    kurtosis = .data[[x]] |> kurtosis(na.rm = TRUE),
+    .by = species
+  ) |>
+  pivot_longer(
+    cols = -species,
+    names_to = "statistic",
+    values_to = "value"
+  ) |>
+  pivot_wider(
+    names_from = species,
+    values_from = value
+  )
+}
 ```
 :::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%;"}
+```{r}
+stats_summary("bill_length_mm")
+```
+:::
+::::
 
 ::: {.notes}
 :::
 
-## The `gt` Package {.smaller}
+## The Grammar of Tables {.smaller}
 
 :::: {.columns}
 ::: {.column style="width: 30%; font-size: 0.9em;"}
 [![](images/gt-hex-logo.svg){style="width: 120px; padding-top: 0px;"}](https://gt.rstudio.com/)
 
-The most powerful package for creating and customizing tables in R.
+The `gt` package is the most powerful package for creating and customizing tables in R.
 
 It provides a flexible **grammar** for table creation and styling.
 :::
@@ -239,10 +461,239 @@ It provides a flexible **grammar** for table creation and styling.
 ::: {.notes}
 :::
 
-## Exercise {.smaller}
+## The `gt` Package {.smaller}
+
+```{r}
+library(dplyr)
+library(gt)
+library(palmerpenguins)
+library(stringr)
+```
+
+```{r}
+penguins_summary <-
+  penguins |>
+  filter(!is.na(sex)) |>
+  summarize(
+    n = n(),
+    mean_body_mass_g = mean(body_mass_g, na.rm = TRUE),
+    mean_bill_length_mm = mean(bill_length_mm, na.rm = TRUE),
+    mean_flipper_length_mm = mean(flipper_length_mm, na.rm = TRUE),
+    .by = c("species", "sex")
+  ) |>
+  mutate(sex = sex |> str_to_title()) |>
+  arrange(species, sex)
+```
+
+## The `gt` Package {.smaller}
+
+```{r}
+penguins_summary
+```
+
+## It's All About Layers {.smaller .scrollable}
+
+```{r}
+#| code-fold: true
+
+penguin_table <-
+  penguins_summary |>
+  gt(groupname_col = "species") |>
+  cols_label(
+    sex = "Sex",
+    n = "N",
+    mean_body_mass_g = "Body Mass (g)",
+    mean_bill_length_mm = "Bill Length (mm)",
+    mean_flipper_length_mm = "Flipper Length (mm)"
+  )
+
+penguin_table
+```
+
+## It's All About Layers {.smaller .scrollable}
+
+```{r}
+#| code-fold: true
+
+penguin_table <-
+  penguin_table |>
+  tab_header(
+    title = md("**Antarctic Penguin Characteristics**"),
+    subtitle = "Comparison between species and sexes"
+  )
+
+penguin_table
+```
+
+## It's All About Layers {.smaller .scrollable}
+
+```{r}
+#| code-fold: true
+
+penguin_table <-
+  penguin_table |>
+  fmt_number(
+    columns = starts_with("mean"),
+    decimals = 2
+  )
+
+penguin_table
+```
+
+## It's All About Layers {.smaller .scrollable}
+
+```{r}
+#| code-fold: true
+
+penguin_table <-
+  penguin_table |>
+  data_color(
+    columns = mean_body_mass_g,
+    palette = "Blues"
+  )
+
+penguin_table
+```
+
+## It's All About Layers {.smaller .scrollable}
+
+```{r}
+#| code-fold: true
+
+penguin_table <-
+  penguin_table |>
+  tab_source_note(
+    source_note = "Source: Palmer Station LTER / palmerpenguins package"
+  ) |>
+  tab_footnote(
+    footnote = "Averages calculated after removing missing values",
+    locations = cells_column_labels(columns = starts_with("mean"))
+  )
+
+penguin_table
+```
+
+## It's All About Layers {.smaller .scrollable}
+
+```{r}
+#| code-fold: true
+
+penguin_table <-
+  penguin_table |>
+  tab_style(
+    style = cell_fill(color = "#E8F4F8"),
+    locations = cells_row_groups()
+  ) |>
+  tab_style(
+    style = cell_text(weight = "bold", size = px(18)),
+    locations = cells_title(groups = "title")
+  ) |>
+  tab_options(
+    table.border.top.style = "solid",
+    table.border.bottom.style = "solid",
+    heading.border.bottom.style = "solid",
+    column_labels.border.bottom.style = "solid",
+    row_group.border.top.style = "solid",
+    row_group.border.bottom.style = "solid"
+  )
+
+penguin_table
+```
+
+## Exercise (`gt`) {.smaller}
+
+Using the [`starwars`](https://dplyr.tidyverse.org/reference/starwars.html) dataset from the [`dplyr`](https://dplyr.tidyverse.org) package, create a summary table that displays the mean *height* and *mass* of characters grouped by their species.
+
+Customize the table with appropriate titles, labels, and formatting to enhance its readability.
+
+```{r}
+library(dplyr)
+```
+
+```{r}
+#| attr-source: "style='height: 350px;'"
+
+starwars |> glimpse()
+```
+
+::: {.notes}
+:::
+
+## Exercise (`gt`) {.smaller .scrollable}
+
+**Solution**:
+
+```{r}
+#| code-fold: true
+
+library(dplyr)
+library(gt)
+library(tidyr)
+
+starwars_summary <-
+  starwars |>
+  drop_na(species, height, mass) |>
+  summarize(
+    mean_height = mean(height, na.rm = TRUE),
+    mean_mass = mean(mass, na.rm = TRUE),
+    .by = "species"
+  )
+
+starwars_summary |>
+  gt() |>
+  cols_label(
+    species = "Species",
+    mean_height = "Mean Height (cm)",
+    mean_mass = "Mean Mass (kg)"
+  ) |>
+  tab_header(
+    title = md("**Star Wars Character Characteristics**"),
+    subtitle = "Mean height and mass by species"
+  ) |>
+  fmt_number(
+    columns = starts_with("mean"),
+    decimals = 2
+  ) |>
+  tab_source_note(
+    source_note = "Source: Star Wars API / dplyr package"
+  )
+```
 
 ::: {.notes}
 - **15-minute break** after this slide.
+:::
+
+## `gt` Extensions {.smaller}
+
+The `gt` package also has several extensions that provide additional functionality for specific use cases.
+
+:::: {.columns}
+::: {.column style="width: 15%; padding-top: 15px;"}
+[![](images/gtsummary-hex-logo.png){style="width: 120px;"}](https://www.danieldsjoberg.com/gtsummary/)
+:::
+::: {.column style="width: 85%; padding-top: 15px;"}
+[`gtsummary`](https://www.danieldsjoberg.com/gtsummary/) provides a simple way to create publication-ready summary tables for statistical models and data frames.
+
+```r
+install.packages("gtsummary")
+```
+:::
+::::
+
+:::: {.columns}
+::: {.column style="width: 15%;"}
+[![](images/gtextras-hex-logo.png){style="width: 120px;"}](https://jthomasmock.github.io/gtExtras/)
+:::
+::: {.column style="width: 85%; padding-top: 15px;"}
+[`gtextras`](https://jthomasmock.github.io/gtExtras/) provides additional themes, color scales, and utilities to enhance `gt` tables.
+
+```r
+install.packages("gtextras")
+```
+:::
+::::
+
+::: {.notes}
 :::
 
 ## The Grammar of Graphics {.smaller}
@@ -326,7 +777,11 @@ library(palmerpenguins)
 library(tidyr)
 
 penguins |>
-  drop_na(body_mass_g, flipper_length_mm, species) |>
+  drop_na(
+    body_mass_g,
+    flipper_length_mm,
+    species
+  ) |>
   ggplot(
     aes(
       x = body_mass_g,
@@ -335,7 +790,10 @@ penguins |>
       shape = species
     )
   ) +
-  theme(text = element_text(size = 20), legend.position = "none")
+  theme(
+    text = element_text(size = 20),
+    legend.position = "none"
+  )
 ```
 :::
 ::::
@@ -348,7 +806,36 @@ penguins |>
 :::: {.columns}
 ::: {.column style="width: 50%;"}
 ``` {r}
+#| eval: false
 #| code-fold: true
+
+library(ggplot2)
+library(palmerpenguins)
+library(tidyr)
+
+penguins |>
+  drop_na(
+    body_mass_g,
+    flipper_length_mm,
+    species
+  ) |>
+  ggplot(
+    aes(
+      x = body_mass_g,
+      y = flipper_length_mm,
+      color = species,
+      shape = species
+    )
+  ) +
+  geom_point(size = 4) +
+  theme(
+    text = element_text(size = 20),
+    legend.position = "none"
+  )
+```
+
+``` {r}
+#| echo: false
 #| warning: false
 #| fig-height: 10
 
@@ -358,7 +845,11 @@ library(palmerpenguins)
 library(tidyr)
 
 penguins |>
-  drop_na(body_mass_g, flipper_length_mm, species) |>
+  drop_na(
+    body_mass_g,
+    flipper_length_mm,
+    species
+  ) |>
   ggplot(
     aes(
       x = body_mass_g,
@@ -369,12 +860,56 @@ penguins |>
   ) +
   geom_point(size = 4) +
   scale_color_brand_d(alpha = 0.7) +
-  theme(text = element_text(size = 20), legend.position = "none")
+  theme(
+    text = element_text(size = 20),
+    legend.position = "none"
+  )
 ```
 :::
 ::: {.column style="width: 50%;"}
 ``` {r}
+#| eval: false
 #| code-fold: true
+
+library(ggplot2)
+library(palmerpenguins)
+library(tidyr)
+
+penguins |>
+  drop_na(
+    body_mass_g,
+    flipper_length_mm,
+    species
+  ) |>
+  ggplot(
+    aes(
+      x = body_mass_g,
+      y = flipper_length_mm,
+      color = species,
+      shape = species
+    )
+  ) +
+  geom_point(size = 4) +
+  geom_smooth(
+    method = "lm",
+    formula = y ~ x,
+    se = FALSE,
+    linewidth = 2
+  ) +
+  labs(
+    x = "Body Mass (g)",
+    y = "Flipper Length (mm)",
+    color = "Species",
+    shape = "Species"
+  ) +
+  theme(
+    text = element_text(size = 20),
+    legend.position = "none"
+  )
+```
+
+``` {r}
+#| echo: false
 #| warning: false
 #| fig-height: 10
 
@@ -384,7 +919,11 @@ library(palmerpenguins)
 library(tidyr)
 
 penguins |>
-  drop_na(body_mass_g, flipper_length_mm, species) |>
+  drop_na(
+    body_mass_g,
+    flipper_length_mm,
+    species
+  ) |>
   ggplot(
     aes(
       x = body_mass_g,
@@ -407,7 +946,10 @@ penguins |>
     shape = "Species"
   ) +
   scale_color_brand_d(alpha = 0.7) +
-  theme(text = element_text(size = 20), legend.position = "none")
+  theme(
+    text = element_text(size = 20),
+    legend.position = "none"
+  )
 ```
 :::
 ::::
@@ -418,7 +960,35 @@ penguins |>
 ## Bar Plots {.smaller .nostretch}
 
 ```{r}
+#| eval: false
 #| code-fold: true
+
+library(ggplot2)
+library(palmerpenguins)
+
+penguins |>
+  ggplot(
+    aes(
+      x = island,
+      fill = species
+    )
+  ) +
+  geom_bar(alpha = 0.8) +
+  facet_wrap(
+    facets = ~species,
+    ncol = 1
+  ) +
+  coord_flip() +
+  labs(
+    x = "Island",
+    y = "Count"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+```{r}
+#| echo: false
 #| warning: false
 #| fig-align: center
 
@@ -427,23 +997,62 @@ library(ggplot2)
 library(palmerpenguins)
 
 penguins |>
-  ggplot(aes(x = island, fill = species)) +
+  ggplot(
+    aes(
+      x = island,
+      fill = species
+    )
+  ) +
   geom_bar(alpha = 0.8) +
-  theme_minimal() +
-  facet_wrap(~species, ncol = 1) +
+  facet_wrap(
+    facets = ~species,
+    ncol = 1
+  ) +
   coord_flip() +
+  scale_fill_brand_d() +
   labs(
     x = "Island",
     y = "Count"
   ) +
-  scale_fill_brand_d() +
+  theme_minimal() +
   theme(legend.position = "none")
 ```
 
 ## Histograms {.smaller .nostretch}
 
 ```{r}
+#| eval: false
 #| code-fold: true
+
+library(ggplot2)
+library(palmerpenguins)
+library(tidyr)
+
+penguins |>
+  drop_na(
+    flipper_length_mm,
+    species
+  ) |>
+  ggplot(
+    aes(
+      x = flipper_length_mm,
+      fill = species
+    )
+  ) +
+  geom_histogram(
+    bins = 30,
+    alpha = 0.5,
+    position = "identity"
+  ) +
+  labs(
+    x = "Flipper Length (mm)",
+    y = "Frequency",
+    fill = "Species"
+  )
+```
+
+```{r}
+#| echo: false
 #| warning: false
 #| fig-align: center
 
@@ -453,17 +1062,67 @@ library(palmerpenguins)
 library(tidyr)
 
 penguins |>
-  drop_na(flipper_length_mm, species) |>
-  ggplot(aes(x = flipper_length_mm, fill = species)) +
-  geom_histogram(bins = 30, alpha = 0.5, position = "identity") +
-  labs(x = "Flipper Length (mm)", y = "Frequency", fill = "Species") +
-  scale_fill_brand_d()
+  drop_na(
+    flipper_length_mm,
+    species
+  ) |>
+  ggplot(
+    aes(
+      x = flipper_length_mm,
+      fill = species
+    )
+  ) +
+  geom_histogram(
+    bins = 30,
+    alpha = 0.5,
+    position = "identity"
+  ) +
+  scale_fill_brand_d() +
+  labs(
+    x = "Flipper Length (mm)",
+    y = "Frequency",
+    fill = "Species"
+  )
 ```
 
 ## Boxplots {.smaller .nostretch}
 
 ```{r}
+#| eval: false
 #| code-fold: true
+
+library(ggplot2)
+library(palmerpenguins)
+library(tidyr)
+
+penguins |>
+  drop_na(
+    bill_length_mm,
+    species
+  ) |>
+  ggplot(
+    aes(
+      x = species,
+      y = bill_length_mm,
+      fill = species
+    )
+  ) +
+  geom_boxplot(
+    outlier.color = "red"
+  ) +
+  geom_jitter(
+   width = 0.2,
+   alpha = 0.1
+  ) +
+  labs(
+    x = "Species",
+    y = "Bill Length (mm)",
+    fill = "Species"
+  )
+```
+
+```{r}
+#| echo: false
 #| warning: false
 #| fig-align: center
 
@@ -473,28 +1132,48 @@ library(palmerpenguins)
 library(tidyr)
 
 penguins |>
-  drop_na(bill_length_mm, species) |>
-  ggplot(aes(x = species, y = bill_length_mm, fill = species)) +
-  geom_boxplot(outlier.color = get_brand_color("dark-red")) +
-  geom_jitter(width = 0.2, alpha = 0.1) +
+  drop_na(
+    bill_length_mm,
+    species
+  ) |>
+  ggplot(
+    aes(
+      x = species,
+      y = bill_length_mm,
+      fill = species
+    )
+  ) +
+  geom_boxplot(
+    outlier.color = "red"
+  ) +
+  geom_jitter(
+   width = 0.2,
+   alpha = 0.1
+  ) +
   scale_fill_brand_d(alpha = 0.7) +
-  labs(x = "Species", y = "Bill Length (mm)", fill = "Species")
+  labs(
+    x = "Species",
+    y = "Bill Length (mm)",
+    fill = "Species"
+  )
 ```
 
 ## Scatter Plots {.smaller .nostretch}
 
 ```{r}
+#| eval: false
 #| code-fold: true
-#| warning: false
-#| fig-align: center
 
-library(brandr)
 library(ggplot2)
 library(palmerpenguins)
 library(tidyr)
 
 penguins |>
-  drop_na(body_mass_g, flipper_length_mm, species) |>
+  drop_na(
+    body_mass_g,
+    flipper_length_mm,
+    species
+  ) |>
   ggplot(
     aes(
       x = body_mass_g,
@@ -504,45 +1183,147 @@ penguins |>
     )
   ) +
   geom_point(size = 2) +
-  geom_smooth(method = "lm", formula = y ~ x, se = FALSE) +
+  geom_smooth(
+    method = "lm",
+    formula = y ~ x,
+    se = FALSE
+  ) +
   labs(
     x = "Body Mass (g)",
     y = "Flipper Length (mm)",
     color = "Species",
     shape = "Species"
+  )
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-align: center
+
+library(brandr)
+library(ggplot2)
+library(palmerpenguins)
+library(tidyr)
+
+penguins |>
+  drop_na(
+    body_mass_g,
+    flipper_length_mm,
+    species
+  ) |>
+  ggplot(
+    aes(
+      x = body_mass_g,
+      y = flipper_length_mm,
+      color = species,
+      shape = species
+    )
   ) +
-  scale_color_brand_d(alpha = 0.7)
+  geom_point(size = 2) +
+  geom_smooth(
+    method = "lm",
+    formula = y ~ x,
+    se = FALSE
+  ) +
+  scale_color_brand_d(alpha = 0.7) +
+  labs(
+    x = "Body Mass (g)",
+    y = "Flipper Length (mm)",
+    color = "Species",
+    shape = "Species"
+  )
 ```
 
 ## Facets {.smaller .nostretch}
 
 ```{r}
+#| eval: false
 #| code-fold: true
+
+library(dplyr)
+library(ggplot2)
+library(magrittr)
+library(palmerpenguins)
+library(stringr)
+library(tidyr)
+
+penguins |>
+  drop_na(
+    body_mass_g,
+    flipper_length_mm,
+    sex
+  ) |>
+  mutate(
+    sex = sex %>%
+      `levels<-`(
+        sex |>
+          levels() |>
+          str_to_title()
+      )
+  ) |>
+  ggplot(
+    aes(
+      x = body_mass_g,
+      y = flipper_length_mm,
+      color = sex
+    )
+  ) +
+  geom_point(size = 2) +
+  geom_smooth(
+    method = "lm",
+    formula = y ~ x,
+    se = FALSE,
+    color = "black"
+  ) +
+  facet_wrap(~species) +
+  labs(
+    x = "Body Mass (g)",
+    y = "Flipper Length (mm)",
+    color = "Sex"
+  )
+```
+
+```{r}
+#| echo: false
 #| warning: false
 #| fig-align: center
 
 library(brandr)
 library(dplyr)
 library(ggplot2)
+library(magrittr)
 library(palmerpenguins)
 library(stringr)
 library(tidyr)
 
 penguins |>
-  drop_na(body_mass_g, flipper_length_mm, sex) |>
-  mutate(sex = `levels<-`(sex, str_to_title(levels(sex)))) |>
-  ggplot(aes(x = body_mass_g, y = flipper_length_mm, color = sex)) +
+  drop_na(
+    body_mass_g,
+    flipper_length_mm,
+    sex
+  ) |>
+  mutate(
+    sex = sex %>%
+      `levels<-`(
+        sex |>
+          levels() |>
+          str_to_title()
+      )
+  ) |>
+  ggplot(
+    aes(
+      x = body_mass_g,
+      y = flipper_length_mm,
+      color = sex
+    )
+  ) +
   geom_point(size = 2) +
   geom_smooth(
     method = "lm",
     formula = y ~ x,
     se = FALSE,
-    color = get_brand_color("brown")
-  ) +
-  labs(
-    x = "Body Mass (g)",
-    y = "Flipper Length (mm)",
-    color = "Sex"
+    color = get_brand_color("blue")
   ) +
   scale_color_brand_d(alpha = 0.7) +
   facet_wrap(~species)
@@ -551,7 +1332,96 @@ penguins |>
 ## Combined Plots {.smaller .nostretch}
 
 ```{r}
+#| eval: false
 #| code-fold: true
+
+library(ggplot2)
+library(palmerpenguins)
+library(patchwork)
+library(tidyr)
+
+plot_hist <-
+  penguins |>
+  drop_na(
+    flipper_length_mm,
+    species
+  ) |>
+  ggplot(
+    aes(
+    x = flipper_length_mm,
+    fill = species
+    )
+  ) +
+  geom_histogram(
+    bins = 30,
+    alpha = 0.5,
+    position = "identity"
+  ) +
+  labs(
+    x = "Flipper Length (mm)",
+    y = "Frequency"
+  ) +
+  theme(legend.position = "none")
+
+plot_boxplot <-
+  penguins |>
+  drop_na(
+    bill_length_mm,
+    species
+  ) |>
+  ggplot(
+    aes(
+      x = species,
+      y = bill_length_mm,
+      fill = species
+    )
+  ) +
+  geom_boxplot(outlier.color = "red") +
+  geom_jitter(width = 0.2, alpha = 0.1) +
+  labs(
+    x = "Species",
+    y = "Bill Length (mm)",
+    fill = "Species"
+  ) +
+  theme(
+    axis.title.x = element_blank(),
+    legend.position = "none"
+  )
+
+plot_scatter <-
+  penguins |>
+  drop_na(
+    body_mass_g,
+    flipper_length_mm,
+    species
+  ) |>
+  ggplot(
+    aes(
+      x = body_mass_g,
+      y = flipper_length_mm,
+      color = species,
+      shape = species
+    )
+  ) +
+  geom_point(size = 2) +
+  geom_smooth(
+    method = "lm",
+    formula = y ~ x,
+    se = FALSE
+  ) +
+  labs(
+    x = "Body Mass (g)",
+    y = "Flipper Length (mm)",
+    color = "Species",
+    shape = "Species"
+  ) +
+  theme(legend.position = "none")
+
+(plot_hist + plot_boxplot) / plot_scatter + plot_annotation(tag_levels = "A")
+```
+
+```{r}
+#| echo: false
 #| warning: false
 #| fig-align: center
 
@@ -563,22 +1433,56 @@ library(tidyr)
 
 plot_hist <-
   penguins |>
-  drop_na(flipper_length_mm, species) |>
-  ggplot(aes(x = flipper_length_mm, fill = species)) +
-  geom_histogram(bins = 30, alpha = 0.5, position = "identity") +
-  labs(x = "Flipper Length (mm)", y = "Frequency") +
+  drop_na(
+    flipper_length_mm,
+    species
+  ) |>
+  ggplot(
+    aes(
+    x = flipper_length_mm,
+    fill = species
+    )
+  ) +
+  geom_histogram(
+    bins = 30,
+    alpha = 0.5,
+    position = "identity"
+  ) +
+  labs(
+    x = "Flipper Length (mm)",
+    y = "Frequency"
+  ) +
   scale_fill_brand_d() +
   theme(legend.position = "none")
 
 plot_boxplot <-
   penguins |>
-  drop_na(bill_length_mm, species) |>
-  ggplot(aes(x = species, y = bill_length_mm, fill = species)) +
-  geom_boxplot(outlier.color = get_brand_color("dark-red")) +
-  geom_jitter(width = 0.2, alpha = 0.1) +
-  labs(x = "Species", y = "Bill Length (mm)", fill = "Species") +
+  drop_na(
+    bill_length_mm,
+    species
+  ) |>
+  ggplot(
+    aes(
+      x = species,
+      y = bill_length_mm,
+      fill = species
+    )
+  ) +
+  geom_boxplot(outlier.color = "red") +
+  geom_jitter(
+    width = 0.2,
+    alpha = 0.1
+  ) +
+  labs(
+    x = "Species",
+    y = "Bill Length (mm)",
+    fill = "Species"
+  ) +
   scale_fill_brand_d(alpha = 0.7) +
-  theme(axis.title.x = element_blank(), legend.position = "none")
+  theme(
+    axis.title.x = element_blank(),
+    legend.position = "none"
+  )
 
 plot_scatter <-
   penguins |>
@@ -592,7 +1496,11 @@ plot_scatter <-
     )
   ) +
   geom_point(size = 2) +
-  geom_smooth(method = "lm", formula = y ~ x, se = FALSE) +
+  geom_smooth(
+    method = "lm",
+    formula = y ~ x,
+    se = FALSE
+  ) +
   labs(
     x = "Body Mass (g)",
     y = "Flipper Length (mm)",
@@ -611,7 +1519,21 @@ plot_scatter <-
 ## Correlation Matrices {.smaller .nostretch}
 
 ```{r}
+#| eval: false
 #| code-fold: true
+
+library(dplyr)
+library(GGally)
+library(ggplot2)
+library(palmerpenguins)
+
+penguins |>
+  select(species, body_mass_g, ends_with("_mm")) |>
+  ggpairs(aes(color = species))
+```
+
+```{r}
+#| echo: false
 #| warning: false
 #| fig-align: center
 #| fig-width: 12
@@ -653,12 +1575,30 @@ library(tidyr)
 library(viridis)
 
 penguins |>
-  drop_na(flipper_length_mm, species) |>
-  ggplot(aes(x = flipper_length_mm, fill = species)) +
-  geom_density(alpha = 0.5, position = "identity") +
+  drop_na(
+    flipper_length_mm,
+    species
+  ) |>
+  ggplot(
+    aes(
+      x = flipper_length_mm,
+      fill = species
+    )
+  ) +
+  geom_density(
+    alpha = 0.5,
+    position = "identity"
+  ) +
   scale_fill_viridis(discrete = TRUE) +
-  labs(x = "Flipper Length (mm)", y = "Density", fill = "Species") +
-  theme(text = element_text(size = 20), legend.position = "none")
+  labs(
+    x = "Flipper Length (mm)",
+    y = "Density",
+    fill = "Species"
+  ) +
+  theme(
+    text = element_text(size = 20),
+    legend.position = "none"
+  )
 ```
 :::
 ::: {.column style="width: 50%;"}
@@ -674,12 +1614,30 @@ library(palmerpenguins)
 library(tidyr)
 
 penguins |>
-  drop_na(flipper_length_mm, species) |>
-  ggplot(aes(x = flipper_length_mm, fill = species)) +
-  geom_density(alpha = 0.5, position = "identity") +
+  drop_na(
+    flipper_length_mm,
+    species
+  ) |>
+  ggplot(
+    aes(
+      x = flipper_length_mm,
+      fill = species
+    )
+  ) +
+  geom_density(
+    alpha = 0.5,
+    position = "identity"
+  ) +
   scale_fill_brewer(palette = "Set1") +
-  labs(x = "Flipper Length (mm)", y = "Density", fill = "Species") +
-  theme(text = element_text(size = 20), legend.position = "none")
+  labs(
+    x = "Flipper Length (mm)",
+    y = "Density",
+    fill = "Species"
+  ) +
+  theme(
+    text = element_text(size = 20),
+    legend.position = "none"
+  )
 ```
 :::
 ::::
@@ -713,9 +1671,85 @@ Another amazing work by [Yan Holtz](https://github.com/holtzy) is the [R Graph G
 ::: {.notes}
 :::
 
-## Exercise {.smaller}
+## Exercise (Scatter Plot) {.smaller}
+
+Create a scatter plot using the [`mpg`](https://ggplot2.tidyverse.org/reference/mpg.html) dataset (available in the [`ggplot2`](https://ggplot2.tidyverse.org/) package) that visualizes the relationship between `displ` (engine displacement) and `hwy` (highway miles per gallon).
+
+Add a  Color the points based on the `class` of the vehicle.
+
+```{r}
+library(ggplot2)
+```
+
+```{r}
+mpg |> glimpse()
+```
 
 ::: {.notes}
+:::
+
+## Exercise (Scatter Plot) {.smaller}
+
+**Solution**:
+
+```{r}
+#| eval: false
+#| code-fold: true
+
+library(ggplot2)
+
+mpg |>
+  ggplot(
+    aes(
+      x = displ,
+      y = hwy,
+      color = class
+    )
+  ) +
+  geom_point(size = 2) +
+  labs(
+    x = "Engine Displacement (L)",
+    y = "Highway Miles per Gallon",
+    color = "Vehicle Class"
+  ) +
+  theme(
+    text = element_text(size = 20),
+    legend.position = "right"
+  )
+```
+
+```{r}
+#| echo: false
+
+library(ggplot2)
+
+mpg |>
+  ggplot(
+    aes(
+      x = displ,
+      y = hwy,
+      color = class
+    )
+  ) +
+  geom_point(size = 2) +
+  # geom_smooth(
+  #   # se = FALSE,
+  #   color = "black"
+  # ) +
+  scale_color_brand_d(alpha = 0.7) +
+  labs(
+    x = "Engine Displacement (L)",
+    y = "Highway Miles per Gallon",
+    color = "Vehicle Class"
+  ) +
+  theme(
+    text = element_text(size = 20),
+    legend.position = "right"
+  )
+```
+
+::: {.notes}
+- **15-minute break** after this slide.
 :::
 
 ## How to Learn More {.smaller}

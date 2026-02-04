@@ -1030,41 +1030,6 @@ data |> glimpse()
 ::: {.notes}
 :::
 
-## `filter()`
-
-![](images/allison-horst-figure-31.png){.nostretch fig-align="center" style="height: 550px;"}
-
-::: footer
-(Artwork by [Allison Horst](https://twitter.com/allison_horst))
-:::
-
-::: {.notes}
-:::
-
-## `filter()` {.smaller}
-
-Let's filter the data to keep only penguins with a body mass greater than 2000 grams and a bill length less than 50 mm.
-
-```{r}
-library(dplyr)
-```
-
-```{r}
-data <-
-  data |>
-  filter(
-    body_mass_g > 2000 | is.na(body_mass_g),
-    bill_length_mm < 60 | is.na(bill_length_mm)
-  )
-```
-
-```{r}
-data |> glimpse()
-```
-
-::: {.notes}
-:::
-
 ## `relocate()`
 
 ![](images/allison-horst-figure-30.png){.nostretch fig-align="center" style="height: 550px;"}
@@ -1183,7 +1148,96 @@ test <- here("data", "palmerpenguins-valid.rds") |> read_rds()
 **Tip**: Store your data in research repositories like [The Open Science Framework](https://osf.io/) (See the [`osfr`](https://docs.ropensci.org/osfr/) package). If you are working with sensitive or human data, ensure it is encrypted before storing it in the cloud (See the [`lockr`](https://danielvartan.github.io/lockr/) package).
 :::
 
-## Exercise (Joins) {.smaller}
+## Other Tools {.smaller}
+
+You've learned the basic grammar for data manipulation using [Tidyverse](https://tidyverse.org), but many important tools remain to be covered. The following slides introduce some of them.
+
+I strongly encourage you to take the time to explore the [documentation website](https://tidyverse.org/packages/) of each Tidyverse package to discover more functions that can help you in your data analysis workflow. I guarantee your future self will thank you!
+
+::: {style="padding-top: 15px;"}
+Now that we've reconstructed the `penguins` dataset from the `palmerpenguins` package, we'll load the package and use the built-in dataset for the following examples. There's no need to import the valid data into R.
+:::
+
+::: {.notes}
+:::
+
+## `filter()`
+
+![](images/allison-horst-figure-31.png){.nostretch fig-align="center" style="height: 550px;"}
+
+::: footer
+(Artwork by [Allison Horst](https://twitter.com/allison_horst))
+:::
+
+::: {.notes}
+:::
+
+## `filter()` {.smaller}
+
+The `filter()` function is used to filter rows from a data frame based on specified conditions.
+
+```{r}
+library(dplyr)
+library(palmerpenguins)
+```
+
+```{r}
+#| attr-source: "style='height: 400px;'"
+
+penguins |>
+  filter(
+    species == "Adelie",
+    island %in% c("Dream", "Torgersen"),
+    body_mass_g > 4000 | !is.na(body_mass_g),
+    bill_length_mm < 40 | !is.na(bill_length_mm)
+  )
+```
+
+::: {.notes}
+:::
+
+## Exercise (`filter`) {.smaller}
+
+The `dplyr` packages provides a dataset called [`starwars`](https://dplyr.tidyverse.org/reference/starwars.html) that contains information about characters from the Star Wars universe. Filter the `starwars` dataset to include only characters who meet the following criteria:
+
+1. Belong to the species *Droid*.
+2. Have a height greater than 100 cm.
+3. Have a mass less than 150 kg.
+
+::: {.notes}
+:::
+
+## Exercise (`filter`) {.smaller}
+
+```{r}
+library(dplyr)
+```
+
+```{r}
+starwars |> glimpse()
+```
+
+::: {.notes}
+:::
+
+## Exercise (`filter`) {.smaller}
+
+**Solution**:
+
+```{r}
+#| code-fold: true
+
+library(dplyr)
+
+starwars |>
+  filter(
+    species == "Droid",
+    height > 100,
+    mass < 150
+  )
+```
+
+## Joins {.smaller}
 
 Data analysis typically requires working with multiple data frames that need to be combined to answer your research questions.
 
@@ -1196,7 +1250,7 @@ Data analysis typically requires working with multiple data frames that need to 
 ::: {.notes}
 :::
 
-## Exercise (Joins) {.smaller}
+## Joins {.smaller}
 
 These combinations are called [**joins**](https://r4ds.hadley.nz/joins.html). There are different types of joins depending on how you want to combine the data frames.
 
@@ -1209,7 +1263,7 @@ These combinations are called [**joins**](https://r4ds.hadley.nz/joins.html). Th
 ::: {.notes}
 :::
 
-## Exercise (Joins) {.smaller}
+## Joins {.smaller}
 
 A left join retains all rows from `x`. Each row in `x` appears in the output, matching with `y` where possible or with `NA` values when no match exists.
 
@@ -1217,6 +1271,31 @@ A left join retains all rows from `x`. Each row in `x` appears in the output, ma
 
 ::: footer
 (Reproduced from @wickham2023e)
+:::
+
+::: {.notes}
+:::
+
+## Joins {.smaller}
+
+```{r}
+x <- tibble(key = 1:3, val_x = c("x1", "x2", "x3"))
+y <- tibble(key = c(1, 2, 4), val_y = c("y1", "y2", "y3"))
+```
+
+```{r}
+x
+```
+
+```{r}
+y
+```
+
+```{r}
+x |> left_join(y, by = join_by(key))
+```
+
+::: {.notes}
 :::
 
 ## Exercise (Joins) {.smaller}
@@ -1232,14 +1311,14 @@ library(dplyr)
 :::
 
 :::: {.columns}
-::: {.column style="width: 47.5%;"}
+::: {.column style="width: 47.5%; padding-top: 15px;"}
 ```{r}
 band_members
 ```
 :::
 ::: {.column style="width: 5%;"}
 :::
-::: {.column style="width: 47.5%;"}
+::: {.column style="width: 47.5%; padding-top: 15px;"}
 ```{r}
 band_instruments2
 ```
@@ -1251,7 +1330,7 @@ band_instruments2
 
 ## Exercise (Joins) {.smaller}
 
-**Answer**:
+**Solution**:
 
 ```{r}
 #| code-fold: true
@@ -1265,12 +1344,13 @@ band_members |>
   )
 ```
 
-## Exercise (Pivot) {.smaller}
+## Pivot {.smaller}
 
-:::: {.columns}
-::: {.column style="width: 47.5%;"}
+::::: {.columns}
+:::: {.column style="width: 47.5%;"}
 One of the most common issues is data stored in **wide** format where column names actually represent values of a variable.
 
+::: {style="padding-top: 15px;"}
 ```{r}
 library(tidyr)
 ```
@@ -1279,10 +1359,51 @@ library(tidyr)
 table4b
 ```
 :::
+::::
+:::: {.column style="width: 5%;"}
+::::
+:::: {.column style="width: 47.5%;"}
+![](images/allison-horst-figure-52.jpg){.nostretch fig-align="center" style="width: 100%;"}
+::::
+:::::
+
+::: footer
+(Artwork by [Allison Horst](https://allisonhorst.com/horst-hill-collaborations))
+:::
+
+::: {.notes}
+:::
+
+## Pivot {.smaller}
+
+`tidyr` provides two functions to deal with this kind if issue: [`pivot_longer()`](https://tidyr.tidyverse.org/reference/pivot_longer.html) and [`pivot_wider()`](https://tidyr.tidyverse.org/reference/pivot_wider.html).
+
+```{r}
+library(tidyr)
+```
+
+:::: {.columns}
+::: {.column style="width: 47.5%; padding-top: 15px;"}
+```{r}
+#| attr-source: "style='height: 400px;'"
+
+relig_income
+```
+:::
 ::: {.column style="width: 5%;"}
 :::
-::: {.column style="width: 47.5%;"}
-![](images/allison-horst-figure-52.jpg){.nostretch fig-align="center" style="width: 100%;"}
+::: {.column style="width: 47.5%; padding-top: 15px;"}
+
+```{r}
+#| attr-source: "style='height: 400px;'"
+
+relig_income |>
+  pivot_longer(
+    cols = !religion,
+    names_to = "income",
+    values_to = "count"
+  )
+```
 :::
 ::::
 
@@ -1295,7 +1416,7 @@ table4b
 
 ## Exercise (Pivot) {.smaller}
 
-Perform a pivot to transform the [`table4a`](https://tidyr.tidyverse.org/reference/table1.html) dataset from **wide** to **long** format using the [`pivot_longer()`](https://tidyr.tidyverse.org/reference/pivot_longer.html) function from the [`tidyr`](https://tidyr.tidyverse.org/) package.
+Perform a pivot to transform the [`table4a`](https://tidyr.tidyverse.org/reference/table1.html) dataset, found in the [`tidyr`](https://tidyr.tidyverse.org/) package, from **wide** to **long** format using the [`pivot_longer()`](https://tidyr.tidyverse.org/reference/pivot_longer.html) function.
 
 ::: {style="padding-top: 15px;"}
 The [`table4a`](https://tidyr.tidyverse.org/reference/table1.html) dataset displays the number of tuberculosis cases documented by the World Health Organization ([WHO](https://www.who.int/)) in Afghanistan, Brazil, and China between 1999 and 2000.
@@ -1314,7 +1435,7 @@ table4a
 
 ## Exercise (Pivot) {.smaller}
 
-**Answer**:
+**Solution**:
 
 ```{r}
 #| code-fold: true
@@ -1323,7 +1444,7 @@ library(tidyr)
 
 table4a |>
   pivot_longer(
-    cols = c(`1999`, `2000`),
+    cols = !country,
     names_to = "year",
     values_to = "cases"
   )

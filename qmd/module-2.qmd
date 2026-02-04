@@ -1289,7 +1289,7 @@ temperatures <- c(18, 22, 14, 27, 7, 21, 31)
 ::: {.column style="width: 5%;"}
 :::
 ::: {.column style="width: 47.5%;"}
-**Answer**:
+**Solution**:
 
 ```{r}
 #| code-fold: true
@@ -1409,7 +1409,7 @@ correct <- FALSE
 ::: {.column style="width: 5%;"}
 :::
 ::: {.column style="width: 47.5%;"}
-**Answer**:
+**Solution**:
 
 ```{r}
 #| eval: false
@@ -1428,8 +1428,6 @@ while (attempts > 0 && !correct) {
 
   if (guess == secret) {
     correct <- TRUE
-
-    break
   } else if (guess < secret) {
     print("Too low! Try again.")
   } else {
@@ -1463,8 +1461,8 @@ name <- function(parameter_1, parameter_2, ...) expression
 The last evaluated expression is the return value of the function.
 
 ```{r}
-foo <- function(x) {
-  x + 1
+foo <- function(x, y = 1) {
+  x + y
 }
 
 foo(9)
@@ -1547,11 +1545,15 @@ password |> nchar()
 ```
 :::
 
-::: {style="padding-top: 30px;"}
-**Tip**: Similar to `nchar()`, you can use `length()` to get the length of a vector.
+::: {style="padding-top: 15px;"}
+Use `stop()` to throw an error if the password is invalid.
 
 ```{r}
-c("a", "b", "c") |> length()
+#| eval: false
+
+stop("Password must be text")
+#> Error:
+#>! Password must be text.
 ```
 :::
 
@@ -1570,10 +1572,12 @@ c("a", "b", "c") |> length()
 #>
 
 validate_password(12345678)
-#> [1] "Password must be text"
+#> Error:
+#> ! Password must be text
 
 validate_password("hello")
-#> [1] "Password too short"
+#> Error:
+#> ! Password too short
 
 validate_password("hello123")
 #> [1] "Valid password"
@@ -1582,26 +1586,30 @@ validate_password("hello123")
 ::: {.column style="width: 5%;"}
 :::
 ::: {.column style="width: 47.5%;"}
-**Answer**:
+**Solution**:
 
 ```{r}
 #| code-fold: true
+#| eval: false
 
 validate_password <- function(password) {
-  char_count <- nchar(password)
-
   if (!is.character(password)) {
-    "Password must be text"
-  } else if (char_count < 8) {
-    "Password too short"
+    stop("Password must be text")
+  } else if (nchar(password) < 8) {
+    stop("Password too short")
   } else {
-    "Valid password"
+    message("Valid password")
   }
 }
 
 validate_password(12345678)
+#> Error:
+#> ! Password must be text
 validate_password("hello")
+#> Error:
+#> ! Password too short
 validate_password("hello123")
+#> Valid password
 ```
 :::
 ::::
@@ -1725,7 +1733,7 @@ test_scores <- list(
 ::: {.column style="width: 5%;"}
 :::
 ::: {.column style="width: 47.5%;"}
-**Answer**:
+**Solution**:
 
 ```{r}
 #| code-fold: true
@@ -1982,7 +1990,7 @@ If you want a deeper understanding of the R language, I encourage you to explore
 
 ## Best Practices {.smaller}
 
-You can learn a lot about a person just by looking at their code 👀.
+Always follow the Tidyverse style guide to write clean and efficient R code:
 
 :::: {.columns}
 ::: {.column style="width: 47.5%; font-size: 0.9em;"}
@@ -2015,6 +2023,8 @@ The tidyverse has four guiding principles:
 ::::
 
 ::: {.notes}
+- Red flags for not following best practices.
+- You can learn a lot about a programmer by looking at their code.
 :::
 
 ## How to Learn More {.smaller}
