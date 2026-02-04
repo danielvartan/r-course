@@ -46,6 +46,7 @@ format:
     preview-links: false
     controls: true
     controls-layout: bottom-right
+    slide-number: true
     chalkboard: true
     auto-stretch: true
     fig-align: center

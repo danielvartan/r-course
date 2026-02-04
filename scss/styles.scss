@@ -77,6 +77,20 @@ body {
   font-size: large;
 }
 
+/* Slide Numbers ----- */
+
+.reveal .slide-number {
+  position: absolute !important;
+  top: var(--r-controls-spacing) !important;
+  right: var(--r-controls-spacing) !important;
+  font-size: 0.5em !important;
+  color: $brand-blue !important;
+}
+
+.reveal .slide-number>a[href*='title-slide'] {
+  display: none;
+}
+
 /* Others ----- */
 
 .semi-bold {
