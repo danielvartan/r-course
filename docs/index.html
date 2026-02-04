@@ -3121,9 +3121,9 @@
 <span id="cb122-7"><a></a>  <span class="at">check =</span> <span class="st">"equal"</span></span>
 <span id="cb122-8"><a></a>)</span>
 <span id="cb122-9"><a></a><span class="co">#&gt; Unit: microseconds</span></span>
-<span id="cb122-10"><a></a><span class="co">#&gt;                   expr      min        lq      mean   median       uq      max</span></span>
-<span id="cb122-11"><a></a><span class="co">#&gt;  with_for_loop(1:1000) 1060.268 1154.4375 1504.8569 1183.226 1213.550 4785.681</span></span>
-<span id="cb122-12"><a></a><span class="co">#&gt;       with_map(1:1000)  291.844  326.6315  347.7094  335.973  350.045 1041.476</span></span>
+<span id="cb122-10"><a></a><span class="co">#&gt;                   expr      min        lq      mean    median       uq      max</span></span>
+<span id="cb122-11"><a></a><span class="co">#&gt;  with_for_loop(1:1000) 1032.099 1099.6315 1426.0296 1124.6975 1163.827 3962.890</span></span>
+<span id="cb122-12"><a></a><span class="co">#&gt;       with_map(1:1000)  288.057  303.6495  328.8385  317.5155  338.846 1042.351</span></span>
 <span id="cb122-13"><a></a><span class="co">#&gt;  neval cld</span></span>
 <span id="cb122-14"><a></a><span class="co">#&gt;    100  a </span></span>
 <span id="cb122-15"><a></a><span class="co">#&gt;    100   b</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -3179,7 +3179,7 @@
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section><section id="exercise-functions-3" class="slide level2 smaller"><h2>Exercise (Functions)</h2>
+      }</style></aside></section><section id="exercise-functionals-1" class="slide level2 smaller"><h2>Exercise (Functionals)</h2>
 <div class="columns">
 <div class="column" style="width: 47.5%; padding-top: 0px;">
 <p><strong>Expected output</strong>:</p>
@@ -10778,7 +10778,7 @@
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb318"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb318-1"><a></a><span class="fu">library</span>(ggplot2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb319" style="height: 400px;"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb319-1"><a></a>mpg <span class="sc">|&gt;</span> <span class="fu">glimpse</span>()</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb319"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb319-1"><a></a>mpg <span class="sc">|&gt;</span> <span class="fu">glimpse</span>()</span>
 <span id="cb319-2"><a></a><span class="co">#&gt; Rows: 234</span></span>
 <span id="cb319-3"><a></a><span class="co">#&gt; Columns: 11</span></span>
 <span id="cb319-4"><a></a><span class="co">#&gt; $ manufacturer &lt;chr&gt; "audi", "audi", "audi", "audi", "audi", "audi", "audi", "…</span></span>

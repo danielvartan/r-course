@@ -1701,7 +1701,7 @@ test_scores <- list(
 ::: {.notes}
 :::
 
-## Exercise (Functions) {.smaller}
+## Exercise (Functionals) {.smaller}
 
 :::: {.columns}
 ::: {.column style="width: 47.5%; padding-top: 0px;"}
