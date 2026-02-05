@@ -1188,8 +1188,8 @@ penguins |>
   filter(
     species == "Adelie",
     island %in% c("Dream", "Torgersen"),
-    body_mass_g > 4000 | !is.na(body_mass_g),
-    bill_length_mm < 40 | !is.na(bill_length_mm)
+    body_mass_g > 4000,
+    bill_length_mm < 40
   )
 ```
 
@@ -1198,7 +1198,7 @@ penguins |>
 
 ## Exercise (`filter`) {.smaller}
 
-The `dplyr` packages provides a dataset called [`starwars`](https://dplyr.tidyverse.org/reference/starwars.html) that contains information about characters from the Star Wars universe. Filter the `starwars` dataset to include only characters who meet the following criteria:
+The [`dplyr`](https://dplyr.tidyverse.org/index.html) package provides a dataset called [`starwars`](https://dplyr.tidyverse.org/reference/starwars.html) that contains information about characters from the Star Wars universe. Filter the `starwars` dataset to include only characters who meet the following criteria:
 
 1. Belong to the species *Droid*.
 2. Have a height greater than 100 cm.

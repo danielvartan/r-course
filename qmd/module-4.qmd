@@ -585,7 +585,7 @@ penguin_table <-
     locations = cells_row_groups()
   ) |>
   tab_style(
-    style = cell_text(weight = "bold", size = px(18)),
+    style = cell_text(size = px(18)),
     locations = cells_title(groups = "title")
   ) |>
   tab_options(
@@ -740,12 +740,12 @@ A [Tidyverse](https://www.tidyverse.org/) package based on the principles of *Th
 ::: {.column style="width: 5%;"}
 :::
 ::: {.column style="width: 47.5%;"}
-![](images/r-graph-gallery-hierarchical-edge-bundling-figure-1.png){style="width: 100%; padding-top: 0px;"}
+![](images/wickham-2016-figure-1.png){style="width: 100%; padding-top: 30px;"}
 :::
 ::::
 
 ::: footer
-(Artwork by [R Chart Gallery](https://r-graph-gallery.com/hierarchical-edge-bundling.html))
+(Reproduced from @wickham2016a)
 :::
 
 ::: {.notes}
@@ -768,7 +768,25 @@ penguins |> ggplot()
 :::
 ::: {.column style="width: 50%;"}
 ``` {r}
+#| eval: false
 #| code-fold: true
+
+library(ggplot2)
+library(palmerpenguins)
+
+penguins |>
+  ggplot(
+    aes(
+      x = body_mass_g,
+      y = flipper_length_mm,
+      color = species,
+      shape = species
+    )
+  )
+```
+
+``` {r}
+#| echo: false
 #| warning: false
 #| fig-height: 10
 
@@ -811,14 +829,8 @@ penguins |>
 
 library(ggplot2)
 library(palmerpenguins)
-library(tidyr)
 
 penguins |>
-  drop_na(
-    body_mass_g,
-    flipper_length_mm,
-    species
-  ) |>
   ggplot(
     aes(
       x = body_mass_g,
@@ -827,11 +839,7 @@ penguins |>
       shape = species
     )
   ) +
-  geom_point(size = 4) +
-  theme(
-    text = element_text(size = 20),
-    legend.position = "none"
-  )
+  geom_point(size = 4)
 ```
 
 ``` {r}
@@ -873,14 +881,8 @@ penguins |>
 
 library(ggplot2)
 library(palmerpenguins)
-library(tidyr)
 
 penguins |>
-  drop_na(
-    body_mass_g,
-    flipper_length_mm,
-    species
-  ) |>
   ggplot(
     aes(
       x = body_mass_g,
@@ -889,22 +891,16 @@ penguins |>
       shape = species
     )
   ) +
-  geom_point(size = 4) +
+  geom_point() +
   geom_smooth(
     method = "lm",
-    formula = y ~ x,
-    se = FALSE,
-    linewidth = 2
+    se = FALSE
   ) +
   labs(
     x = "Body Mass (g)",
     y = "Flipper Length (mm)",
     color = "Species",
     shape = "Species"
-  ) +
-  theme(
-    text = element_text(size = 20),
-    legend.position = "none"
   )
 ```
 
@@ -935,7 +931,6 @@ penguins |>
   geom_point(size = 4) +
   geom_smooth(
     method = "lm",
-    formula = y ~ x,
     se = FALSE,
     linewidth = 2
   ) +
@@ -973,18 +968,16 @@ penguins |>
       fill = species
     )
   ) +
-  geom_bar(alpha = 0.8) +
+  geom_bar() +
   facet_wrap(
-    facets = ~species,
+    facets = vars(species),
     ncol = 1
   ) +
   coord_flip() +
   labs(
     x = "Island",
-    y = "Count"
-  ) +
-  theme_minimal() +
-  theme(legend.position = "none")
+    y = "Frequency"
+  )
 ```
 
 ```{r}
@@ -1005,18 +998,100 @@ penguins |>
   ) +
   geom_bar(alpha = 0.8) +
   facet_wrap(
-    facets = ~species,
+    facets = vars(species),
     ncol = 1
   ) +
   coord_flip() +
   scale_fill_brand_d() +
   labs(
     x = "Island",
-    y = "Count"
+    y = "Frequency"
   ) +
   theme_minimal() +
   theme(legend.position = "none")
 ```
+
+## Exercise (Bar Plot) {.smaller}
+
+Create a bar plot using the [`starwars`](https://dplyr.tidyverse.org/reference/starwars.html) dataset that shows the frequency of characters by their `sex` variable.
+
+Apply the following customizations:
+
+- Drop any missing values from `sex` before creating the plot using the [`drop_na()`](https://tidyr.tidyverse.org/reference/drop_na.html) function from the [`tidyr`](https://tidyr.tidyverse.org) package.
+- Select a fill color from the `colors()` function. View available color tones [here](https://r-charts.com/colors/).
+- Use [`coord_flip()`](https://ggplot2.tidyverse.org/reference/coord_flip.html) to display horizontal bars.
+- Add appropriate axis labels and a title to the plot.
+- Include a caption that credits the data source.
+
+::: {.notes}
+:::
+
+## Exercise (Bar Plot) {.smaller}
+
+**Solution**:
+
+```{r}
+#| eval: false
+#| code-fold: true
+
+library(dplyr)
+library(forcats)
+library(ggplot2)
+library(stringr)
+library(tidyr)
+
+starwars |>
+  drop_na(sex) |>
+  mutate(
+    sex = sex |>
+      str_to_title() |>
+      as.factor() |>
+      fct_infreq()
+  ) |>
+  ggplot(aes(x = sex)) +
+  geom_bar(fill = "dodgerblue4") +
+  coord_flip() +
+  labs(
+    title = "Distribution of Star Wars Characters by Sex",
+    x = "Sex",
+    y = "Frequency",
+    caption = "Source: Star Wars API / dplyr package"
+  )
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-align: center
+
+library(brandr)
+library(dplyr)
+library(forcats)
+library(ggplot2)
+library(stringr)
+library(tidyr)
+
+starwars |>
+  drop_na(sex) |>
+  mutate(
+    sex = sex |>
+      str_to_title() |>
+      as.factor() |>
+      fct_infreq()
+  ) |>
+  ggplot(aes(x = sex)) +
+  geom_bar(fill = get_brand_color("blue")) +
+  coord_flip() +
+  labs(
+    title = "Distribution of Star Wars Characters by Sex",
+    x = "Sex",
+    y = "Frequency",
+    caption = "Source: Star Wars API / dplyr package"
+  )
+```
+
+::: {.notes}
+:::
 
 ## Histograms {.smaller .nostretch}
 
@@ -1026,13 +1101,8 @@ penguins |>
 
 library(ggplot2)
 library(palmerpenguins)
-library(tidyr)
 
 penguins |>
-  drop_na(
-    flipper_length_mm,
-    species
-  ) |>
   ggplot(
     aes(
       x = flipper_length_mm,
@@ -1040,7 +1110,6 @@ penguins |>
     )
   ) +
   geom_histogram(
-    bins = 30,
     alpha = 0.5,
     position = "identity"
   ) +
@@ -1073,7 +1142,6 @@ penguins |>
     )
   ) +
   geom_histogram(
-    bins = 30,
     alpha = 0.5,
     position = "identity"
   ) +
@@ -1082,6 +1150,81 @@ penguins |>
     x = "Flipper Length (mm)",
     y = "Frequency",
     fill = "Species"
+  )
+```
+
+## Exercise (Histogram) {.smaller}
+
+The [`ggplot2`](https://ggplot2.tidyverse.org/) package includes the [`diamonds`](https://ggplot2.tidyverse.org/reference/diamonds.html) dataset containing information about diamond quality and price. Using this dataset, create a histogram to visualize the distribution of the `price` variable.
+
+Apply the following customizations:
+
+- Select a fill color from the `colors()` function. View available color tones [here](https://r-charts.com/colors/).
+- Add appropriate axis labels and a title to the plot.
+- Include a caption that credits the data source.
+
+::: {.notes}
+:::
+
+## Exercise (Histogram) {.smaller}
+
+```{r}
+library(ggplot2)
+```
+
+```{r}
+diamonds |> glimpse()
+```
+
+::: {.notes}
+:::
+
+## Exercise (Histogram) {.smaller}
+
+**Solution**:
+
+```{r}
+#| eval: false
+#| code-fold: true
+
+library(ggplot2)
+library(tidyr)
+
+diamonds |>
+  ggplot(aes(x = price)) +
+  geom_histogram(
+    fill = "goldenrod4",
+    color = "white"
+  ) +
+  labs(
+    title = "Distribution of Diamond Prices",
+    x = "Price (USD)",
+    y = "Frequency",
+    caption = "Source: ggplot2 package"
+  )
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-align: center
+
+library(brandr)
+library(ggplot2)
+library(tidyr)
+
+diamonds |>
+  drop_na(price) |>
+  ggplot(aes(x = price)) +
+  geom_histogram(
+    fill = get_brand_color("comp-blue-1"),
+    color = "white"
+  ) +
+  labs(
+    title = "Distribution of Diamond Prices",
+    x = "Price (USD)",
+    y = "Frequency",
+    caption = "Source: ggplot2 package"
   )
 ```
 
@@ -1158,6 +1301,96 @@ penguins |>
   )
 ```
 
+## Exercise (Boxplot) {.smaller}
+
+The [`ggplot2`](https://ggplot2.tidyverse.org/) package includes the [`msleep`](https://ggplot2.tidyverse.org/reference/msleep.html) dataset containing information about the sleep habits of various mammals. Using this dataset, create a boxplot to visualize the distribution of the `sleep_total` variable across different `vore` (dietary categories).
+
+Apply the following customizations:
+
+- Drop any missing values for `sleep_total` and `vore` before creating the plot using the [`drop_na()`](https://tidyr.tidyverse.org/reference/drop_na.html) function from the [`tidyr`](https://tidyr.tidyverse.org) package.
+- Use different fill colors for each `vore` category by mapping the fill aesthetic to the `vore` variable.
+- Add appropriate axis labels and a title to the plot.
+- Include a caption that credits the data source.
+
+::: {.notes}
+:::
+
+## Exercise (Boxplot) {.smaller}
+
+```{r}
+library(ggplot2)
+```
+
+```{r}
+msleep |> glimpse()
+```
+
+::: {.notes}
+:::
+
+## Exercise (Boxplot) {.smaller}
+
+**Solution**:
+
+```{r}
+#| eval: false
+#| code-fold: true
+
+library(ggplot2)
+library(tidyr)
+
+msleep |>
+  drop_na(
+    sleep_total,
+    vore
+  ) |>
+  ggplot(
+    aes(
+      x = vore,
+      y = sleep_total,
+      fill = vore
+    )
+  ) +
+  geom_boxplot() +
+  labs(
+    title = "Distribution of Total Sleep by Dietary Category",
+    x = "Dietary Category (Vore)",
+    y = "Total Sleep (hours)",
+    caption = "Source: ggplot2 package"
+  )
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-align: center
+
+library(brandr)
+library(ggplot2)
+library(tidyr)
+
+msleep |>
+  drop_na(
+    sleep_total,
+    vore
+  ) |>
+  ggplot(
+    aes(
+      x = vore,
+      y = sleep_total,
+      fill = vore
+    )
+  ) +
+  geom_boxplot() +
+  scale_fill_brand_d(alpha = 0.7) +
+  labs(
+    title = "Distribution of Total Sleep by Dietary Category",
+    x = "Dietary Category (Vore)",
+    y = "Total Sleep (hours)",
+    caption = "Source: ggplot2 package"
+  )
+```
+
 ## Scatter Plots {.smaller .nostretch}
 
 ```{r}
@@ -1169,11 +1402,6 @@ library(palmerpenguins)
 library(tidyr)
 
 penguins |>
-  drop_na(
-    body_mass_g,
-    flipper_length_mm,
-    species
-  ) |>
   ggplot(
     aes(
       x = body_mass_g,
@@ -1182,7 +1410,7 @@ penguins |>
       shape = species
     )
   ) +
-  geom_point(size = 2) +
+  geom_point() +
   geom_smooth(
     method = "lm",
     formula = y ~ x,
@@ -1235,6 +1463,85 @@ penguins |>
   )
 ```
 
+## Exercise (Scatter Plot) {.smaller}
+
+The [`ggplot2`](https://ggplot2.tidyverse.org/) package includes the [`mpg`](https://ggplot2.tidyverse.org/reference/mpg.html) dataset containing information about various car models and their fuel efficiency. Using this dataset, create a scatter plot to visualize the relationship between `displ` (engine displacement) and `hwy` (highway miles per gallon).
+
+Apply the following customizations:
+
+- Add a regression line using the [`geom_smooth()`](https://ggplot2.tidyverse.org/reference/geom_smooth.html) function.
+- Add appropriate axis labels and a title to the plot.
+- Include a caption that credits the data source.
+
+::: {.notes}
+:::
+
+## Exercise (Scatter Plot) {.smaller}
+
+```{r}
+library(ggplot2)
+```
+
+```{r}
+mpg |> glimpse()
+```
+
+::: {.notes}
+:::
+
+## Exercise (Scatter Plot) {.smaller}
+
+**Solution**:
+
+```{r}
+#| eval: false
+#| code-fold: true
+
+library(ggplot2)
+
+mpg |>
+  ggplot(
+    aes(
+      x = displ,
+      y = hwy
+    )
+  ) +
+  geom_point() +
+  geom_smooth() +
+  labs(
+    title = "Relationship between Engine Displacement and Highway MPG",
+    x = "Engine Displacement (L)",
+    y = "Highway Miles per Gallon",
+    caption = "Source: ggplot2 package"
+  )
+```
+
+```{r}
+#| echo: false
+#| fig-align: center
+
+library(ggplot2)
+
+mpg |>
+  ggplot(
+    aes(
+      x = displ,
+      y = hwy
+    )
+  ) +
+  geom_point(size = 2) +
+  geom_smooth() +
+  labs(
+    title = "Relationship between Engine Displacement and Highway MPG",
+    x = "Engine Displacement (L)",
+    y = "Highway Miles per Gallon",
+    caption = "Source: ggplot2 package"
+  )
+```
+
+::: {.notes}
+:::
+
 ## Facets {.smaller .nostretch}
 
 ```{r}
@@ -1246,21 +1553,10 @@ library(ggplot2)
 library(magrittr)
 library(palmerpenguins)
 library(stringr)
-library(tidyr)
 
 penguins |>
-  drop_na(
-    body_mass_g,
-    flipper_length_mm,
-    sex
-  ) |>
   mutate(
-    sex = sex %>%
-      `levels<-`(
-        sex |>
-          levels() |>
-          str_to_title()
-      )
+    sex = sex |> str_to_title()
   ) |>
   ggplot(
     aes(
@@ -1269,14 +1565,14 @@ penguins |>
       color = sex
     )
   ) +
-  geom_point(size = 2) +
+  geom_point() +
   geom_smooth(
     method = "lm",
     formula = y ~ x,
     se = FALSE,
     color = "black"
   ) +
-  facet_wrap(~species) +
+  facet_wrap(vars(species)) +
   labs(
     x = "Body Mass (g)",
     y = "Flipper Length (mm)",
@@ -1304,12 +1600,7 @@ penguins |>
     sex
   ) |>
   mutate(
-    sex = sex %>%
-      `levels<-`(
-        sex |>
-          levels() |>
-          str_to_title()
-      )
+    sex = sex |> str_to_title()
   ) |>
   ggplot(
     aes(
@@ -1323,10 +1614,15 @@ penguins |>
     method = "lm",
     formula = y ~ x,
     se = FALSE,
-    color = get_brand_color("blue")
+    color = get_brand_color("black")
   ) +
   scale_color_brand_d(alpha = 0.7) +
-  facet_wrap(~species)
+  facet_wrap(vars(species)) +
+  labs(
+    x = "Body Mass (g)",
+    y = "Flipper Length (mm)",
+    color = "Sex"
+  )
 ```
 
 ## Combined Plots {.smaller .nostretch}
@@ -1338,22 +1634,16 @@ penguins |>
 library(ggplot2)
 library(palmerpenguins)
 library(patchwork)
-library(tidyr)
 
 plot_hist <-
   penguins |>
-  drop_na(
-    flipper_length_mm,
-    species
-  ) |>
   ggplot(
     aes(
-    x = flipper_length_mm,
-    fill = species
+      x = flipper_length_mm,
+      fill = species
     )
   ) +
   geom_histogram(
-    bins = 30,
     alpha = 0.5,
     position = "identity"
   ) +
@@ -1365,10 +1655,6 @@ plot_hist <-
 
 plot_boxplot <-
   penguins |>
-  drop_na(
-    bill_length_mm,
-    species
-  ) |>
   ggplot(
     aes(
       x = species,
@@ -1377,7 +1663,10 @@ plot_boxplot <-
     )
   ) +
   geom_boxplot(outlier.color = "red") +
-  geom_jitter(width = 0.2, alpha = 0.1) +
+  geom_jitter(
+    width = 0.2,
+    alpha = 0.1
+  ) +
   labs(
     x = "Species",
     y = "Bill Length (mm)",
@@ -1403,7 +1692,7 @@ plot_scatter <-
       shape = species
     )
   ) +
-  geom_point(size = 2) +
+  geom_point() +
   geom_smooth(
     method = "lm",
     formula = y ~ x,
@@ -1544,9 +1833,11 @@ library(dplyr)
 library(GGally)
 library(ggplot2)
 library(palmerpenguins)
+library(tidyr)
 
 penguins |>
   select(species, body_mass_g, ends_with("_mm")) |>
+  drop_na(species, body_mass_g, ends_with("_mm")) |>
   ggpairs(aes(color = species)) +
   scale_color_brand_d(alpha = 0.7) +
   scale_fill_brand_d(alpha = 0.7)
@@ -1556,7 +1847,7 @@ penguins |>
 The [`GGally`](https://ggobi.github.io/ggally/index.html) package is an extension of `ggplot2`.
 :::
 
-## Color Palettes {.smaller}
+## Color Palettes {.smaller .scrollable}
 
 Color palettes can be sequential, diverging, or qualitative (discrete). Here are some examples of two popular packages for color palettes in R.
 
@@ -1669,87 +1960,6 @@ Another amazing work by [Yan Holtz](https://github.com/holtzy) is the [R Graph G
 :::
 
 ::: {.notes}
-:::
-
-## Exercise (Scatter Plot) {.smaller}
-
-Create a scatter plot using the [`mpg`](https://ggplot2.tidyverse.org/reference/mpg.html) dataset (available in the [`ggplot2`](https://ggplot2.tidyverse.org/) package) that visualizes the relationship between `displ` (engine displacement) and `hwy` (highway miles per gallon).
-
-Add a  Color the points based on the `class` of the vehicle.
-
-```{r}
-library(ggplot2)
-```
-
-```{r}
-mpg |> glimpse()
-```
-
-::: {.notes}
-:::
-
-## Exercise (Scatter Plot) {.smaller}
-
-**Solution**:
-
-```{r}
-#| eval: false
-#| code-fold: true
-
-library(ggplot2)
-
-mpg |>
-  ggplot(
-    aes(
-      x = displ,
-      y = hwy,
-      color = class
-    )
-  ) +
-  geom_point(size = 2) +
-  labs(
-    x = "Engine Displacement (L)",
-    y = "Highway Miles per Gallon",
-    color = "Vehicle Class"
-  ) +
-  theme(
-    text = element_text(size = 20),
-    legend.position = "right"
-  )
-```
-
-```{r}
-#| echo: false
-
-library(ggplot2)
-
-mpg |>
-  ggplot(
-    aes(
-      x = displ,
-      y = hwy,
-      color = class
-    )
-  ) +
-  geom_point(size = 2) +
-  # geom_smooth(
-  #   # se = FALSE,
-  #   color = "black"
-  # ) +
-  scale_color_brand_d(alpha = 0.7) +
-  labs(
-    x = "Engine Displacement (L)",
-    y = "Highway Miles per Gallon",
-    color = "Vehicle Class"
-  ) +
-  theme(
-    text = element_text(size = 20),
-    legend.position = "right"
-  )
-```
-
-::: {.notes}
-- **15-minute break** after this slide.
 :::
 
 ## How to Learn More {.smaller}

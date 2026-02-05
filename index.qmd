@@ -481,7 +481,7 @@ In accordance with the [American Psychological Association (APA) Style](https://
 ::: {.notes}
 :::
 
-## Thank you!
+## Thank You!
 
 ![](images/allison-horst-figure-11.png){.nostretch fig-align="center" style="width: 70%; padding-top: 25px;"}
 

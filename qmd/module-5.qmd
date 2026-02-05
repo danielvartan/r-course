@@ -35,11 +35,11 @@ library("tidymodels")
 ::::
 
 ::: {style="font-size: 1em;"}
-- `rsample`: Provides infrastructure for efficient data splitting and resampling.
-- `parsnip`: A tidy, unified interface to models.
-- `recipes`: A tidy interface to data pre-processing tools for feature engineering.
-- `workflows`: A package to bundle the pre-processing, modeling, and post-processing together.
-- `infer`: A statistical **grammar** for inferential statistics.
+- [`rsample`](https://rsample.tidymodels.org): Provides infrastructure for efficient data splitting and resampling.
+- [`parsnip`](https://parsnip.tidymodels.org): A tidy, unified interface to models.
+- [`recipes`](https://recipes.tidymodels.org): A tidy interface to data pre-processing tools for feature engineering.
+- [`workflows`](https://workflows.tidymodels.org): A package to bundle the pre-processing, modeling, and post-processing together.
+- [`infer`](https://infer.tidymodels.org): A statistical **grammar** for inferential statistics.
 :::
 
 ::: {.notes}

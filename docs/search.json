@@ -543,7 +543,7 @@
     "href": "index.html#functionals",
     "title": "An Introduction to the R Programming Language",
     "section": "Functionals",
-    "text": "Functionals\n\n\nA functional is a function that takes a function as an input and returns a vector as output (Wickham, 2019).\nIt makes the programmer’s work easier by applying a function to a vector without needing a loop. These functions are typically written in C (a lower-level programming language), making them very fast.\nR has native functionals (e.g., lapply()), but prefer solutions from the purrr package from Tidyverse.\n\n\n\n\ntriple &lt;- function(x) x * 3\n\n\nwith_for_loop &lt;- function(x) {\n  out &lt;- numeric()\n  for (i in x) out &lt;- c(out, triple(i))\n  out\n}\n\n\nlibrary(purrr)\n\nwith_map &lt;- function(x) map_dbl(x, triple)\n\n\nlibrary(microbenchmark)\n\nmicrobenchmark(\n  with_for_loop(1:1000),\n  with_map(1:1000),\n  times = 100,\n  check = \"equal\"\n)\n#&gt; Unit: microseconds\n#&gt;                   expr      min        lq      mean   median        uq      max\n#&gt;  with_for_loop(1:1000) 1024.675 1097.4590 1428.4508 1126.838 1166.2575 4112.099\n#&gt;       with_map(1:1000)  286.570  306.4585  327.0491  314.627  331.0335  998.918\n#&gt;  neval cld\n#&gt;    100  a \n#&gt;    100   b"
+    "text": "Functionals\n\n\nA functional is a function that takes a function as an input and returns a vector as output (Wickham, 2019).\nIt makes the programmer’s work easier by applying a function to a vector without needing a loop. These functions are typically written in C (a lower-level programming language), making them very fast.\nR has native functionals (e.g., lapply()), but prefer solutions from the purrr package from Tidyverse.\n\n\n\n\ntriple &lt;- function(x) x * 3\n\n\nwith_for_loop &lt;- function(x) {\n  out &lt;- numeric()\n  for (i in x) out &lt;- c(out, triple(i))\n  out\n}\n\n\nlibrary(purrr)\n\nwith_map &lt;- function(x) map_dbl(x, triple)\n\n\nlibrary(microbenchmark)\n\nmicrobenchmark(\n  with_for_loop(1:1000),\n  with_map(1:1000),\n  times = 100,\n  check = \"equal\"\n)\n#&gt; Unit: microseconds\n#&gt;                   expr      min        lq      mean   median        uq      max\n#&gt;  with_for_loop(1:1000) 1012.879 1088.7160 1436.9108 1127.291 1179.8550 4230.763\n#&gt;       with_map(1:1000)  290.383  304.3155  332.5127  320.525  342.6845 1120.201\n#&gt;  neval cld\n#&gt;    100  a \n#&gt;    100   b"
   },
   {
     "objectID": "index.html#exercise-functionals",
@@ -984,14 +984,14 @@
     "href": "index.html#filter-1",
     "title": "An Introduction to the R Programming Language",
     "section": "filter()",
-    "text": "filter()\nThe filter() function is used to filter rows from a data frame based on specified conditions.\n\nlibrary(dplyr)\nlibrary(palmerpenguins)\n\n\npenguins |&gt;\n  filter(\n    species == \"Adelie\",\n    island %in% c(\"Dream\", \"Torgersen\"),\n    body_mass_g &gt; 4000 | !is.na(body_mass_g),\n    bill_length_mm &lt; 40 | !is.na(bill_length_mm)\n  )\n#&gt; # A tibble: 107 × 8\n#&gt;    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n#&gt;    &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n#&gt;  1 Adelie  Torgersen           39.1          18.7               181        3750\n#&gt;  2 Adelie  Torgersen           39.5          17.4               186        3800\n#&gt;  3 Adelie  Torgersen           40.3          18                 195        3250\n#&gt;  4 Adelie  Torgersen           36.7          19.3               193        3450\n#&gt;  5 Adelie  Torgersen           39.3          20.6               190        3650\n#&gt;  6 Adelie  Torgersen           38.9          17.8               181        3625\n#&gt;  7 Adelie  Torgersen           39.2          19.6               195        4675\n#&gt;  8 Adelie  Torgersen           34.1          18.1               193        3475\n#&gt;  9 Adelie  Torgersen           42            20.2               190        4250\n#&gt; 10 Adelie  Torgersen           37.8          17.1               186        3300\n#&gt; # ℹ 97 more rows\n#&gt; # ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;"
+    "text": "filter()\nThe filter() function is used to filter rows from a data frame based on specified conditions.\n\nlibrary(dplyr)\nlibrary(palmerpenguins)\n\n\npenguins |&gt;\n  filter(\n    species == \"Adelie\",\n    island %in% c(\"Dream\", \"Torgersen\"),\n    body_mass_g &gt; 4000,\n    bill_length_mm &lt; 40\n  )\n#&gt; # A tibble: 10 × 8\n#&gt;    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n#&gt;    &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n#&gt;  1 Adelie  Torgersen           39.2          19.6               195        4675\n#&gt;  2 Adelie  Torgersen           34.6          21.1               198        4400\n#&gt;  3 Adelie  Dream               39.2          21.1               196        4150\n#&gt;  4 Adelie  Dream               39.8          19.1               184        4650\n#&gt;  5 Adelie  Dream               39.6          18.8               190        4600\n#&gt;  6 Adelie  Torgersen           35.1          19.4               193        4200\n#&gt;  7 Adelie  Dream               39.6          18.1               186        4450\n#&gt;  8 Adelie  Dream               37.5          18.5               199        4475\n#&gt;  9 Adelie  Dream               39.7          17.9               193        4250\n#&gt; 10 Adelie  Dream               39.2          18.6               190        4250\n#&gt; # ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;"
   },
   {
     "objectID": "index.html#exercise-filter",
     "href": "index.html#exercise-filter",
     "title": "An Introduction to the R Programming Language",
     "section": "Exercise (filter)",
-    "text": "Exercise (filter)\nThe dplyr packages provides a dataset called starwars that contains information about characters from the Star Wars universe. Filter the starwars dataset to include only characters who meet the following criteria:\n\nBelong to the species Droid.\nHave a height greater than 100 cm.\nHave a mass less than 150 kg."
+    "text": "Exercise (filter)\nThe dplyr package provides a dataset called starwars that contains information about characters from the Star Wars universe. Filter the starwars dataset to include only characters who meet the following criteria:\n\nBelong to the species Droid.\nHave a height greater than 100 cm.\nHave a mass less than 150 kg."
   },
   {
     "objectID": "index.html#exercise-filter-1",
@@ -1250,7 +1250,7 @@
     "href": "index.html#its-all-about-layers-5",
     "title": "An Introduction to the R Programming Language",
     "section": "It’s All About Layers",
-    "text": "It’s All About Layers\n\nCodepenguin_table &lt;-\n  penguin_table |&gt;\n  tab_style(\n    style = cell_fill(color = \"#E8F4F8\"),\n    locations = cells_row_groups()\n  ) |&gt;\n  tab_style(\n    style = cell_text(weight = \"bold\", size = px(18)),\n    locations = cells_title(groups = \"title\")\n  ) |&gt;\n  tab_options(\n    table.border.top.style = \"solid\",\n    table.border.bottom.style = \"solid\",\n    heading.border.bottom.style = \"solid\",\n    column_labels.border.bottom.style = \"solid\",\n    row_group.border.top.style = \"solid\",\n    row_group.border.bottom.style = \"solid\"\n  )\n\npenguin_table\n\n\n\n\n\n\nAntarctic Penguin Characteristics\n\n\nComparison between species and sexes\n\n\nSex\nN\nBody Mass (g)1\n\nBill Length (mm)1\n\nFlipper Length (mm)1\n\n\n\n\n\nAdelie\n\n\nFemale\n73\n3,368.84\n37.26\n187.79\n\n\nMale\n73\n4,043.49\n40.39\n192.41\n\n\nChinstrap\n\n\nFemale\n34\n3,527.21\n46.57\n191.74\n\n\nMale\n34\n3,938.97\n51.09\n199.91\n\n\nGentoo\n\n\nFemale\n58\n4,679.74\n45.56\n212.71\n\n\nMale\n61\n5,484.84\n49.47\n221.54\n\n\n\n\n\n1 Averages calculated after removing missing values\n\n\nSource: Palmer Station LTER / palmerpenguins package"
+    "text": "It’s All About Layers\n\nCodepenguin_table &lt;-\n  penguin_table |&gt;\n  tab_style(\n    style = cell_fill(color = \"#E8F4F8\"),\n    locations = cells_row_groups()\n  ) |&gt;\n  tab_style(\n    style = cell_text(size = px(18)),\n    locations = cells_title(groups = \"title\")\n  ) |&gt;\n  tab_options(\n    table.border.top.style = \"solid\",\n    table.border.bottom.style = \"solid\",\n    heading.border.bottom.style = \"solid\",\n    column_labels.border.bottom.style = \"solid\",\n    row_group.border.top.style = \"solid\",\n    row_group.border.bottom.style = \"solid\"\n  )\n\npenguin_table\n\n\n\n\n\n\nAntarctic Penguin Characteristics\n\n\nComparison between species and sexes\n\n\nSex\nN\nBody Mass (g)1\n\nBill Length (mm)1\n\nFlipper Length (mm)1\n\n\n\n\n\nAdelie\n\n\nFemale\n73\n3,368.84\n37.26\n187.79\n\n\nMale\n73\n4,043.49\n40.39\n192.41\n\n\nChinstrap\n\n\nFemale\n34\n3,527.21\n46.57\n191.74\n\n\nMale\n34\n3,938.97\n51.09\n199.91\n\n\nGentoo\n\n\nFemale\n58\n4,679.74\n45.56\n212.71\n\n\nMale\n61\n5,484.84\n49.47\n221.54\n\n\n\n\n\n1 Averages calculated after removing missing values\n\n\nSource: Palmer Station LTER / palmerpenguins package"
   },
   {
     "objectID": "index.html#exercise-gt",
@@ -1292,35 +1292,70 @@
     "href": "index.html#the-ggplot2-package-1",
     "title": "An Introduction to the R Programming Language",
     "section": "The ggplot2 Package",
-    "text": "The ggplot2 Package\n\n\n\nThe most powerful and flexible package for data visualization.\nA Tidyverse package based on the principles of The Grammar of Graphics.\n\n\n\n\n\n\n(Artwork by R Chart Gallery)"
+    "text": "The ggplot2 Package\n\n\n\nThe most powerful and flexible package for data visualization.\nA Tidyverse package based on the principles of The Grammar of Graphics.\n\n\n\n\n\n\n(Reproduced from Wickham (2016))"
   },
   {
     "objectID": "index.html#its-all-about-layers-6",
     "href": "index.html#its-all-about-layers-6",
     "title": "An Introduction to the R Programming Language",
     "section": "It’s All About Layers",
-    "text": "It’s All About Layers\n\n\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\n\npenguins |&gt; ggplot()\n\n\n\n\n\n\n\n\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(\n    body_mass_g,\n    flipper_length_mm,\n    species\n  ) |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      y = flipper_length_mm,\n      color = species,\n      shape = species\n    )\n  ) +\n  theme(\n    text = element_text(size = 20),\n    legend.position = \"none\"\n  )"
+    "text": "It’s All About Layers\n\n\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\n\npenguins |&gt; ggplot()\n\n\n\n\n\n\n\n\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\n\npenguins |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      y = flipper_length_mm,\n      color = species,\n      shape = species\n    )\n  )"
   },
   {
     "objectID": "index.html#its-all-about-layers-7",
     "href": "index.html#its-all-about-layers-7",
     "title": "An Introduction to the R Programming Language",
     "section": "It’s All About Layers",
-    "text": "It’s All About Layers\n\n\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(\n    body_mass_g,\n    flipper_length_mm,\n    species\n  ) |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      y = flipper_length_mm,\n      color = species,\n      shape = species\n    )\n  ) +\n  geom_point(size = 4) +\n  theme(\n    text = element_text(size = 20),\n    legend.position = \"none\"\n  )\n\n\n\n\n\n\n\n\n\n\n\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(\n    body_mass_g,\n    flipper_length_mm,\n    species\n  ) |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      y = flipper_length_mm,\n      color = species,\n      shape = species\n    )\n  ) +\n  geom_point(size = 4) +\n  geom_smooth(\n    method = \"lm\",\n    formula = y ~ x,\n    se = FALSE,\n    linewidth = 2\n  ) +\n  labs(\n    x = \"Body Mass (g)\",\n    y = \"Flipper Length (mm)\",\n    color = \"Species\",\n    shape = \"Species\"\n  ) +\n  theme(\n    text = element_text(size = 20),\n    legend.position = \"none\"\n  )"
+    "text": "It’s All About Layers\n\n\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\n\npenguins |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      y = flipper_length_mm,\n      color = species,\n      shape = species\n    )\n  ) +\n  geom_point(size = 4)\n\n\n\n\n\n\n\n\n\n\n\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\n\npenguins |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      y = flipper_length_mm,\n      color = species,\n      shape = species\n    )\n  ) +\n  geom_point() +\n  geom_smooth(\n    method = \"lm\",\n    se = FALSE\n  ) +\n  labs(\n    x = \"Body Mass (g)\",\n    y = \"Flipper Length (mm)\",\n    color = \"Species\",\n    shape = \"Species\"\n  )"
   },
   {
     "objectID": "index.html#bar-plots",
     "href": "index.html#bar-plots",
     "title": "An Introduction to the R Programming Language",
     "section": "Bar Plots",
-    "text": "Bar Plots\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\n\npenguins |&gt;\n  ggplot(\n    aes(\n      x = island,\n      fill = species\n    )\n  ) +\n  geom_bar(alpha = 0.8) +\n  facet_wrap(\n    facets = ~species,\n    ncol = 1\n  ) +\n  coord_flip() +\n  labs(\n    x = \"Island\",\n    y = \"Count\"\n  ) +\n  theme_minimal() +\n  theme(legend.position = \"none\")"
+    "text": "Bar Plots\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\n\npenguins |&gt;\n  ggplot(\n    aes(\n      x = island,\n      fill = species\n    )\n  ) +\n  geom_bar() +\n  facet_wrap(\n    facets = vars(species),\n    ncol = 1\n  ) +\n  coord_flip() +\n  labs(\n    x = \"Island\",\n    y = \"Frequency\"\n  )"
+  },
+  {
+    "objectID": "index.html#exercise-bar-plot",
+    "href": "index.html#exercise-bar-plot",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Exercise (Bar Plot)",
+    "text": "Exercise (Bar Plot)\nCreate a bar plot using the starwars dataset that shows the frequency of characters by their sex variable.\nApply the following customizations:\n\nDrop any missing values from sex before creating the plot using the drop_na() function from the tidyr package.\nSelect a fill color from the colors() function. View available color tones here.\nUse coord_flip() to display horizontal bars.\nAdd appropriate axis labels and a title to the plot.\nInclude a caption that credits the data source."
+  },
+  {
+    "objectID": "index.html#exercise-bar-plot-1",
+    "href": "index.html#exercise-bar-plot-1",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Exercise (Bar Plot)",
+    "text": "Exercise (Bar Plot)\nSolution:\n\nCodelibrary(dplyr)\nlibrary(forcats)\nlibrary(ggplot2)\nlibrary(stringr)\nlibrary(tidyr)\n\nstarwars |&gt;\n  drop_na(sex) |&gt;\n  mutate(\n    sex = sex |&gt;\n      str_to_title() |&gt;\n      as.factor() |&gt;\n      fct_infreq()\n  ) |&gt;\n  ggplot(aes(x = sex)) +\n  geom_bar(fill = \"dodgerblue4\") +\n  coord_flip() +\n  labs(\n    title = \"Distribution of Star Wars Characters by Sex\",\n    x = \"Sex\",\n    y = \"Frequency\",\n    caption = \"Source: Star Wars API / dplyr package\"\n  )"
   },
   {
     "objectID": "index.html#histograms",
     "href": "index.html#histograms",
     "title": "An Introduction to the R Programming Language",
     "section": "Histograms",
-    "text": "Histograms\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(\n    flipper_length_mm,\n    species\n  ) |&gt;\n  ggplot(\n    aes(\n      x = flipper_length_mm,\n      fill = species\n    )\n  ) +\n  geom_histogram(\n    bins = 30,\n    alpha = 0.5,\n    position = \"identity\"\n  ) +\n  labs(\n    x = \"Flipper Length (mm)\",\n    y = \"Frequency\",\n    fill = \"Species\"\n  )"
+    "text": "Histograms\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\n\npenguins |&gt;\n  ggplot(\n    aes(\n      x = flipper_length_mm,\n      fill = species\n    )\n  ) +\n  geom_histogram(\n    alpha = 0.5,\n    position = \"identity\"\n  ) +\n  labs(\n    x = \"Flipper Length (mm)\",\n    y = \"Frequency\",\n    fill = \"Species\"\n  )"
+  },
+  {
+    "objectID": "index.html#exercise-histogram",
+    "href": "index.html#exercise-histogram",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Exercise (Histogram)",
+    "text": "Exercise (Histogram)\nThe ggplot2 package includes the diamonds dataset containing information about diamond quality and price. Using this dataset, create a histogram to visualize the distribution of the price variable.\nApply the following customizations:\n\nSelect a fill color from the colors() function. View available color tones here.\nAdd appropriate axis labels and a title to the plot.\nInclude a caption that credits the data source."
+  },
+  {
+    "objectID": "index.html#exercise-histogram-1",
+    "href": "index.html#exercise-histogram-1",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Exercise (Histogram)",
+    "text": "Exercise (Histogram)\n\nlibrary(ggplot2)\n\n\ndiamonds |&gt; glimpse()\n#&gt; Rows: 53,940\n#&gt; Columns: 10\n#&gt; $ carat   &lt;dbl&gt; 0.23, 0.21, 0.23, 0.29, 0.31, 0.24, 0.24, 0.26, 0.22, 0.23, 0.…\n#&gt; $ cut     &lt;ord&gt; Ideal, Premium, Good, Premium, Good, Very Good, Very Good, Ver…\n#&gt; $ color   &lt;ord&gt; E, E, E, I, J, J, I, H, E, H, J, J, F, J, E, E, I, J, J, J, I,…\n#&gt; $ clarity &lt;ord&gt; SI2, SI1, VS1, VS2, SI2, VVS2, VVS1, SI1, VS2, VS1, SI1, VS1, …\n#&gt; $ depth   &lt;dbl&gt; 61.5, 59.8, 56.9, 62.4, 63.3, 62.8, 62.3, 61.9, 65.1, 59.4, 64…\n#&gt; $ table   &lt;dbl&gt; 55, 61, 65, 58, 58, 57, 57, 55, 61, 61, 55, 56, 61, 54, 62, 58…\n#&gt; $ price   &lt;int&gt; 326, 326, 327, 334, 335, 336, 336, 337, 337, 338, 339, 340, 34…\n#&gt; $ x       &lt;dbl&gt; 3.95, 3.89, 4.05, 4.20, 4.34, 3.94, 3.95, 4.07, 3.87, 4.00, 4.…\n#&gt; $ y       &lt;dbl&gt; 3.98, 3.84, 4.07, 4.23, 4.35, 3.96, 3.98, 4.11, 3.78, 4.05, 4.…\n#&gt; $ z       &lt;dbl&gt; 2.43, 2.31, 2.31, 2.63, 2.75, 2.48, 2.47, 2.53, 2.49, 2.39, 2.…"
+  },
+  {
+    "objectID": "index.html#exercise-histogram-2",
+    "href": "index.html#exercise-histogram-2",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Exercise (Histogram)",
+    "text": "Exercise (Histogram)\nSolution:\n\nCodelibrary(ggplot2)\nlibrary(tidyr)\n\ndiamonds |&gt;\n  ggplot(aes(x = price)) +\n  geom_histogram(\n    fill = \"goldenrod4\",\n    color = \"white\"\n  ) +\n  labs(\n    title = \"Distribution of Diamond Prices\",\n    x = \"Price (USD)\",\n    y = \"Frequency\",\n    caption = \"Source: ggplot2 package\"\n  )"
   },
   {
     "objectID": "index.html#boxplots",
@@ -1330,25 +1365,67 @@
     "text": "Boxplots\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(\n    bill_length_mm,\n    species\n  ) |&gt;\n  ggplot(\n    aes(\n      x = species,\n      y = bill_length_mm,\n      fill = species\n    )\n  ) +\n  geom_boxplot(\n    outlier.color = \"red\"\n  ) +\n  geom_jitter(\n   width = 0.2,\n   alpha = 0.1\n  ) +\n  labs(\n    x = \"Species\",\n    y = \"Bill Length (mm)\",\n    fill = \"Species\"\n  )"
   },
   {
+    "objectID": "index.html#exercise-boxplot",
+    "href": "index.html#exercise-boxplot",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Exercise (Boxplot)",
+    "text": "Exercise (Boxplot)\nThe ggplot2 package includes the msleep dataset containing information about the sleep habits of various mammals. Using this dataset, create a boxplot to visualize the distribution of the sleep_total variable across different vore (dietary categories).\nApply the following customizations:\n\nDrop any missing values for sleep_total and vore before creating the plot using the drop_na() function from the tidyr package.\nUse different fill colors for each vore category by mapping the fill aesthetic to the vore variable.\nAdd appropriate axis labels and a title to the plot.\nInclude a caption that credits the data source."
+  },
+  {
+    "objectID": "index.html#exercise-boxplot-1",
+    "href": "index.html#exercise-boxplot-1",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Exercise (Boxplot)",
+    "text": "Exercise (Boxplot)\n\nlibrary(ggplot2)\n\n\nmsleep |&gt; glimpse()\n#&gt; Rows: 83\n#&gt; Columns: 11\n#&gt; $ name         &lt;chr&gt; \"Cheetah\", \"Owl monkey\", \"Mountain beaver\", \"Greater shor…\n#&gt; $ genus        &lt;chr&gt; \"Acinonyx\", \"Aotus\", \"Aplodontia\", \"Blarina\", \"Bos\", \"Bra…\n#&gt; $ vore         &lt;chr&gt; \"carni\", \"omni\", \"herbi\", \"omni\", \"herbi\", \"herbi\", \"carn…\n#&gt; $ order        &lt;chr&gt; \"Carnivora\", \"Primates\", \"Rodentia\", \"Soricomorpha\", \"Art…\n#&gt; $ conservation &lt;chr&gt; \"lc\", NA, \"nt\", \"lc\", \"domesticated\", NA, \"vu\", NA, \"dome…\n#&gt; $ sleep_total  &lt;dbl&gt; 12.1, 17.0, 14.4, 14.9, 4.0, 14.4, 8.7, 7.0, 10.1, 3.0, 5…\n#&gt; $ sleep_rem    &lt;dbl&gt; NA, 1.8, 2.4, 2.3, 0.7, 2.2, 1.4, NA, 2.9, NA, 0.6, 0.8, …\n#&gt; $ sleep_cycle  &lt;dbl&gt; NA, NA, NA, 0.1333333, 0.6666667, 0.7666667, 0.3833333, N…\n#&gt; $ awake        &lt;dbl&gt; 11.9, 7.0, 9.6, 9.1, 20.0, 9.6, 15.3, 17.0, 13.9, 21.0, 1…\n#&gt; $ brainwt      &lt;dbl&gt; NA, 0.01550, NA, 0.00029, 0.42300, NA, NA, NA, 0.07000, 0…\n#&gt; $ bodywt       &lt;dbl&gt; 50.000, 0.480, 1.350, 0.019, 600.000, 3.850, 20.490, 0.04…"
+  },
+  {
+    "objectID": "index.html#exercise-boxplot-2",
+    "href": "index.html#exercise-boxplot-2",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Exercise (Boxplot)",
+    "text": "Exercise (Boxplot)\nSolution:\n\nCodelibrary(ggplot2)\nlibrary(tidyr)\n\nmsleep |&gt;\n  drop_na(\n    sleep_total,\n    vore\n  ) |&gt;\n  ggplot(\n    aes(\n      x = vore,\n      y = sleep_total,\n      fill = vore\n    )\n  ) +\n  geom_boxplot() +\n  labs(\n    title = \"Distribution of Total Sleep by Dietary Category\",\n    x = \"Dietary Category (Vore)\",\n    y = \"Total Sleep (hours)\",\n    caption = \"Source: ggplot2 package\"\n  )"
+  },
+  {
     "objectID": "index.html#scatter-plots",
     "href": "index.html#scatter-plots",
     "title": "An Introduction to the R Programming Language",
     "section": "Scatter Plots",
-    "text": "Scatter Plots\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(\n    body_mass_g,\n    flipper_length_mm,\n    species\n  ) |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      y = flipper_length_mm,\n      color = species,\n      shape = species\n    )\n  ) +\n  geom_point(size = 2) +\n  geom_smooth(\n    method = \"lm\",\n    formula = y ~ x,\n    se = FALSE\n  ) +\n  labs(\n    x = \"Body Mass (g)\",\n    y = \"Flipper Length (mm)\",\n    color = \"Species\",\n    shape = \"Species\"\n  )"
+    "text": "Scatter Plots\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      y = flipper_length_mm,\n      color = species,\n      shape = species\n    )\n  ) +\n  geom_point() +\n  geom_smooth(\n    method = \"lm\",\n    formula = y ~ x,\n    se = FALSE\n  ) +\n  labs(\n    x = \"Body Mass (g)\",\n    y = \"Flipper Length (mm)\",\n    color = \"Species\",\n    shape = \"Species\"\n  )"
+  },
+  {
+    "objectID": "index.html#exercise-scatter-plot",
+    "href": "index.html#exercise-scatter-plot",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Exercise (Scatter Plot)",
+    "text": "Exercise (Scatter Plot)\nThe ggplot2 package includes the mpg dataset containing information about various car models and their fuel efficiency. Using this dataset, create a scatter plot to visualize the relationship between displ (engine displacement) and hwy (highway miles per gallon).\nApply the following customizations:\n\nAdd a regression line using the geom_smooth() function.\nAdd appropriate axis labels and a title to the plot.\nInclude a caption that credits the data source."
+  },
+  {
+    "objectID": "index.html#exercise-scatter-plot-1",
+    "href": "index.html#exercise-scatter-plot-1",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Exercise (Scatter Plot)",
+    "text": "Exercise (Scatter Plot)\n\nlibrary(ggplot2)\n\n\nmpg |&gt; glimpse()\n#&gt; Rows: 234\n#&gt; Columns: 11\n#&gt; $ manufacturer &lt;chr&gt; \"audi\", \"audi\", \"audi\", \"audi\", \"audi\", \"audi\", \"audi\", \"…\n#&gt; $ model        &lt;chr&gt; \"a4\", \"a4\", \"a4\", \"a4\", \"a4\", \"a4\", \"a4\", \"a4 quattro\", \"…\n#&gt; $ displ        &lt;dbl&gt; 1.8, 1.8, 2.0, 2.0, 2.8, 2.8, 3.1, 1.8, 1.8, 2.0, 2.0, 2.…\n#&gt; $ year         &lt;int&gt; 1999, 1999, 2008, 2008, 1999, 1999, 2008, 1999, 1999, 200…\n#&gt; $ cyl          &lt;int&gt; 4, 4, 4, 4, 6, 6, 6, 4, 4, 4, 4, 6, 6, 6, 6, 6, 6, 8, 8, …\n#&gt; $ trans        &lt;chr&gt; \"auto(l5)\", \"manual(m5)\", \"manual(m6)\", \"auto(av)\", \"auto…\n#&gt; $ drv          &lt;chr&gt; \"f\", \"f\", \"f\", \"f\", \"f\", \"f\", \"f\", \"4\", \"4\", \"4\", \"4\", \"4…\n#&gt; $ cty          &lt;int&gt; 18, 21, 20, 21, 16, 18, 18, 18, 16, 20, 19, 15, 17, 17, 1…\n#&gt; $ hwy          &lt;int&gt; 29, 29, 31, 30, 26, 26, 27, 26, 25, 28, 27, 25, 25, 25, 2…\n#&gt; $ fl           &lt;chr&gt; \"p\", \"p\", \"p\", \"p\", \"p\", \"p\", \"p\", \"p\", \"p\", \"p\", \"p\", \"p…\n#&gt; $ class        &lt;chr&gt; \"compact\", \"compact\", \"compact\", \"compact\", \"compact\", \"c…"
+  },
+  {
+    "objectID": "index.html#exercise-scatter-plot-2",
+    "href": "index.html#exercise-scatter-plot-2",
+    "title": "An Introduction to the R Programming Language",
+    "section": "Exercise (Scatter Plot)",
+    "text": "Exercise (Scatter Plot)\nSolution:\n\nCodelibrary(ggplot2)\n\nmpg |&gt;\n  ggplot(\n    aes(\n      x = displ,\n      y = hwy\n    )\n  ) +\n  geom_point() +\n  geom_smooth() +\n  labs(\n    title = \"Relationship between Engine Displacement and Highway MPG\",\n    x = \"Engine Displacement (L)\",\n    y = \"Highway Miles per Gallon\",\n    caption = \"Source: ggplot2 package\"\n  )"
   },
   {
     "objectID": "index.html#facets",
     "href": "index.html#facets",
     "title": "An Introduction to the R Programming Language",
     "section": "Facets",
-    "text": "Facets\n\nCodelibrary(dplyr)\nlibrary(ggplot2)\nlibrary(magrittr)\nlibrary(palmerpenguins)\nlibrary(stringr)\nlibrary(tidyr)\n\npenguins |&gt;\n  drop_na(\n    body_mass_g,\n    flipper_length_mm,\n    sex\n  ) |&gt;\n  mutate(\n    sex = sex %&gt;%\n      `levels&lt;-`(\n        sex |&gt;\n          levels() |&gt;\n          str_to_title()\n      )\n  ) |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      y = flipper_length_mm,\n      color = sex\n    )\n  ) +\n  geom_point(size = 2) +\n  geom_smooth(\n    method = \"lm\",\n    formula = y ~ x,\n    se = FALSE,\n    color = \"black\"\n  ) +\n  facet_wrap(~species) +\n  labs(\n    x = \"Body Mass (g)\",\n    y = \"Flipper Length (mm)\",\n    color = \"Sex\"\n  )"
+    "text": "Facets\n\nCodelibrary(dplyr)\nlibrary(ggplot2)\nlibrary(magrittr)\nlibrary(palmerpenguins)\nlibrary(stringr)\n\npenguins |&gt;\n  mutate(\n    sex = sex |&gt; str_to_title()\n  ) |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      y = flipper_length_mm,\n      color = sex\n    )\n  ) +\n  geom_point() +\n  geom_smooth(\n    method = \"lm\",\n    formula = y ~ x,\n    se = FALSE,\n    color = \"black\"\n  ) +\n  facet_wrap(vars(species)) +\n  labs(\n    x = \"Body Mass (g)\",\n    y = \"Flipper Length (mm)\",\n    color = \"Sex\"\n  )"
   },
   {
     "objectID": "index.html#combined-plots",
     "href": "index.html#combined-plots",
     "title": "An Introduction to the R Programming Language",
     "section": "Combined Plots",
-    "text": "Combined Plots\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(patchwork)\nlibrary(tidyr)\n\nplot_hist &lt;-\n  penguins |&gt;\n  drop_na(\n    flipper_length_mm,\n    species\n  ) |&gt;\n  ggplot(\n    aes(\n    x = flipper_length_mm,\n    fill = species\n    )\n  ) +\n  geom_histogram(\n    bins = 30,\n    alpha = 0.5,\n    position = \"identity\"\n  ) +\n  labs(\n    x = \"Flipper Length (mm)\",\n    y = \"Frequency\"\n  ) +\n  theme(legend.position = \"none\")\n\nplot_boxplot &lt;-\n  penguins |&gt;\n  drop_na(\n    bill_length_mm,\n    species\n  ) |&gt;\n  ggplot(\n    aes(\n      x = species,\n      y = bill_length_mm,\n      fill = species\n    )\n  ) +\n  geom_boxplot(outlier.color = \"red\") +\n  geom_jitter(width = 0.2, alpha = 0.1) +\n  labs(\n    x = \"Species\",\n    y = \"Bill Length (mm)\",\n    fill = \"Species\"\n  ) +\n  theme(\n    axis.title.x = element_blank(),\n    legend.position = \"none\"\n  )\n\nplot_scatter &lt;-\n  penguins |&gt;\n  drop_na(\n    body_mass_g,\n    flipper_length_mm,\n    species\n  ) |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      y = flipper_length_mm,\n      color = species,\n      shape = species\n    )\n  ) +\n  geom_point(size = 2) +\n  geom_smooth(\n    method = \"lm\",\n    formula = y ~ x,\n    se = FALSE\n  ) +\n  labs(\n    x = \"Body Mass (g)\",\n    y = \"Flipper Length (mm)\",\n    color = \"Species\",\n    shape = \"Species\"\n  ) +\n  theme(legend.position = \"none\")\n\n(plot_hist + plot_boxplot) / plot_scatter + plot_annotation(tag_levels = \"A\")"
+    "text": "Combined Plots\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(patchwork)\n\nplot_hist &lt;-\n  penguins |&gt;\n  ggplot(\n    aes(\n      x = flipper_length_mm,\n      fill = species\n    )\n  ) +\n  geom_histogram(\n    alpha = 0.5,\n    position = \"identity\"\n  ) +\n  labs(\n    x = \"Flipper Length (mm)\",\n    y = \"Frequency\"\n  ) +\n  theme(legend.position = \"none\")\n\nplot_boxplot &lt;-\n  penguins |&gt;\n  ggplot(\n    aes(\n      x = species,\n      y = bill_length_mm,\n      fill = species\n    )\n  ) +\n  geom_boxplot(outlier.color = \"red\") +\n  geom_jitter(\n    width = 0.2,\n    alpha = 0.1\n  ) +\n  labs(\n    x = \"Species\",\n    y = \"Bill Length (mm)\",\n    fill = \"Species\"\n  ) +\n  theme(\n    axis.title.x = element_blank(),\n    legend.position = \"none\"\n  )\n\nplot_scatter &lt;-\n  penguins |&gt;\n  drop_na(\n    body_mass_g,\n    flipper_length_mm,\n    species\n  ) |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      y = flipper_length_mm,\n      color = species,\n      shape = species\n    )\n  ) +\n  geom_point() +\n  geom_smooth(\n    method = \"lm\",\n    formula = y ~ x,\n    se = FALSE\n  ) +\n  labs(\n    x = \"Body Mass (g)\",\n    y = \"Flipper Length (mm)\",\n    color = \"Species\",\n    shape = \"Species\"\n  ) +\n  theme(legend.position = \"none\")\n\n(plot_hist + plot_boxplot) / plot_scatter + plot_annotation(tag_levels = \"A\")"
   },
   {
     "objectID": "index.html#correlation-matrices",
@@ -1377,20 +1454,6 @@
     "title": "An Introduction to the R Programming Language",
     "section": "The R Graph Gallery",
     "text": "The R Graph Gallery\nAnother amazing work by Yan Holtz is the R Graph Gallery, which provides numerous examples of R graphics and how to create them.\n\n\n\n\n\n(Artwork by Yan Holtz)"
-  },
-  {
-    "objectID": "index.html#exercise-scatter-plot",
-    "href": "index.html#exercise-scatter-plot",
-    "title": "An Introduction to the R Programming Language",
-    "section": "Exercise (Scatter Plot)",
-    "text": "Exercise (Scatter Plot)\nCreate a scatter plot using the mpg dataset (available in the ggplot2 package) that visualizes the relationship between displ (engine displacement) and hwy (highway miles per gallon).\nAdd a Color the points based on the class of the vehicle.\n\nlibrary(ggplot2)\n\n\nmpg |&gt; glimpse()\n#&gt; Rows: 234\n#&gt; Columns: 11\n#&gt; $ manufacturer &lt;chr&gt; \"audi\", \"audi\", \"audi\", \"audi\", \"audi\", \"audi\", \"audi\", \"…\n#&gt; $ model        &lt;chr&gt; \"a4\", \"a4\", \"a4\", \"a4\", \"a4\", \"a4\", \"a4\", \"a4 quattro\", \"…\n#&gt; $ displ        &lt;dbl&gt; 1.8, 1.8, 2.0, 2.0, 2.8, 2.8, 3.1, 1.8, 1.8, 2.0, 2.0, 2.…\n#&gt; $ year         &lt;int&gt; 1999, 1999, 2008, 2008, 1999, 1999, 2008, 1999, 1999, 200…\n#&gt; $ cyl          &lt;int&gt; 4, 4, 4, 4, 6, 6, 6, 4, 4, 4, 4, 6, 6, 6, 6, 6, 6, 8, 8, …\n#&gt; $ trans        &lt;chr&gt; \"auto(l5)\", \"manual(m5)\", \"manual(m6)\", \"auto(av)\", \"auto…\n#&gt; $ drv          &lt;chr&gt; \"f\", \"f\", \"f\", \"f\", \"f\", \"f\", \"f\", \"4\", \"4\", \"4\", \"4\", \"4…\n#&gt; $ cty          &lt;int&gt; 18, 21, 20, 21, 16, 18, 18, 18, 16, 20, 19, 15, 17, 17, 1…\n#&gt; $ hwy          &lt;int&gt; 29, 29, 31, 30, 26, 26, 27, 26, 25, 28, 27, 25, 25, 25, 2…\n#&gt; $ fl           &lt;chr&gt; \"p\", \"p\", \"p\", \"p\", \"p\", \"p\", \"p\", \"p\", \"p\", \"p\", \"p\", \"p…\n#&gt; $ class        &lt;chr&gt; \"compact\", \"compact\", \"compact\", \"compact\", \"compact\", \"c…"
-  },
-  {
-    "objectID": "index.html#exercise-scatter-plot-1",
-    "href": "index.html#exercise-scatter-plot-1",
-    "title": "An Introduction to the R Programming Language",
-    "section": "Exercise (Scatter Plot)",
-    "text": "Exercise (Scatter Plot)\nSolution:\n\nCodelibrary(ggplot2)\n\nmpg |&gt;\n  ggplot(\n    aes(\n      x = displ,\n      y = hwy,\n      color = class\n    )\n  ) +\n  geom_point(size = 2) +\n  labs(\n    x = \"Engine Displacement (L)\",\n    y = \"Highway Miles per Gallon\",\n    color = \"Vehicle Class\"\n  ) +\n  theme(\n    text = element_text(size = 20),\n    legend.position = \"right\"\n  )\n\n\n\n\n\n15-minute break after this slide."
   },
   {
     "objectID": "index.html#how-to-learn-more-3",
@@ -1956,7 +2019,7 @@
     "objectID": "index.html#thank-you",
     "href": "index.html#thank-you",
     "title": "An Introduction to the R Programming Language",
-    "section": "Thank you!",
-    "text": "Thank you!\n\n\n\n\n\n(Artwork by Allison Horst)"
+    "section": "Thank You!",
+    "text": "Thank You!\n\n\n\n\n\n(Artwork by Allison Horst)"
   }
 ]
