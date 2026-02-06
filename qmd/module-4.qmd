@@ -1625,6 +1625,9 @@ penguins |>
   )
 ```
 
+::: {.notes}
+:::
+
 ## Combined Plots {.smaller .nostretch}
 
 ```{r}

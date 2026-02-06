@@ -1,20 +1,26 @@
 ---
 title: >
-  Exploring potential differences in ultra-processed food consumption among
-  Brazilian children aged 2 to 4 in 2022 among B and D MISFS-R clusters
+  Differences in Ultra-Processed Food Consumption Between MISFS-R Clusters B
+  and D Among Brazilian Children Aged 2 to 4 in 2022
 format: html
-author: "[YOUR NAME HERE]"
+author: "[Your Name Here]"
 date: today
+bibliography: ../bib/template-references.bib
 ---
 
 <!-- badges: start -->
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![License: GPLv3](https://img.shields.io/badge/license-GPLv3-bd0000.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/license-CC_BY--NC--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 <!-- badges: end -->
 
+::: {.callout-important}
+This is your data report! Make any changes you need.
+:::
+
 ## Overview
 
-This report presents a data analysis exercise for the course [An Introduction to the R Programming Language](https://github.com/danielvartan/r-course).
+This report presents a data analysis exercise for the course [An Introduction to the R Programming Language](https://danielvartan.github.io/r-course).
 
 The analysis explores potential differences in ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022, focusing on clusters B and D of the Revised Multidimensional Index for Sustainable Food Systems ([MISFS-R](https://doi.org/10.1002/sd.2376)).
 
@@ -34,55 +40,43 @@ This analysis seeks to address the following question:
 Was there a [**meaningful**]{.brand-red} difference in [**ultra-processed food consumption**]{.brand-red} among Brazilian children aged [**2 to 4**]{.brand-red} in [**2022**]{.brand-red} across the [**clusters B and D**]{.brand-red} of the Revised Multidimensional Index for Sustainable Food Systems ([MISFS-R](https://doi.org/10.1002/sd.2376))?
 :::
 
-MISFS is a multidimensional index designed to assess the sustainability of food systems at a subnational level in Brazil, incorporating local behaviors and practices. The MISFS-R is a revised version that introduces new indicators and a refined methodology ([@fig-norde-2023-figure-6]). For more details, see @carvalho2021a and @norde2023.
-
-::: {#fig-norde-2023-figure-6}
-![](images/norde-2023-figure-6.jpg){width=90%}
-
-[Source: Reproduced from @norde2023.]{.legend}
-
-Dendrogram for cluster analysis between Brazilian states considering all the Revised Multidimensional Index for Sustainable Food Systems (MISFS-R) indicators and geographical location of each cluster.
-:::
+MISFS is a multidimensional index designed to assess the sustainability of food systems at a subnational level in Brazil, incorporating local behaviors and practices. The MISFS-R is a revised version that introduces new indicators and a refined methodology. For more details, see @carvalho2021a and @norde2023.
 
 ## Methods
 
-### Approach and Procedure Method
+### Approach
 
-This study employed the hypothetical-deductive method, also known as the method of conjecture and refutation [@popper1979a, p. 164], as its problem-solving approach. Procedurally, it applied an enhanced version of Null Hypothesis Significance Testing (NHST), grounded on the original ideas of Neyman-Pearson framework for data testing [@neyman1928; @neyman1928a; @perezgonzalez2015].
+This study employed Popper's hypothetical-deductive method, also known as the method of conjecture and refutation [@popper1979a, p. 164], as its problem-solving approach. Procedurally, it applied an enhanced version of Null Hypothesis Significance Testing (NHST), grounded on the original ideas of Neyman-Pearson framework for data testing [@neyman1928; @neyman1928a; @perezgonzalez2015].
 
-### Source of Data/Information
+### Source of Data
 
-The data used in this analysis were sourced from Brazil's Food and Nutrition Surveillance System ([SISVAN](https://sisaps.saude.gov.br/sisvan/)), regarding the dataset on ultra-processed food consumption [@sisvan].
+The data used in this analysis were sourced from Brazil's Food and Nutrition Surveillance System ([SISVAN](https://sisaps.saude.gov.br/sisvan/)), Ministry of Health ([MS](https://www.gov.br/saude)), specifically the dataset on ultra-processed food consumption [@sisvan].
 
-Only data from municipalities with 10 or more monitored children were considered in the analysis.
+### Data Munging
 
-### Data Wrangling
+The data munging follow the data science workflow outlined by @wickham2023e. All processes were made using the [Quarto](https://quarto.org/) publishing system [@allaire], the [R](https://www.r-project.org/) programming language [@rcoreteam], and several R packages.
 
-Data munging and analysis followed the data science workflow outlined by @wickham2023e, as illustrated in [@fig-wickham-at-al-2024-figure-1]. All processes were made using the R programming language [@rcoreteam], Positron IDE [@positteam], and several R packages.
-
-The [tidyverse](https://www.tidyverse.org/) and [rOpenSci](https://ropensci.org/) peer-reviewed package ecosystem and other R packages adherents of the tidy tools manifesto [@wickham2023c] were prioritized. All processes were made in order to provide result transparency and reproducibility.
-
-::: {#fig-wickham-at-al-2024-figure-1}
-![](images/wickham-at-al-2024-figure-1.png){width=75%}
-
-[Source: Reproduced from @wickham2023e.]{.legend}
-
-Data science workflow created by Wickham, Çetinkaya-Runde, and Grolemund.
-:::
-
-The Tidyverse [code style guide](https://style.tidyverse.org/) and [design principles](https://design.tidyverse.org/) were followed to ensure consistency and enhance readability.
-
-All the analyses are 100% reproducible and can be run again at any time. See the [README](hhttps://github.com/danielvartan/r-course-exercise/blob/main/README.md) file in the code repository to learn how to run them.
+For data manipulation and workflow, priority was given to packages from the [tidyverse](https://www.tidyverse.org/), [tidymodels](https://www.tidymodels.org), and [rOpenSci](https://ropensci.org) ecosystems, as well as other packages adhering to the tidy tools manifesto [@wickham2023c].
 
 ### Data Analysis
 
-The analysis employed a bilateral [t-test for independent groups](https://en.wikipedia.org/wiki/Student%27s_t-test) using a randomization-based empirical null distribution. Visual inspections of the data were also conducted to explore and assess patterns. Furthermore, a power analysis and effect-size estimation were performed to evaluate the statistical robustness and practical significance of the findings.
+The analysis employed a bilateral [t-test for independent groups](https://en.wikipedia.org/wiki/Student%27s_t-test) using a [randomization-based empirical null distribution](https://infer.netlify.app/articles/t_test#sample-t-test-1). Visual inspections of the data were also conducted to explore and assess patterns. Furthermore, an *a priori* power analysis and effect-size estimation were performed to evaluate the statistical robustness and practical significance of the findings.
+
+### Data Validation
+
+Data from municipalities with fewer than 10 monitored children were excluded to ensure reliable estimates.
+
+Outliers were identified and assessed using visual inspection methods, including boxplots and histograms. To ensure the integrity of the results, values below 1.5 times the interquartile range (IQR) from the first quartile (Q1) and above 1.5 times the IQR from the third quartile (Q3) were excluded from the analysis.
+
+::: {.callout-important}
+Usually you would not remove outliers without investigating them first. However, for the purposes of this exercise, we will proceed with their removal to simplify the analysis.
+:::
 
 ### Hypothesis Testing
 
-We tested whether the means of ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 differed meaningfully across the clusters B and D of the Revised Multidimensional Index for Sustainable Food Systems (MISFS-R).
+The analysis tested whether the means of ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 differed meaningfully across clusters B and D of the Revised Multidimensional Index for Sustainable Food Systems ([MISFS-R](https://doi.org/10.1002/sd.2376)).
 
-To ensure practical significance, we applied a Minimum Effect Size (MES) criterion, following the original Neyman-Pearson framework for hypothesis testing [@neyman1928; @neyman1928a; @perezgonzalez2015]. The MES was set at Cohen's threshold for small effects (Cohen's $d$ = 0.2) [@cohen1988a]. Thus, a difference was considered meaningfully only if its effect-size was greater or equal to the MES; otherwise, it was considered negligible.
+To ensure practical significance, a Minimum Effect Size (MES) criterion was applied, following the original Neyman-Pearson framework for hypothesis testing [@neyman1928; @neyman1928a; @perezgonzalez2015]. The MES was set at Cohen's threshold for small effects (Cohen's $d$ = 0.2) [@cohen1988a]. A difference was considered meaningful only if its effect size was greater than or equal to the MES; otherwise, it was considered negligible.
 
 The test was structured as follows:
 
@@ -99,24 +93,39 @@ $$
 \end{cases}
 $$
 
-To ensure validity, this hypothesis test is conditioned on a Type I error ($\alpha$) of 0.05 and a minimum statistical power (1 - $\beta$) of 0.8. This means the test should have at least an 80% probability of correctly rejecting the null hypothesis when it is false, thereby minimizing the risk of a Type II error ($\beta$).
+The hypothesis test is conditioned on a Type I error ($\alpha$) of 0.05 and a minimum statistical power (1 - $\beta$) of 0.8. This means the test should have at least an 80% probability of correctly rejecting the null hypothesis when it is false, thereby minimizing the risk of a Type II error ($\beta$).
 
-## Setting the Environment
+### Code Style
+
+The Tidyverse [tidy tools manifesto](https://tidyverse.tidyverse.org/articles/manifesto.html) [@wickham2023e], [code style guide](https://style.tidyverse.org/) [@wickhama] and [design principles](https://design.tidyverse.org/) [@wickhamc] were followed to ensure consistency and enhance readability.
+
+### Reproducibility
+
+The pipeline is fully reproducible and can be run again at any time. To ensure consistent results, the [`renv`](https://rstudio.github.io/renv/) package [@ushey2025] was used to manage and restore the R environment. See the [README](https://github.com/cem-usp/locais-nova-rais-rfb-test/blob/main/README.md) file in the code repository to learn how to run it.
+
+## Set the Environment
+
+### Load Packages
+
+::: {.callout-note}
+**Remove any packages you don't use in your analysis.**
+:::
 
 ```{r}
 #| output: false
 
 library(brandr)
-library(curl)
 library(dplyr)
 library(effectsize)
 library(ggplot2)
+library(gt)
 library(here)
 library(infer)
 library(janitor)
 library(patchwork)
 library(pwr)
 library(pwrss)
+library(purrr)
 library(readr)
 library(readxl)
 library(stringr)
@@ -124,17 +133,13 @@ library(summarytools)
 library(tidyr)
 ```
 
-## Importing and Tidying the Data
-
-Source: SISVAN [Food Consumption](https://dadosabertos.saude.gov.br/dataset/sisvan-estado-nutricional) dataset for ultra-processed food consumption of children between 2 to 4 years old (Sistema de Vigilância Alimentar e Nutricional, n.d.).
-
-### Reading the Data
+## Import Data
 
 ```{r}
 #| output: false
 
 data <-
-  here("data", "sisvan-raw.xlsx") |>
+  here("data-raw", "CONS_ULTRA.xlsx") |>
   read_xlsx(
     sheet = "2022",
     skip = 1,
@@ -142,25 +147,23 @@ data <-
   )
 ```
 
-### Tidying the Data
+```{r}
+data |> glimpse()
+```
+
+## Tidy Data
 
 ```{r}
 
 ```
 
-### Validating the Data
+## Validate Data
 
 ```{r}
 
 ```
 
-### Transforming the Data
-
-```{r}
-
-```
-
-## Saving the Valid Data
+## Transform the Data
 
 ```{r}
 
@@ -169,39 +172,29 @@ data <-
 ## Data Dictionary
 
 - `year`: Year of the data collection (type: `integer`).
-- `misfs`: Revised Multidimensional Index for Sustainable Food Systems (MISFS-R) cluster (type: `factor`).
-- `state_abbrev`: State abbreviation (Federal Unit) (type: `character`).
 - `municipality_code`: Municipality code (type: `integer`).
 - `municipality_name`: Municipality name (type: `character`).
+- `state_abbrev`: State abbreviation (Federal Unit) (type: `character`).
+- `misfs`: Revised Multidimensional Index for Sustainable Food Systems (MISFS-R) cluster (type: `factor`).
 - `n_upf`: Number of children that consumed ultra-processed foods (UPF) (type: `integer`).
 - `n_upf_rel`: Percentage of children that consumed ultra-processed foods (UPF) (type: `double`).
 - `n_monitored`: Number of monitored children (type: `integer`).
 
-## Checking Distributions
+## Save Data
 
 ```{r}
 
 ```
 
-## Checking Combined Distributions
+## Explore Data
+
+## Model Data
 
 ```{r}
 
 ```
 
-## Modeling the Data
-
-```{r}
-
-```
-
-## Assessing the Effect Size
-
-```{r}
-
-```
-
-## Assessing Power
+## Assess the Effect Size
 
 ```{r}
 
@@ -209,15 +202,39 @@ data <-
 
 ## Conclusion
 
+## Citation
+
+To cite this work, please use the following format:
+
+[Your Surname Here], [YOUR INITIALS HERE]. (2026). *An introduction to the R programming language: Class exercise* \[Report\]. Center for Metropolitan Studies, University of São Paulo.
+
+A BibLaTeX entry for LaTeX users is
+
+```
+@report{[your-surname-in-lower-case-here]2026,
+  title = {An introduction to the R programming language: Class exercise},
+  author = {{Your Full Name Here}},
+  year = {2026},
+  address = {São Paulo},
+  institution = {Center for Metropolitan Studies, University of São Paulo},
+  langid = {en}
+```
+
 ## License
 
+::: {style="text-align: left;"}
 [![License: GPLv3](https://img.shields.io/badge/license-GPLv3-bd0000.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/license-CC_BY--NC--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+:::
+
+::: {.callout-important}
+The original data sources may be subject to their own licensing terms and conditions.
+:::
 
 The code in this repository is licensed under the [GNU General Public License Version 3](https://www.gnu.org/licenses/gpl-3.0), while the report is available under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-```
-Copyright (C) Daniel Vartanian
+```text
+Copyright (C) 2026 [Your Full Name Here]
 
 The code in this report is free software: you can redistribute it and/or
 modify it under the terms of the GNU General Public License as published by the
@@ -230,24 +247,6 @@ PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License along with
 this program. If not, see <https://www.gnu.org/licenses/>.
-```
-
-## Citation
-
-To cite this work, please use the following format:
-
-[YOUR SURNAME HERE], [YOUR INITIALS HERE], Pereira, J. L., & Vartanian, D. (2025). (2025). *An introduction to the R programming language: Class exercise* \[Report\]. Sustentarea Research and Extension Group at the University of São Paulo.
-
-A BibTeX entry for LaTeX users is
-
-```
-@techreport{[your-surname-in-lower-case-here]2025,
-  title = {An introduction to the R programming language: Class exercise},
-  author = {{YOUR FULL NAME HERE} {Daniel Vartanian} and {Jaqueline Lopes Pereira}},
-  year = {2025},
-  address = {São Paulo},
-  institution = {Sustentarea Research and Extension Group at the University of São Paulo},
-  langid = {en}
 ```
 
 ## References {.unnumbered}

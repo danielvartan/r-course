@@ -125,7 +125,7 @@ theme_set(
 #' @wmoldham fork `remotes::install_github("wmoldham/rbbt", force = TRUE)`.
 
 # bbt_write_quarto_bib(
-#   bib_file = here("references.bib"),
+#   bib_file = here("bib", "references.bib"),
 #   dir = c(".", "qmd"),
 #   pattern = "\\.qmd$",
 #   wd = here()

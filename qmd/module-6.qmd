@@ -18,7 +18,7 @@ Was there a [**meaningful**]{.brand-triad-blue-red} difference in [**ultra-proce
 
 :::: {.columns}
 ::: {.column style="width: 50%; font-size: 0.95em;"}
-The Multidimensional Index for Sustainable Food Systems (MISFS) is a tool designed to assess the sustainability of food systems at a subnational level in Brazil, incorporating local behaviors and practices.
+The Multidimensional Index for Sustainable Food Systems (MISFS) is a tool designed to assess the sustainability of [food systems](https://en.wikipedia.org/wiki/Food_system) at a subnational level in Brazil, incorporating local behaviors and practices.
 
 The **MISFS-R** is a revised version that introduces new indicators and a refined methodology for calculating the index.
 
@@ -52,8 +52,6 @@ For more details, see @carvalho2021a and @norde2023.
 **This exercise is for educational purposes only**.
 
 The data used in this exercise requires further cleaning and validation to ensure its suitability for real-world applications. For the purposes of this analysis, we will assume the data is valid and reliable, though this assumption may not hold in practice.
-
-Additionally, we will not verify the assumptions underlying the statistical test. To simplify the exercise, we will proceed as though all necessary assumptions are satisfied.
 
 Please note that **the results of the statistical test may not be valid** due to these simplifications.
 
@@ -95,33 +93,41 @@ Remember the data science workflow:
 👣 Here are the steps you should follow:
 
 :::: {.columns}
-::: {.column style="width: 50%;"}
-1\. Create a new Quarto project
+::: {.column style="width: 47.5%; font-size: 0.9em;"}
+1\. Create a new project and open it in [Positron](https://positron.posit.co).
 
-2\. Formulate your hypothesis
+2\. Download the [Quarto](https://quarto.org) [template file](https://raw.githubusercontent.com/danielvartan/r-course/refs/heads/main/qmd/template.qmd), rename it as `index.qmd`, and store it in the project root.
 
-3\. Perform a **pre-hoc** power analysis
+3\. Download the template [references file](https://raw.githubusercontent.com/danielvartan/r-course/refs/heads/main/qmd/references.bib), name it as `reference.bib` and store it in the project root.
 
-4\. Download the data
+4\. Read and review the Quarto template.
 
-5\. Inspect the data file
+5\. Perform an **a priori** power analysis.
 
-6\. Import the data into R
+6\. Download the data.
 
-7\. Clean, tidy, and validate the data
+7\. Inspect the data file.
 :::
-::: {.column style="width: 50%;"}
-8\. Save the validated data
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%; font-size: 0.9em;"}
+8\. Import the data into R.
 
-9\. Conduct a **brief** exploratory data analysis
+9\. Clean, tidy, and validate the data.
 
-10\. Conduct a t-test to compare the groups
+10\. Transform the data as needed.
 
-11\. Calculate the effect size
+11\. Save the validated data.
 
-12\. Perform a **post-hoc** power analysis
+12\. Conduct a **brief** exploratory data analysis.
 
-13\. Write your conclusions
+13\. Conduct a t-test to compare the group means.
+
+14\. Calculate and assess the effect size.
+
+15\. Write your conclusions.
+
+16\. Render the report.
 :::
 ::::
 
@@ -130,11 +136,13 @@ Remember the data science workflow:
 
 ## Notes
 
-🧮 Recalculate the relative frequency
+🧮 Recalculate the relative frequency.
 
-❌ Remove municipalities with less than 10 monitored children
+❌ Remove municipalities with less than 10 monitored children.
 
-🙋‍♂️ If you're stuck, ask for help
+❌ Remove outliers.
+
+🙋‍♂️ If you're stuck, ask for help.
 
 🎉 Have fun!
 
