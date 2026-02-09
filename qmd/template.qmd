@@ -15,7 +15,7 @@ bibliography: references.bib
 <!-- badges: end -->
 
 ::: {.callout-important}
-This is your data report! Make any changes you need.
+This is your data report! Make any changes you want to it.
 :::
 
 ## Overview

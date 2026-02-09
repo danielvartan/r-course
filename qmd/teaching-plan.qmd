@@ -16,6 +16,9 @@
 
 Provide a solid introduction to R programming with a focus on [Tidyverse](https://tidyverse.org/) principles and its ecosystem.
 
+::: {.notes}
+:::
+
 ## Learning Objectives {.smaller visibility="uncounted"}
 
 1. Learn key concepts of computer science and programming
@@ -51,14 +54,22 @@ Provide a solid introduction to R programming with a focus on [Tidyverse](https:
 [@bernardes2009a, Translated from Portuguese to English by the author]
 :::
 
+::: {.notes}
+:::
+
 ## Strategy {.smaller visibility="uncounted"}
 
 - 💬 Pre-course survey
 - Theory ➡️ Practice
 - 🏋 In-class activities
+- ☕ 15-minute break between sessions
+- 🍝 1-hour for lunch
 - 📓 Final project
 - 😌 No formal evaluation
 - 💬 Post-course survey
+
+::: {.notes}
+:::
 
 ## Resources {.smaller visibility="uncounted"}
 
@@ -66,6 +77,9 @@ Provide a solid introduction to R programming with a focus on [Tidyverse](https:
 - Data projector
 - Slides
 - Computers
+
+::: {.notes}
+:::
 
 ## Main References {.smaller visibility="uncounted"}
 
@@ -103,7 +117,7 @@ Provide a solid introduction to R programming with a focus on [Tidyverse](https:
 ::: {.column style="width: 47.5%;"}
 **Part 2** (13:30-17:00)
 
-- Module 2 (R Basics)
+- Module 2 (R Basics): Start
 :::
 ::::
 
@@ -116,6 +130,7 @@ Provide a solid introduction to R programming with a focus on [Tidyverse](https:
 ::: {.column style="width: 47.5%;"}
 **Part 1** (10:00-12:30)
 
+- Module 2 (R Basics): End
 - Module 3 (Data Munging): Start
 :::
 ::: {.column style="width: 5%;"}
@@ -123,7 +138,7 @@ Provide a solid introduction to R programming with a focus on [Tidyverse](https:
 ::: {.column style="width: 47.5%;"}
 **Part 2** (13:30-17:00)
 
-- Module 3 (Data Munging): End
+- Module 3 (Data Munging)
 :::
 ::::
 
@@ -136,14 +151,14 @@ Provide a solid introduction to R programming with a focus on [Tidyverse](https:
 ::: {.column style="width: 47.5%;"}
 **Part 1** (10:00-12:30)
 
-- Module 4 (Exploratory Data Analysis): Start
+- Module 3 (Data Munging): End
 :::
 ::: {.column style="width: 5%;"}
 :::
 ::: {.column style="width: 47.5%;"}
 **Part 2** (13:30-17:00)
 
-- Module 4 (Exploratory Data Analysis): End
+- Module 4 (Exploratory Data Analysis): Start
 :::
 ::::
 
@@ -156,15 +171,14 @@ Provide a solid introduction to R programming with a focus on [Tidyverse](https:
 ::: {.column style="width: 47.5%;"}
 **Part 1** (10:00-12:30)
 
-- Module 5 (Modeling): Introduction -> Infer pipelines
-
+- Module 4 (Exploratory Data Analysis): End
 :::
 ::: {.column style="width: 5%;"}
 :::
 ::: {.column style="width: 47.5%;"}
 **Part 2** (13:30-17:00)
 
-- Module 5 (Modeling): One-Sample t-Test -> ANOVA
+- Module 5 (Modeling): Start
 :::
 ::::
 
@@ -177,7 +191,7 @@ Provide a solid introduction to R programming with a focus on [Tidyverse](https:
 ::: {.column style="width: 47.5%;"}
 **Part 1** (10:00-12:30)
 
-- Module 5 (Modeling): Linear Regression
+- Module 5 (Modeling): End
 :::
 ::: {.column style="width: 5%;"}
 :::

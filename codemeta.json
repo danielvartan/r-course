@@ -34,7 +34,7 @@
     "email": "danielvartan@proton.me",
     "@id": "https://orcid.org/0000-0001-7782-759X"
   },
-  "description": "",
+  "description": "An introductory course on the R programming language, designed for students and professionals. The course covers the basics of R programming, data manipulation, data visualization, and reproducible research practices. It is intended to provide a solid foundation for those looking to use R for data analysis and research.",
   "keywords": [
     "Data Engineering",
     "Data Science",
@@ -73,5 +73,5 @@
   "developmentStatus": "active",
   "readme": "https://github.com/danielvartan/r-course/blob/main/README.md",
   "releaseNotes": "https://github.com/danielvartan/r-course/blob/main/NEWS.md",
-  "version": "1.1.0.9000"
+  "version": "2.0.0"
 }

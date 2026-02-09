@@ -53,7 +53,7 @@ Before opening a new issue, please check the [issues tab](https://github.com/dan
 The code in this repository is licensed under the [GNU General Public License Version 3](https://www.gnu.org/licenses/gpl-3.0), while the slides are available under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 ```
-Copyright (C) Daniel Vartanian
+Copyright (C) 2026 Daniel Vartanian
 
 The code in this report is free software: you can redistribute it and/or
 modify it under the terms of the GNU General Public License as published by the
@@ -74,7 +74,7 @@ this program. If not, see <https://www.gnu.org/licenses/>.
 
 To cite this work, please use the following format:
 
-Vartanian, D. (2025). *An introduction to the R programming language*. Center for Metropolitan Studies, University of São Paulo. <https://doi.org/10.5281/zenodo.18332665>
+Vartanian, D. (2026). *An introduction to the R programming language*. Center for Metropolitan Studies, University of São Paulo. <https://doi.org/10.5281/zenodo.18332665>
 
 A BibLaTeX entry for LaTeX users is:
 
@@ -99,7 +99,7 @@ A BibLaTeX entry for LaTeX users is:
         <a href="https://centrodametropole.fflch.usp.br"><img src="images/cem-logo.svg" width="190em"/></a>
     </td>
     <td width="70%" valign="center">
-      This work was developed with support from the Center for Metropolitan Studies (<a href="https://centrodametropole.fflch.usp.br">CEM</a>) based at the School of Philosophy, Letters and Human Sciences (<a href="https://www.fflch.usp.br/">FFLCH</a>) at the University of São Paulo (<a href="https://usp.br">USP</a>) and at the Brazilian Center for Analysis and Planning (<a href="https://cebrap.org.br/">CEBRAP</a>).
+      This work was developed with support from the Center for Metropolitan Studies (<a href="https://centrodametropole.fflch.usp.br">CEM</a>) based at the School of Philosophy, Letters and Human Sciences (<a href="https://www.fflch.usp.br/">FFLCH</a>) of the University of São Paulo (<a href="https://usp.br">USP</a>) and at the Brazilian Center for Analysis and Planning (<a href="https://cebrap.org.br/">CEBRAP</a>).
     </td>
   </tr>
 </table>
