@@ -45,6 +45,30 @@ library("tidymodels")
 ::: {.notes}
 :::
 
+## Hypothesis Testing {.smaller}
+
+A [hypothesis]{.brand-triad-blue-red .bold-black} is a statement about a population parameter.
+
+::: {style="padding-top: 15px;"}
+The goal of a hypothesis test is to decide, based on a sample from the population, which of **two complementary hypotheses** is true.
+
+The two complementary hypotheses in a hypothesis testing problem are called the **null hypothesis** and the **alternative hypothesis**. They are denoted by $\text{H}_{0}$ and $\text{H}_{1}$, respectively.
+:::
+
+::: {style="padding-top: 15px;"}
+A hypothesis testing procedure or [hypothesis test]{.brand-triad-blue-red .bold-black} is a rule that specifies:
+
+1. For which sample values the decision is made to accept $\text{H}_{0}$ as true.
+1. For which sample values $\text{H}_{0}$ is rejected and $\text{H}_{1}$, is accepted as true.
+:::
+
+::: footer
+[@casella2002, p. 373-374]
+:::
+
+::: {.notes}
+:::
+
 ## Power Analysis {.smaller}
 
 ::: {style="padding-top: 100px;"}
@@ -398,14 +422,14 @@ Check Antoine Soetewey's [flowchart](https://statsandr.com/blog/what-statistical
 ::: {.notes}
 :::
 
-## `infer` Pipeline Examples {.smaller .nostretch}
+## The `infer` Package {.smaller .nostretch}
 
 :::: {.columns}
 ::: {.column style="width: 15%; padding-top: 15px;"}
-[![](images/infer-hex-logo.png){style="width: 120px;"}](https://readr.tidyverse.org/)
+[![](images/infer-hex-logo.png){style="width: 120px;"}](https://infer.netlify.app)
 :::
 ::: {.column style="width: 85%; padding-top: 15px;"}
-`infer` is a [Tidymodels](https://www.tidymodels.org/) package that provides a statistical **grammar** for inferential statistics.
+[`infer`](https://infer.netlify.app) is a [Tidymodels](https://www.tidymodels.org/) package that provides a statistical **grammar** for inferential statistics.
 
 ```r
 install.packages("infer")
@@ -418,25 +442,26 @@ It also offers [pipeline examples](https://infer.tidymodels.org/articles/observe
 ::: {.notes}
 :::
 
-## Hypothesis Testing {.smaller}
+## The `infer` Package {.smaller .nostretch}
 
-A [hypothesis]{.brand-triad-blue-red .bold-black} is a statement about a population parameter.
+![](images/couch-2021-figure-1.png){.nostretch fig-align="center" style="width: 75%; padding-top: 30px; padding-bottom: 10px;"}
 
-::: {style="padding-top: 15px;"}
-The goal of a hypothesis test is to decide, based on a sample from the population, which of **two complementary hypotheses** is true.
-
-The two complementary hypotheses in a hypothesis testing problem are called the **null hypothesis** and the **alternative hypothesis**. They are denoted by $\text{H}_{0}$ and $\text{H}_{1}$, respectively.
+:::: {.columns}
+::: {.column style="width: 47.5%; font-size: 0.9em;"}
+- [`specify()`](https://infer.netlify.app/reference/specify) specifies the variable, or relationship between variables, of interest.
+- [`hypothesize()`](https://infer.netlify.app/reference/hypothesize) declares the null hypothesis.
+- [`generate()`](https://infer.netlify.app/reference/generate) generates data reflecting the null hypothesis or using the bootstrap.
 :::
-
-::: {style="padding-top: 15px;"}
-A hypothesis testing procedure or [hypothesis test]{.brand-triad-blue-red .bold-black} is a rule that specifies:
-
-1. For which sample values the decision is made to accept $\text{H}_{0}$ as true.
-1. For which sample values $\text{H}_{0}$ is rejected and $\text{H}_{1}$, is accepted as true.
+::: {.column style="width: 5%;"}
 :::
+::: {.column style="width: 47.5%; font-size: 0.9em;"}
+- [`calculate()`](https://infer.netlify.app/reference/calculate) calculates summary statistics from either the observed data to form the observed test statistic, or from the generated data to form the null distribution of test statistics.
+- [`visualize()`](https://infer.netlify.app/reference/visualize) plots the null distribution of test statistics.
+:::
+::::
 
 ::: footer
-[@brookshear2020]
+[@couch2021]
 :::
 
 ::: {.notes}
@@ -559,10 +584,10 @@ These two packages provide functions for performing power analysis and sample si
 
 :::: {.columns}
 ::: {.column style="width: 15%; padding-top: 15px;"}
-[![](images/empty-hex-logo.svg){style="width: 120px;"}](https://www.danieldsjoberg.com/gtsummary/)
+[![](images/empty-hex-logo.svg){style="width: 120px;"}](https://CRAN.R-project.org/package=pwr)
 :::
 ::: {.column style="width: 85%; padding-top: 15px;"}
-[`pwr`](https://www.danieldsjoberg.com/gtsummary/) provides basic functions for power analysis.
+[`pwr`](https://CRAN.R-project.org/package=pwr) provides basic functions for power analysis.
 
 ```r
 install.packages("pwr")
@@ -1026,6 +1051,97 @@ penguins |>
 
 ## t-Test: Observed Statistic {.smaller}
 
+The [t-statistic](https://en.wikipedia.org/wiki/T-statistic) for comparing two independent means can be calculated using the following formula:
+
+$$
+t = \frac{\text{m}_{A} - \text{m}_{B}}{\sqrt{\frac{s_{A}^{2}}{n_{A}} + \frac{s_{B}^{2}}{n_{B}}}}
+$$
+
+Where:
+
+- $\text{m}_{A}$ and $\text{m}_{B}$ are the sample means of the two groups.
+- $s_{A}^{2}$ and $s_{B}^{2}$ are the sample variances of the two groups.
+- $n_{A}$ and $n_{B}$ are the sample sizes of the two groups.
+
+::: footer
+[@frey2022, p. 1671]
+:::
+
+::: {.notes}
+:::
+
+## t-Test: Observed Statistic {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%;"}
+```{r}
+library(dplyr)
+library(magrittr)
+library(palmerpenguins)
+library(tidyr)
+```
+
+```{r}
+male <-
+  penguins |>
+  filter(
+    species == "Adelie",
+    sex == "male"
+  ) |>
+  drop_na() |>
+  pull(body_mass_g)
+```
+
+```{r}
+female <-
+  penguins |>
+  filter(
+    species == "Adelie",
+    sex == "female"
+  ) |>
+  drop_na() |>
+  pull(body_mass_g)
+```
+:::
+::: {.column style="width: 50%;"}
+```{r}
+t_statistic <-
+  mean(male, na.rm = TRUE) |>
+  subtract(mean(female, na.rm = TRUE)) |>
+  divide_by(
+    var(male, na.rm = TRUE) |>
+      divide_by(length(male)) |>
+      add(
+        var(female, na.rm = TRUE) |>
+          divide_by(length(female))
+      ) |>
+      sqrt()
+  )
+```
+
+```{r}
+t_statistic
+```
+:::
+::::
+
+```{r}
+#| eval: false
+#| include: false
+
+penguins |>
+  t.test(
+    body_mass_g ~ sex,
+    data = _,
+    subset = species == "Adelie"
+  )
+```
+
+::: {.notes}
+:::
+
+## t-Test: Observed Statistic {.smaller}
+
 ```{r}
 library(dplyr)
 library(infer)
@@ -1055,7 +1171,9 @@ observed_statistic
 
 ## t-Test: Null Distribution {.smaller}
 
+::: {style="padding-top: 30px; padding-bottom: 30px; text-align: center;"}
 [What would our data look like if there was no difference between sexes?]{.brand-triad-blue-red .bold-black style="font-size: 1.1em;"}
+:::
 
 One way to simulate this scenario is to randomly shuffle the `sex` values among the `body_mass_g` values. This breaks any real association between sex and body mass.
 
@@ -1066,6 +1184,8 @@ We then calculate the t-statistic for this new dataset. Repeating this process m
 
 ## t-Test: Null Distribution {.smaller}
 
+:::: {.columns}
+::: {.column style="width: 50%;"}
 ```{r}
 library(dplyr)
 library(infer)
@@ -1089,15 +1209,13 @@ null_dist <-
     order = c("male", "female")
   )
 ```
-
-::: {.notes}
 :::
-
-## t-Test: Null Distribution {.smaller}
-
+::: {.column style="width: 50%;"}
 ```{r}
 null_dist
 ```
+:::
+::::
 
 ::: {.notes}
 :::
@@ -1161,7 +1279,10 @@ library(tidyr)
 ```{r}
 male <-
   penguins |>
-  filter(sex == "male") |>
+  filter(
+    species == "Adelie",
+    sex == "male"
+  ) |>
   drop_na() |>
   pull(body_mass_g)
 ```
@@ -1169,7 +1290,10 @@ male <-
 ```{r}
 female <-
   penguins |>
-  filter(sex == "female") |>
+  filter(
+    species == "Adelie",
+    sex == "female"
+  ) |>
   drop_na() |>
   pull(body_mass_g)
 ```
@@ -1189,15 +1313,12 @@ effect_size <-
 ```{r}
 effect_size
 ```
-:::
-::::
-
-::: {style="padding-top: 15px;"}
 ```{r}
 effect_size |>
   interpret_hedges_g(rules = "cohen1988")
 ```
 :::
+::::
 
 ::: {.notes}
 :::
@@ -1208,7 +1329,7 @@ effect_size |>
 ::: {.column style="width: 60%; font-size: 0.85em;"}
 [Is there a meaningful difference in body mass between male and female Adelie penguins?]{.brand-triad-blue-red .bold-black style="font-size: 1.1em;"}
 
-Our analysis found a statistically significant difference in means ($t$ = 13.1, $p$-value < 0.001). The observed effect size was large and exceed the Minimal Effect Size (MES) threshold ($d$ = 0.94, 95% CI [0.71, 1.16]).
+Our analysis found a statistically significant difference in means ($t$ = 13.1, $p$-value < 0.001). The observed effect size was large and exceed the Minimal Effect Size (MES) threshold ($d$ = 2.17, 95% CI [1.76, 2.58]).
 
 Since we could reliably detect effects of **d = 0.5** or larger, the power of our test remains high, indicating that the probability of a false negative ($\beta$) is very low.
 

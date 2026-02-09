@@ -3,6 +3,8 @@
 #| label: module-6-first-chunk
 ```
 
+<!-- Adapt this exercise using the [Gini Index](https://sustentarea.github.io/datasus-gini-index/) data instead of the MISFS-R clusters. -->
+
 ## Your Mission {.smaller}
 
 Answer the following question using the data provided:
@@ -51,26 +53,11 @@ For more details, see @carvalho2021a and @norde2023.
 
 **This exercise is for educational purposes only**.
 
-The data used in this exercise requires further cleaning and validation to ensure its suitability for real-world applications. For the purposes of this analysis, we will assume the data is valid and reliable, though this assumption may not hold in practice.
+The data used in this exercise requires further cleaning and validation to ensure its suitability for real-world applications. For the purposes of this analysis, we will assume the data is valid, weighted, and reliable, though this assumption may not hold in practice.
 
 Please note that **the results of the statistical test may not be valid** due to these simplifications.
 
 In real-world scenarios, always ensure that the assumptions of statistical tests are rigorously checked and validated before interpreting the results.
-
-::: {.notes}
-:::
-
-## The Data {.smaller}
-
-```{=html}
-<video width="100%" style="display: block; margin: 0 auto;" muted controls>
-  <source src="images/downloading-sisvan-data.mp4" type="video/mp4">
-</video>
-```
-
-::: footer
-(If you're unable to download the data, you can access it [here](https://github.com/danielvartan/r-course/raw/refs/heads/main/data-raw/CONS_ULTRA.xlsx))
-:::
 
 ::: {.notes}
 :::
@@ -90,19 +77,17 @@ Remember the data science workflow:
 
 ## Steps {.smaller}
 
-👣 Here are the steps you should follow:
-
 :::: {.columns}
 ::: {.column style="width: 47.5%; font-size: 0.9em;"}
 1\. Create a new project and open it in [Positron](https://positron.posit.co).
 
-2\. Download the [Quarto](https://quarto.org) [template file](https://raw.githubusercontent.com/danielvartan/r-course/refs/heads/main/qmd/template.qmd), rename it as `index.qmd`, and store it in the project root.
+2\. Download the Quarto [template file](https://raw.githubusercontent.com/danielvartan/r-course/refs/heads/main/qmd/template.qmd), rename it as `index.qmd`, and store it in the project root.
 
-3\. Download the template [references file](https://raw.githubusercontent.com/danielvartan/r-course/refs/heads/main/qmd/references.bib), name it as `reference.bib` and store it in the project root.
+3\. Download the template [references file](https://raw.githubusercontent.com/danielvartan/r-course/refs/heads/main/bib/template-references.bib), name it as `reference.bib` and store it in the project root.
 
 4\. Read and review the Quarto template.
 
-5\. Perform an **a priori** power analysis.
+5\. Perform an *a priori* power analysis.
 
 6\. Download the data.
 
@@ -134,6 +119,21 @@ Remember the data science workflow:
 ::: {.notes}
 :::
 
+## The Data {.smaller}
+
+```{=html}
+<video width="100%" style="display: block; margin: 0 auto;" muted controls>
+  <source src="images/downloading-sisvan-data.mp4" type="video/mp4">
+</video>
+```
+
+::: footer
+(If you're unable to download the data, you can access it [here](https://raw.githubusercontent.com/danielvartan/r-course/refs/heads/main/data-raw/CONS_ULTRA.xlsx))
+:::
+
+::: {.notes}
+:::
+
 ## Notes
 
 🧮 Recalculate the relative frequency.
@@ -149,4 +149,24 @@ Remember the data science workflow:
 ::: {.notes}
 - Set a time limit of 2 hours to complete the exercise.
 - Reserve a time for the course **conclusion** and **class photo**.
+:::
+
+## Outlier Removal {.smaller}
+
+⚠️ **This approach is for educational purposes only.** ⚠️
+
+This data requires more thorough cleaning and validation for real-world applications. To simplify the exercise, we will remove outliers using the Interquartile Range (IQR) method.
+
+In practice, outlier removal should be done cautiously and based on a clear rationale.
+
+Remove outliers using the IQR method:
+
+::: {style="padding-top: 15px; padding-bottom: 15px;"}
+$$
+x < (Q1 - (1.5 * IQR))
+$$
+
+$$
+x > (Q3 + (1.5 * IQR))
+$$
 :::

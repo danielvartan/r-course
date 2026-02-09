@@ -502,6 +502,108 @@ We've only touched upon the vast landscape of open science. There are many other
 
 ---
 
+## Colors {.smaller}
+
+Individual photoreceptors in the human eye are sensitive to different wavelengths of light, which we perceive as colors.
+
+![](images/kandel-2021-figure-17-5-a.png){.nostretch fig-align="center" style="width: 75%;"}
+
+::: footer
+(Reproduced from @kandel2021[p. 394])
+:::
+
+::: {.notes}
+:::
+
+## Color Models {.smaller}
+
+![](images/figma-figure-1.png){.nostretch fig-align="center" style="width: 60%;"}
+
+::: footer
+(Reproduced from @figma)
+:::
+
+::: {.notes}
+:::
+
+## Color Gamut {.smaller}
+
+A [color gamut](https://en.wikipedia.org/wiki/Gamut) is the range of colors that can be represented in a given color model or by a specific device.
+
+
+::: {.notes}
+:::
+
+## Color Mixing {.smaller}
+
+Color representation on computer screens is based on the [RGB](https://en.wikipedia.org/wiki/RGB_color_model) color model, where colors are created by combining red, green, and blue light.
+
+:::: {.columns}
+::: {.column style="width: 47.5%; padding-top: 15px;"}
+**Screen** (RGB)
+
+![](images/color-vision-printing-2026-figure-1.jpg){style="width: 100%; padding-top: 0px;"}
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%; padding-top: 15px;"}
+**Print** (CMYK)
+
+![](images/color-vision-printing-2026-figure-2.jpg){style="width: 100%; padding-top: 0px;"}
+:::
+::::
+
+::: footer
+(Reproduced from [Color Vision Printing ](https://www.colorvisionprinting.com/blog/the-difference-between-cmyk-and-rgb-color-models?p=5))
+:::
+
+::: {.notes}
+:::
+
+## `colors()` {.smaller}
+
+R provides a built-in set of named colors that can be used in visualizations and graphics. You can access the list of available colors using the `colors()` function. View all available color tones [here](https://r-charts.com/colors/).
+
+:::: {.columns}
+::: {.column style="width: 40%;"}
+```{r}
+colors() |> head(30)
+```
+:::
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 55%;"}
+![](images/neth-2026-figure-d-3.png){style="width: 100%; padding-top: 0px;"}
+:::
+::::
+
+::: footer
+(Reproduced from @neth2026)
+:::
+
+::: {.notes}
+:::
+
+## Hex Colors {.smaller}
+
+Hex color codes are a way to represent [RGB](https://en.wikipedia.org/wiki/RGB_color_model) colors using hexadecimal (base 16) values. R and other programming languages use hex color codes to specify colors in visualizations and graphics.
+
+:::: {.columns}
+::: {.column style="width: 47.5%;"}
+![](images/gremillion-2012-figure-2.png){style="width: 100%; padding-top: 150px;"}
+:::
+::: {.column style="width: 47.5%;"}
+![](images/gremillion-2012-figure-1.png){style="width: 100%; padding-top: 0px;"}
+:::
+::::
+
+::: footer
+(Reproduced from @gremillion2012)
+:::
+
+::: {.notes}
+:::
+
 ## ANOVA: Hypothesis {.smaller}
 
 :::: {.columns}

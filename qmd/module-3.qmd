@@ -154,12 +154,12 @@ Data validation techniques are used to ensure that data is accurate, consistent,
 **Examples of invalid data**:
 
 - Impossible values (e.g., negative age).
-- Inconsistent values (e.g., a person with a height of 2 meters and a weight of 20 kg).
+- Biologically implausible values (BIVs) (e.g., a child with a height of 2 meters).
 - Improbable values (e.g., a person 200 years old).
 - Duplicated values (e.g., the same person with two different ages).
 :::
 
-**Tip**: Check out Mark van der Loo's [`validate`](https://cran.r-project.org/web/packages/validate/vignettes/cookbook.html) R package for data validation techniques.
+**Tip**: For details on identifying biologically implausible values (BIVs) in anthropometric data, see the WHO [`anthro`](https://cran.r-project.org/package=anthro) R package.
 
 ::: {.notes}
 :::
@@ -849,18 +849,20 @@ install.packages("dplyr")
 ::::
 
 :::: {.columns}
-::: {.column style="width: 50%; font-size: 0.9em;"}
-- `mutate()`: Create, modify, and delete columns.
-- `transmute()`: Creates a new data frame containing only specified computations
-- `select()`: Keep or drop columns using their names and types.
-- `slice()`: Subset rows using their positions.
+::: {.column style="width: 47.5%; font-size: 0.9em;"}
+- [`mutate()`](https://dplyr.tidyverse.org/reference/mutate.html): Create, modify, and delete columns.
+- [`transmute()`](https://dplyr.tidyverse.org/reference/transmute.html): Creates a new data frame containing only specified computations
+- [`select()`](https://dplyr.tidyverse.org/reference/select.html): Keep or drop columns using their names and types.
+- [`slice()`](https://dplyr.tidyverse.org/reference/slice.html): Subset rows using their positions.
 :::
-::: {.column style="width: 50%; font-size: 0.9em;"}
-- `filter()`: Keep rows that match a condition.
-- `arrange()`: Order rows using column values.
-- `rename()`: Rename columns.
-- `relocate()`: Change column order.
-- `summarize()`: Summarise each group down to one row.
+::: {.column style="width: 5%;"}
+:::
+::: {.column style="width: 47.5%; font-size: 0.9em;"}
+- [`filter()`](https://dplyr.tidyverse.org/reference/filter.html): Keep rows that match a condition.
+- [`arrange()`](https://dplyr.tidyverse.org/reference/arrange.html): Order rows using column values.
+- [`rename()`](https://dplyr.tidyverse.org/reference/rename.html): Rename columns.
+- [`relocate()`](https://dplyr.tidyverse.org/reference/relocate.html): Change column order.
+- [`summarize()`](https://dplyr.tidyverse.org/reference/summarize.html): Summarise each group down to one row.
 :::
 ::::
 

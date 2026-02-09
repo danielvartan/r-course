@@ -37,7 +37,7 @@ If you understand R at its core, you can navigate any challenge you encounter.
 **The science of information processes and their interactions with the world** [@denning2005].
 
 Computer science studies information processes both artificial and natural [@denning2005]. It seeks to build a scientific foundation
-for such topics as *computer design*, *computer programming*, *information processing*, *algorithmic solutions* of problems, and *the algorithmic process itself* [@brookshear2020].
+for such topics as *computer design*, *computer programming*, *information processing*, *algorithmic solutions of problems*, and *the algorithmic process itself* [@brookshear2020].
 :::
 ::: {.column style="width: 50%;"}
 ![](images/richards-1950-chinese-abacus.jpg){fig-align="center" style="width: 80%; padding-top: 100px;"}
