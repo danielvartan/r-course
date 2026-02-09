@@ -3,12 +3,12 @@
 # v2.0.0 (2026-02-09)
 
 - Added a `NEWS.md` file to track changes.
-- Fixed errors, typos, and formatting issues.
 - Added a section about the grammar of tables.
 - Added more examples and explanations.
 - Added more exercises.
+- Added numbers to slides.
+- Fixed errors, typos, and formatting issues.
 - Simplified the modeling section.
-- Added page numbers.
 
 # v1.0.0 (2025-03-30)
 
