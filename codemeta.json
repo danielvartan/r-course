@@ -73,5 +73,5 @@
   "developmentStatus": "active",
   "readme": "https://github.com/danielvartan/r-course/blob/main/README.md",
   "releaseNotes": "https://github.com/danielvartan/r-course/blob/main/NEWS.md",
-  "version": "2.0.0"
+  "version": "2.0.1.9000"
 }
