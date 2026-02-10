@@ -262,11 +262,11 @@ Create a comprehensive species profile for the Palmer Penguins dataset. For each
 
 :::: {.columns}
 ::: {.column style="width: 47.5%; padding-top: 0px;"}
-- Number of individuals observed.
-- Number of islands they inhabit.
-- Mean body mass (in grams).
-- Mean bill length (in mm).
-- Mean flipper length (in mm).
+- Number of individuals observed
+- Number of islands they inhabit
+- Mean body mass (in grams)
+- Mean bill length (in mm)
+- Mean flipper length (in mm)
 :::
 ::: {.column style="width: 5%;"}
 :::
@@ -449,7 +449,7 @@ stats_summary("bill_length_mm")
 ::: {.column style="width: 30%; font-size: 0.9em;"}
 [![](images/gt-hex-logo.svg){style="width: 120px; padding-top: 0px;"}](https://gt.rstudio.com/)
 
-The `gt` package is the most powerful package for creating and customizing tables in R.
+The [`gt`](https://gt.rstudio.com/) package is the most powerful package for creating and customizing tables in R.
 
 It provides a flexible **grammar** for table creation and styling.
 :::
@@ -665,7 +665,7 @@ starwars_summary |>
 
 ## `gt` Extensions {.smaller}
 
-The `gt` package also has several extensions that provide additional functionality for specific use cases.
+The [`gt`](https://gt.rstudio.com/) package also has several extensions that provide additional functionality for specific use cases.
 
 :::: {.columns}
 ::: {.column style="width: 15%; padding-top: 15px;"}
@@ -1628,6 +1628,30 @@ penguins |>
 ::: {.notes}
 :::
 
+## The `patchwork` Package {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 15%;"}
+[![](images/patchwork-hex-logo.svg){style="width: 120px;"}](https://patchwork.data-imaginist.com)
+:::
+::: {.column style="width: 85%; padding-top: 15px;"}
+[`patchwork`](https://patchwork.data-imaginist.com) provides a simple and intuitive way to combine multiple [`ggplot2`](https://ggplot2.tidyverse.org/) plots into a single layout.
+
+```r
+install.packages("patchwork")
+```
+:::
+::::
+
+![](images/allison-horst-figure-53.png){fig-align="center" style="width: 50%;"}
+
+::: footer
+(Artwork by [Allison Horst](https://twitter.com/allison_horst))
+:::
+
+::: {.notes}
+:::
+
 ## Combined Plots {.smaller .nostretch}
 
 ```{r}
@@ -1804,6 +1828,38 @@ plot_scatter <-
 
 (plot_hist + plot_boxplot) / plot_scatter + plot_annotation(tag_levels = "A")
 ```
+
+::: {.notes}
+:::
+
+## `ggplot2` Extensions {.smaller}
+
+Like [`gt`](https://gt.rstudio.com/), the [`ggplot2`](https://ggplot2.tidyverse.org/) package has several extensions that provide additional functionality for specific use cases. You can check a list of them [here](https://exts.ggplot2.tidyverse.org/gallery/).
+
+:::: {.columns}
+::: {.column style="width: 15%; padding-top: 15px;"}
+[![](images/ggwordcloud-hex-logo.png){style="width: 120px;"}](https://lepennec.github.io/ggwordcloud/)
+:::
+::: {.column style="width: 85%; padding-top: 15px;"}
+[`ggwordcloud`](https://lepennec.github.io/ggwordcloud/) provides a way to create word clouds using `ggplot2`.
+
+```r
+install.packages("ggwordcloud")
+```
+:::
+::::
+
+:::: {.columns}
+::: {.column style="width: 15%; padding-top: 15px;"}
+[![](images/tidyplots-hex-logo.png){style="width: 120px;"}](https://tidyplots.org)
+:::
+::: {.column style="width: 85%; padding-top: 15px;"}
+[`tidyplots`](https://tidyplots.org) provides a user-friendly code-based interface for creating customizable and insightful plots.
+```r
+install.packages("tidyplots")
+```
+:::
+::::
 
 ::: {.notes}
 :::

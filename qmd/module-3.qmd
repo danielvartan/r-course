@@ -97,9 +97,9 @@ Data is an abstraction. It's a representation of the world around us. Without co
 
 :::: {.columns}
 ::: {.column style="width: 50%; font-size: 0.9em;"}
-> With raw data, we mean the data as it arrives at the desk of the analyst. The state of such data may of course vary enormously, depending on the data source. [@vanderloo2018].
+> With raw data, we mean the data as it arrives at the desk of the analyst. The state of such data may of course vary enormously, depending on the data source [@vanderloo2018].
 
-> If the researcher has made any modifications to the raw data, it is not the raw form of the data. [@ellis2018].
+> If the researcher has made any modifications to the raw data, it is not the raw form of the data [@ellis2018].
 :::
 ::: {.column style="width: 50%;"}
 ![](images/raw-data.png){fig-align="center" style="width: 100%; padding-top: 75px;"}
@@ -159,7 +159,7 @@ Data validation techniques are used to ensure that data is accurate, consistent,
 - Duplicated values (e.g., the same person with two different ages).
 :::
 
-**Tip**: For details on identifying biologically implausible values (BIVs) in anthropometric data, see the WHO [`anthro`](https://cran.r-project.org/package=anthro) R package.
+**Tip**: For details on identifying biologically implausible values (BIVs) in anthropometric data, see the World Health Organization (WHO) [`anthro`](https://cran.r-project.org/package=anthro) R package.
 
 ::: {.notes}
 :::
@@ -246,7 +246,7 @@ Not all data is tabular; spatial data can be very large and complex.
 Excel cannot handle spatial data, and GUI-based statistical softwares, when capable of handling spatial data, are often limited and struggles with performance issues.
 
 ::: {style="font-size: 0.8em; font-style: italic; padding-top: 100px;"}
-Projected monthly average maximum temperatures (°C) for June 2021–2040, based on the global climate model (GCM) ACCESS-CM2.
+Projected monthly average maximum temperatures (°C) for June 2021–2040, based on the global climate model ([GCM](https://en.wikipedia.org/wiki/Climate_model)) [ACCESS-CM2](https://research.csiro.au/access/about/cm2/).
 :::
 ::::
 :::: {.column style="width: 40%; padding-top: 30px;"}
@@ -443,7 +443,7 @@ Different from Excel or GUI-based statistical software, R can deal with any kind
 
 - Tabular data: `utils::read.csv()`, [`readr::read_csv()`](https://readr.tidyverse.org/reference/read_delim.html)
 - Geographical data: [`sf::st_read()`](https://r-spatial.github.io/sf/reference/st_read.html), [`stars::read_stars()`](https://r-spatial.github.io/stars/reference/read_stars.html), [`terra::vect()`](https://rspatial.github.io/terra/reference/vect.html), [`terra::rast()`](https://rspatial.github.io/terra/reference/rast.html)
-- Proprietary formats: [`readxl::read_excel()`](https://readxl.tidyverse.org/reference/read_excel.html), [`haven::read_dta()`](https://haven.tidyverse.org/reference/read_dta.html) ([Stata](https://www.stata.com/)), [`haven::read_sav()`](https://haven.tidyverse.org/reference/read_spss.html) ([SPSS](https://www.ibm.com/br-pt/products/spss)), [`haven::read_sas()`](https://haven.tidyverse.org/reference/read_sas.html) ([SAS](https://www.sas.com/en_us/software/stat.html))
+- Proprietary formats: [`readxl::read_excel()`](https://readxl.tidyverse.org/reference/read_excel.html) ([Excel](https://www.microsoft.com/pt-br/microsoft-365/excel)), [`haven::read_dta()`](https://haven.tidyverse.org/reference/read_dta.html) ([Stata](https://www.stata.com/)), [`haven::read_sav()`](https://haven.tidyverse.org/reference/read_spss.html) ([SPSS](https://www.ibm.com/br-pt/products/spss)), [`haven::read_sas()`](https://haven.tidyverse.org/reference/read_sas.html) ([SAS](https://www.sas.com/en_us/software/stat.html))
 
 ::: {.notes}
 :::
@@ -594,7 +594,7 @@ Click [here](https://tidyverse.org/blog/2017/12/workflow-vs-script/) to learn wh
 
 :::: {.columns}
 ::: {.column style="width: 45%;"}
-[`here`](https://here.r-lib.org/) is a package that helps you use relative paths in your R projects.
+[`here`](https://here.r-lib.org) is a package that helps you use relative paths in your R projects.
 
 It turns file management much easier and [OS](https://en.wikipedia.org/wiki/Operating_system) independent.
 
@@ -632,10 +632,10 @@ here("data-raw", "palmerpenguins-raw.csv")
 
 :::: {.columns}
 ::: {.column style="width: 15%;"}
-[![](images/readr-hex-logo.png){style="width: 120px;"}](https://readr.tidyverse.org/)
+[![](images/readr-hex-logo.png){style="width: 120px;"}](https://readr.tidyverse.org)
 :::
 ::: {.column style="width: 85%; padding-top: 15px;"}
-`readr` provides a fast and easy way to read rectangular data from delimited files, such as Comma-Separated Values (CSV) and Tab-Separated Values (TSV).
+[`readr`](https://readr.tidyverse.org) provides a fast and easy way to read rectangular data from delimited files, such as Comma-Separated Values ([CSV](https://en.wikipedia.org/wiki/Comma-separated_values)) and Tab-Separated Values ([TSV](https://en.wikipedia.org/wiki/Tab-separated_values)).
 
 ```r
 install.packages("readr")
@@ -1202,9 +1202,9 @@ penguins |>
 
 The [`dplyr`](https://dplyr.tidyverse.org/index.html) package provides a dataset called [`starwars`](https://dplyr.tidyverse.org/reference/starwars.html) that contains information about characters from the Star Wars universe. Filter the `starwars` dataset to include only characters who meet the following criteria:
 
-1. Belong to the species *Droid*.
-2. Have a height greater than 100 cm.
-3. Have a mass less than 150 kg.
+1. Belong to the species *Droid*
+2. Have a height greater than 100 cm
+3. Have a mass less than 150 kg
 
 ::: {.notes}
 :::

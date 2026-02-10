@@ -21,11 +21,11 @@ Provide a solid introduction to R programming with a focus on [Tidyverse](https:
 
 ## Learning Objectives {.smaller visibility="uncounted"}
 
-1. Learn key concepts of computer science and programming
-2. Learn the structure and essential components of R programming language
-3. Learn tidyverse grammar for data manipulation
-4. Learn grammar of graphics for data exploration and visualization
-5. Learn tidymodels grammar for building statistical and predictive models
+1. Learn key concepts of computer science and programming.
+2. Learn the structure and essential components of R programming language.
+3. Learn tidyverse grammar for data manipulation.
+4. Learn grammar of graphics for data exploration and visualization.
+5. Learn tidymodels grammar for building statistical and predictive models.
 
 ::: {.notes}
 :::

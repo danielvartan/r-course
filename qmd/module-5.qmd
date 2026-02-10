@@ -9,7 +9,7 @@
 
 The [Tidymodels](https://www.tidymodels.org/) framework is a collection of packages for modeling and machine learning using [Tidyverse](https://www.tidyverse.org/) principles.
 
-It is created by the same team that developed the `tidyverse` and is designed to work seamlessly with it.
+It is created by the same team that developed [Tidyverse](https://www.tidyverse.org/) and is designed to work seamlessly with it.
 
 Although it is a relative newcomer to the R ecosystem (2018), it has quickly gained popularity due to its simplicity and consistency.
 
@@ -762,10 +762,7 @@ library(tidyr)
 
 penguins |>
   filter(species == "Adelie") |>
-  drop_na(
-    body_mass_g,
-    sex
-  ) |>
+  drop_na(body_mass_g, sex) |>
   ggplot(
     aes(
       x = sex,
@@ -838,10 +835,7 @@ library(tidyr)
 
 penguins |>
   filter(species == "Adelie") |>
-  drop_na(
-    body_mass_g,
-    sex
-  ) |>
+  drop_na(body_mass_g, sex) |>
   ggplot(
     aes(
       x = body_mass_g,
@@ -910,10 +904,7 @@ library(tidyr)
 
 penguins |>
   filter(species == "Adelie") |>
-  drop_na(
-    body_mass_g,
-    sex
-  ) |>
+  drop_na(body_mass_g, sex) |>
   ggplot(
     aes(
       x = body_mass_g,
@@ -977,10 +968,7 @@ library(tidyr)
 
 penguins |>
   filter(species == "Adelie") |>
-  drop_na(
-    body_mass_g,
-    sex
-  ) |>
+  drop_na(body_mass_g, sex) |>
   ggplot(
     aes(
       sample = body_mass_g,
@@ -1088,7 +1076,7 @@ male <-
     species == "Adelie",
     sex == "male"
   ) |>
-  drop_na() |>
+  drop_na(body_mass_g, sex) |>
   pull(body_mass_g)
 ```
 
@@ -1099,7 +1087,7 @@ female <-
     species == "Adelie",
     sex == "female"
   ) |>
-  drop_na() |>
+  drop_na(body_mass_g, sex) |>
   pull(body_mass_g)
 ```
 :::
@@ -1283,7 +1271,7 @@ male <-
     species == "Adelie",
     sex == "male"
   ) |>
-  drop_na() |>
+  drop_na(body_mass_g, sex) |>
   pull(body_mass_g)
 ```
 
@@ -1294,7 +1282,7 @@ female <-
     species == "Adelie",
     sex == "female"
   ) |>
-  drop_na() |>
+  drop_na(body_mass_g, sex) |>
   pull(body_mass_g)
 ```
 :::

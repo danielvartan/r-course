@@ -18,14 +18,14 @@
     "href": "index.html#main-objective",
     "title": "An Introduction to the R Programming Language",
     "section": "Main Objective",
-    "text": "Main Objective\n\nProvide a solid introduction to R programming with a focus on Tidyverse principles and its ecosystem\n\n\nWhat to expect from the course."
+    "text": "Main Objective\n\nProvide a solid introduction to R programming with a focus on Tidyverse principles and its ecosystem.\n\n\nWhat to expect from the course."
   },
   {
     "objectID": "index.html#learning-objectives",
     "href": "index.html#learning-objectives",
     "title": "An Introduction to the R Programming Language",
     "section": "Learning Objectives",
-    "text": "Learning Objectives\n\nUnderstand key concepts of computer science and programming\nLearn the structure and essential components of R programming language\nLearn tidyverse grammar for data manipulation\nLearn grammar of graphics for data exploration and visualization\nLearn tidymodels grammar for building statistical and predictive models\n\n\nFuture courses?\nAn Introduction to Git and GitHub\nAn introduction to Quarto and Reproducible Workflows\nAn introduction to Geospatial Data Science and the r-spatial framework\nAn introduction to Shiny dashboards\n\n\nPre-course survey: discuss responses about future courses."
+    "text": "Learning Objectives\n\nUnderstand key concepts of computer science and programming.\nLearn the structure and essential components of R programming language.\nLearn tidyverse grammar for data manipulation.\nLearn grammar of graphics for data exploration and visualization.\nLearn tidymodels grammar for building statistical and predictive models.\n\n\nFuture courses?\nAn Introduction to Git and GitHub.\nAn introduction to Quarto and Reproducible Workflows.\nAn introduction to Geospatial Data Science and the r-spatial framework.\nAn introduction to Shiny dashboards."
   },
   {
     "objectID": "index.html#course-content",
@@ -74,7 +74,7 @@
     "href": "index.html#notes",
     "title": "An Introduction to the R Programming Language",
     "section": "Notes",
-    "text": "Notes\n💾 Bring a flash drive/pen drive.\n👩‍💻 Try to use the same computer for all classes.\n💬 Always open this presentation in the browser.\n❌ Don’t miss a class.\n🙋‍♂️ Ask questions.\n🤝 Help each other.\n🙏 Be kind.\n🎉 Have fun!\n\nTalk about kindness.\nShow the Thumper video.\nAsk for more experienced participants to help others.\nMention that the modules have a scale of importance, from more to less important. If time is short, some topics may be skipped."
+    "text": "Notes\n💾 Bring a flash drive/pen drive\n👩‍💻 Try to use the same computer for all classes\n💬 Always open this presentation in the browser\n❌ Don’t miss a class\n🙋‍♂️ Ask questions\n🤝 Help each other\n🙏 Be kind\n🎉 Have fun!\n\nTalk about kindness.\nShow the Thumper video.\nAsk for more experienced participants to help others.\nMention that the modules have a scale of importance, from more to less important. If time is short, some topics may be skipped."
   },
   {
     "objectID": "index.html#course-presentation",
@@ -144,7 +144,7 @@
     "href": "index.html#programming-languages",
     "title": "An Introduction to the R Programming Language",
     "section": "Programming Languages",
-    "text": "Programming Languages\n\n\n\nThe instructions which govern this operation must be given to the device in absolutely exhaustive detail. […] All these procedures require the use of some code to express the logical and the algebraical definition of the problem under consideration, as well as the necessary numerical material. (von Neumann, 1993)\n\n\n\n\n\n\n\n\n(Photo by Corbis Historical/Getty Images)"
+    "text": "Programming Languages\n\n\n\nThe instructions which govern this operation must be given to the device in absolutely exhaustive detail. […] All these procedures require the use of some code to express the logical and the algebraical definition of the problem under consideration, as well as the necessary numerical material (von Neumann, 1993).\n\n\n\n\n\n\n\n\n(Photo by Corbis Historical/Getty Images)"
   },
   {
     "objectID": "index.html#programming-paradigms",
@@ -333,7 +333,7 @@
     "href": "index.html#non-atomic-objects",
     "title": "An Introduction to the R Programming Language",
     "section": "Non-Atomic Objects",
-    "text": "Non-Atomic Objects\n\n\nNon-atomic types are objects that can be composed of different data types.\nThey can also be recursive objects, meaning they can contain themselves as elements.\n\n\nlist\n\ndata.frame (a special case of list)\n\n\n\nis.atomic(list())\n#&gt; [1] FALSE\n\n\nis.recursive(list())\n#&gt; [1] TRUE\n\n\n\n\n\nc(\"a\", \"b\", \"c\", c(\"d\", \"e\"))\n#&gt; [1] \"a\" \"b\" \"c\" \"d\" \"e\"\n\n\nc(1L, 2L, 3L, c(4L, 5L))\n#&gt; [1] 1 2 3 4 5\n\n\nc(1.123, 2.123, 3.123, c(4.123, 5.123))\n#&gt; [1] 1.123 2.123 3.123 4.123 5.123\n\n\nc(TRUE, FALSE, TRUE, c(FALSE, TRUE))\n#&gt; [1]  TRUE FALSE  TRUE FALSE  TRUE\n\n\nlist(list(TRUE, 1L, pi, \"a\"))\n#&gt; [[1]]\n#&gt; [[1]][[1]]\n#&gt; [1] TRUE\n#&gt; \n#&gt; [[1]][[2]]\n#&gt; [1] 1\n#&gt; \n#&gt; [[1]][[3]]\n#&gt; [1] 3.141593\n#&gt; \n#&gt; [[1]][[4]]\n#&gt; [1] \"a\"\n\n\n\n\n15-minute break after this slide."
+    "text": "Non-Atomic Objects\n\n\nNon-atomic types are objects that can be composed of different data types.\nThey can also be recursive objects, meaning they can contain themselves as elements.\n\n\nlist\n\ndata.frame (a special case of list)\n\n\n\nlist() |&gt; is.atomic()\n#&gt; [1] FALSE\n\n\nlist() |&gt; is.recursive()\n#&gt; [1] TRUE\n\n\n\n\n\nc(\"a\", \"b\", \"c\", c(\"d\", \"e\"))\n#&gt; [1] \"a\" \"b\" \"c\" \"d\" \"e\"\n\n\nc(1L, 2L, 3L, c(4L, 5L))\n#&gt; [1] 1 2 3 4 5\n\n\nc(1.123, 2.123, 3.123, c(4.123, 5.123))\n#&gt; [1] 1.123 2.123 3.123 4.123 5.123\n\n\nc(TRUE, FALSE, TRUE, c(FALSE, TRUE))\n#&gt; [1]  TRUE FALSE  TRUE FALSE  TRUE\n\n\nlist(list(TRUE, 1L, pi, \"a\"))\n#&gt; [[1]]\n#&gt; [[1]][[1]]\n#&gt; [1] TRUE\n#&gt; \n#&gt; [[1]][[2]]\n#&gt; [1] 1\n#&gt; \n#&gt; [[1]][[3]]\n#&gt; [1] 3.141593\n#&gt; \n#&gt; [[1]][[4]]\n#&gt; [1] \"a\"\n\n\n\n\n15-minute break after this slide."
   },
   {
     "objectID": "index.html#operations",
@@ -543,7 +543,7 @@
     "href": "index.html#functionals",
     "title": "An Introduction to the R Programming Language",
     "section": "Functionals",
-    "text": "Functionals\n\n\nA functional is a function that takes a function as an input and returns a vector as output (Wickham, 2019).\nIt makes the programmer’s work easier by applying a function to a vector without needing a loop. These functions are typically written in C (a lower-level programming language), making them very fast.\nR has native functionals (e.g., lapply()), but prefer solutions from the purrr package from Tidyverse.\n\n\n\n\ntriple &lt;- function(x) x * 3\n\n\nwith_for_loop &lt;- function(x) {\n  out &lt;- numeric()\n  for (i in x) out &lt;- c(out, triple(i))\n  out\n}\n\n\nlibrary(purrr)\n\nwith_map &lt;- function(x) map_dbl(x, triple)\n\n\nlibrary(microbenchmark)\n\nmicrobenchmark(\n  with_for_loop(1:1000),\n  with_map(1:1000),\n  times = 100,\n  check = \"equal\"\n)\n#&gt; Unit: microseconds\n#&gt;                   expr      min        lq      mean    median        uq\n#&gt;  with_for_loop(1:1000) 1301.092 1768.4675 2710.5878 2087.7520 2902.7300\n#&gt;       with_map(1:1000)  351.539  490.1735  624.6272  558.9645  682.4505\n#&gt;        max neval cld\n#&gt;  10129.281   100  a \n#&gt;   1394.826   100   b"
+    "text": "Functionals\n\n\nA functional is a function that takes a function as an input and returns a vector as output (Wickham, 2019).\nIt makes the programmer’s work easier by applying a function to a vector without needing a loop. These functions are typically written in C (a lower-level programming language), making them very fast.\nR has native functionals (e.g., lapply()), but prefer solutions from the purrr package from Tidyverse.\n\n\n\n\ntriple &lt;- function(x) x * 3\n\n\nwith_for_loop &lt;- function(x) {\n  out &lt;- numeric()\n  for (i in x) out &lt;- c(out, triple(i))\n  out\n}\n\n\nlibrary(purrr)\n\nwith_map &lt;- function(x) map_dbl(x, triple)\n\n\nlibrary(microbenchmark)\n\nmicrobenchmark(\n  with_for_loop(1:1000),\n  with_map(1:1000),\n  times = 100,\n  check = \"equal\"\n)\n#&gt; Unit: microseconds\n#&gt;                   expr      min       lq      mean   median       uq      max\n#&gt;  with_for_loop(1:1000) 1007.177 1064.891 1337.7664 1105.869 1163.637 4569.412\n#&gt;       with_map(1:1000)  286.520  304.493  343.8708  320.992  356.462 1045.046\n#&gt;  neval cld\n#&gt;    100  a \n#&gt;    100   b"
   },
   {
     "objectID": "index.html#exercise-functionals",
@@ -676,7 +676,7 @@
     "href": "index.html#raw-data",
     "title": "An Introduction to the R Programming Language",
     "section": "Raw Data",
-    "text": "Raw Data\n\n\n\nWith raw data, we mean the data as it arrives at the desk of the analyst. The state of such data may of course vary enormously, depending on the data source. (van der Loo & Jonge, 2018).\n\n\nIf the researcher has made any modifications to the raw data, it is not the raw form of the data. (S. E. Ellis & Leek, 2018).\n\n\n\n\n\n\n\n\n(Photo by Unknown Author)"
+    "text": "Raw Data\n\n\n\nWith raw data, we mean the data as it arrives at the desk of the analyst. The state of such data may of course vary enormously, depending on the data source (van der Loo & Jonge, 2018).\n\n\nIf the researcher has made any modifications to the raw data, it is not the raw form of the data (S. E. Ellis & Leek, 2018).\n\n\n\n\n\n\n\n\n(Photo by Unknown Author)"
   },
   {
     "objectID": "index.html#tidy-data",
@@ -704,7 +704,7 @@
     "href": "index.html#valid-data",
     "title": "An Introduction to the R Programming Language",
     "section": "Valid Data",
-    "text": "Valid Data\nData validation techniques are used to ensure that data is accurate, consistent, and reliable.\n\nExamples of invalid data:\n\nImpossible values (e.g., negative age).\nBiologically implausible values (BIVs) (e.g., a child with a height of 2 meters).\nImprobable values (e.g., a person 200 years old).\nDuplicated values (e.g., the same person with two different ages).\n\n\nTip: For details on identifying biologically implausible values (BIVs) in anthropometric data, see the WHO anthro R package."
+    "text": "Valid Data\nData validation techniques are used to ensure that data is accurate, consistent, and reliable.\n\nExamples of invalid data:\n\nImpossible values (e.g., negative age).\nBiologically implausible values (BIVs) (e.g., a child with a height of 2 meters).\nImprobable values (e.g., a person 200 years old).\nDuplicated values (e.g., the same person with two different ages).\n\n\nTip: For details on identifying biologically implausible values (BIVs) in anthropometric data, see the World Health Organization (WHO) anthro R package."
   },
   {
     "objectID": "index.html#tabular-data",
@@ -774,7 +774,7 @@
     "href": "index.html#how-to-read-data-in-r",
     "title": "An Introduction to the R Programming Language",
     "section": "How to Read Data in R",
-    "text": "How to Read Data in R\nIt will depend on what king of data you are working with.\nDifferent from Excel or GUI-based statistical software, R can deal with any kind of data.\nExamples of R functions to read data:\n\nTabular data: utils::read.csv(), readr::read_csv()\n\nGeographical data: sf::st_read(), stars::read_stars(), terra::vect(), terra::rast()\n\nProprietary formats: readxl::read_excel(), haven::read_dta() (Stata), haven::read_sav() (SPSS), haven::read_sas() (SAS)"
+    "text": "How to Read Data in R\nIt will depend on what king of data you are working with.\nDifferent from Excel or GUI-based statistical software, R can deal with any kind of data.\nExamples of R functions to read data:\n\nTabular data: utils::read.csv(), readr::read_csv()\n\nGeographical data: sf::st_read(), stars::read_stars(), terra::vect(), terra::rast()\n\nProprietary formats: readxl::read_excel() (Excel), haven::read_dta() (Stata), haven::read_sav() (SPSS), haven::read_sas() (SAS)"
   },
   {
     "objectID": "index.html#meet-the-penguins",
@@ -991,7 +991,7 @@
     "href": "index.html#exercise-filter",
     "title": "An Introduction to the R Programming Language",
     "section": "Exercise (filter)",
-    "text": "Exercise (filter)\nThe dplyr package provides a dataset called starwars that contains information about characters from the Star Wars universe. Filter the starwars dataset to include only characters who meet the following criteria:\n\nBelong to the species Droid.\nHave a height greater than 100 cm.\nHave a mass less than 150 kg."
+    "text": "Exercise (filter)\nThe dplyr package provides a dataset called starwars that contains information about characters from the Star Wars universe. Filter the starwars dataset to include only characters who meet the following criteria:\n\nBelong to the species Droid\n\nHave a height greater than 100 cm\nHave a mass less than 150 kg"
   },
   {
     "objectID": "index.html#exercise-filter-1",
@@ -1159,7 +1159,7 @@
     "href": "index.html#exercise-summarize",
     "title": "An Introduction to the R Programming Language",
     "section": "Exercise (summarize)",
-    "text": "Exercise (summarize)\nCreate a comprehensive species profile for the Palmer Penguins dataset. For each penguin species, calculate:\n\n\n\nNumber of individuals observed.\nNumber of islands they inhabit.\nMean body mass (in grams).\nMean bill length (in mm).\nMean flipper length (in mm).\n\n\n\n\nAll of this information should be generated in a single, elegant operation.\n\npenguins |&gt;\n  summarize(\n    #&gt; [Your code goes here!]\n  )"
+    "text": "Exercise (summarize)\nCreate a comprehensive species profile for the Palmer Penguins dataset. For each penguin species, calculate:\n\n\n\nNumber of individuals observed\nNumber of islands they inhabit\nMean body mass (in grams)\nMean bill length (in mm)\nMean flipper length (in mm)\n\n\n\n\nAll of this information should be generated in a single, elegant operation.\n\npenguins |&gt;\n  summarize(\n    #&gt; [Your code goes here!]\n  )"
   },
   {
     "objectID": "index.html#exercise-summarize-1",
@@ -1180,7 +1180,7 @@
     "href": "index.html#the-summarytools-package",
     "title": "An Introduction to the R Programming Language",
     "section": "The summarytools Package",
-    "text": "The summarytools Package\n\n\n\n\nThe summarytools package makes it easy to create frequency and descriptive statistics tables for single variables with minimal code.\ninstall.packages(\"gtsummary\")\n\n\nlibrary(palmerpenguins)\nlibrary(summarytools)\n\n\n\n\npenguins |&gt; freq(var = species, round.digits = 3)\n#&gt; Frequencies  \n#&gt; penguins$species  \n#&gt; Type: Factor  \n#&gt; \n#&gt;                   Freq   % Valid   % Valid Cum.   % Total   % Total Cum.\n#&gt; --------------- ------ --------- -------------- --------- --------------\n#&gt;          Adelie    152    44.186         44.186    44.186         44.186\n#&gt;       Chinstrap     68    19.767         63.953    19.767         63.953\n#&gt;          Gentoo    124    36.047        100.000    36.047        100.000\n#&gt;            &lt;NA&gt;      0                              0.000        100.000\n#&gt;           Total    344   100.000        100.000   100.000        100.000\n\n\n\n\n\npenguins |&gt; descr(var = bill_depth_mm, round.digits = 3)\n#&gt; Descriptive Statistics  \n#&gt; penguins  \n#&gt; N: 344  \n#&gt; \n#&gt;                     bill_depth_mm\n#&gt; ----------------- ---------------\n#&gt;              Mean          17.151\n#&gt;           Std.Dev           1.975\n#&gt;               Min          13.100\n#&gt;                Q1          15.600\n#&gt;            Median          17.300\n#&gt;                Q3          18.700\n#&gt;               Max          21.500\n#&gt;               MAD           2.224\n#&gt;               IQR           3.100\n#&gt;                CV           0.115\n#&gt;          Skewness          -0.142\n#&gt;       SE.Skewness           0.132\n#&gt;          Kurtosis          -0.923\n#&gt;           N.Valid         342.000\n#&gt;                 N         344.000\n#&gt;         Pct.Valid          99.419"
+    "text": "The summarytools Package\n\n\n\n\nThe summarytools package makes it easy to create frequency and descriptive statistics tables for single variables with minimal code.\ninstall.packages(\"gtsummary\")\n\n\nlibrary(palmerpenguins)\nlibrary(summarytools)\n\n\n\n\npenguins |&gt; freq(var = species, round.digits = 3)\n#&gt; Frequencies  \n#&gt; penguins$species  \n#&gt; Type: Factor  \n#&gt; \n#&gt;                   Freq   % Valid   % Valid Cum.   % Total   % Total Cum.\n#&gt; --------------- ------ --------- -------------- --------- --------------\n#&gt;          Adelie    152    44.186         44.186    44.186         44.186\n#&gt;       Chinstrap     68    19.767         63.953    19.767         63.953\n#&gt;          Gentoo    124    36.047        100.000    36.047        100.000\n#&gt;            &lt;NA&gt;      0                              0.000        100.000\n#&gt;           Total    344   100.000        100.000   100.000        100.000\n\n\n\n\n\npenguins |&gt; descr(var = bill_depth_mm, round.digits = 3)\n#&gt; Descriptive Statistics  \n#&gt; penguins$bill_depth_mm  \n#&gt; N: 344  \n#&gt; \n#&gt;                     bill_depth_mm\n#&gt; ----------------- ---------------\n#&gt;              Mean          17.151\n#&gt;           Std.Dev           1.975\n#&gt;               Min          13.100\n#&gt;                Q1          15.600\n#&gt;            Median          17.300\n#&gt;                Q3          18.700\n#&gt;               Max          21.500\n#&gt;               MAD           2.224\n#&gt;               IQR           3.100\n#&gt;                CV           0.115\n#&gt;          Skewness          -0.142\n#&gt;       SE.Skewness           0.132\n#&gt;          Kurtosis          -0.923\n#&gt;           N.Valid         342.000\n#&gt;                 N         344.000\n#&gt;         Pct.Valid          99.419"
   },
   {
     "objectID": "index.html#summarize-approach",
@@ -1421,11 +1421,25 @@
     "text": "Facets\n\nCodelibrary(dplyr)\nlibrary(ggplot2)\nlibrary(magrittr)\nlibrary(palmerpenguins)\nlibrary(stringr)\n\npenguins |&gt;\n  mutate(\n    sex = sex |&gt; str_to_title()\n  ) |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      y = flipper_length_mm,\n      color = sex\n    )\n  ) +\n  geom_point() +\n  geom_smooth(\n    method = \"lm\",\n    formula = y ~ x,\n    se = FALSE,\n    color = \"black\"\n  ) +\n  facet_wrap(vars(species)) +\n  labs(\n    x = \"Body Mass (g)\",\n    y = \"Flipper Length (mm)\",\n    color = \"Sex\"\n  )"
   },
   {
+    "objectID": "index.html#the-patchwork-package",
+    "href": "index.html#the-patchwork-package",
+    "title": "An Introduction to the R Programming Language",
+    "section": "The patchwork Package",
+    "text": "The patchwork Package\n\n\n\n\npatchwork provides a simple and intuitive way to combine multiple ggplot2 plots into a single layout.\ninstall.packages(\"patchwork\")\n\n\n\n\n\n\n(Artwork by Allison Horst)"
+  },
+  {
     "objectID": "index.html#combined-plots",
     "href": "index.html#combined-plots",
     "title": "An Introduction to the R Programming Language",
     "section": "Combined Plots",
     "text": "Combined Plots\n\nCodelibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(patchwork)\n\nplot_hist &lt;-\n  penguins |&gt;\n  ggplot(\n    aes(\n      x = flipper_length_mm,\n      fill = species\n    )\n  ) +\n  geom_histogram(\n    alpha = 0.5,\n    position = \"identity\"\n  ) +\n  labs(\n    x = \"Flipper Length (mm)\",\n    y = \"Frequency\"\n  ) +\n  theme(legend.position = \"none\")\n\nplot_boxplot &lt;-\n  penguins |&gt;\n  ggplot(\n    aes(\n      x = species,\n      y = bill_length_mm,\n      fill = species\n    )\n  ) +\n  geom_boxplot(outlier.color = \"red\") +\n  geom_jitter(\n    width = 0.2,\n    alpha = 0.1\n  ) +\n  labs(\n    x = \"Species\",\n    y = \"Bill Length (mm)\",\n    fill = \"Species\"\n  ) +\n  theme(\n    axis.title.x = element_blank(),\n    legend.position = \"none\"\n  )\n\nplot_scatter &lt;-\n  penguins |&gt;\n  drop_na(\n    body_mass_g,\n    flipper_length_mm,\n    species\n  ) |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      y = flipper_length_mm,\n      color = species,\n      shape = species\n    )\n  ) +\n  geom_point() +\n  geom_smooth(\n    method = \"lm\",\n    formula = y ~ x,\n    se = FALSE\n  ) +\n  labs(\n    x = \"Body Mass (g)\",\n    y = \"Flipper Length (mm)\",\n    color = \"Species\",\n    shape = \"Species\"\n  ) +\n  theme(legend.position = \"none\")\n\n(plot_hist + plot_boxplot) / plot_scatter + plot_annotation(tag_levels = \"A\")"
+  },
+  {
+    "objectID": "index.html#ggplot2-extensions",
+    "href": "index.html#ggplot2-extensions",
+    "title": "An Introduction to the R Programming Language",
+    "section": "\nggplot2 Extensions",
+    "text": "ggplot2 Extensions\nLike gt, the ggplot2 package has several extensions that provide additional functionality for specific use cases. You can check a list of them here.\n\n\n\n\nggwordcloud provides a way to create word clouds using ggplot2.\ninstall.packages(\"ggwordcloud\")\n\n\n\n\n\ntidyplots provides a user-friendly code-based interface for creating customizable and insightful plots.\ninstall.packages(\"tidyplots\")"
   },
   {
     "objectID": "index.html#correlation-matrices",
@@ -1467,7 +1481,7 @@
     "href": "index.html#the-tidymodels-framework",
     "title": "An Introduction to the R Programming Language",
     "section": "The Tidymodels Framework",
-    "text": "The Tidymodels Framework\n\nThe Tidymodels framework is a collection of packages for modeling and machine learning using Tidyverse principles.\nIt is created by the same team that developed the tidyverse and is designed to work seamlessly with it.\nAlthough it is a relative newcomer to the R ecosystem (2018), it has quickly gained popularity due to its simplicity and consistency.\n\nTalk about the purpose of this module. It is not intend to teach statistics. Students with no statistical background may find it difficult to follow."
+    "text": "The Tidymodels Framework\n\nThe Tidymodels framework is a collection of packages for modeling and machine learning using Tidyverse principles.\nIt is created by the same team that developed Tidyverse and is designed to work seamlessly with it.\nAlthough it is a relative newcomer to the R ecosystem (2018), it has quickly gained popularity due to its simplicity and consistency.\n\nTalk about the purpose of this module. It is not intend to teach statistics. Students with no statistical background may find it difficult to follow."
   },
   {
     "objectID": "index.html#tidymodels-packages",
@@ -1649,28 +1663,28 @@
     "href": "index.html#t-test-boxplots",
     "title": "An Introduction to the R Programming Language",
     "section": "t-Test: Boxplots",
-    "text": "t-Test: Boxplots\n\nCodelibrary(dplyr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  filter(species == \"Adelie\") |&gt;\n  drop_na(\n    body_mass_g,\n    sex\n  ) |&gt;\n  ggplot(\n    aes(\n      x = sex,\n      y = body_mass_g,\n      fill = sex\n    )\n  ) +\n  geom_boxplot(outlier.color = \"red\") +\n  geom_jitter(\n    width = 0.2,\n    alpha = 0.1\n  ) +\n  labs(\n    x = \"Sex\",\n    y = \"Body Mass (g)\",\n    fill = \"Sex\"\n  )"
+    "text": "t-Test: Boxplots\n\nCodelibrary(dplyr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  filter(species == \"Adelie\") |&gt;\n  drop_na(body_mass_g, sex) |&gt;\n  ggplot(\n    aes(\n      x = sex,\n      y = body_mass_g,\n      fill = sex\n    )\n  ) +\n  geom_boxplot(outlier.color = \"red\") +\n  geom_jitter(\n    width = 0.2,\n    alpha = 0.1\n  ) +\n  labs(\n    x = \"Sex\",\n    y = \"Body Mass (g)\",\n    fill = \"Sex\"\n  )"
   },
   {
     "objectID": "index.html#t-test-histograms",
     "href": "index.html#t-test-histograms",
     "title": "An Introduction to the R Programming Language",
     "section": "t-Test: Histograms",
-    "text": "t-Test: Histograms\n\nCodelibrary(dplyr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  filter(species == \"Adelie\") |&gt;\n  drop_na(\n    body_mass_g,\n    sex\n  ) |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      fill = sex\n    )\n  ) +\n  geom_histogram(\n    position = \"identity\",\n    alpha = 0.7\n  ) +\n  labs(\n    x = \"Body Mass (g)\",,\n    y = \"Frequency\",\n    fill = \"Sex\"\n  )"
+    "text": "t-Test: Histograms\n\nCodelibrary(dplyr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  filter(species == \"Adelie\") |&gt;\n  drop_na(body_mass_g, sex) |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      fill = sex\n    )\n  ) +\n  geom_histogram(\n    position = \"identity\",\n    alpha = 0.7\n  ) +\n  labs(\n    x = \"Body Mass (g)\",,\n    y = \"Frequency\",\n    fill = \"Sex\"\n  )"
   },
   {
     "objectID": "index.html#t-test-density-plots",
     "href": "index.html#t-test-density-plots",
     "title": "An Introduction to the R Programming Language",
     "section": "t-Test: Density Plots",
-    "text": "t-Test: Density Plots\n\nCodelibrary(dplyr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  filter(species == \"Adelie\") |&gt;\n  drop_na(\n    body_mass_g,\n    sex\n  ) |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      fill = sex\n    )\n  ) +\n  geom_density(alpha = 0.7) +\n  labs(\n    x = \"Body Mass (g)\",,\n    y = \"Density\",\n    fill = \"Sex\"\n  )"
+    "text": "t-Test: Density Plots\n\nCodelibrary(dplyr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  filter(species == \"Adelie\") |&gt;\n  drop_na(body_mass_g, sex) |&gt;\n  ggplot(\n    aes(\n      x = body_mass_g,\n      fill = sex\n    )\n  ) +\n  geom_density(alpha = 0.7) +\n  labs(\n    x = \"Body Mass (g)\",,\n    y = \"Density\",\n    fill = \"Sex\"\n  )"
   },
   {
     "objectID": "index.html#t-test-q-q-plots",
     "href": "index.html#t-test-q-q-plots",
     "title": "An Introduction to the R Programming Language",
     "section": "t-Test: Q-Q Plots",
-    "text": "t-Test: Q-Q Plots\n\nCodelibrary(brandr)\nlibrary(dplyr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  filter(species == \"Adelie\") |&gt;\n  drop_na(\n    body_mass_g,\n    sex\n  ) |&gt;\n  ggplot(\n    aes(\n      sample = body_mass_g,\n      color = sex\n    )\n  ) +\n  stat_qq() +\n  stat_qq_line(color = \"black\") +\n  facet_wrap(vars(sex)) +\n  labs(\n    x = \"Theoretical Quantiles\",\n    y = \"Sample Quantiles\",\n    color = \"Sex\"\n  )"
+    "text": "t-Test: Q-Q Plots\n\nCodelibrary(brandr)\nlibrary(dplyr)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\npenguins |&gt;\n  filter(species == \"Adelie\") |&gt;\n  drop_na(body_mass_g, sex) |&gt;\n  ggplot(\n    aes(\n      sample = body_mass_g,\n      color = sex\n    )\n  ) +\n  stat_qq() +\n  stat_qq_line(color = \"black\") +\n  facet_wrap(vars(sex)) +\n  labs(\n    x = \"Theoretical Quantiles\",\n    y = \"Sample Quantiles\",\n    color = \"Sex\"\n  )"
   },
   {
     "objectID": "index.html#t-test-assumptions-1",
@@ -1691,7 +1705,7 @@
     "href": "index.html#t-test-observed-statistic-1",
     "title": "An Introduction to the R Programming Language",
     "section": "t-Test: Observed Statistic",
-    "text": "t-Test: Observed Statistic\n\n\n\nlibrary(dplyr)\nlibrary(magrittr)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\n\nmale &lt;-\n  penguins |&gt;\n  filter(\n    species == \"Adelie\",\n    sex == \"male\"\n  ) |&gt;\n  drop_na() |&gt;\n  pull(body_mass_g)\n\n\nfemale &lt;-\n  penguins |&gt;\n  filter(\n    species == \"Adelie\",\n    sex == \"female\"\n  ) |&gt;\n  drop_na() |&gt;\n  pull(body_mass_g)\n\n\n\nt_statistic &lt;-\n  mean(male, na.rm = TRUE) |&gt;\n  subtract(mean(female, na.rm = TRUE)) |&gt;\n  divide_by(\n    var(male, na.rm = TRUE) |&gt;\n      divide_by(length(male)) |&gt;\n      add(\n        var(female, na.rm = TRUE) |&gt;\n          divide_by(length(female))\n      ) |&gt;\n      sqrt()\n  )\n\n\nt_statistic\n#&gt; [1] 13.12629"
+    "text": "t-Test: Observed Statistic\n\n\n\nlibrary(dplyr)\nlibrary(magrittr)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\n\nmale &lt;-\n  penguins |&gt;\n  filter(\n    species == \"Adelie\",\n    sex == \"male\"\n  ) |&gt;\n  drop_na(body_mass_g, sex) |&gt;\n  pull(body_mass_g)\n\n\nfemale &lt;-\n  penguins |&gt;\n  filter(\n    species == \"Adelie\",\n    sex == \"female\"\n  ) |&gt;\n  drop_na(body_mass_g, sex) |&gt;\n  pull(body_mass_g)\n\n\n\nt_statistic &lt;-\n  mean(male, na.rm = TRUE) |&gt;\n  subtract(mean(female, na.rm = TRUE)) |&gt;\n  divide_by(\n    var(male, na.rm = TRUE) |&gt;\n      divide_by(length(male)) |&gt;\n      add(\n        var(female, na.rm = TRUE) |&gt;\n          divide_by(length(female))\n      ) |&gt;\n      sqrt()\n  )\n\n\nt_statistic\n#&gt; [1] 13.12629"
   },
   {
     "objectID": "index.html#t-test-observed-statistic-2",
@@ -1733,7 +1747,7 @@
     "href": "index.html#t-test-observed-effect-size",
     "title": "An Introduction to the R Programming Language",
     "section": "t-Test: Observed Effect Size",
-    "text": "t-Test: Observed Effect Size\n\n\n\nlibrary(dplyr)\nlibrary(effectsize)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\n\nmale &lt;-\n  penguins |&gt;\n  filter(\n    species == \"Adelie\",\n    sex == \"male\"\n  ) |&gt;\n  drop_na() |&gt;\n  pull(body_mass_g)\n\n\nfemale &lt;-\n  penguins |&gt;\n  filter(\n    species == \"Adelie\",\n    sex == \"female\"\n  ) |&gt;\n  drop_na() |&gt;\n  pull(body_mass_g)\n\n\n\neffect_size &lt;-\n  cohens_d(\n    x = male,\n    y = female,\n    mu = 0,\n    ci = 0.95,\n    alternative = \"two.sided\"\n  )\n\n\neffect_size\n#&gt; Cohen's d |       95% CI\n#&gt; ------------------------\n#&gt; 2.17      | [1.76, 2.58]\n#&gt; \n#&gt; - Estimated using pooled SD.\n\n\neffect_size |&gt;\n  interpret_hedges_g(rules = \"cohen1988\")\n#&gt; Cohen's d |       95% CI | Interpretation\n#&gt; -----------------------------------------\n#&gt; 2.17      | [1.76, 2.58] |          large\n#&gt; \n#&gt; - Estimated using pooled SD.\n#&gt; - Interpretation rule: cohen1988"
+    "text": "t-Test: Observed Effect Size\n\n\n\nlibrary(dplyr)\nlibrary(effectsize)\nlibrary(palmerpenguins)\nlibrary(tidyr)\n\n\nmale &lt;-\n  penguins |&gt;\n  filter(\n    species == \"Adelie\",\n    sex == \"male\"\n  ) |&gt;\n  drop_na(body_mass_g, sex) |&gt;\n  pull(body_mass_g)\n\n\nfemale &lt;-\n  penguins |&gt;\n  filter(\n    species == \"Adelie\",\n    sex == \"female\"\n  ) |&gt;\n  drop_na(body_mass_g, sex) |&gt;\n  pull(body_mass_g)\n\n\n\neffect_size &lt;-\n  cohens_d(\n    x = male,\n    y = female,\n    mu = 0,\n    ci = 0.95,\n    alternative = \"two.sided\"\n  )\n\n\neffect_size\n#&gt; Cohen's d |       95% CI\n#&gt; ------------------------\n#&gt; 2.17      | [1.76, 2.58]\n#&gt; \n#&gt; - Estimated using pooled SD.\n\n\neffect_size |&gt;\n  interpret_hedges_g(rules = \"cohen1988\")\n#&gt; Cohen's d |       95% CI | Interpretation\n#&gt; -----------------------------------------\n#&gt; 2.17      | [1.76, 2.58] |          large\n#&gt; \n#&gt; - Estimated using pooled SD.\n#&gt; - Interpretation rule: cohen1988"
   },
   {
     "objectID": "index.html#t-test-conclusion",

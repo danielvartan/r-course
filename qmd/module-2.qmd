@@ -361,11 +361,11 @@ They can also be [*recursive objects*](https://rdrr.io/r/base/is.recursive.html)
 :::
 
 ```{r}
-is.atomic(list())
+list() |> is.atomic()
 ```
 
 ```{r}
-is.recursive(list())
+list() |> is.recursive()
 ```
 ::::
 :::: {.column style="width: 5%;"}

@@ -182,7 +182,7 @@ Programs, and the algorithms they represent, are collectively referred to as [**
 
 :::: {.columns}
 ::: {.column style="width: 50%;"}
-> The instructions which govern this operation must be given to the device in absolutely **exhaustive detail**. [...] All these procedures require the use of **some code** to express the logical and the algebraical definition of the problem under consideration, as well as the necessary numerical material. [@vonneumann1993a]
+> The instructions which govern this operation must be given to the device in absolutely **exhaustive detail**. [...] All these procedures require the use of **some code** to express the logical and the algebraical definition of the problem under consideration, as well as the necessary numerical material [@vonneumann1993a].
 :::
 ::: {.column style="width: 50%;"}
 ![](images/von-neumann-figure-1.jpg){fig-align="center" style="width: 80%; padding-top: 0px;"}

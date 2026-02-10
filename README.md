@@ -37,6 +37,15 @@ quarto render
 
 This will start the rendering process, which may take some time depending on your machine. Once complete, the [Quarto](https://quarto.org/) presentation will be available in the [`docs`](docs) folder.
 
+## Links
+
+You can access the latest course outputs (v2.0.0) at the following links:
+
+- Slides: https://danielvartan.github.io/r-course
+- Code repository: https://github.com/danielvartan/r-course
+- Photos: https://photos.app.goo.gl/XarvYhtCPeWptmcj7
+- Videos (pt-BR): https://youtube.com/playlist?list=PL1CZfe9j9vWEmhy3l9_TCl97NueKaMo8m&si=rDTQAROgy4xbuqo7
+
 ## Contributing
 
 [![Contributor Covenant 3.0 code of conduct badge](https://img.shields.io/badge/Contributor%20Covenant-3.0-4baaaa.svg)](https://www.contributor-covenant.org/version/3/0/code_of_conduct/)

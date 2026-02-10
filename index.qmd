@@ -60,7 +60,7 @@ Here are the main topics:
 ## Main Objective
 
 ::: {.brand-triad-blue-red .bold-black style="text-align: center; padding-top: 150px;"}
-Provide a solid introduction to R programming with a focus on [Tidyverse](https://tidyverse.org/) principles and its ecosystem
+Provide a solid introduction to R programming with a focus on [Tidyverse](https://tidyverse.org/) principles and its ecosystem.
 :::
 
 ::: {.notes}
@@ -69,26 +69,25 @@ Provide a solid introduction to R programming with a focus on [Tidyverse](https:
 
 ## Learning Objectives {.smaller}
 
-1. Understand key concepts of computer science and programming
-2. Learn the structure and essential components of R programming language
-3. Learn tidyverse grammar for data manipulation
-4. Learn grammar of graphics for data exploration and visualization
-5. Learn tidymodels grammar for building statistical and predictive models
+1. Understand key concepts of computer science and programming.
+2. Learn the structure and essential components of R programming language.
+3. Learn tidyverse grammar for data manipulation.
+4. Learn grammar of graphics for data exploration and visualization.
+5. Learn tidymodels grammar for building statistical and predictive models.
 
 ::: {style="padding-top: 15px;"}
 [**Future courses?**]{.brand-triad-blue-red}
 
-An Introduction to [Git](https://git-scm.com) and [GitHub](https://github.com)
+An Introduction to [Git](https://git-scm.com) and [GitHub](https://github.com).
 
-An introduction to [Quarto](https://quarto.org/) and [Reproducible Workflows](https://open-science-training-handbook.gitbook.io/book/02opensciencebasics/04reproducibleresearchanddataanalysis)
+An introduction to [Quarto](https://quarto.org/) and [Reproducible Workflows](https://open-science-training-handbook.gitbook.io/book/02opensciencebasics/04reproducibleresearchanddataanalysis).
 
-An introduction to [Geospatial Data Science](https://r-spatial.org/book/) and the [r-spatial](https://r-spatial.org) framework
+An introduction to [Geospatial Data Science](https://r-spatial.org/book/) and the [r-spatial](https://r-spatial.org) framework.
 
-An introduction to [Shiny](https://shiny.posit.co) dashboards
+An introduction to [Shiny](https://shiny.posit.co) dashboards.
 :::
 
 ::: {.notes}
-- Pre-course survey: discuss responses about future courses.
 :::
 
 ## Course Content {.smaller .nostretch}
@@ -205,19 +204,19 @@ Today, you can also use AI-powered tools like [Claude](https://claude.ai/) to ge
 
 ## Notes
 
-💾 Bring a flash drive/pen drive.
+💾 Bring a flash drive/pen drive
 
-👩‍💻 Try to use the same computer for all classes.
+👩‍💻 Try to use the same computer for all classes
 
-💬 Always open this presentation in the browser.
+💬 Always open this presentation in the browser
 
-❌ Don't miss a class.
+❌ Don't miss a class
 
-🙋‍♂️ Ask questions.
+🙋‍♂️ Ask questions
 
-🤝 Help each other.
+🤝 Help each other
 
-🙏 [Be kind](https://www.youtube.com/shorts/SryH6_eWjGA).
+🙏 [Be kind](https://www.youtube.com/shorts/SryH6_eWjGA)
 
 🎉 Have fun!
 
