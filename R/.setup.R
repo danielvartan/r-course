@@ -7,7 +7,6 @@ library(here)
 library(katex)
 library(knitr)
 library(magrittr)
-library(quartor) # github.com/danielvartan/quartor
 library(ragg)
 library(showtext)
 library(sysfonts)

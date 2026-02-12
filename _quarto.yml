@@ -29,7 +29,7 @@ website:
     image: images/og-image.png
     image-width: 2400
     image-height: 1600
-    image-alt: "Center for Metropolitan Studies (CEM)"
+    image-alt: Center for Metropolitan Studies
   repo-branch: main
 
 format:

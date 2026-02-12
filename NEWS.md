@@ -4,6 +4,7 @@
 - Improved the documentation.
 - Added a slide showing the `patchwork` package.
 - Added a slide showing `ggplot2` extensions.
+- Update the final exercise.
 
 # v2.0.0 (2026-02-09)
 

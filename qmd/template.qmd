@@ -1,10 +1,12 @@
 ---
 title: >
-  Differences in Ultra-Processed Food Consumption Between MISFS-R Clusters B
-  and D Among Brazilian Children Aged 2 to 4 in 2022
-format: html
+  Differences Among Brazilian Children Aged 2 to 4 in Ultra-Processed Food
+  Consumption in 2022 Between Municipalities in Clusters B and D of the Revised
+  Multidimensional Index for Sustainable Food Systems (MISFS-R)
 author: "[Your Name Here]"
 date: today
+date-format: long
+format: html
 bibliography: references.bib
 ---
 
@@ -15,100 +17,109 @@ bibliography: references.bib
 <!-- badges: end -->
 
 ::: {.callout-important}
-This is your data report! Make any changes you want to it.
+This is your data report. Make any changes you want to it.
 :::
 
 ## Overview
 
-This report presents a data analysis exercise for the course [An Introduction to the R Programming Language](https://danielvartan.github.io/r-course).
+This report contains a data analysis exercise for the course [An Introduction to the R Programming Language](https://danielvartan.github.io/r-course/).
 
-The analysis explores potential differences in ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022, focusing on clusters B and D of the Revised Multidimensional Index for Sustainable Food Systems ([MISFS-R](https://doi.org/10.1002/sd.2376)).
+The analysis check for potential differences in ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 between municipalities in clusters B and D of the Revised Multidimensional Index for Sustainable Food Systems ([MISFS-R](https://doi.org/10.1002/sd.2376)).
 
 ::: {.callout-warning}
 **This exercise is for educational purposes only**.
 
-The data requires additional cleaning and validation to ensure its suitability for real-world applications. This analysis assumes the data is valid and reliable, which may not necessarily hold true.
+The data used in this exercise requires further cleaning and validation before it can be used in real-world applications. For the purposes of this analysis, the data is assumed to be valid, reliable, and to satisfy all assumptions underlying the statistical tests performed, even though this may not hold in practice.
 
-Furthermore, the assumptions underlying the statistical tests were not explicitly verified. For simplicity, it was presumed that the data satisfies all necessary assumptions. Consequently, the validity of the statistical test results may be compromised.
+Please note that **the results of the statistical tests may not be valid** due to these simplifications.
+
+In real-world scenarios, always ensure that the assumptions of statistical tests are rigorously checked and validated before interpreting the results.
 :::
+
+## Problem
+
+Ultra-processed foods ([UPF](https://en.wikipedia.org/wiki/Ultra-processed_food)) are industrial formulations typically high in added sugars, unhealthy fats, and salt, while being low in essential nutrients [@monteiro2018; @monteiro2019]. Their consumption has been linked to various adverse health outcomes, including obesity [@louzada2015], cardiovascular diseases [@mendonca2017], and metabolic disorders [@lavigne-robichaud2018].
+
+Although the consumption of [UPF](https://en.wikipedia.org/wiki/Ultra-processed_food) has been increasing globally, there is limited research on how it varies across different regions and socio-economic contexts, particularly among children. The Revised Multidimensional Index for Sustainable Food Systems ([MISFS-R](https://doi.org/10.1002/sd.2376)) ([@fig-norde-2023-figure-6]) provides a framework for assessing the sustainability of food systems at a subnational level in Brazil, incorporating local behaviors and practices [@carvalho2021a; @norde2023]. Understanding the relationship between MISFS-R clusters and [UPF](https://en.wikipedia.org/wiki/Ultra-processed_food) consumption can inform targeted interventions to promote healthier dietary patterns among children.
 
 ## Question
 
 This analysis seeks to address the following question:
 
 ::: {style="text-align: center; font-size: 1.1em; padding-top: 30px; padding-bottom: 30px;"}
-Was there a [**meaningful**]{.brand-red} difference in [**ultra-processed food consumption**]{.brand-red} among Brazilian children aged [**2 to 4**]{.brand-red} in [**2022**]{.brand-red} across the [**clusters B and D**]{.brand-red} of the Revised Multidimensional Index for Sustainable Food Systems ([MISFS-R](https://doi.org/10.1002/sd.2376))?
+Was there a **meaningful** difference in **ultra-processed food consumption** among Brazilian children aged **2 to 4** in **2022** between municipalities in **clusters B and D** of the Revised Multidimensional Index for Sustainable Food Systems ([MISFS-R](https://doi.org/10.1002/sd.2376))?
 :::
 
-MISFS is a multidimensional index designed to assess the sustainability of food systems at a subnational level in Brazil, incorporating local behaviors and practices. The MISFS-R is a revised version that introduces new indicators and a refined methodology. For more details, see @carvalho2021a and @norde2023.
+## Methods
 
 ## Methods
 
 ### Approach
 
-This study employed Popper's hypothetical-deductive method, also known as the method of conjecture and refutation [@popper1979a, p. 164], as its problem-solving approach. Procedurally, it applied an enhanced version of Null Hypothesis Significance Testing (NHST), grounded on the original ideas of Neyman-Pearson framework for data testing [@neyman1928; @neyman1928a; @perezgonzalez2015].
+This study employed Popper's [hypothetical-deductive method](https://en.wikipedia.org/wiki/Hypothetico-deductive_model), also known as the method of conjecture and refutation [@popper1979a, p. 164], as its problem-solving approach. Procedurally, it applied an enhanced version of Null Hypothesis Significance Testing ([NHST](https://en.wikipedia.org/wiki/Statistical_hypothesis_test#NHST)), grounded on the original ideas of Neyman-Pearson framework for data testing [@neyman1928; @neyman1928a; @perezgonzalez2015].
 
 ### Source of Data
 
-The data used in this analysis were sourced from Brazil's Food and Nutrition Surveillance System ([SISVAN](https://sisaps.saude.gov.br/sisvan/)), Ministry of Health ([MS](https://www.gov.br/saude)), specifically the dataset on ultra-processed food consumption [@sisvan].
+The data used in this analysis were sourced from the Food and Nutrition Surveillance System ([SISVAN](https://sisaps.saude.gov.br/sisvan/)) of the Brazilian Ministry of Health ([MS](https://www.gov.br/saude)) [@sisvana].
 
 ### Data Munging
 
 The data munging follow the data science workflow outlined by @wickham2023e. All processes were made using the [Quarto](https://quarto.org/) publishing system [@allaire], the [R](https://www.r-project.org/) programming language [@rcoreteam], and several R packages.
 
-For data manipulation and workflow, priority was given to packages from the [tidyverse](https://www.tidyverse.org/), [tidymodels](https://www.tidymodels.org), and [rOpenSci](https://ropensci.org) ecosystems, as well as other packages adhering to the tidy tools manifesto [@wickham2023c].
+For data manipulation and workflow, priority was given to packages from the [Tidyverse](https://www.tidyverse.org/), [Tidymodels](https://www.tidymodels.org), and [rOpenSci](https://ropensci.org) frameworks, as well as other packages adhering to the tidy tools manifesto [@wickham2023c].
 
 ### Data Analysis
 
-The analysis employed a bilateral [t-test for independent groups](https://en.wikipedia.org/wiki/Student%27s_t-test) using a [randomization-based empirical null distribution](https://infer.netlify.app/articles/t_test#sample-t-test-1). Visual inspections of the data were also conducted to explore and assess patterns. Furthermore, an *a priori* power analysis and effect-size estimation were performed to evaluate the statistical robustness and practical significance of the findings.
+The analysis employed a bilateral [t-test for independent groups](https://en.wikipedia.org/wiki/Student%27s_t-test) with a [randomization-based empirical null distribution](https://infer.netlify.app/articles/t_test#sample-t-test-1). Summary tables and visual inspections were conducted to explore patterns in the data.
+
+Furthermore, an *a priori* power analysis and effect-size estimation were performed to evaluate the statistical robustness and practical significance of the findings.
 
 ### Data Validation
 
-Data from municipalities with fewer than 10 monitored children were excluded to ensure reliable estimates.
+Data from municipalities with fewer than 10 monitored children were excluded to ensure reliable estimates. Additionally, municipalities where the number of children consuming ultra-processed foods ([UPF](https://en.wikipedia.org/wiki/Ultra-processed_food)) exceeded the total number of monitored children were removed, as this indicates data inconsistencies.
 
-Outliers were identified and assessed using visual inspection methods, including boxplots and histograms. To ensure the integrity of the results, values below 1.5 times the interquartile range (IQR) from the first quartile (Q1) and above 1.5 times the IQR from the third quartile (Q3) were excluded from the analysis.
-
-::: {.callout-important}
-Usually you would not remove outliers without investigating them first. However, for the purposes of this exercise, we will proceed with their removal to simplify the analysis.
-:::
+This does not guarantee the validity of the data, but it helps to mitigate some potential issues.
 
 ### Hypothesis Testing
 
-The analysis tested whether the means of ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 differed meaningfully across clusters B and D of the Revised Multidimensional Index for Sustainable Food Systems ([MISFS-R](https://doi.org/10.1002/sd.2376)).
+The analysis tested whether the means of ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 differed meaningfully between municipalities in clusters B and D of the Revised Multidimensional Index for Sustainable Food Systems ([MISFS-R](https://doi.org/10.1002/sd.2376)).
 
-To ensure practical significance, a Minimum Effect Size (MES) criterion was applied, following the original Neyman-Pearson framework for hypothesis testing [@neyman1928; @neyman1928a; @perezgonzalez2015]. The MES was set at Cohen's threshold for small effects (Cohen's $d$ = 0.2) [@cohen1988a]. A difference was considered meaningful only if its effect size was greater than or equal to the MES; otherwise, it was considered negligible.
+To ensure practical significance, a Minimum Effect Size ([MES](https://en.wikipedia.org/wiki/Effect_size)) criterion was applied, following the original Neyman-Pearson framework for hypothesis testing [@neyman1928; @neyman1928a; @perezgonzalez2015]. The MES was set at Cohen's threshold for small effects (Cohen's $d$ = 0.2) [@cohen1988a]. A difference was considered meaningful only if its effect size was greater than or equal to the MES; otherwise, it was considered negligible.
 
 The test was structured as follows:
 
-- **Null Hypothesis** ($\text{H}_{0}$): Ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 does not differ meaningfully across MISFS-R clusters B and D, indicated by Cohen's $d$ effect-size statistic being smaller than 0.2 (negligible).
+- **Null Hypothesis** ($\text{H}_{0}$): Ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 does not differ meaningfully between municipalities in MISFS-R clusters B and D, indicated by Cohen's $d$ effect-size statistic being smaller than 0.2 (negligible).
 
-- **Alternative Hypothesis** ($\text{H}_{a}$): Ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 differs meaningfully across MISFS-R clusters B and D, indicated by Cohen's $d$ effect-size statistic being greater or equal than 0.2 (non-negligible).
+- **Alternative Hypothesis** ($\text{H}_{a}$): Ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 differs meaningfully between municipalities in MISFS-R clusters B and D, indicated by Cohen's $d$ effect-size statistic being greater or equal than 0.2 (non-negligible).
 
 Formally:
 
 $$
 \begin{cases}
-\text{H}_{0}: \text{Cohen's} \ d < \text{MES} \\
-\text{H}_{a}: \text{Cohen's} \ d \geq \text{MES}
+\text{H}_{0}: \mu_{A} = \mu_{B} \\
+\text{H}_{a}: \mu_{A} \neq \mu_{B} \\
 \end{cases}
 $$
 
-The hypothesis test is conditioned on a Type I error ($\alpha$) of 0.05 and a minimum statistical power (1 - $\beta$) of 0.8. This means the test should have at least an 80% probability of correctly rejecting the null hypothesis when it is false, thereby minimizing the risk of a Type II error ($\beta$).
+$$
+\begin{cases}
+\text{H}_{0}: \text{Cohen's d} < \text{MES} \\
+\text{H}_{a}: \text{Cohen's d} \geq \text{MES} \\
+\end{cases}
+$$
+
+The hypothesis test is conditioned on a [Type I error](https://en.wikipedia.org/wiki/Type_I_and_type_II_errors) ($\alpha$) of 0.05 and a minimum [statistical power](https://en.wikipedia.org/wiki/Power_(statistics)) (1 - $\beta$) of 0.8. This means the test should have at least an 80% probability of correctly rejecting the null hypothesis when it is false, thereby minimizing the risk of a [Type II error](https://en.wikipedia.org/wiki/Type_I_and_type_II_errors) ($\beta$).
 
 ### Code Style
 
 The Tidyverse [tidy tools manifesto](https://tidyverse.tidyverse.org/articles/manifesto.html) [@wickham2023e], [code style guide](https://style.tidyverse.org/) [@wickhama] and [design principles](https://design.tidyverse.org/) [@wickhamc] were followed to ensure consistency and enhance readability.
-
-### Reproducibility
-
-The pipeline is fully reproducible and can be run again at any time. To ensure consistent results, the [`renv`](https://rstudio.github.io/renv/) package [@ushey2025] was used to manage and restore the R environment. See the [README](https://github.com/cem-usp/locais-nova-rais-rfb-test/blob/main/README.md) file in the code repository to learn how to run it.
 
 ## Set the Environment
 
 ### Load Packages
 
 ::: {.callout-note}
-**Remove any packages you don't use in your analysis.**
+Remove any packages you don't need for your analysis.
 :::
 
 ```{r}
@@ -133,13 +144,35 @@ library(summarytools)
 library(tidyr)
 ```
 
+### Set Data Directories
+
+```{r}
+raw_data_dir <- here("data-raw")
+data_dir <- here("data")
+```
+
+```{r}
+for (i in c(raw_data_dir, data_dir)) {
+  if (!dir.exists(i)) {
+    dir.create(i)
+  }
+}
+```
+
+## Perform an *a priori* Power Analysis
+
+```{r}
+
+```
+
 ## Import Data
 
 ```{r}
+#| label: Import Data
 #| output: false
 
 data <-
-  here("data-raw", "CONS_ULTRA.xlsx") |>
+  here(raw_data_dir, "CONS_ULTRA.xlsx") |>
   read_xlsx(
     sheet = "2022",
     skip = 1,
@@ -163,7 +196,7 @@ data |> glimpse()
 
 ```
 
-## Transform the Data
+## Transform Data
 
 ```{r}
 
@@ -173,11 +206,11 @@ data |> glimpse()
 
 - `year`: Year of the data collection (type: `integer`).
 - `municipality_code`: Municipality code (type: `integer`).
-- `municipality_name`: Municipality name (type: `character`).
-- `state_abbrev`: State abbreviation (Federal Unit) (type: `character`).
+- `municipality`: Municipality name (type: `character`).
+- `federal_unit`: State abbreviation (Federal Unit) (type: `factor`).
 - `misfs`: Revised Multidimensional Index for Sustainable Food Systems (MISFS-R) cluster (type: `factor`).
 - `n_upf`: Number of children that consumed ultra-processed foods (UPF) (type: `integer`).
-- `n_upf_rel`: Percentage of children that consumed ultra-processed foods (UPF) (type: `double`).
+- `n_upf_per`: Percentage of children that consumed ultra-processed foods (UPF) (type: `double`).
 - `n_monitored`: Number of monitored children (type: `integer`).
 
 ## Save Data
@@ -192,13 +225,9 @@ data |> glimpse()
 
 ```
 
+## Assess Model Assumptions
+
 ## Model Data
-
-```{r}
-
-```
-
-## Assess the Effect Size
 
 ```{r}
 
@@ -235,7 +264,7 @@ A BibLaTeX entry for LaTeX users is
 The original data sources may be subject to their own licensing terms and conditions.
 :::
 
-The code in this repository is licensed under the [GNU General Public License Version 3](https://www.gnu.org/licenses/gpl-3.0), while the report is available under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+The code in this report is licensed under the [GNU General Public License Version 3](https://www.gnu.org/licenses/gpl-3.0), while the report is available under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 ```text
 Copyright (C) 2026 [Your Full Name Here]

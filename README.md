@@ -1,7 +1,7 @@
 # r-course
 
 <!-- badges: start -->
-[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![Project Status: Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
 [![DOI Badge](https://img.shields.io/badge/doi-10.5281/zenodo.18332665-1284C5.svg)](https://doi.org/10.5281/zenodo.18332665)
 [![FAIR checklist badge](https://img.shields.io/badge/fairsoftwarechecklist.net--00a7d9.png)](https://fairsoftwarechecklist.net/v0.2?f=21&a=32113&i=02310&r=123)
 [![fair-software.eu](https://img.shields.io/badge/fair--software.eu-%E2%97%8F%20%E2%97%8F%20%E2%97%8F%20%E2%97%8F%20%E2%97%8B-yellow)](https://fair-software.eu)
@@ -138,7 +138,7 @@ A BibLaTeX entry for LaTeX users is:
 <table>
   <tr>
     <td width="30%" align="center" valign="center">
-      <a href="https://fapesp.br/"><img src="images/cnpq-logo.svg" width="150em"/></a>
+      <a href="https://www.gov.br/cnpq/"><img src="images/cnpq-logo.svg" width="150em"/></a>
     </td>
     <td width="70%" valign="center">
       This work was financed, in part, by the National Council for Scientific and Technological Development (<a href="https://www.gov.br/cnpq/">CNPq</a>), Brazil. Process Number 383443/2024-5.

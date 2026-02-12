@@ -10,7 +10,7 @@
 Answer the following question using the data provided:
 
 ::: {style="text-align: center; font-size: 1.1em; padding-top: 100px;"}
-Was there a [**meaningful**]{.brand-triad-blue-red} difference in [**ultra-processed food consumption**]{.brand-triad-blue-red} among Brazilian children aged [**2 to 4**]{.brand-triad-blue-red} years in [**2022**]{.brand-triad-blue-red} across [**clusters B and D**]{.brand-triad-blue-red} of the Revised Multidimensional Index for Sustainable Food Systems ([MISFS-R](https://doi.org/10.1002/sd.2376))?
+Was there a [**meaningful**]{.brand-triad-blue-red} difference in [**ultra-processed food consumption**]{.brand-triad-blue-red} among Brazilian children aged [**2 to 4**]{.brand-triad-blue-red} in [**2022**]{.brand-triad-blue-red} between municipalities in [**clusters B and D**]{.brand-triad-blue-red} of the Revised Multidimensional Index for Sustainable Food Systems ([MISFS-R](https://doi.org/10.1002/sd.2376))?
 :::
 
 ::: {.notes}
@@ -53,7 +53,7 @@ For more details, see @carvalho2021a and @norde2023.
 
 **This exercise is for educational purposes only**.
 
-The data used in this exercise requires further cleaning and validation to ensure its suitability for real-world applications. For the purposes of this analysis, we will assume the data is valid and reliable, though this assumption may not hold in practice.
+The data used in this exercise requires further cleaning and validation before it can be used in real-world applications. For the purposes of this analysis, we will assume the data is valid, reliable, and satisfies all assumptions underlying the statistical tests performed, even though this may not hold in practice.
 
 Please note that **the results of the statistical test may not be valid** due to these simplifications.
 
@@ -102,13 +102,13 @@ Remember the data science workflow:
 
 10\. Transform the data as needed.
 
-11\. Save the validated data.
+11\. Save the processed data.
 
 12\. Conduct a **brief** exploratory data analysis.
 
-13\. Conduct a t-test to compare the group means.
+13\. Assess the model assumptions.
 
-14\. Calculate and assess the effect size.
+14\. Model the data.
 
 15\. Write your conclusions.
 
@@ -140,6 +140,8 @@ Remember the data science workflow:
 
 ❌ Remove municipalities with less than 10 monitored children.
 
+❌ Remove municipalities where the number of children consuming ultra-processed foods exceeds the number monitored.
+
 🙋‍♂️ If you're stuck, ask for help.
 
 🎉 Have fun!
@@ -147,4 +149,23 @@ Remember the data science workflow:
 ::: {.notes}
 - Set a time limit of 2 hours to complete the exercise.
 - Reserve a time for the course **conclusion** and **class photo**.
+:::
+
+## Solution
+
+You can find the solution to this exercise at the following links:
+
+::: {style="padding-top: 15px;"}
+**Report**
+
+<https://danielvartan.github.io/r-course-exercise>
+:::
+
+::: {style="padding-top: 15px;"}
+**Code Repository**
+
+<https://github.com/danielvartan/r-course-exercise>
+:::
+
+::: {.notes}
 :::
