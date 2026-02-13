@@ -386,7 +386,7 @@ $\Delta\text{R}^{2}$ = 0.00388`<br>`{=html}Cohen’s $f^{2}$ = 0.00414
 
 Latitudinal cline of chronotype [@leocadio-miguel2017].
 
-[Critique](https://danielvartan.github.io/mastersthesis/web/qmd/supplementary-material-9.html) of Leocadio-Miguel et al. latitude article [@vartanian2024a].
+[Critique](https://danielvartan.github.io/mastersthesis/web/qmd/supplementary-material-11.html) of Leocadio-Miguel et al. latitude article [@vartanian2024a].
 
 The ASA statement on p-values [@wasserstein2016].
 
@@ -484,14 +484,14 @@ Our test type-1 error rate ($\alpha$) will be set at **0.05** and our type-2 err
 $$
 \begin{cases}
 \text{H}_{0}: \mu_{A} = \mu_{B} \\
-\text{H}_{a}: \mu_{A} \neq \mu_{B} \\
+\text{H}_{1}: \mu_{A} \neq \mu_{B} \\
 \end{cases}
 $$
 
 $$
 \begin{cases}
-\text{H}_{0}: \text{Cohen's d} < \text{MES} \\
-\text{H}_{a}: \text{Cohen's d} \geq \text{MES} \\
+\text{H}_{0}: \text{Cohen's} \ d < \text{MES} \\
+\text{H}_{1}: \text{Cohen's} \ d \geq \text{MES} \\
 \end{cases}
 $$
 :::
@@ -506,7 +506,7 @@ $$
 :::: {.column style="width: 50%; font-size: 0.85em;"}
 [Is there a meaningful difference in body mass between male and female Adelie penguins?]{.brand-triad-blue-red .bold-black style="font-size: 1.1em;"}
 
-To ensure [practical significance]{.underline}, we will analyze the difference in means for its effect size, considering a 95% confidence interval. Cohen's benchmark for a medium effect size (**d = 0.05**) will be used as our Minimum Effect Size (MES) [@cohen1988a].
+To ensure [practical significance]{.underline}, we will analyze the difference in means for its effect size, considering a 95% confidence interval. Cohen's benchmark for a medium effect size ($d$ = 0.5) will be used as our Minimum Effect Size (MES) [@cohen1988a].
 
 ::: {style="padding-top: 100px;"}
 **Tip**: See @perezgonzalez2015 to learn more about data testing and practical significance.
@@ -516,14 +516,14 @@ To ensure [practical significance]{.underline}, we will analyze the difference i
 $$
 \begin{cases}
 \text{H}_{0}: \mu_{A} = \mu_{B} \\
-\text{H}_{a}: \mu_{A} \neq \mu_{B} \\
+\text{H}_{1}: \mu_{A} \neq \mu_{B} \\
 \end{cases}
 $$
 
 $$
 \begin{cases}
-\text{H}_{0}: \text{Cohen's d} < \text{MES} \\
-\text{H}_{a}: \text{Cohen's d} \geq \text{MES} \\
+\text{H}_{0}: \text{Cohen's} \ d < \text{MES} \\
+\text{H}_{1}: \text{Cohen's} \ d \geq \text{MES} \\
 \end{cases}
 $$
 ::::
@@ -532,13 +532,13 @@ $$
 ::: {.notes}
 :::
 
-## Cohen's d {.smaller}
+## Cohen's $d$ {.smaller}
 
 ::: {style="font-size: 0.95em;"}
-Cohen's d is a measure of [effect size](https://en.wikipedia.org/wiki/Effect_size) that indicates the standardized difference between two means. When comparing two independent means, Cohen's d for [two tails](https://en.wikipedia.org/wiki/One-_and_two-tailed_tests) t-test can be calculated as:
+Cohen's $d$ is a measure of [effect size](https://en.wikipedia.org/wiki/Effect_size) that indicates the standardized difference between two means. When comparing two independent means, Cohen's $d$ for [two tails](https://en.wikipedia.org/wiki/One-_and_two-tailed_tests) t-test can be calculated as:
 
 $$
-\text{d} = \frac{|\text{m}_{A} - \text{m}_{B}|}{s_{\text{pooled}}}
+d = \frac{|\text{m}_{A} - \text{m}_{B}|}{s_{\text{pooled}}}
 $$
 
 Where:
@@ -554,7 +554,7 @@ Where:
 ::: {.notes}
 :::
 
-## Cohen's d {.smaller}
+## Cohen's $d$ {.smaller}
 
 :::: {style="font-size: 0.95em;"}
 The spooled standard deviation ($s_{pooled}$) is calculated using the following formula:
@@ -637,7 +637,7 @@ penguins |>
 
 ## t-Test: Power Analysis {.smaller}
 
-A power analysis for a t-test with an expected effect size of $\text{d} = 0.5$ indicates that we would need approximately [64]{.brand-triad-blue-red .bold-black} participants in each group to achieve a power of **0.8** at a significance level of **0.05**.
+A power analysis for a t-test with an expected effect size of **0.5** ($\text{Cohen's} \ d$) indicates that we would need approximately [64]{.brand-triad-blue-red .bold-black} participants in each group to achieve a power of **0.8** at a significance level of **0.05**.
 
 :::: {.columns}
 ::: {.column style="width: 47.5%; padding-top: 15px;"}
@@ -650,8 +650,8 @@ library(pwr)
 #| include: false
 
 power.t.welch(
-  d = 0.50,
-  power = 0.80,
+  d = 0.5,
+  power = 0.8,
   alpha = 0.05,
   alternative = "two.sided"
 )
@@ -1319,7 +1319,7 @@ effect_size |>
 
 Our analysis found a statistically significant difference in means ($t$ = 13.1, $p$-value < 0.001). The observed effect size was large and exceed the Minimal Effect Size (MES) threshold ($d$ = 2.17, 95% CI [1.76, 2.58]).
 
-Since we could reliably detect effects of **d = 0.5** or larger, the power of our test remains high, indicating that the probability of a false negative ($\beta$) is very low.
+Since we could reliably detect effects of 0.5 ($\text{Cohen's} \ d$) or larger, the power of our test remains high, indicating that the probability of a false negative ($\beta$) is very low.
 
 Based on these results, we conclude that **there is a meaningful difference in body mass between male and female Adelie penguins**, with male penguins having a higher mean body mass. Therefore, we reject the null hypothesis in favor of the alternative hypothesis.
 :::
@@ -1327,14 +1327,14 @@ Based on these results, we conclude that **there is a meaningful difference in b
 $$
 \begin{cases}
 \text{H}_{0}: \mu_{A} = \mu_{B} \\
-\text{H}_{a}: \mu_{A} \neq \mu_{B} \\
+\text{H}_{1}: \mu_{A} \neq \mu_{B} \\
 \end{cases}
 $$
 
 $$
 \begin{cases}
 \text{H}_{0}: d < \text{MES} \\
-\text{H}_{a}: d \geq \text{MES} \\
+\text{H}_{1}: d \geq \text{MES} \\
 \end{cases}
 $$
 :::

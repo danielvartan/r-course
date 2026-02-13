@@ -3114,9 +3114,9 @@
 <span id="cb122-7"><a></a>  <span class="at">check =</span> <span class="st">"equal"</span></span>
 <span id="cb122-8"><a></a>)</span>
 <span id="cb122-9"><a></a><span class="co">#&gt; Unit: microseconds</span></span>
-<span id="cb122-10"><a></a><span class="co">#&gt;                   expr      min       lq      mean   median        uq      max</span></span>
-<span id="cb122-11"><a></a><span class="co">#&gt;  with_for_loop(1:1000) 1139.020 1457.209 2250.9868 1736.405 2888.7465 7216.839</span></span>
-<span id="cb122-12"><a></a><span class="co">#&gt;       with_map(1:1000)  304.376  401.830  531.1448  488.924  637.0195 1596.411</span></span>
+<span id="cb122-10"><a></a><span class="co">#&gt;                   expr      min        lq      mean   median       uq      max</span></span>
+<span id="cb122-11"><a></a><span class="co">#&gt;  with_for_loop(1:1000) 1054.845 1195.9870 1623.9336 1252.052 1679.917 5111.942</span></span>
+<span id="cb122-12"><a></a><span class="co">#&gt;       with_map(1:1000)  335.771  361.8655  433.7118  396.855  451.498 1626.814</span></span>
 <span id="cb122-13"><a></a><span class="co">#&gt;  neval cld</span></span>
 <span id="cb122-14"><a></a><span class="co">#&gt;    100  a </span></span>
 <span id="cb122-15"><a></a><span class="co">#&gt;    100   b</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -8238,10 +8238,10 @@
 <details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb298"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb298-1"><a></a>penguin_table <span class="ot">&lt;-</span></span>
 <span id="cb298-2"><a></a>  penguin_table <span class="sc">|&gt;</span></span>
 <span id="cb298-3"><a></a>  <span class="fu">tab_source_note</span>(</span>
-<span id="cb298-4"><a></a>    <span class="at">source_note =</span> <span class="st">"Source: Palmer Station LTER / palmerpenguins package"</span></span>
+<span id="cb298-4"><a></a>    <span class="at">source_note =</span> <span class="st">"Source: Palmer Station LTER / palmerpenguins package."</span></span>
 <span id="cb298-5"><a></a>  ) <span class="sc">|&gt;</span></span>
 <span id="cb298-6"><a></a>  <span class="fu">tab_footnote</span>(</span>
-<span id="cb298-7"><a></a>    <span class="at">footnote =</span> <span class="st">"Averages calculated after removing missing values"</span>,</span>
+<span id="cb298-7"><a></a>    <span class="at">footnote =</span> <span class="st">"Averages calculated after removing missing values."</span>,</span>
 <span id="cb298-8"><a></a>    <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(<span class="at">columns =</span> <span class="fu">starts_with</span>(<span class="st">"mean"</span>))</span>
 <span id="cb298-9"><a></a>  )</span>
 <span id="cb298-10"><a></a></span>
@@ -8771,10 +8771,10 @@
 <tfoot>
 <tr class="gt_footnotes odd">
 <td colspan="5" class="gt_footnote">
-<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> Averages calculated after removing missing values</td>
+<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> Averages calculated after removing missing values.</td>
 </tr>
 <tr class="gt_sourcenotes even">
-<td colspan="5" class="gt_sourcenote">Source: Palmer Station LTER / palmerpenguins package</td>
+<td colspan="5" class="gt_sourcenote">Source: Palmer Station LTER / palmerpenguins package.</td>
 </tr>
 </tfoot>
 </table>
@@ -9328,10 +9328,10 @@
 <tfoot>
 <tr class="gt_footnotes odd">
 <td colspan="5" class="gt_footnote">
-<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> Averages calculated after removing missing values</td>
+<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> Averages calculated after removing missing values.</td>
 </tr>
 <tr class="gt_sourcenotes even">
-<td colspan="5" class="gt_sourcenote">Source: Palmer Station LTER / palmerpenguins package</td>
+<td colspan="5" class="gt_sourcenote">Source: Palmer Station LTER / palmerpenguins package.</td>
 </tr>
 </tfoot>
 </table>
@@ -9405,7 +9405,7 @@
 <span id="cb302-27"><a></a>    <span class="at">decimals =</span> <span class="dv">2</span></span>
 <span id="cb302-28"><a></a>  ) <span class="sc">|&gt;</span></span>
 <span id="cb302-29"><a></a>  <span class="fu">tab_source_note</span>(</span>
-<span id="cb302-30"><a></a>    <span class="at">source_note =</span> <span class="st">"Source: Star Wars API / dplyr package"</span></span>
+<span id="cb302-30"><a></a>    <span class="at">source_note =</span> <span class="st">"Source: Star Wars API / dplyr package."</span></span>
 <span id="cb302-31"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details><div class="cell-output-display">
 <div id="gtuzljiwpk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
@@ -10029,7 +10029,7 @@
 </tr>
 </tbody>
 <tfoot><tr class="gt_sourcenotes odd">
-<td colspan="3" class="gt_sourcenote">Source: Star Wars API / dplyr package</td>
+<td colspan="3" class="gt_sourcenote">Source: Star Wars API / dplyr package.</td>
 </tr></tfoot>
 </table>
 </div>
@@ -12504,7 +12504,7 @@ Effect Size Classes
 <div class="column" style="width: 45%; font-size: 0.9em;">
 <p><span class="math inline">\(\Delta\text{R}^{2}\)</span> = 0.00388<br>Cohen’s <span class="math inline">\(f^{2}\)</span> = 0.00414</p>
 <p>Latitudinal cline of chronotype <span class="citation" data-cites="leocadio-miguel2017">(<a href="#/references" role="doc-biblioref" onclick="">Leocadio-Miguel et al., 2017</a>)</span>.</p>
-<p><a href="https://danielvartan.github.io/mastersthesis/web/qmd/supplementary-material-9.html">Critique</a> of Leocadio-Miguel et al.&nbsp;latitude article <span class="citation" data-cites="vartanian2024a">(<a href="#/references" role="doc-biblioref" onclick="">Vartanian, 2024</a>)</span>.</p>
+<p><a href="https://danielvartan.github.io/mastersthesis/web/qmd/supplementary-material-11.html">Critique</a> of Leocadio-Miguel et al.&nbsp;latitude article <span class="citation" data-cites="vartanian2024a">(<a href="#/references" role="doc-biblioref" onclick="">Vartanian, 2024</a>)</span>.</p>
 <p>The ASA statement on p-values <span class="citation" data-cites="wasserstein2016">(<a href="#/references" role="doc-biblioref" onclick="">Wasserstein &amp; Lazar, 2016</a>)</span>.</p>
 <p>Authors who rely solely on the p-value demonstrate a preference for statistical rituals over statistical reasoning <span class="citation" data-cites="gigerenzer2004">(<a href="#/references" role="doc-biblioref" onclick="">Gigerenzer, 2004</a>)</span>.</p>
 </div><div class="column" style="width: 55%;">
@@ -12619,13 +12619,13 @@ Effect Size Classes
 <p><span class="math display">\[
 \begin{cases}
 \text{H}_{0}: \mu_{A} = \mu_{B} \\
-\text{H}_{a}: \mu_{A} \neq \mu_{B} \\
+\text{H}_{1}: \mu_{A} \neq \mu_{B} \\
 \end{cases}
 \]</span></p>
 <p><span class="math display">\[
 \begin{cases}
-\text{H}_{0}: \text{Cohen's d} &lt; \text{MES} \\
-\text{H}_{a}: \text{Cohen's d} \geq \text{MES} \\
+\text{H}_{0}: \text{Cohen's} \ d &lt; \text{MES} \\
+\text{H}_{1}: \text{Cohen's} \ d \geq \text{MES} \\
 \end{cases}
 \]</span></p>
 </div></div>
@@ -12643,7 +12643,7 @@ Effect Size Classes
 <div class="columns">
 <div class="column" style="width: 50%; font-size: 0.85em;">
 <p><span class="brand-triad-blue-red bold-black" style="font-size: 1.1em;">Is there a meaningful difference in body mass between male and female Adelie penguins?</span></p>
-<p>To ensure <u>practical significance</u>, we will analyze the difference in means for its effect size, considering a 95% confidence interval. Cohen’s benchmark for a medium effect size (<strong>d = 0.05</strong>) will be used as our Minimum Effect Size (MES) <span class="citation" data-cites="cohen1988a">(<a href="#/references" role="doc-biblioref" onclick="">Cohen, 1988</a>)</span>.</p>
+<p>To ensure <u>practical significance</u>, we will analyze the difference in means for its effect size, considering a 95% confidence interval. Cohen’s benchmark for a medium effect size (<span class="math inline">\(d\)</span> = 0.5) will be used as our Minimum Effect Size (MES) <span class="citation" data-cites="cohen1988a">(<a href="#/references" role="doc-biblioref" onclick="">Cohen, 1988</a>)</span>.</p>
 <div style="padding-top: 100px;">
 <p><strong>Tip</strong>: See <span class="citation" data-cites="perezgonzalez2015">Perezgonzalez (<a href="#/references" role="doc-biblioref" onclick="">2015</a>)</span> to learn more about data testing and practical significance.</p>
 </div>
@@ -12651,13 +12651,13 @@ Effect Size Classes
 <p><span class="math display">\[
 \begin{cases}
 \text{H}_{0}: \mu_{A} = \mu_{B} \\
-\text{H}_{a}: \mu_{A} \neq \mu_{B} \\
+\text{H}_{1}: \mu_{A} \neq \mu_{B} \\
 \end{cases}
 \]</span></p>
 <p><span class="math display">\[
 \begin{cases}
-\text{H}_{0}: \text{Cohen's d} &lt; \text{MES} \\
-\text{H}_{a}: \text{Cohen's d} \geq \text{MES} \\
+\text{H}_{0}: \text{Cohen's} \ d &lt; \text{MES} \\
+\text{H}_{1}: \text{Cohen's} \ d \geq \text{MES} \\
 \end{cases}
 \]</span></p>
 </div></div>
@@ -12671,11 +12671,12 @@ Effect Size Classes
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section><section id="cohens-d" class="slide level2 smaller"><h2>Cohen’s d</h2>
+      }</style></aside></section><section id="cohens-d" class="slide level2 smaller"><h2>Cohen’s <span class="math inline">\(d\)</span>
+</h2>
 <div style="font-size: 0.95em;">
-<p>Cohen’s d is a measure of <a href="https://en.wikipedia.org/wiki/Effect_size">effect size</a> that indicates the standardized difference between two means. When comparing two independent means, Cohen’s d for <a href="https://en.wikipedia.org/wiki/One-_and_two-tailed_tests">two tails</a> t-test can be calculated as:</p>
+<p>Cohen’s <span class="math inline">\(d\)</span> is a measure of <a href="https://en.wikipedia.org/wiki/Effect_size">effect size</a> that indicates the standardized difference between two means. When comparing two independent means, Cohen’s <span class="math inline">\(d\)</span> for <a href="https://en.wikipedia.org/wiki/One-_and_two-tailed_tests">two tails</a> t-test can be calculated as:</p>
 <p><span class="math display">\[
-\text{d} = \frac{|\text{m}_{A} - \text{m}_{B}|}{s_{\text{pooled}}}
+d = \frac{|\text{m}_{A} - \text{m}_{B}|}{s_{\text{pooled}}}
 \]</span></p>
 <p>Where:</p>
 <ul>
@@ -12698,7 +12699,8 @@ Effect Size Classes
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section><section id="cohens-d-1" class="slide level2 smaller"><h2>Cohen’s d</h2>
+      }</style></aside></section><section id="cohens-d-1" class="slide level2 smaller"><h2>Cohen’s <span class="math inline">\(d\)</span>
+</h2>
 <div style="font-size: 0.95em;">
 <p>The spooled standard deviation (<span class="math inline">\(s_{pooled}\)</span>) is calculated using the following formula:</p>
 <div style="padding-top: 15px; padding-bottom: 15px;">
@@ -12785,7 +12787,7 @@ s_{pooled} = \sqrt{\frac{(n_{1} - 1)s_{1}^{2} + (n_{2} - 1)s_{2}^{2}}{n_{1} + n_
           overflow: hidden!important;
           display:block!important;
       }</style></aside></section><section id="t-test-power-analysis-1" class="slide level2 smaller"><h2>t-Test: Power Analysis</h2>
-<p>A power analysis for a t-test with an expected effect size of <span class="math inline">\(\text{d} = 0.5\)</span> indicates that we would need approximately <span class="brand-triad-blue-red bold-black">64</span> participants in each group to achieve a power of <strong>0.8</strong> at a significance level of <strong>0.05</strong>.</p>
+<p>A power analysis for a t-test with an expected effect size of <strong>0.5</strong> (<span class="math inline">\(\text{Cohen's} \ d\)</span>) indicates that we would need approximately <span class="brand-triad-blue-red bold-black">64</span> participants in each group to achieve a power of <strong>0.8</strong> at a significance level of <strong>0.05</strong>.</p>
 <div class="columns">
 <div class="column" style="width: 47.5%; padding-top: 15px;">
 <div class="cell">
@@ -13459,19 +13461,19 @@ t = \frac{\text{m}_{A} - \text{m}_{B}}{\sqrt{\frac{s_{A}^{2}}{n_{A}} + \frac{s_{
 <div class="column" style="width: 60%; font-size: 0.85em;">
 <p><span class="brand-triad-blue-red bold-black" style="font-size: 1.1em;">Is there a meaningful difference in body mass between male and female Adelie penguins?</span></p>
 <p>Our analysis found a statistically significant difference in means (<span class="math inline">\(t\)</span> = 13.1, <span class="math inline">\(p\)</span>-value &lt; 0.001). The observed effect size was large and exceed the Minimal Effect Size (MES) threshold (<span class="math inline">\(d\)</span> = 2.17, 95% CI [1.76, 2.58]).</p>
-<p>Since we could reliably detect effects of <strong>d = 0.5</strong> or larger, the power of our test remains high, indicating that the probability of a false negative (<span class="math inline">\(\beta\)</span>) is very low.</p>
+<p>Since we could reliably detect effects of 0.5 (<span class="math inline">\(\text{Cohen's} \ d\)</span>) or larger, the power of our test remains high, indicating that the probability of a false negative (<span class="math inline">\(\beta\)</span>) is very low.</p>
 <p>Based on these results, we conclude that <strong>there is a meaningful difference in body mass between male and female Adelie penguins</strong>, with male penguins having a higher mean body mass. Therefore, we reject the null hypothesis in favor of the alternative hypothesis.</p>
 </div><div class="column" style="width: 40%; padding-top: 130px;">
 <p><span class="math display">\[
 \begin{cases}
 \text{H}_{0}: \mu_{A} = \mu_{B} \\
-\text{H}_{a}: \mu_{A} \neq \mu_{B} \\
+\text{H}_{1}: \mu_{A} \neq \mu_{B} \\
 \end{cases}
 \]</span></p>
 <p><span class="math display">\[
 \begin{cases}
 \text{H}_{0}: d &lt; \text{MES} \\
-\text{H}_{a}: d \geq \text{MES} \\
+\text{H}_{1}: d \geq \text{MES} \\
 \end{cases}
 \]</span></p>
 </div></div>

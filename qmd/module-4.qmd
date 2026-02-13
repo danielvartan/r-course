@@ -563,10 +563,10 @@ penguin_table
 penguin_table <-
   penguin_table |>
   tab_source_note(
-    source_note = "Source: Palmer Station LTER / palmerpenguins package"
+    source_note = "Source: Palmer Station LTER / palmerpenguins package."
   ) |>
   tab_footnote(
-    footnote = "Averages calculated after removing missing values",
+    footnote = "Averages calculated after removing missing values.",
     locations = cells_column_labels(columns = starts_with("mean"))
   )
 
@@ -655,7 +655,7 @@ starwars_summary |>
     decimals = 2
   ) |>
   tab_source_note(
-    source_note = "Source: Star Wars API / dplyr package"
+    source_note = "Source: Star Wars API / dplyr package."
   )
 ```
 
